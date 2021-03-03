@@ -1,28 +1,25 @@
-DA Landing Site 2.0
-===============================================================================
+# DA Landing Site 2.0
 
 Distribute Aid's landing site, where we get to tell the world who the heck we are and what the hell we're doing!
 
 The main goals of this project are to:
 
-  1. Create a landing site that introduces Distribute Aid, highlights our projects & services, publicly documents our impact, communicates upcoming plans to our network, highlights how to join / support us, and of course credits the many people who have contributed over the years.
+1. Create a landing site that introduces Distribute Aid, highlights our projects & services, publicly documents our impact, communicates upcoming plans to our network, highlights how to join / support us, and of course credits the many people who have contributed over the years.
 
-  2. Make it easy for any Distribute Aid volunteer to manage content and publish changes to the site directly. This includes all text & images, but also data that powers components, pages & site structure, and some site metadata.
-  
-  3. Provide engaging pathways for design & dev volunteers to directly collaborate with the rest of the team, without holding them back.  Our whole team will be contributing well structured content, which helps clarify what's needed without a ton of meetings.  Use your favorite tools to make it shine.
+2. Make it easy for any Distribute Aid volunteer to manage content and publish changes to the site directly. This includes all text & images, but also data that powers components, pages & site structure, and some site metadata.
+
+3. Provide engaging pathways for design & dev volunteers to directly collaborate with the rest of the team, without holding them back. Our whole team will be contributing well structured content, which helps clarify what's needed without a ton of meetings. Use your favorite tools to make it shine.
 
 **Quick Links**
 
-  * Production Site - [https://distributeaid.org](https://distributeaid.org)
-  * Github Repo - [https://github.com/distributeaid/distributeaid.org](https://github.com/distributeaid/distributeaid.org)
+- Production Site - [https://distributeaid.org](https://distributeaid.org)
+- Github Repo - [https://github.com/distributeaid/distributeaid.org](https://github.com/distributeaid/distributeaid.org)
 
 **Key Documents**
 
-  * [Project Overview](https://www.notion.so/distributeaid/Landing-2-0-c85002a23d94423bb79f4c64802c4c47)
+- [Project Overview](https://www.notion.so/distributeaid/Landing-2-0-c85002a23d94423bb79f4c64802c4c47)
 
-
-Development Process
-------------------------------------------------------------
+## Development Process
 
 ### Code of Conduct
 
@@ -34,9 +31,9 @@ Development tasks are managed in the github issues for this repository. The issu
 
 Issues tagged front end will also be tagged with:
 
-  * `needs sample content` - A content creator needs to create sample content to show what information will be presented.
-  * `needs UI mock` - A designer needs to create a UI mock of the component.
-  * `has content & UI mock` - The task is ready for development!
+- `needs sample content` - A content creator needs to create sample content to show what information will be presented.
+- `needs UI mock` - A designer needs to create a UI mock of the component.
+- `has content & UI mock` - The task is ready for development!
 
 When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort.
 
@@ -46,47 +43,43 @@ When you're ready to submit your code, open a pull request with "Closes #X" to l
 
 It's easy for the intention of code review comments to be unclear or get misinterpreted. To help with communication, reviewers are encouraged to use [conventional comments](https://conventionalcomments.org/) and explicitly indicate that comments are `(blocking)`, where the discussion must be resolved for PR to be approved, or `(non-blocking)` where resolving the discussion is optional for the implementer.
 
-
-Dev Setup
-------------------------------------------------------------
+## Dev Setup
 
 Install system dependencies:
 
-  * Node v14.16.0
-  * npm v7.6.0
+- Node v14.16.0
+- yarn v12.2.5
 
 Install project dependencies:
 
-  * `npm install`
+- `yarn`
 
 Setup your dev environment:
 
-  * `npm run setup` - Will ask for Contentful API tokens and create `.env.development` and `.env.production`. Ask the project leads to get the API tokens or your own Contentful account.
+- `yarn setup` - Will ask for Contentful API tokens and create `.env.development` and `.env.production`. Ask the project leads to get the API tokens or your own Contentful account.
 
 Run the dev server:
 
-  * `npm run dev`
+- `yarn dev`
 
 Finally, checkout the local site & GraphQL sandbox at:
 
-  * [http://localhost:8000/](http://localhost:8000/)
-  * [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
+- [http://localhost:8000/](http://localhost:8000/)
+- [http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql)
 
-
-Dev Notes
-------------------------------------------------------------
+## Dev Notes
 
 ### Crucial Commands
 
-**`npm run dev`**
+**`yarn dev`**
 
 Run the project locally with live reload in development mode.
 
-**`npm run build`**
+**`yarn build`**
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
 
-**`npm run serve`**
+**`yarn serve`**
 
 Spin up a production-ready server with the site. Don't forget to build your page beforehand.
 
@@ -94,21 +87,15 @@ Spin up a production-ready server with the site. Don't forget to build your page
 
 React `src/` folder layout inspired by [this blog post](https://charles-stover.medium.com/optimal-file-structure-for-react-applications-f3e35ad0a145) but can be changed up as desired.
 
-
-Deployment & Production
-------------------------------------------------------------
+## Deployment & Production
 
 TODO
 
-
-Content Creation
-------------------------------------------------------------
+## Content Creation
 
 TODO
 
-
-Technologies Used
-------------------------------------------------------------
+## Technologies Used
 
 > Our Content "Supply Chain"
 
@@ -116,35 +103,32 @@ The Distribute Aid Landing Site is a static TypeScript website generated by Gats
 
 **Content Management**
 
-  * [Contentful](https://www.contentful.com/) headless cms
+- [Contentful](https://www.contentful.com/) headless cms
 
 **General Tools**
 
-  * [Typescript](https://www.typescriptlang.org/)
-      - TODO: switch from JS
-  * [NPM Package Manager](https://www.npmjs.com/)
-      - TODO: Switch to Yarn
-  * TODO: [Prettier code formatter](https://prettier.io/)
-      - TODO: Does TypeScript need a linter too?
-  * TODO: [Jest test framework](https://jestjs.io/)
-  * [Gatsby.js](http://gatsbyjs.org/) static site generator
+- [Typescript](https://www.typescriptlang.org/)
+  - TODO: switch from JS
+- [Yarn Package Manager](https://yarnpkg.com/)
+- TODO: [Prettier code formatter](https://prettier.io/)
+  - TODO: Does TypeScript need a linter too?
+- TODO: [Jest test framework](https://jestjs.io/)
+- [Gatsby.js](http://gatsbyjs.org/) static site generator
 
 **Build Tools**
 
-  * [Gatsby.js](http://gatsbyjs.org/)
+- [Gatsby.js](http://gatsbyjs.org/)
 
 **Front End**
 
-  * [React.js](https://reactjs.org/)
-  * TODO: [Tailwind.css](https://tailwindcss.com/)
+- [React.js](https://reactjs.org/)
+- TODO: [Tailwind.css](https://tailwindcss.com/)
 
 **Production**
 
-  * [Netlify](https://www.netlify.com/) build runner & hosting
+- [Netlify](https://www.netlify.com/) build runner & hosting
 
-
-Previous Work & Credits
-------------------------------------------------------------
+## Previous Work & Credits
 
 Initial commit bootstrapped off of [Contentful Gatsby Starter Blog](https://github.com/contentful/starter-gatsby-blog/) which is MIT licensed.
 

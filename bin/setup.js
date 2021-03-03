@@ -40,10 +40,7 @@ const questions = [
 inquirer
   .prompt(questions)
   .then(({ spaceId, accessToken }) => {
-    const {
-      CONTENTFUL_SPACE_ID,
-      CONTENTFUL_ACCESS_TOKEN,
-    } = process.env;
+    const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 
     // env vars are given precedence followed by args provided to the setup
     // followed by input given to prompts displayed by the setup script
@@ -73,7 +70,7 @@ inquirer
   .then((_, error) => {
     console.log(
       `All set! You can now run ${chalk.yellow(
-        "npm run dev"
+        "yarn dev"
       )} to see it in action.`
     );
   })
