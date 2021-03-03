@@ -2,7 +2,7 @@ import React from 'react'
 
 import 'stylesheets/index.css'
 
-import NavMain from 'components/NavMain'
+import NavMain from '../components/NavMain'
 
 class DefaultLayout extends React.Component {
   render() {
