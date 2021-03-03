@@ -1,42 +1,125 @@
 const Promise = require('bluebird')
 const path = require('path')
 
-exports.createPages = ({ graphql, actions }) => {
+
+/*
+Dynamic Pages
+================================================================================
+*/
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    resolve(
-      graphql(
-        `
-          {
-            allContentfulBlogPost {
-              edges {
-                node {
-                  title
-                  slug
-                }
-              }
-            }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
+  /*
+  Gatsby Site Metadata
+  ------------------------------------------------------------
+  */
+  const gatsbySiteResult = await graphql(`
+    {
+      site {
+        siteMetadata {
+          domain,
+          homePageSlug
         }
+      }
+    }
+  `)
 
-        const posts = result.data.allContentfulBlogPost.edges
-        posts.forEach(post => {
-          createPage({
-            path: `/blog/${post.node.slug}/`,
-            component: blogPost,
-            context: {
-              slug: post.node.slug,
-            },
-          })
+  if (gatsbySiteResult.errors) {
+    reporter.panicOnBuild(`
+      Error while running GraphQL query to get
+      the siteMetadata set in gatsby-config.js.
+    `)
+    return
+  }
+
+  const siteMetadata = gatsbySiteResult.data.site.siteMetadata
+
+  /*
+  Contentful Site Pages
+  ------------------------------------------------------------
+  */
+  const contentfulSitePagesResult = await graphql(
+    `
+      {
+        contentfulSite {
+          contentful_id
+
+          pages {
+            contentful_id
+            slug
+
+            tabs {
+              contentful_id
+              slug
+            }
+
+          }
+        }
+      }
+    `
+  )
+
+  if (contentfulSitePagesResult.errors) {
+    reporter.panicOnBuild(`
+      Error while running GraphQL query to get
+      the site pages from Contentful.
+    `)
+    return
+  }
+
+  const contentfulSite = contentfulSitePagesResult.data.contentfulSite
+
+  /*
+  Create Pages
+  ------------------------------------------------------------
+  */
+  const mainPageTemplate = path.resolve(`./src/templates/MainPage/MainPage.jsx`)
+  const tabPageTemplate = path.resolve(`./src/templates/TabPage/TabPage.jsx`)
+
+  contentfulSite.pages.forEach(( mainPage ) => {
+    const mainPagePath =
+      mainPage.slug !== siteMetadata.homePageSlug
+        ? `/${mainPage.slug}`
+        : `/`
+
+    createPage({
+      path: mainPagePath,
+      component: mainPageTemplate,
+      context: {
+        siteContentfulId: contentfulSite.contentful_id,
+        mainPageContentfulId: mainPage.contentful_id
+      }
+    })
+
+    if (mainPage.tabs !== null) {
+      mainPage.tabs.forEach(( tabPage ) => {
+        const tabPagePath = `${mainPagePath}/${tabPage.slug}`
+
+        createPage({
+          path: tabPagePath,
+          component: tabPageTemplate,
+          context: {
+            siteContentfulId: contentfulSite.contentful_id,
+            mainPageContentfulId: mainPage.contentful_id,
+            tabPageContentfulId: tabPage.contentful_id
+          }
         })
       })
-    )
+    }
+
+  })
+
+}
+
+
+/*
+Webpack Config
+================================================================================
+*/
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
   })
 }

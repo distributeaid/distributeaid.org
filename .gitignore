@@ -56,6 +56,8 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.development
+.env.production
 
 # build folder
 public
@@ -63,7 +65,5 @@ public
 # gatsby cache folder
 .cache
 
-# contentful config file
-.contentful.json
 # Local Netlify folder
 .netlify

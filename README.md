@@ -1,64 +1,151 @@
-# Contentful Gatsby Starter Blog
+DA Landing Site 2.0
+===============================================================================
 
-Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
+Distribute Aid's landing site, where we get to tell the world who the heck we are and what the hell we're doing!
 
-![The index page of the starter blog](https://rawgit.com/contentful/starter-gatsby-blog/master/screenshot.jpg "The index page of the starter blog")
+The main goals of this project are to:
 
-Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
+  1. Create a landing site that introduces Distribute Aid, highlights our projects & services, publicly documents our impact, communicates upcoming plans to our network, highlights how to join / support us, and of course credits the many people who have contributed over the years.
 
-With Contentful and Gatsby you can connect your favorite static site generator with an API that provides an easy to use interface for people writing content and automate the publishing using services like [Travis CI](https://travis-ci.org/) or [Netlify](https://www.netlify.com/).
+  2. Make it easy for any Distribute Aid volunteer to manage content and publish changes to the site directly. This includes all text & images, but also data that powers components, pages & site structure, and some site metadata.
+  
+  3. Provide engaging pathways for design & dev volunteers to directly collaborate with the rest of the team, without holding them back.  Our whole team will be contributing well structured content, which helps clarify what's needed without a ton of meetings.  Use your favorite tools to make it shine.
 
-## Features
+**Quick Links**
 
-- Simple content model and structure. Easy to adjust to your needs.
-- Use the [synchronization feature](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization) of our [Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
-- Responsive/adaptive images via [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) and our [Images API](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/initial-synchronization-of-entries-of-a-specific-content-type).
+  * Production Site - [https://distributeaid.org](https://distributeaid.org)
+  * Github Repo - [https://github.com/distributeaid/distributeaid.org](https://github.com/distributeaid/distributeaid.org)
 
-## Getting started
+**Key Documents**
 
-See our [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
+  * [Project Overview](https://www.notion.so/distributeaid/Landing-2-0-c85002a23d94423bb79f4c64802c4c47)
 
-### Get the source code and install dependencies.
 
-```
-$ git clone https://github.com/contentful/starter-gatsby-blog.git
-$ npm install
-```
+Development Process
+------------------------------------------------------------
 
-Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
+### Code of Conduct
 
-```
-$ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsby-blog/
-```
+First, please read our [code of conduct](https://www.notion.so/distributeaid/Code-of-Conduct-6ba4ca07a6fa4e4da9ef8ad91757c5b4).
 
-### Set up of the needed content model and create a configuration file
+### Issue Tracking
 
-This project comes with a Contentful setup command `npm run setup`.
+Development tasks are managed in the github issues for this repository. The issues themselves are fairly light on detail in favor of a simple description of scope (i.e. the conditions for the task being considered "done"). Most tasks will be driven by content requirements, so please coordinate with the requesting content creator for context, sample content, and additional details.
 
-This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./.contentful.json`).
+Issues tagged front end will also be tagged with:
 
-`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+  * `needs sample content` - A content creator needs to create sample content to show what information will be presented.
+  * `needs UI mock` - A designer needs to create a UI mock of the component.
+  * `has content & UI mock` - The task is ready for development!
 
-## Crucial Commands
+When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort.
 
-### `npm run dev`
+### Pull Requests
+
+When you're ready to submit your code, open a pull request with "Closes #X" to link the relevant issue. When your PR is approved by at least one maintainer it is ready to submit.
+
+It's easy for the intention of code review comments to be unclear or get misinterpreted. To help with communication, reviewers are encouraged to use [conventional comments](https://conventionalcomments.org/) and explicitly indicate that comments are `(blocking)`, where the discussion must be resolved for PR to be approved, or `(non-blocking)` where resolving the discussion is optional for the implementer.
+
+
+Dev Setup
+------------------------------------------------------------
+
+Install system dependencies:
+
+  * Node v14.16.0
+  * npm v7.6.0
+
+Install project dependencies:
+
+  * `npm install`
+
+Setup your dev environment:
+
+  * `npm run setup` - Will ask for Contentful API tokens and create `.env.development` and `.env.production`. Ask the project leads to get the API tokens or your own Contentful account.
+
+Run the dev server:
+
+  * `npm run dev`
+
+Finally, checkout the local site & GraphQL sandbox at:
+
+  * [http://localhost:8000/](http://localhost:8000/)
+  * [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
+
+
+Dev Notes
+------------------------------------------------------------
+
+### Crucial Commands
+
+**`npm run dev`**
 
 Run the project locally with live reload in development mode.
 
-### `npm run build`
+**`npm run build`**
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
 
-### `npm run serve`
+**`npm run serve`**
 
-Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
+Spin up a production-ready server with the site. Don't forget to build your page beforehand.
 
-## Deployment
+### Where To Put Things
 
-See the [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
+React `src/` folder layout inspired by [this blog post](https://charles-stover.medium.com/optimal-file-structure-for-react-applications-f3e35ad0a145) but can be changed up as desired.
 
-## Contribution
 
-Feel free to open pull requests to fix bugs. If you want to add features, please have a look at the [original version](https://github.com/contentful-userland/gatsby-contentful-starter). It is always open to contributions and pull requests.
+Deployment & Production
+------------------------------------------------------------
 
-You can learn more about how Contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
+TODO
+
+
+Content Creation
+------------------------------------------------------------
+
+TODO
+
+
+Technologies Used
+------------------------------------------------------------
+
+> Our Content "Supply Chain"
+
+The Distribute Aid Landing Site is a static TypeScript website generated by GatsbyJS with content from the Contentful headless CMS.
+
+**Content Management**
+
+  * [Contentful](https://www.contentful.com/) headless cms
+
+**General Tools**
+
+  * [Typescript](https://www.typescriptlang.org/)
+      - TODO: switch from JS
+  * [NPM Package Manager](https://www.npmjs.com/)
+      - TODO: Switch to Yarn
+  * TODO: [Prettier code formatter](https://prettier.io/)
+      - TODO: Does TypeScript need a linter too?
+  * TODO: [Jest test framework](https://jestjs.io/)
+  * [Gatsby.js](http://gatsbyjs.org/) static site generator
+
+**Build Tools**
+
+  * [Gatsby.js](http://gatsbyjs.org/)
+
+**Front End**
+
+  * [React.js](https://reactjs.org/)
+  * TODO: [Tailwind.css](https://tailwindcss.com/)
+
+**Production**
+
+  * [Netlify](https://www.netlify.com/) build runner & hosting
+
+
+Previous Work & Credits
+------------------------------------------------------------
+
+Initial commit bootstrapped off of [Contentful Gatsby Starter Blog](https://github.com/contentful/starter-gatsby-blog/) which is MIT licensed.
+
+The original DA Landing Site project can be found at [https://gitlab.com/distribute-aid/landing](https://gitlab.com/distribute-aid/landing). <3
