@@ -73,8 +73,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   Create Pages
   ------------------------------------------------------------
   */
-  const mainPageTemplate = path.resolve(`./src/templates/MainPage/MainPage.jsx`)
-  const tabPageTemplate = path.resolve(`./src/templates/TabPage/TabPage.jsx`)
+  const mainPageTemplate = path.resolve(`./src/templates/MainPage.tsx`)
+  const tabPageTemplate = path.resolve(`./src/templates/TabPage.tsx`)
 
   contentfulSite.pages.forEach(( mainPage ) => {
     const mainPagePath =
@@ -109,17 +109,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   })
 
-}
-
-
-/*
-Webpack Config
-================================================================================
-*/
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
-    },
-  })
 }

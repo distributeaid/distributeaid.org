@@ -3,8 +3,8 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 
-import DefaultLayout from 'layouts/Default'
-import NavTabs from 'components/NavTabs'
+import DefaultLayout from '../layouts/Default'
+import NavTabs from '../components/NavTabs'
 
 class MainPageTemplate extends React.Component {
   render() {
