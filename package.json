@@ -29,7 +29,7 @@
   "engines": {
     "node": ">=14.16.0",
     "npm": "please-use-yarn",
-    "yarn": ">= 1.22.5"
+    "yarn": ">= 1.22"
   },
   "homepage": "https://github.com/distributeaid/distributeaid.org#readme",
   "keywords": [
