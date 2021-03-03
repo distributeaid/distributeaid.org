@@ -27,7 +27,8 @@
   },
   "engines": {
     "node": ">=14.16.0",
-    "npm": ">=7.6.0"
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.5"
   },
   "homepage": "https://github.com/distributeaid/distributeaid.org#readme",
   "keywords": [
