@@ -5,8 +5,6 @@ import {
   Link
 } from 'gatsby'
 
-import styles from './NavMain.module.css'
-
 const NavMain = () => {
   const data = useStaticQuery(graphql`
     query NavMainComponentQuery {
@@ -26,10 +24,10 @@ const NavMain = () => {
 
   return (
     <nav role="navigation">
-      <ul className={styles.navigation}>
+      <ul className="flex justify-center h-48">
         {pages.map(( page ) => {
           return (
-            <li key={page.contentful_id} className={styles.navigationItem}>
+            <li key={page.contentful_id} className="mx-4">
               <Link to={`/${page.slug}`}>{page.title}</Link>
             </li>
           )

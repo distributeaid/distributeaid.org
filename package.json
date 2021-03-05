@@ -23,8 +23,12 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.0",
+    "autoprefixer": "^10.2.4",
     "contentful-import": "^7.9.38",
-    "netlify-cli": "^3.10.1"
+    "gatsby-plugin-postcss": "^4.0.0",
+    "netlify-cli": "^3.10.1",
+    "postcss": "^8.2.7",
+    "tailwindcss": "^2.0.3"
   },
   "engines": {
     "node": ">=14.16.0",
