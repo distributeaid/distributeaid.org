@@ -2,4 +2,4 @@
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
 
 // Import global styles
-import "./src/stylesheets/index.css";
+import './src/stylesheets/index.css'

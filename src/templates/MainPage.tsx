@@ -1,10 +1,9 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
-
-import DefaultLayout from '../layouts/Default'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import NavTabs from '../components/NavTabs'
+import DefaultLayout from '../layouts/Default'
 
 class MainPageTemplate extends React.Component {
   render() {
@@ -16,20 +15,14 @@ class MainPageTemplate extends React.Component {
       <DefaultLayout>
         <div>
           <Helmet title={`${page.title} // ${site.title}`} />
-          <h1>
-            {page.title}
-          </h1>
+          <h1>{page.title}</h1>
 
           <NavTabs page={page} tabs={tabs} />
 
           <div>
-            <p>
-              {page.updatedAt}
-            </p>
+            <p>{page.updatedAt}</p>
 
-            <p>
-              TODO: show page content
-            </p>
+            <p>TODO: show page content</p>
           </div>
         </div>
       </DefaultLayout>

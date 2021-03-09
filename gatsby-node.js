@@ -1,7 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
 
-
 /*
 Dynamic Pages
 ================================================================================
@@ -17,7 +16,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     {
       site {
         siteMetadata {
-          domain,
+          domain
           homePageSlug
         }
       }
@@ -52,11 +51,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               contentful_id
               slug
             }
-
           }
         }
       }
-    `
+    `,
   )
 
   if (contentfulSitePagesResult.errors) {
@@ -76,23 +74,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const mainPageTemplate = path.resolve(`./src/templates/MainPage.tsx`)
   const tabPageTemplate = path.resolve(`./src/templates/TabPage.tsx`)
 
-  contentfulSite.pages.forEach(( mainPage ) => {
+  contentfulSite.pages.forEach((mainPage) => {
     const mainPagePath =
-      mainPage.slug !== siteMetadata.homePageSlug
-        ? `/${mainPage.slug}`
-        : `/`
+      mainPage.slug !== siteMetadata.homePageSlug ? `/${mainPage.slug}` : `/`
 
     createPage({
       path: mainPagePath,
       component: mainPageTemplate,
       context: {
         siteContentfulId: contentfulSite.contentful_id,
-        mainPageContentfulId: mainPage.contentful_id
-      }
+        mainPageContentfulId: mainPage.contentful_id,
+      },
     })
 
     if (mainPage.tabs !== null) {
-      mainPage.tabs.forEach(( tabPage ) => {
+      mainPage.tabs.forEach((tabPage) => {
         const tabPagePath = `${mainPagePath}/${tabPage.slug}`
 
         createPage({
@@ -101,12 +97,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           context: {
             siteContentfulId: contentfulSite.contentful_id,
             mainPageContentfulId: mainPage.contentful_id,
-            tabPageContentfulId: tabPage.contentful_id
-          }
+            tabPageContentfulId: tabPage.contentful_id,
+          },
         })
       })
     }
-
   })
-
 }
