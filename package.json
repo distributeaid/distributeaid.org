@@ -16,12 +16,16 @@
     "gatsby-transformer-remark": "^2.16.1",
     "gatsby-transformer-sharp": "^2.12.0",
     "gh-pages": "^3.1.0",
+    "husky": "^5.1.3",
     "lodash": "^4.17.21",
+    "prettier-plugin-organize-imports": "^1.1.1",
+    "pretty-quick": "^3.1.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@distributeaid/shared-config": "distributeaid/shared-config",
     "@types/react-helmet": "^6.1.0",
     "autoprefixer": "^10.2.4",
     "contentful-import": "^7.9.38",
@@ -56,6 +60,7 @@
     "serve": "gatsby serve",
     "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "netlify:deploy": "netlify deploy -d public -p",
+    "prepare": "husky install"
   }
 }

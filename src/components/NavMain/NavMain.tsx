@@ -1,9 +1,5 @@
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
-import {
-  useStaticQuery,
-  graphql,
-  Link
-} from 'gatsby'
 
 const NavMain = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +21,7 @@ const NavMain = () => {
   return (
     <nav role="navigation">
       <ul className="flex justify-center h-48">
-        {pages.map(( page ) => {
+        {pages.map((page) => {
           return (
             <li key={page.contentful_id} className="mx-4">
               <Link to={`/${page.slug}`}>{page.title}</Link>

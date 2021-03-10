@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link } from 'gatsby'
+import React from 'react'
 
 const NavTabs = ({ page, tabs }) => {
   if (tabs === null) {
@@ -12,7 +12,7 @@ const NavTabs = ({ page, tabs }) => {
         <li key={page.contentful_id}>
           <Link to={`/${page.slug}`}>{page.title}</Link>
         </li>
-        {tabs.map(( tab ) => {
+        {tabs.map((tab) => {
           return (
             <li key={tab.contentful_id}>
               <Link to={`/${page.slug}/${tab.slug}`}>{tab.title}</Link>

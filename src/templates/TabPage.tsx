@@ -1,14 +1,16 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
-
-import Layout from '../layouts/Default'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import NavTabs from '../components/NavTabs'
+import Layout from '../layouts/Default'
 
 class TabPageTemplate extends React.Component {
   render() {
-    const site = get(this.props, 'data.contentfulPageTab.page___main[0].site[0]')
+    const site = get(
+      this.props,
+      'data.contentfulPageTab.page___main[0].site[0]',
+    )
     const page = get(this.props, 'data.contentfulPageTab.page___main[0]')
     const tabs = get(this.props, 'data.contentfulPageTab.page___main[0].tabs')
     const tab = get(this.props, 'data.contentfulPageTab')
@@ -17,25 +19,19 @@ class TabPageTemplate extends React.Component {
       <Layout>
         <div>
           <Helmet title={`${tab.title} // ${site.title}`} />
-          <h1>
-            {tab.title}
-          </h1>
+          <h1>{tab.title}</h1>
 
           <NavTabs page={page} tabs={tabs} />
 
           <div>
-            <p>
-              {tab.updatedAt}
-            </p>
+            <p>{tab.updatedAt}</p>
 
-            {tab.sections.map(( section ) => {
+            {tab.sections.map((section) => {
               return (
                 <div>
-                  <h2>
-                    {section.title}
-                  </h2>
+                  <h2>{section.title}</h2>
 
-                  {section.content.map(( content ) => {
+                  {section.content.map((content) => {
                     if (content.contentful_id == null) {
                       return null
                     }
@@ -43,21 +39,18 @@ class TabPageTemplate extends React.Component {
                     return (
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: content
-                                    .childContentfulComponentMarkdownContentTextNode
-                                    .childMarkdownRemark
-                                    .html
+                          __html:
+                            content
+                              .childContentfulComponentMarkdownContentTextNode
+                              .childMarkdownRemark.html,
                         }}
                       />
                     )
                   })}
-
                 </div>
               )
             })}
-
           </div>
-
         </div>
       </Layout>
     )
@@ -106,13 +99,10 @@ export const pageQuery = graphql`
                   html
                 }
               }
-
             }
           }
-
         }
       }
-
     }
   }
 `
