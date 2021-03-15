@@ -1,14 +1,19 @@
 import React from 'react'
+import NavBreadcrumbs from '../components/NavBreadcrumbs'
 import NavMain from '../components/NavMain'
 
 class DefaultLayout extends React.Component {
   render() {
-    const { children } = this.props
+    const { site, pages, pageLookup, page, children } = this.props
 
     return (
       <div>
-        <NavMain />
-        {children}
+        <header>
+          <NavMain pageLookup={pageLookup} page={page} />
+          <NavBreadcrumbs pageLookup={pageLookup} page={page} />
+        </header>
+        <main>{children}</main>
+        <footer>Footer</footer>
       </div>
     )
   }

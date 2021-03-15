@@ -1,30 +1,47 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-const NavMain = () => {
+const NavMain = (props) => {
   const data = useStaticQuery(graphql`
-    query NavMainComponentQuery {
-      contentfulSite {
+    query MainMenuQuery {
+      contentfulSiteSite {
         contentful_id
 
-        pages {
+        mainMenu {
           contentful_id
           title
-          slug
+          flavor
+          layout
+
+          links {
+            contentful_id
+            label
+            type
+
+            toPage {
+              contentful_id
+            }
+          }
         }
       }
     }
   `)
 
-  const pages = data.contentfulSite.pages
+  const { pageLookup, page } = props
+
+  const menu = data.contentfulSiteSite.mainMenu
+  menu.links.forEach((link) => {
+    link.toPage = pageLookup[link.toPage.contentful_id]
+  })
 
   return (
     <nav role="navigation">
       <ul className="flex justify-center h-48">
-        {pages.map((page) => {
+        {menu.links.map((link) => {
+          const label = link.label ? link.label : link.toPage.title
           return (
-            <li key={page.contentful_id} className="mx-4">
-              <Link to={`/${page.slug}`}>{page.title}</Link>
+            <li key={link.toPage.contentful_id} className="mx-4">
+              <Link to={`${link.toPage.path}`}>{label}</Link>
             </li>
           )
         })}

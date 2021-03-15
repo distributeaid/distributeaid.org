@@ -35,7 +35,6 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     domain: 'distributeaid.org',
-    homePageSlug: 'home',
   },
   pathPrefix: '/',
 
