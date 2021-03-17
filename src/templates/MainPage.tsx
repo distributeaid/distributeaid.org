@@ -1,30 +1,47 @@
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import NavTabs from '../components/NavTabs'
+import Section from '../components/Section'
 import DefaultLayout from '../layouts/Default'
 
 class MainPageTemplate extends React.Component {
   render() {
-    const site = get(this.props, 'data.contentfulPageMain.site')
-    const page = get(this.props, 'data.contentfulPageMain')
-    const tabs = get(this.props, 'data.contentfulPageMain.tabs')
+    const { site, pages, pageLookup, pageStructure } = this.props.pageContext
+    const pageDetails = this.props.data.contentfulSitePage
+    const page = {
+      ...pageStructure,
+      ...pageDetails,
+    }
+    if (page.sections === null) {
+      page.sections = []
+    }
 
     return (
-      <DefaultLayout>
-        <div>
-          <Helmet title={`${page.title} // ${site.title}`} />
+      <DefaultLayout
+        site={site}
+        pages={pages}
+        pageLookup={pageLookup}
+        page={page}
+      >
+        {/* page header */}
+        <header>
           <h1>{page.title}</h1>
+        </header>
 
-          <NavTabs page={page} tabs={tabs} />
+        {/* page body */}
+        {page.sections.map((section) => {
+          return (
+            <Section
+              key={section.contentful_id}
+              page={page}
+              section={section}
+            />
+          )
+        })}
 
-          <div>
-            <p>{page.updatedAt}</p>
-
-            <p>TODO: show page content</p>
-          </div>
-        </div>
+        {/* page footer */}
+        <footer>
+          <p>{page.updatedAt}</p>
+        </footer>
       </DefaultLayout>
     )
   }
@@ -33,22 +50,71 @@ class MainPageTemplate extends React.Component {
 export default MainPageTemplate
 
 export const pageQuery = graphql`
-  query MainPageQuery($mainPageContentfulId: String!) {
-    contentfulPageMain(contentful_id: { eq: $mainPageContentfulId }) {
+  query MainPageDetails($pageContentfulId: String!) {
+    contentfulSitePage(contentful_id: { eq: $pageContentfulId }) {
       contentful_id
       title
-      slug
-      updatedAt(formatString: "MMMM Do, YYYY")
+      flavor
+      updatedAt
 
-      site {
-        contentful_id
-        title
-      }
-
-      tabs {
+      sections {
         contentful_id
         title
         slug
+
+        flavor
+        layout
+
+        content {
+          ... on ContentfulContentMarkdown {
+            contentful_id
+            label
+            internal {
+              type
+            }
+            entry {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+
+          ... on ContentfulContentPhoto {
+            contentful_id
+            label
+            internal {
+              type
+            }
+            entry {
+              contentful_id
+              title
+              description
+              file {
+                contentType
+                url
+                details {
+                  image {
+                    width
+                    height
+                  }
+                  size
+                }
+              }
+            }
+          }
+
+          ... on ContentfulContentPrezi {
+            contentful_id
+            label
+            internal {
+              type
+            }
+
+            width
+            height
+            embedUrl
+          }
+        }
       }
     }
   }

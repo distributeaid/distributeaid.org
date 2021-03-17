@@ -1,58 +1,51 @@
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import NavTabs from '../components/NavTabs'
-import Layout from '../layouts/Default'
+import Section from '../components/Section'
+import DefaultLayout from '../layouts/Default'
 
 class TabPageTemplate extends React.Component {
   render() {
-    const site = get(
-      this.props,
-      'data.contentfulPageTab.page___main[0].site[0]',
-    )
-    const page = get(this.props, 'data.contentfulPageTab.page___main[0]')
-    const tabs = get(this.props, 'data.contentfulPageTab.page___main[0].tabs')
-    const tab = get(this.props, 'data.contentfulPageTab')
+    const { site, pages, pageLookup, pageStructure } = this.props.pageContext
+    const pageDetails = this.props.data.contentfulSitePage
+    const page = {
+      ...pageStructure,
+      ...pageDetails,
+    }
+    if (page.sections === null) {
+      page.sections = []
+    }
 
     return (
-      <Layout>
-        <div>
-          <Helmet title={`${tab.title} // ${site.title}`} />
-          <h1>{tab.title}</h1>
+      <DefaultLayout
+        site={site}
+        pages={pages}
+        pageLookup={pageLookup}
+        page={page}
+      >
+        {/* page header */}
+        <header>
+          <NavTabs pageLookup={pageLookup} page={page} />
+          <h1>{page.title}</h1>
+          <p>{page.updatedAt}</p>
+        </header>
 
-          <NavTabs page={page} tabs={tabs} />
+        {/* page body */}
+        {page.sections.map((section) => {
+          return (
+            <Section
+              key={section.contentful_id}
+              page={page}
+              section={section}
+            />
+          )
+        })}
 
-          <div>
-            <p>{tab.updatedAt}</p>
-
-            {tab.sections.map((section) => {
-              return (
-                <div>
-                  <h2>{section.title}</h2>
-
-                  {section.content.map((content) => {
-                    if (content.contentful_id == null) {
-                      return null
-                    }
-
-                    return (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html:
-                            content
-                              .childContentfulComponentMarkdownContentTextNode
-                              .childMarkdownRemark.html,
-                        }}
-                      />
-                    )
-                  })}
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </Layout>
+        {/* page footer */}
+        <footer>
+          <p>{page.updatedAt}</p>
+        </footer>
+      </DefaultLayout>
     )
   }
 }
@@ -60,46 +53,69 @@ class TabPageTemplate extends React.Component {
 export default TabPageTemplate
 
 export const pageQuery = graphql`
-  query TabPageQuery($tabPageContentfulId: String!) {
-    contentfulPageTab(contentful_id: { eq: $tabPageContentfulId }) {
+  query TabPageDetails($pageContentfulId: String!) {
+    contentfulSitePage(contentful_id: { eq: $pageContentfulId }) {
       contentful_id
       title
-      slug
-      updatedAt(formatString: "MMMM Do, YYYY")
+      flavor
+      updatedAt
 
-      page___main {
+      sections {
         contentful_id
         title
         slug
 
-        site {
-          contentful_id
-          title
-        }
+        flavor
+        layout
 
-        tabs {
-          contentful_id
-          title
-          slug
-        }
-      }
+        content {
+          ... on ContentfulContentMarkdown {
+            contentful_id
+            label
+            internal {
+              type
+            }
+            entry {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
 
-      sections {
-        ... on ContentfulSectionContent {
-          contentful_id
-          title
-
-          content {
-            ... on ContentfulComponentMarkdown {
+          ... on ContentfulContentPhoto {
+            contentful_id
+            label
+            internal {
+              type
+            }
+            entry {
               contentful_id
-              name
-
-              childContentfulComponentMarkdownContentTextNode {
-                childMarkdownRemark {
-                  html
+              title
+              description
+              file {
+                contentType
+                url
+                details {
+                  image {
+                    width
+                    height
+                  }
+                  size
                 }
               }
             }
+          }
+
+          ... on ContentfulContentPrezi {
+            contentful_id
+            label
+            internal {
+              type
+            }
+
+            width
+            height
+            embedUrl
           }
         }
       }
