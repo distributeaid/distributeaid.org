@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import Section from '../components/Section'
 import DefaultLayout from '../layouts/Default'
 
@@ -23,13 +22,12 @@ class MainPageTemplate extends React.Component {
         pageLookup={pageLookup}
         page={page}
       >
-        <Helmet title={`${page.title} < ${site.title}`} />
-
+        {/* page header */}
         <header>
           <h1>{page.title}</h1>
-          <p>{page.updatedAt}</p>
         </header>
 
+        {/* page body */}
         {page.sections.map((section) => {
           return (
             <Section
@@ -39,6 +37,11 @@ class MainPageTemplate extends React.Component {
             />
           )
         })}
+
+        {/* page footer */}
+        <footer>
+          <p>{page.updatedAt}</p>
+        </footer>
       </DefaultLayout>
     )
   }

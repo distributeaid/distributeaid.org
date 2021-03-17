@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import NavTabs from '../components/NavTabs'
 import Section from '../components/Section'
 import DefaultLayout from '../layouts/Default'
@@ -24,14 +23,14 @@ class TabPageTemplate extends React.Component {
         pageLookup={pageLookup}
         page={page}
       >
-        <Helmet title={`${page.title} < ${site.title}`} />
-
+        {/* page header */}
         <header>
           <NavTabs pageLookup={pageLookup} page={page} />
           <h1>{page.title}</h1>
           <p>{page.updatedAt}</p>
         </header>
 
+        {/* page body */}
         {page.sections.map((section) => {
           return (
             <Section
@@ -41,6 +40,11 @@ class TabPageTemplate extends React.Component {
             />
           )
         })}
+
+        {/* page footer */}
+        <footer>
+          <p>{page.updatedAt}</p>
+        </footer>
       </DefaultLayout>
     )
   }

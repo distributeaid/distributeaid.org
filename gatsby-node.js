@@ -1,5 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
+const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 
 /*
 Dynamic Pages
@@ -110,10 +111,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // create a page lookup by contentful_id
   //
   // ````
-  // pages.lookup = {contenful_id: page, ...}
-  // pages.lookup[contentful_id] = page | null
+  // pageLookup = {contenful_id: page, ...}
+  // pageLookup[contentful_id] = page | null
   // ````
-  pages.lookup = pages.reduce((pageLookupAcc, page) => {
+  const pageLookup = pages.reduce((pageLookupAcc, page) => {
     pageLookupAcc[page.contentful_id] = page
     return pageLookupAcc
   }, {})
@@ -138,7 +139,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     // set pointers from child -> parent pages to traverse up
     const parent = page
     parent.leadsTo = parent.leadsTo.map(({ contentful_id }) => {
-      child = pages.lookup[contentful_id]
+      child = pageLookup[contentful_id]
       child.comesFromID = parent.contentful_id
       return child
     })
@@ -163,7 +164,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // NOTE: The homepage must have `comesFromID` set to `null`, and is the only
   //       page that should.
   site.homePageID = site.homePage.contentful_id
-  homePage = pages.lookup[site.homePageID]
+  homePage = pageLookup[site.homePageID]
   homePage.slug = ''
   homePage.comesFromID = null
   homePage.leadsTo = pages.filter(
@@ -174,72 +175,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   /*
-  Tree Traversal Helpers
-  ------------------------------------------------------------
-  TODO: move these into a utility file
-  */
-  const pageTreeUtils = {
-    getSiteRoot: () => {
-      return pages.lookup[site.homePageID]
-    },
-
-    BFS: (handlePage, root = null, filterChildren = null) => {
-      if (root === null) {
-        root = pageTreeUtils.getSiteRoot()
-      }
-
-      if (filterChildren === null) {
-        filterChildren = (page) => true
-      }
-
-      let queue = [root]
-      while (queue.length > 0) {
-        page = queue.shift()
-        handlePage(page)
-
-        next = page.leadsTo.filter(filterChildren)
-        queue = queue.concat(next)
-      }
-    },
-
-    preorderDFS: (handlePage, root = null, filterChildren = null) => {
-      if (root === null) {
-        root = pageTreeUtils.getSiteRoot()
-      }
-
-      if (filterChildren === null) {
-        filterChildren = (page) => page
-      }
-
-      handlePage(root)
-      root.leadsTo.filter(filterChildren).forEach((childPage) => {
-        pageTreeUtils.preorderDFS(handlePage, childPage, filterChildren)
-      })
-    },
-
-    postorderDFS: (handlePage, root = null, filterChildren = null) => {
-      if (root === null) {
-        root = pageTreeUtils.getSiteRoot()
-      }
-
-      if (filterChildren === null) {
-        filterChildren = (page) => page
-      }
-
-      root.leadsTo.filter(filterChildren).forEach((childPage) => {
-        pageTreeUtils.postorderDFS(handlePage, childPage, filterChildren)
-      })
-      handlePage(root)
-    },
-  }
-
-  /*
   Set Tree-Based Page Properties
   ------------------------------------------------------------
     - path
     - breadcrumbIDs
   */
-  pageTreeUtils.preorderDFS((page) => {
+  PageTreeTraversal.preorderDFS(homePage, (page) => {
     // root page
     if (page.contentful_id === site.homePageID) {
       page.path = '/'
@@ -248,14 +189,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     // parent page
     else if (page.leadsTo.length > 0) {
-      parent = pages.lookup[page.comesFromID]
+      parent = pageLookup[page.comesFromID]
       page.path = `${parent.path}${page.slug}/`
       page.breadcrumbIDs = [...parent.breadcrumbIDs, page.contentful_id]
     }
 
     // leaf page
     else {
-      parent = pages.lookup[page.comesFromID]
+      parent = pageLookup[page.comesFromID]
       page.path = `${parent.path}${page.slug}`
       page.breadcrumbIDs = [...parent.breadcrumbIDs, page.contentful_id]
     }
@@ -270,7 +211,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     main: path.resolve(`./src/templates/MainPage.tsx`),
     tabs: path.resolve(`./src/templates/TabPage.tsx`),
   }
-  pageTreeUtils.BFS((page) => {
+  PageTreeTraversal.BFS(homePage, (page) => {
+    console.log(page.path)
+
     layout = pageLayouts.main
 
     // unique homepage layout
@@ -281,7 +224,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     // tab pages (parent & children)
     else if (
       page.layout === 'Tabs' ||
-      pages.lookup[page.comesFromID].layout === 'Tabs'
+      pageLookup[page.comesFromID].layout === 'Tabs'
     ) {
       layout = pageLayouts.tabs
     }
@@ -293,7 +236,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         site: site,
         pages: pages,
-        pageLookup: pages.lookup,
+        pageLookup: pageLookup,
         pageStructure: page,
 
         // page query params
