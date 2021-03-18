@@ -1,0 +1,82 @@
+/* A fancy little burger adapted from https://jonsuh.com/hamburgers/ */
+
+.burger {
+  --burger-layer-height: 2px;
+  --burger-layer-spacing: 6px;
+  --burger-layer-width: 24px;
+  padding: 0.25rem;
+}
+
+.burger.is-active .burger-inner {
+  transition-delay: 0.22s;
+  background-color: transparent;
+}
+
+.burger.is-active .burger-inner::before {
+  top: 0;
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(
+      0,
+      calc(var(--burger-layer-spacing) + var(--burger-layer-height)),
+      0
+    )
+    rotate(45deg);
+}
+
+.burger.is-active .burger-inner::after {
+  top: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(
+      0,
+      calc(var(--burger-layer-spacing) + var(--burger-layer-height)),
+      0
+    )
+    rotate(-45deg);
+}
+
+.burger-box {
+  display: block;
+  height: calc(
+    var(--burger-layer-height) * 3 + var(--burger-layer-spacing) * 2
+  );
+  position: relative;
+  width: var(--burger-layer-width);
+}
+
+.burger-inner,
+.burger-inner::before,
+.burger-inner::after {
+  display: block;
+  width: var(--burger-layer-width);
+  height: var(--burger-layer-height);
+  background-color: white;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.burger-inner {
+  top: 50%;
+  margin-top: calc(var(--burger-layer-height) / -2);
+  top: calc(var(--burger-layer-height) / 2);
+  transition: background-color 0s 0.13s linear;
+}
+
+.burger-inner::before,
+.burger-inner::after {
+  content: '';
+  transition: transform 0.15s ease;
+}
+
+.burger-inner::before {
+  top: calc(var(--burger-layer-height) + var(--burger-layer-spacing));
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.burger-inner::after {
+  top: calc((var(--burger-layer-height) + var(--burger-layer-spacing)) * 2);
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}

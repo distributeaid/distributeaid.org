@@ -212,8 +212,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     tabs: path.resolve(`./src/templates/TabPage.tsx`),
   }
   PageTreeTraversal.BFS(homePage, (page) => {
-    console.log(page.path)
-
     layout = pageLayouts.main
 
     // unique homepage layout
