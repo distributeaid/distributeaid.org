@@ -1,47 +1,6 @@
+/* Import Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
-  color: #373f49;
-  background: #eee;
-}
-
-img {
-  width: 100%;
-}
-
-h1,
-h2,
-h3 {
-  font-size: 2em;
-}
-
-a {
-  color: currentColor;
-}
-
-.wrapper {
-  width: calc(100% - 10vmin);
-  margin: 0 auto;
-  padding: 5vmin 0;
-}
-
-/**
- * article grid
- */
-.article-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
-}
-
-/**
- *
- */
-.section-headline {
-  padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
-  border-bottom: 1px solid #ddd;
-}
+@import './burger.css';

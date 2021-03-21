@@ -58,7 +58,7 @@ Dev Setup
 
 Install system dependencies:
 
-* Node v14.16.0
+* Node v14
 * Yarn v1.22.5
 
 Install project dependencies:

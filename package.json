@@ -8,21 +8,35 @@
     "url": "https://github.com/distributeaid/distributeaid.org/issues"
   },
   "dependencies": {
-    "gatsby": "^2.32.8",
+    "@nivo/core": "^0.67.0",
+    "@types/bluebird": "^3.5.33",
+    "@types/classnames": "^2.2.11",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-table": "^7.0.29",
+    "classnames": "^2.2.6",
+    "gatsby": "^3.1.1",
     "gatsby-image": "^2.11.0",
-    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sharp": "^2.14.3",
-    "gatsby-source-contentful": "^4.5.0",
-    "gatsby-transformer-remark": "^2.16.1",
-    "gatsby-transformer-sharp": "^2.12.0",
+    "gatsby-plugin-typescript": "^3.1.0",
+    "gatsby-source-contentful": "^5.1.1",
+    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-sharp": "^3.1.0",
     "gh-pages": "^3.1.0",
     "husky": "^5.1.3",
     "lodash": "^4.17.21",
     "prettier-plugin-organize-imports": "^1.1.1",
     "pretty-quick": "^3.1.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.15.4",
+    "react-table": "^7.6.3",
+    "tailwindcss": "^2.0.4",
+    "typescript": "^4.2.3"
   },
   "devDependencies": {
     "@distributeaid/shared-config": "distributeaid/shared-config",
@@ -31,11 +45,10 @@
     "contentful-import": "^7.9.38",
     "gatsby-plugin-postcss": "^4.0.0",
     "netlify-cli": "^3.10.1",
-    "postcss": "^8.2.7",
-    "tailwindcss": "^2.0.3"
+    "postcss": "^8.2.7"
   },
   "engines": {
-    "node": ">=14.16.0",
+    "node": ">=14.0.0",
     "npm": "please-use-yarn",
     "yarn": ">= 1.22"
   },

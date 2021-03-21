@@ -212,8 +212,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     tabs: path.resolve(`./src/templates/TabPage.tsx`),
   }
   PageTreeTraversal.BFS(homePage, (page) => {
-    console.log(page.path)
-
     layout = pageLayouts.main
 
     // unique homepage layout
@@ -243,5 +241,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         pageContentfulId: page.contentful_id,
       },
     })
+  })
+}
+
+// https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup
+// This should really be handled by Gatsby but here we are
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-transform-react-jsx',
+    options: {
+      runtime: 'automatic',
+    },
   })
 }

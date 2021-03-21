@@ -1,50 +1,49 @@
 import { graphql } from 'gatsby'
-import React from 'react'
-import Section from '../components/Section'
+import { FunctionComponent } from 'react'
+import Section from '../components/section/Section'
 import DefaultLayout from '../layouts/Default'
 
-class MainPageTemplate extends React.Component {
-  render() {
-    const { site, pages, pageLookup, pageStructure } = this.props.pageContext
-    const pageDetails = this.props.data.contentfulSitePage
-    const page = {
-      ...pageStructure,
-      ...pageDetails,
-    }
-    if (page.sections === null) {
-      page.sections = []
-    }
+interface Props {
+  pageContext: any
+  data: any
+}
 
-    return (
-      <DefaultLayout
-        site={site}
-        pages={pages}
-        pageLookup={pageLookup}
-        page={page}
-      >
-        {/* page header */}
-        <header>
-          <h1>{page.title}</h1>
-        </header>
-
-        {/* page body */}
-        {page.sections.map((section) => {
-          return (
-            <Section
-              key={section.contentful_id}
-              page={page}
-              section={section}
-            />
-          )
-        })}
-
-        {/* page footer */}
-        <footer>
-          <p>{page.updatedAt}</p>
-        </footer>
-      </DefaultLayout>
-    )
+const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
+  const { site, pages, pageLookup, pageStructure } = pageContext
+  const pageDetails = data.contentfulSitePage
+  const page = {
+    ...pageStructure,
+    ...pageDetails,
   }
+  if (page.sections === null) {
+    page.sections = []
+  }
+
+  return (
+    <DefaultLayout
+      site={site}
+      pages={pages}
+      pageLookup={pageLookup}
+      page={page}
+    >
+      {/* page header */}
+      <header>
+        <h1>{page.title}</h1>
+      </header>
+
+      {/* page body */}
+      {page.sections.map((section) => {
+        return (
+          <Section key={section.contentful_id} page={page} section={section} />
+        )
+      })}
+
+      {/* page footer */}
+      <footer>
+        <p>{page.updatedAt}</p>
+      </footer>
+    </DefaultLayout>
+  )
 }
 
 export default MainPageTemplate
