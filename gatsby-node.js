@@ -243,3 +243,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+
+// https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup
+// This should really be handled by Gatsby but here we are
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-transform-react-jsx',
+    options: {
+      runtime: 'automatic',
+    },
+  })
+}
