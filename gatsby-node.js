@@ -1,6 +1,15 @@
 const Promise = require('bluebird')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
+const { spawnSync } = require('child_process')
+
+/*
+Run Scripts After Build
+================================================================================
+*/
+exports.onCreateDevServer = async ({ reporter }) => {
+  spawnSync('yarn', ['run', 'gen-types'], { stdio: 'inherit' })
+}
 
 /*
 Dynamic Pages

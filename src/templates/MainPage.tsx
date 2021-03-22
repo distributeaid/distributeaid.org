@@ -2,41 +2,45 @@ import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
 import Section from '../components/section/Section'
 import DefaultLayout from '../layouts/Default'
+import { ContentfulSitePage } from '../types/gatsby-graphql-types.gen'
+import { PageContext } from '../types/site-types'
 
 interface Props {
-  pageContext: any
-  data: any
+  pageContext: PageContext
+  data: {
+    contentfulSitePage: ContentfulSitePage
+  }
 }
 
 const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
-  const { site, pages, pageLookup, pageStructure } = pageContext
-  const pageDetails = data.contentfulSitePage
-  const page = {
-    ...pageStructure,
-    ...pageDetails,
+  const { __typename, ...pageData } = data.contentfulSitePage
+  pageContext.page = {
+    ...pageContext.page,
+    ...pageData,
   }
-  if (page.sections === null) {
-    page.sections = []
-  }
+  const page = pageContext.page
 
   return (
-    <DefaultLayout
-      site={site}
-      pages={pages}
-      pageLookup={pageLookup}
-      page={page}
-    >
+    <DefaultLayout pageContext={pageContext}>
       {/* page header */}
       <header>
         <h1>{page.title}</h1>
       </header>
 
       {/* page body */}
-      {page.sections.map((section) => {
-        return (
-          <Section key={section.contentful_id} page={page} section={section} />
-        )
-      })}
+      {page.sections &&
+        page.sections.map((section) => {
+          if (!section) {
+            return
+          }
+          return (
+            <Section
+              key={section.contentful_id}
+              page={page}
+              section={section}
+            />
+          )
+        })}
 
       {/* page footer */}
       <footer>

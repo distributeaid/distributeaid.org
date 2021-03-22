@@ -1,24 +1,23 @@
 import { FunctionComponent } from 'react'
+import { ContentfulContentPrezi } from '../../types/gatsby-graphql-types.gen'
 
 interface Props {
-  content: {
-    width: number
-    height: number
-    embedUrl: string
-  }
+  content: ContentfulContentPrezi
 }
 
 const ContentPrezi: FunctionComponent<Props> = ({ content }) => {
+  if (!content.embedUrl) {
+    return null
+  }
+
   const { width, height, embedUrl } = content
 
   return (
     <iframe
-      width={width}
-      height={height}
+      width={width ? width : 550}
+      height={height ? height : 400}
       src={embedUrl}
-      webkitAllowFullscreen="1"
-      mozAllowFullscreen="1"
-      allowFullScreen="1"
+      allowFullScreen={true}
     ></iframe>
   )
 }

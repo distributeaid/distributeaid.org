@@ -1,14 +1,14 @@
 import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
+import { PageContext } from '../../types/site-types'
 
 interface Props {
-  pageLookup: object
-  page: {
-    breadcrumbIDs: [string?]
-  }
+  pageContext: PageContext
 }
 
-const Breadcrumbs: FunctionComponent<Props> = ({ pageLookup, page }) => {
+const Breadcrumbs: FunctionComponent<Props> = ({ pageContext }) => {
+  const { page, pageLookup } = pageContext
+
   return (
     <nav aria-label="breadcrumb" role="navigation">
       <strong>Breadcrumbs:</strong>

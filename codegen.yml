@@ -1,0 +1,10 @@
+# https://www.graphql-code-generator.com/docs/getting-started/codegen-config
+overwrite: true
+schema: 'http://localhost:8000/___graphql'
+generates:
+  ./src/types/gatsby-graphql-types.gen.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-document-nodes'
+    config:
+      gqlImport: gatsby#graphql
