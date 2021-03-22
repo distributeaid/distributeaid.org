@@ -54,7 +54,11 @@ jobs:
           echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
 
       - name: Generate types
-        run: yarn run gen-types
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 1
+          max_attempts: 3
+          command: yarn run gen-types
 
       - name: Kill dev server
         run: kill ${{ env.DEVSERVER_PID }}
