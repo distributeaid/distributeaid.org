@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: preview
+
+    env:
+      CONTENTFUL_ENVIRONMENT: master
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.CONTENTFUL_DELIVERY_TOKEN }}
+      CONTENTFUL_PREVIEW_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_TOKEN }}
+      CONTENTFUL_MANAGEMENT_TOKEN: ${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Configure Contentful
+        run: |
+          echo "CONTENTFUL_HOST='preview.contentful.com'" >> .env.development
+          echo "CONTENTFUL_SPACE_ID='${{ env.CONTENTFUL_SPACE_ID }}'" >> .env.development
+          echo "CONTENTFUL_ENVIRONMENT='${{ env.CONTENTFUL_ENVIRONMENT }}'" >> .env.development
+          echo "CONTENTFUL_DELIVERY_TOKEN='${{ env.CONTENTFUL_DELIVERY_TOKEN }}'" >> .env.development
+          echo "CONTENTFUL_PREVIEW_TOKEN='${{ env.CONTENTFUL_PREVIEW_TOKEN }}'" >> .env.development
+          echo "CONTENTFUL_MANAGEMENT_TOKEN='${{ env.CONTENTFUL_MANAGEMENT_TOKEN }}" >> .env.development
+
+      - name: Build
+        run: yarn build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-${{ github.sha }}
+          path: build
