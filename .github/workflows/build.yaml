@@ -48,10 +48,21 @@ jobs:
           echo "CONTENTFUL_PREVIEW_TOKEN='${{ env.CONTENTFUL_PREVIEW_TOKEN }}'" >> .env.development
           echo "CONTENTFUL_MANAGEMENT_TOKEN='${{ env.CONTENTFUL_MANAGEMENT_TOKEN }}" >> .env.development
 
+      - name: Start dev server
+        run: |
+          nohup yarn dev > /dev/null 2>&1 & echo $! > run.pid
+          echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
+
+      - name: Generate types
+        run: yarn run gen-types
+
+      - name: Kill dev server
+        run: kill ${{ env.DEVSERVER_PID }}
+
       - name: Build
         run: yarn build
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-${{ github.sha }}
-          path: build
+          path: public
