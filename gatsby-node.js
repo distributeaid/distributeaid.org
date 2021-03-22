@@ -1,6 +1,26 @@
 const Promise = require('bluebird')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
+const { spawn } = require('child_process')
+
+/*
+Run Scripts After Build
+================================================================================
+*/
+exports.onCreateDevServer = async ({ reporter }) => {
+  const genTypes = await spawn('yarn', ['run', 'gen-types'], {
+    stdio: 'inherit',
+  })
+  genTypes.on('exit', (code) => {
+    if (code === 0) {
+      reporter.success(
+        'graphql-codegen: types generated from gatsby graphql endpoint',
+      )
+    } else {
+      reporter.error(`graphql-codegen: exited with code ${code}`)
+    }
+  })
+}
 
 /*
 Dynamic Pages
@@ -235,7 +255,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         site: site,
         pages: pages,
         pageLookup: pageLookup,
-        pageStructure: page,
+        page: page,
 
         // page query params
         pageContentfulId: page.contentful_id,

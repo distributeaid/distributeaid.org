@@ -1,8 +1,13 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { FunctionComponent } from 'react'
 import { Flavors } from '../../types/display-option-types'
+import { ContentfulSiteSite } from '../../types/gatsby-graphql-types.gen'
 
 export type BrandMarkLayouts = 'logo' | 'lettermark' | 'wordmark'
+
+interface LogosData {
+  contentfulSiteSite: ContentfulSiteSite
+}
 
 interface Props {
   flavor?: Flavors
@@ -15,10 +20,12 @@ const BrandMark: FunctionComponent<Props> = ({
   layout = 'logo',
   className = '',
 }) => {
-  const data = useStaticQuery(graphql`
+  const data: LogosData = useStaticQuery(graphql`
     query BrandMarkQuery {
       contentfulSiteSite {
         logos {
+          contentful_id
+          title
           file {
             contentType
             url
@@ -29,24 +36,32 @@ const BrandMark: FunctionComponent<Props> = ({
               }
             }
           }
-          contentful_id
-          title
         }
       }
     }
   `)
 
   const logos = data.contentfulSiteSite.logos
+    ? data.contentfulSiteSite.logos
+    : []
   const logo = logos.find((logo) => {
-    const title = logo.title.toLowerCase()
+    if (!logo) {
+      return false
+    }
+
+    const title = logo.title ? logo.title.toLowerCase() : ''
     const hasFlavor = title.indexOf(flavor) !== -1
     const hasLayout = title.indexOf(layout) !== -1
     return hasFlavor && hasLayout
   })
 
+  if (!logo || !logo.file || !logo.file.url || !logo.title) {
+    return null
+  }
+
   return (
     <div className={className}>
-      <img src={logo.url} alt={logo.title} />
+      <img src={logo.file.url} alt={`${logo.title}`} />
       <h3>{logo.title}</h3>
     </div>
   )

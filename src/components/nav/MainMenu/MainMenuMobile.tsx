@@ -47,9 +47,9 @@ const MobileNavigation: FunctionComponent<Props> = ({ navLinks }) => {
         )}
       >
         {navLinks.map((link) => (
-          <li key={link.toPage.path}>
+          <li key={link.path}>
             <Link
-              to={link.toPage.path}
+              to={link.path}
               className="py-2 px-4 flex items-center text-white"
             >
               {link.title}
