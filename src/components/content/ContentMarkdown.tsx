@@ -1,10 +1,19 @@
 import { FunctionComponent } from 'react'
+import { ContentfulContentMarkdown } from '../../types/gatsby-graphql-types.gen'
 
 interface Props {
-  content: { entry: { childMarkdownRemark: { html: string } } }
+  content: ContentfulContentMarkdown
 }
 
 const ContentMarkdown: FunctionComponent<Props> = ({ content }) => {
+  if (
+    !content.entry ||
+    !content.entry.childMarkdownRemark ||
+    !content.entry.childMarkdownRemark.html
+  ) {
+    return null
+  }
+
   const markdownHtml = content.entry.childMarkdownRemark.html
 
   return <div dangerouslySetInnerHTML={{ __html: markdownHtml }} />

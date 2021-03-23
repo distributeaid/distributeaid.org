@@ -1,15 +1,19 @@
 import { FunctionComponent } from 'react'
+import {
+  ContentfulContentMarkdownContentfulContentPhotoContentfulContentPreziUnion,
+  ContentfulSitePageSection,
+} from '../../types/gatsby-graphql-types.gen'
 import ContentMarkdown from './ContentMarkdown'
 import ContentPhoto from './ContentPhoto'
 import ContentPrezi from './ContentPrezi'
 
 interface Props {
-  section: any
-  content: any
+  section: ContentfulSitePageSection
+  content: ContentfulContentMarkdownContentfulContentPhotoContentfulContentPreziUnion
 }
 
 const Content: FunctionComponent<Props> = ({ section, content }) => {
-  switch (content.internal.type) {
+  switch (content.__typename) {
     case 'ContentfulContentMarkdown':
       return <ContentMarkdown content={content} />
 
