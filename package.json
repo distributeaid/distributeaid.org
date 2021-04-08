@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@nivo/core": "^0.67.0",
+    "@nivo/sunburst": "^0.67.0",
     "@types/bluebird": "^3.5.33",
     "@types/classnames": "^2.2.11",
     "@types/lodash": "^4.14.168",
@@ -16,6 +17,7 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
     "@types/react-table": "^7.0.29",
+    "@types/tailwindcss": "^2.0.2",
     "classnames": "^2.2.6",
     "gatsby": "^3.1.1",
     "gatsby-image": "^2.11.0",
