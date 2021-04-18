@@ -2,7 +2,7 @@
   "name": "da-landing",
   "description": "Distribute Aid's landing site!",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.22.5",
   "author": "Distribute Aid | https://distributeaid.org/",
   "bugs": {
     "url": "https://github.com/distributeaid/distributeaid.org/issues"
