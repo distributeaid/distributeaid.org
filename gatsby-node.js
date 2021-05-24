@@ -10,6 +10,7 @@ Run Scripts After Build
 exports.onCreateDevServer = async ({ reporter }) => {
   const genTypes = await spawn('yarn', ['run', 'gen-types'], {
     stdio: 'inherit',
+    shell: true,
   })
   genTypes.on('exit', (code) => {
     if (code === 0) {
