@@ -1,8 +1,22 @@
 //import DefaultLayout from '../layouts/Default'
+
 import { graphql } from 'gatsby'
-import { FunctionComponent, useMemo } from 'react'
+import React, { FunctionComponent, useMemo } from 'react'
 import { useSortBy, useTable } from 'react-table'
 import TableHeader from '../components/table/TableHeader'
+
+const IndeterminateCheckbox = React.forwardRef(
+  ({ indeterminate, ...rest }, ref) => {
+    const defaultRef = React.useRef()
+    const resolvedRef = ref || defaultRef
+
+    React.useEffect(() => {
+      resolvedRef.current.indeterminate = indeterminate
+    }, [resolvedRef, indeterminate])
+
+    return <input type="checkbox" ref={resolvedRef} {...rest} />
+  },
+)
 
 const COLUMNS = [
   {
@@ -49,13 +63,34 @@ const ShipmentsPage: FunctionComponent<Props> = ({ data }) => {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns: COLUMNS, data: shipments }, useSortBy)
+    allColumns,
+    getToggleHideAllColumnsProps,
+    state,
+  } = useTable(
+    { columns: COLUMNS, data: shipments, initialState: { hiddenColumns: [] } },
+    useSortBy,
+  )
 
   return (
     <div>
       <header>
         <h1>Shipments</h1>
       </header>
+      <div>
+        <div>
+          <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle
+          All
+        </div>
+        {allColumns.map((column) => (
+          <div key={column.id}>
+            <label>
+              <input type="checkbox" {...column.getToggleHiddenProps()} />{' '}
+              {column.id}
+            </label>
+          </div>
+        ))}
+        <br />
+      </div>
       <section>
         <table>
           <thead>
