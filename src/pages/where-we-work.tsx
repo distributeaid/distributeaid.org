@@ -22,9 +22,15 @@ const WhereWeWorkPage: FunctionComponent<Props> = ({ data }) => {
         <h1>Where We Work</h1>
       </header>
 
-      {/* page body */}
-      <p>Hello World</p>
-
+      <ul>
+        {data.allContentfulDataGeoRegion.nodes.map((node) => {
+          return (
+            <li>
+              <a href={`./where-we-work/${node.slug}`}>{node.name}</a>
+            </li>
+          )
+        })}
+      </ul>
       {/* page footer */}
       <footer>
         <p>Page Footer</p>
