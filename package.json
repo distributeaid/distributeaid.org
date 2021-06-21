@@ -21,6 +21,7 @@
     "classnames": "^2.2.6",
     "gatsby": "^3.1.1",
     "gatsby-image": "^2.11.0",
+    "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-plugin-typescript": "^3.1.0",

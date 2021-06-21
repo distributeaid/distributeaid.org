@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react'
 
 interface Props {
   data: {
-    allContentfulDataPersonVolunteer
+    allContentfulDataPersonVolunteer: { nodes: any }
   }
 }
 
@@ -13,23 +13,37 @@ const TeamPage: FunctionComponent<Props> = ({ data }) => {
     <div>
       <h1>Our Team</h1>
       <div>
-        {/* <div>
-      <ul>{
-          volunteers.map((volunteer) => (
-            <li>
-              <img src={volunteer.avatar.file.url} />
-            </li>
-            ))
-          }
-          </ul>
-        </div> */}
-        <ul>
-          {volunteers.map((volunteer) => (
-            <li>
-              {volunteer.name} - {volunteer.title} - {volunteer.Whereabouts}
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            {volunteers.map((volunteer) => (
+              <tr>
+                <td>
+                  {volunteer.avatar != null && (
+                    <img
+                      src={volunteer.avatar.file.url}
+                      alt={volunteer.avatar.file.title}
+                      width="100px"
+                      height="100px"
+                    />
+                  )}
+                </td>
+                <td>{volunteer.name}</td>
+                <td>{volunteer.title}</td>
+                <td>{volunteer.Whereabouts}</td>
+                <td>{volunteer.joined}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
