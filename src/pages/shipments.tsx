@@ -4,19 +4,14 @@ import { graphql } from 'gatsby'
 import React, { FunctionComponent, useMemo } from 'react'
 import { useSortBy, useTable } from 'react-table'
 import TableHeader from '../components/table/TableHeader'
+import { PageContext } from '../types/site-types'
 
-const IndeterminateCheckbox = React.forwardRef(
-  ({ indeterminate, ...rest }, ref) => {
-    const defaultRef = React.useRef()
-    const resolvedRef = ref || defaultRef
-
-    React.useEffect(() => {
-      resolvedRef.current.indeterminate = indeterminate
-    }, [resolvedRef, indeterminate])
-
-    return <input type="checkbox" ref={resolvedRef} {...rest} />
-  },
-)
+interface Props {
+  pageContext: PageContext
+  data: {
+    allContentfulDataImpactShipment
+  }
+}
 
 const COLUMNS = [
   {
@@ -45,13 +40,7 @@ const COLUMNS = [
   },
 ]
 
-interface Props {
-  data: {
-    allContentfulDataImpactShipment
-  }
-}
-
-const ShipmentsPage: FunctionComponent<Props> = ({ data }) => {
+const ShipmentsPage: FunctionComponent<Props> = ({ pageContext, data }) => {
   // We must memoize the data for react-table to function properly
   const shipments = useMemo(
     () => data?.allContentfulDataImpactShipment.nodes || [],
@@ -73,23 +62,10 @@ const ShipmentsPage: FunctionComponent<Props> = ({ data }) => {
 
   return (
     <div>
-      <header>
-        <h1>Shipments</h1>
-      </header>
+      {/* site level header / body / footer */}
+
       <div>
-        <div>
-          <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle
-          All
-        </div>
-        {allColumns.map((column) => (
-          <div key={column.id}>
-            <label>
-              <input type="checkbox" {...column.getToggleHiddenProps()} />{' '}
-              {column.id}
-            </label>
-          </div>
-        ))}
-        <br />
+        <h1>Shipments</h1>
       </div>
       <section>
         <table>
