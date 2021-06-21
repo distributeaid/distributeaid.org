@@ -224,7 +224,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   /*
-  Create Pages
+  Create Content Pages
   ------------------------------------------------------------
   */
   const pageLayouts = {
@@ -260,6 +260,42 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
         // page query params
         pageContentfulId: page.contentful_id,
+      },
+    })
+  })
+
+  /*
+  Create Data-Drive Pages: Regions
+  ------------------------------------------------------------
+  */
+  const regionsResult = await graphql(
+    `
+      query Regions {
+        allContentfulDataGeoRegion {
+          nodes {
+            contentful_id
+            slug
+          }
+        }
+      }
+    `,
+  )
+
+  if (regionsResult.errors) {
+    reporter.panicOnBuild(`
+      Error while running GraphQL query to get
+      the region data from Contentful.
+    `)
+    return
+  }
+
+  const regions = regionsResult.data.allContentfulDataGeoRegion.nodes
+  regions.forEach((region) => {
+    createPage({
+      path: 'where-we-work/' + region.slug,
+      component: path.resolve(`./src/templates/RegionPage.tsx`),
+      context: {
+        regionContentfulId: region.contentful_id,
       },
     })
   })

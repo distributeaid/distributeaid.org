@@ -43,8 +43,8 @@
     "typescript": "^4.2.3"
   },
   "devDependencies": {
-    "@codesee/babel-plugin-instrument": "^0.30.0",
-    "@codesee/tracker": "^0.30.0",
+    "@codesee/babel-plugin-instrument": "^0.38.0",
+    "@codesee/tracker": "^0.38.0",
     "@distributeaid/shared-config": "distributeaid/shared-config",
     "@graphql-codegen/cli": "1.21.3",
     "@graphql-codegen/typescript": "1.21.1",
