@@ -317,6 +317,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             totalCommercialValue
             totalDistance
             totalWeight
+            numDropoffs
+            numPickups
+            slug
             fromSubregions {
               region {
                 mapPhoto {
@@ -333,9 +336,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               slug
             }
-            numDropoffs
-            numPickups
-            slug
             toSubregions {
               region {
                 mapPhoto {
@@ -368,7 +368,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const shipments = shipmentsResult.data.allContentfulDataImpactShipment.nodes
   shipments.forEach((shipment) => {
-    const shipmentName = shipment.name.toString()
+    const shipmentName = shipment.slug
     createPage({
       path: 'shipment/' + shipmentName,
       component: path.resolve(`./src/templates/ShipmentPage.tsx`),
