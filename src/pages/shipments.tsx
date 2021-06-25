@@ -60,6 +60,13 @@ const ShipmentsPage: FunctionComponent<Props> = ({ pageContext, data }) => {
     useSortBy,
   )
 
+  function firstCellClick(cell) {
+    if (cell.column.Header === 'Name') {
+      console.log(cell.value)
+      window.open('/shipment/' + cell.value)
+    }
+  }
+
   return (
     <div>
       {/* site level header / body / footer */}
@@ -92,7 +99,12 @@ const ShipmentsPage: FunctionComponent<Props> = ({ pageContext, data }) => {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    <td
+                      {...cell.getCellProps()}
+                      onClick={() => firstCellClick(cell)}
+                    >
+                      {cell.render('Cell')}
+                    </td>
                   ))}
                 </tr>
               )

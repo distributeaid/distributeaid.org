@@ -299,6 +299,84 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+
+  /*
+  Create Data-Drive Pages: Shipments
+  ------------------------------------------------------------
+  */
+
+  const shipmentsResult = await graphql(
+    `
+      query Shipments {
+        allContentfulDataImpactShipment {
+          nodes {
+            contentful_id
+            name
+            deliveredOn
+            totalC02
+            totalCommercialValue
+            totalDistance
+            totalWeight
+            fromSubregions {
+              region {
+                mapPhoto {
+                  file {
+                    url
+                  }
+                }
+                overview {
+                  overview
+                }
+              }
+              overview {
+                overview
+              }
+              slug
+            }
+            numDropoffs
+            numPickups
+            slug
+            toSubregions {
+              region {
+                mapPhoto {
+                  file {
+                    url
+                  }
+                }
+                slug
+                overview {
+                  overview
+                }
+              }
+              overview {
+                overview
+              }
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  if (shipmentsResult.errors) {
+    reporter.panicOnBuild(`
+      Error while running GraphQL query to get
+      the shipment data from Contentful.
+    `)
+    return
+  }
+
+  const shipments = shipmentsResult.data.allContentfulDataImpactShipment.nodes
+  shipments.forEach((shipment) => {
+    const shipmentName = shipment.name.toString()
+    createPage({
+      path: 'shipment/' + shipmentName,
+      component: path.resolve(`./src/templates/ShipmentPage.tsx`),
+      context: {
+        shipmentContentfulId: shipment.contentful_id,
+      },
+    })
+  })
 }
 
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup
