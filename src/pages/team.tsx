@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { FunctionComponent } from 'react'
 
 interface Props {
@@ -28,11 +29,9 @@ const TeamPage: FunctionComponent<Props> = ({ data }) => {
               <tr>
                 <td>
                   {volunteer.avatar != null && (
-                    <img
-                      src={volunteer.avatar.file.url}
+                    <GatsbyImage
+                      image={volunteer.avatar.gatsbyImageData}
                       alt={volunteer.avatar.file.title}
-                      width="100px"
-                      height="100px"
                     />
                   )}
                 </td>
@@ -73,6 +72,7 @@ export const pageQuery = graphql`
           contentful_id
           description
           title
+          gatsbyImageData(layout: FULL_WIDTH, width: 200)
           file {
             contentType
             fileName
