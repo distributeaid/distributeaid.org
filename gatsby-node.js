@@ -10,6 +10,7 @@ Run Scripts After Build
 exports.onCreateDevServer = async ({ reporter }) => {
   const genTypes = await spawn('yarn', ['run', 'gen-types'], {
     stdio: 'inherit',
+    shell: true,
   })
   genTypes.on('exit', (code) => {
     if (code === 0) {
@@ -295,6 +296,84 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/templates/RegionPage.tsx`),
       context: {
         regionContentfulId: region.contentful_id,
+      },
+    })
+  })
+
+  /*
+  Create Data-Drive Pages: Shipments
+  ------------------------------------------------------------
+  */
+
+  const shipmentsResult = await graphql(
+    `
+      query Shipments {
+        allContentfulDataImpactShipment {
+          nodes {
+            contentful_id
+            name
+            deliveredOn
+            totalC02
+            totalCommercialValue
+            totalDistance
+            totalWeight
+            numDropoffs
+            numPickups
+            slug
+            fromSubregions {
+              region {
+                mapPhoto {
+                  file {
+                    url
+                  }
+                }
+                overview {
+                  overview
+                }
+              }
+              overview {
+                overview
+              }
+              slug
+            }
+            toSubregions {
+              region {
+                mapPhoto {
+                  file {
+                    url
+                  }
+                }
+                slug
+                overview {
+                  overview
+                }
+              }
+              overview {
+                overview
+              }
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  if (shipmentsResult.errors) {
+    reporter.panicOnBuild(`
+      Error while running GraphQL query to get
+      the shipment data from Contentful.
+    `)
+    return
+  }
+
+  const shipments = shipmentsResult.data.allContentfulDataImpactShipment.nodes
+  shipments.forEach((shipment) => {
+    const shipmentName = shipment.slug
+    createPage({
+      path: 'shipment/' + shipmentName,
+      component: path.resolve(`./src/templates/ShipmentPage.tsx`),
+      context: {
+        shipmentContentfulId: shipment.contentful_id,
       },
     })
   })
