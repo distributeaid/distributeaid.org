@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import SimpleLayout from '../layouts/Simple'
 
@@ -22,11 +22,11 @@ const WhereWeWorkPage: FunctionComponent<Props> = ({ data }) => {
         <h1>Where We Work</h1>
       </header>
 
-      <ul>
+      <ul className="list-disc list-inside">
         {data.allContentfulDataGeoRegion.nodes.map((node) => {
           return (
-            <li>
-              <a href={`./where-we-work/${node.slug}`}>{node.name}</a>
+            <li key={node.contentful_id}>
+              <Link to={`./${node.slug}`}>{node.name}</Link>
             </li>
           )
         })}
