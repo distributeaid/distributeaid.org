@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { FunctionComponent } from 'react'
 import SimpleLayout from '../layouts/Simple'
 import { ContentfulDataGeoRegion } from '../types/gatsby-graphql-types.gen'
@@ -27,6 +28,10 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
       {/* page body */}
       <p>Hello World</p>
 
+      <GatsbyImage
+        image={region.mapPhoto?.gatsbyImageData}
+        alt="Map of {region.name}"
+      />
       {/* page footer */}
       <footer>
         <p>Page Footer</p>
@@ -42,6 +47,9 @@ export const regionQuery = graphql`
     contentfulDataGeoRegion(contentful_id: { eq: $regionContentfulId }) {
       contentful_id
       name
+      mapPhoto {
+        gatsbyImageData
+      }
     }
   }
 `

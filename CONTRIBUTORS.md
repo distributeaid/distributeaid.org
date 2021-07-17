@@ -10,3 +10,6 @@ By contributing to this project you agree to:
 ## Contributor Signatures
 
 J. Taylor Fairbank
+Jonn Louie Lim
+Sanket Dive
+Ramón Huidobro
