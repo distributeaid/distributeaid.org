@@ -40,9 +40,9 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         alt="Map of {region.name}"
       />
       <h1 className="text-xl">To Shipments</h1>
-      <p>{JSON.stringify(toShipments)}</p>
+      <table><tr>{JSON.stringify(toShipments)}</tr></table>
       <h1 className="text-xl">From Shipments</h1>
-      <p>{JSON.stringify(fromShipments)}</p>
+      <table><tr>{JSON.stringify(fromShipments)}</tr></table>
 
       {/* page footer */}
       <footer>
