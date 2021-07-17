@@ -2,11 +2,16 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FunctionComponent } from 'react'
 import SimpleLayout from '../layouts/Simple'
-import { ContentfulDataGeoRegion } from '../types/gatsby-graphql-types.gen'
+import {
+  AllContentfulDataImpactShipment,
+  ContentfulDataGeoRegion,
+} from '../types/gatsby-graphql-types.gen'
 
 interface Props {
   data: {
     contentfulDataGeoRegion: ContentfulDataGeoRegion
+    toRegions: AllContentfulDataImpactShipment
+    fromRegions: AllContentfulDataImpactShipment
   }
 }
 
@@ -17,6 +22,8 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   }
 
   const region = data.contentfulDataGeoRegion
+  const toShipments = data.toRegions
+  const fromShipments = data.fromRegions
 
   return (
     <SimpleLayout pageContext={pageContext}>
@@ -32,6 +39,11 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         image={region.mapPhoto?.gatsbyImageData}
         alt="Map of {region.name}"
       />
+      <h1 className="text-xl">To Shipments</h1>
+      <p>{JSON.stringify(toShipments)}</p>
+      <h1 className="text-xl">From Shipments</h1>
+      <p>{JSON.stringify(fromShipments)}</p>
+
       {/* page footer */}
       <footer>
         <p>Page Footer</p>
@@ -49,6 +61,86 @@ export const regionQuery = graphql`
       name
       mapPhoto {
         gatsbyImageData
+      }
+    }
+    toRegions: allContentfulDataImpactShipment(
+      filter: {
+        toSubregions: {
+          elemMatch: { region: { contentful_id: { eq: $regionContentfulId } } }
+        }
+      }
+    ) {
+      nodes {
+        contentful_id
+        deliveredOn
+        name
+        slug
+        numPickups
+        numDropoffs
+        totalCommercialValue
+        totalDistance
+        totalWeight
+        totalC02
+        fromSubregions {
+          contentful_id
+          name
+          slug
+          region {
+            name
+            slug
+            contentful_id
+          }
+        }
+        toSubregions {
+          contentful_id
+          name
+          slug
+          region {
+            name
+            slug
+            contentful_id
+          }
+        }
+      }
+    }
+    fromRegions: allContentfulDataImpactShipment(
+      filter: {
+        fromSubregions: {
+          elemMatch: { region: { contentful_id: { eq: $regionContentfulId } } }
+        }
+      }
+    ) {
+      nodes {
+        contentful_id
+        deliveredOn
+        name
+        slug
+        numPickups
+        numDropoffs
+        totalCommercialValue
+        totalDistance
+        totalWeight
+        totalC02
+        fromSubregions {
+          contentful_id
+          name
+          slug
+          region {
+            name
+            slug
+            contentful_id
+          }
+        }
+        toSubregions {
+          contentful_id
+          name
+          slug
+          region {
+            name
+            slug
+            contentful_id
+          }
+        }
       }
     }
   }
