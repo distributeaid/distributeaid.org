@@ -40,9 +40,13 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         alt="Map of {region.name}"
       />
       <h1 className="text-xl">To Shipments</h1>
-      <table><tr>{JSON.stringify(toShipments)}</tr></table>
+      <table>
+        <tr>{JSON.stringify(toShipments)}</tr>
+      </table>
       <h1 className="text-xl">From Shipments</h1>
-      <table><tr>{JSON.stringify(fromShipments)}</tr></table>
+      <table>
+        <tr>{JSON.stringify(fromShipments)}</tr>
+      </table>
 
       {/* page footer */}
       <footer>
@@ -51,6 +55,18 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
     </SimpleLayout>
   )
 }
+
+/*
+Scenario Outline:
+Given shipment to and from "<region>"
+When we ask for the to shipments
+Then the destination is among "<destinations>"
+
+Examples:
+| region | destinations |
+| Greece | Lesvos,Chios,Greece |
+| France | Calais,Dunkirk,France |
+*/
 
 export default RegionPageTemplate
 
