@@ -305,6 +305,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   ------------------------------------------------------------
   */
 
+  /*
+  sendingHubs {
+              hub
+            }
+            receivingHubs {
+              hub
+            }
+            collectionGroups {
+              org
+            }
+            frontlineGroups {
+              org
+            }
+  */
+
   const shipmentsResult = await graphql(
     `
       query Shipments {

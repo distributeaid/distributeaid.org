@@ -30,10 +30,11 @@ module.exports = {
   pathPrefix: '/',
 
   plugins: [
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
