@@ -22,8 +22,20 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   }
 
   const region = data.contentfulDataGeoRegion
-  const toShipments = data.toRegions
-  const fromShipments = data.fromRegions
+  const toShipments = data.toRegions.nodes
+  const fromShipments = data.fromRegions.nodes
+  const allShipments = toShipments.reduce(
+    (accumulator: Array<any>, shipment: any) => {
+      const hasShipment = accumulator.find((item) => {
+        return item.contentful_id === shipment.contentful_id
+      })
+      if (!hasShipment) {
+        accumulator.push(shipment)
+      }
+      return accumulator
+    },
+    fromShipments,
+  )
 
   return (
     <SimpleLayout pageContext={pageContext}>
@@ -35,12 +47,32 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
       {/* page body */}
       <p>Hello World</p>
 
+      <p>
+        {toShipments.length}
+        <br />
+        {fromShipments.length}
+        <br />
+        {allShipments.length}
+      </p>
+
       <GatsbyImage
         image={region.mapPhoto?.gatsbyImageData}
         alt="Map of {region.name}"
       />
       <h1 className="text-xl">To Shipments</h1>
       <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+          </tr>
+        </thead>
+        {toShipments.map((shipment) => {
+          return (
+            <tr>
+              <td>{shipment.name}</td>
+            </tr>
+          )
+        })}
         <tr>{JSON.stringify(toShipments)}</tr>
       </table>
       <h1 className="text-xl">From Shipments</h1>
