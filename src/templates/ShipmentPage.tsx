@@ -21,8 +21,6 @@ const ShipmentPageTemplate: FunctionComponent<Props> = ({ data }) => {
   const formattedDistance = shipment.totalDistance + ' km'
   const formattedCO2 = shipment.totalC02 + ' tons'
 
-  console.log(shipment.toSubregions[0].region)
-
   return (
     <SimpleLayout pageContext={pageContext}>
       {/* page header */}
