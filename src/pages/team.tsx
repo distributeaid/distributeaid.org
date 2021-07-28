@@ -10,39 +10,49 @@ interface Props {
 
 const TeamPage: FunctionComponent<Props> = ({ data }) => {
   const volunteers = data.allContentfulDataPersonVolunteer.nodes
+  const teams = [
+    'Admin',
+    'Logistics',
+    'Sourcing',
+    'Tech',
+    'Design',
+    'Stories',
+    'Fundraising',
+    'Advisory Board',
+    'Board',
+  ]
+
   return (
     <div>
       <h1>Our Team</h1>
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Location</th>
-              <th>Joined</th>
-            </tr>
-          </thead>
-          <tbody>
-            {volunteers.map((volunteer) => (
-              <tr>
-                <td>
-                  {volunteer.avatar != null && (
-                    <GatsbyImage
-                      image={volunteer.avatar.gatsbyImageData}
-                      alt={volunteer.avatar.file.title}
-                    />
-                  )}
-                </td>
-                <td>{volunteer.name}</td>
-                <td>{volunteer.title}</td>
-                <td>{volunteer.Whereabouts}</td>
-                <td>{volunteer.joined}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {teams.map((team) => (
+          <div className="team-and-title">
+            <h2>{team}</h2>
+            <div className="team">
+              {volunteers.map(
+                (volunteer) =>
+                  volunteer.team == team && (
+                    <div className="volunteer">
+                      <div className="volunteer-image-container">
+                        {volunteer.avatar != null && (
+                          <GatsbyImage
+                            image={volunteer.avatar.gatsbyImageData}
+                            alt={volunteer.avatar.file.title}
+                            className="volunteer-image"
+                          />
+                        )}
+                      </div>
+
+                      <h3>{volunteer.name}</h3>
+                      <p>{volunteer.title}</p>
+                      <p>{volunteer.Whereabouts}</p>
+                    </div>
+                  ),
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -58,6 +68,7 @@ export const pageQuery = graphql`
         name
         slug
         title
+        team
         position
         joined
         left
