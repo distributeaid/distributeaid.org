@@ -43,7 +43,6 @@ const TeamPage: FunctionComponent<Props> = ({ data }) => {
                           />
                         )}
                       </div>
-
                       <h3>{volunteer.name}</h3>
                       <p>{volunteer.title}</p>
                       <p>{volunteer.Whereabouts}</p>

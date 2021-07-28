@@ -8,12 +8,19 @@ interface Props {
 }
 
 const AboutUsPage: FunctionComponent<Props> = ({ data }) => {
-  const info = data.allContentfulContentMarkdown.nodes
+  const siteInfo = data.allContentfulContentMarkdown.nodes
+
+  const mission = siteInfo.map((info) => {
+    if (info.label == 'Our mission overview') {
+      return info.entry.childMarkdownRemark.html
+    }
+  })
+
   return (
     <div>
       <h1>About Us</h1>
       <h2>Our Mission</h2>
-      <p>Our Mission content from contentful</p>
+      <p>{mission}</p>
 
       <ul>
         <li>Our Story</li>
