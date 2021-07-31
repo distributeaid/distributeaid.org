@@ -23,7 +23,7 @@ const TeamPage: FunctionComponent<Props> = ({ data }) => {
   ]
 
   return (
-    <div>
+    <div className="team-page-container">
       <h1>Our Team</h1>
       <div>
         {teams.map((team) => (

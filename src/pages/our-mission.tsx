@@ -7,7 +7,7 @@ interface Props {
   }
 }
 
-const AboutUsPage: FunctionComponent<Props> = ({ data }) => {
+const OurMissionPage: FunctionComponent<Props> = ({ data }) => {
   const siteInfo = data.allContentfulContentMarkdown.nodes
 
   const mission = siteInfo.map((info) => {
@@ -18,25 +18,16 @@ const AboutUsPage: FunctionComponent<Props> = ({ data }) => {
 
   return (
     <div>
-      <h1>About Us</h1>
-      <h2>Our Mission</h2>
-      <p>{mission}</p>
-
-      <ul>
-        <li>Our Story</li>
-        <li>
-          <a href="./team">Our Team</a>
-        </li>
-        <li>Our Purpose and Values</li>
-      </ul>
+      <h1>Our Mission</h1>
+      <div dangerouslySetInnerHTML={{ __html: mission }} />
     </div>
   )
 }
 
-export default AboutUsPage
+export default OurMissionPage
 
 export const pageQuery = graphql`
-  query AboutUsInfo {
+  query OurMissionInfo {
     allContentfulContentMarkdown {
       nodes {
         label

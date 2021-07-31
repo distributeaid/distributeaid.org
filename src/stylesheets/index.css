@@ -5,8 +5,9 @@
 
 @import './burger.css';
 
-h3 {
-  font-weight: bold;
+.team-page-container {
+  width: 70%;
+  margin: auto;
 }
 
 .team-and-title {
@@ -20,7 +21,7 @@ h3 {
 }
 
 .volunteer {
-  width: 200px;
+  width: 300px;
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -29,11 +30,11 @@ h3 {
 }
 
 .volunteer-image-container {
-  width: 199px;
-  height: 199px;
+  width: 299px;
+  height: 299px;
 }
 
 .volunteer-image {
-  height: 199px;
-  width: 198px;
+  height: 299px;
+  width: 298px;
 }
