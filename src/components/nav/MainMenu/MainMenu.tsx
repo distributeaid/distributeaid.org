@@ -70,7 +70,7 @@ const MainMenu: FunctionComponent<Props> = ({ pageContext }) => {
         <MobileNavigation navLinks={links} />
         <div className="flex items-center">
           <Link to="/" className="text-white" aria-label="Go to the home page">
-            <BrandMark flavor="white" layout="logo" className="block h-8" />
+            <BrandMark flavor="white" layout="logo" className="block" />
           </Link>
         </div>
         <DesktopNavigation navLinks={links} />

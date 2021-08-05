@@ -2,7 +2,7 @@
   "name": "da-landing",
   "description": "Distribute Aid's landing site!",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.22.5",
   "author": "Distribute Aid | https://distributeaid.org/",
   "bugs": {
     "url": "https://github.com/distributeaid/distributeaid.org/issues"
@@ -26,6 +26,7 @@
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-plugin-typescript": "^3.1.0",
     "gatsby-source-contentful": "^5.1.1",
+    "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-remark": "^3.1.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gh-pages": "^3.1.0",
