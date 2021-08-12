@@ -47,37 +47,34 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
       {/* page body */}
       <p>Hello World</p>
 
-      <p>
-        {toShipments.length}
-        <br />
-        {fromShipments.length}
-        <br />
-        {allShipments.length}
-      </p>
-
       <GatsbyImage
         image={region.mapPhoto?.gatsbyImageData}
         alt="Map of {region.name}"
       />
-      <h1 className="text-xl">To Shipments</h1>
+      <h1 className="text-xl">All Shipments</h1>
       <table>
         <thead>
           <tr>
             <th>Title</th>
+            <th>Date Delivered</th>
+            <th>Total Com. Value</th>
+            <th>Total Weight (kg)</th>
+            <th>Total Distance (km)</th>
+            <th>Total CO2 (Tons)</th>
           </tr>
         </thead>
-        {toShipments.map((shipment) => {
+        {allShipments.map((shipment) => {
           return (
             <tr>
               <td>{shipment.name}</td>
+              <td>{shipment.deliveredOn}</td>
+              <td>{shipment.totalCommercialValue}</td>
+              <td>{shipment.totalWeight}</td>
+              <td>{shipment.totalDistance}</td>
+              <td>{shipment.totalC02}</td>
             </tr>
           )
         })}
-        <tr>{JSON.stringify(toShipments)}</tr>
-      </table>
-      <h1 className="text-xl">From Shipments</h1>
-      <table>
-        <tr>{JSON.stringify(fromShipments)}</tr>
       </table>
 
       {/* page footer */}
