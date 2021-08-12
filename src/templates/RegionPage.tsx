@@ -15,6 +15,33 @@ interface Props {
   }
 }
 
+const categorizeShipment = function (
+  shipment: any,
+  region: ContentfulDataGeoRegion,
+) {
+  const { fromSubregions, toSubregions } = shipment
+
+  // fromSubregions might be null, guard against that
+  const isOutgoing: Boolean = (fromSubregions || []).find((subregion: any) => {
+    return subregion.region.contentful_id === region.contentful_id
+  })
+
+  // toSubregions might be null, guard against that
+  const isIncoming: Boolean = (toSubregions || []).find((subregion: any) => {
+    return subregion.region.contentful_id === region.contentful_id
+  })
+
+  if (isOutgoing && isIncoming) {
+    return 'internal-transfer'
+  } else if (isOutgoing) {
+    return 'outgoing'
+  } else if (isIncoming) {
+    return 'incoming'
+  } else {
+    console.log('Invalid GraphQL Data')
+  }
+}
+
 const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   const pageContext = {
     pageTitle: 'TODO',
@@ -24,17 +51,26 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   const region = data.contentfulDataGeoRegion
   const toShipments = data.toRegions.nodes
   const fromShipments = data.fromRegions.nodes
-  const allShipments = toShipments.reduce(
+  const allShipmentsWithDuplicates = toShipments.concat(fromShipments)
+
+  // remove duplicate shipments
+  const allShipments = allShipmentsWithDuplicates.reduce(
     (accumulator: Array<any>, shipment: any) => {
       const hasShipment = accumulator.find((item) => {
         return item.contentful_id === shipment.contentful_id
       })
       if (!hasShipment) {
+        // Goal: categorize each shipment
+        //   - incoming
+        //   - outgoing
+        //   - local-transfers
+        shipment.category = categorizeShipment(shipment, region)
+
         accumulator.push(shipment)
       }
       return accumulator
     },
-    fromShipments,
+    [],
   )
 
   return (
@@ -56,6 +92,7 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         <thead>
           <tr>
             <th>Title</th>
+            <th>Category</th>
             <th>Date Delivered</th>
             <th>Total Com. Value</th>
             <th>Total Weight (kg)</th>
@@ -67,6 +104,7 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
           return (
             <tr>
               <td>{shipment.name}</td>
+              <td>{shipment.category}</td>
               <td>{shipment.deliveredOn}</td>
               <td>{shipment.totalCommercialValue}</td>
               <td>{shipment.totalWeight}</td>
