@@ -40,6 +40,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.15.4",
     "react-router-dom": "^5.2.0",
+    "react-social-icons": "^5.5.1",
     "react-table": "^7.6.3",
     "sharp": "^0.28.3",
     "tailwindcss": "^2.0.4",
