@@ -16,6 +16,18 @@ interface Props {
   }
 }
 
+interface Totals {
+  shipmentsCount: number
+  C02: number
+  commercialValue: number
+  weight: number
+  distance: number
+}
+
+function formatNumber(number: number) {
+  return new Intl.NumberFormat('en-US').format(number)
+}
+
 const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   const pageContext = {
     pageTitle: 'TODO',
@@ -41,6 +53,25 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
     [],
   )
 
+  const totals: Totals = allShipments.reduce(
+    (accumulator: Totals, shipment: any) => {
+      accumulator.C02 += shipment.totalC02
+      accumulator.commercialValue += shipment.totalCommercialValue
+      accumulator.weight += shipment.totalWeight
+      accumulator.distance += shipment.totalDistance
+      accumulator.shipmentsCount += 1
+
+      return accumulator
+    },
+    {
+      C02: 0,
+      commercialValue: 0,
+      weight: 0,
+      distance: 0,
+      shipmentsCount: 0,
+    },
+  )
+
   return (
     <SimpleLayout pageContext={pageContext}>
       {/* page header */}
@@ -55,7 +86,7 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         image={region.mapPhoto?.gatsbyImageData}
         alt="Map of {region.name}"
       />
-      <h1 className="text-xl">All Shipments</h1>
+      <h1 className="text-xl">{totals.shipmentsCount} Shipments</h1>
       <table>
         <thead>
           <tr>
@@ -67,6 +98,15 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
             <th>Total Distance (km)</th>
             <th>Total CO2 (Tons)</th>
           </tr>
+          <tr className="text-left">
+            <th>Totals:</th>
+            <th>---</th>
+            <th>---</th>
+            <th>{formatNumber(totals.commercialValue)}</th>
+            <th>{formatNumber(totals.weight)}</th>
+            <th>{formatNumber(totals.distance)}</th>
+            <th>{formatNumber(totals.C02)}</th>
+          </tr>
         </thead>
         {allShipments.map((shipment) => {
           return (
@@ -76,10 +116,10 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
                 <ShipmentCategoryIcon shipment={shipment} region={region} />
               </td>
               <td>{shipment.deliveredOn}</td>
-              <td>{shipment.totalCommercialValue}</td>
-              <td>{shipment.totalWeight}</td>
-              <td>{shipment.totalDistance}</td>
-              <td>{shipment.totalC02}</td>
+              <td>{formatNumber(shipment.totalCommercialValue)}</td>
+              <td>{formatNumber(shipment.totalWeight)}</td>
+              <td>{formatNumber(shipment.totalDistance)}</td>
+              <td>{formatNumber(shipment.totalC02)}</td>
             </tr>
           )
         })}
