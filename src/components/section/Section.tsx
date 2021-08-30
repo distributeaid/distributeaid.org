@@ -34,6 +34,27 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
         </SectionStack>
       )
 
+    case 'SectionTitle':
+      return null
+
+    case 'HeaderCarousel':
+      return null
+
+    case 'MissionBanner':
+      return null
+
+    case 'ShipmentBanner':
+      return null
+
+    case 'RightSideCard':
+      return null
+
+    case 'LeftSideCard':
+      return null
+
+    case 'NumbersSummary':
+      return null
+
     default:
       return (
         <SectionStack section={section}>
