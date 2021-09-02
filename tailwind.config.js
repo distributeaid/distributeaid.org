@@ -82,8 +82,7 @@ module.exports = {
         sm: '0px 1px 2px 0px #000000 5%',
         DEFAULT:
           '0px 1px 2px 0px #000000 6%, box-shadow: 0px 1px 3px 0px #000000 10%',
-        md:
-          '0px 1px 2px 0px #000000 6%, box-shadow: 0px 1px 3px 0px #000000 10%',
+        md: '0px 1px 2px 0px #000000 6%, box-shadow: 0px 1px 3px 0px #000000 10%',
         lg: '0px 4px 6px -2px #000000 5%, 0px 10px 15px -3px #000000 10%',
       },
     },
@@ -95,7 +94,7 @@ module.exports = {
       padding: ['first', 'last'],
       // Adds the ability to set the background color on the active state
       // For example: active:bg-green-700
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'even', 'odd'],
     },
   },
   plugins: [],
