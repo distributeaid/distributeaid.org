@@ -1,6 +1,8 @@
 DA Landing Site 2.0
 ===============================================================================
 
+[![CodeSee: View Architecture Diagram](./badge.svg)](https://app.codesee.io/maps/ddc21460-098f-11ec-b053-333e0b8cd199)
+
 Distribute Aid's landing site, where we get to tell the world who the heck we are and what the hell we're doing!
 
 The main goals of this project are to:
