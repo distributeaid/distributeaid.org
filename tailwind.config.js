@@ -95,7 +95,7 @@ module.exports = {
       padding: ['first', 'last'],
       // Adds the ability to set the background color on the active state
       // For example: active:bg-green-700
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'even', 'odd'],
     },
   },
   plugins: [],
