@@ -5,6 +5,11 @@ import CarouselImage from './CarouselImage'
 
 interface Props {}
 
+/* 
+A simple auto-scolling carousel of images for the top banner of the landing page.
+
+Placeholder object will be replaced with the GraphQL call to Contentful when we identify
+ what source we want to pull images from */
 const placeholderCarouselObjects = {
   0: {
     alt: 'props.alt',
@@ -28,22 +33,24 @@ const placeholderCarouselObjects = {
   },
 }
 
-const ImageCarousel: FunctionComponent<Props> = (props) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  }
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+}
 
+/*  */
+
+const ImageCarousel: FunctionComponent<Props> = (props) => {
   let carouselItems = Object.keys(placeholderCarouselObjects).map(function (
     key,
     index,
@@ -64,7 +71,7 @@ const ImageCarousel: FunctionComponent<Props> = (props) => {
       draggable={false}
       showDots={false}
       responsive={responsive}
-      ssr={false} // means to render carousel on server-side.
+      ssr={false} // true means to render carousel on server-side.
       infinite={true}
       autoPlay={true}
       //this.props.deviceType !== "mobile" ? true : false
