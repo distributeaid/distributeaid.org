@@ -1,12 +1,13 @@
 import { FunctionComponent } from 'react'
-// import Row from './SectionRow'
-// import Grid from './SectionGrid'
-// import TableOfContents from './SectionTableOfContents'
-// import Gallery from './SectionGallery'
 import {
   ContentfulSitePage,
   ContentfulSitePageSection,
 } from '../../types/gatsby-graphql-types.gen'
+// import Row from './SectionRow'
+// import Grid from './SectionGrid'
+// import TableOfContents from './SectionTableOfContents'
+// import Gallery from './SectionGallery'
+import ImageCarousel from '../carousel/ImageCarousel'
 import Content from '../content/Content'
 import SectionStack from './SectionStack'
 
@@ -34,11 +35,8 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
         </SectionStack>
       )
 
-    case 'SectionTitle':
-      return null
-
     case 'HeaderCarousel':
-      return null
+      return <ImageCarousel section={section} />
 
     case 'MissionBanner':
       return null
@@ -46,10 +44,7 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
     case 'ShipmentBanner':
       return null
 
-    case 'RightSideCard':
-      return null
-
-    case 'LeftSideCard':
+    case 'SideCardStack':
       return null
 
     case 'NumbersSummary':

@@ -1,4 +1,5 @@
 import { graphql, Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { FunctionComponent } from 'react'
 import SimpleLayout from '../layouts/Simple'
 
@@ -22,15 +23,30 @@ const WhereWeWorkPage: FunctionComponent<Props> = ({ data }) => {
         <h1>Where We Work</h1>
       </header>
 
-      <ul className="list-disc list-inside">
-        {data.allContentfulDataGeoRegion.nodes.map((node) => {
-          return (
-            <li key={node.contentful_id}>
-              <Link to={`./${node.slug}`}>{node.name}</Link>
-            </li>
-          )
-        })}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.allContentfulDataGeoRegion.nodes.map((node) => (
+            <tr key={node.contentful_id}>
+              <td>
+                <GatsbyImage
+                  image={node.mapPhoto.gatsbyImageData}
+                  alt={`Photo of ${node.name}`}
+                />
+              </td>
+              <td>
+                <Link to={`./${node.slug}`}>{node.name}</Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       {/* page footer */}
       <footer>
         <p>Page Footer</p>
@@ -58,6 +74,9 @@ export const pageQuery = graphql`
         contentful_id
         name
         slug
+        mapPhoto {
+          gatsbyImageData(layout: FULL_WIDTH, width: 200)
+        }
       }
     }
   }

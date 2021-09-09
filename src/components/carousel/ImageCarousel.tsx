@@ -1,15 +1,18 @@
 import { FunctionComponent } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import { ContentfulSitePageSection } from '../../types/gatsby-graphql-types.gen'
 import CarouselImage from './CarouselImage'
 
-interface Props {}
+interface Props {
+  section: ContentfulSitePageSection
+}
 
 /* 
 A simple auto-scolling carousel of images for the top banner of the landing page.
 
-Placeholder object will be replaced with the GraphQL call to Contentful when we identify
- what source we want to pull images from */
+TODO: Placeholder object will be replaced with object passed in as props from Section.tsx */
+
 const placeholderCarouselObjects = {
   0: {
     alt: 'props.alt',
@@ -48,7 +51,10 @@ const responsive = {
   },
 }
 
-/*  */
+/* TODO: Adapt to Gatsby image 
+
+Carousel takes an object containing image information
+ and maps them to render*/
 
 const ImageCarousel: FunctionComponent<Props> = (props) => {
   let carouselItems = Object.keys(placeholderCarouselObjects).map(function (
