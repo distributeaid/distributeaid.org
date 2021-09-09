@@ -19,6 +19,10 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
     ...pageData,
   }
   const page = pageContext.page
+  console.log('page')
+  console.log(page)
+  console.log('pageContext')
+  console.log(pageContext)
 
   return (
     <DefaultLayout pageContext={pageContext}>
