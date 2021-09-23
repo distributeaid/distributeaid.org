@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
+import ImageCarousel from '../components/carousel/ImageCarousel'
 import SimpleLayout from '../layouts/Simple'
 import { ContentfulDataImpactShipment } from '../types/gatsby-graphql-types.gen'
 
@@ -35,6 +36,8 @@ const ShipmentPageTemplate: FunctionComponent<Props> = ({ data }) => {
       <footer>
         <p>Page Footer</p>
       </footer>
+
+      <ImageCarousel />
     </SimpleLayout>
   )
 }
