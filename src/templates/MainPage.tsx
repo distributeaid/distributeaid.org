@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
-import Section from '../components/section/Section'
+import PageBanner from '../components/content/PageBanner'
 import DefaultLayout from '../layouts/Default'
 import { ContentfulSitePage } from '../types/gatsby-graphql-types.gen'
 import { PageContext } from '../types/site-types'
@@ -31,8 +31,10 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
         <h1>{page.title}</h1>
       </header>
 
+      <PageBanner />
+
       {/* page body */}
-      {page.sections &&
+      {/* {page.sections &&
         page.sections.map((section) => {
           if (!section) {
             return
@@ -44,7 +46,7 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
               section={section}
             />
           )
-        })}
+        })} */}
 
       {/* page footer */}
       <footer>
