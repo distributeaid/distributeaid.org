@@ -1,11 +1,17 @@
 import { FunctionComponent } from 'react'
 // import { ContentfulContentMarkdown } from '../../types/gatsby-graphql-types.gen'
+import { ContentfulSitePageSection } from '../../types/gatsby-graphql-types.gen'
 
-interface Props {}
+interface Props {
+  section: ContentfulSitePageSection
+  children: any
+}
 
-const PageBanner: FunctionComponent<Props> = () => {
+const PageBanner: FunctionComponent<Props> = ({ section, children }) => {
   return (
-    <div className="flex items-center gap-x-8 bg-gray-100 px-16 py-20">
+    <div className="flex items-center gap-x-8 bg-gray-100 px-16 py-20 font-sans text-2xl text-navy-600">
+      {children}
+      {/*
       <div>
         <p className="font-sans font-black text-2xl text-navy-600 mb-8">
           Distribute Aid delivers humanitarian aid to communities in need.
@@ -17,6 +23,7 @@ const PageBanner: FunctionComponent<Props> = () => {
         </p>
       </div>
       {worldmap()}
+      */}
     </div>
   )
 }
