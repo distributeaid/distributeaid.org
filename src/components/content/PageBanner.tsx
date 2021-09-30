@@ -5,13 +5,17 @@ interface Props {}
 
 const PageBanner: FunctionComponent<Props> = () => {
   return (
-    <div className="flex bg-gray-100 px-16 py-24">
-      <p className="font-sans text-2xl text-navy-600 flex-2">
-        Distribute Aid provides{' '}
-        <strong className="font-black">basic human needs</strong> at scale by
-        shipping to communities{' '}
-        <strong className="font-black">where it's needed most.</strong>
-      </p>
+    <div className="flex items-center gap-x-8 bg-gray-100 px-16 py-20">
+      <div>
+        <p className="font-sans font-black text-2xl text-navy-600 mb-8">
+          Distribute Aid delivers humanitarian aid to communities in need.
+        </p>
+        <p className="font-sans text-2xl text-navy-600">
+          By coordinating end-to-end shipments, we make it easy for donors to
+          connect with frontline aid organisations, understand the needs on the
+          ground, and get their aid delivered.
+        </p>
+      </div>
       {worldmap()}
     </div>
   )
@@ -22,7 +26,7 @@ export default PageBanner
 function worldmap() {
   return (
     <svg
-      className="flex-1"
+      className="flex-none w-32 md:w-48 lg:w-64"
       width="auto"
       height="auto"
       viewBox="0 0 496 395"
