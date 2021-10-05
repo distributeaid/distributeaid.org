@@ -1,8 +1,8 @@
+import ImageCarousel from '@components/carousel/ImageCarousel'
+import SimpleLayout from '@layouts/Simple'
+import { ContentfulDataImpactShipment } from '@types/gatsby-graphql-types.gen'
 import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
-import ImageCarousel from '../components/carousel/ImageCarousel'
-import SimpleLayout from '../layouts/Simple'
-import { ContentfulDataImpactShipment } from '../types/gatsby-graphql-types.gen'
 
 interface Props {
   data: {

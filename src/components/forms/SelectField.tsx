@@ -1,3 +1,4 @@
+import { FormRegisterType } from '@types/form-types'
 import { nanoid } from 'nanoid'
 import {
   ChangeEvent,
@@ -6,7 +7,6 @@ import {
   SelectHTMLAttributes,
   useState,
 } from 'react'
-import { FormRegisterType } from '../../types/form-types'
 import InlineError from './InlineError'
 import Label from './Label'
 import SelectInput from './SelectInput'

@@ -1,11 +1,11 @@
-//import DefaultLayout from '../layouts/Default'
+//import DefaultLayout from '@layouts/Default'
 
+import TableHeader from '@components/table/TableHeader'
+import SimpleLayout from '@layouts/Simple'
+import { PageContext } from '@types/site-types'
 import { graphql, Link } from 'gatsby'
 import React, { FunctionComponent, useMemo } from 'react'
 import { useSortBy, useTable } from 'react-table'
-import TableHeader from '../components/table/TableHeader'
-import SimpleLayout from '../layouts/Simple'
-import { PageContext } from '../types/site-types'
 
 interface Props {
   pageContext: PageContext

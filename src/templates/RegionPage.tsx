@@ -1,12 +1,12 @@
-import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { FunctionComponent } from 'react'
-import ShipmentCategoryIcon from '../components/icons/ShipmentCategoryIcon'
-import SimpleLayout from '../layouts/Simple'
+import ShipmentCategoryIcon from '@components/icons/ShipmentCategoryIcon'
+import SimpleLayout from '@layouts/Simple'
 import {
   AllContentfulDataImpactShipment,
   ContentfulDataGeoRegion,
-} from '../types/gatsby-graphql-types.gen'
+} from '@types/gatsby-graphql-types.gen'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { FunctionComponent } from 'react'
 
 interface Props {
   data: {

@@ -1,7 +1,7 @@
+import { FormRegisterType } from '@types/form-types'
 import cx from 'classnames'
 import { FunctionComponent, InputHTMLAttributes } from 'react'
 import { RegisterOptions } from 'react-hook-form'
-import { FormRegisterType } from '../../types/form-types'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   /**

@@ -1,7 +1,7 @@
+import { ContentfulSitePageSection } from '@types/gatsby-graphql-types.gen'
 import { FunctionComponent } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import { ContentfulSitePageSection } from '../../types/gatsby-graphql-types.gen'
 import CarouselImage from './CarouselImage'
 
 interface Props {

@@ -1,12 +1,12 @@
-import { BadgeColor } from '../components/Badge'
-import { COUNTRY_CODES_TO_NAME, MONTHS } from '../data/constants'
+import { BadgeColor } from '@components/Badge'
 import {
   GroupType,
   Maybe,
   Shipment,
   ShipmentQuery,
   ShipmentStatus,
-} from '../types/api-types'
+} from '@types/api-types'
+import { COUNTRY_CODES_TO_NAME, MONTHS } from '../data/constants'
 
 export function formatGroupType(type: GroupType) {
   switch (type) {

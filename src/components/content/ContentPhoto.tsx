@@ -1,5 +1,5 @@
+import { ContentfulContentPhoto } from '@types/gatsby-graphql-types.gen'
 import { FunctionComponent } from 'react'
-import { ContentfulContentPhoto } from '../../types/gatsby-graphql-types.gen'
 
 interface Props {
   content: ContentfulContentPhoto
