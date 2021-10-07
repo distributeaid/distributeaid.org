@@ -40,21 +40,7 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
       return <ImageCarousel section={section} />
 
     case 'PageBanner':
-      return (
-        <PageBanner section={section}>
-          {section.content &&
-            section.content.map((content) => {
-              if (content === null) {
-                return
-              }
-              return (
-                <div key={content.contentful_id}>
-                  <Content section={section} content={content} />
-                </div>
-              )
-            })}
-        </PageBanner>
-      )
+      return <PageBanner section={section} />
 
     case 'ShipmentBanner':
       return null
