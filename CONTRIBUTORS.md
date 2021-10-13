@@ -13,3 +13,4 @@ By contributing to this project you agree to:
 - Jonn Louie Lim
 - Sanket Dive
 - Ramón Huidobro
+- K. Hendrikse
