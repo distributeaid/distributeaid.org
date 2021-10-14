@@ -98,11 +98,11 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
     "netlify:deploy": "netlify deploy -d public -p",
     "prepare": "husky install",
     "test": "jest",
+    "clean": "gatsby clean",
     "gen-types": "graphql-codegen --config codegen.yml"
   }
 }
