@@ -14,3 +14,4 @@ By contributing to this project you agree to:
 - Sanket Dive
 - Ramón Huidobro
 - K. Hendrikse
+- Aaron Pedwell
