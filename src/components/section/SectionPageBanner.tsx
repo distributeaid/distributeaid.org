@@ -7,7 +7,7 @@ interface Props {
   section: ContentfulSitePageSection
 }
 
-const PageBanner: FunctionComponent<Props> = ({ section }) => {
+const SectionPageBanner: FunctionComponent<Props> = ({ section }) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-8 bg-gray-100 px-16 py-20 font-sans text-2xl text-navy-600">
       {section.content &&
@@ -34,4 +34,4 @@ const PageBanner: FunctionComponent<Props> = ({ section }) => {
   )
 }
 
-export default PageBanner
+export default SectionPageBanner

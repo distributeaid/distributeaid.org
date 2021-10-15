@@ -9,7 +9,7 @@ import {
 // import Gallery from './SectionGallery'
 import ImageCarousel from '../carousel/ImageCarousel'
 import Content from '../content/Content'
-import PageBanner from '../content/PageBanner'
+import SectionPageBanner from './SectionPageBanner'
 import SectionStack from './SectionStack'
 
 interface Props {
@@ -40,7 +40,7 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
       return <ImageCarousel section={section} />
 
     case 'PageBanner':
-      return <PageBanner section={section} />
+      return <SectionPageBanner section={section} />
 
     case 'ShipmentBanner':
       return null
