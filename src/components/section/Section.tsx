@@ -39,7 +39,7 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
     case 'HeaderCarousel':
       return <ImageCarousel section={section} />
 
-    case 'SectionPageBanner':
+    case 'PageBanner':
       return <SectionPageBanner section={section} />
 
     case 'ShipmentBanner':
