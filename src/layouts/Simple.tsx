@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import { Helmet } from 'react-helmet'
-// import Breadcrumbs from '../components/nav/Breadcrumbs'
-// import MainMenu from '../components/nav/MainMenu/MainMenu'
+// import Breadcrumbs from '@components/nav/Breadcrumbs'
+// import MainMenu from '@components/nav/MainMenu/MainMenu'
 
 interface Props {
   pageContext: {

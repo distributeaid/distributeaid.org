@@ -48,5 +48,17 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: 'gatsby-alias-imports',
+      options: {
+        aliases: {
+          '@components': 'src/components',
+          '@templates': 'src/templates',
+          '@pages': 'src/pages',
+          '@types': 'src/types',
+          '@layouts': 'src/layouts',
+        },
+      },
+    },
   ],
 }

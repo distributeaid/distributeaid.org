@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react'
 import {
   ContentfulSitePage,
   ContentfulSitePageSection,
-} from '../../types/gatsby-graphql-types.gen'
+} from '@types/gatsby-graphql-types.gen'
+import { FunctionComponent } from 'react'
 // import Row from './SectionRow'
 // import Grid from './SectionGrid'
 // import TableOfContents from './SectionTableOfContents'

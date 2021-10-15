@@ -1,10 +1,10 @@
+import Tabs from '@components/nav/Tabs'
+import Section from '@components/section/Section'
+import DefaultLayout from '@layouts/Default'
+import { ContentfulSitePage } from '@types/gatsby-graphql-types.gen'
+import { PageContext } from '@types/site-types'
 import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
-import Tabs from '../components/nav/Tabs'
-import Section from '../components/section/Section'
-import DefaultLayout from '../layouts/Default'
-import { ContentfulSitePage } from '../types/gatsby-graphql-types.gen'
-import { PageContext } from '../types/site-types'
 
 interface Props {
   pageContext: PageContext

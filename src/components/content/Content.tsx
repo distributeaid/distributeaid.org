@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react'
 import {
   ContentfulContentMarkdownContentfulContentPhotoContentfulContentPreziUnion,
   ContentfulSitePageSection,
-} from '../../types/gatsby-graphql-types.gen'
+} from '@types/gatsby-graphql-types.gen'
+import { FunctionComponent } from 'react'
 import ContentMarkdown from './ContentMarkdown'
 import ContentPhoto from './ContentPhoto'
 import ContentPrezi from './ContentPrezi'

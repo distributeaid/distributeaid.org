@@ -1,7 +1,7 @@
+import SimpleLayout from '@layouts/Simple'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { FunctionComponent } from 'react'
-import SimpleLayout from '../layouts/Simple'
 
 interface Props {
   data: {

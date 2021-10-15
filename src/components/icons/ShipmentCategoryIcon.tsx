@@ -1,5 +1,5 @@
+import { ContentfulDataGeoRegion } from '@types/gatsby-graphql-types.gen'
 import { FunctionComponent } from 'react'
-import { ContentfulDataGeoRegion } from '../../types/gatsby-graphql-types.gen'
 
 const ShipmentCategoryIcon: FunctionComponent<any> = (props) => {
   const shipment: any = props.shipment

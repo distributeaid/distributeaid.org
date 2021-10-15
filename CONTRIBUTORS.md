@@ -15,3 +15,4 @@ By contributing to this project you agree to:
 - Ramón Huidobro
 - K. Hendrikse
 - Aaron Pedwell
+- Maurits Lourens
