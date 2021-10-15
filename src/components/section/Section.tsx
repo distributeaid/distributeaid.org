@@ -9,6 +9,7 @@ import { FunctionComponent } from 'react'
 // import Gallery from './SectionGallery'
 import ImageCarousel from '../carousel/ImageCarousel'
 import Content from '../content/Content'
+import SectionPageBanner from './SectionPageBanner'
 import SectionStack from './SectionStack'
 
 interface Props {
@@ -38,8 +39,8 @@ const Section: FunctionComponent<Props> = ({ page, section }) => {
     case 'HeaderCarousel':
       return <ImageCarousel section={section} />
 
-    case 'MissionBanner':
-      return null
+    case 'PageBanner':
+      return <SectionPageBanner section={section} />
 
     case 'ShipmentBanner':
       return null
