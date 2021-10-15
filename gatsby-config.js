@@ -56,6 +56,7 @@ module.exports = {
           '@templates': 'src/templates',
           '@pages': 'src/pages',
           '@types': 'src/types',
+          '@layouts': 'src/layouts',
         },
       },
     },

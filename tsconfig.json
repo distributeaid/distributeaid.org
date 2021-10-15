@@ -20,7 +20,8 @@
       "@components": ["components"],
       "@templates": ["templates"],
       "@pages": ["pages"],
-      "@types": ["types"]
+      "@types": ["types"],
+      "@layouts": ["layouts"]
     }
   },
   "include": ["src"]
