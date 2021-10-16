@@ -16,3 +16,4 @@ By contributing to this project you agree to:
 - K. Hendrikse
 - Aaron Pedwell
 - Maurits Lourens
+- Iuliu Pop
