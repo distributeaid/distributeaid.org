@@ -1,5 +1,5 @@
+import { ContentfulSitePageSection } from '@types/gatsby-graphql-types.gen'
 import { FunctionComponent } from 'react'
-import { ContentfulSitePageSection } from '../../types/gatsby-graphql-types.gen'
 
 interface Props {
   section: ContentfulSitePageSection

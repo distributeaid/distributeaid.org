@@ -1,5 +1,5 @@
+import { ContentfulContentPrezi } from '@types/gatsby-graphql-types.gen'
 import { FunctionComponent } from 'react'
-import { ContentfulContentPrezi } from '../../types/gatsby-graphql-types.gen'
 
 interface Props {
   content: ContentfulContentPrezi

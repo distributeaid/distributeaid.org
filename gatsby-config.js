@@ -30,13 +30,11 @@ module.exports = {
   pathPrefix: '/',
 
   plugins: [
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
@@ -48,6 +46,18 @@ module.exports = {
         isTSX: true, // defaults to false
         jsxPragma: `jsx`, // defaults to "React"
         allExtensions: true, // defaults to false
+      },
+    },
+    {
+      resolve: 'gatsby-alias-imports',
+      options: {
+        aliases: {
+          '@components': 'src/components',
+          '@templates': 'src/templates',
+          '@pages': 'src/pages',
+          '@types': 'src/types',
+          '@layouts': 'src/layouts',
+        },
       },
     },
   ],

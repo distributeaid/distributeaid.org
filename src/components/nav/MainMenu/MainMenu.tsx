@@ -1,7 +1,7 @@
+import { ContentfulSiteSite } from '@types/gatsby-graphql-types.gen'
+import { PageContext } from '@types/site-types'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import { FunctionComponent } from 'react'
-import { ContentfulSiteSite } from '../../../types/gatsby-graphql-types.gen'
-import { PageContext } from '../../../types/site-types'
 import BrandMark from '../../brand/BrandMark'
 import DesktopNavigation from './MainMenuDesktop'
 import MobileNavigation from './MainMenuMobile'
@@ -70,7 +70,7 @@ const MainMenu: FunctionComponent<Props> = ({ pageContext }) => {
         <MobileNavigation navLinks={links} />
         <div className="flex items-center">
           <Link to="/" className="text-white" aria-label="Go to the home page">
-            <BrandMark flavor="white" layout="logo" className="block h-8" />
+            <BrandMark flavor="white" layout="logo" className="block" />
           </Link>
         </div>
         <DesktopNavigation navLinks={links} />

@@ -1,7 +1,7 @@
+import { Flavors } from '@types/display-option-types'
+import { ContentfulSiteSite } from '@types/gatsby-graphql-types.gen'
 import { graphql, useStaticQuery } from 'gatsby'
 import { FunctionComponent } from 'react'
-import { Flavors } from '../../types/display-option-types'
-import { ContentfulSiteSite } from '../../types/gatsby-graphql-types.gen'
 
 export type BrandMarkLayouts = 'logo' | 'lettermark' | 'wordmark'
 

@@ -1,6 +1,6 @@
+import { PageContext } from '@types/site-types'
 import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
-import { PageContext } from '../../types/site-types'
 import { NavLinkItem } from './MainMenu/MainMenu'
 
 interface Props {

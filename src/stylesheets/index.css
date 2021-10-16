@@ -4,3 +4,37 @@
 @tailwind utilities;
 
 @import './burger.css';
+
+.team-page-container {
+  width: 70%;
+  margin: auto;
+}
+
+.team-and-title {
+  margin-top: 1em;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.volunteer {
+  width: 300px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  margin: 5px;
+}
+
+.volunteer-image-container {
+  width: 299px;
+  height: 299px;
+}
+
+.volunteer-image {
+  height: 299px;
+  width: 298px;
+}

@@ -1,9 +1,9 @@
+import Section from '@components/section/Section'
+import DefaultLayout from '@layouts/Default'
+import { ContentfulSitePage } from '@types/gatsby-graphql-types.gen'
+import { PageContext } from '@types/site-types'
 import { graphql } from 'gatsby'
 import { FunctionComponent } from 'react'
-import Section from '../components/section/Section'
-import DefaultLayout from '../layouts/Default'
-import { ContentfulSitePage } from '../types/gatsby-graphql-types.gen'
-import { PageContext } from '../types/site-types'
 
 interface Props {
   pageContext: PageContext
@@ -19,6 +19,10 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
     ...pageData,
   }
   const page = pageContext.page
+  console.log('page')
+  console.log(page)
+  console.log('pageContext')
+  console.log(pageContext)
 
   return (
     <DefaultLayout pageContext={pageContext}>
