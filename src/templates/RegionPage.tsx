@@ -16,6 +16,18 @@ interface Props {
   }
 }
 
+interface Totals {
+  shipmentsCount: number
+  C02: number
+  commercialValue: number
+  weight: number
+  distance: number
+}
+
+function formatNumber(number: number) {
+  return new Intl.NumberFormat('en-US').format(number)
+}
+
 const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
   const pageContext = {
     pageTitle: 'TODO',
@@ -41,6 +53,25 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
     [],
   )
 
+  const totals: Totals = allShipments.reduce(
+    (accumulator: Totals, shipment: any) => {
+      accumulator.C02 += shipment.totalC02
+      accumulator.commercialValue += shipment.totalCommercialValue
+      accumulator.weight += shipment.totalWeight
+      accumulator.distance += shipment.totalDistance
+      accumulator.shipmentsCount += 1
+
+      return accumulator
+    },
+    {
+      C02: 0,
+      commercialValue: 0,
+      weight: 0,
+      distance: 0,
+      shipmentsCount: 0,
+    },
+  )
+
   return (
     <SimpleLayout pageContext={pageContext}>
       {/* page header */}
@@ -55,34 +86,53 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
         image={region.mapPhoto?.gatsbyImageData}
         alt="Map of {region.name}"
       />
-      <h1 className="text-xl">All Shipments</h1>
-      <table>
+      <h1 className="text-xl">{totals.shipmentsCount} Shipments</h1>
+      <table className="table-auto">
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Date Delivered</th>
-            <th>Total Com. Value</th>
-            <th>Total Weight (kg)</th>
-            <th>Total Distance (km)</th>
-            <th>Total CO2 (Tons)</th>
+          <tr className="border-b-2 border-navy-900 bg-navy-800 text-white">
+            <th className="px-8 py-2">Title</th>
+            <th className="px-8 py-2">Category</th>
+            <th className="px-8 py-2">Date Delivered</th>
+            <th className="px-8 py-2">Total Com. Value</th>
+            <th className="px-8 py-2">Total Weight (kg)</th>
+            <th className="px-8 py-2">Total Distance (km)</th>
+            <th className="px-8 py-2">Total CO2 (Tons)</th>
+          </tr>
+          <tr className="text-left bg-navy-800 text-white border-b-2 border-navy-900">
+            <th className="px-8 py-2">Totals:</th>
+            <th className="px-8 py-2">---</th>
+            <th className="px-8 py-2">---</th>
+            <th className="px-8 py-2">
+              {formatNumber(totals.commercialValue)}
+            </th>
+            <th className="px-8 py-2">{formatNumber(totals.weight)}</th>
+            <th className="px-8 py-2">{formatNumber(totals.distance)}</th>
+            <th className="px-8 py-2">{formatNumber(totals.C02)}</th>
           </tr>
         </thead>
-        {allShipments.map((shipment) => {
-          return (
-            <tr>
-              <td>{shipment.name}</td>
-              <td>
-                <ShipmentCategoryIcon shipment={shipment} region={region} />
-              </td>
-              <td>{shipment.deliveredOn}</td>
-              <td>{shipment.totalCommercialValue}</td>
-              <td>{shipment.totalWeight}</td>
-              <td>{shipment.totalDistance}</td>
-              <td>{shipment.totalC02}</td>
-            </tr>
-          )
-        })}
+        <tbody>
+          {allShipments.map((shipment) => {
+            return (
+              <tr className="even:bg-navy-200 ">
+                <td className="px-8 py-2">{shipment.name}</td>
+                <td className="px-8 py-2">
+                  <ShipmentCategoryIcon shipment={shipment} region={region} />
+                </td>
+                <td className="px-8 py-2">{shipment.deliveredOn}</td>
+                <td className="px-8 py-2">
+                  {formatNumber(shipment.totalCommercialValue)}
+                </td>
+                <td className="px-8 py-2">
+                  {formatNumber(shipment.totalWeight)}
+                </td>
+                <td className="px-8 py-2">
+                  {formatNumber(shipment.totalDistance)}
+                </td>
+                <td className="px-8 py-2">{formatNumber(shipment.totalC02)}</td>
+              </tr>
+            )
+          })}
+        </tbody>
       </table>
 
       {/* page footer */}
