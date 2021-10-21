@@ -70,3 +70,6 @@ public
 
 # Local Netlify folder
 .netlify
+
+#idea
+.idea/

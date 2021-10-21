@@ -7,6 +7,7 @@ import {
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FunctionComponent } from 'react'
+import { calculateTotalsShipments, Totals } from '../utils/totals-helper'
 
 interface Props {
   data: {
@@ -14,14 +15,6 @@ interface Props {
     toRegions: AllContentfulDataImpactShipment
     fromRegions: AllContentfulDataImpactShipment
   }
-}
-
-interface Totals {
-  shipmentsCount: number
-  C02: number
-  commercialValue: number
-  weight: number
-  distance: number
 }
 
 function formatNumber(number: number) {
@@ -53,24 +46,7 @@ const RegionPageTemplate: FunctionComponent<Props> = ({ data }) => {
     [],
   )
 
-  const totals: Totals = allShipments.reduce(
-    (accumulator: Totals, shipment: any) => {
-      accumulator.C02 += shipment.totalC02
-      accumulator.commercialValue += shipment.totalCommercialValue
-      accumulator.weight += shipment.totalWeight
-      accumulator.distance += shipment.totalDistance
-      accumulator.shipmentsCount += 1
-
-      return accumulator
-    },
-    {
-      C02: 0,
-      commercialValue: 0,
-      weight: 0,
-      distance: 0,
-      shipmentsCount: 0,
-    },
-  )
+  const totals: Totals = calculateTotalsShipments(allShipments)
 
   return (
     <SimpleLayout pageContext={pageContext}>
