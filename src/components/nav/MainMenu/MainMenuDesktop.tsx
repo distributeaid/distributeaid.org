@@ -8,7 +8,7 @@ interface Props {
 
 const DesktopNavigation: FunctionComponent<Props> = ({ navLinks }) => {
   return (
-    <nav role="navigation" className="hidden md:block w-full">
+    <nav role="navigation" className="hidden md:block">
       <ul className="pl-6 flex space-x-2">
         {navLinks.map((link) => (
           <li key={link.path}>

@@ -68,8 +68,12 @@ const MainMenu: FunctionComponent<Props> = ({ pageContext }) => {
     <header className="py-2 bg-navy-800 h-nav sticky top-0">
       <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
         <MobileNavigation navLinks={links} />
-        <div className="flex items-center">
-          <Link to="/" className="text-white" aria-label="Go to the home page">
+        <div className="flex items-center w-16 h-16">
+          <Link
+            to="/"
+            className="text-white w-full h-full"
+            aria-label="Go to the home page"
+          >
             <BrandMark flavor="white" layout="logo" className="block" />
           </Link>
         </div>
