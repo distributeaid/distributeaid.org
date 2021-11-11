@@ -72,7 +72,7 @@
     "jest-extended": "0.11.5",
     "netlify-cli": "3.37.36",
     "postcss": "8.3.5",
-    "ts-jest": "27.0.4"
+    "ts-jest": "27.0.7"
   },
   "engines": {
     "node": ">=14.0.0",
