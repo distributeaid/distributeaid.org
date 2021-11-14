@@ -62,7 +62,6 @@ const BrandMark: FunctionComponent<Props> = ({
   return (
     <div className={className}>
       <img src={logo.file.url} alt={`${logo.title}`} />
-      <h3>{logo.title}</h3>
     </div>
   )
 }
