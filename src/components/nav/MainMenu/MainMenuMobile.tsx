@@ -56,6 +56,13 @@ const MobileNavigation: FunctionComponent<Props> = ({ navLinks }) => {
             </Link>
           </li>
         ))}
+
+        <Link
+          to="/donate"
+          className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
+        >
+          Donate
+        </Link>
       </ul>
     </nav>
   )
