@@ -8,8 +8,8 @@
     "url": "https://github.com/distributeaid/distributeaid.org/issues"
   },
   "dependencies": {
-    "@nivo/core": "0.67.0",
-    "@nivo/sunburst": "0.67.0",
+    "@nivo/core": "0.74.0",
+    "@nivo/sunburst": "0.74.0",
     "@types/classnames": "2.3.1",
     "@types/lodash": "4.14.176",
     "@types/node": "14.17.3",
