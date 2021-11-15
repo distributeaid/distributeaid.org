@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // we can also use tailwind's other pallets, such as coolGray for text
+        // we can also use tailwind's other palettes, such as coolGray for text
         navy: {
           900: '#051E5E',
           800: '#082B76',

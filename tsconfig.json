@@ -17,11 +17,11 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@components": ["components"],
-      "@templates": ["templates"],
-      "@pages": ["pages"],
-      "@types": ["types"],
-      "@layouts": ["layouts"]
+      "@components/*": ["components/*"],
+      "@templates/*": ["templates/*"],
+      "@pages/*": ["pages/*"],
+      "@types/*": ["types/*"],
+      "@layouts/*": ["layouts/*"]
     }
   },
   "include": ["src"]
