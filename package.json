@@ -15,7 +15,7 @@
     "@types/node": "14.17.3",
     "@types/react": "17.0.34",
     "@types/react-dom": "17.0.11",
-    "@types/react-table": "7.7.1",
+    "@types/react-table": "7.7.8",
     "@types/tailwindcss": "2.2.4",
     "classnames": "2.3.1",
     "gatsby": "3.14.5",
