@@ -8,12 +8,12 @@ const ShipmentCategoryIcon: FunctionComponent<any> = (props) => {
 
   // fromSubregions might be null, guard against that
   const isOutgoing: Boolean = (fromSubregions || []).find((subregion: any) => {
-    return subregion.region.contentful_id === region.contentful_id
+    return subregion.region?.contentful_id === region.contentful_id
   })
 
   // toSubregions might be null, guard against that
   const isIncoming: Boolean = (toSubregions || []).find((subregion: any) => {
-    return subregion.region.contentful_id === region.contentful_id
+    return subregion.region?.contentful_id === region.contentful_id
   })
 
   if (isOutgoing && isIncoming) {
