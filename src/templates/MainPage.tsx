@@ -18,6 +18,7 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
     ...pageContext.page,
     ...pageData,
   }
+
   const page = pageContext.page
 
   return (
@@ -41,11 +42,6 @@ const MainPageTemplate: FunctionComponent<Props> = ({ pageContext, data }) => {
             />
           )
         })}
-
-      {/* page footer */}
-      <footer>
-        <p>{page.updatedAt}</p>
-      </footer>
     </DefaultLayout>
   )
 }

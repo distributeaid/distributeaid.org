@@ -1,3 +1,4 @@
+import Footer from '@components/Footer'
 import Breadcrumbs from '@components/nav/Breadcrumbs'
 import MainMenu from '@components/nav/MainMenu/MainMenu'
 import { PageContext } from '@types/site-types'
@@ -34,7 +35,7 @@ const DefaultLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
         <Breadcrumbs pageContext={pageContext} />
       </header>
       <main>{children}</main>
-      <footer>Footer</footer>
+      <Footer />
     </>
   )
 }
