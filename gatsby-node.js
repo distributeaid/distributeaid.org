@@ -1,4 +1,3 @@
-const Promise = require('bluebird')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
