@@ -25,8 +25,8 @@ const Footer: FC = () => (
         src="../images/become_a_patron_button.png"
         alt="Patreon logo"
         layout="fixed"
-        height={58}
-        width={250}
+        height={51}
+        width={217}
       />
     </a>
     <div className="my-4">
