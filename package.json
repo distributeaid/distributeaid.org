@@ -11,7 +11,7 @@
     "@nivo/core": "0.74.0",
     "@nivo/sunburst": "0.74.0",
     "@types/classnames": "2.3.1",
-    "@types/lodash": "4.14.176",
+    "@types/lodash": "4.14.177",
     "@types/node": "14.17.3",
     "@types/react": "17.0.34",
     "@types/react-dom": "17.0.11",
