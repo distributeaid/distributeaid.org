@@ -5,10 +5,6 @@ import LinkedInIcon from '@components/icons/LinkedInIcon'
 import InstagramIcon from '@components/icons/InstagramIcon'
 import TwitterIcon from '@components/icons/TwitterIcon'
 
-export function Dino() {
-  return <StaticImage src="../images/dino.png" alt="A dinosaur" />
-}
-
 const Footer: FC = () => (
   <footer
     style={{ background: '#F3F4F6' }}
