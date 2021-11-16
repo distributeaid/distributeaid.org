@@ -1,6 +1,4 @@
-import { ContentfulSiteSite } from '@types/gatsby-graphql-types.gen'
-import { PageContext } from '@types/site-types'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
 import BrandMark from '../../brand/BrandMark'
 import DesktopNavigation from './MainMenuDesktop'
@@ -11,73 +9,40 @@ export interface NavLinkItem {
   path: string
 }
 
-interface Props {
-  pageContext: PageContext
-}
-
-interface MainMenuData {
-  contentfulSiteSite: ContentfulSiteSite
-}
-
 /**
  * A full-width element that sits at the top of the page. It displays the DA
  * branding and a dropdown-menu with some account information.
  */
-const MainMenu: FunctionComponent<Props> = ({ pageContext }) => {
-  const data: MainMenuData = useStaticQuery(graphql`
-    query MainMenuQuery {
-      contentfulSiteSite {
-        contentful_id
-
-        mainMenu {
-          contentful_id
-          title
-          flavor
-          layout
-
-          links {
-            contentful_id
-            label
-            type
-
-            toPage {
-              contentful_id
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const { mainMenu } = data.contentfulSiteSite
-  const links: NavLinkItem[] = []
-  if (mainMenu && mainMenu.links) {
-    mainMenu.links.forEach((link) => {
-      if (!link || !link.label || !link.toPage) {
-        return
-      }
-      const navLink: NavLinkItem = {
-        title: link.label,
-        path: pageContext.pageLookup[link.toPage.contentful_id].path,
-      }
-      links.push(navLink)
-    })
-  }
+const MainMenu: FunctionComponent = () => {
+  const linksHardcoded: NavLinkItem[] = [
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'Who We Are',
+      path: '/who-we-are/',
+    },
+    {
+      title: 'What We Do',
+      path: '/what-we-do',
+    },
+    {
+      title: 'Get Involved',
+      path: '/get-involved',
+    },
+  ]
 
   return (
     <header className="py-2 bg-navy-800 h-nav sticky top-0">
       <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
-        <MobileNavigation navLinks={links} />
+        <MobileNavigation navLinks={linksHardcoded} />
         <div className="flex items-center w-16 h-16">
-          <Link
-            to="/"
-            className="text-white w-full h-full"
-            aria-label="Go to the home page"
-          >
-            <BrandMark flavor="white" layout="logo" className="block" />
+          <Link to="/" className="text-white" aria-label="Go to the home page">
+            <BrandMark flavor="white" layout="logo" />
           </Link>
         </div>
-        <DesktopNavigation navLinks={links} />
+        <DesktopNavigation navLinks={linksHardcoded} />
       </div>
     </header>
   )

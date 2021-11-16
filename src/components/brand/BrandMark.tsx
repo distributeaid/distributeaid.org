@@ -12,13 +12,11 @@ interface LogosData {
 interface Props {
   flavor?: Flavors
   layout?: BrandMarkLayouts
-  className?: string
 }
 
 const BrandMark: FunctionComponent<Props> = ({
   flavor = 'white',
   layout = 'logo',
-  className = '',
 }) => {
   const data: LogosData = useStaticQuery(graphql`
     query BrandMarkQuery {
@@ -60,9 +58,7 @@ const BrandMark: FunctionComponent<Props> = ({
   }
 
   return (
-    <div className={className}>
-      <img src={logo.file.url} alt={`${logo.title}`} />
-    </div>
+    <img src={logo.file.url} alt={`${logo.title}`} width="50" height="42.5" />
   )
 }
 

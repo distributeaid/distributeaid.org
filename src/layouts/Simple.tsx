@@ -28,7 +28,7 @@ const SimpleLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
       {/* site level header / body / footer */}
       <header>
         {/*
-          <MainMenu pageContext={pageContext} />
+          <MainMenu />
           <Breadcrumbs pageContext={pageContext} />
         */}
         Site Header
