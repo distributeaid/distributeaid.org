@@ -13,13 +13,22 @@ import vanIcon from '../../images/routes/icons/noun_Van_485356.svg'
 import halfPalletIcon from '../../images/routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../../images/routes/icons/noun_Pallet_3307940.svg'
 
+import palletStorageBackground from './pallet-storage.jpg'
+import forkliftLoadingBackground from './forklift-loading.jpg'
+import collectionBackground from './collection-and-sorting.jpg'
+import mobileRefugeeSupportBackground from './mobile-refugee-support-distribution.jpg'
+import calaisUnloadingBackground from './calais-food-collective-unloading.jpg'
+
 const UkToFrance: FC = () => {
   return (
     <RouteLayout>
       <Helmet>
         <title>Route: UK to France</title>
       </Helmet>
-      <section className="text-navy-700 section section--above-the-fold min-h-screen flex justify-start items-stretch section--content-left bg--img-cover bg--img-forklift-loading">
+      <section
+        className="text-navy-700 section section--above-the-fold flex justify-start items-stretch section--content-left bg--img-cover bg--img-forklift-loading"
+        style={{ backgroundImage: `url(${forkliftLoadingBackground})` }}
+      >
         <div className="section__content bg-white">
           <header className="section__header">
             <h1 className="section__title">
@@ -127,6 +136,7 @@ const UkToFrance: FC = () => {
       <section
         id="reserve-your-spot"
         className="text-navy-700 section section--content-right bg--img-cover bg--img-pallet-storage"
+        style={{ backgroundImage: `url(${palletStorageBackground})` }}
       >
         <div className="section__content bg-white">
           <header className="section__header">
@@ -271,6 +281,7 @@ const UkToFrance: FC = () => {
       <section
         id="frontline-groups"
         className="text-navy-700 section flex justify-start items-stretch section--content-left bg--img-cover bg--img-mrs-distro"
+        style={{ backgroundImage: `url(${mobileRefugeeSupportBackground})` }}
       >
         <div className="section__content bg-white">
           <header className="section__header">
@@ -463,6 +474,7 @@ const UkToFrance: FC = () => {
       <section
         id="storage-and-shipping-charge"
         className="text-navy-700 section flex justify-start items-stretch section--content-left bg--img-cover bg--img-cfc-unloading"
+        style={{ backgroundImage: `url(${calaisUnloadingBackground})` }}
       >
         <div className="section__content bg-white">
           <header className="section__header">
@@ -566,6 +578,7 @@ const UkToFrance: FC = () => {
       <section
         id="all-about-pallets"
         className="text-navy-700 section section--content-right bg--img-cover bg--img-collection-and-sorting"
+        style={{ backgroundImage: `url(${collectionBackground})` }}
       >
         <div className="section__content bg-white">
           <header className="section__header">
