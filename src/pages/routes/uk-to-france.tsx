@@ -19,7 +19,7 @@ const UkToFrance: FC = () => {
       <Helmet>
         <title>Route: UK to France</title>
       </Helmet>
-      <section className="text-navy-700 section section--above-the-fold relative min-h-screen flex justify-start items-stretch section--content-left bg--img-cover bg--img-forklift-loading">
+      <section className="text-navy-700 section section--above-the-fold min-h-screen flex justify-start items-stretch section--content-left bg--img-cover bg--img-forklift-loading">
         <div className="section__content bg-white">
           <header className="section__header">
             <h1 className="section__title">

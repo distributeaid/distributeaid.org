@@ -1,7 +1,17 @@
 import React, { FC } from 'react'
 import { Helmet } from 'react-helmet'
+import { StaticImage } from 'gatsby-plugin-image'
 import RouteLayout from '../../layouts/Route'
 import logoSrc from '../../images/lettermark_blue.svg'
+import netIcon from '../../images/routes/icons/noun_net_2428552.svg'
+import mapIcon from '../../images/routes/icons/noun_Maps_3610706.svg'
+import truckIcon from '../../images/routes/icons/noun_Truck_1731459.svg'
+import heartBillIcon from '../../images/routes/icons/noun_Heart_Bill_98293.svg'
+import halfPalletIcon from '../../images/routes/icons/noun_Pallet_3364535.svg'
+import palletIcon from '../../images/routes/icons/noun_Pallet_3307940.svg'
+import boxIcon from '../../images/routes/icons/noun_Box_1897159.svg'
+import sackIcon from '../../images/routes/icons/noun_sack_1468937.svg'
+import vanIcon from '../../images/routes/icons/noun_Van_485356.svg'
 
 const UkToLebanon: FC = () => {
   return (
@@ -9,7 +19,7 @@ const UkToLebanon: FC = () => {
       <Helmet>
         <title>Route: UK to Lebanon</title>
       </Helmet>
-      <section className="text-navy-700 relative min-h-screen flex justify-start items-stretch bg--img-cover bg--img-free-shop-unloading">
+      <section className="text-navy-700 section section--above-the-fold section--content-left min-h-screen flex justify-start items-stretch bg--img-cover bg--img-free-shop-unloading">
         <div className="section__content bg--white">
           <header className="section__header">
             <h1 className="section__title">
@@ -28,13 +38,13 @@ const UkToLebanon: FC = () => {
           </header>
 
           <div className="section__body">
-            <p>
+            <p className="mb-4">
               Distribute Aid is organising a shipment of humanitarian aid
               between the UK and Lebanon. We won't let pandemics or global
               supply chain disruptions stop the flow of aid to those who need it
               most! &#9829;
             </p>
-            <p>
+            <p className="mb-4">
               If you're here because you want to donate goods for displaced
               peoples in Lebanon-{' '}
               <strong className="text-uppercase">thank you!</strong> Groups on
@@ -43,11 +53,11 @@ const UkToLebanon: FC = () => {
             </p>
 
             <div className="tiles tiles--grid tiles--highlight">
-              <div className="tile tile--column col-6">
-                <div className="tile-icon">
+              <div className="tile tile--column w-1/2">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_net_2428552.svg"
+                    src={netIcon}
                     alt="Hub Icon: Multiple nodes connected to a center hub."
                   />
                 </div>
@@ -57,11 +67,11 @@ const UkToLebanon: FC = () => {
                 </div>
               </div>
 
-              <div className="tile tile--column col-6">
-                <div className="tile-icon">
+              <div className="tile tile--column w-1/2">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Maps_3610706.svg"
+                    src={mapIcon}
                     alt="Map Icon: A destination marker on a map."
                   />
                 </div>
@@ -71,11 +81,11 @@ const UkToLebanon: FC = () => {
                 </div>
               </div>
 
-              <div className="tile tile--column col-6">
-                <div className="tile-icon">
+              <div className="tile tile--column w-1/2">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Shipping_2027289.svg"
+                    src={truckIcon}
                     alt="Ship Icon: A container ship in motion."
                   />
                 </div>
@@ -85,11 +95,11 @@ const UkToLebanon: FC = () => {
                 </div>
               </div>
 
-              <div className="tile tile--column col-6">
-                <div className="tile-icon">
+              <div className="tile tile--column w-1/2">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Heart_Bill_98293.svg"
+                    src={heartBillIcon}
                     alt="Money Icon: A currency bill with a heart in the middle."
                   />
                 </div>
@@ -128,8 +138,10 @@ const UkToLebanon: FC = () => {
           <div className="section__body">
             <ol className="stages list--unstyled">
               <li className="stage stage--active">
-                <h4>1) Submit Your Aid Delivery Request</h4>
-                <p>
+                <h4 className="text-lg font-semibold mb-4">
+                  1) Submit Your Aid Delivery Request
+                </h4>
+                <p className="mb-4">
                   Download the{' '}
                   <a
                     className="stage-action"
@@ -141,7 +153,7 @@ const UkToLebanon: FC = () => {
                   </a>{' '}
                   and fill it in.
                 </p>
-                <p>
+                <p className="mb-4">
                   Email the completed form to{' '}
                   <a
                     className="stage-action"
@@ -154,22 +166,30 @@ const UkToLebanon: FC = () => {
                   . Your local Staging Hub will receive it and follow up if
                   there are any questions.
                 </p>
-                <p className="h5">Submissions Close: Sunday, May 9th</p>
+                <p className="h5">
+                  Submissions Close: Sunday, 21st November 2021
+                </p>
               </li>
               <li className="stage">
-                <h4>2) Consult Frontline Groups</h4>
-                <p>
+                <h4 className="text-lg font-semibold mb-4">
+                  2) Consult Frontline Groups
+                </h4>
+                <p className="mb-4">
                   We'll check in with the frontline groups after the form
                   submission deadline, to prioritise deliveries that meet their
                   biggest needs and build a manifest for the upcoming shipment
                   with their input. Then we can confirm if you have a place
                   reserved on the next container.
                 </p>
-                <p className="h5">Confirmation Date: Friday, May 14th</p>
+                <p className="h5">
+                  Confirmation Date: Wednesday, 24th November 2021
+                </p>
               </li>
               <li className="stage">
-                <h4>3) Drop Off @ Staging Hubs</h4>
-                <p>
+                <h4 className="text-lg font-semibold mb-4">
+                  3) Drop Off @ Staging Hubs
+                </h4>
+                <p className="mb-4">
                   Schedule a drop-off appointment with your local Staging Hub,
                   pay them the flat-rate{' '}
                   <a href="#storage-and-shipping-charge">
@@ -177,18 +197,24 @@ const UkToLebanon: FC = () => {
                   </a>
                   , and deliver the boxes of aid at the agreed time.
                 </p>
-                <p className="h5">Staging Period: May 22nd - May 29th</p>
+                <p className="h5">
+                  Staging Period: 27th November - 2nd December 2021
+                </p>
               </li>
               <li className="stage">
-                <h4>4) Deliver The Aid</h4>
-                <p>
+                <h4 className="text-lg font-semibold mb-4">
+                  4) Deliver The Aid
+                </h4>
+                <p className="mb-4">
                   <strong>And that's it!</strong> Take an evening off to
                   celebrate a job well done, we got it from here. Once your aid
                   is delivered we'll follow up with an after-shipment report,
                   including photos and acknowledgments from the frontline
                   groups.
                 </p>
-                <p className="h5">Container Departs: Monday, May 30th</p>
+                <p className="h5">
+                  Container Departs: Friday, 3rd November 2021
+                </p>
               </li>
             </ol>
           </div>
@@ -212,7 +238,7 @@ const UkToLebanon: FC = () => {
 
       <section
         id="frontline-groups"
-        className="section flex justify-start items-stretch bg--img-cover bg--img-its-lebanon"
+        className="section section--content-left flex justify-start items-stretch bg--img-cover bg--img-its-lebanon"
       >
         <div className="section__content bg--white">
           <header className="section__header">
@@ -223,9 +249,11 @@ const UkToLebanon: FC = () => {
             <div className="tiles tiles--grid tiles--highlight">
               <div className="tile tile--column col-3">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={140}
+                    width={140}
                     className="icon icon--responsive"
-                    src="./frontline-logos/the-free-shop-logo.392.png"
+                    src="../../images/routes/the-free-shop-logo.392.png"
                     alt="Frontline Group Logo: The Free Shop"
                   />
                 </div>
@@ -233,9 +261,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-7">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={85}
+                    width={360}
                     className="icon icon--responsive"
-                    src="./frontline-logos/beirut-celebrations-logo.1061x256.png"
+                    src="../../images/routes/beirut-celebrations-logo.1061x256.png"
                     alt="Frontline Group Logo: Beirut Celebrations"
                   />
                 </div>
@@ -243,9 +273,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-7">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={180}
+                    width={360}
                     className="icon icon--responsive"
-                    src="./frontline-logos/ema-logo.512x256.jpg"
+                    src="../../images/routes/ema-logo.512x256.jpg"
                     alt="Frontline Group Logo: Endless Medical Advantage (EMA)"
                   />
                 </div>
@@ -253,9 +285,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-3">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={145}
+                    width={145}
                     className="icon icon--responsive"
-                    src="./frontline-logos/live-love-beirut-logo.256.png"
+                    src="../../images/routes/live-love-beirut-logo.256.png"
                     alt="Frontline Group Logo: Live Love Beirut"
                   />
                 </div>
@@ -263,9 +297,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-6 col-mx-auto">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={168}
+                    width={300}
                     className="icon icon--responsive"
-                    src="./frontline-logos/wing-woman-logo.300x168.jpg"
+                    src="../../images/routes/wing-woman-logo.300x168.jpg"
                     alt="Frontline Group Logo: Wing Woman"
                   />
                 </div>
@@ -273,9 +309,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-6 col-mx-auto">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={173}
+                    width={307}
                     className="icon icon--responsive"
-                    src="./frontline-logos/arcenciel-logo.455x256.jpg"
+                    src="../../images/routes/arcenciel-logo.455x256.jpg"
                     alt="Frontline Group Logo: Arcenciel"
                   />
                 </div>
@@ -283,9 +321,11 @@ const UkToLebanon: FC = () => {
 
               <div className="tile tile--column col-6 col-mx-auto">
                 <div className="tile-icon tile-icon--auto">
-                  <img
+                  <StaticImage
+                    height={82}
+                    width={262}
                     className="icon icon--responsive"
-                    src="./frontline-logos/shaabe-logo.262x82.jpg"
+                    src="../../images/routes/shaabe-logo.262x82.jpg"
                     alt="Frontline Group Logo: Shaabe"
                   />
                 </div>
@@ -311,16 +351,16 @@ const UkToLebanon: FC = () => {
         </div>
       </section>
 
-      <div className="display-flex">
-        <div className="col-6 col-sm-12">
+      <div className="flex">
+        <div className="w-full md:w-1/2">
           <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1ZRALkbEQoigOjaT5tFEgJtVFkXBOW6LM"
             width="100%"
             height="100%"
-          ></iframe>
+          />
         </div>
 
-        <section id="uk-staging-hubs" className="section col-6 col-sm-12">
+        <section id="uk-staging-hubs" className="section w-full md:w-1/2">
           <div className="section__content bg--white">
             <header className="section__header">
               <h1 className="section__title">UK Staging Hubs</h1>
@@ -340,16 +380,17 @@ const UkToLebanon: FC = () => {
               </p>
 
               <div className="tiles tiles--column tiles--highlight">
-                <div className="tile">
-                  <div className="tile-icon">
-                    <img
-                      className="icon icon--responsive"
-                      src="./hub-logos/camcrag-logo.jpg"
-                      alt="Hub Logo: Cambridge Convoy Refugee Action Group (CamCRAG)"
+                <div className="tile flex">
+                  <div className="tile-icon flex-shrink-0">
+                    <StaticImage
+                      src="../../images/routes/pallet-aid-logo.256.png"
+                      alt="Hub Logo: Pallet Aid (PA)"
+                      height={80}
+                      width={80}
                     />
                   </div>
                   <div className="tile-content">
-                    <p className="tile-title">Cambridge - South England</p>
+                    <p className="tile-title">Cambridgeshire</p>
                     <p>Both Community &amp; Commercial Aid</p>
                     <p className="text-italic">
                       pallets, loose boxes, bulk bags of tents &amp; sleeping
@@ -379,7 +420,7 @@ const UkToLebanon: FC = () => {
 
       <section
         id="storage-and-shipping-charge"
-        className="section flex justify-start items-stretch bg--img-cover bg--img-forklift-loading-2"
+        className="section--content-left section flex justify-start items-stretch bg--img-cover bg--img-forklift-loading-2"
       >
         <div className="section__content bg--white">
           <header className="section__header">
@@ -396,10 +437,10 @@ const UkToLebanon: FC = () => {
 
             <div className="tiles tiles--row tiles--highlight">
               <div className="tile tile--column">
-                <div className="tile-icon">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Pallet_3307940.svg"
+                    src={palletIcon}
                     alt="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
                   />
                 </div>
@@ -411,10 +452,10 @@ const UkToLebanon: FC = () => {
               </div>
 
               <div className="tile tile--column">
-                <div className="tile-icon">
+                <div className="tile-icon mx-auto">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Pallet_3364535.svg"
+                    src={halfPalletIcon}
                     alt="Half Pallet Icon: 3 boxes stacked in a pyramid on a pallet."
                   />
                 </div>
@@ -426,7 +467,9 @@ const UkToLebanon: FC = () => {
               </div>
             </div>
 
-            <h3>What if my aid doesn't fit exactly?</h3>
+            <h3 className="text-xl font-medium">
+              What if my aid doesn't fit exactly?
+            </h3>
 
             <ul>
               <li>
@@ -436,7 +479,7 @@ const UkToLebanon: FC = () => {
               <li>
                 We reserve 2 pallets worth of space on each truck for overflow,
                 so if you have slightly more then a Standard Pallet's worth of
-                aid that's ok! Overflow pricing is £2.50 per banana box (500mm x
+                aid that's ok! Overflow pricing is £6 per banana box (500mm x
                 400mm x 250mm high, holds 15kg).
               </li>
               <li>
@@ -464,13 +507,16 @@ const UkToLebanon: FC = () => {
               </li>
             </ul>
 
-            <h3>When will prices be set?</h3>
+            <h3 className="text-xl font-medium mt-12 mb-4">
+              How are contribution prices set?
+            </h3>
 
             <p>
-              This is a new route, so we are currently comparing quotes from our
-              commercial partners. Our goal is to provide the best possible flat
-              rate for sending groups! We will reach out to all groups who have
-              had their aid offers matched to confirm pricing as soon as we can.
+              Our goal is to provide the best possible flat rate for sending
+              groups! The current contribution prices are based on shipping
+              prices so far this year. As of November/December 2021, the
+              price/pallet is currently set at £250, covering shipping, storage
+              and anticipated taxes.
             </p>
           </div>
 
@@ -502,11 +548,11 @@ const UkToLebanon: FC = () => {
             <h3>How many Standard Pallet spaces do I need?</h3>
 
             <div className="tiles tiles--column tiles--highlight">
-              <div className="tile">
-                <div className="tile-icon">
+              <div className="tile flex">
+                <div className="tile-icon w-20 flex-shrink-0">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Van_485356.svg"
+                    src={vanIcon}
                     alt="Van Icon: The Calais classic."
                   />
                 </div>
@@ -519,11 +565,11 @@ const UkToLebanon: FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="tile">
-                <div className="tile-icon">
+              <div className="tile flex">
+                <div className="tile-icon w-20 flex-shrink-0">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_sack_1468937.svg"
+                    src={sackIcon}
                     alt="Bulk Bag Icon: A large sack."
                   />
                 </div>
@@ -549,11 +595,11 @@ const UkToLebanon: FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="tile">
-                <div className="tile-icon">
+              <div className="tile flex">
+                <div className="tile-icon w-20 flex-shrink-0">
                   <img
                     className="icon icon--responsive"
-                    src="/img/icons/noun_Box_1897159.svg"
+                    src={boxIcon}
                     alt="Confirmed Box Icon: The proverbial banana box."
                   />
                 </div>
