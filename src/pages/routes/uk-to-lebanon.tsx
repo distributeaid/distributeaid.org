@@ -29,11 +29,10 @@ const UkToLebanon: FC = () => {
         className="text-navy-700 section section--above-the-fold section--content-left flex justify-start items-stretch bg--img-cover bg--img-free-shop-unloading"
         style={{ backgroundImage: `url(${theFreeShopBackground})` }}
       >
-        <div className="section__content bg--white">
+        <div className="section__content bg-white">
           <header className="section__header">
             <h1 className="section__title">
               <img
-                className="lettermark lettermark--inline"
                 width="130"
                 height="60"
                 src={logoSrc}
@@ -71,7 +70,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">1 UK Staging Hub</p>
+                  <p className="mb-1">1 UK Staging Hub</p>
                   <p>Cambridge</p>
                 </div>
               </div>
@@ -85,7 +84,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Service to Lebanon</p>
+                  <p className="mb-1">Service to Lebanon</p>
                   <p>Supporting 7 Frontline Groups</p>
                 </div>
               </div>
@@ -99,7 +98,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Regular Shipments</p>
+                  <p className="mb-1">Regular Shipments</p>
                   <p>Scaled To Demand</p>
                 </div>
               </div>
@@ -113,7 +112,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Fair Flat-Rate Pricing</p>
+                  <p className="mb-1">Fair Flat-Rate Pricing</p>
                   <p>All-Inclusive, At-Cost</p>
                 </div>
               </div>
@@ -140,14 +139,14 @@ const UkToLebanon: FC = () => {
         className="section section--content-right bg--img-cover bg--img-pallet-storage"
         style={{ backgroundImage: `url(${palletStorageBackground})` }}
       >
-        <div className="section__content bg--white">
+        <div className="section__content bg-white">
           <header className="section__header">
             <h2 className="section__title">Reserve Your Spot!</h2>
           </header>
 
           <div className="section__body">
-            <ol className="stages list--unstyled">
-              <li className="stage stage--active">
+            <ol className="">
+              <li className="">
                 <h4 className="text-lg font-semibold mb-4">
                   1) Submit Your Aid Delivery Request
                 </h4>
@@ -251,7 +250,7 @@ const UkToLebanon: FC = () => {
         className="section section--content-left flex justify-start items-stretch bg--img-cover bg--img-its-lebanon"
         style={{ backgroundImage: `url(${settlementLebanonBackground})` }}
       >
-        <div className="section__content bg--white">
+        <div className="section__content bg-white">
           <header className="section__header">
             <h2 className="section__title">Frontline Groups</h2>
           </header>
@@ -341,7 +340,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Shaabe</p>
+                  <p className="mb-1">Shaabe</p>
                 </div>
               </div>
             </div>
@@ -372,7 +371,7 @@ const UkToLebanon: FC = () => {
         </div>
 
         <section id="uk-staging-hubs" className="section w-full md:w-1/2">
-          <div className="section__content bg--white">
+          <div className="section__content bg-white">
             <header className="section__header">
               <h1 className="section__title">UK Staging Hubs</h1>
             </header>
@@ -401,7 +400,7 @@ const UkToLebanon: FC = () => {
                     />
                   </div>
                   <div className="tile-content">
-                    <p className="tile-title">Cambridgeshire</p>
+                    <p className="mb-1">Cambridgeshire</p>
                     <p>Both Community &amp; Commercial Aid</p>
                     <p className="text-italic">
                       pallets, loose boxes, bulk bags of tents &amp; sleeping
@@ -434,7 +433,7 @@ const UkToLebanon: FC = () => {
         className="section--content-left section flex justify-start items-stretch bg--img-cover bg--img-forklift-loading-2"
         style={{ backgroundImage: `url(${forkliftLoadingBackground})` }}
       >
-        <div className="section__content bg--white">
+        <div className="section__content bg-white">
           <header className="section__header">
             <h1 className="section__title">Storage &amp; Shipping (£)</h1>
           </header>
@@ -457,7 +456,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content text-left">
-                  <p className="tile-title">Standard Pallet - ££</p>
+                  <p className="mb-1">Standard Pallet - ££</p>
                   <p>1.2m x 1.0m x 1.70m high</p>
                   <p>700kg</p>
                 </div>
@@ -472,7 +471,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content text-left">
-                  <p className="tile-title">Half Pallet - £</p>
+                  <p className="mb-1">Half Pallet - £</p>
                   <p>1.2m x 1.0m x 0.85m high</p>
                   <p>350kg</p>
                 </div>
@@ -552,7 +551,7 @@ const UkToLebanon: FC = () => {
         className="section section--content-right bg--img-cover bg--img-collection-and-sorting"
         style={{ backgroundImage: `url(${collectionBackground})` }}
       >
-        <div className="section__content bg--white">
+        <div className="section__content bg-white">
           <header className="section__header">
             <h1 className="section__title">All About Pallets</h1>
           </header>
@@ -570,7 +569,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Van Loads</p>
+                  <p className="mb-1">Van Loads</p>
                   <p>
                     The Calais classic. Most Vans fit about{' '}
                     <strong>3 Standard Pallets</strong> worth of aid in the
@@ -587,12 +586,12 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Bulk Bags</p>
+                  <p className="mb-1">Bulk Bags</p>
                   <p>
                     Perfect for those larger, clumsier items like tents or
                     sleeping bags that are too awkward to box up.
                   </p>
-                  <ul className="list--v-inline">
+                  <ul className="">
                     <li>
                       Each Bulk Bag takes up one <strong>Half Pallet</strong>{' '}
                       space.
@@ -617,7 +616,7 @@ const UkToLebanon: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Banana Boxes</p>
+                  <p className="mb-1">Banana Boxes</p>
                   <p>
                     Easy to acquire, small, and sturdy boxes. Each Banana Box
                     should hold a specific item, such as mens small pants or
@@ -625,7 +624,7 @@ const UkToLebanon: FC = () => {
                     could be used to fill a Standard or Half pallet. Banana Box
                     sizes can vary a bit, but a good rule of thumb is:
                   </p>
-                  <ul className="list--v-inline">
+                  <ul className="">
                     <li>
                       <strong>Dimensions:</strong> 500mm x 400mm x 250mm high,
                       holds 15kg

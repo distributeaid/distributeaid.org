@@ -34,7 +34,7 @@ const routeLinks: NavLinkItem[] = [
  * branding and a dropdown-menu with some account information.
  */
 const MainMenu: FunctionComponent = () => (
-  <header className="py-2 bg-navy-800 h-nav sticky top-0">
+  <header className="py-2 bg-navy-800 h-nav sticky top-0 z-10">
     <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
       <MobileNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
       <div className="flex items-center w-16 h-16">

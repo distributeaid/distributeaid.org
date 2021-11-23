@@ -12,22 +12,6 @@ const DesktopNavigation: FunctionComponent<Props> = ({
   navLinks,
   routeLinks,
 }) => {
-  const [showRoutes, setShowRoutes] = useState(false)
-  const navRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    // TODO make this more accessible. We could do all of this with only CSS.
-    const enableRoutes = () => setShowRoutes(true)
-    const disableRoutes = () => setShowRoutes(false)
-    navRef.current?.addEventListener('mouseover', enableRoutes)
-    navRef.current?.addEventListener('mouseout', disableRoutes)
-
-    return () => {
-      navRef.current?.removeEventListener('mouseover', enableRoutes)
-      navRef.current?.removeEventListener('mouseout', disableRoutes)
-    }
-  })
-
   return (
     <nav role="navigation" className="hidden md:block">
       <div className="pl-6 flex space-x-2 items-center">
@@ -41,17 +25,19 @@ const DesktopNavigation: FunctionComponent<Props> = ({
           </Link>
         ))}
         {routeLinks && (
-          <nav ref={navRef} className="cursor-pointer">
-            <div className="py-2 px-4 text-white">Routes</div>
-            <ul
-              style={{ display: showRoutes ? 'block' : 'none' }}
-              className="absolute z-10 bg-navy-800"
+          <nav className="nav-dropdown">
+            <a
+              href="#"
+              className="nav-dropdown-trigger py-2 px-4 text-white block rounded-t"
             >
+              Routes
+            </a>
+            <ul className="nav-dropdown-content bg-navy-700 shadow-lg">
               {routeLinks.map((route) => (
                 <Link
                   to={route.path}
                   key={route.path}
-                  className="py-2 px-4 block hover:bg-navy-700 transition-colors text-white"
+                  className="py-2 px-4 rounded block hover:bg-navy-600 transition-colors text-white whitespace-nowrap"
                 >
                   {route.title}
                 </Link>

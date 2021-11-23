@@ -33,7 +33,6 @@ const UkToFrance: FC = () => {
           <header className="section__header">
             <h1 className="section__title">
               <img
-                className="lettermark lettermark--inline"
                 width="130"
                 height="60"
                 src={logoSrc}
@@ -69,7 +68,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">1 UK Staging Hubs</p>
+                  <p className="mb-1">1 UK Staging Hubs</p>
                   <p>Cambridge</p>
                 </div>
               </div>
@@ -83,7 +82,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Service to Calais &amp; Dunkirk</p>
+                  <p className="mb-1">Service to Calais &amp; Dunkirk</p>
                   <p>Supporting 7 Frontline Groups</p>
                 </div>
               </div>
@@ -97,7 +96,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Regular Shipments</p>
+                  <p className="mb-1">Regular Shipments</p>
                   <p>Scaled To Demand</p>
                 </div>
               </div>
@@ -111,7 +110,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Fair Flat-Rate Pricing</p>
+                  <p className="mb-1">Fair Flat-Rate Pricing</p>
                   <p>All-Inclusive, At-Cost</p>
                 </div>
               </div>
@@ -144,8 +143,8 @@ const UkToFrance: FC = () => {
           </header>
 
           <div className="section__body">
-            <ol className="stages list--unstyled">
-              <li className="stage stage--active">
+            <ol className="">
+              <li className="">
                 <h4 className="text-lg font-semibold mb-4">
                   1) Submit Your Aid Delivery Request
                 </h4>
@@ -299,46 +298,46 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Mobile Refugee Support</p>
+                  <p className="mb-1">Mobile Refugee Support</p>
                 </div>
               </div>
 
               <div className="tile tile--column w-1/3">
                 <div className="tile-icon mx-auto">
                   <StaticImage
-                    className="icon icon--responsive icon--rounded"
+                    className="icon icon--responsive rounded-full"
                     src="../../images/routes/ca-logo.256.jpg"
                     alt="Frontline Group Logo: Collective Aid (CA)"
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Collective Aid</p>
+                  <p className="mb-1">Collective Aid</p>
                 </div>
               </div>
 
               <div className="tile tile--column w-1/3">
                 <div className="tile-icon mx-auto">
                   <StaticImage
-                    className="icon icon--responsive icon--rounded"
+                    className="icon icon--responsive rounded-full"
                     src="../../images/routes/u56-logo.256.jpg"
                     alt="Frontline Group Logo: Utopia 56 (U56)"
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Utopia 56</p>
+                  <p className="mb-1">Utopia 56</p>
                 </div>
               </div>
 
               <div className="tile tile--column w-1/3">
                 <div className="tile-icon mx-auto">
                   <StaticImage
-                    className="icon icon--responsive icon--rounded"
+                    className="icon icon--responsive rounded-full"
                     src="../../images/routes/cfc-logo.256.jpg"
                     alt="Frontline Group Logo: Calais Food Collective (CFC)"
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Calais Food Collective</p>
+                  <p className="mb-1">Calais Food Collective</p>
                 </div>
               </div>
 
@@ -351,7 +350,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Refugee Community Kitchen</p>
+                  <p className="mb-1">Refugee Community Kitchen</p>
                 </div>
               </div>
 
@@ -364,7 +363,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Refugee Women's Center</p>
+                  <p className="mb-1">Refugee Women's Center</p>
                 </div>
               </div>
 
@@ -377,7 +376,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">L'Auberge des Migrants</p>
+                  <p className="mb-1">L'Auberge des Migrants</p>
                 </div>
               </div>
             </div>
@@ -499,7 +498,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content text-left">
-                  <p className="tile-title">Standard Pallet - £75</p>
+                  <p className="mb-1">Standard Pallet - £75</p>
                   <p>1.2m x 1.0m x 1.70m high</p>
                   <p>700kg</p>
                 </div>
@@ -514,7 +513,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content text-left">
-                  <p className="tile-title">Half Pallet - £45</p>
+                  <p className="mb-1">Half Pallet - £45</p>
                   <p>1.2m x 1.0m x 0.85m high</p>
                   <p>350kg</p>
                 </div>
@@ -598,7 +597,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Van Loads</p>
+                  <p className="mb-1">Van Loads</p>
                   <p>
                     The Calais classic. Most Vans fit about{' '}
                     <strong>3 Standard Pallets</strong> worth of aid in the
@@ -615,12 +614,12 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Bulk Bags</p>
+                  <p className="mb-1">Bulk Bags</p>
                   <p>
                     Perfect for those larger, clumsier items like tents or
                     sleeping bags that are too awkward to box up.
                   </p>
-                  <ul className="list--v-inline">
+                  <ul className="">
                     <li>
                       Each Bulk Bag takes up one <strong>Half Pallet</strong>{' '}
                       space.
@@ -645,7 +644,7 @@ const UkToFrance: FC = () => {
                   />
                 </div>
                 <div className="tile-content">
-                  <p className="tile-title">Banana Boxes</p>
+                  <p className="mb-1">Banana Boxes</p>
                   <p>
                     Easy to acquire, small, and sturdy boxes. Each Banana Box
                     should hold a specific item, such as mens small pants or
@@ -653,7 +652,7 @@ const UkToFrance: FC = () => {
                     could be used to fill a Standard or Half pallet. Banana Box
                     sizes can vary a bit, but a good rule of thumb is:
                   </p>
-                  <ul className="list--v-inline">
+                  <ul className="">
                     <li>
                       <strong>Dimensions:</strong> 500mm x 400mm x 250mm high,
                       holds 15kg
