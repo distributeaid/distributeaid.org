@@ -30,7 +30,7 @@ const UkToFrance: FC = () => {
         style={{ backgroundImage: `url(${forkliftLoadingBackground})` }}
       >
         <div className="section__content bg-white">
-          <header className="section__header">
+          <header className="mb-4 text-center">
             <h1 className="section__title">
               <img
                 width="130"
@@ -40,7 +40,7 @@ const UkToFrance: FC = () => {
               />
               <span>Delivery</span>
             </h1>
-            <h2 className="section__subtitle">Regular Route: UK&rarr;France</h2>
+            <h2 className="text-2xl">Regular Route: UK&rarr;France</h2>
           </header>
 
           <div className="section__body">
@@ -117,7 +117,7 @@ const UkToFrance: FC = () => {
             </div>
           </div>
 
-          <footer className="section__footer">
+          <footer>
             <p className="photo-credit text-center">
               <span>Background Photo Credit:</span>{' '}
               <a
@@ -138,7 +138,7 @@ const UkToFrance: FC = () => {
         style={{ backgroundImage: `url(${palletStorageBackground})` }}
       >
         <div className="section__content bg-white">
-          <header className="section__header">
+          <header className="mb-4 text-center">
             <h2 className="section__title">Reserve Your Spot!</h2>
           </header>
 
@@ -260,7 +260,7 @@ const UkToFrance: FC = () => {
             </ol>
           </div>
 
-          <footer className="section__footer">
+          <footer>
             <p className="photo-credit text-center">
               <span>Background Photo Credit:</span>{' '}
               <a href="https://unsplash.com/@ruchindra?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
@@ -283,12 +283,12 @@ const UkToFrance: FC = () => {
         style={{ backgroundImage: `url(${mobileRefugeeSupportBackground})` }}
       >
         <div className="section__content bg-white">
-          <header className="section__header">
+          <header className="mb-4 text-center">
             <h2 className="section__title">Frontline Groups</h2>
           </header>
 
           <div className="section__body">
-            <div className="tiles tiles--grid tiles--highlight">
+            <div className="tiles tiles--grid ">
               <div className="tile tile--column w-1/3">
                 <div className="tile-icon mx-auto">
                   <StaticImage
@@ -382,7 +382,7 @@ const UkToFrance: FC = () => {
             </div>
           </div>
 
-          <footer className="section__footer">
+          <footer>
             <p className="photo-credit text-center hide-sm">
               <span>Background Photo Credit:</span>{' '}
               <a
@@ -411,7 +411,7 @@ const UkToFrance: FC = () => {
           className="text-navy-700 section w-full md:w-1/2"
         >
           <div className="section__content bg-white">
-            <header className="section__header">
+            <header className="mb-4 text-center">
               <h1 className="section__title">UK Staging Hubs</h1>
             </header>
 
@@ -453,7 +453,7 @@ const UkToFrance: FC = () => {
               </div>
             </div>
 
-            <footer className="section__footer">
+            <footer>
               <p className="photo-credit text-center">
                 Questions? Comments? Contact us all at{' '}
                 <a
@@ -476,7 +476,7 @@ const UkToFrance: FC = () => {
         style={{ backgroundImage: `url(${calaisUnloadingBackground})` }}
       >
         <div className="section__content bg-white">
-          <header className="section__header">
+          <header className="mb-4 text-center">
             <h1 className="section__title">Storage &amp; Shipping (£)</h1>
           </header>
 
@@ -488,7 +488,7 @@ const UkToFrance: FC = () => {
               consistent, and spread the cost evenly for all groups sending aid.
             </p>
 
-            <div className="tiles tiles--row tiles--highlight">
+            <div className="tiles tiles--row ">
               <div className="tile tile--column">
                 <div className="tile-icon mx-auto">
                   <img
@@ -559,7 +559,7 @@ const UkToFrance: FC = () => {
             </ul>
           </div>
 
-          <footer className="section__footer">
+          <footer>
             <p className="photo-credit text-center">
               <span>Background Photo Credit:</span>{' '}
               <a
@@ -580,14 +580,14 @@ const UkToFrance: FC = () => {
         style={{ backgroundImage: `url(${collectionBackground})` }}
       >
         <div className="section__content bg-white">
-          <header className="section__header">
+          <header className="mb-4 text-center">
             <h1 className="section__title">All About Pallets</h1>
           </header>
 
           <div className="section__body">
             <h3>How many Standard Pallet spaces do I need?</h3>
 
-            <div className="tiles tiles--column tiles--highlight">
+            <div className="tiles tiles--column ">
               <div className="tile flex">
                 <div className="tile-icon w-20 flex-shrink-0">
                   <img
@@ -670,7 +670,7 @@ const UkToFrance: FC = () => {
             </div>
           </div>
 
-          <footer className="section__footer">
+          <footer>
             <p className="photo-credit text-center hide-sm">
               <span>Background Photo Credit:</span>{' '}
               <a

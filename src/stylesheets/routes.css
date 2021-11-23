@@ -4,15 +4,7 @@ Legacy CSS for the routes pages
 /routes/uk-to-france
 */
 
-.section--above-the-fold {
-  position: relative;
-  min-height: 100vh;
-  margin-top: 0;
-  overflow: auto;
-}
-
 .section--content-left,
-.section--content-center,
 .section--content-right {
   display: flex;
   flex-direction: row;
@@ -24,11 +16,6 @@ Legacy CSS for the routes pages
   width: 50%;
 }
 
-.section--content-center .section__content {
-  width: 83.33333333%; /* 10/12 */
-  margin: 0 auto;
-}
-
 .section--content-right .section__content {
   width: 50%;
   margin-left: auto;
@@ -38,50 +25,27 @@ Legacy CSS for the routes pages
   padding: 1rem;
 }
 
-.section__header {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.section__header--banner {
-  padding: 2rem 0;
-}
-
 .section__title {
   display: flex;
   justify-content: center;
   align-items: baseline;
-
   margin-bottom: 0;
-
   font-size: 2.4rem;
   text-transform: uppercase;
 }
 
-.section__title:only-child {
-  line-height: 1;
-}
-
-.section__title > * {
-  margin: 0 0.25rem;
-}
-
-.section__subtitle {
-  margin-bottom: 0;
-
-  font-size: 1.6rem;
-}
-
-.section__footer > :last-child {
-  margin-bottom: 0;
-}
-
 @media only screen and (max-device-width: 600px) {
   .section--content-left .section__content,
-  .section--content-center .section__content,
   .section--content-right .section__content {
     width: 100%;
   }
+}
+
+.section--above-the-fold {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 0;
+  overflow: auto;
 }
 
 @media only screen and (min-device-width: 1281px) {
@@ -96,10 +60,6 @@ Legacy CSS for the routes pages
   }
 }
 
-/*
-Icons
-------------------------------------------------------------
-*/
 .icon {
   display: inline-block;
   width: 2em;
@@ -132,16 +92,8 @@ Photos
   }
 }
 
-/*
-Tiles
-------------------------------------------------------------
-*/
 .tiles {
   margin-bottom: 1rem;
-}
-
-.tiles--highlight {
-  color: #09328b;
 }
 
 .tiles--highlight .tile {
