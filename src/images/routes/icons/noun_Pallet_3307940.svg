@@ -1,0 +1,34 @@
+<!--
+Pallet by ArmOkay from the Noun Project
+https://thenounproject.com/term/pallet/3307940/
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16.00 16.00 480.00 480.00" x="0px" y="0px">
+  <style type="text/css">
+    .primary-color{fill:#09328B;}
+  </style>
+  <path class="primary-color" d="M488,16H24a8.00008,8.00008,0,0,0-8,8V488a8.00008,8.00008,0,0,0,8,8H488a8.00008,8.00008,0,0,0,8-8V24A8.00008,8.00008,0,0,0,488,16Zm-8,176-216-.00049V32h72V96a8.00038,8.00038,0,0,0,13.65674,5.65723L360,91.31348l10.34326,10.34375a8.00182,8.00182,0,0,0,11.31348,0L392,91.31348l10.34326,10.34375A8.00038,8.00038,0,0,0,416,96V32h64ZM288,448V416H432v32ZM80,448V416H224v32Zm40-240.00073h48v44.68725l-2.34326-2.34375a8.00182,8.00182,0,0,0-11.31348,0L144,260.68652l-10.34326-10.34375a8.00182,8.00182,0,0,0-11.31348,0L120,252.68652Zm-11.06152,71.39135a7.99878,7.99878,0,0,0,8.71826-1.73339L128,267.31348l10.34326,10.34375a8.00182,8.00182,0,0,0,11.31348,0L160,267.31348l10.34326,10.34375A8.00038,8.00038,0,0,0,184,272V207.99927l64,.00024V368H32V207.999l72,.00025V272A8,8,0,0,0,108.93848,279.39062ZM480,400H32V384H480ZM32,416H64v32H32Zm208,0h32v32H240Zm208,0h32v32H448Zm32-48H264V207.99951l72,.00025V272a8.00038,8.00038,0,0,0,13.65674,5.65723L360,267.31348l10.34326,10.34375a8.00182,8.00182,0,0,0,11.31348,0L392,267.31348l10.34326,10.34375A8.00038,8.00038,0,0,0,416,272V208h64ZM352,207.99976h48v44.68676l-2.34326-2.34375a8.00182,8.00182,0,0,0-11.31348,0L376,260.68652l-10.34326-10.34375a8.00182,8.00182,0,0,0-11.31348,0L352,252.68652ZM352,32h48V76.68652l-2.34326-2.34375a8.00182,8.00182,0,0,0-11.31348,0L376,84.68652,365.65674,74.34277a8.00182,8.00182,0,0,0-11.31348,0L352,76.68652ZM120,32h48V76.68652l-2.34326-2.34375a8.00182,8.00182,0,0,0-11.31348,0L144,84.68652,133.65674,74.34277a8.00182,8.00182,0,0,0-11.31348,0L120,76.68652Zm-16,0V96a8.00038,8.00038,0,0,0,13.65674,5.65723L128,91.31348l10.34326,10.34375a8.00182,8.00182,0,0,0,11.31348,0L160,91.31348l10.34326,10.34375A8.00038,8.00038,0,0,0,184,96V32h64V191.99951L32,191.999V32ZM480,480H32V464H480Z"/>
+  <rect class="primary-color" x="168" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="192" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="216" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="48" y="120" width="16" height="16"/>
+  <rect class="primary-color" x="80" y="120" width="32" height="16"/>
+  <rect class="primary-color" x="48" y="152" width="48" height="16"/>
+  <rect class="primary-color" x="408" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="432" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="456" y="160" width="16" height="16"/>
+  <rect class="primary-color" x="288" y="120" width="16" height="16"/>
+  <rect class="primary-color" x="320" y="120" width="32" height="16"/>
+  <rect class="primary-color" x="288" y="152" width="48" height="16"/>
+  <rect class="primary-color" x="168" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="192" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="216" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="48" y="296" width="16" height="16"/>
+  <rect class="primary-color" x="80" y="296" width="32" height="16"/>
+  <rect class="primary-color" x="48" y="328" width="48" height="16"/>
+  <rect class="primary-color" x="408" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="432" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="456" y="336" width="16" height="16"/>
+  <rect class="primary-color" x="288" y="296" width="16" height="16"/>
+  <rect class="primary-color" x="320" y="296" width="32" height="16"/>
+  <rect class="primary-color" x="288" y="328" width="48" height="16"/>
+</svg>

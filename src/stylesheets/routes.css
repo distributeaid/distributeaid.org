@@ -1,0 +1,259 @@
+/*
+Legacy CSS for the routes pages
+/routes/uk-to-lebanon
+/routes/uk-to-france
+*/
+
+.section--content-left,
+.section--content-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.section--content-left .section__content {
+  width: 50%;
+}
+
+.section--content-right .section__content {
+  width: 50%;
+  margin-left: auto;
+}
+
+.section__content {
+  padding: 1rem;
+}
+
+.section__title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 0;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-device-width: 600px) {
+  .section--content-left .section__content,
+  .section--content-right .section__content {
+    width: 100%;
+  }
+}
+
+.section--above-the-fold {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 0;
+  overflow: auto;
+}
+
+@media only screen and (min-device-width: 1281px) {
+  .section--above-the-fold {
+    min-height: 90%;
+  }
+}
+
+@media only screen and (min-device-width: 1401px) {
+  .section--above-the-fold {
+    padding: 1.2rem 10%;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 2em;
+  max-height: 2em;
+  margin: 1em;
+}
+
+.icon--responsive {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+
+/*
+Photos
+------------------------------------------------------------
+*/
+.photo-credit {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+@media only screen and (max-device-width: 600px) {
+  .photo-credit {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tiles {
+  margin-bottom: 1rem;
+}
+
+.tiles--highlight .tile {
+  padding: 0.5rem;
+}
+
+.tiles--highlight .tile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+}
+
+.tiles--highlight .tile-icon--auto {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.tiles--grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tiles--grid .tile-icon {
+  margin-bottom: 0.25rem;
+}
+
+.tiles--grid .tile-icon--auto {
+  margin-bottom: 0;
+}
+
+.tiles--row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tiles--column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.tiles--column .tile-icon {
+  align-items: center;
+}
+
+.tiles--column .tile {
+  padding: 1rem 4.16666666%;
+  border-bottom: 1px solid #c5cfe4;
+}
+
+.tiles--column .tile:last-child {
+  border-bottom: none;
+}
+
+.tiles--column .tile-content:not(:first-child) {
+  padding-left: 1rem;
+}
+
+/* ### tile */
+
+.tile {
+  font-size: 87.5%;
+  font-weight: 400;
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tile-content > * {
+  margin-bottom: 0.25rem;
+}
+
+.tile-content > :last-child {
+  margin-bottom: 0;
+}
+
+.tile--column {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  text-align: center;
+}
+
+.tile--column .tile-icon {
+  line-height: 0;
+}
+
+.tile--column .tile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+}
+
+.tile--column .tile-content:not(:first-child) {
+  padding-left: 0;
+}
+
+/*
+Accessibility
+------------------------------------------------------------
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*
+Background & Color
+------------------------------------------------------------
+*/
+.bg--img-cover {
+  background: no-repeat center center fixed;
+  background-size: cover;
+  background-color: #c5cfe4; /* fallback if no image is used */
+}
+
+.bg--img-forklift-loading,
+.bg--img-its-lebanon {
+  background: no-repeat center right;
+  background-size: contain;
+}
+
+.bg--img-forklift-loading-2,
+.bg--img-cfc-unloading {
+  background: no-repeat center right;
+  background-size: cover;
+}
+
+.bg--img-pallet-storage {
+  background: no-repeat center left;
+  background-size: contain;
+}
+
+.bg--img-collection-and-sorting {
+  background: no-repeat center left;
+  background-size: 50% auto;
+}
+
+.bg--img-free-shop-unloading,
+.bg--img-mrs-distro {
+  background: no-repeat center right;
+  background-size: 50% auto;
+}

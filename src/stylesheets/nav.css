@@ -1,0 +1,24 @@
+.nav-dropdown {
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-dropdown:hover .nav-dropdown-content,
+.nav-dropdown:focus-within .nav-dropdown-content {
+  display: block;
+}
+
+.nav-dropdown:hover .nav-dropdown-trigger,
+.nav-dropdown:focus-within .nav-dropdown-trigger {
+  background-color: #09328b;
+}
+
+.nav-dropdown-content {
+  padding: 0.25rem;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: fit-content;
+  z-index: 20;
+}

@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 @import './burger.css';
+@import './routes.css';
+@import './nav.css';
 
 .team-page-container {
   width: 70%;
