@@ -5,9 +5,13 @@ import { NavLinkItem } from './MainMenu'
 
 interface Props {
   navLinks: NavLinkItem[]
+  routeLinks?: NavLinkItem[]
 }
 
-const MobileNavigation: FunctionComponent<Props> = ({ navLinks }) => {
+const MobileNavigation: FunctionComponent<Props> = ({
+  navLinks,
+  routeLinks,
+}) => {
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const toggleMobileNav = () => {
@@ -56,6 +60,23 @@ const MobileNavigation: FunctionComponent<Props> = ({ navLinks }) => {
             </Link>
           </li>
         ))}
+
+        {routeLinks && (
+          <div className="mt-6">
+            <p className="text-navy-100 px-4 mb-2 text-sm tracking-wide uppercase">
+              Routes
+            </p>
+            {routeLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="py-2 px-6 flex items-center text-white"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        )}
 
         <Link
           to="/donate"

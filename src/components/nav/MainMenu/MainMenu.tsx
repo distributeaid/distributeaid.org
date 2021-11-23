@@ -9,43 +9,42 @@ export interface NavLinkItem {
   path: string
 }
 
+const linksHardcoded: NavLinkItem[] = [
+  {
+    title: 'Who We Are',
+    path: '/who-we-are/',
+  },
+  {
+    title: 'What We Do',
+    path: '/what-we-do',
+  },
+  {
+    title: 'Get Involved',
+    path: '/get-involved',
+  },
+]
+
+const routeLinks: NavLinkItem[] = [
+  { title: 'UK to France', path: '/routes/uk-to-france' },
+  { title: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
+]
+
 /**
  * A full-width element that sits at the top of the page. It displays the DA
  * branding and a dropdown-menu with some account information.
  */
-const MainMenu: FunctionComponent = () => {
-  const linksHardcoded: NavLinkItem[] = [
-    {
-      title: 'Home',
-      path: '/',
-    },
-    {
-      title: 'Who We Are',
-      path: '/who-we-are/',
-    },
-    {
-      title: 'What We Do',
-      path: '/what-we-do',
-    },
-    {
-      title: 'Get Involved',
-      path: '/get-involved',
-    },
-  ]
-
-  return (
-    <header className="py-2 bg-navy-800 h-nav sticky top-0">
-      <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
-        <MobileNavigation navLinks={linksHardcoded} />
-        <div className="flex items-center w-16 h-16">
-          <Link to="/" className="text-white" aria-label="Go to the home page">
-            <BrandMark flavor="white" layout="logo" />
-          </Link>
-        </div>
-        <DesktopNavigation navLinks={linksHardcoded} />
+const MainMenu: FunctionComponent = () => (
+  <header className="py-2 bg-navy-800 h-nav sticky top-0">
+    <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
+      <MobileNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
+      <div className="flex items-center w-16 h-16">
+        <Link to="/" className="text-white" aria-label="Go to the home page">
+          <BrandMark flavor="white" layout="logo" />
+        </Link>
       </div>
-    </header>
-  )
-}
+      <DesktopNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
+    </div>
+  </header>
+)
 
 export default MainMenu
