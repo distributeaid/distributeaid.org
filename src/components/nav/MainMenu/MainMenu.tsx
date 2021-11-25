@@ -25,8 +25,8 @@ const linksHardcoded: NavLinkItem[] = [
 ]
 
 const routeLinks: NavLinkItem[] = [
-  { title: 'UK to France', path: '/routes/uk-to-france' },
-  { title: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
+  { title: 'UK to France', path: '/regular-routes/uk-to-france' },
+  { title: 'UK to Lebanon', path: '/regular-routes/uk-to-lebanon' },
 ]
 
 /**

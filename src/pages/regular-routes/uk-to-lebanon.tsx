@@ -3,15 +3,15 @@ import { Helmet } from 'react-helmet'
 import { StaticImage } from 'gatsby-plugin-image'
 import RouteLayout from '../../layouts/Route'
 import logoSrc from '../../images/lettermark_blue.svg'
-import netIcon from '../../images/routes/icons/noun_net_2428552.svg'
-import mapIcon from '../../images/routes/icons/noun_Maps_3610706.svg'
-import truckIcon from '../../images/routes/icons/noun_Truck_1731459.svg'
-import heartBillIcon from '../../images/routes/icons/noun_Heart_Bill_98293.svg'
-import halfPalletIcon from '../../images/routes/icons/noun_Pallet_3364535.svg'
-import palletIcon from '../../images/routes/icons/noun_Pallet_3307940.svg'
-import boxIcon from '../../images/routes/icons/noun_Box_1897159.svg'
-import sackIcon from '../../images/routes/icons/noun_sack_1468937.svg'
-import vanIcon from '../../images/routes/icons/noun_Van_485356.svg'
+import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
+import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
+import truckIcon from '../../images/regular-routes/icons/noun_Truck_1731459.svg'
+import heartBillIcon from '../../images/regular-routes/icons/noun_Heart_Bill_98293.svg'
+import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
+import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
+import boxIcon from '../../images/regular-routes/icons/noun_Box_1897159.svg'
+import sackIcon from '../../images/regular-routes/icons/noun_sack_1468937.svg'
+import vanIcon from '../../images/regular-routes/icons/noun_Van_485356.svg'
 
 import theFreeShopBackground from './the-free-shop-unloading.jpg'
 import palletStorageBackground from './pallet-storage.jpg'
@@ -261,7 +261,7 @@ const UkToLebanon: FC = () => {
                     height={140}
                     width={140}
                     className="icon icon--responsive"
-                    src="../../images/routes/the-free-shop-logo.392.png"
+                    src="../../images/regular-routes/the-free-shop-logo.392.png"
                     alt="Frontline Group Logo: The Free Shop"
                   />
                 </div>
@@ -273,7 +273,7 @@ const UkToLebanon: FC = () => {
                     height={85}
                     width={360}
                     className="icon icon--responsive"
-                    src="../../images/routes/beirut-celebrations-logo.1061x256.png"
+                    src="../../images/regular-routes/beirut-celebrations-logo.1061x256.png"
                     alt="Frontline Group Logo: Beirut Celebrations"
                   />
                 </div>
@@ -285,7 +285,7 @@ const UkToLebanon: FC = () => {
                     height={180}
                     width={360}
                     className="icon icon--responsive"
-                    src="../../images/routes/ema-logo.512x256.jpg"
+                    src="../../images/regular-routes/ema-logo.512x256.jpg"
                     alt="Frontline Group Logo: Endless Medical Advantage (EMA)"
                   />
                 </div>
@@ -297,7 +297,7 @@ const UkToLebanon: FC = () => {
                     height={145}
                     width={145}
                     className="icon icon--responsive"
-                    src="../../images/routes/live-love-beirut-logo.256.png"
+                    src="../../images/regular-routes/live-love-beirut-logo.256.png"
                     alt="Frontline Group Logo: Live Love Beirut"
                   />
                 </div>
@@ -309,7 +309,7 @@ const UkToLebanon: FC = () => {
                     height={168}
                     width={300}
                     className="icon icon--responsive"
-                    src="../../images/routes/wing-woman-logo.300x168.jpg"
+                    src="../../images/regular-routes/wing-woman-logo.300x168.jpg"
                     alt="Frontline Group Logo: Wing Woman"
                   />
                 </div>
@@ -321,7 +321,7 @@ const UkToLebanon: FC = () => {
                     height={173}
                     width={307}
                     className="icon icon--responsive"
-                    src="../../images/routes/arcenciel-logo.455x256.jpg"
+                    src="../../images/regular-routes/arcenciel-logo.455x256.jpg"
                     alt="Frontline Group Logo: Arcenciel"
                   />
                 </div>
@@ -333,7 +333,7 @@ const UkToLebanon: FC = () => {
                     height={82}
                     width={262}
                     className="icon icon--responsive"
-                    src="../../images/routes/shaabe-logo.262x82.jpg"
+                    src="../../images/regular-routes/shaabe-logo.262x82.jpg"
                     alt="Frontline Group Logo: Shaabe"
                   />
                 </div>
@@ -391,7 +391,7 @@ const UkToLebanon: FC = () => {
                 <div className="tile flex">
                   <div className="tile-icon flex-shrink-0">
                     <StaticImage
-                      src="../../images/routes/pallet-aid-logo.256.png"
+                      src="../../images/regular-routes/pallet-aid-logo.256.png"
                       alt="Hub Logo: Pallet Aid (PA)"
                       height={80}
                       width={80}
