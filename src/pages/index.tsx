@@ -1,5 +1,7 @@
-import React, { FC } from 'react'
-import RouteCard from '../components/home/RouteCard'
+import { FC } from 'react'
+import RouteCard from '@components/home/RouteCard'
+import HeroSection from '@components/home/HeroSection'
+import MissionSection from '@components/home/MissionSection'
 import SimpleLayout from '../layouts/Simple'
 import franceRouteImage from '../images/home/help-refugees-warehouse-calais.jpg'
 import lebanonRouteImage from '../images/home/the-free-shop-unloading.jpg'
@@ -8,7 +10,9 @@ import customShipmentsImage from '../images/home/bobby-moving-a-pallet-iha.jpg'
 const HomePage: FC = () => {
   return (
     <SimpleLayout pageTitle="Home">
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 lg:p-8 max-w-7xl mx-auto">
+      <HeroSection />
+      <MissionSection />
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         <RouteCard
           title="UK ➜ France"
           subtitle="Pallets via DA Delivery"

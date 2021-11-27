@@ -16,7 +16,7 @@ const DefaultLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
   return (
     <>
       {/* html document head */}
-      <Helmet title={`${page.title} < ${site.title}`} />
+      <Helmet title={`${page.title} - ${site.title}`} />
 
       {/* site level header / body / footer */}
       <header>
