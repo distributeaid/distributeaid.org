@@ -3,3 +3,6 @@
 
 // Import global styles
 import './src/stylesheets/index.css'
+
+// Import the Lato typeface
+import '@fontsource/lato'
