@@ -1,32 +1,21 @@
+import Footer from '@components/Footer'
+import MainMenu from '@components/nav/MainMenu/MainMenu'
 import { FunctionComponent } from 'react'
 import { Helmet } from 'react-helmet'
 
 interface Props {
-  pageContext: {
-    pageTitle: string
-    siteTitle: string
-  }
-  children: any
+  pageTitle: string
 }
 
-const SimpleLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
-  const { pageTitle, siteTitle } = pageContext
-
+const SimpleLayout: FunctionComponent<Props> = ({ pageTitle, children }) => {
   return (
     <>
-      {/* html document head */}
-      <Helmet title={`${pageTitle} < ${siteTitle}`} />
-
-      {/* site level header / body / footer */}
+      <Helmet title={`${pageTitle} < Distribute Aid`} />
       <header>
-        {/*
-          <MainMenu />
-          <Breadcrumbs pageContext={pageContext} />
-        */}
-        Site Header
+        <MainMenu />
       </header>
       <main>{children}</main>
-      <footer>Site Footer</footer>
+      <Footer />
     </>
   )
 }

@@ -1,5 +1,4 @@
-import React, { FC } from 'react'
-import { Helmet } from 'react-helmet'
+import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import RouteLayout from '../../layouts/Route'
 import logoSrc from '../../images/lettermark_blue.svg'
@@ -18,13 +17,11 @@ import palletStorageBackground from './pallet-storage.jpg'
 import settlementLebanonBackground from './informal-tented-settlement-lebanon.jpg'
 import forkliftLoadingBackground from './forklift-loading-2.jpg'
 import collectionBackground from './collection-and-sorting.jpg'
+import SimpleLayout from '@layouts/Simple'
 
 const UkToLebanon: FC = () => {
   return (
-    <RouteLayout>
-      <Helmet>
-        <title>Route: UK to Lebanon</title>
-      </Helmet>
+    <SimpleLayout pageTitle="Route: UK to Lebanon">
       <section
         className="text-navy-700 section section--above-the-fold section--content-left flex justify-start items-stretch bg--img-cover bg--img-free-shop-unloading"
         style={{ backgroundImage: `url(${theFreeShopBackground})` }}
@@ -654,7 +651,7 @@ const UkToLebanon: FC = () => {
           </footer>
         </div>
       </section>
-    </RouteLayout>
+    </SimpleLayout>
   )
 }
 
