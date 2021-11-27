@@ -8,6 +8,7 @@
     "url": "https://github.com/distributeaid/distributeaid.org/issues"
   },
   "dependencies": {
+    "@fontsource/lato": "4.5.0",
     "@nivo/core": "0.74.0",
     "@nivo/sunburst": "0.74.0",
     "@types/classnames": "2.3.1",

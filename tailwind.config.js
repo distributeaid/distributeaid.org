@@ -73,11 +73,7 @@ module.exports = {
         content: 'calc(100vh - 4rem)',
       },
       fontFamily: {
-        // sans: ['Raleway', 'sans-serif'],
-        sans: ['Lato', 'sans-serif'],
-        serif: ['Karla', 'serif'],
-        mono: ['Inconsolata', 'mono'],
-        handwriting: ['Caveat', 'cursive'],
+        sans: `Lato, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
       },
       boxShadow: {
         sm: '0px 1px 2px 0px #000000 5%',
