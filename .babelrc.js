@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const devPlugins = []
 if (!process.env.DISABLE_CODESEE_INSTRUMENTATION) {
-  plugins.push(['@codesee/instrument', { hosted: true }])
+  devPlugins.push(['@codesee/instrument', { hosted: true }])
 }
 
 module.exports = {
