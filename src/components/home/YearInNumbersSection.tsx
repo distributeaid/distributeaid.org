@@ -5,6 +5,7 @@ import boxImage from '../../images/home/box.svg'
 import peopleImage from '../../images/home/people.svg'
 import highwayImage from '../../images/home/highway.svg'
 import rocketImage from '../../images/home/rocket.svg'
+import ExternalLink from '@components/link/ExternalLink'
 
 const content = [
   {
@@ -66,17 +67,16 @@ const YearInNumbersSection: FC = () => (
 
     <div className="text-center mt-8 text-gray-500 p-4 lg:px-8">
       All emojis designed by{' '}
-      <a href="https://openmoji.org/" target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="link" href="https://openmoji.org/">
         OpenMoji
-      </a>
+      </ExternalLink>
       – the open-source emoji and icon project. License:{' '}
-      <a
+      <ExternalLink
+        className="link"
         href="https://creativecommons.org/licenses/by-sa/4.0/"
-        target="_blank"
-        rel="noopener noreferrer"
       >
         CC BY-SA 4.0
-      </a>
+      </ExternalLink>
     </div>
   </section>
 )
