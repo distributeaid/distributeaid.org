@@ -14,19 +14,11 @@ const linksHardcoded: NavLinkItem[] = [
     title: 'Who We Are',
     path: '/who-we-are/',
   },
-  {
-    title: 'What We Do',
-    path: '/what-we-do',
-  },
-  {
-    title: 'Get Involved',
-    path: '/get-involved',
-  },
 ]
 
 const routeLinks: NavLinkItem[] = [
-  { title: 'UK to France', path: '/regular-routes/uk-to-france' },
-  { title: 'UK to Lebanon', path: '/regular-routes/uk-to-lebanon' },
+  { title: 'UK to France', path: '/routes/uk-to-france' },
+  { title: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
 ]
 
 /**

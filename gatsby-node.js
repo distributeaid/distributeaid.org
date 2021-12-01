@@ -26,7 +26,7 @@ exports.onCreateDevServer = async ({ reporter }) => {
 Dynamic Pages
 ================================================================================
 */
-exports.createPages = async ({ graphql, actions, reporter }) => {
+createPages____UNUSED = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   /*

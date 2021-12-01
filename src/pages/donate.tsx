@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
 
-const donate: FC = () => {
+const Donate: FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   return (
@@ -39,7 +39,7 @@ const donate: FC = () => {
               />
             </div>
             <ExternalLink
-              className="py-2"
+              className="link py-2"
               href="https://www.patreon.com/distributeaid"
             >
               Patreon
@@ -57,7 +57,7 @@ const donate: FC = () => {
               className="mx-auto block"
             />
             <ExternalLink
-              className="py-2"
+              className="link py-2"
               href="https://opencollective.com/distribute-aid-usa"
             >
               Open Collective
@@ -81,7 +81,10 @@ const donate: FC = () => {
             <p className="mt-4 text-gray-700">
               Make a donation directly to our bank account at Distribute Aid.
               Reach out to{' '}
-              <ExternalLink href="mailto:hello@distributeaid.org">
+              <ExternalLink
+                className="link"
+                href="mailto:hello@distributeaid.org"
+              >
                 hello@distributeaid.org
               </ExternalLink>{' '}
               if you have any questions.
@@ -147,4 +150,4 @@ const donate: FC = () => {
   )
 }
 
-export default donate
+export default Donate

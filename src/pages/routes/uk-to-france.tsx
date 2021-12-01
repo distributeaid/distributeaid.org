@@ -1,7 +1,5 @@
-import React, { FC } from 'react'
-import { Helmet } from 'react-helmet'
+import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import RouteLayout from '../../layouts/Route'
 import logoSrc from '../../images/lettermark_blue.svg'
 import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
 import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
@@ -18,13 +16,11 @@ import forkliftLoadingBackground from './forklift-loading.jpg'
 import collectionBackground from './collection-and-sorting.jpg'
 import mobileRefugeeSupportBackground from './mobile-refugee-support-distribution.jpg'
 import calaisUnloadingBackground from './calais-food-collective-unloading.jpg'
+import SimpleLayout from '@layouts/Simple'
 
 const UkToFrance: FC = () => {
   return (
-    <RouteLayout>
-      <Helmet>
-        <title>Route: UK to France</title>
-      </Helmet>
+    <SimpleLayout pageTitle="Route: UK to France">
       <section
         className="text-navy-700 section section--above-the-fold flex justify-start items-stretch section--content-left bg--img-cover bg--img-forklift-loading"
         style={{ backgroundImage: `url(${forkliftLoadingBackground})` }}
@@ -684,7 +680,7 @@ const UkToFrance: FC = () => {
           </footer>
         </div>
       </section>
-    </RouteLayout>
+    </SimpleLayout>
   )
 }
 

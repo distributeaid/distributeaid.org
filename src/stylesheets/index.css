@@ -40,3 +40,7 @@
   height: 299px;
   width: 298px;
 }
+
+.link {
+  @apply text-navy-700 hover:underline font-semibold;
+}
