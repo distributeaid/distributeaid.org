@@ -2,6 +2,7 @@ import { FC } from 'react'
 import RouteCard from '@components/home/RouteCard'
 import HeroSection from '@components/home/HeroSection'
 import MissionSection from '@components/home/MissionSection'
+import HowWeHelpSection from '@components/home/HowWeHelpSection'
 import SimpleLayout from '../layouts/Simple'
 import franceRouteImage from '../images/home/help-refugees-warehouse-calais.jpg'
 import lebanonRouteImage from '../images/home/the-free-shop-unloading.jpg'
@@ -75,6 +76,7 @@ const HomePage: FC = () => {
           </div>
         </RouteCard>
       </section>
+      <HowWeHelpSection />
     </SimpleLayout>
   )
 }
