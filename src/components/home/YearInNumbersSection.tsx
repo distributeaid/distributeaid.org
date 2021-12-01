@@ -1,0 +1,84 @@
+import { FC } from 'react'
+import moneyImage from '../../images/home/money.svg'
+import truckImage from '../../images/home/truck.svg'
+import boxImage from '../../images/home/box.svg'
+import peopleImage from '../../images/home/people.svg'
+import highwayImage from '../../images/home/highway.svg'
+import rocketImage from '../../images/home/rocket.svg'
+
+const content = [
+  {
+    figure: '$2+ Million',
+    description: 'worth of aid shipped',
+    image: moneyImage,
+  },
+  {
+    figure: '1+ Million',
+    description: 'pieces shipped',
+    image: boxImage,
+  },
+  {
+    figure: '290,500 ×',
+    description: 'aid delivered',
+    image: peopleImage,
+  },
+  {
+    figure: '467,100 kg',
+    description: 'aid shipped',
+    image: truckImage,
+  },
+  {
+    figure: '54,953 km',
+    description: 'transport arranged',
+    image: highwayImage,
+  },
+  {
+    figure: '20x Impact',
+    description: 'every $1 we spend delivers $20 worth of aid',
+    image: rocketImage,
+  },
+]
+
+type CardProps = {
+  figure: string
+  description: string
+  image: string
+}
+
+const Card: FC<CardProps> = ({ figure, description, image }) => (
+  <article className="text-center px-4">
+    <img src={image} width="160" className="block mx-auto" />
+    <p className="text-2xl font-medium">{figure}</p>
+    <p className="text-gray-700 mb-2">{description}</p>
+  </article>
+)
+
+const YearInNumbersSection: FC = () => (
+  <section className="py-8 md:py-16 bg-gray-50">
+    <h2 className="text-4xl font-semibold max-w-7xl mx-auto mb-8 p-4 lg:px-8">
+      2020 in Numbers
+    </h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 justify-center">
+      {content.map((section, i) => (
+        <Card {...section} key={`section-${i}`} />
+      ))}
+    </div>
+
+    <div className="max-w-7xl mx-auto text-center mt-8 text-gray-500 p-4 lg:px-8">
+      All emojis designed by{' '}
+      <a href="https://openmoji.org/" target="_blank" rel="noopener noreferrer">
+        OpenMoji
+      </a>
+      – the open-source emoji and icon project. License:{' '}
+      <a
+        href="https://creativecommons.org/licenses/by-sa/4.0/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CC BY-SA 4.0
+      </a>
+    </div>
+  </section>
+)
+
+export default YearInNumbersSection
