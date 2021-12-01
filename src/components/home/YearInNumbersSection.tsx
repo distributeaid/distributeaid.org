@@ -54,8 +54,8 @@ const Card: FC<CardProps> = ({ figure, description, image }) => (
 )
 
 const YearInNumbersSection: FC = () => (
-  <section className="py-8 md:py-16 bg-gray-50">
-    <h2 className="text-4xl font-semibold max-w-7xl mx-auto mb-8 p-4 lg:px-8">
+  <section className="py-8 md:py-16 max-w-7xl mx-auto">
+    <h2 className="text-4xl font-semibold mb-8 p-4 text-center">
       2020 in Numbers
     </h2>
     <div className="grid grid-cols-2 sm:grid-cols-3 justify-center">
@@ -64,7 +64,7 @@ const YearInNumbersSection: FC = () => (
       ))}
     </div>
 
-    <div className="max-w-7xl mx-auto text-center mt-8 text-gray-500 p-4 lg:px-8">
+    <div className="text-center mt-8 text-gray-500 p-4 lg:px-8">
       All emojis designed by{' '}
       <a href="https://openmoji.org/" target="_blank" rel="noopener noreferrer">
         OpenMoji

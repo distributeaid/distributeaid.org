@@ -14,14 +14,6 @@ const linksHardcoded: NavLinkItem[] = [
     title: 'Who We Are',
     path: '/who-we-are/',
   },
-  {
-    title: 'What We Do',
-    path: '/what-we-do',
-  },
-  {
-    title: 'Get Involved',
-    path: '/get-involved',
-  },
 ]
 
 const routeLinks: NavLinkItem[] = [

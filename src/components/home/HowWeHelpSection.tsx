@@ -46,15 +46,17 @@ const Card: FC<CardProps> = ({ title, subtitle, body, image, side }) => (
 )
 
 const HowWeHelpSection: FC = () => (
-  <section className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
-    <h2 className="text-4xl font-semibold">How we help</h2>
-    {content.map((section, i) => (
-      <Card
-        {...section}
-        side={i % 2 === 0 ? 'left' : 'right'}
-        key={`section-${i}`}
-      />
-    ))}
+  <section className="bg-gray-50">
+    <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
+      <h2 className="text-4xl font-semibold">How we help</h2>
+      {content.map((section, i) => (
+        <Card
+          {...section}
+          side={i % 2 === 0 ? 'left' : 'right'}
+          key={`section-${i}`}
+        />
+      ))}
+    </div>
   </section>
 )
 
