@@ -11,8 +11,8 @@ export interface NavLinkItem {
 
 const linksHardcoded: NavLinkItem[] = [
   {
-    title: 'Who We Are',
-    path: '/who-we-are/',
+    title: 'About Us',
+    path: '/about-us/',
   },
 ]
 
