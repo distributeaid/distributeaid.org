@@ -1,13 +1,11 @@
 import { FC, useState } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import Modal from 'react-modal'
 import openCollectiveImage from '../images/opencollective_logo.svg'
 import directTransferImage from '../images/direct_transfer.svg'
 import ExternalLink from '@components/link/ExternalLink'
 import Button from '@components/button/Button'
-import Footer from '@components/Footer'
-import MainMenu from '@components/nav/MainMenu/MainMenu'
-import { Helmet } from 'react-helmet'
+import BankInformationModal from '@components/donate/BankInfoModal'
+import SimpleLayout from '@layouts/Simple'
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
 
@@ -15,16 +13,10 @@ const Donate: FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   return (
-    <>
-      <Helmet>
-        <title>How to donate</title>
-      </Helmet>
-      <header>
-        <MainMenu />
-      </header>
-      <main className="pt-8 md:pt-20" style={{ minHeight: '80vh' }}>
-        <h1 className="text-center text-gray-800 text-3xl font-semibold leading-loose mb-20">
-          Support Distribute Aid!
+    <SimpleLayout pageTitle="How to donate">
+      <div className="pt-8 md:pt-20" style={{ minHeight: '80vh' }}>
+        <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
+          Support Distribute Aid to help more people in need:
         </h1>
 
         <div className="lg:flex max-w-5xl mx-auto">
@@ -45,7 +37,13 @@ const Donate: FC = () => {
               Patreon
             </ExternalLink>
             <p className="mt-4 text-gray-700">
-              Become a monthly supporter of Distribute Aid through our Patreon
+              Become a monthly supporter of Distribute Aid{' '}
+              <ExternalLink
+                href="https://www.patreon.com/distributeaid"
+                className="link"
+              >
+                through our Patreon
+              </ExternalLink>{' '}
               account and get access to exclusive updates about our work.
             </p>
           </div>
@@ -64,7 +62,14 @@ const Donate: FC = () => {
             </ExternalLink>
             <p className="mt-4 text-gray-700">
               If you are in the US, you can make tax-deductible donations to
-              Distribute Aid through the Open Collective Foundation.
+              Distribute Aid through the{' '}
+              <ExternalLink
+                href="https://opencollective.com/distribute-aid-usa"
+                className="link"
+              >
+                Open Collective Foundation
+              </ExternalLink>
+              .
             </p>
           </div>
 
@@ -92,61 +97,12 @@ const Donate: FC = () => {
           </div>
         </div>
 
-        <Modal
+        <BankInformationModal
           isOpen={modalIsOpen}
           onRequestClose={() => setModalIsOpen(false)}
-          contentLabel="Example Modal"
-          style={{
-            content: {
-              top: '40%',
-              left: '50%',
-              right: 'auto',
-              bottom: 'auto',
-              marginRight: '-50%',
-              transform: 'translate(-50%, -50%)',
-              width: 'calc(100% - 2rem)',
-              maxWidth: 500,
-            },
-            overlay: {
-              backgroundColor: 'rgba(0, 0, 0, .65)',
-            },
-          }}
-        >
-          <h3 className="text-xl leading-loose mb-4 tracking-wide text-navy-800">
-            Bank information
-          </h3>
-          <table>
-            <tbody>
-              <tr>
-                <td className="text-gray-700 font-medium py-1">
-                  Account holder:
-                </td>
-                <td className="font-semibold text-navy-700 py-1 pl-2">
-                  Distribute Aid
-                </td>
-              </tr>
-              <tr>
-                <td className="text-gray-700 font-medium py-1">IBAN:</td>
-                <td className="font-semibold text-navy-700 py-1 pl-2">
-                  BE72 9672 1338 5616
-                </td>
-              </tr>
-              <tr>
-                <td className="text-gray-700 font-medium py-1">BIC:</td>
-                <td className="font-semibold text-navy-700 py-1 pl-2">
-                  TRWIBEB1XXX
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div className="mt-6 text-right">
-            <Button onClick={() => setModalIsOpen(false)}>Close</Button>
-          </div>
-        </Modal>
-      </main>
-      <Footer />
-    </>
+        />
+      </div>
+    </SimpleLayout>
   )
 }
 

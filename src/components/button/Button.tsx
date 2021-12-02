@@ -41,7 +41,7 @@ const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
   const { disabled, className, children } = otherProps
 
   const classes = cx(
-    'inline-flex items-center border text-center text-sm leading-5 font-medium rounded whitespace-no-wrap focus:outline-none focus:ring-4 transition ease-in-out duration-100',
+    'inline-flex items-center border text-center text-sm leading-5 font-semibold tracking-wide rounded whitespace-no-wrap focus:outline-none focus:ring-4 transition ease-in-out duration-100',
     className,
     {
       // Default
