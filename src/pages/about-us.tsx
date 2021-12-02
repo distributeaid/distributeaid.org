@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import logoBlueSrc from '../images/logomark_blue.svg'
 import SimpleLayout from '@layouts/Simple'
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
@@ -38,6 +39,25 @@ const AboutUs: FC = () => {
           />
         </div>
       </div>
+      <section className="bg-navy-50 px-4 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-6 text-navy-700 text-2xl lg:text-3xl lg:leading-snug">
+            <div className="lg:flex justify-between items-center lg:space-x-8">
+              <img
+                width="130"
+                height="60"
+                src={logoBlueSrc}
+                alt="Distribute Aid Logo: A flock of doves stylized by stacking wings behind the main outline of a dove."
+              />
+              <p className="flex-grow">
+                Distribute Aid’s mission is to provide for basic human needs at
+                scale by connecting communities and empowering people to uphold
+                human dignity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </SimpleLayout>
   )
 }
