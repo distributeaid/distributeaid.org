@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import logoBlueSrc from '../images/logomark_blue.svg'
+import boardSrc from '../images/about-us/board.jpg'
 import SimpleLayout from '@layouts/Simple'
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
@@ -58,6 +59,26 @@ const AboutUs: FC = () => {
           </div>
         </div>
       </section>
+      <div className="max-w-7xl mx-auto text-center py-20 px-4 text-lg">
+        <img
+          className="mx-auto mb-4"
+          style={{
+            width: 600,
+            height: 300,
+            objectFit: 'cover',
+            objectPosition: 'top',
+          }}
+          width="600"
+          height="300"
+          src={boardSrc}
+          alt="Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank"
+        />
+        <p>
+          Our board members from left to right:
+          <br />
+          Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank
+        </p>
+      </div>
     </SimpleLayout>
   )
 }
