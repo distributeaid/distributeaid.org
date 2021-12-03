@@ -44,3 +44,52 @@
 .link {
   @apply text-navy-700 hover:underline font-semibold;
 }
+
+.history-container {
+  position: relative;
+}
+
+.history-container::after {
+  @apply bg-gray-200;
+  content: '';
+  display: block;
+  height: 100%;
+  left: calc(1rem - 1px);
+  position: absolute;
+  top: 0;
+  width: 2px;
+  z-index: 1;
+}
+
+.history-item {
+  margin: 1rem 0 1rem 4rem;
+  position: relative;
+}
+
+/* the dot */
+.history-item::after {
+  @apply border-navy-500 border-2;
+  background: white;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 8px;
+  left: calc(-4px - 3rem);
+  position: absolute;
+  top: 0.75rem;
+  width: 8px;
+  z-index: 3;
+}
+
+/* the horizontal line */
+.history-item::before {
+  @apply bg-navy-500;
+  content: '';
+  display: block;
+  height: 2px;
+  left: -3rem;
+  position: absolute;
+  top: calc(0.75rem + 3px);
+  width: 2rem;
+  z-index: 2;
+}
