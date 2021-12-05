@@ -1,0 +1,157 @@
+/*
+
+On mobile, the timeline is stacked on the left side of the screen:
+
+│
+├─── Title
+│    Paragraph of content
+│
+├─── Title
+│    Paragraph of content
+│
+├─── Title
+│    Paragraph of content
+│
+
+On wider monitors, the timeline items alternate between the left and right:
+
+                         │
+                         │
+Title  ──────────────────┤
+Paragraph of content     │
+                         │
+                         ├─── Title
+                         │    Paragraph of content
+                         │
+Long title   ────────────┤
+Paragraph of content     │
+                         │
+                         ├─── Title
+                         │    Paragraph of content
+                         │
+
+We use pseudo-elements to display the lines and circles.
+
+For wider displays, we render 2 horizontal lines for the .timeline-item
+containers on the left side of the screen, because we want to extend the lines
+toward the titles. To achieve that, we render an extra horizontal line inside
+the .timeline-title.
+
+ */
+
+.timeline-container {
+  --line-color: #e5e7eb;
+  --line-accent-color: #8b9fc8;
+
+  padding: 1rem 0;
+  position: relative;
+}
+
+.timeline-container::after {
+  background: var(--line-color);
+  content: '';
+  display: block;
+  height: 100%;
+  left: calc(0.5rem - 1px);
+  position: absolute;
+  top: 0;
+  width: 2px;
+  z-index: 1;
+}
+
+/* Each timeline item contains a title and some content. */
+.timeline-item {
+  margin: 2rem 0 2rem 3rem;
+  position: relative;
+}
+
+/* On wider displays, the timeline titles use a pseudo-element to extend the
+vertical line toward the text. */
+.timeline-title {
+  align-items: center;
+  display: flex;
+  height: 28px; /* fixed width so that the horizontal lines are placed reliably */
+}
+
+/* the dot */
+.timeline-item::after {
+  background: white;
+  border-radius: 50%;
+  border: 2px solid var(--line-accent-color);
+  content: '';
+  display: block;
+  height: 8px;
+  left: calc(-4px - 2.5rem);
+  position: absolute;
+  top: calc(14px - 4px);
+  width: 8px;
+  z-index: 3;
+}
+
+/* the horizontal lines */
+.timeline-item::before {
+  background-color: var(--line-accent-color);
+  content: '';
+  display: block;
+  height: 2px;
+  left: -2.5rem;
+  position: absolute;
+  top: calc(14px - 1px);
+  width: 2rem;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .timeline-container {
+    padding: 4rem 0;
+  }
+
+  /* Display the vertical line in the center */
+  .timeline-container::after {
+    left: calc(50% - 1px);
+  }
+
+  /* Align the items to the right of the timeline */
+  .timeline-item.right {
+    margin-left: auto;
+    width: calc(50% - 3rem);
+  }
+
+  /* The horizontal lines for items on the left side */
+  .timeline-item.left {
+    margin-left: 0;
+    width: calc(50% - 3rem);
+  }
+
+  /* The dots for items on the left side */
+  .timeline-item.left::after {
+    left: auto;
+    right: calc(-3rem - 4px);
+  }
+
+  /* The dots for items on the right side */
+  .timeline-item.right::after {
+    left: calc(-4px - 3rem);
+  }
+
+  /* The horizontal lines on the left side */
+  .timeline-item.left::before {
+    left: auto;
+    right: calc(-3rem - 1px);
+    width: 4rem;
+  }
+
+  /* The horizontal lines fon the right side */
+  .timeline-item.right::before {
+    left: -3rem;
+  }
+
+  /* Torizontal lines after titles on the left side */
+  .timeline-item.left .timeline-title::after {
+    background-color: var(--line-accent-color);
+    content: '';
+    flex: 1;
+    height: 2px;
+    margin-left: 2rem;
+  }
+}

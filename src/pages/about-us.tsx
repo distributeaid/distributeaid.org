@@ -2,7 +2,7 @@ import { FC } from 'react'
 import logoBlueSrc from '../images/logomark_blue.svg'
 import boardSrc from '../images/about-us/board.jpg'
 import SimpleLayout from '@layouts/Simple'
-import History from '@components/about-us/History'
+import Timeline from '@components/about-us/Timeline'
 
 const AboutUs: FC = () => (
   <SimpleLayout pageTitle="About us">
@@ -102,7 +102,7 @@ const AboutUs: FC = () => (
         </p>
       </div>
     </section>
-    <History />
+    <Timeline />
   </SimpleLayout>
 )
 
