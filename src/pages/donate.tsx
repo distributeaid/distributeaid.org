@@ -62,7 +62,7 @@ const Donate: FC = () => {
             </ExternalLink>
             <p className="mt-4 text-gray-700">
               If you are in the US, you can make tax-deductible donations to
-              Distribute Aid through the{' '}
+              support Distribute Aid's USA based projects, through the{' '}
               <ExternalLink
                 href="https://opencollective.com/distribute-aid-usa"
                 className="link"
