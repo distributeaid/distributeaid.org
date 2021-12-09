@@ -62,7 +62,7 @@
     "autoprefixer": "10.4.0",
     "babel-jest": "27.3.1",
     "babel-preset-gatsby": "1.14.0",
-    "contentful-import": "7.9.42",
+    "contentful-import": "8.2.28",
     "gatsby-plugin-postcss": "4.14.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.3.1",
