@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const AboutHero: FC = () => (
-  <div className="py-8 md:py-20 mx-auto" style={{ maxWidth: 800 }}>
+  <div className="py-8 md:py-20 mx-auto max-w-screen-lg">
     <div
       style={{
         position: 'relative',
