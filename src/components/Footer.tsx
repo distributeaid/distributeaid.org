@@ -4,27 +4,19 @@ import ExternalLink from '@components/link/ExternalLink'
 import LinkedInIcon from '@components/icons/LinkedInIcon'
 import InstagramIcon from '@components/icons/InstagramIcon'
 import TwitterIcon from '@components/icons/TwitterIcon'
+import { Link } from 'gatsby'
 
 const Footer: FC = () => (
   <footer
     style={{ background: '#F3F4F6' }}
     className="px-4 py-12 md:px-8 text-center"
   >
-    <a
-      className="inline-block"
-      href="https://www.patreon.com/distributeaid"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Support us on Patreon (opens in a new tab)"
+    <Link
+      to="/donate"
+      className="py-2 px-6 rounded bg-navy-700 transition-colors text-white"
     >
-      <StaticImage
-        src="../images/become_a_patron_button.png"
-        alt="Patreon logo"
-        layout="fixed"
-        height={51}
-        width={217}
-      />
-    </a>
+      Donate
+    </Link>
     <div className="my-4">
       <p>
         Email us at{' '}
