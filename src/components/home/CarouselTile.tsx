@@ -16,8 +16,9 @@ const CarouselTile: FC<Props> = ({
   currentIndex,
   animationDelayMS = 0,
 }) => {
+  // Keep track of the previous value of currentIndex because we need to animate
+  // the previous image in a specific way.
   const lastIndex = useRef(0)
-
   useEffect(() => {
     lastIndex.current = currentIndex
   })
@@ -35,10 +36,10 @@ const CarouselTile: FC<Props> = ({
             height: size,
             zIndex:
               currentIndex === index
-                ? images.length + 2
+                ? images.length + 2 // Always at the top
                 : lastIndex.current === index
-                ? images.length + 1
-                : index,
+                ? images.length + 1 // Always right below the top image
+                : 0,
             transition: 'opacity 500ms linear',
             opacity:
               currentIndex === index || index === lastIndex.current ? 1 : 0,
