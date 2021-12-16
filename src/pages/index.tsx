@@ -1,14 +1,15 @@
 import { FC } from 'react'
-import HeroSection from '@components/home/HeroSection'
+
 import RoutesSection from '@components/home/RoutesSection'
 import MissionSection from '@components/home/MissionSection'
 import HowWeHelpSection from '@components/home/HowWeHelpSection'
 import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import SimpleLayout from '../layouts/Simple'
+import ImageCarousel from '@components/home/ImageCarousel'
 
 const HomePage: FC = () => (
   <SimpleLayout pageTitle="Home">
-    <HeroSection />
+    <ImageCarousel />
     <MissionSection />
     <RoutesSection />
     <HowWeHelpSection />
