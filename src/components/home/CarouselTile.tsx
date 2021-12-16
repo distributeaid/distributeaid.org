@@ -1,10 +1,8 @@
 import { FC, useEffect, useRef } from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 type Props = {
-  images: {
-    src: string
-    alt: string
-  }[]
+  images: any[]
   size: number
   currentIndex: number
   animationDelayMS?: number
@@ -29,8 +27,8 @@ const CarouselTile: FC<Props> = ({
       style={{ width: size, height: size }}
     >
       {images.map((image, index) => (
-        <img
-          className="absolute object-cover inset-0 rounded"
+        <div
+          className="absolute inset-0 rounded"
           style={{
             width: size,
             height: size,
@@ -45,10 +43,10 @@ const CarouselTile: FC<Props> = ({
               currentIndex === index || index === lastIndex.current ? 1 : 0,
             transitionDelay: `${animationDelayMS}ms`,
           }}
-          src={image.src}
-          alt={image.alt}
-          key={index}
-        />
+          key={`image-${index}`}
+        >
+          <GatsbyImage key={index} image={getImage(image)!} alt="" />
+        </div>
       ))}
     </div>
   )

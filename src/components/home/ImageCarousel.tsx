@@ -1,39 +1,33 @@
-import WordMark from '@components/brand/WordMark'
 import { FC, useEffect, useRef, useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import WordMark from '@components/brand/WordMark'
 import CarouselTile from './CarouselTile'
-import truckImage from '../../images/home/carousel/loading_truck.png'
-import moriaReliefImage from '../../images/home/carousel/moria_fire_relief.png'
-import soapDonationImage from '../../images/home/carousel/soap_relief.png'
-import calaisWaterImage from '../../images/home/carousel/water_relief.png'
-
-const images = [
-  {
-    src: truckImage,
-    alt: 'Volunteers loading a truck full of clothing donations',
-  },
-  {
-    src: moriaReliefImage,
-    alt: 'A volunteer sorting through clothing donations during the Moria fire relief efforts',
-  },
-  {
-    src: soapDonationImage,
-    alt: 'A volunteer handing out bars of soap to a refugee',
-  },
-  {
-    src: calaisWaterImage,
-    alt: 'A warehouse full of water bottles headed to refugee camps in Calais, France',
-  },
-]
 
 const CAROUSEL_TIMER_MS = 5000 as const
 
 const ImageCarousel: FC = () => {
-  const [imageIndex, setImageIndex] = useState(0)
+  // Load all the images from the home/carousel directory
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { relativeDirectory: { eq: "home/carousel" } }) {
+        nodes {
+          name
+          childImageSharp {
+            gatsbyImageData(width: 400)
+          }
+        }
+      }
+    }
+  `)
 
+  const allImages = data.allFile.nodes.map((node: any) => node.childImageSharp)
+
+  // We use a timeout to cycle through the images
+  const [imageIndex, setImageIndex] = useState(0)
   const timeoutRef = useRef<number>(-1)
 
   const showNextImage = () => {
-    setImageIndex((prev) => (prev + 1) % images.length)
+    setImageIndex((prev) => (prev + 1) % allImages.length)
     if (timeoutRef.current) {
       window.clearTimeout(timeoutRef.current)
     }
@@ -51,7 +45,8 @@ const ImageCarousel: FC = () => {
   // On mobile, we don't show any images
   // On desktop, we animate between 3 slots
 
-  const leftImageIndex = imageIndex === 0 ? images.length - 1 : imageIndex - 1
+  const leftImageIndex =
+    imageIndex === 0 ? allImages.length - 1 : imageIndex - 1
 
   return (
     <section className="max-w-full flex gap-6 overflow-hidden px-4 lg:px-8 py-16 lg:py-36">
@@ -63,7 +58,7 @@ const ImageCarousel: FC = () => {
             Re-imagine Humanitarian Aid Delivery
           </h1>
         </div>
-        <CarouselTile images={images} currentIndex={imageIndex} size={400} />
+        <CarouselTile images={allImages} currentIndex={imageIndex} size={400} />
 
         {/* 1 image on the left, overflowing the column */}
         <div
@@ -72,7 +67,7 @@ const ImageCarousel: FC = () => {
         >
           <CarouselTile
             animationDelayMS={500}
-            images={images}
+            images={allImages}
             currentIndex={leftImageIndex}
             size={360}
           />
@@ -85,8 +80,8 @@ const ImageCarousel: FC = () => {
         >
           <CarouselTile
             animationDelayMS={250}
-            images={images}
-            currentIndex={(imageIndex + 1) % images.length}
+            images={allImages}
+            currentIndex={(imageIndex + 1) % allImages.length}
             size={360}
           />
         </div>
