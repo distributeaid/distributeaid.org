@@ -30,7 +30,11 @@ const socialMediaDetails = [
   },
 ]
 
-const SocialIconContainer: FC = () => {
+interface Props {
+  position: 'footer' | 'side'
+}
+
+const SocialIconContainer: FC<Props> = ({ position }) => {
   const [screenWidth, setScreenWidth] = useState(window?.innerWidth)
   useEffect(() => {
     const handleResize = () => {
@@ -41,12 +45,12 @@ const SocialIconContainer: FC = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  if (screenWidth < getThemeLargeScreenWidth()) {
+  if (screenWidth < getThemeLargeScreenWidth() && position === 'side') {
     return null
   }
 
   return (
-    <div>
+    <div className={`flex flex-${position === 'side' ? 'col' : 'row'}`}>
       {socialMediaDetails.map((detail) => (
         <SocialMediaLink key={detail.href} {...detail} />
       ))}

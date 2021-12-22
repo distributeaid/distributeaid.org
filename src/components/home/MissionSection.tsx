@@ -21,7 +21,7 @@ const MissionSection: FC = () => {
           src={mapImage}
           alt="Map of where Distribute Aid has operated in the past"
         />
-        <SocialIconContainer />
+        <SocialIconContainer position="side" />
       </div>
     </section>
   )

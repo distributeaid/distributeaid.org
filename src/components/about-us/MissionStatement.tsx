@@ -22,7 +22,7 @@ const MissionStatement: FC = () => (
         </div>
       </div>
     </div>
-    <SocialIconContainer />
+    <SocialIconContainer position="side" />
   </section>
 )
 
