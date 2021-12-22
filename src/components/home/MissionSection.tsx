@@ -1,3 +1,4 @@
+import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
 import mapImage from '../../images/homepage-banner-image.svg'
 
@@ -20,6 +21,7 @@ const MissionSection: FC = () => {
           src={mapImage}
           alt="Map of where Distribute Aid has operated in the past"
         />
+        <SocialIconContainer />
       </div>
     </section>
   )
