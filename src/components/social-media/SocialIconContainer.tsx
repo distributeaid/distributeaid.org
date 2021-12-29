@@ -35,7 +35,11 @@ interface Props {
 }
 
 const SocialIconContainer: FC<Props> = ({ position }) => {
-  const [screenWidth, setScreenWidth] = useState(window?.innerWidth)
+  const isBrowser = typeof window !== 'undefined'
+  const [screenWidth, setScreenWidth] = useState(
+    isBrowser ? window.innerWidth : 0,
+  )
+
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window?.innerWidth)
