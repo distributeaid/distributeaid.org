@@ -1,9 +1,10 @@
+import { FunctionComponent } from 'react'
+import { Helmet } from 'react-helmet'
+import { PageContext } from '@types/site-types'
 import Footer from '@components/Footer'
 import Breadcrumbs from '@components/nav/Breadcrumbs'
 import MainMenu from '@components/nav/MainMenu/MainMenu'
-import { PageContext } from '@types/site-types'
-import { FunctionComponent } from 'react'
-import { Helmet } from 'react-helmet'
+import Favicon from '@components/Favicon'
 
 interface Props {
   pageContext: PageContext
@@ -15,10 +16,9 @@ const DefaultLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
 
   return (
     <>
-      {/* html document head */}
       <Helmet title={`${page.title} - ${site.title}`} />
+      <Favicon />
 
-      {/* site level header / body / footer */}
       <header>
         <MainMenu />
         <Breadcrumbs pageContext={pageContext} />
