@@ -1,10 +1,7 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
-import LinkedInIcon from '@components/icons/LinkedInIcon'
-import InstagramIcon from '@components/icons/InstagramIcon'
-import TwitterIcon from '@components/icons/TwitterIcon'
 import { Link } from 'gatsby'
+import SocialIconContainer from './social-media/SocialIconContainer'
 
 const Footer: FC = () => (
   <footer
@@ -26,37 +23,8 @@ const Footer: FC = () => (
         </ExternalLink>
       </p>
     </div>
-    <div className="flex space-x-4 justify-center">
-      <a
-        href="https://twitter.com/DistributeAid"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit us on Twitter"
-        style={{ color: '#1DA1F2' }}
-        className="block p-4"
-      >
-        <TwitterIcon width="24" height="24" />
-      </a>
-      <a
-        href="https://www.linkedin.com/company/distribute-aid"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit us on LinkedIn"
-        style={{ color: '#0A66C2' }}
-        className="block p-4"
-      >
-        <LinkedInIcon width="24" height="24" />
-      </a>
-      <a
-        href="https://www.instagram.com/distributeaid"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit us on Instagram"
-        style={{ color: '#E4405F' }}
-        className="block p-4"
-      >
-        <InstagramIcon width="24" height="24" />
-      </a>
+    <div className="mx-auto w-64">
+      <SocialIconContainer position="footer" />
     </div>
   </footer>
 )

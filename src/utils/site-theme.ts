@@ -63,3 +63,7 @@ export function getDivergingColorList(nameA = 'rosemary', nameB = 'purple') {
   const colorsB = siteColors.byName[nameB]
   return colorsA.concat(colorsB)
 }
+
+export function getThemeLargeScreenWidth() {
+  return parseInt(siteTheme?.screens?.lg.replace('px', ''), 10)
+}
