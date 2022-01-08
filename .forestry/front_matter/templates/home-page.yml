@@ -20,3 +20,5 @@ fields:
     schema:
       format: markdown
   label: Mission Statement
+pages:
+- content/pages/home.md
