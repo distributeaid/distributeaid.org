@@ -1,4 +1,22 @@
 ---
 label: Home Page
 hide_body: false
-fields: []
+fields:
+- name: headline
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Headline
+- name: mission_statement
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Mission Statement
