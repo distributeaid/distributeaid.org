@@ -3,7 +3,6 @@ import cx from 'classnames'
 import refugeeAidImage from '../../images/home/how-we-help-refugees.jpg'
 import covidAidImage from '../../images/home/how-we-help-covid.jpg'
 import placeholderImage from '../../images/home/how-we-help-placeholder.png'
-import ExternalLink from '@components/link/ExternalLink'
 import MarkdownContent from '@components/markdown/MarkdownContent'
 
 export type HowWeHelpBlock = {
@@ -15,43 +14,6 @@ export type HowWeHelpBlock = {
 // TODO move this to our CMS
 const images = [refugeeAidImage, covidAidImage, placeholderImage]
 
-const content = [
-  {
-    title: 'Refugee Aid',
-    subtitle: 'Europe',
-    body: `Distribute Aid helps European grassroots refugee aid groups support over 100,000 asylum seekers. We assist with every point in the supply chain: assessing needs, gathering supplies at home or from in-kind donors, coordinating shipments, and advising on distributions. We currently send several regular shipments each month to multiple destinations, and handle specialty / emergency response shipments as well.`,
-    image: refugeeAidImage,
-  },
-  {
-    title: 'COVID-19 Response',
-    subtitle: 'Europe & USA',
-    body: `Distribute Aid is actively working to prevent the spread of COVID-19 globally. We regularly send hygiene and PPE shipments to our European partners who continue to work to protect people in crowded refugee camps. Because COVID-19 affects everybody, our response grew as the virus spread. We now also collaborate with multiple grassroots networks in the US to support their response.`,
-    image: covidAidImage,
-  },
-  {
-    title: 'In-kind Donations',
-    subtitle: 'Global',
-    body: (
-      <>
-        Distribute Aid runs a successful in-kind donation programme where we
-        connect companies with aid organisations. Through our network of
-        hundreds of charities we can handle coordinating large volumes of
-        donations. To date we have secured over 5 million items through our
-        in-kind donor programme. Email{' '}
-        <ExternalLink
-          className="link"
-          href="mailto:donate-aid@distributeaid.org"
-        >
-          donate-aid@distributeaid.org
-          <span className="sr-only">(opens in your email client)</span>
-        </ExternalLink>{' '}
-        if you can donate in-kind.
-      </>
-    ),
-    image: placeholderImage,
-  },
-]
-
 type CardProps = {
   title: string
   location: string
@@ -60,7 +22,13 @@ type CardProps = {
   side: 'left' | 'right'
 }
 
-const Card: FC<CardProps> = ({ title, location, description, image, side }) => (
+const HowWeHelpBlock: FC<CardProps> = ({
+  title,
+  location,
+  description,
+  image,
+  side,
+}) => (
   <article className="md:flex my-12">
     <img
       className={cx('w-full md:w-1/2', {
@@ -88,7 +56,7 @@ const HowWeHelpSection: FC<Props> = ({ blocks }) => (
     <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
       <h2 className="text-4xl font-semibold">How we help</h2>
       {blocks.map((section, i) => (
-        <Card
+        <HowWeHelpBlock
           {...section}
           image={images[i]}
           side={i % 2 === 0 ? 'left' : 'right'}
