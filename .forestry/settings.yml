@@ -10,8 +10,8 @@ sections:
   create: all
   match: "**/*"
 - type: document
-  path: content/footer.md
-  label: Footer
+  path: content/site-settings.md
+  label: Site Settings
 upload_dir: content/uploads
 public_path: "/uploads"
 front_matter_path: ''
