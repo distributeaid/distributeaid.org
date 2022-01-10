@@ -1,3 +1,0 @@
----
-email: 'hello@distributeaid.org'
----
