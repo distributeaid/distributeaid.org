@@ -20,5 +20,12 @@ how_we_help_block:
     who continue to work to protect people in crowded refugee camps. Because COVID-19
     affects everybody, our response grew as the virus spread. We now also collaborate
     with multiple grassroots networks in the US to support their response.
+- title: In-kind Donations
+  location: Global
+  description: Distribute Aid runs a successful in-kind donation programme where we
+    connect companies with aid organisations. Through our network of hundreds of charities,
+    we can handle coordinating large volumes of donations. To date, we have secured
+    over 5 million items through our in-kind donor programme. Email [donate-aid@distributeaid.org](mailto:donate-aid@distributeaid.org
+    "Contact Distribute Aid") if you can donate in-kind.
 
 ---
