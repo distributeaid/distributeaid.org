@@ -82,8 +82,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  console.log(homePageQuery.data)
-
   // make the page
   createPage({
     path: '/',
@@ -94,6 +92,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   console.timeEnd('Building home page')
+
+  // Build the About Us page
+  console.time('Building About Us page')
+  const aboutUsPageQuery = await graphql(`
+    query AboutUsPageQuery {
+      file(relativePath: { eq: "about-us.md" }) {
+        id
+        childMarkdownRemark {
+          frontmatter {
+            mission_statement
+            about_our_mission
+            timeline_items {
+              period
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // make the page
+  createPage({
+    path: '/about-us',
+    component: path.resolve(`./src/templates/AboutUsPage.tsx`),
+    context: {
+      pageFields: aboutUsPageQuery.data.file.childMarkdownRemark.frontmatter,
+    },
+  })
+
+  console.timeEnd('Building About Us page')
 }
 
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup

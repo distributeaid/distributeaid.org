@@ -1,5 +1,10 @@
 import { FC } from 'react'
 
+type TimelineItem = {
+  period: string
+  description: string
+}
+
 const timelineContent = [
   {
     period: 'Summer 2018',
@@ -41,11 +46,15 @@ const timelineContent = [
   },
 ]
 
-const Timeline: FC = () => (
+type Props = {
+  items: TimelineItem[]
+}
+
+const Timeline: FC<Props> = ({ items }) => (
   <section className="px-4 pt-20 max-w-6xl mx-auto">
     <h2 className="text-4xl font-semibold mb-4">Our history</h2>
     <div className="timeline-container">
-      {timelineContent.map((item, i) => (
+      {items.map((item, i) => (
         <div
           key={`item-${i}`}
           className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}
@@ -53,7 +62,7 @@ const Timeline: FC = () => (
           <p className="text-xl text-navy-600 font-bold mb-2 timeline-title">
             {item.period}
           </p>
-          <p>{item.content}</p>
+          <p>{item.description}</p>
         </div>
       ))}
     </div>
