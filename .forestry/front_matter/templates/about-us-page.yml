@@ -16,7 +16,7 @@ fields:
     schema:
       format: markdown
   label: About our mission
-- name: timeline
+- name: timeline_items
   type: field_group_list
   fields:
   - name: period
@@ -33,6 +33,6 @@ fields:
     min: 
     max: 
     labelField: 
-  label: Timeline
+  label: Timeline items
 pages:
 - content/pages/about-us.md
