@@ -13,5 +13,24 @@ timeline_items:
 - description: When sorting donations in Scotland Sara had the idea for Distribute
     Aid to make it easier for people to help
   period: Summer 2018
+- period: Fall 2018
+  description: Sara and Taylor (co-founders) spent 3 months visiting and volunteering
+    with 50+ aid organisations in Europe to discover the most effective ways to help
+- period: January 2019
+  description: Distribute Aid became a registered charity in Sweden
+- period: October 2019
+  description: Distribute Aid facilitated its first large in-kind donation
+- period: January 2020
+  description: Distribute Aid received the "Most Direct Human Impact" award by the
+    UN Technology and Innovation Lab
+- period: Sprint 2021
+  description: Distribute Aid set up aid hubs and regular routes from the U.K. to
+    help grassroots organisations continue to send aid after Brexit.
+- period: March 2020
+  description: Flexport.org rewarded Distribute Aid with a $50,000 grant to provide
+    emergency aid shipments
+- period: Fall 2020
+  description: Distribute Aid facilitated the international response to the Moria
+    fire, tripling its number of aid shipments to date
 
 ---
