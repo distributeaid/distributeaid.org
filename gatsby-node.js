@@ -62,7 +62,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Build the home page
-  console.time('Building home page')
   const homePageQuery = await graphql(`
     query HomePageQuery {
       file(relativePath: { eq: "home.md" }) {
@@ -91,10 +90,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     },
   })
 
-  console.timeEnd('Building home page')
-
   // Build the About Us page
-  console.time('Building About Us page')
   const aboutUsPageQuery = await graphql(`
     query AboutUsPageQuery {
       file(relativePath: { eq: "about-us.md" }) {
@@ -121,8 +117,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       pageFields: aboutUsPageQuery.data.file.childMarkdownRemark.frontmatter,
     },
   })
-
-  console.timeEnd('Building About Us page')
 }
 
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup

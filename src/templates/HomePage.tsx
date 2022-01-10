@@ -21,19 +21,14 @@ type TemplateProps = {
   }
 }
 
-const HomePage: FC<TemplateProps> = ({ pageContext }) => {
-  const { pageFields } = pageContext
-  console.log(pageFields)
-
-  return (
-    <SimpleLayout pageTitle="Home">
-      <ImageCarousel headline={pageFields.headline} />
-      <MissionSection missionStatement={pageFields.mission_statement} />
-      <RoutesSection />
-      <HowWeHelpSection blocks={pageFields.how_we_help_block} />
-      <YearInNumbersSection />
-    </SimpleLayout>
-  )
-}
+const HomePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
+  <SimpleLayout pageTitle="Home">
+    <ImageCarousel headline={pageFields.headline} />
+    <MissionSection missionStatement={pageFields.mission_statement} />
+    <RoutesSection />
+    <HowWeHelpSection blocks={pageFields.how_we_help_block} />
+    <YearInNumbersSection />
+  </SimpleLayout>
+)
 
 export default HomePage
