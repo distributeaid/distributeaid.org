@@ -4,6 +4,7 @@ import refugeeAidImage from '../../images/home/how-we-help-refugees.jpg'
 import covidAidImage from '../../images/home/how-we-help-covid.jpg'
 import placeholderImage from '../../images/home/how-we-help-placeholder.png'
 import ExternalLink from '@components/link/ExternalLink'
+import MarkdownContent from '@components/markdown/MarkdownContent'
 
 export type HowWeHelpBlock = {
   title: string
@@ -73,7 +74,7 @@ const Card: FC<CardProps> = ({ title, location, description, image, side }) => (
     <div className="py-4 md:mx-8 md:w-1/2">
       <h3 className="text-2xl font-medium">{title}</h3>
       <p className="text-xl text-navy-700 mb-2">{location}</p>
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <MarkdownContent content={description} />
     </div>
   </article>
 )

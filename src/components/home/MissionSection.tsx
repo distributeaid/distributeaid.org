@@ -1,3 +1,4 @@
+import MarkdownContent from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
 import mapImage from '../../images/homepage-banner-image.svg'
@@ -10,10 +11,9 @@ const MissionSection: FC<Props> = ({ missionStatement }) => {
   return (
     <section className="bg-navy-50 px-4 py-20">
       <div className="max-w-7xl mx-auto lg:flex justify-between items-center">
-        <div
-          className="space-y-6 text-navy-700 text-2xl lg:text-3xl lg:w-1/2 lg:leading-snug"
-          dangerouslySetInnerHTML={{ __html: missionStatement }}
-        />
+        <div className="space-y-6 text-navy-700 text-2xl lg:text-3xl lg:w-1/2 lg:leading-snug">
+          <MarkdownContent content={missionStatement} />
+        </div>
         <img
           className="hidden lg:block"
           src={mapImage}
