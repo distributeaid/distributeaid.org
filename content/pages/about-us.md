@@ -9,5 +9,9 @@ timeline:
 - period: Summer 2018
   description: When sorting donations in Scotland Sara had the idea for Distribute
     Aid to make it easier for people to help
+timeline_items:
+- description: When sorting donations in Scotland Sara had the idea for Distribute
+    Aid to make it easier for people to help
+  period: Summer 2018
 
 ---
