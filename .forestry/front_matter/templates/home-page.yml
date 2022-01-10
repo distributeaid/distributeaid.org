@@ -46,6 +46,6 @@ fields:
     min: 
     max: 
     labelField: 
-  label: How we help block
+  label: How we help
 pages:
 - content/pages/home.md
