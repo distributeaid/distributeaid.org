@@ -18,7 +18,7 @@ fields:
     required: false
     wysiwyg: true
     schema:
-      format: html-blocks
+      format: markdown
   label: Mission Statement
 - name: how_we_help_block
   type: field_group_list
@@ -40,7 +40,7 @@ fields:
       required: false
       wysiwyg: true
       schema:
-        format: html-blocks
+        format: markdown
     label: Description
   config:
     min: 
