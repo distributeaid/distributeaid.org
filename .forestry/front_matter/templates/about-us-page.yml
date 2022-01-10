@@ -1,4 +1,36 @@
 ---
 label: About Us Page
 hide_body: false
-fields: []
+fields:
+- name: mission_statement
+  type: text
+  config:
+    required: false
+  label: Mission statement
+- name: about_our_mission
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: About our mission
+- name: timeline
+  type: field_group_list
+  fields:
+  - name: period
+    type: text
+    config:
+      required: false
+    label: Period
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Timeline
