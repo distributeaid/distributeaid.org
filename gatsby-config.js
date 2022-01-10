@@ -32,12 +32,18 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/content/pages`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -46,6 +52,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-typescript`,
