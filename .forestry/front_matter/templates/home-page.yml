@@ -20,5 +20,32 @@ fields:
     schema:
       format: html-blocks
   label: Mission Statement
+- name: how_we_help_block
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: location
+    type: text
+    config:
+      required: false
+    label: Location
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: html-blocks
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: How we help block
 pages:
 - content/pages/home.md
