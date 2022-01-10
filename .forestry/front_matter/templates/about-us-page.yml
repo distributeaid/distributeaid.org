@@ -34,3 +34,5 @@ fields:
     max: 
     labelField: 
   label: Timeline
+pages:
+- content/pages/about-us.md
