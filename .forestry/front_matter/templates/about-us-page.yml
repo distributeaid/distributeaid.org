@@ -1,6 +1,6 @@
 ---
 label: About Us Page
-hide_body: false
+hide_body: true
 fields:
 - name: mission_statement
   type: text
