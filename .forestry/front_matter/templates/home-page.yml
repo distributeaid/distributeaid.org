@@ -1,6 +1,6 @@
 ---
 label: Home Page
-hide_body: false
+hide_body: true
 fields:
 - name: headline
   type: textarea
