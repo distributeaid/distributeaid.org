@@ -93,6 +93,7 @@
     "url": "git+https://github.com/distributeaid/distributeaid.org.git"
   },
   "scripts": {
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
