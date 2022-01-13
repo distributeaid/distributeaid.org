@@ -47,19 +47,24 @@ const content = [
     subtitle: 'USA',
     body: (
       <>
-        Distribute Aid runs a successful in-kind donation programme where we
-        connect companies with aid organisations. Through our network of
-        hundreds of charities we can handle coordinating large volumes of
-        donations. To date we have secured over 5 million items through our
-        in-kind donor programme. Email{' '}
+        Distribute Aid was officially invited to join Operation Allies Welcome
+        at Fort Pickett in November. Our role on base is to manage all the
+        donated aid. We work with NGOs and departments across the base to assess
+        the needs of our guests, and work with the community of external
+        organizations supporting the Operation Allies Welcome mission to help
+        facilitate aid deliveries. Once aid arrives on base we work with the US
+        Marines to distribute items to guests, and supply materials for NGOs
+        running education & activity programs to use in their classes. In
+        November & December, our efforts resulted in more than 750,000 items
+        being distributed to or used by 7,500 guests at Fort Pickett. You can
+        support our work by donating{' '}
         <ExternalLink
           className="link"
-          href="mailto:donate-aid@distributeaid.org"
+          href="https://opencollective.com/fort-pickett"
         >
-          donate-aid@distributeaid.org
-          <span className="sr-only">(opens in your email client)</span>
-        </ExternalLink>{' '}
-        if you can donate in-kind.
+          here
+        </ExternalLink>
+        !
       </>
     ),
     image: fortPickettImage,
