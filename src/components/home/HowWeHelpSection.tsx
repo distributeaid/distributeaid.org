@@ -3,6 +3,8 @@ import cx from 'classnames'
 import refugeeAidImage from '../../images/home/how-we-help-refugees.jpg'
 import covidAidImage from '../../images/home/how-we-help-covid.jpg'
 import placeholderImage from '../../images/home/how-we-help-placeholder.png'
+import inKindDonationsImage from '../../images/home/in-kind-donations.webp'
+import fortPickettImage from '../../images/home/fort-pickett.jpg'
 import ExternalLink from '@components/link/ExternalLink'
 
 const content = [
@@ -38,7 +40,29 @@ const content = [
         if you can donate in-kind.
       </>
     ),
-    image: placeholderImage,
+    image: inKindDonationsImage,
+  },
+  {
+    title: 'Fort Pickett',
+    subtitle: 'USA',
+    body: (
+      <>
+        Distribute Aid runs a successful in-kind donation programme where we
+        connect companies with aid organisations. Through our network of
+        hundreds of charities we can handle coordinating large volumes of
+        donations. To date we have secured over 5 million items through our
+        in-kind donor programme. Email{' '}
+        <ExternalLink
+          className="link"
+          href="mailto:donate-aid@distributeaid.org"
+        >
+          donate-aid@distributeaid.org
+          <span className="sr-only">(opens in your email client)</span>
+        </ExternalLink>{' '}
+        if you can donate in-kind.
+      </>
+    ),
+    image: fortPickettImage,
   },
 ]
 
