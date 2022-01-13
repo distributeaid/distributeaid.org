@@ -3,6 +3,8 @@ import cx from 'classnames'
 import refugeeAidImage from '../../images/home/how-we-help-refugees.jpg'
 import covidAidImage from '../../images/home/how-we-help-covid.jpg'
 import placeholderImage from '../../images/home/how-we-help-placeholder.png'
+import inKindDonationsImage from '../../images/home/in-kind-donations.webp'
+import fortPickettImage from '../../images/home/fort-pickett.jpg'
 import ExternalLink from '@components/link/ExternalLink'
 
 const content = [
@@ -38,7 +40,34 @@ const content = [
         if you can donate in-kind.
       </>
     ),
-    image: placeholderImage,
+    image: inKindDonationsImage,
+  },
+  {
+    title: 'Fort Pickett',
+    subtitle: 'USA',
+    body: (
+      <>
+        Distribute Aid was officially invited to join Operation Allies Welcome
+        at Fort Pickett in November. Our role on base is to manage all the
+        donated aid. We work with NGOs and departments across the base to assess
+        the needs of our guests, and work with the community of external
+        organizations supporting the Operation Allies Welcome mission to help
+        facilitate aid deliveries. Once aid arrives on base we work with the US
+        Marines to distribute items to guests, and supply materials for NGOs
+        running education & activity programs to use in their classes. In
+        November & December, our efforts resulted in more than 750,000 items
+        being distributed to or used by 7,500 guests at Fort Pickett. You can
+        support our work by donating{' '}
+        <ExternalLink
+          className="link"
+          href="https://opencollective.com/fort-pickett"
+        >
+          here
+        </ExternalLink>
+        !
+      </>
+    ),
+    image: fortPickettImage,
   },
 ]
 
