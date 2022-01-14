@@ -52,15 +52,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const domain = metadataResult.data.site.siteMetadata.domain
-  const pathPrefix = metadataResult.data.site.pathPrefix
-
-  const pageTemplates = {
-    home: path.resolve(`./src/templates/HomePage.tsx`),
-    main: path.resolve(`./src/templates/MainPage.tsx`),
-    tabs: path.resolve(`./src/templates/TabPage.tsx`),
-  }
-
   // Build the home page
   const homePageQuery = await graphql(`
     query HomePageQuery {
@@ -81,10 +72,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  // make the page
   createPage({
     path: '/',
-    component: pageTemplates.home,
+    component: path.resolve(`./src/templates/HomePage.tsx`),
     context: {
       pageFields: homePageQuery.data.file.childMarkdownRemark.frontmatter,
     },
@@ -109,7 +99,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  // make the page
   createPage({
     path: '/about-us',
     component: path.resolve(`./src/templates/AboutUsPage.tsx`),
