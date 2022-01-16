@@ -1,9 +1,7 @@
 import React, { FC } from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import RouteCard from '@components/home/RouteCard'
 import InternalLink from '@components/link/InternalLink'
-import franceRouteImage from '../../images/home/help-refugees-warehouse-calais.jpg'
-import lebanonRouteImage from '../../images/home/the-free-shop-unloading.jpg'
-import customShipmentsImage from '../../images/home/bobby-moving-a-pallet-iha.jpg'
 
 const RoutesSection: FC = () => (
   <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
@@ -11,8 +9,15 @@ const RoutesSection: FC = () => (
       title="UK ➜ France"
       subtitle="Pallets via DA Delivery"
       ctaLabel="Ship aid to France!"
-      ctaUrl="/routes/uk-to-france/"
-      imageSrc={franceRouteImage}
+      ctaUrl="/routes/uk-to-francie/"
+      image={
+        <StaticImage
+          src={'../../images/home/help-refugees-warehouse-calais.jpg'}
+          alt="Calais warehouse"
+          className="mb-4 object-cover w-full"
+          height={200}
+        />
+      }
     >
       <p>Send pallets to Calais & Dunkirk on our monthly truck.</p>
       <p>
@@ -32,7 +37,14 @@ const RoutesSection: FC = () => (
       subtitle="Pallets via DA Delivery"
       ctaLabel="Ship aid to Lebanon!"
       ctaUrl="/routes/uk-to-lebanon/"
-      imageSrc={lebanonRouteImage}
+      image={
+        <StaticImage
+          src={'../../images/home/the-free-shop-unloading.jpg'}
+          alt="Two volunteers unloading a truck"
+          className="mb-4 object-cover w-full"
+          height={200}
+        />
+      }
     >
       <p>Send pallets to Calais & Dunkirk on our monthly truck.</p>
       <p>
@@ -45,7 +57,14 @@ const RoutesSection: FC = () => (
       subtitle="Pallets, Trucks, & Containers"
       ctaLabel="Contact Us!"
       ctaUrl="mailto:logistics@distributeaid.org"
-      imageSrc={customShipmentsImage}
+      image={
+        <StaticImage
+          src={'../../images/home/bobby-moving-a-pallet-iha.jpg'}
+          alt="Volunteer Bobby moving a pallet"
+          className="mb-4 object-cover w-full"
+          height={200}
+        />
+      }
     >
       <p>
         We're happy to help organize or advise on humanitarian aid shipments to:
