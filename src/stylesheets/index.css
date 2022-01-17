@@ -48,7 +48,7 @@
 
 .video-container {
   /* Fallback for browsers that don't support aspect-ratio */
-  @supports not (aspect-ratio: auto) {
+  @supports not (aspect-ratio: 1 / 1) {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px;
@@ -56,12 +56,13 @@
     overflow: hidden;
   }
 }
+
 .video-iframe {
   aspect-ratio: 16/9;
   width: 100%;
 
   /* Fallback for browsers that don't support aspect-ratio */
-  @supports not (aspect-ratio: auto) {
+  @supports not (aspect-ratio: 1 / 1) {
     position: absolute;
     top: 0;
     left: 0;
