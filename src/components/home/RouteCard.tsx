@@ -7,7 +7,7 @@ type Props = {
   subtitle: ReactNode
   ctaLabel: ReactNode
   ctaUrl: string
-  imageSrc: string
+  image: ReactNode
 }
 
 const RouteCard: FC<Props> = ({
@@ -16,15 +16,10 @@ const RouteCard: FC<Props> = ({
   subtitle,
   ctaLabel,
   ctaUrl,
-  imageSrc,
+  image,
 }) => (
   <article className="border">
-    <img
-      src={imageSrc}
-      alt=""
-      className="mb-4 object-cover w-full"
-      style={{ height: 200 }}
-    />
+    {image}
     <div className="text-center">
       <h2 className="text-xl font-semibold mb-1">{title}</h2>
       <p className="text-gray-600 mb-6">{subtitle}</p>
