@@ -5,7 +5,9 @@ import CarouselTile from './CarouselTile'
 
 const CAROUSEL_TIMER_MS = 5000 as const
 
-const ImageCarousel: FC = () => {
+type Props = { headline: string }
+
+const ImageCarousel: FC<Props> = ({ headline }) => {
   // Load all the images from the home/carousel directory
   const data = useStaticQuery(graphql`
     {
@@ -55,7 +57,7 @@ const ImageCarousel: FC = () => {
         <div className="pb-8">
           <WordMark width={300} height="auto" />
           <h1 className="text-4xl text-navy-700 max-w-sm mt-4 leading-snug">
-            Re-imagine Humanitarian Aid Delivery
+            {headline || 'Re-imagine Humanitarian Aid Delivery'}
           </h1>
         </div>
         <CarouselTile images={allImages} currentIndex={imageIndex} size={400} />

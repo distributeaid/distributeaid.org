@@ -1,0 +1,51 @@
+---
+label: Home Page
+hide_body: true
+fields:
+- name: headline
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: html-blocks
+  label: Headline
+- name: mission_statement
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Mission Statement
+- name: how_we_help_block
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: location
+    type: text
+    config:
+      required: false
+    label: Location
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: How we help
+pages:
+- content/pages/home.md

@@ -105,6 +105,21 @@ Remove cached data from Gatsby, including data pulled in from Contentful. A good
 React `src/` folder layout inspired by [this blog post](https://charles-stover.medium.com/optimal-file-structure-for-react-applications-f3e35ad0a145) but can be changed up as desired.
 
 
+### Content management system
+
+We use [Forestry](https://forestry.io) to manage our content. Forestry is a "git-based CMS", which means that all the content is stored inside this repo.
+
+Visit the `.forestry` directory to view the configuration for our site, templates, and data files.
+
+All the content is stored inside the `content` directory.
+
+#### How do I edit content?
+
+There are 3 ways to do edit content:
+- make a pull request through GitHub's UI
+- clone this repository and create a pull request
+- make changes in Forestry's UI (you'll need a Forestry account)
+
 Deployment & Production
 ------------------------------------------------------------
 

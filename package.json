@@ -36,6 +36,7 @@
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
     "react-hook-form": "6.15.8",
+    "react-markdown": "7.1.2",
     "react-modal": "3.14.4",
     "react-multi-carousel": "2.6.5",
     "react-router-dom": "5.3.0",
@@ -92,6 +93,7 @@
     "url": "git+https://github.com/distributeaid/distributeaid.org.git"
   },
   "scripts": {
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
