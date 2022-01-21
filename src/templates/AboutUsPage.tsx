@@ -9,9 +9,9 @@ import Timeline from '@components/about-us/Timeline'
 type TemplateProps = {
   pageContext: {
     pageFields: {
-      mission_statement: string
-      about_our_mission: string
-      timeline_items: {
+      missionStatement: string
+      aboutOurMission: string
+      timelineItems: {
         period: string
         description: string
       }[]
@@ -22,10 +22,10 @@ type TemplateProps = {
 const AboutUs: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
   <SimpleLayout pageTitle="About us">
     <AboutHero />
-    <MissionStatement missionStatement={pageFields.mission_statement} />
+    <MissionStatement missionStatement={pageFields.missionStatement} />
     <BoardMembers />
-    <AboutOurMission content={pageFields.about_our_mission} />
-    <Timeline items={pageFields.timeline_items} />
+    <AboutOurMission content={pageFields.aboutOurMission} />
+    <Timeline items={pageFields.timelineItems} />
   </SimpleLayout>
 )
 

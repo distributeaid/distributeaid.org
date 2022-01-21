@@ -1,10 +1,10 @@
 ---
 headline: Re-imagine Humanitarian Aid Delivery
-mission_statement: |-
+missionStatement: |-
   Distribute Aid delivers humanitarian aid to communities in need.
 
   By coordinating end-to-end shipments, we make it easy for donors to connect with frontline aid organisations, understand the needs on the ground, and get their aid delivered.
-how_we_help_block:
+howWeHelpBlock:
   - title: Refugee Aid
     location: Europe
     description:

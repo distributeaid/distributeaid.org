@@ -60,8 +60,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         childMarkdownRemark {
           frontmatter {
             headline
-            mission_statement
-            how_we_help_block {
+            missionStatement
+            howWeHelpBlock {
               description
               location
               title
@@ -87,9 +87,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         id
         childMarkdownRemark {
           frontmatter {
-            mission_statement
-            about_our_mission
-            timeline_items {
+            missionStatement
+            aboutOurMission
+            timelineItems {
               period
               description
             }
