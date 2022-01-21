@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
 import { Link } from 'gatsby'
+import siteSettings from '../../content/site-settings.json'
 import SocialIconContainer from './social-media/SocialIconContainer'
 
 const Footer: FC = () => (
@@ -17,8 +18,11 @@ const Footer: FC = () => (
     <div className="my-4">
       <p>
         Email us at{' '}
-        <ExternalLink className="link" href="mailto:hello@distributeaid.org">
-          hello@distributeaid.org
+        <ExternalLink
+          className="link"
+          href={`mailto:${siteSettings.footerEmail}`}
+        >
+          {siteSettings.footerEmail}
           <span className="sr-only">(opens in your email client)</span>
         </ExternalLink>
       </p>

@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 
+import siteSettings from '../../../content/site-settings.json'
 import facebookSrc from '../../images/social-icons/facebook.svg'
 import twitterSrc from '../../images/social-icons/twitter.svg'
 import linkedInSrc from '../../images/social-icons/linked-in.svg'
@@ -9,22 +10,22 @@ import { getThemeLargeScreenWidth } from 'utils/site-theme'
 
 const socialMediaDetails = [
   {
-    href: 'https://www.instagram.com/distributeaid',
+    href: siteSettings.instagramUrl,
     src: instagramSrc,
     altText: 'Instagram icon',
   },
   {
-    href: 'https://twitter.com/DistributeAid',
+    href: siteSettings.twitterUrl,
     src: twitterSrc,
     altText: 'Twitter icon',
   },
   {
-    href: 'https://www.linkedin.com/company/distribute-aid',
+    href: siteSettings.linkedinUrl,
     src: linkedInSrc,
     altText: 'LinkedIn icon',
   },
   {
-    href: 'https://www.facebook.com/DistributeAidDotOrg/',
+    href: siteSettings.facebookUrl,
     src: facebookSrc,
     altText: 'Facebook icon',
   },
