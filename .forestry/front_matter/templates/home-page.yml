@@ -2,16 +2,38 @@
 label: Home Page
 hide_body: true
 fields:
-  - name: headline
-    type: textarea
-    default: ''
+- name: headline
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: html-blocks
+  label: Headline
+- name: missionStatement
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Mission Statement
+- name: howWeHelpBlock
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
     config:
       required: false
-      wysiwyg: false
-      schema:
-        format: html-blocks
-    label: Headline
-  - name: missionStatement
+    label: Title
+  - name: location
+    type: text
+    config:
+      required: false
+    label: Location
+  - name: description
     type: textarea
     default: ''
     config:
@@ -19,33 +41,11 @@ fields:
       wysiwyg: true
       schema:
         format: markdown
-    label: Mission Statement
-  - name: howWeHelpBlock
-    type: field_group_list
-    fields:
-      - name: title
-        type: text
-        config:
-          required: false
-        label: Title
-      - name: location
-        type: text
-        config:
-          required: false
-        label: Location
-      - name: description
-        type: textarea
-        default: ''
-        config:
-          required: false
-          wysiwyg: true
-          schema:
-            format: markdown
-        label: Description
-    config:
-      min:
-      max:
-      labelField:
-    label: How we help
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: How we help
 pages:
-  - content/pages/home.md
+- content/pages/home.md
