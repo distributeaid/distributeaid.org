@@ -470,7 +470,7 @@ const UkToFrance: FC = () => {
         positionOfVisual="right"
         visual={
           <RoutesSectionImage
-            ariaLabel="Pallets with lots of cans of food."
+            ariaLabel="Pallets with lots of cans of food and a person celebrating the successful unloading."
             image={calaisUnloadingBackground}
           />
         }
