@@ -4,27 +4,6 @@ Legacy CSS for the routes pages
 /routes/uk-to-france
 */
 
-.section--content-left,
-.section--content-right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-
-.section--content-left .section__content {
-  width: 50%;
-}
-
-.section--content-right .section__content {
-  width: 50%;
-  margin-left: auto;
-}
-
-.section__content {
-  padding: 1rem;
-}
-
 .section__title {
   display: flex;
   justify-content: center;
@@ -32,13 +11,6 @@ Legacy CSS for the routes pages
   margin-bottom: 0;
   font-size: 2.4rem;
   text-transform: uppercase;
-}
-
-@media only screen and (max-device-width: 600px) {
-  .section--content-left .section__content,
-  .section--content-right .section__content {
-    width: 100%;
-  }
 }
 
 .section--above-the-fold {
@@ -218,42 +190,4 @@ Accessibility
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-/*
-Background & Color
-------------------------------------------------------------
-*/
-.bg--img-cover {
-  background: no-repeat center center fixed;
-  background-size: cover;
-  background-color: #c5cfe4; /* fallback if no image is used */
-}
-
-.bg--img-forklift-loading,
-.bg--img-its-lebanon {
-  background: no-repeat center right;
-  background-size: contain;
-}
-
-.bg--img-forklift-loading-2,
-.bg--img-cfc-unloading {
-  background: no-repeat center right;
-  background-size: cover;
-}
-
-.bg--img-pallet-storage {
-  background: no-repeat center left;
-  background-size: contain;
-}
-
-.bg--img-collection-and-sorting {
-  background: no-repeat center left;
-  background-size: 50% auto;
-}
-
-.bg--img-free-shop-unloading,
-.bg--img-mrs-distro {
-  background: no-repeat center right;
-  background-size: 50% auto;
 }
