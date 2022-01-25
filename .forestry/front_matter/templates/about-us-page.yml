@@ -34,23 +34,5 @@ fields:
     max: 
     labelField: 
   label: Timeline items
-- name: frontlineGroups
-  type: field_group_list
-  fields:
-  - name: logo
-    type: file
-    config:
-      maxSize: 64
-    label: Logo
-  - name: name
-    type: text
-    config:
-      required: true
-    label: Name
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Frontline groups
 pages:
 - content/pages/about-us.md
