@@ -12,10 +12,25 @@ introduction: |-
 
   If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2021-10-31T00:00:00Z
-  confirmationDate: 2021-11-05T00:00:00Z
-  stagingBegins: 2021-11-15T00:00:00Z
-  stagingEnds: 2021-11-22T00:00:00Z
-  shipmentDeparture: 2021-11-23T00:00:00Z
+  submissionsDeadline: 2021-10-31T00:00:00.000+00:00
+  confirmationDate: 2021-11-05T00:00:00.000+00:00
+  stagingBegins: 2021-11-15T00:00:00.000+00:00
+  stagingEnds: 2021-11-22T00:00:00.000+00:00
+  shipmentDeparture: 2021-11-23T00:00:00.000+00:00
+frontlineGroups:
+- name: L'Auberge des Migrants
+  logo: "/uploads/auberge-logo-256.jpg"
+- name: Refugee Women's Center
+  logo: "/uploads/rwc-logo-256.jpg"
+- name: Refugee Community Kitchen
+  logo: "/uploads/rck-logo-256.jpg"
+- name: Calais Food Collective
+  logo: "/uploads/cfc-logo-256.jpg"
+- name: Utopia 56
+  logo: "/uploads/u56-logo-256.jpg"
+- name: Collective Aid
+  logo: "/uploads/ca-logo-256.jpg"
+- name: Mobile Refugee Support
+  logo: "/uploads/mrs-logo-256.jpg"
 
 ---
