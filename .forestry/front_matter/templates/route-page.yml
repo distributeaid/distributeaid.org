@@ -138,6 +138,24 @@ fields:
       step: 
       required: true
   label: Costs
+- name: frontlineGroups
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+  - name: logo
+    type: file
+    config:
+      maxSize: 5
+    label: Logo
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Frontline groups
 pages:
 - content/pages/routes/uk-to-france.md
 - content/pages/routes/uk-to-lebanon.md
