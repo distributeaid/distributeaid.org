@@ -1,4 +1,130 @@
 ---
 label: Route Page
 hide_body: true
-fields: []
+fields:
+- name: routeOrigin
+  type: text
+  config:
+    required: true
+  label: Route origin
+  default: UK
+- name: routeDestination
+  type: text
+  config:
+    required: true
+  label: Route destination
+  default: France
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Introduction
+- name: deadlines
+  type: field_group
+  config: {}
+  fields:
+  - name: submissionsDeadline
+    type: datetime
+    label: Submissions deadline
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: confirmationDate
+    type: datetime
+    label: Confirmation date
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: stagingBegins
+    type: datetime
+    label: Staging begins
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: stagingEnds
+    type: datetime
+    label: Staging ends
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: shipmentDeparture
+    type: datetime
+    label: Shipment departure
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  label: Deadlines
+- name: costs
+  type: field_group
+  config: {}
+  fields:
+  - name: currency
+    type: select
+    default: EUR
+    config:
+      required: true
+      options:
+      - GBP
+      - EUR
+      - USD
+      - SEK
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Currency
+    description: The currency for all the costs in this section.
+  - name: standardPaletteCost
+    type: number
+    label: Standard palette cost
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  - name: halfPaletteCost
+    type: number
+    label: Half palette cost
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  - name: overflowPricing
+    type: number
+    label: Overflow pricing
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  label: Costs
