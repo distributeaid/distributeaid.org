@@ -2,6 +2,16 @@
 label: Route Page
 hide_body: true
 fields:
+- name: pagePath
+  type: text
+  config:
+    required: true
+    min: 5
+    max: 20
+  label: Page path
+  default: uk-to-lebanon
+  description: The path that will appear in the URL. For example, if you choose "uk-to-lebanon",
+    the URL of this page will be distributeaid.org/routes/uk-to-lebanon.
 - name: routeOrigin
   type: text
   config:
