@@ -139,4 +139,5 @@ fields:
       required: true
   label: Costs
 pages:
+- content/pages/routes/uk-to-france.md
 - content/pages/routes/uk-to-lebanon.md

@@ -1,0 +1,21 @@
+---
+pagePath: uk-to-france
+routeOrigin: UK
+routeDestination: France
+costs:
+  currency: GBP
+  standardPaletteCost: 75
+  halfPaletteCost: 45
+  overflowPricing: 2.5
+introduction: |-
+  Distribute Aid is organising a regular route for humanitarian aid shipments between the UK and France. We won't let pandemics, Brexit, or global supply chain disruptions stop the flow of aid to those who need it most! ♥
+
+  If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
+deadlines:
+  submissionsDeadline: 2021-10-31T00:00:00Z
+  confirmationDate: 2021-11-05T00:00:00Z
+  stagingBegins: 2021-11-15T00:00:00Z
+  stagingEnds: 2021-11-22T00:00:00Z
+  shipmentDeparture: 2021-11-23T00:00:00Z
+
+---
