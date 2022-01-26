@@ -172,7 +172,8 @@ fields:
     labelField: 
   label: Frontline groups
 - name: images
-  type: field_group_list
+  type: field_group
+  config: {}
   fields:
   - name: deliverySection
     type: file
@@ -199,10 +200,6 @@ fields:
     config:
       maxSize: 5
     label: Pallets section
-  config:
-    min: 
-    max: 
-    labelField: 
   label: Images
 pages:
 - content/pages/routes/uk-to-france.md
