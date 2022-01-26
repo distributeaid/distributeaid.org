@@ -19,17 +19,17 @@ deadlines:
   shipmentDeparture: 2021-12-03T00:00:00.000+00:00
 frontlineGroups:
 - name: Shaabe
-  logo: "/uploads/shaabe-logo-262x82.jpg"
+  logo: "/static/uploads/shaabe.jpg"
 - name: arcenciel
   logo: "/uploads/arcenciel-1.png"
-- name: Wing Woman
-  logo: "/uploads/wing-woman-logo-300x168.jpg"
+- name: WingWoman Lebanon
+  logo: "/static/uploads/259036900_358957345986394_2142388690480471044_n.png"
 - name: Live Love Beirut
   logo: "/uploads/live-love-beirut-logo-256.png"
 - name: Endless Medical Advantage
   logo: "/uploads/ema-logo-512x256.jpg"
 - name: Beirut Celebrations
-  logo: "/uploads/beirut-celebrations-logo-1061x256.png"
+  logo: "/static/uploads/ejqj2pcm_400x400.jpg"
 - name: The Free Shop
   logo: "/uploads/the-free-shop-logo-392.png"
 
