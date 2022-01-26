@@ -34,5 +34,10 @@ frontlineGroups:
   logo: "/uploads/the-free-shop-logo-392.png"
 aidRequestFormUrl: "/docs/da_aid-delivery-request_uk-to-lebanon.xlsx"
 mapUrl: https://www.google.com/maps/d/u/0/embed?mid=1ZRALkbEQoigOjaT5tFEgJtVFkXBOW6LM
-
+images:
+  deliverySection: "/uploads/the-free-shop-unloading.jpg"
+  reservationSection: "/uploads/pallet-storage.jpg"
+  groupsSection: "/uploads/informal-tented-settlement-lebanon.jpg"
+  storageSection: "/uploads/forklift-loading-2.jpg"
+  palletsSection: "/uploads/collection-and-sorting.jpg"
 ---

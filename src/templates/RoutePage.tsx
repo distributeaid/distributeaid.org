@@ -16,12 +16,6 @@ import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
 
-import palletStorageBackground from '../images/pallet-storage.jpg'
-import forkliftLoadingBackground from '../images/forklift-loading.jpg'
-import collectionBackground from '../images/collection-and-sorting.jpg'
-import mobileRefugeeSupportBackground from '../images/mobile-refugee-support-distribution.jpg'
-import calaisUnloadingBackground from '../images/calais-food-collective-unloading.jpg'
-
 type TemplateProps = {
   pageContext: {
     pageFields: {
@@ -31,6 +25,13 @@ type TemplateProps = {
       introduction: string
       mapUrl: string
       aidRequestFormUrl: string
+      images: {
+        deliverySection: string
+        reservationSection: string
+        groupsSection: string
+        storageSection: string
+        palletsSection: string
+      }
       costs: {
         currency: string
         standardPaletteCost: number
@@ -86,7 +87,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Fork lift loading pallets into a truck"
-          image={forkliftLoadingBackground}
+          image={pageFields.images.deliverySection}
         />
       }
     >
@@ -181,7 +182,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="An aisle in a warehouse with shelves stacked high with pallets of boxes."
-          image={palletStorageBackground}
+          image={pageFields.images.reservationSection}
         />
       }
     >
@@ -295,7 +296,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Mobile refugee support station with a few people gathering."
-          image={mobileRefugeeSupportBackground}
+          image={pageFields.images.groupsSection}
         />
       }
     >
@@ -409,7 +410,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Pallets with lots of cans of food and a person celebrating the successful unloading."
-          image={calaisUnloadingBackground}
+          image={pageFields.images.storageSection}
         />
       }
     >
@@ -538,7 +539,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Three people sorting and packing clothes into boxes."
-          image={collectionBackground}
+          image={pageFields.images.palletsSection}
         />
       }
     >

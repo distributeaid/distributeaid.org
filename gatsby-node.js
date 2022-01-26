@@ -124,6 +124,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               introduction
               mapUrl
               aidRequestFormUrl
+              images {
+                deliverySection
+                reservationSection
+                groupsSection
+                storageSection
+                palletsSection
+              }
               costs {
                 currency
                 standardPaletteCost

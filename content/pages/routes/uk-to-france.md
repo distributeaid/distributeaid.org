@@ -34,5 +34,10 @@ frontlineGroups:
   logo: "/uploads/mrs-logo-256.jpg"
 aidRequestFormUrl: "/docs/da_aid-delivery-request_uk-to-france.xlsx"
 mapUrl: https://www.google.com/maps/d/u/0/embed?mid=1a1ZBC-Fc-WJCP27ZGx70YFRaAByjdFTS
-
+images:
+  deliverySection: "/uploads/forklift-loading.jpg"
+  reservationSection: "/uploads/pallet-storage.jpg"
+  groupsSection: "/uploads/mobile-refugee-support-distribution.jpg"
+  storageSection: "/uploads/calais-food-collective-unloading.jpg"
+  palletsSection: "/uploads/collection-and-sorting.jpg"
 ---
