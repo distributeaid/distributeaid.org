@@ -171,6 +171,39 @@ fields:
     max: 
     labelField: 
   label: Frontline groups
+- name: images
+  type: field_group_list
+  fields:
+  - name: deliverySection
+    type: file
+    config:
+      maxSize: 5
+    label: Delivery section
+  - name: reservationSection
+    type: file
+    config:
+      maxSize: 5
+    label: Reservation section
+  - name: groupsSection
+    type: file
+    config:
+      maxSize: 5
+    label: Groups section
+  - name: storageSection
+    type: file
+    config:
+      maxSize: 5
+    label: Storage section
+  - name: palletsSection
+    type: file
+    config:
+      maxSize: 5
+    label: Pallets section
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Images
 pages:
 - content/pages/routes/uk-to-france.md
 - content/pages/routes/uk-to-lebanon.md
