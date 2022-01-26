@@ -52,7 +52,11 @@ type TemplateProps = {
 }
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('en-US', {
+  const actualDate = new Date(date)
+  const timeDiff = actualDate.getTimezoneOffset() * 60000
+  const adjustedDate = new Date(actualDate.valueOf() + timeDiff)
+
+  return adjustedDate.toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -271,46 +275,6 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               {formatDate(pageFields.deadlines.shipmentDeparture)}
             </p>
           </li>
-          <li>
-            <h4 className="text-lg font-semibold mb-4">Shipment Timetable</h4>
-            <table className="w-full">
-              <thead>
-                <tr>
-                  <th className="border-b-2 border-gray-100 p-2"></th>
-                  <th className="border-b-2 border-gray-100 p-2">
-                    Offer Deadline
-                  </th>
-                  <th className="border-b-2 border-gray-100 p-2">
-                    Truck Departs
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-100 bg-gray-50">
-                  <td className="p-2"></td>
-                  <td className="p-2">8th August</td>
-                  <td className="p-2">24th August</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="p-2"></td>
-                  <td className="p-2">12th September</td>
-                  <td className="p-2">5th October</td>
-                </tr>
-                <tr className="border-b border-gray-100 bg-gray-50">
-                  <td className="text-center text-lg p-2">
-                    <strong>&#10148;</strong>
-                  </td>
-                  <td className="p-2">31st October</td>
-                  <td className="p-2">15th November</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="p-2"></td>
-                  <td className="p-2">28th November</td>
-                  <td className="p-2">13th December</td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
         </ol>
       </div>
 
@@ -468,9 +432,9 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
 
         <div className="tiles tiles--row ">
           <div className="tile tile--column">
-            <div className="tile-icon mx-auto mx-auto mb-2">
+            <div className="tile-icon mx-auto mb-2">
               <img
-                className="icon icon--responsive"
+                className="icon icon--responsive mx-auto"
                 src={palletIcon}
                 alt="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
                 style={{ width: 100 }}
