@@ -32,5 +32,7 @@ frontlineGroups:
   logo: "/uploads/ejqj2pcm_400x400.jpg"
 - name: The Free Shop
   logo: "/uploads/the-free-shop-logo-392.png"
+aidRequestFormUrl: "/docs/da_aid-delivery-request_uk-to-lebanon.xlsx"
+mapUrl: https://www.google.com/maps/d/u/0/embed?mid=1ZRALkbEQoigOjaT5tFEgJtVFkXBOW6LM
 
 ---
