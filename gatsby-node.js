@@ -122,6 +122,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               routeOrigin
               routeDestination
               introduction
+              mapUrl
+              aidRequestFormUrl
               costs {
                 currency
                 standardPaletteCost

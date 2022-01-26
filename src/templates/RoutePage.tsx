@@ -6,7 +6,6 @@ import TextWithVisual from '../components/routes/TextWithVisual'
 import RoutesSectionImage from '../components/routes/RoutesSectionImage'
 import MarkdownContent from '../components/markdown/MarkdownContent'
 
-import logoSrc from '../images/lettermark_blue.svg'
 import netIcon from '../images/regular-routes/icons/noun_net_2428552.svg'
 import mapIcon from '../images/regular-routes/icons/noun_Maps_3610706.svg'
 import truckIcon from '../images/regular-routes/icons/openmoji_truck.svg'
@@ -17,11 +16,11 @@ import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
 
-import palletStorageBackground from '../pages/routes_old/pallet-storage.jpg'
-import forkliftLoadingBackground from '../pages/routes_old/forklift-loading.jpg'
-import collectionBackground from '../pages/routes_old/collection-and-sorting.jpg'
-import mobileRefugeeSupportBackground from '../pages/routes_old/mobile-refugee-support-distribution.jpg'
-import calaisUnloadingBackground from '../pages/routes_old/calais-food-collective-unloading.jpg'
+import palletStorageBackground from '../images/pallet-storage.jpg'
+import forkliftLoadingBackground from '../images/forklift-loading.jpg'
+import collectionBackground from '../images/collection-and-sorting.jpg'
+import mobileRefugeeSupportBackground from '../images/mobile-refugee-support-distribution.jpg'
+import calaisUnloadingBackground from '../images/calais-food-collective-unloading.jpg'
 
 type TemplateProps = {
   pageContext: {
@@ -30,6 +29,8 @@ type TemplateProps = {
       routeOrigin: string
       routeDestination: string
       introduction: string
+      mapUrl: string
+      aidRequestFormUrl: string
       costs: {
         currency: string
         standardPaletteCost: number
@@ -90,15 +91,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       }
     >
       <header className="my-4 text-center">
-        <h1 className="section__title">
-          <img
-            width="130"
-            height="60"
-            src={logoSrc}
-            alt="Distribute Aid Logo: A flock of doves stylized by stacking wings behind the main outline of a dove."
-          />
-          <span>Delivery</span>
-        </h1>
+        <h1 className="section__title">Delivery</h1>
         <h2 className="text-2xl">
           Regular Route: {pageFields.routeOrigin}&rarr;
           {pageFields.routeDestination}
@@ -131,8 +124,10 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               />
             </div>
             <div className="tile-content">
-              <p className="mb-1">Service to Calais &amp; Dunkirk</p>
-              <p>Supporting 7 Frontline Groups</p>
+              <p className="mb-1">Service to {pageFields.routeDestination}</p>
+              <p>
+                Supporting {pageFields.frontlineGroups.length} Frontline Groups
+              </p>
             </div>
           </div>
 
@@ -204,7 +199,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               Download the{' '}
               <a
                 className="font-bold underline"
-                href="/docs/da_aid-delivery-request_uk-to-france.xlsx"
+                href={pageFields.aidRequestFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -348,7 +343,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <iframe
           className="w-full md:w-2/4 h-96 md:h-auto"
-          src="https://www.google.com/maps/d/u/0/embed?mid=1a1ZBC-Fc-WJCP27ZGx70YFRaAByjdFTS"
+          src={pageFields.mapUrl}
           width="100%"
           height="100%"
         />
@@ -361,7 +356,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       <div className="section__body">
         <p className="mb-4">
           The most <strong>cost efficient and Brexit / pandemic-proof</strong>{' '}
-          way to send aid from the UK to France is by shipping palletised aid on
+          way to send aid from the UK is by shipping palletised aid on
           articulated lorries that are loaded by a forklift.{' '}
           <strong>That's where our UK Staging Hubs come in!</strong> They have
           the necessary infrastructure and experience working with us to ensure
