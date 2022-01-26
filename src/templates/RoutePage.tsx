@@ -343,7 +343,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       <header className="mb-4 text-center">
         <h2 className="section__title">Frontline Groups</h2>
       </header>
-      <div className="section__body">
+      <div className="section__body mb-8">
         <div className="flex flex-wrap gap-6 justify-center">
           {pageFields.frontlineGroups.map((group, index) => (
             <div
@@ -358,7 +358,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
                 alt={`Frontline Group Logo: ${group.name}`}
                 style={{ width: 120 }}
               />
-              <div className="text-center text-sm">{group.name}</div>
+              <div className="text-center text-sm mt-4">{group.name}</div>
             </div>
           ))}
         </div>
