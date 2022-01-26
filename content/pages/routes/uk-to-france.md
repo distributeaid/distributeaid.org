@@ -32,5 +32,7 @@ frontlineGroups:
   logo: "/uploads/ca-logo-256.jpg"
 - name: Mobile Refugee Support
   logo: "/uploads/mrs-logo-256.jpg"
+aidRequestFormUrl: "/docs/da_aid-delivery-request_uk-to-france.xlsx"
+mapUrl: https://www.google.com/maps/d/u/0/embed?mid=1a1ZBC-Fc-WJCP27ZGx70YFRaAByjdFTS
 
 ---
