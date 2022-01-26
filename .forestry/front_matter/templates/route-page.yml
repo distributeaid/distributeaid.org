@@ -33,6 +33,21 @@ fields:
     schema:
       format: markdown
   label: Introduction
+- name: aidRequestFormUrl
+  type: text
+  config:
+    required: true
+  label: Aid request form URL
+  default: "/docs/da_aid-delivery-request_uk-to-france.xlsx"
+- name: mapUrl
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Map URL
 - name: deadlines
   type: field_group
   config: {}
