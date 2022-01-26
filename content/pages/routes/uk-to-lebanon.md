@@ -27,7 +27,7 @@ frontlineGroups:
 - name: Live Love Beirut
   logo: "/uploads/live-love-beirut-logo-256.png"
 - name: Endless Medical Advantage
-  logo: "/uploads/ema-logo-512x256.jpg"
+  logo: "/uploads/ema.png"
 - name: Beirut Celebrations
   logo: "/uploads/ejqj2pcm_400x400.jpg"
 - name: The Free Shop
