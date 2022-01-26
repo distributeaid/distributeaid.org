@@ -135,6 +135,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 stagingEnds
                 shipmentDeparture
               }
+              frontlineGroups {
+                logo
+                name
+              }
             }
           }
           relativeDirectory

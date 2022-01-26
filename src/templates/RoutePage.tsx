@@ -43,6 +43,10 @@ type TemplateProps = {
         stagingEnds: string
         shipmentDeparture: string
       }
+      frontlineGroups: {
+        logo: string
+        name: string
+      }[]
     }
   }
 }
@@ -340,97 +344,23 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
         <h2 className="section__title">Frontline Groups</h2>
       </header>
       <div className="section__body">
-        <div className="tiles tiles--grid ">
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive"
-                src="../images/regular-routes/mrs-logo.256.jpg"
-                alt="Frontline Group Logo: Mobile Refugee Support (MRS)"
+        <div className="flex flex-wrap gap-6 justify-center">
+          {pageFields.frontlineGroups.map((group, index) => (
+            <div
+              className="w-full"
+              style={{ maxWidth: 160 }}
+              key={`group-${index}`}
+            >
+              {/* TODO size the images correctly */}
+              <img
+                className="icon icon--responsive mx-auto rounded-full"
+                src={group.logo}
+                alt={`Frontline Group Logo: ${group.name}`}
+                style={{ width: 120 }}
               />
+              <div className="text-center text-sm">{group.name}</div>
             </div>
-            <div className="tile-content">
-              <p className="mb-1">Mobile Refugee Support</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive rounded-full"
-                src="../images/regular-routes/ca-logo.256.jpg"
-                alt="Frontline Group Logo: Collective Aid (CA)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Collective Aid</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive rounded-full"
-                src="../images/regular-routes/u56-logo.256.jpg"
-                alt="Frontline Group Logo: Utopia 56 (U56)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Utopia 56</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive rounded-full"
-                src="../images/regular-routes/cfc-logo.256.jpg"
-                alt="Frontline Group Logo: Calais Food Collective (CFC)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Calais Food Collective</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive"
-                src="../images/regular-routes/rck-logo.256.jpg"
-                alt="Frontline Group Logo: Refugee Community Kitchen (RCK)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Refugee Community Kitchen</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive"
-                src="../images/regular-routes/rwc-logo.256.jpg"
-                alt="Frontline Group Logo: Refugee Women's Center (RWC)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Refugee Women's Center</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/3">
-            <div className="tile-icon mx-auto">
-              <StaticImage
-                className="icon icon--responsive"
-                src="../images/regular-routes/auberge-logo.256.jpg"
-                alt="Frontline Group Logo: L'Auberge des Migrants (Auberge)"
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">L'Auberge des Migrants</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
