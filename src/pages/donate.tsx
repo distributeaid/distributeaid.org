@@ -53,6 +53,7 @@ const Donate: FC = () => {
               width="100"
               height="100"
               className="mx-auto block"
+              alt=""
             />
             <ExternalLink
               className="link py-2"
@@ -79,6 +80,7 @@ const Donate: FC = () => {
               width="100"
               height="100"
               className="mx-auto block"
+              alt=""
             />
             <Button variant="primary" onClick={() => setModalIsOpen(true)}>
               View bank info
