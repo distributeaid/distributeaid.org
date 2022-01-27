@@ -106,6 +106,70 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       pageFields: aboutUsPageQuery.data.file.childMarkdownRemark.frontmatter,
     },
   })
+
+  /**
+   * Build the routes! For each page in the content/routes directory, we create
+   * a page using its path.
+   */
+  const routesQuery = await graphql(`
+    query RoutePagesQuery {
+      allFile(filter: { relativeDirectory: { eq: "routes" } }) {
+        nodes {
+          id
+          childMarkdownRemark {
+            frontmatter {
+              pagePath
+              routeOrigin
+              routeDestination
+              introduction
+              mapUrl
+              aidRequestFormUrl
+              images {
+                deliverySection
+                reservationSection
+                groupsSection
+                storageSection
+                palletsSection
+              }
+              costs {
+                currency
+                standardPaletteCost
+                overflowPricing
+                halfPaletteCost
+              }
+              deadlines {
+                submissionsDeadline
+                confirmationDate
+                stagingBegins
+                stagingEnds
+                shipmentDeparture
+              }
+              frontlineGroups {
+                logo
+                name
+              }
+            }
+          }
+          relativeDirectory
+        }
+      }
+    }
+  `)
+
+  routesQuery.data.allFile.nodes.forEach((route) => {
+    if (route.childMarkdownRemark?.frontmatter) {
+      console.log(
+        `creating route page at /routes/${route.childMarkdownRemark.frontmatter.pagePath}`,
+      )
+      createPage({
+        path: `/routes/${route.childMarkdownRemark.frontmatter.pagePath}`,
+        component: path.resolve(`./src/templates/RoutePage.tsx`),
+        context: {
+          pageFields: route.childMarkdownRemark.frontmatter,
+        },
+      })
+    }
+  })
 }
 
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup

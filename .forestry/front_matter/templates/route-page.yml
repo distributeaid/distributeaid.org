@@ -1,0 +1,206 @@
+---
+label: Route Page
+hide_body: true
+fields:
+- name: pagePath
+  type: text
+  config:
+    required: true
+    min: 5
+    max: 20
+  label: Page path
+  default: uk-to-lebanon
+  description: The path that will appear in the URL. For example, if you choose "uk-to-lebanon",
+    the URL of this page will be distributeaid.org/routes/uk-to-lebanon.
+- name: routeOrigin
+  type: text
+  config:
+    required: true
+  label: Route origin
+  default: UK
+- name: routeDestination
+  type: text
+  config:
+    required: true
+  label: Route destination
+  default: France
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Introduction
+- name: aidRequestFormUrl
+  type: text
+  config:
+    required: true
+  label: Aid request form URL
+  default: "/docs/da_aid-delivery-request_uk-to-france.xlsx"
+- name: mapUrl
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Map URL
+- name: deadlines
+  type: field_group
+  config: {}
+  fields:
+  - name: submissionsDeadline
+    type: datetime
+    label: Submissions deadline
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: confirmationDate
+    type: datetime
+    label: Confirmation date
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: stagingBegins
+    type: datetime
+    label: Staging begins
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: stagingEnds
+    type: datetime
+    label: Staging ends
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  - name: shipmentDeparture
+    type: datetime
+    label: Shipment departure
+    description: ''
+    config:
+      required: true
+      date_format: DD/MM/YYYY
+      time_format: 
+      display_utc: true
+  label: Deadlines
+- name: costs
+  type: field_group
+  config: {}
+  fields:
+  - name: currency
+    type: select
+    default: EUR
+    config:
+      required: true
+      options:
+      - GBP
+      - EUR
+      - USD
+      - SEK
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Currency
+    description: The currency for all the costs in this section.
+  - name: standardPaletteCost
+    type: number
+    label: Standard palette cost
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  - name: halfPaletteCost
+    type: number
+    label: Half palette cost
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  - name: overflowPricing
+    type: number
+    label: Overflow pricing
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 0
+      max: 
+      step: 
+      required: true
+  label: Costs
+- name: frontlineGroups
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+  - name: logo
+    type: file
+    config:
+      maxSize: 5
+    label: Logo
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Frontline groups
+- name: images
+  type: field_group
+  config: {}
+  fields:
+  - name: deliverySection
+    type: file
+    config:
+      maxSize: 5
+    label: Delivery section
+  - name: reservationSection
+    type: file
+    config:
+      maxSize: 5
+    label: Reservation section
+  - name: groupsSection
+    type: file
+    config:
+      maxSize: 5
+    label: Groups section
+  - name: storageSection
+    type: file
+    config:
+      maxSize: 5
+    label: Storage section
+  - name: palletsSection
+    type: file
+    config:
+      maxSize: 5
+    label: Pallets section
+  label: Images
+pages:
+- content/pages/routes/uk-to-france.md
+- content/pages/routes/uk-to-lebanon.md
