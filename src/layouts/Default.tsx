@@ -16,7 +16,12 @@ const DefaultLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
 
   return (
     <>
-      <Helmet title={`${page.title} - ${site.title}`} />
+      <Helmet
+        title={`${page.title} - ${site.title}`}
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      />
       <Favicon />
 
       <header>

@@ -10,7 +10,12 @@ interface Props {
 
 const SimpleLayout: FunctionComponent<Props> = ({ pageTitle, children }) => (
   <>
-    <Helmet title={`${pageTitle} - Distribute Aid`} />
+    <Helmet
+      title={`${pageTitle} - Distribute Aid`}
+      htmlAttributes={{
+        lang: 'en',
+      }}
+    />
     <Favicon />
     <header>
       <MainMenu />
