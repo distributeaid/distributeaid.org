@@ -48,7 +48,7 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ figure, description, image }) => (
   <article className="text-center px-4">
-    <img src={image} width="160" className="block mx-auto" />
+    <img src={image} width="160" className="block mx-auto" alt="" />
     <p className="text-2xl font-medium">{figure}</p>
     <p className="text-gray-700 mb-2">{description}</p>
   </article>
