@@ -21,7 +21,12 @@ const DefaultLayout: FunctionComponent<Props> = ({ pageContext, children }) => {
         htmlAttributes={{
           lang: 'en',
         }}
-      />
+      >
+        <meta
+          name="description"
+          content="Humanitarian aid delivery reimagined. By supporting a huge network of grassroots organisations, we ensure that donations get to where they are needed most."
+        ></meta>
+      </Helmet>
       <Favicon />
 
       <header>
