@@ -2,7 +2,6 @@ import { FC } from 'react'
 import cx from 'classnames'
 import refugeeAidImage from '../../images/home/how-we-help-refugees.jpg'
 import covidAidImage from '../../images/home/how-we-help-covid.jpg'
-import placeholderImage from '../../images/home/how-we-help-placeholder.png'
 import inKindDonationsImage from '../../images/home/in-kind-donations.webp'
 import fortPickettImage from '../../images/home/fort-pickett.jpg'
 import MarkdownContent from '@components/markdown/MarkdownContent'
@@ -14,7 +13,26 @@ export type HowWeHelpBlock = {
 }
 
 // TODO move this to our CMS
-const images = [refugeeAidImage, covidAidImage, inKindDonationsImage, fortPickettImage]
+const images = [
+  {
+    image: refugeeAidImage,
+    altText:
+      'Lots of boxes with donations stacked on the floor next to a shelf with car seats for children.',
+  },
+  {
+    image: covidAidImage,
+    altText: 'People in a room using sewing machines to create masks.',
+  },
+  {
+    image: inKindDonationsImage,
+    altText: 'Two men hugging.',
+  },
+  {
+    image: fortPickettImage,
+    altText:
+      'A US Marine in camouflage uniform playing football with Afghan boys.',
+  },
+]
 
 type CardProps = {
   title: string
@@ -22,6 +40,7 @@ type CardProps = {
   description: string
   image: string
   side: 'left' | 'right'
+  altText: string
 }
 
 const HowWeHelpBlock: FC<CardProps> = ({
@@ -30,12 +49,14 @@ const HowWeHelpBlock: FC<CardProps> = ({
   description,
   image,
   side,
+  altText,
 }) => (
   <article className="md:flex my-12">
     <img
       className={cx('w-full md:w-1/2', {
         'order-2': side === 'right',
       })}
+      alt={altText}
       src={image}
       style={{
         height: '56.25%',
@@ -60,9 +81,10 @@ const HowWeHelpSection: FC<Props> = ({ blocks }) => (
       {blocks.map((section, i) => (
         <HowWeHelpBlock
           {...section}
-          image={images[i]}
+          image={images[i].image}
           side={i % 2 === 0 ? 'left' : 'right'}
           key={`section-${i}`}
+          altText={images[i].altText}
         />
       ))}
     </div>
