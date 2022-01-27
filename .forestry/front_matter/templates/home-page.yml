@@ -33,6 +33,16 @@ fields:
     config:
       required: false
     label: Location
+  - name: image
+    type: file
+    config:
+      maxSize: 5
+    label: Image
+  - name: image_alt
+    type: text
+    config:
+      required: false
+    label: Image Alt
   - name: description
     type: textarea
     default: ''
