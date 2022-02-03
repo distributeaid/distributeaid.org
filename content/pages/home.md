@@ -14,7 +14,7 @@ howWeHelpBlock:
     month to multiple destinations and handle specialty/emergency response shipments
     as well.'
   image: "/uploads/how-we-help-refugees.jpg"
-  image_alt: Lots of boxes with donations stacked on the floor next to a shelf with
+  imageAlt: Lots of boxes with donations stacked on the floor next to a shelf with
     car seats for children.
 - title: COVID-19 Response
   location: Europe & USA
@@ -24,7 +24,7 @@ howWeHelpBlock:
     affects everybody, our response grew as the virus spread. We now also collaborate
     with multiple grassroots networks in the US to support their response.
   image: "/uploads/how-we-help-covid.jpg"
-  image_alt: People in a room using sewing machines to create masks.
+  imageAlt: People in a room using sewing machines to create masks.
 - title: In-kind Donations
   location: Global
   description: Distribute Aid runs a successful in-kind donation programme where we
@@ -33,7 +33,7 @@ howWeHelpBlock:
     over 5 million items through our in-kind donor programme. Email [donate-aid@distributeaid.org](mailto:donate-aid@distributeaid.org
     "Contact Distribute Aid") if you can donate in-kind.
   image: "/uploads/in-kind-donations.webp"
-  image_alt: Two men hugging.
+  imageAlt: Two men hugging.
 - title: Fort Pickett
   location: USA
   description: Distribute Aid was officially invited to join Operation _Allies Welcome_
@@ -47,6 +47,6 @@ howWeHelpBlock:
     to or used by 7,500 guests at Fort Pickett. You can support our work by [donating
     to us through our Open Collective page](https://opencollective.com/fort-pickett)!
   image: "/uploads/fort-pickett.jpg"
-  image_alt: A US Marine in camouflage uniform playing football with Afghan boys.
+  imageAlt: A US Marine in camouflage uniform playing football with Afghan boys.
 
 ---

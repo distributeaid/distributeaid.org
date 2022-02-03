@@ -65,6 +65,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               description
               location
               title
+              image
+              imageAlt
             }
           }
         }

@@ -38,7 +38,7 @@ fields:
     config:
       maxSize: 5
     label: Image
-  - name: image_alt
+  - name: imageAlt
     type: text
     config:
       required: false
