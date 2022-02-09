@@ -12,11 +12,11 @@ introduction: |-
 
   If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2021-10-31T00:00:00.000+00:00
-  confirmationDate: 2021-11-05T00:00:00.000+00:00
-  stagingBegins: 2021-11-15T00:00:00.000+00:00
-  stagingEnds: 2021-11-22T00:00:00.000+00:00
-  shipmentDeparture: 2021-11-23T00:00:00.000+00:00
+  submissionsDeadline: 2022-02-20T00:00:00Z
+  confirmationDate: 2022-02-25T00:00:00Z
+  stagingBegins: 2022-03-04T00:00:00Z
+  stagingEnds: 2022-03-06T00:00:00Z
+  shipmentDeparture: 2022-03-07T00:00:00Z
 frontlineGroups:
 - name: L'Auberge des Migrants
   logo: "/uploads/auberge-logo-256.jpg"
@@ -40,4 +40,5 @@ images:
   groupsSection: "/uploads/mobile-refugee-support-distribution.jpg"
   storageSection: "/uploads/calais-food-collective-unloading.jpg"
   palletsSection: "/uploads/collection-and-sorting.jpg"
+
 ---
