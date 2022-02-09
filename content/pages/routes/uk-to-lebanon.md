@@ -12,11 +12,11 @@ introduction: |-
 
   If you're here because you want to donate goods for displaced people in Lebanon- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2021-11-21T00:00:00.000+00:00
-  confirmationDate: 2021-11-24T00:00:00.000+00:00
-  stagingBegins: 2021-11-27T00:00:00.000+00:00
-  stagingEnds: 2021-12-02T00:00:00.000+00:00
-  shipmentDeparture: 2021-12-03T00:00:00.000+00:00
+  submissionsDeadline: 2022-03-01T00:00:00Z
+  confirmationDate: 2022-03-01T00:00:00Z
+  stagingBegins: 2022-03-01T00:00:00Z
+  stagingEnds: 2022-03-01T00:00:00Z
+  shipmentDeparture: 2022-03-01T00:00:00Z
 frontlineGroups:
 - name: Shaabe
   logo: "/uploads/shaabe.jpg"
@@ -40,4 +40,5 @@ images:
   groupsSection: "/uploads/informal-tented-settlement-lebanon.jpg"
   storageSection: "/uploads/forklift-loading-2.jpg"
   palletsSection: "/uploads/collection-and-sorting.jpg"
+
 ---
