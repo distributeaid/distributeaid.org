@@ -7,10 +7,14 @@ costs:
   standardPaletteCost: 75
   halfPaletteCost: 45
   overflowPricing: 6
-introduction: |-
-  Distribute Aid is organising a shipment of humanitarian aid between the UK and Lebanon. We won't let pandemics or global supply chain disruptions stop the flow of aid to those who need it most! ♥
-
-  If you're here because you want to donate goods for displaced people in Lebanon- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
+introduction: "Distribute Aid is hoping to send a UK to Lebanon shipment around March.
+  This is dependent on storage availability, the need in Lebanon, and the capacity
+  of UK groups. Drop us an email if you would be interested at hubs@distributeaid.org
+  with the subject line 'UK to Lebanon interest'. \n\nIf you're here because you want
+  to donate goods for displaced people in Lebanon- **thank you!** Groups on the ground
+  would not be able to provide the services they do without support from donations
+  like yours. We won't let pandemics or global supply chain disruptions stop the flow
+  of aid to those who need it most! ♥"
 deadlines:
   submissionsDeadline: 2022-03-01T00:00:00Z
   confirmationDate: 2022-03-01T00:00:00Z
