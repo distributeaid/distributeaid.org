@@ -15,7 +15,7 @@ deadlines:
   submissionsDeadline: 2022-02-20T00:00:00Z
   confirmationDate: 2022-02-25T00:00:00Z
   stagingBegins: 2022-03-04T00:00:00Z
-  stagingEnds: 2022-03-06T00:00:00Z
+  stagingEnds: 2022-03-05T00:00:00Z
   shipmentDeparture: 2022-03-07T00:00:00Z
 frontlineGroups:
 - name: L'Auberge des Migrants
