@@ -4,8 +4,8 @@ routeOrigin: UK
 routeDestination: Lebanon
 costs:
   currency: GBP
-  standardPaletteCost: 75
-  halfPaletteCost: 45
+  standardPaletteCost: 250
+  halfPaletteCost: 150
   overflowPricing: 6
 introduction: "Distribute Aid is hoping to send a UK to Lebanon shipment around March.
   This is dependent on storage availability, the need in Lebanon, and the capacity
@@ -16,15 +16,15 @@ introduction: "Distribute Aid is hoping to send a UK to Lebanon shipment around 
   like yours. We won't let pandemics or global supply chain disruptions stop the flow
   of aid to those who need it most! ♥"
 deadlines:
-  submissionsDeadline: 2022-03-01T00:00:00Z
-  confirmationDate: 2022-03-01T00:00:00Z
-  stagingBegins: 2022-03-01T00:00:00Z
-  stagingEnds: 2022-03-01T00:00:00Z
-  shipmentDeparture: 2022-03-01T00:00:00Z
+  submissionsDeadline: 2022-03-12T00:00:00Z
+  confirmationDate: 2022-03-18T00:00:00Z
+  stagingBegins: 2022-03-27T00:00:00Z
+  stagingEnds: 2022-04-01T00:00:00Z
+  shipmentDeparture: 2022-04-04T16:38:29Z
 frontlineGroups:
 - name: Shaabe
   logo: "/uploads/shaabe.jpg"
-- name: arcenciel
+- name: Arc-en-ciel
   logo: "/uploads/arcenciel-1.png"
 - name: WingWoman Lebanon
   logo: "/uploads/wingwoman.png"
