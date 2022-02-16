@@ -16,11 +16,11 @@ introduction: "Distribute Aid is hoping to send a UK to Lebanon shipment around 
   like yours. We won't let pandemics or global supply chain disruptions stop the flow
   of aid to those who need it most! ♥"
 deadlines:
-  submissionsDeadline: 2022-03-12T00:00:00Z
-  confirmationDate: 2022-03-18T00:00:00Z
-  stagingBegins: 2022-03-27T00:00:00Z
-  stagingEnds: 2022-04-01T00:00:00Z
-  shipmentDeparture: 2022-04-04T16:38:29Z
+  submissionsDeadline: 2022-03-27T00:00:00Z
+  confirmationDate: 2022-03-31T00:00:00Z
+  stagingBegins: 2022-04-11T00:00:00Z
+  stagingEnds: 2022-04-16T00:00:00Z
+  shipmentDeparture: 2022-04-18T00:00:00Z
 frontlineGroups:
 - name: Shaabe
   logo: "/uploads/shaabe.jpg"
