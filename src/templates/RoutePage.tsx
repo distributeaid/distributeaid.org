@@ -112,7 +112,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
             </div>
             <div className="tile-content">
               <p className="mb-1">1 UK Staging Hubs</p>
-              <p>Cambridge</p>
+              <p>Coventry</p>
             </div>
           </div>
 
@@ -376,9 +376,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
             />
           </div>
           <div className="tile-content ml-4">
-            <p className="text-lg font-medium mb-2">
-              Cambridge - South England
-            </p>
+            <p className="text-lg font-medium mb-2">Coventry - South England</p>
             <p className="text-sm leading-snug">
               Both Community &amp; Commercial Aid
             </p>

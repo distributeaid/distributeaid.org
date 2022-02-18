@@ -9,7 +9,7 @@ const RoutesSection: FC = () => (
       title="UK ➜ France"
       subtitle="Pallets via DA Delivery"
       ctaLabel="Ship aid to France!"
-      ctaUrl="/routes/uk-to-francie/"
+      ctaUrl="/routes/uk-to-france/"
       image={
         <StaticImage
           src={'../../images/home/help-refugees-warehouse-calais.jpg'}
