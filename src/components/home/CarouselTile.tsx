@@ -23,7 +23,7 @@ const CarouselTile: FC<Props> = ({
 
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative overflow-hidden hidden md:block"
       style={{ width: size, height: size }}
     >
       {images.map((image, index) => (
