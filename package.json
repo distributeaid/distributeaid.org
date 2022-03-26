@@ -53,7 +53,7 @@
     "@graphql-codegen/cli": "1.21.8",
     "@graphql-codegen/typescript": "1.23.0",
     "@graphql-codegen/typescript-document-nodes": "1.17.16",
-    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/jest-dom": "5.16.3",
     "@testing-library/react": "12.1.2",
     "@types/jest": "27.0.2",
     "@types/react-helmet": "6.1.4",
