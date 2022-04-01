@@ -1967,10 +1967,10 @@
     object-path "^0.11.4"
     pkg-up "^3.1.0"
 
-"@codesee/tracker@0.141.2":
-  version "0.141.2"
-  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.141.2.tgz#eb7afd23948c7e627b969fba7d4922553e1b412d"
-  integrity sha512-b2TyRCxakkfwbm2jwu+vu+/2luz3l2QFwLi4m5BFj3Ce6NBiqttqHBjGkQ28sEeQ4aporePYGevdsfE1cxz/uQ==
+"@codesee/tracker@0.223.0":
+  version "0.223.0"
+  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.223.0.tgz#8b148a18da1a7e5713ff0933e1b953e2a88122ca"
+  integrity sha512-bvA35qwKgQdTo/31sfeQOhWOBlLqyGvlWTKBanakAXr5SIpwfITD7f79qndOizNAOWKM0r93PrrI+t0rcH7c3Q==
 
 "@contentful/rich-text-react-renderer@^14.1.3":
   version "14.1.3"
