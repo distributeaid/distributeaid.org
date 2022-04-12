@@ -9323,10 +9323,10 @@ gatsby-worker@^1.11.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.11.2.tgz#fba8843316992e2f0eafc5ae3ee6fb37ce7aa953"
-  integrity sha512-kJ2gHQzO3efV1BaynGfxi0divFOorUqxKom/QdIEnaj9VMkNRnrpNxUNsT4ljq+d9BTlq/0AAIpGNQZKC1ZgFg==
+gatsby@4.11.3:
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.11.3.tgz#dec77d6ee5c11e28787b90cb9597b50b905d6e73"
+  integrity sha512-NmdWedBvIgeJqR1klE16QvuJjyshqQBU2FiZBWlt3foJ7syXoF6Ab7Eb5JafWsm89ejZyePiI79aHSDraIuZQA==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"
@@ -9423,7 +9423,7 @@ gatsby@4.11.2:
     joi "^17.4.2"
     json-loader "^0.5.7"
     latest-version "5.1.0"
-    lmdb "^2.2.3"
+    lmdb "~2.2.3"
     lodash "^4.17.21"
     md5-file "^5.0.0"
     meant "^1.0.3"
@@ -12260,7 +12260,7 @@ lmdb@2.2.4:
     ordered-binary "^1.2.4"
     weak-lru-cache "^1.2.2"
 
-lmdb@^2.0.2, lmdb@^2.2.3, lmdb@^2.2.4:
+lmdb@^2.0.2, lmdb@^2.2.4, lmdb@~2.2.3:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/lmdb/-/lmdb-2.2.6.tgz#a52ef533812b8abcbe0033fc9d74d215e7dfc0a0"
   integrity sha512-UmQV0oZZcV3EN6rjcAjIiuWcc3MYZGWQ0GUYz46Ron5fuTa/dUow7WSQa6leFkvZIKVUdECBWVw96tckfEzUFQ==
