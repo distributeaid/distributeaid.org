@@ -18,7 +18,7 @@
     "@types/react-table": "7.7.10",
     "@types/tailwindcss": "3.0.10",
     "classnames": "2.3.1",
-    "gatsby": "4.11.2",
+    "gatsby": "4.11.3",
     "gatsby-alias-imports": "1.0.6",
     "gatsby-plugin-image": "2.11.1",
     "gatsby-plugin-react-helmet": "5.11.0",
