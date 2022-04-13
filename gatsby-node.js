@@ -52,63 +52,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  // Build the home page
-  const homePageQuery = await graphql(`
-    query HomePageQuery {
-      file(relativePath: { eq: "home.md" }) {
-        id
-        childMarkdownRemark {
-          frontmatter {
-            headline
-            missionStatement
-            howWeHelpBlock {
-              description
-              location
-              title
-              image
-              imageAlt
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  createPage({
-    path: '/',
-    component: path.resolve(`./src/templates/HomePage.tsx`),
-    context: {
-      pageFields: homePageQuery.data.file.childMarkdownRemark.frontmatter,
-    },
-  })
-
-  // Build the About Us page
-  const aboutUsPageQuery = await graphql(`
-    query AboutUsPageQuery {
-      file(relativePath: { eq: "about-us.md" }) {
-        id
-        childMarkdownRemark {
-          frontmatter {
-            missionStatement
-            aboutOurMission
-            timelineItems {
-              period
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  createPage({
-    path: '/about-us',
-    component: path.resolve(`./src/templates/AboutUsPage.tsx`),
-    context: {
-      pageFields: aboutUsPageQuery.data.file.childMarkdownRemark.frontmatter,
-    },
-  })
-
   /**
    * Build the routes! For each page in the content/routes directory, we create
    * a page using its path.
