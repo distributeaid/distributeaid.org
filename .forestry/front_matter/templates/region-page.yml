@@ -1,0 +1,113 @@
+---
+label: Route Page
+hide_body: true
+fields:
+- name: pagePath
+  type: text
+  config:
+    required: true
+    min: 5
+    max: 20
+  label: Page path
+  default: region-name-goes-here
+  description: The path that will appear in the URL. For example, if you choose "the-balkans",
+    the URL of this page will be distributeaid.org/regions/the-balkans.
+- name: regionName
+  type: text
+  config:
+    required: true
+  label: Region name
+  default: UK
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Introduction
+- name: governmentResponse
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Government response
+- name: populationCount
+  type: number
+  label: Population count
+  description: The total number of people supported by Distribute Aid's frontline partners in the region.
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
+- name: populationTrend
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Population trend
+- name: populationDescription
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Population description
+- name: newsUpdates
+  type: field_group_list
+  label: News updates
+  fields:
+    - name: newsUpdate
+      type: textarea
+      default: ''
+      config:
+        required: true
+        wysiwyg: true
+        schema:
+          format: markdown
+      label: News update
+- name: newsUpdates
+  type: field_group_list
+  label: News updates
+  fields:
+    - name: newsUpdate
+      type: textarea
+      default: ''
+      config:
+        required: true
+        wysiwyg: true
+        schema:
+          format: markdown
+      label: News update
+- name: stayInformedLinks
+  type: field_group_list
+  label: Stay informed links
+  fields:
+    - name: linkLabel
+      type: text
+      config:
+        required: true
+      label: Link label
+    - name: linkURL
+      type: text
+      config:
+        required: true
+      label: Link URL
+    - name: linkDescription
+      type: text
+      config:
+        required: true
+        max: 140
+      label: Link description
