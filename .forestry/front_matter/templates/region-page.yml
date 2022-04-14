@@ -112,3 +112,5 @@ fields:
       required: true
       max: 140
     label: Link description
+pages:
+- content/pages/regions/france.md
