@@ -39,7 +39,8 @@ fields:
 - name: populationCount
   type: number
   label: Population count
-  description: The total number of people supported by Distribute Aid's frontline partners in the region.
+  description: The total number of people supported by Distribute Aid's frontline
+    partners in the region.
   default: 0
   required: true
   config:
@@ -69,45 +70,45 @@ fields:
   type: field_group_list
   label: News updates
   fields:
-    - name: newsUpdate
-      type: textarea
-      default: ''
-      config:
-        required: true
-        wysiwyg: true
-        schema:
-          format: markdown
-      label: News update
+  - name: newsUpdate
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: News update
 - name: newsUpdates
   type: field_group_list
   label: News updates
   fields:
-    - name: newsUpdate
-      type: textarea
-      default: ''
-      config:
-        required: true
-        wysiwyg: true
-        schema:
-          format: markdown
-      label: News update
+  - name: newsUpdate
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: News update
 - name: stayInformedLinks
   type: field_group_list
   label: Stay informed links
   fields:
-    - name: linkLabel
-      type: text
-      config:
-        required: true
-      label: Link label
-    - name: linkURL
-      type: text
-      config:
-        required: true
-      label: Link URL
-    - name: linkDescription
-      type: text
-      config:
-        required: true
-        max: 140
-      label: Link description
+  - name: linkLabel
+    type: text
+    config:
+      required: true
+    label: Link label
+  - name: linkURL
+    type: text
+    config:
+      required: true
+    label: Link URL
+  - name: linkDescription
+    type: text
+    config:
+      required: true
+      max: 140
+    label: Link description
