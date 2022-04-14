@@ -1,5 +1,5 @@
 ---
-label: Route Page
+label: Region Page
 hide_body: true
 fields:
 - name: pagePath
