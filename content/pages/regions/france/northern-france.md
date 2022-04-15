@@ -30,8 +30,9 @@ populationDescription: The war in Ukraine has led many Ukrainian nationals to se
   temporary refuge in Calais while attempting to seek asylum in the UK. As of March
   8th, [around 600 Ukrainian refugees are in Calais.](https://www.bbc.com/news/uk-wales-politics-60664557)
 newsUpdates:
-- newsUpdate: The UK government is seeking to introduce new ‘Nationality and Borders
-    Bills’, referred to as the [‘Anti-Refugee Bill’](https://www.unhcr.org/uk/news/press/2022/3/621fa0a14/unhcr-welcomes-lords-amendments-to-the-nationality-and-borders-bill-and.html),
+- newsUpdateTitle: Nationality and Borders Bills
+  newsUpdateDescription: The UK government is seeking to introduce new ‘Nationality
+    and Borders Bills’, referred to as the [‘Anti-Refugee Bill’](https://www.unhcr.org/uk/news/press/2022/3/621fa0a14/unhcr-welcomes-lords-amendments-to-the-nationality-and-borders-bill-and.html),
     with [offshore detention centres, the ability to revoke citizenship without notice,
     and criminalisation](https://bills.parliament.uk/bills/3023) of people reaching
     the UK through unconventional means.
