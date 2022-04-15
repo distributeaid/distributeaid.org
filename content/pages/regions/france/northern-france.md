@@ -1,6 +1,7 @@
 ---
-pagePath: france
+pagePath: northern-france
 regionName: France
+subRegionName: Northern France
 populationCount: 2817
 introduction: The number of displaced people in Northern France continuously fluctuates,
   as it hosts a transient community. Many people reach Northern France after months

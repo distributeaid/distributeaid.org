@@ -1,5 +1,5 @@
 ---
-label: Region Page
+label: Sub Region Page
 hide_body: true
 fields:
 - name: pagePath
@@ -113,4 +113,4 @@ fields:
       max: 140
     label: Link description
 pages:
-- content/pages/regions/france.md
+- content/pages/regions/france/northern-france.md
