@@ -88,7 +88,14 @@ fields:
   type: field_group_list
   label: News Updates
   fields:
-  - name: newsUpdate
+  - name: newsUpdateTitle
+    type: text
+    config:
+      required: false
+      max: 140
+    label: Title
+    description: An optional title for the news update.
+  - name: newsUpdateDescription
     type: textarea
     default: ''
     config:
@@ -96,7 +103,8 @@ fields:
       wysiwyg: true
       schema:
         format: markdown
-    label: News Update
+    label: Description
+    description: The news update content.
   description: A list of recent news updates relevant to humanitarian crisis in the
     sub-region.
 - name: stayInformedLinks
@@ -107,18 +115,18 @@ fields:
     type: text
     config:
       required: true
-    label: Link Label
+    label: Label
   - name: linkURL
     type: text
     config:
       required: true
-    label: Link URL
+    label: URL
   - name: linkDescription
     type: text
     config:
       required: false
       max: 140
-    label: Link Description
+    label: Description
     description: A brief, optional description about the news source.
   description: Links to news sources that viewers should follow if they want to stay
     informed about humanitarian crises in the sub-region.
