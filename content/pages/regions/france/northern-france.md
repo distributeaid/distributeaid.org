@@ -40,5 +40,6 @@ stayInformedLinks:
   linkURL: https://refugee-rights.eu/wp-content/uploads/2021/08/RRE_FiveYearsOn.pdf
   linkDescription: Report detailing the changing conditions in Calais in the five
     years since the Calais jungle was dismantled.
+subRegion: Northern France
 
 ---
