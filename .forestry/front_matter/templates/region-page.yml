@@ -1,18 +1,7 @@
 ---
-label: Sub-Region Page
+label: Region Page
 hide_body: true
 fields:
-- name: pagePath
-  type: text
-  config:
-    required: true
-    min: 2
-    max: 64
-  label: Page Path
-  default: ''
-  description: The path that will appear in the URL. For example, if you choose "serbia"
-    and are adding this page to "the-balkans" region folder, the URL of this page
-    will be distributeaid.org/regions/the-balkans/serbia.
 - name: regionName
   type: text
   config:
@@ -21,15 +10,8 @@ fields:
     max: 64
   label: Region Name
   default: ''
-  description: The name of the region folder this sub-region page is in.  If this
-    is "Serbia", then you should put "The Balkans".
-- name: subRegion
-  type: text
-  config:
-    required: true
-  label: Sub-Region Name
-  description: 'The name of the sub-region this page is for.  EX: "Serbia"'
-- name: introduction
+  description: The name of this region.
+- name: overview
   type: textarea
   default: ''
   config:
@@ -37,8 +19,8 @@ fields:
     wysiwyg: true
     schema:
       format: markdown
-  label: Introduction
-  description: An overview of the humanitarian situation in this sub-region.
+  label: Overview
+  description: An overview of the humanitarian situation in this region.
 - name: governmentResponse
   type: textarea
   default: ''
@@ -48,13 +30,13 @@ fields:
     schema:
       format: markdown
   label: Government Response
-  description: How the government is currently handling relevant humanitarian crises
-    in this sub-region.
+  description: How the government is currently handling relevant humanitarian issues
+    in this region.
 - name: populationCount
   type: number
   label: Population Count
   description: The total number of people supported by Distribute Aid's frontline
-    partners in the sub-region.
+    partners in this region.
   default: 
   required: true
   config:
@@ -72,7 +54,7 @@ fields:
       format: markdown
   label: Population Description
   description: A description of the current population served by Distribute Aid's
-    partners in the sub-region.
+    partners in the region.
 - name: populationTrend
   type: textarea
   default: ''
@@ -82,7 +64,7 @@ fields:
     schema:
       format: markdown
   label: Population Trend
-  description: A description of current trends in the population in the sub-region,
+  description: A description of current trends in the population across this region and between sub-rgions,
     or acknowledgement that there has been little recent change.
 - name: newsUpdates
   type: field_group_list
@@ -132,7 +114,3 @@ fields:
     informed about humanitarian crises in the sub-region.
   config:
     labelField: linkLabel
-pages:
-- content/pages/regions/france/northern-france.md
-- content/pages/regions/greece/aegean-islands.md
-- content/pages/regions/greece/northern-greece.md
