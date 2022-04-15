@@ -28,6 +28,7 @@ fields:
   config:
     required: true
   label: Sub-Region Name
+  description: 'The name of the sub-region this page is for.  EX: "Serbia"'
 - name: introduction
   type: textarea
   default: ''
