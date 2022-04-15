@@ -6,18 +6,28 @@ fields:
   type: text
   config:
     required: true
-    min: 5
-    max: 20
-  label: Page path
-  default: region-name-goes-here
-  description: The path that will appear in the URL. For example, if you choose "the-balkans",
-    the URL of this page will be distributeaid.org/regions/the-balkans.
+    min: 2
+    max: 64
+  label: Page Path
+  default: ''
+  description: The path that will appear in the URL. For example, if you choose "serbia"
+    and are adding this page to "the-balkans" region folder, the URL of this page
+    will be distributeaid.org/regions/the-balkans/serbia.
 - name: regionName
   type: text
   config:
     required: true
-  label: Region name
-  default: UK
+    min: 2
+    max: 64
+  label: Region Name
+  default: ''
+  description: The name of the region folder this sub-region page is in.  If this
+    is "Serbia", then you should put "The Balkans".
+- name: subRegion
+  type: text
+  config:
+    required: true
+  label: Sub-Region Name
 - name: introduction
   type: textarea
   default: ''
@@ -27,80 +37,76 @@ fields:
     schema:
       format: markdown
   label: Introduction
+  description: An overview of the humanitarian situation in this sub-region.
 - name: governmentResponse
   type: textarea
   default: ''
   config:
-    required: true
+    required: false
     wysiwyg: true
     schema:
       format: markdown
-  label: Government response
+  label: Government Response
+  description: How the government is currently handling relevant humanitarian crises
+    in this sub-region.
 - name: populationCount
   type: number
-  label: Population count
+  label: Population Count
   description: The total number of people supported by Distribute Aid's frontline
-    partners in the region.
-  default: 0
+    partners in the sub-region.
+  default: 
   required: true
   config:
     min: 0
     max: 
     step: 
-    required: true
-- name: populationTrend
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Population trend
+    required: false
 - name: populationDescription
   type: textarea
   default: ''
   config:
-    required: true
+    required: false
     wysiwyg: true
     schema:
       format: markdown
-  label: Population description
+  label: Population Description
+  description: A description of the current population served by Distribute Aid's
+    partners in the sub-region.
+- name: populationTrend
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Population Trend
+  description: A description of current trends in the population in the sub-region,
+    or acknowledgement that there has been little recent change.
 - name: newsUpdates
   type: field_group_list
-  label: News updates
+  label: News Updates
   fields:
   - name: newsUpdate
     type: textarea
     default: ''
     config:
-      required: true
+      required: false
       wysiwyg: true
       schema:
         format: markdown
-    label: News update
-- name: newsUpdates
-  type: field_group_list
-  label: News updates
-  fields:
-  - name: newsUpdate
-    type: textarea
-    default: ''
-    config:
-      required: true
-      wysiwyg: true
-      schema:
-        format: markdown
-    label: News update
+    label: News Update
+  description: A list of recent news updates relevant to humanitarian crisis in the
+    sub-region.
 - name: stayInformedLinks
   type: field_group_list
-  label: Stay informed links
+  label: Stay Informed Links
   fields:
   - name: linkLabel
     type: text
     config:
       required: true
-    label: Link label
+    label: Link Label
   - name: linkURL
     type: text
     config:
@@ -109,8 +115,13 @@ fields:
   - name: linkDescription
     type: text
     config:
-      required: true
+      required: false
       max: 140
-    label: Link description
+    label: Link Description
+    description: A brief, optional description about the news source.
+  description: Links to news sources that viewers should follow if they want to stay
+    informed about humanitarian crises in the sub-region.
+  config:
+    labelField: linkLabel
 pages:
 - content/pages/regions/france/northern-france.md
