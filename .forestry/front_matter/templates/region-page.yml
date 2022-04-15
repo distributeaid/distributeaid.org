@@ -64,8 +64,8 @@ fields:
     schema:
       format: markdown
   label: Population Trend
-  description: A description of current trends in the population across this region and between sub-rgions,
-    or acknowledgement that there has been little recent change.
+  description: A description of current trends in the population across this region
+    and between sub-rgions, or acknowledgement that there has been little recent change.
 - name: newsUpdates
   type: field_group_list
   label: News Updates
@@ -114,3 +114,5 @@ fields:
     informed about humanitarian crises in the sub-region.
   config:
     labelField: linkLabel
+pages:
+- content/pages/regions/greece/index.md
