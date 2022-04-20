@@ -12,11 +12,11 @@ introduction: |-
 
   If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2022-05-10T00:00:00Z
-  confirmationDate: 2022-05-10T00:00:00Z
-  stagingBegins: 2022-05-10T00:00:00Z
-  stagingEnds: 2022-05-10T00:00:00Z
-  shipmentDeparture: 2022-05-10T00:00:00Z
+  submissionsDeadline: 2022-05-01T00:00:00Z
+  confirmationDate: 2022-05-06T00:00:00Z
+  stagingBegins: 2022-05-16T00:00:00Z
+  stagingEnds: 2022-05-21T00:00:00Z
+  shipmentDeparture: 2022-05-23T00:00:00Z
 frontlineGroups:
 - name: L'Auberge des Migrants
   logo: "/uploads/auberge-logo-256.jpg"
