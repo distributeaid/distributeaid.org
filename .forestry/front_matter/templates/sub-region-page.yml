@@ -23,7 +23,7 @@ fields:
   default: ''
   description: The name of the region folder this sub-region page is in.  If this
     is "Serbia", then you should put "The Balkans".
-- name: subRegion
+- name: subRegionName
   type: text
   config:
     required: true

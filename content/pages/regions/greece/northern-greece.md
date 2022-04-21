@@ -1,7 +1,7 @@
 ---
 pagePath: northern-greece
 regionName: Greece
-subRegion: Northern Greece
+subRegionName: Northern Greece
 introduction: 'In the north of Greece, displaced people may live on the streets of
   Thessaloniki, in one of the camps located in smaller surrounding towns, may [seek
   permanent residence, or prepare to travel further west](https://www.refugeesintowns.org/thessaloniki).
