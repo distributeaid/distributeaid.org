@@ -1,7 +1,7 @@
 ---
 pagePath: aegean-islands
 regionName: Greece
-subRegion: Aegean Islands
+subRegionName: Aegean Islands
 introduction: The Aegean Islands are a group of small Greek islands in the Aegean
   Sea, located just a few kilometres west of Turkey. Their close proximity to the
   Turkish coast makes them a destination for many people seeking safety in Europe.
