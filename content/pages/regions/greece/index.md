@@ -47,9 +47,13 @@ updates:
     to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)[
     ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)a
     [human rights and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
-  date: 2021-10-01T19:14:30Z
+  date: '2021-10-01T19:14:30Z'
   pinned: true
   title: Cash Support Program Failing After Greece Takes Over
-links: []
+links:
+- label: Report From Refugees International
+  url: https://static1.squarespace.com/static/506c8ea1e4b01d9450dd53f5/t/6216a3799be96a3b07de2089/1645650812924/Greece+Report+-+Feb+2022.pdf
+  description: Published in February, 2022, this report describes the intensifying
+    human rights abuse situation in Greece.
 
 ---
