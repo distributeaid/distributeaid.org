@@ -40,7 +40,7 @@ stayInformedLinks:
 name: Greece
 map: ''
 title: News Updates
-visibleCount: '5'
+visibleCount: 5
 updates:
 - content: Greece recently took over responsibility for making cash support payments
     to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
@@ -60,6 +60,20 @@ links:
   description: Published in February, 2022, this report describes the intensifying
     human rights abuse situation in Greece.
 updateListTitle: News Updates
-updateListVisibleCount: 5
+updateListVisibleCount: '5'
+newsUpdates2:
+  updateListTitle: News Updates
+  updateListVisibleCount: '5'
+  title: News Updates
+  visibleCount: 5
+  updates:
+  - title: Cash Support
+    content: Greece recently took over responsibility for making cash support payments
+      to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
+      to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)[
+      ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)a
+      [human rights and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
+    pinned: false
+    date: '2021-10-01T22:20:30Z'
 
 ---
