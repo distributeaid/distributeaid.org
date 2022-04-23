@@ -1,4 +1,41 @@
 ---
-label: LinksList
+label: Links List Template
 hide_body: true
-fields: []
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: List Title
+  default: Quick Links
+- name: links
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: true
+    label: Label
+  - name: url
+    type: text
+    config:
+      required: true
+    label: URL
+    description: https://google.com
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+      max: 128
+    label: Description
+    description: A brief, optional description about the link.
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Links
