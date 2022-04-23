@@ -38,6 +38,12 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Greek Islanders Protest Construction of Closed Camps
+    content: "[Protests by locals against camp construction](https://www.infomigrants.net/en/post/37728/greek-islanders-block-ship-full-of-construction-materials-for-migrant-camps)
+      have been occurring, leading to [arrests](https://www.infomigrants.net/en/post/38429/protesters-detained-after-violence-breaks-out-at-building-site-of-new-greek-migrant-camp)
+      after demonstrations turned violent in February."
+    date: '2022-01-10T23:50:23Z'
+    pinned: false
   - title: Greece Continues Illegal Sea Pushbacks
     content: There have been increases in [illegal mass asylum rejections and deportations](https://www.infomigrants.net/en/post/33636/asylum-seekers-facing-rejection-in-greece-we-cannot-clap-with-one-hand),
       ongoing illegal pushbacks, and people being moved to the mainland more rapidly.
