@@ -10,6 +10,13 @@ fields:
     max: 64
   label: Region Name
   default: ''
+- name: map
+  type: file
+  config:
+    maxSize: 2
+  label: Map
+  description: A photo of a map for the region.  Should be at least 512x512, and in
+    square dimensions.
 - name: overview
   type: textarea
   default: ''
@@ -38,29 +45,11 @@ fields:
   label: News Updates
   description: Region-wide news, context updates, trends, etc.
 - name: stayInformedLinks
-  type: field_group_list
+  type: include
+  config: {}
+  template: linkslist
   label: Stay Informed Links
-  fields:
-  - name: linkLabel
-    type: text
-    config:
-      required: true
-    label: Label
-  - name: linkURL
-    type: text
-    config:
-      required: true
-    label: URL
-  - name: linkDescription
-    type: text
-    config:
-      required: false
-      max: 140
-    label: Description
-    description: A brief, optional description about the news source.
-  description: Links to news sources that viewers should follow if they want to stay
-    informed about humanitarian crises in the sub-region.
-  config:
-    labelField: linkLabel
+  description: Links to news, reporting, and other information sources for people
+    to follow.
 pages:
 - content/pages/regions/greece/index.md
