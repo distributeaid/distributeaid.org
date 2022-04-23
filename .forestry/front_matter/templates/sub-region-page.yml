@@ -71,11 +71,16 @@ fields:
       partners in the sub-region.
   label: Population
 - name: newsUpdates
-  type: include
+  type: field_group
   config: {}
-  template: update
+  fields:
+  - name: updatesList
+    type: include
+    config: {}
+    template: update
+    label: Updates List
   label: News Updates
-  description: Region-wide news, context updates, trends, etc.
+  description: News updates about humanitarian responses and related info in the region.
 pages:
 - content/pages/regions/france/northern-france.md
 - content/pages/regions/greece/aegean-islands.md
