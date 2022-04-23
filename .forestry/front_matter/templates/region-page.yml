@@ -2,20 +2,19 @@
 label: Region Page
 hide_body: true
 fields:
-- name: regionName
+- name: name
   type: text
   config:
     required: true
-    min: 2
+    min: 4
     max: 64
   label: Region Name
   default: ''
-  description: The name of this region.
 - name: overview
   type: textarea
   default: ''
   config:
-    required: true
+    required: false
     wysiwyg: true
     schema:
       format: markdown
@@ -32,63 +31,12 @@ fields:
   label: Government Response
   description: How the government is currently handling relevant humanitarian issues
     in this region.
-- name: populationCount
-  type: number
-  label: Population Count
-  description: The total number of people supported by Distribute Aid's frontline
-    partners in this region.
-  default: 
-  required: true
-  config:
-    min: 0
-    max: 
-    step: 
-    required: false
-- name: populationDescription
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Population Description
-  description: A description of the current population served by Distribute Aid's
-    partners in the region.
-- name: populationTrend
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Population Trend
-  description: A description of current trends in the population across this region
-    and between sub-rgions, or acknowledgement that there has been little recent change.
 - name: newsUpdates
-  type: field_group_list
+  type: include
+  config: {}
+  template: update
   label: News Updates
-  fields:
-  - name: newsUpdateTitle
-    type: text
-    config:
-      required: false
-      max: 140
-    label: Title
-    description: An optional title for the news update.
-  - name: newsUpdateDescription
-    type: textarea
-    default: ''
-    config:
-      required: false
-      wysiwyg: true
-      schema:
-        format: markdown
-    label: Description
-    description: The news update content.
-  description: A list of recent news updates relevant to humanitarian crisis in the
-    sub-region.
+  description: Region-wide news, context updates, trends, etc.
 - name: stayInformedLinks
   type: field_group_list
   label: Stay Informed Links
