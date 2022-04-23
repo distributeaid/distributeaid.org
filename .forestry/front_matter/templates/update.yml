@@ -1,4 +1,65 @@
 ---
-label: Update
+label: Update List Template
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: List Title
+  default: Updates
+- name: visibleCount
+  type: number
+  description: The number of entries that are shown in the update list by default.
+    If there are additional entries, they'll be hidden with an option to "see more".
+  default: 3
+  required: true
+  config:
+    min: 1
+    max: 
+    step: 
+    required: true
+  label: "# of Entries Shown"
+- name: updates
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: true
+      min: 8
+      max: 128
+    label: Title
+  - name: content
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Content
+  - name: date
+    type: datetime
+    label: Date
+    description: The date of the update:<br><br>  - For news updates, this should
+      be the date of the event or when the article was published.<br>  - For DA updates,
+      this should be when the update is published.
+    config:
+      required: true
+      date_format: YYYY-MM-DD
+      time_format: 
+      display_utc: false
+    default: now
+  - name: pinned
+    type: boolean
+    label: Pinned?
+    description: TRUE =&gt; Pinned updates will be shown first.<br><br>FALSE =&gt;
+      Other updates will be shown if they're among the most recent (by date).
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Updates
+  description: A list of related updates.  EX:<br><br>  - News Updates<br>  - Shipment
+    Events<br>  - Project Progress
