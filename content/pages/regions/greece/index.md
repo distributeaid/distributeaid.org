@@ -40,7 +40,7 @@ stayInformedLinks:
 name: Greece
 map: ''
 title: News Updates
-visibleCount: 5
+visibleCount: '5'
 updates:
 - content: Greece recently took over responsibility for making cash support payments
     to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
@@ -59,5 +59,7 @@ links:
   url: https://static1.squarespace.com/static/506c8ea1e4b01d9450dd53f5/t/6216a3799be96a3b07de2089/1645650812924/Greece+Report+-+Feb+2022.pdf
   description: Published in February, 2022, this report describes the intensifying
     human rights abuse situation in Greece.
+updateListTitle: News Updates
+updateListVisibleCount: 5
 
 ---
