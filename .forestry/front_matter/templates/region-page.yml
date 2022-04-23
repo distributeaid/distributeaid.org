@@ -43,11 +43,11 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: updateList
+  - name: updatesList
     type: include
     config: {}
     template: update
-    label: News Updates
+    label: Updates List
   label: News Updates
   description: News updates about humanitarian responses and related info in the region.
 - name: stayInformed
