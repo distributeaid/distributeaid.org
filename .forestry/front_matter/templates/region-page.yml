@@ -50,13 +50,6 @@ fields:
     label: News Updates
   label: News Updates
   description: News updates about humanitarian responses and related info in the region.
-- name: stayInformedLinks
-  type: include
-  config: {}
-  template: linkslist
-  label: Stay Informed Links
-  description: Links to news, reporting, and other information sources for people
-    to follow.
 - name: stayInformed
   type: field_group
   config: {}
