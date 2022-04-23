@@ -67,7 +67,7 @@ newsUpdates2:
   title: News Updates
   visibleCount: 5
   updates:
-  - title: Cash Support
+  - title: Cash Support Program Failing After Greece Takes Over
     content: Greece recently took over responsibility for making cash support payments
       to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
       to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)[
