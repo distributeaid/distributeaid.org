@@ -30,14 +30,39 @@ populationTrend: Down. The population on these islands has been drastically decr
   islands ](https://www.infomigrants.net/en/post/37717/migration-fewer-people-arrived-on-greek-islands-in-2021)since
   the beginning of the so-called migrant crisis in 2015.
 newsUpdates:
-- newsUpdateDescription: "[Protests by locals against camp construction](https://www.infomigrants.net/en/post/37728/greek-islanders-block-ship-full-of-construction-materials-for-migrant-camps)
-    have been occurring, leading to [arrests](https://www.infomigrants.net/en/post/38429/protesters-detained-after-violence-breaks-out-at-building-site-of-new-greek-migrant-camp)
-    after demonstrations turned violent in February."
-  newsUpdateTitle: Camp Construction Protests
+  '0':
+    newsUpdateDescription: "[Protests by locals against camp construction](https://www.infomigrants.net/en/post/37728/greek-islanders-block-ship-full-of-construction-materials-for-migrant-camps)
+      have been occurring, leading to [arrests](https://www.infomigrants.net/en/post/38429/protesters-detained-after-violence-breaks-out-at-building-site-of-new-greek-migrant-camp)
+      after demonstrations turned violent in February."
+    newsUpdateTitle: Camp Construction Protests
+  title: News Updates
+  visibleCount: 3
+  updates:
+  - title: Greece Continues Illegal Sea Pushbacks
+    content: There have been increases in [illegal mass asylum rejections and deportations](https://www.infomigrants.net/en/post/33636/asylum-seekers-facing-rejection-in-greece-we-cannot-clap-with-one-hand),
+      ongoing illegal pushbacks, and people being moved to the mainland more rapidly.
+      During the week 7th to 13th March 2022 alone, [15 boats carrying 506 people](https://aegeanboatreport.com/weekly-reports/)
+      were stopped from reaching the islands by either the Turkish Coast Guard or
+      Police.
+    date: '2022-03-07T23:49:40Z'
+    pinned: false
 stayInformedLinks:
 - linkLabel: Aegean Boat Report
   linkURL: https://aegeanboatreport.com/weekly-reports/
   linkDescription: Weekly updates on boat arrivals, resettlement to the mainland,
     and other population trends.
+name: Aegean Islands
+overview: |-
+  The Aegean Islands are a group of small Greek islands in the Aegean Sea, located just a few kilometres west of Turkey. Their close proximity to the Turkish coast makes them a destination for many people seeking safety in Europe. However, smugglers have employed life-threatening and money-saving tactics, such as using unsuitable boats, providing insufficient fuel to complete the crossing, fake or no lifejackets, and sending boats despite poor sea conditions.
+
+  Islands that host refugee camps include Lesvos, Samos, Chios, Leros, Kos, and Crete.
+map: ''
+population:
+  count: 2300
+  trend: Decreasing
+  description: The population on these islands has been drastically decreasing since
+    the end of 2020. [2021 saw the lowest number of people arriving to the Aegean
+    islands ](https://www.infomigrants.net/en/post/37717/migration-fewer-people-arrived-on-greek-islands-in-2021)since
+    the beginning of the so-called migrant crisis in 2015.
 
 ---
