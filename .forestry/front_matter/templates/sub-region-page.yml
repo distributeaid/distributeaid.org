@@ -1,6 +1,7 @@
 ---
 label: Sub-Region Page
 hide_body: true
+display_field: name
 fields:
 - name: name
   type: text
