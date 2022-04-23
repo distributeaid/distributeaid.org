@@ -2,13 +2,13 @@
 label: Update List Template
 hide_body: true
 fields:
-- name: updateListTitle
+- name: title
   type: text
   config:
     required: true
   label: List Title
   default: Updates
-- name: updateListVisibleCount
+- name: visibleCount
   type: number
   description: The number of entries that are shown in the update list by default.
     If there are additional entries, they'll be hidden with an option to "see more".
