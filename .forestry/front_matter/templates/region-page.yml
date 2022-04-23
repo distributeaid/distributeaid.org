@@ -52,5 +52,15 @@ fields:
   label: Stay Informed Links
   description: Links to news, reporting, and other information sources for people
     to follow.
+- name: newsUpdates2
+  type: field_group
+  config: {}
+  fields:
+  - name: updateList
+    type: include
+    config: {}
+    template: update
+    label: News Updates
+  label: News Updates
 pages:
 - content/pages/regions/greece/index.md
