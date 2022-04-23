@@ -40,19 +40,6 @@ fields:
   description: How the government is currently handling relevant humanitarian issues
     in this region.
 - name: newsUpdates
-  type: include
-  config: {}
-  template: update
-  label: News Updates
-  description: Region-wide news, context updates, trends, etc.
-- name: stayInformedLinks
-  type: include
-  config: {}
-  template: linkslist
-  label: Stay Informed Links
-  description: Links to news, reporting, and other information sources for people
-    to follow.
-- name: newsUpdates2
   type: field_group
   config: {}
   fields:
@@ -62,5 +49,25 @@ fields:
     template: update
     label: News Updates
   label: News Updates
+  description: News updates about humanitarian responses and related info in the region.
+- name: stayInformedLinks
+  type: include
+  config: {}
+  template: linkslist
+  label: Stay Informed Links
+  description: Links to news, reporting, and other information sources for people
+    to follow.
+- name: stayInformed
+  type: field_group
+  config: {}
+  fields:
+  - name: linksList
+    type: include
+    config: {}
+    template: linkslist
+    label: Links List
+  label: Stay Informed Links
+  description: Links to news, reporting, and other information sources that regularly
+    cover the region.
 pages:
 - content/pages/regions/greece/index.md
