@@ -37,6 +37,13 @@ newsUpdates:
   title: News Updates
   visibleCount: 5
   updates:
+  - title: Greek System Leaves Migrants Out in the Cold
+    content: In January 2022 a rare and severe snowstorm hit Greece. Many of the camps
+      that host people on the move in mainland Greece are [not designed to handle
+      these types of extreme weather conditions](https://www.infomigrants.net/en/post/38150/greek-system-leaves-migrants-out-in-the-cold).
+      For the people outside the camps, conditions are potentially even worse.
+    date: '2022-01-26T23:39:13Z'
+    pinned: false
   - content: Greece recently took over responsibility for making cash support payments
       to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
       to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)[
