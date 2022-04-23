@@ -51,6 +51,10 @@ updates:
   pinned: true
   title: Cash Support Program Failing After Greece Takes Over
 links:
+- label: Aegean Boat Report
+  url: https://aegeanboatreport.com/weekly-reports/
+  description: Weekly reports describing changes to the asylum seeker population living
+    in the Aegean Island camps.
 - label: Report From Refugees International
   url: https://static1.squarespace.com/static/506c8ea1e4b01d9450dd53f5/t/6216a3799be96a3b07de2089/1645650812924/Greece+Report+-+Feb+2022.pdf
   description: Published in February, 2022, this report describes the intensifying
