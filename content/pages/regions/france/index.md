@@ -4,7 +4,7 @@ newsUpdates:
   visibleCount: 5
   updates: []
 stayInformed:
-  title: Quick Links
+  title: Stay Informed Links
   links:
   - label: Refugee Rights Europe
     url: https://refugee-rights.eu/wp-content/uploads/2021/08/RRE_FiveYearsOn.pdf
