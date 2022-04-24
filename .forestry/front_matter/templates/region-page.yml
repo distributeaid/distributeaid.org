@@ -63,6 +63,7 @@ fields:
   description: Links to news, reporting, and other information sources that regularly
     cover the region.
 pages:
+- content/pages/regions/eastern-europe/index.md
 - content/pages/regions/france/index.md
 - content/pages/regions/greece/index.md
 - content/pages/regions/the-balkans/index.md
