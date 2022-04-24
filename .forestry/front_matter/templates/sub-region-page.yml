@@ -84,6 +84,7 @@ fields:
   description: News updates about humanitarian responses and related info in the region.
 pages:
 - content/pages/regions/eastern-europe/poland.md
+- content/pages/regions/eastern-europe/slovakia.md
 - content/pages/regions/eastern-europe/ukraine.md
 - content/pages/regions/france/northern-france.md
 - content/pages/regions/greece/aegean-islands.md
