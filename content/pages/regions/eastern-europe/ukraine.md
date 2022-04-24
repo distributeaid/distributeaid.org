@@ -6,7 +6,7 @@ population:
     Around 4.2 million have fled Ukraine, most travelling westward to the bordering
     states of Poland, Slovakia, and Hungary.
 newsUpdates:
-  title: Updates
+  title: News Updates
   visibleCount: 3
   updates: []
 name: Ukraine
