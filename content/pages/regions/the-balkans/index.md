@@ -10,7 +10,7 @@ newsUpdates:
       This could lead to a decline in people migrating through these territories,
       choosing more dangerous routes, or taking greater risks on the existing Balkan
       route.
-    date: '2022-02-18T23:59:19Z'
+    date: 2022-02-18T23:59:19Z
     pinned: false
   - title: Illegal EU Pushbacks Continue
     content: In the last year, there have been several instances of pushbacks at the
@@ -19,7 +19,7 @@ newsUpdates:
       [Bosnia and Herzegovina - Croatia](https://www.borderviolence.eu/balkan-regional-report-january-2022/),
       and more. In February 2022, 32 instances of [pushbacks affected 3614 people](https://www.borderviolence.eu/balkan-regional-report-january-2022/)
       on the move in the Balkans.
-    date: '2022-02-01T23:58:14Z'
+    date: 2022-02-01T23:58:14Z
     pinned: false
 stayInformed:
   title: Quick Links
@@ -47,5 +47,9 @@ governmentResponse: 'Most states are often antagonistic towards people seeking r
   against children](https://refugee-rights.eu/wp-content/uploads/2021/09/RRE_NoRightsInSight.pdf).
   Hungary is the only EU country to have formally legalised pushbacks nationally,
   although they are commonplace in many EU countries.'
+subregions:
+- content/pages/regions/the-balkans/serbia.md
+- content/pages/regions/the-balkans/bosnia.md
+- content/pages/regions/the-balkans/croatia.md
 
 ---
