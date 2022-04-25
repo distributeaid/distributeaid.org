@@ -21,5 +21,7 @@ governmentResponse: Displaced people in France face “[inhuman and degrading li
   at least 156 evictions in February alone, and roughly 627 tents and tarps were destroyed
   across Calais and Grande-Synthe. These evictions [regularly subject people to violence
   and police brutality](http://www.laubergedesmigrants.fr/wp-content/uploads/2021/05/HRO-2020-Annual-Report_All.pdf).
+subregions:
+- content/pages/regions/france/northern-france.md
 
 ---
