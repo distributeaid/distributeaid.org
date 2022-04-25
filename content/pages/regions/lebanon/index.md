@@ -8,7 +8,7 @@ newsUpdates:
       or income and 95% of refugee households [could not afford](https://data2.unhcr.org/en/documents/details/90852)
       enough food. [Thousands of displaced families and individuals are facing evictions](https://www.nrc.no/news/2022/february/lebanon-syrian-refugees-face-evictions-as-they-take-desperate-measures-to-survive-the-winter/)
       as they cannot pay rent.
-    date: '2022-02-12T02:41:19Z'
+    date: 2022-02-12T02:41:19Z
     pinned: false
 stayInformed:
   title: Stay Informed
@@ -39,5 +39,8 @@ governmentResponse: "Experiencing a massive decrease in international and nation
   as education and healthcare, leaving refugees vulnerable to exploitation, eviction
   and deportation.  \n  \nTODO: bit about the beirut blast displacing lebanese poeple,
   and the general economic crisis affecting lebanese people as well"
+subregions:
+- content/pages/regions/lebanon/beirut.md
+- content/pages/regions/lebanon/bekka-valley.md
 
 ---
