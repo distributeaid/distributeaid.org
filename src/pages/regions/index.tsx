@@ -1,16 +1,18 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
+import RegionCard from '@components/regions/RegionCard'
 
 type Props = {
   data: {
     allMarkdownRemark: {
       nodes: [
         {
+          fileAbsolutePath: string
           frontmatter: {
-            regionName: string
-            subRegionName: string
-            populationCount: number
+            name: string
+            map: string
+            overview: string
           }
         },
       ]
@@ -24,19 +26,23 @@ const RegionsPage: FC<Props> = ({
   },
 }) => {
   const regions = nodes.map(
-    ({ frontmatter: { regionName, subRegionName, populationCount } }) => {
-      console.log(regionName, subRegionName, populationCount)
+    ({ fileAbsolutePath, frontmatter: { name, map, overview } }) => {
       return (
-        <li key={regionName + ' ' + subRegionName}>
-          {regionName} - {subRegionName} - {populationCount}
-        </li>
+        <RegionCard
+          name={name}
+          subregions={['']}
+          overview={overview}
+          map={map}
+        />
       )
     },
   )
 
   return (
     <SimpleLayout pageTitle="Regions">
-      <ul>{regions}</ul>
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
+        {regions}
+      </section>
     </SimpleLayout>
   )
 }
@@ -46,14 +52,36 @@ export default RegionsPage
 export const pageQuery = graphql`
   query RegionsPageQuery {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { glob: "**/content/pages/regions/**/*.md" } }
+      filter: {
+        fileAbsolutePath: { glob: "**/content/pages/regions/**/index.md" }
+      }
     ) {
       nodes {
         frontmatter {
-          regionName
-          subRegionName
-          populationCount
+          name
+          map
+          overview
+          governmentResponse
+          newsUpdates {
+            title
+            visibleCount
+            updates {
+              content
+              date
+              pinned
+              title
+            }
+          }
+          stayInformed {
+            title
+            links {
+              label
+              url
+              description
+            }
+          }
         }
+        fileAbsolutePath
       }
     }
   }
