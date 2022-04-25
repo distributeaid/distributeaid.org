@@ -62,9 +62,24 @@ fields:
   label: Stay Informed Links
   description: Links to news, reporting, and other information sources that regularly
     cover the region.
+- name: subregions
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: regions
+  label: Sub Regions
 pages:
 - content/pages/regions/eastern-europe/index.md
+- content/pages/regions/eastern-europe/index.md
+- content/pages/regions/france/index.md
 - content/pages/regions/france/index.md
 - content/pages/regions/greece/index.md
+- content/pages/regions/greece/index.md
 - content/pages/regions/lebanon/index.md
+- content/pages/regions/lebanon/index.md
+- content/pages/regions/the-balkans/index.md
 - content/pages/regions/the-balkans/index.md
