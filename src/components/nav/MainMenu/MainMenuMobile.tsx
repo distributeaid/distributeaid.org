@@ -18,6 +18,19 @@ const MobileNavigation: FunctionComponent<Props> = ({
     setShowMobileNav(!showMobileNav)
   }
 
+  var donateButton = (
+    <Link
+      to="/donate"
+      className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
+    >
+      Donate
+    </Link>
+  )
+
+  if (window.location.pathname === '/donate') {
+    donateButton = <></>
+  }
+
   return (
     <nav role="navigation" className="md:hidden">
       {/* Screenreaders work best when the button is inside the nav */}
@@ -78,14 +91,7 @@ const MobileNavigation: FunctionComponent<Props> = ({
           </li>
         )}
 
-        <li>
-          <Link
-            to="/donate"
-            className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
-          >
-            Donate
-          </Link>
-        </li>
+        <li>{donateButton}</li>
       </ul>
     </nav>
   )

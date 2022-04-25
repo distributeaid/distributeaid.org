@@ -1,6 +1,5 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, FunctionComponent } from 'react'
 import { Link } from 'gatsby'
-import { FunctionComponent } from 'react'
 import { NavLinkItem } from './MainMenu'
 
 interface Props {
@@ -12,6 +11,19 @@ const DesktopNavigation: FunctionComponent<Props> = ({
   navLinks,
   routeLinks,
 }) => {
+  var donateButton = (
+    <Link
+      to="/donate"
+      className="py-2 px-6 rounded bg-white transition-colors text-navy-700"
+    >
+      Donate
+    </Link>
+  )
+
+  if (window.location.pathname === '/donate') {
+    donateButton = <></>
+  }
+
   return (
     <nav role="navigation" className="hidden md:block">
       <div className="pl-6 flex space-x-2 items-center">
@@ -45,12 +57,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({
             </ul>
           </nav>
         )}
-        <Link
-          to="/donate"
-          className="py-2 px-6 rounded bg-white transition-colors text-navy-700"
-        >
-          Donate
-        </Link>
+        {donateButton}
       </div>
     </nav>
   )
