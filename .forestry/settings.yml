@@ -9,6 +9,16 @@ sections:
   label: Pages
   create: all
   match: "**/*"
+- type: directory
+  path: content/pages/regions
+  label: Regions
+  create: all
+  match: "**/*"
+  templates:
+  - region-page
+  - sub-region-page
+  - linkslist
+  - update
 - type: document
   path: content/site-settings.json
   label: Site Settings
