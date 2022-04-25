@@ -72,6 +72,16 @@ fields:
       type: pages
       section: regions
   label: Sub Regions
+- name: test
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: documents
+      section: regions
+  label: Test
 pages:
 - content/pages/regions/eastern-europe/index.md
 - content/pages/regions/eastern-europe/index.md
