@@ -11,6 +11,7 @@
     "@fontsource/lato": "4.5.8",
     "@nivo/core": "0.79.0",
     "@nivo/sunburst": "0.79.1",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "@types/lodash": "4.14.182",
     "@types/node": "17.0.31",
     "@types/react": "18.0.12",
