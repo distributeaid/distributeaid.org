@@ -1,3 +1,4 @@
+const slugify = require('slugify')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
@@ -52,10 +53,123 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  /**
-   * Build the routes! For each page in the content/routes directory, we create
-   * a page using its path.
-   */
+  /*
+  Regions
+  ------------------------------------------------------------ 
+  */
+  const regionsQuery = await graphql(`
+    query RegionPagesQuery {
+      regions: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { glob: "**/content/pages/regions/*/index.md" }
+        }
+      ) {
+        nodes {
+          fileAbsolutePath
+          frontmatter {
+            name
+            map
+            overview
+            governmentResponse
+            newsUpdates {
+              title
+              visibleCount
+              updates {
+                title
+                content
+                date
+                pinned
+              }
+            }
+            subregions
+          }
+        }
+      }
+    }
+  `)
+
+  await Promise.all(
+    regionsQuery.data.regions.nodes.map(async (regionNode) => {
+      const subregionRelativePaths = regionNode.frontmatter.subregions.map(
+        (subregionPath) => {
+          return subregionPath.slice('content/pages/'.length)
+        },
+      )
+
+      const subregionsQuery = await graphql(
+        `
+          query SubregionsQuery($subregionRelativePaths: [String]) {
+            subregions: allFile(
+              filter: { relativePath: { in: $subregionRelativePaths } }
+            ) {
+              nodes {
+                id
+                relativePath
+                childMarkdownRemark {
+                  frontmatter {
+                    name
+                    map
+                    overview
+                    population {
+                      count
+                      trend
+                      description
+                    }
+                    stayInformed {
+                      title
+                      links {
+                        label
+                        url
+                        description
+                      }
+                    }
+                    newsUpdates {
+                      title
+                      visibleCount
+                      updates {
+                        title
+                        content
+                        date
+                        pinned
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `,
+        { subregionRelativePaths: subregionRelativePaths },
+      )
+
+      const region = regionNode.frontmatter
+      const slug = slugify(region.name, {
+        lower: true,
+        strict: true,
+      })
+
+      const subregions = subregionsQuery.data.subregions.nodes.map(
+        ({ childMarkdownRemark: { frontmatter } }) => frontmatter,
+      )
+
+      console.log(`creating regions page at /routes/${slug}`)
+
+      createPage({
+        path: `/regions/${slug}`,
+        component: path.resolve(`./src/templates/RegionPage.tsx`),
+        context: {
+          region: region,
+          subregions: subregions,
+        },
+      })
+    }),
+  )
+
+  /*
+  Routes
+  ------------------------------------------------------------
+  For each page in the content/routes directory, we create a page using its path.
+  */
   const routesQuery = await graphql(`
     query RoutePagesQuery {
       allFile(filter: { relativeDirectory: { eq: "routes" } }) {
