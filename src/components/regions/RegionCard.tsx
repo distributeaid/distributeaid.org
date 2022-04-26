@@ -24,7 +24,7 @@ const RegionCard: FC<Props> = ({ name, subregions, overview, map }) => (
       </SmartLink>
 */}
     </div>
-    <div className="p-4 mt-6 space-y-2">
+    <div className="m-4 mt-6 space-y-2 line-clamp-3">
       <MarkdownContent content={overview} />
     </div>
   </article>
