@@ -81,6 +81,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 pinned
               }
             }
+            stayInformed {
+              title
+              links {
+                label
+                url
+                description
+              }
+            }
             subregions
           }
         }
@@ -114,14 +122,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                       count
                       trend
                       description
-                    }
-                    stayInformed {
-                      title
-                      links {
-                        label
-                        url
-                        description
-                      }
                     }
                     newsUpdates {
                       title
