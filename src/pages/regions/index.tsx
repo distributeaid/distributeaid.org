@@ -3,9 +3,8 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import RegionCard from '@components/regions/RegionCard'
 import {
-  Region,
-  Subregion,
-  Subregions,
+  RegionSummary,
+  SubregionSummary,
 } from '@components/regions/RegionComponentTypes'
 
 type Props = {
@@ -14,7 +13,7 @@ type Props = {
       nodes: [
         {
           fileAbsolutePath: string
-          frontmatter: Region
+          frontmatter: RegionSummary
         },
       ]
     }
@@ -22,7 +21,7 @@ type Props = {
       nodes: [
         {
           fileAbsolutePath: string
-          frontmatter: Subregion
+          frontmatter: SubregionSummary
         },
       ]
     }
@@ -36,7 +35,10 @@ const RegionsPage: FC<Props> = ({
   },
 }) => {
   const subregionLookup = subregions.reduce(
-    (lookup: Subregions, { fileAbsolutePath, frontmatter: subregion }) => {
+    (
+      lookup: Record<string, SubregionSummary>,
+      { fileAbsolutePath, frontmatter: subregion },
+    ) => {
       const fileRelativePath =
         'content/pages/regions/' +
         fileAbsolutePath.split('content/pages/regions/')[1]
@@ -49,11 +51,11 @@ const RegionsPage: FC<Props> = ({
   const regionCards = regions.map(
     ({ fileAbsolutePath, frontmatter: region }) => {
       const subregions = region.subregions.reduce(
-        (collector: Subregions, relativeFilePath) => {
-          collector[relativeFilePath] = subregionLookup[relativeFilePath]
+        (collector: SubregionSummary[], fileRelativePath) => {
+          collector.push(subregionLookup[fileRelativePath])
           return collector
         },
-        {},
+        [],
       )
 
       return <RegionCard region={region} subregions={subregions} />
