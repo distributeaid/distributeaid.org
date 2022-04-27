@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, GatsbyImageData } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
 
 import { Region, Subregion } from '@components/regions/RegionComponentTypes'
@@ -13,16 +13,28 @@ import SmartLink from '@components/link/SmartLink'
 type TemplateProps = {
   pageContext: {
     region: Region
+    regionMapImage: GatsbyImageData
     subregions: Subregion[]
   }
 }
 
 const RegionPage: FC<TemplateProps> = ({
-  pageContext: { region, subregions },
+  pageContext: { region, regionMapImage, subregions },
 }) => {
+  console.log(regionMapImage)
+
   return (
     <SimpleLayout pageTitle={`Region: ${region.name}`}>
       <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
+
+      <div className="w-64">
+        <GatsbyImage
+          key={region.name}
+          image={regionMapImage}
+          alt={`Map highlighting the ${region.name} region.`}
+          className="mb-4 w-full"
+        />
+      </div>
 
       <ul>
         {subregions.map((subregion) => {
