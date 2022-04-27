@@ -48,7 +48,7 @@ When you're ready to submit your code, open a pull request with "Closes #X" to l
 
 It's easy for the intention of code review comments to be unclear or get misinterpreted. To help with communication, reviewers are encouraged to use [conventional comments](https://conventionalcomments.org/) and explicitly indicate that comments are `(blocking)`, where the discussion must be resolved for PR to be merged, or `(non-blocking)` where resolving the discussion is optional for the implementer.
 
-We highly recommend you [create a CodeSee account](https://www.codesee.io/welcome), free for open source development.  We use their [data-flow recordings](https://docs.codesee.io/projects/recordings/en/latest/) and [codebase maps](https://docs.codesee.io/en/latest/) tool during our development and review processes to help make it easy to understand your changes or any problems you might run into along the way.
+We highly recommend you [create a CodeSee account](https://www.codesee.io/welcome), free for open source development.  We use their [data-flow recordings](https://docs.codesee.io/docs/introduction-to-recordings) and [codebase maps](https://docs.codesee.io/docs/codebase-maps) tool during our development and review processes to help make it easy to understand your changes or any problems you might run into along the way.
 
 #### Approval and merging
 
