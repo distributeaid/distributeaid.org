@@ -5,10 +5,10 @@ Link List
 export type LinkList = {
   title: string
   links: {
-    title: string
+    label: string
     url: string
     description: string
-  }
+  }[]
 }
 
 /*
@@ -23,5 +23,5 @@ export type UpdateList = {
     content: string
     date: string
     pinned: boolean
-  }
+  }[]
 }
