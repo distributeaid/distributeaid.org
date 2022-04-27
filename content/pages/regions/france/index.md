@@ -11,7 +11,7 @@ stayInformed:
     description: Details the changing conditions in Calais in the five years since
       the Calais jungle was dismantled.
 name: France
-map: ''
+map: "/uploads/france.png"
 overview: TODO
 governmentResponse: Displaced people in France face “[inhuman and degrading living
   conditions, as well as police abuse and harassment](https://www.hrw.org/world-report/2021/country-chapters/france).”
