@@ -28,7 +28,7 @@ stayInformed:
     url: https://refugee-rights.eu/pushbacksevidence/
     description: ''
 name: The Balkans
-map: ''
+map: "/uploads/the-balkans.png"
 overview: The Balkan region borders the EU and Schengen zone, which makes it a standard
   route for transitory migrants wishing to gain asylum within the EU. The Balkans
   act as a transitory region for people on the move, most from Afghanistan, Pakistan,
