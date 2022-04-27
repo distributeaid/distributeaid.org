@@ -15,7 +15,7 @@ export type Region = {
   overview: string
   governmentResponse: string
   newsUpdates: UpdateList
-  linksList: LinkList
+  stayInformed: LinkList
   subregions: string[]
 }
 

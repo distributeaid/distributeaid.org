@@ -1,12 +1,14 @@
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import slugify from 'utils/slugify'
 
 import { Region, Subregion } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
 import MarkdownContent from '@components/markdown/MarkdownContent'
-import UpdateList from '@components/list/UpdateList'
 import LinkList from '@components/list/LinkList'
+import UpdateList from '@components/list/UpdateList'
+import SmartLink from '@components/link/SmartLink'
 
 type TemplateProps = {
   pageContext: {
@@ -23,9 +25,18 @@ const RegionPage: FC<TemplateProps> = ({
       <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
 
       <ul>
-        {subregions.map(({ name }) => (
-          <li>{name}</li>
-        ))}
+        {subregions.map((subregion) => {
+          const href = `/regions/${slugify(region.name)}/${slugify(
+            subregion.name,
+          )}`
+          return (
+            <li>
+              <SmartLink className="link" href={href}>
+                {subregion.name}
+              </SmartLink>
+            </li>
+          )
+        })}
       </ul>
 
       <h2>Overview</h2>
