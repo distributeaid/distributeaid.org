@@ -17,8 +17,8 @@ stayInformed:
   - url: https://www.humanitarianresponse.info/sites/www.humanitarianresponse.info/files/documents/files/hno_2021-eng_-_2021-02-09.pdf
     description: ''
     label: Humanitarian Needs in Ukraine - OCHA
-name: Eastern Europe (Ukraine)
-map: ''
+name: Eastern Europe
+map: "/uploads/eastern-europe.png"
 overview: Eastern Europe as a region, includes Ukraine, Romania, Moldova, Hungary,
   Slovakia, and Poland.  It mostly act as places of transition for people wanting
   to seek asylum in other EU countries- although not always.  Since Russia's war in
