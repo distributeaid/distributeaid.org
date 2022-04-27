@@ -5,20 +5,19 @@ import DesktopNavigation from './MainMenuDesktop'
 import MobileNavigation from './MainMenuMobile'
 
 export interface NavLinkItem {
-  title: string
+  label: string
   path: string
 }
 
 const linksHardcoded: NavLinkItem[] = [
-  {
-    title: 'About Us',
-    path: '/about-us/',
-  },
+  { label: 'Home', path: '/' },
+  { label: 'About Us', path: '/about-us/' },
+  { label: 'Regions', path: '/regions/' },
 ]
 
 const routeLinks: NavLinkItem[] = [
-  { title: 'UK to France', path: '/routes/uk-to-france' },
-  { title: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
+  { label: 'UK to France', path: '/routes/uk-to-france' },
+  { label: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
 ]
 
 /**

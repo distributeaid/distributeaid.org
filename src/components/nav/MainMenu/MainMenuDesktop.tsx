@@ -21,7 +21,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({
             to={link.path}
             className="py-2 px-4 rounded hover:bg-navy-700 transition-colors text-white"
           >
-            {link.title}
+            {link.label}
           </Link>
         ))}
         {routeLinks && (
@@ -39,7 +39,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({
                   key={route.path}
                   className="py-2 px-4 rounded block hover:bg-navy-600 transition-colors text-white whitespace-nowrap"
                 >
-                  {route.title}
+                  {route.label}
                 </Link>
               ))}
             </ul>

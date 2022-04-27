@@ -56,7 +56,7 @@ const MobileNavigation: FunctionComponent<Props> = ({
               to={link.path}
               className="py-2 px-4 flex items-center text-white"
             >
-              {link.title}
+              {link.label}
             </Link>
           </li>
         ))}
@@ -72,7 +72,7 @@ const MobileNavigation: FunctionComponent<Props> = ({
                 to={link.path}
                 className="py-2 px-6 flex items-center text-white"
               >
-                {link.title}
+                {link.label}
               </Link>
             ))}
           </li>
