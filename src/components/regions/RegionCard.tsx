@@ -16,11 +16,11 @@ type Props = {
 
 const RegionCard: FC<Props> = ({ region, subregions }) => {
   const regionSlug = slugify(region.name)
-  const regionHref = '/regions/' + regionSlug
+  const regionHref = `/regions/${regionSlug}`
 
   const subregionLinks = subregions.map((subregion, index, array) => {
     const subregionSlug = slugify(subregion.name)
-    const subregionHref = regionHref + '#' + subregionSlug
+    const subregionHref = `${regionHref}/${subregionSlug}`
     const seperator = getOxfordCommaSeparator(index, array)
     return (
       <span>

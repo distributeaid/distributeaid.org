@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   /*
-  Regions
+  Regions & Subregions
   ------------------------------------------------------------ 
   */
   const regionsQuery = await graphql(`
@@ -143,7 +143,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       )
 
       const region = regionNode.frontmatter
-      const slug = slugify(region.name, {
+      const regionSlug = slugify(region.name, {
         lower: true,
         strict: true,
       })
@@ -152,15 +152,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ({ childMarkdownRemark: { frontmatter } }) => frontmatter,
       )
 
-      console.log(`creating regions page at /routes/${slug}`)
+      console.log(`creating regions page at /routes/${regionSlug}`)
 
       createPage({
-        path: `/regions/${slug}`,
+        path: `/regions/${regionSlug}`,
         component: path.resolve(`./src/templates/RegionPage.tsx`),
         context: {
           region: region,
           subregions: subregions,
         },
+      })
+
+      subregions.forEach((subregion) => {
+        const subregionSlug = slugify(subregion.name, {
+          lower: true,
+          strict: true,
+        })
+
+        createPage({
+          path: `/regions/${regionSlug}/${subregionSlug}`,
+          component: path.resolve(`./src/templates/SubregionPage.tsx`),
+          context: {
+            region: region,
+
+            // TODO: Don't love passing in subregions here, seems like it's
+            //       mixing concerns.  How to fix:
+            //         1) use a PageQuery to grab em
+            //         2) replace the region.subregions property with them
+            //            (may require refactoring types)
+            subregions: subregions,
+            subregion: subregion,
+          },
+        })
       })
     }),
   )

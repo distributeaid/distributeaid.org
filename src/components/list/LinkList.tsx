@@ -16,7 +16,9 @@ const LinkList: FC<Props> = ({ list: { title, links } }) => {
         {links.map(({ label, url, description }) => (
           <>
             <dd>
-              <SmartLink href={url}>{label}</SmartLink>
+              <SmartLink className="link" href={url}>
+                {label}
+              </SmartLink>
             </dd>
             <dt>{description}</dt>
           </>
