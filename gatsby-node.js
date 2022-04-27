@@ -98,6 +98,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   await Promise.all(
     regionsQuery.data.regions.nodes.map(async (regionNode) => {
+      const region = regionNode.frontmatter
+      const regionSlug = slugify(region.name, {
+        lower: true,
+        strict: true,
+      })
+
+      const regionMapGlob = `**/static${region.map}`
+      const regionMapImageQuery = await graphql(
+        `
+          query RegionMapImageQuery($regionMapGlob: String) {
+            regionMapImage: file(absolutePath: { glob: $regionMapGlob }) {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        `,
+        { regionMapGlob: regionMapGlob },
+      )
+
+      const regionMapImage = regionMapImageQuery.data
+        ? regionMapImageQuery.data.regionMapImage.childImageSharp
+            .gatsbyImageData
+        : null
+
       const subregionRelativePaths = regionNode.frontmatter.subregions.map(
         (subregionPath) => {
           return subregionPath.slice('content/pages/'.length)
@@ -142,23 +167,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         { subregionRelativePaths: subregionRelativePaths },
       )
 
-      const region = regionNode.frontmatter
-      const regionSlug = slugify(region.name, {
-        lower: true,
-        strict: true,
-      })
-
       const subregions = subregionsQuery.data.subregions.nodes.map(
         ({ childMarkdownRemark: { frontmatter } }) => frontmatter,
       )
 
-      console.log(`creating regions page at /routes/${regionSlug}`)
+      console.info(`creating region page at /routes/${regionSlug}`)
 
       createPage({
         path: `/regions/${regionSlug}`,
         component: path.resolve(`./src/templates/RegionPage.tsx`),
         context: {
           region: region,
+          regionMapImage: regionMapImage,
           subregions: subregions,
         },
       })
@@ -168,6 +188,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           lower: true,
           strict: true,
         })
+
+        console.info(
+          `creating subregion page at /regions/${regionSlug}/${subregionSlug}`,
+        )
 
         createPage({
           path: `/regions/${regionSlug}/${subregionSlug}`,
@@ -240,7 +264,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   routesQuery.data.allFile.nodes.forEach((route) => {
     if (route.childMarkdownRemark?.frontmatter) {
-      console.log(
+      console.info(
         `creating route page at /routes/${route.childMarkdownRemark.frontmatter.pagePath}`,
       )
       createPage({

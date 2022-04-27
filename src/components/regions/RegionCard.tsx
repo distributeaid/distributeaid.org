@@ -40,6 +40,8 @@ const RegionCard: FC<Props> = ({ region, subregions }) => {
 
   return (
     <article className="border">
+      {region.map}
+
       <div className="m-3">
         <h2 className="text-xl font-semibold mb-1">{region.name}</h2>
         <p className="mb-3">{subregionLinks}</p>
