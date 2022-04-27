@@ -1,17 +1,63 @@
+import { LinkList, UpdateList } from '@components/list/ListTypes'
+
+/*
+Region
+================================================================================
+*/
+
+/*
+Region
+------------------------------------------------------------
+*/
 export type Region = {
+  name: string
+  map: string
+  overview: string
+  governmentResponse: string
+  newsUpdates: UpdateList
+  linksList: LinkList
+  subregions: string[]
+}
+
+/*
+Region Summary
+------------------------------------------------------------
+*/
+export type RegionSummary = {
   name: string
   map: string
   overview: string
   subregions: [string]
 }
 
-export type Regions = Record<string, Region>
+/*
+Subregion
+================================================================================
+*/
 
+/*
+Subregion
+------------------------------------------------------------
+*/
 export type Subregion = {
+  name: string
+  map: string
+  overview: string
+  population: {
+    count: number
+    trend: string
+    description: string
+  }
+  newsUpdates: UpdateList
+}
+
+/*
+Subregion Summary
+------------------------------------------------------------
+*/
+export type SubregionSummary = {
   name: string
   population: {
     count: number
   }
 }
-
-export type Subregions = Record<string, Subregion>
