@@ -4,7 +4,7 @@ Thank you so much for contributing to Distribute Aid! Please add your name to th
 
 By contributing to this project you agree to:
 
-1. Abide by Distribute Aid's [Code of Conduct](https://www.notion.so/distributeaid/Code-of-Conduct-6ba4ca07a6fa4e4da9ef8ad91757c5b4).
+1. Abide by Distribute Aid's [Code of Conduct](https://github.com/distributeaid/.github/blob/saga/CODE_OF_CONDUCT.md).
 2. Assign the copyright of your code contributions to Distribute Aid, who commits to acting as a good steward for the codebase for public benefit inline with its nonprofit status and mission.
 
 ## Contributor Signatures

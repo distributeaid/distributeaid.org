@@ -28,7 +28,7 @@ Development Process
 
 ### Code of Conduct
 
-First, please read our [code of conduct](https://www.notion.so/distributeaid/Code-of-Conduct-6ba4ca07a6fa4e4da9ef8ad91757c5b4).
+First, please read our [code of conduct](https://github.com/distributeaid/.github/blob/saga/CODE_OF_CONDUCT.md).
 
 ### Issue Tracking
 
