@@ -59,17 +59,17 @@
     "@types/testing-library__jest-dom": "5.14.3",
     "@types/testing-library__react": "10.2.0",
     "autoprefixer": "10.4.5",
-    "babel-jest": "27.5.1",
+    "babel-jest": "28.0.3",
     "babel-preset-gatsby": "2.12.1",
     "contentful-import": "8.2.29",
     "gatsby-plugin-postcss": "5.12.1",
     "identity-obj-proxy": "3.0.0",
-    "jest": "27.5.1",
+    "jest": "28.0.3",
     "jest-extended": "2.0.0",
     "netlify-cli": "9.16.7",
     "postcss": "8.4.12",
     "prettier": "2.6.2",
-    "ts-jest": "27.1.4"
+    "ts-jest": "28.0.1"
   },
   "engines": {
     "node": ">=14.0.0",
