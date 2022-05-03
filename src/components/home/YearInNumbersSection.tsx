@@ -1,44 +1,45 @@
+import { last } from 'lodash'
 import { FC } from 'react'
-import moneyImage from '../../images/home/money.svg'
-import truckImage from '../../images/home/truck.svg'
-import boxImage from '../../images/home/box.svg'
-import peopleImage from '../../images/home/people.svg'
-import highwayImage from '../../images/home/highway.svg'
-import rocketImage from '../../images/home/rocket.svg'
-import ExternalLink from '@components/link/ExternalLink'
+import crateImage from '../../images/da-in-numbers/crate.svg'
+import heartImage from '../../images/da-in-numbers/heart.svg'
+import peopleImage from '../../images/da-in-numbers/people.svg'
+import routeImage from '../../images/da-in-numbers/route.svg'
+
+const numberFormatter = new Intl.NumberFormat()
+const moneyFormatter = new Intl.NumberFormat(undefined, {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+})
 
 const content = [
   {
-    figure: '$2+ Million',
-    description: 'worth of aid shipped',
-    image: moneyImage,
+    figure: numberFormatter.format(2031432),
+    description: 'aid items delivered',
+    image: crateImage,
   },
   {
-    figure: '1+ Million',
-    description: 'pieces shipped',
-    image: boxImage,
-  },
-  {
-    figure: '290,500 ×',
-    description: 'aid delivered',
+    figure: numberFormatter.format(962302),
+    description: 'needs met',
     image: peopleImage,
   },
   {
-    figure: '467,100 kg',
-    description: 'aid shipped',
-    image: truckImage,
+    figure: moneyFormatter.format(2578255),
+    description: 'value to end-beneficiary',
+    image: heartImage,
   },
   {
-    figure: '54,953 km',
+    figure: `${numberFormatter.format(72463)} km`,
     description: 'transport arranged',
-    image: highwayImage,
+    image: routeImage,
   },
   {
-    figure: '20x Impact',
-    description: 'every $1 we spend delivers $20 worth of aid',
-    image: rocketImage,
+    figure: `${numberFormatter.format(214284)} kg`,
+    description: 'aid shipped',
+    image: routeImage,
   },
 ]
+const lastUpdate = 'May 2022'
 
 type CardProps = {
   figure: string
@@ -47,36 +48,34 @@ type CardProps = {
 }
 
 const Card: FC<CardProps> = ({ figure, description, image }) => (
-  <article className="text-center px-4">
-    <img src={image} width="160" className="block mx-auto" alt="" />
-    <p className="text-2xl font-medium">{figure}</p>
-    <p className="text-gray-700 mb-2">{description}</p>
-  </article>
+  <div
+    className="flex justify-center items-center flex-col px-4 m-4"
+    style={{ maxWidth: '150px' }}
+  >
+    <img
+      src={image}
+      width="100%"
+      className="block mx-auto mb-2"
+      alt={description}
+    />
+    <p className="text-2xl font-medium whitespace-nowrap">{figure}</p>
+    <p className="text-gray-700 mb-2 whitespace-nowrap">{description}</p>
+  </div>
 )
 
 const YearInNumbersSection: FC = () => (
   <section className="py-8 md:py-16 max-w-7xl mx-auto">
     <h2 className="text-4xl font-semibold mb-8 p-4 text-center">
-      2020 in Numbers
+      The last 12 months in numbers
     </h2>
-    <div className="grid grid-cols-2 sm:grid-cols-3 justify-center">
+    <div className="flex justify-center items-end flex-wrap">
       {content.map((section, i) => (
         <Card {...section} key={`section-${i}`} />
       ))}
     </div>
 
     <div className="text-center mt-8 text-gray-500 p-4 lg:px-8">
-      All emojis designed by{' '}
-      <ExternalLink className="link" href="https://openmoji.org/">
-        OpenMoji
-      </ExternalLink>
-      – the open-source emoji and icon project. License:{' '}
-      <ExternalLink
-        className="link"
-        href="https://creativecommons.org/licenses/by-sa/4.0/"
-      >
-        CC BY-SA 4.0
-      </ExternalLink>
+      Last update: {lastUpdate}
     </div>
   </section>
 )
