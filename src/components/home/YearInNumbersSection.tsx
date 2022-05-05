@@ -66,7 +66,7 @@ const Card: FC<CardProps> = ({ figure, description, image }) => (
 const YearInNumbersSection: FC = () => (
   <section className="py-8 md:py-16 max-w-7xl mx-auto">
     <h2 className="text-4xl font-semibold mb-8 p-4 text-center">
-      2021 in numbers
+      Aid delivered in 2021
     </h2>
     <div className="flex justify-center items-end flex-wrap">
       {content.map((section, i) => (
