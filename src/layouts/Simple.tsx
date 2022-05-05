@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import Favicon from '@components/Favicon'
 import Footer from '@components/Footer'
@@ -6,9 +6,14 @@ import MainMenu from '@components/nav/MainMenu/MainMenu'
 
 interface Props {
   pageTitle: string
+  footer?: ReactNode
 }
 
-const SimpleLayout: FunctionComponent<Props> = ({ pageTitle, children }) => (
+const SimpleLayout: FunctionComponent<PropsWithChildren<Props>> = ({
+  pageTitle,
+  footer,
+  children,
+}) => (
   <>
     <Helmet
       title={`${pageTitle} - Distribute Aid`}
@@ -26,7 +31,7 @@ const SimpleLayout: FunctionComponent<Props> = ({ pageTitle, children }) => (
       <MainMenu />
     </header>
     <main>{children}</main>
-    <Footer />
+    {footer ? footer : <Footer />}
   </>
 )
 

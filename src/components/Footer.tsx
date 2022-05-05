@@ -4,17 +4,19 @@ import { Link } from 'gatsby'
 import siteSettings from '../../content/site-settings.json'
 import SocialIconContainer from './social-media/SocialIconContainer'
 
-const Footer: FC = () => (
+const Footer: FC<{ showDonateButton?: boolean }> = ({ showDonateButton }) => (
   <footer
     style={{ background: '#F3F4F6' }}
     className="px-4 py-12 md:px-8 text-center"
   >
-    <Link
-      to="/donate"
-      className="py-2 px-6 rounded bg-navy-700 transition-colors text-white"
-    >
-      Donate
-    </Link>
+    {(showDonateButton ?? true) && (
+      <Link
+        to="/donate"
+        className="py-2 px-6 rounded bg-navy-700 transition-colors text-white"
+      >
+        Donate
+      </Link>
+    )}
     <div className="my-4">
       <p>
         Email us at{' '}

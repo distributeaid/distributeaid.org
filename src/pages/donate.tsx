@@ -6,6 +6,7 @@ import ExternalLink from '@components/link/ExternalLink'
 import Button from '@components/button/Button'
 import BankInformationModal from '@components/donate/BankInfoModal'
 import SimpleLayout from '@layouts/Simple'
+import Footer from '@components/Footer'
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
 
@@ -13,7 +14,10 @@ const Donate: FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   return (
-    <SimpleLayout pageTitle="How to donate">
+    <SimpleLayout
+      pageTitle="How to donate"
+      footer={<Footer showDonateButton={false} />}
+    >
       <div className="pt-8 md:pt-20" style={{ minHeight: '80vh' }}>
         <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
           Support Distribute Aid to help more people in need:
