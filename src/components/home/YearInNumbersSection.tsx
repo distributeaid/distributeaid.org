@@ -40,7 +40,6 @@ const content = [
     image: routeImage,
   },
 ]
-const lastUpdate = 'May 2022'
 
 type CardProps = {
   figure: string
@@ -67,16 +66,12 @@ const Card: FC<CardProps> = ({ figure, description, image }) => (
 const YearInNumbersSection: FC = () => (
   <section className="py-8 md:py-16 max-w-7xl mx-auto">
     <h2 className="text-4xl font-semibold mb-8 p-4 text-center">
-      The last 12 months in numbers
+      2021 in numbers
     </h2>
     <div className="flex justify-center items-end flex-wrap">
       {content.map((section, i) => (
         <Card {...section} key={`section-${i}`} />
       ))}
-    </div>
-
-    <div className="text-center mt-8 text-gray-500 p-4 lg:px-8">
-      Last update: {lastUpdate}
     </div>
   </section>
 )
