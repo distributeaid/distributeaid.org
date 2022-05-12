@@ -28,7 +28,13 @@ Run Scripts After Build
 Transform Nodes
 ================================================================================
 */
-exports.onCreateNode = ({ node, actions, createNodeId }) => {
+exports.onCreateNode = ({
+  node,
+  actions,
+  createNodeId,
+  createContentDigest,
+  getNode,
+}) => {
   const { createNode, createNodeField } = actions
 
   // Forestry Files
@@ -37,6 +43,8 @@ exports.onCreateNode = ({ node, actions, createNodeId }) => {
     node.fileAbsolutePath &&
     minimatch(node.fileAbsolutePath, '**/content/**/*.md')
   ) {
+    const fm = node.frontmatter
+
     // Regions
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
@@ -49,24 +57,49 @@ exports.onCreateNode = ({ node, actions, createNodeId }) => {
         governmentResponse: fm.governmentResponse,
         newsUpdates: fm.newsUpdates,
         stayInformed: fm.stayInformed,
-        subregions: fm.stayInformed,
+        subregionFileRelativePaths: fm.subregions,
 
         // Gatsby Fields
         id: createNodeId(`DA Region - ${fm.name}`),
         parent: node.id,
         children: [],
         internal: {
-          type: 'Forestry',
-          //          contentDigest: // TODO
-          discription: `DA Region: ${fm.name} - A region, w/ content sourced from markdown frontmatter created in the Forestry CMS.`,
+          type: 'DARegion',
+          contentDigest: createContentDigest(fm),
         },
       })
     }
 
-    // Routes
+    // Subregions
     else if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
+      const fileRelativePath = path.join(
+        'content',
+        'pages',
+        getNode(node.parent).relativePath,
+      )
+
+      createNode({
+        // Node Data
+        name: fm.name,
+        overview: fm.overview,
+        population: fm.population,
+        newsUpdates: fm.newsUpdates,
+
+        // Metadata
+        mapFileRelativePath: fm.map,
+        fileRelativePath: fileRelativePath,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Subregion - ${fm.name}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DASubregion',
+          contentDigest: createContentDigest(fm),
+        },
+      })
     }
 
     // Other Pages
@@ -82,6 +115,47 @@ Customize the GraqphQL Schema
 */
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
+}
+
+/*
+Create Resolvers for Looking Up Related Nodes
+================================================================================
+*/
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    DARegion: {
+      subregions: {
+        type: ['DASubregion'],
+        resolve: async (source, args, context, info) => {
+          const { entries } = await context.nodeModel.findAll({
+            query: {
+              filter: {
+                fileRelativePath: { in: source.subregionFileRelativePaths },
+              },
+            },
+            type: 'DASubregion',
+          })
+          return entries
+        },
+      },
+
+      //   TODO
+      //   map: {
+      //     type: ["File"],
+      //     resolve: async (source, args, context, info) => {
+      //       const entry = await context.nodeModel.findOne({
+      //         query: {
+      //           absolutePath: { glob: `**/static${source.mapFileRelativePath}`}
+      //         }
+      //       })
+
+      //       return entry
+      //     }
+      //   }
+    },
+  }
+
+  createResolvers(resolvers)
 }
 
 /*
