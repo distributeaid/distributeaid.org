@@ -1095,10 +1095,10 @@
   resolved "https://registry.yarnpkg.com/@bugsnag/safe-json-stringify/-/safe-json-stringify-6.0.0.tgz#22abdcd83e008c369902976730c34c150148a758"
   integrity sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==
 
-"@codesee/babel-plugin-instrument@0.257.0":
-  version "0.257.0"
-  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.257.0.tgz#d0b3a92f9d00f363f215d9e217bfe5e886950478"
-  integrity sha512-mY0WxU67dsJSkE2eEjos/WQRIrIrwj4a+ViUehEmHPRK6DOa6gZfFYxBdqJpk1mvQhd145QpucehejT5w93XFg==
+"@codesee/babel-plugin-instrument@0.258.0":
+  version "0.258.0"
+  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.258.0.tgz#11b1d084b2451b7f7960e613ffee044db2a3c1d4"
+  integrity sha512-OynX7wsVbu8IUKsqZaiDWqHE+p9Mwi5GZt2Z6De0UoVdHgatVnccMhZJgvBK7Qfg6hxYU/8RIY8V80TtmQ/ogw==
   dependencies:
     "@babel/plugin-syntax-jsx" "^7.12.13"
     "@babel/plugin-transform-typescript" "^7.14.4"
