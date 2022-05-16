@@ -247,159 +247,108 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   ------------------------------------------------------------ 
   */
   const regionsQuery = await graphql(`
-    query RegionPagesQuery {
-      regions: allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { glob: "**/content/pages/regions/*/index.md" }
-        }
-      ) {
+    query RegionsQuery {
+      regions: allDaRegion {
         nodes {
-          fileAbsolutePath
-          frontmatter {
+          name
+          map {
+            gatsbyImageData
+          }
+          overview
+          governmentResponse
+          newsUpdates {
+            title
+            visibleCount
+            updates {
+              title
+              content
+              date
+              pinned
+            }
+          }
+          stayInformed {
+            title
+            links {
+              label
+              url
+              description
+            }
+          }
+          subregions {
             name
-            map
-            overview
-            governmentResponse
-            newsUpdates {
-              title
-              visibleCount
-              updates {
-                title
-                content
-                date
-                pinned
-              }
-            }
-            stayInformed {
-              title
-              links {
-                label
-                url
-                description
-              }
-            }
-            subregions
           }
         }
       }
     }
   `)
 
-  await Promise.all(
-    regionsQuery.data.regions.nodes.map(async (regionNode) => {
-      const region = regionNode.frontmatter
-      const regionSlug = slugify(region.name, {
-        lower: true,
-        strict: true,
-      })
+  regionsQuery.data.regions.nodes.forEach((region) => {
+    const regionSlug = slugify(region.name, {
+      lower: true,
+      strict: true,
+    })
 
-      const regionMapGlob = `**/static${region.map}`
-      const regionMapImageQuery = await graphql(
-        `
-          query RegionMapImageQuery($regionMapGlob: String) {
-            regionMapImage: file(absolutePath: { glob: $regionMapGlob }) {
-              childImageSharp {
-                gatsbyImageData
-              }
+    console.info(`creating region page at /routes/${regionSlug}`)
+
+    createPage({
+      path: `/regions/${regionSlug}`,
+      component: path.resolve(`./src/templates/RegionPage.tsx`),
+      context: {
+        region: region,
+      },
+    })
+  })
+
+  const subregionsQuery = await graphql(`
+    query SubregionsQuery {
+      subregions: allDaSubregion {
+        nodes {
+          name
+          map {
+            gatsbyImageData
+          }
+          overview
+          newsUpdates {
+            title
+            visibleCount
+            updates {
+              title
+              content
+              date
+              pinned
             }
           }
-        `,
-        { regionMapGlob: regionMapGlob },
-      )
-
-      const regionMapImage = regionMapImageQuery.data
-        ? regionMapImageQuery.data.regionMapImage.childImageSharp
-            .gatsbyImageData
-        : null
-
-      const subregionRelativePaths = regionNode.frontmatter.subregions.map(
-        (subregionPath) => {
-          return subregionPath.slice('content/pages/'.length)
-        },
-      )
-
-      const subregionsQuery = await graphql(
-        `
-          query SubregionsQuery($subregionRelativePaths: [String]) {
-            subregions: allFile(
-              filter: { relativePath: { in: $subregionRelativePaths } }
-            ) {
-              nodes {
-                id
-                relativePath
-                childMarkdownRemark {
-                  frontmatter {
-                    name
-                    map
-                    overview
-                    population {
-                      count
-                      trend
-                      description
-                    }
-                    newsUpdates {
-                      title
-                      visibleCount
-                      updates {
-                        title
-                        content
-                        date
-                        pinned
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          region {
+            name
           }
-        `,
-        { subregionRelativePaths: subregionRelativePaths },
-      )
+        }
+      }
+    }
+  `)
 
-      const subregions = subregionsQuery.data.subregions.nodes.map(
-        ({ childMarkdownRemark: { frontmatter } }) => frontmatter,
-      )
+  subregionsQuery.data.subregions.nodes.forEach((subregion) => {
+    const regionSlug = slugify(subregion.region.name, {
+      lower: true,
+      strict: true,
+    })
 
-      console.info(`creating region page at /routes/${regionSlug}`)
+    const subregionSlug = slugify(subregion.name, {
+      lower: true,
+      strict: true,
+    })
 
-      createPage({
-        path: `/regions/${regionSlug}`,
-        component: path.resolve(`./src/templates/RegionPage.tsx`),
-        context: {
-          region: region,
-          regionMapImage: regionMapImage,
-          subregions: subregions,
-        },
-      })
+    console.info(
+      `creating subregion page at /regions/${regionSlug}/${subregionSlug}`,
+    )
 
-      subregions.forEach((subregion) => {
-        const subregionSlug = slugify(subregion.name, {
-          lower: true,
-          strict: true,
-        })
-
-        console.info(
-          `creating subregion page at /regions/${regionSlug}/${subregionSlug}`,
-        )
-
-        createPage({
-          path: `/regions/${regionSlug}/${subregionSlug}`,
-          component: path.resolve(`./src/templates/SubregionPage.tsx`),
-          context: {
-            region: region,
-
-            // TODO: Don't love passing in subregions here, seems like it's
-            //       mixing concerns.  How to fix:
-            //         1) use a PageQuery to grab em
-            //         2) replace the region.subregions property with them
-            //            (may require refactoring types)
-            subregions: subregions,
-            subregion: subregion,
-          },
-        })
-      })
-    }),
-  )
+    createPage({
+      path: `/regions/${regionSlug}/${subregionSlug}`,
+      component: path.resolve(`./src/templates/SubregionPage.tsx`),
+      context: {
+        subregion: subregion,
+      },
+    })
+  })
 
   /*
   Routes
