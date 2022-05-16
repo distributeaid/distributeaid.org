@@ -64,7 +64,7 @@ overview: The number of displaced people in Northern France continuously fluctua
   asylum. Many people making this journey speak English, have family or friends in
   the UK, and/or have been subject to state violence in other countries, deterring
   them from claiming asylum there.
-map: ''
+map: "/uploads/screenshot-from-2022-05-16-15-52-07-2x.png"
 population:
   count: 2817
   trend: Increasing
