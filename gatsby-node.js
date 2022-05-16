@@ -147,6 +147,7 @@ exports.createResolvers = ({ createResolvers, getNode }) => {
           return subregions
         },
       },
+
       map: {
         type: 'ImageSharp',
         resolve: async (source, args, context, info) => {
