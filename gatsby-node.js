@@ -49,15 +49,24 @@ exports.onCreateNode = ({
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
     ) {
+      const fileRelativePath = path.join(
+        'content',
+        'pages',
+        getNode(node.parent).relativePath,
+      )
+
       createNode({
         // Node Data
         name: fm.name,
-        mapFileRelativePath: fm.map,
         overview: fm.overview,
         governmentResponse: fm.governmentResponse,
         newsUpdates: fm.newsUpdates,
         stayInformed: fm.stayInformed,
         subregionFileRelativePaths: fm.subregions,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+        mapFileRelativePath: fm.map,
 
         // Gatsby Fields
         id: createNodeId(`DA Region - ${fm.name}`),
@@ -88,8 +97,8 @@ exports.onCreateNode = ({
         newsUpdates: fm.newsUpdates,
 
         // Metadata
-        mapFileRelativePath: fm.map,
         fileRelativePath: fileRelativePath,
+        mapFileRelativePath: fm.map,
 
         // Gatsby Fields
         id: createNodeId(`DA Subregion - ${fm.name}`),
@@ -121,7 +130,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 Create Resolvers for Looking Up Related Nodes
 ================================================================================
 */
-exports.createResolvers = ({ createResolvers }) => {
+exports.createResolvers = ({ createResolvers, getNode }) => {
   const resolvers = {
     DARegion: {
       subregions: {
@@ -138,20 +147,23 @@ exports.createResolvers = ({ createResolvers }) => {
           return entries
         },
       },
+      map: {
+        type: 'ImageSharp',
+        resolve: async (source, args, context, info) => {
+          const entry = await context.nodeModel.findOne({
+            query: {
+              filter: {
+                absolutePath: {
+                  glob: `**/static${source.mapFileRelativePath}`,
+                },
+              },
+            },
+            type: 'File',
+          })
 
-      //   TODO
-      //   map: {
-      //     type: ["File"],
-      //     resolve: async (source, args, context, info) => {
-      //       const entry = await context.nodeModel.findOne({
-      //         query: {
-      //           absolutePath: { glob: `**/static${source.mapFileRelativePath}`}
-      //         }
-      //       })
-
-      //       return entry
-      //     }
-      //   }
+          return getNode(entry.children[0])
+        },
+      },
     },
   }
 
