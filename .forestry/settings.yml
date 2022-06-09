@@ -7,10 +7,9 @@ sections:
 - type: document
   path: content/data/product-prices.json
   label: Product Prices
-  match: "**/*"
   read_only: true
 - type: directory
-  path: content/data/**/*
+  path: content/data
   label: Data
   create: all
   match: "**/*"
