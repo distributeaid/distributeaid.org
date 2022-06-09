@@ -1,4 +1,5 @@
 const slugify = require('slugify')
+var minimatch = require('minimatch')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
@@ -24,7 +25,67 @@ Run Scripts After Build
 // }
 
 /*
-Dynamic Pages
+Transform Nodes
+================================================================================
+*/
+exports.onCreateNode = ({ node, actions, createNodeId }) => {
+  const { createNode, createNodeField } = actions
+
+  // Forestry Files
+  if (
+    node.internal.type === 'MarkdownRemark' &&
+    node.fileAbsolutePath &&
+    minimatch(node.fileAbsolutePath, '**/content/**/*.md')
+  ) {
+    // Regions
+    if (
+      minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
+    ) {
+      createNode({
+        // Node Data
+        name: fm.name,
+        mapFileRelativePath: fm.map,
+        overview: fm.overview,
+        governmentResponse: fm.governmentResponse,
+        newsUpdates: fm.newsUpdates,
+        stayInformed: fm.stayInformed,
+        subregions: fm.stayInformed,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Region - ${fm.name}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'Forestry',
+          //          contentDigest: // TODO
+          discription: `DA Region: ${fm.name} - A region, w/ content sourced from markdown frontmatter created in the Forestry CMS.`,
+        },
+      })
+    }
+
+    // Routes
+    else if (
+      minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
+    ) {
+    }
+
+    // Other Pages
+    else {
+      // do nothing for now
+    }
+  }
+}
+
+/*
+Customize the GraqphQL Schema
+================================================================================
+*/
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+}
+
+/*
+Create Dynamic Pages
 ================================================================================
 */
 exports.createPages = async ({ graphql, actions, reporter }) => {
