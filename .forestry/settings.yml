@@ -4,10 +4,6 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
-- type: document
-  path: content/data/product-prices.json
-  label: Product Prices
-  read_only: true
 - type: directory
   path: content/data
   label: Data
