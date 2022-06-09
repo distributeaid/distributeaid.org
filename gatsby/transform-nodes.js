@@ -1,7 +1,7 @@
 var minimatch = require('minimatch')
 const path = require('path')
 
-module.exports = forestryTransform = ({
+module.exports = onCreateNode = ({
   node,
   actions,
   createNodeId,
