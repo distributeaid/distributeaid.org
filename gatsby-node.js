@@ -3,9 +3,8 @@ var minimatch = require('minimatch')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
-const onCreateNode = require('./gatsby/gastsby-transform-nodes')
-const forestryTransform = require('./gatsby/gastsby-transform-nodes')
-const regionAndImageResolvers = require('./gatsby/create-resolvers')
+const onCreateNode = require('./gatsby/transform-nodes')
+const createResolvers = require('./gatsby/create-resolvers')
 /*
 Run Scripts After Build
 ================================================================================
@@ -30,7 +29,7 @@ Run Scripts After Build
 Transform Nodes
 ================================================================================
 */
-exports.onCreateNode = forestryTransform
+exports.onCreateNode = onCreateNode
 
 /*
 Customize the GraqphQL Schema
@@ -44,7 +43,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 Create Resolvers for Looking Up Related Nodes
 ================================================================================
 */
-exports.createResolvers = regionAndImageResolvers
+exports.createResolvers = createResolvers
 
 /*
 Create Dynamic Pages
