@@ -3,7 +3,9 @@ var minimatch = require('minimatch')
 const path = require('path')
 const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
-
+const onCreateNode = require('./gatsby/gastsby-transform-nodes')
+const forestryTransform = require('./gatsby/gastsby-transform-nodes')
+const regionAndImageResolvers = require('./gatsby/create-resolvers')
 /*
 Run Scripts After Build
 ================================================================================
@@ -28,95 +30,7 @@ Run Scripts After Build
 Transform Nodes
 ================================================================================
 */
-exports.onCreateNode = ({
-  node,
-  actions,
-  createNodeId,
-  createContentDigest,
-  getNode,
-}) => {
-  const { createNode, createNodeField } = actions
-
-  // Forestry Files
-  if (
-    node.internal.type === 'MarkdownRemark' &&
-    node.fileAbsolutePath &&
-    minimatch(node.fileAbsolutePath, '**/content/**/*.md')
-  ) {
-    const fm = node.frontmatter
-
-    // Regions
-    if (
-      minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
-    ) {
-      const fileRelativePath = path.join(
-        'content',
-        'pages',
-        getNode(node.parent).relativePath,
-      )
-
-      createNode({
-        // Node Data
-        name: fm.name,
-        overview: fm.overview,
-        governmentResponse: fm.governmentResponse,
-        newsUpdates: fm.newsUpdates,
-        stayInformed: fm.stayInformed,
-        subregionFileRelativePaths: fm.subregions,
-
-        // Metadata
-        fileRelativePath: fileRelativePath,
-        mapFileRelativePath: fm.map,
-
-        // Gatsby Fields
-        id: createNodeId(`DA Region - ${fm.name}`),
-        parent: node.id,
-        children: [],
-        internal: {
-          type: 'DARegion',
-          contentDigest: createContentDigest(fm),
-        },
-      })
-    }
-
-    // Subregions
-    else if (
-      minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
-    ) {
-      const fileRelativePath = path.join(
-        'content',
-        'pages',
-        getNode(node.parent).relativePath,
-      )
-
-      createNode({
-        // Node Data
-        name: fm.name,
-        overview: fm.overview,
-        population: fm.population,
-        newsUpdates: fm.newsUpdates,
-
-        // Metadata
-        fileRelativePath: fileRelativePath,
-        mapFileRelativePath: fm.map,
-
-        // Gatsby Fields
-        id: createNodeId(`DA Subregion - ${fm.name}`),
-        parent: node.id,
-        children: [],
-        internal: {
-          type: 'DASubregion',
-          contentDigest: createContentDigest(fm),
-        },
-      })
-    }
-
-    // Other Pages
-    else {
-      // do nothing for now
-    }
-  }
-}
+exports.onCreateNode = forestryTransform
 
 /*
 Customize the GraqphQL Schema
@@ -130,87 +44,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 Create Resolvers for Looking Up Related Nodes
 ================================================================================
 */
-exports.createResolvers = ({ createResolvers, getNode }) => {
-  const resolvers = {
-    DARegion: {
-      subregions: {
-        type: ['DASubregion'],
-        resolve: async (source, args, context, info) => {
-          const { entries: subregions } = await context.nodeModel.findAll({
-            query: {
-              filter: {
-                fileRelativePath: { in: source.subregionFileRelativePaths },
-              },
-            },
-            type: 'DASubregion',
-          })
-          return subregions
-        },
-      },
-
-      map: {
-        type: 'ImageSharp',
-        resolve: async (source, args, context, info) => {
-          const file = await context.nodeModel.findOne({
-            query: {
-              filter: {
-                absolutePath: {
-                  glob: `**/static${source.mapFileRelativePath}`,
-                },
-              },
-            },
-            type: 'File',
-          })
-
-          const imageSharp = file ? getNode(file.children[0]) : null
-
-          return imageSharp
-        },
-      },
-    },
-
-    DASubregion: {
-      region: {
-        type: 'DARegion',
-        resolve: async (source, args, context, info) => {
-          const region = await context.nodeModel.findOne({
-            query: {
-              filter: {
-                subregionFileRelativePaths: { eq: source.fileRelativePath },
-              },
-            },
-            type: 'DARegion',
-          })
-          return region
-        },
-      },
-
-      // NOTE: Same as resolver for DARegion.map above.
-      // TODO: Refactor into a graphql fragment or reusable function.
-      map: {
-        type: 'ImageSharp',
-        resolve: async (source, args, context, info) => {
-          const file = await context.nodeModel.findOne({
-            query: {
-              filter: {
-                absolutePath: {
-                  glob: `**/static${source.mapFileRelativePath}`,
-                },
-              },
-            },
-            type: 'File',
-          })
-
-          const imageSharp = file ? getNode(file.children[0]) : null
-
-          return imageSharp
-        },
-      },
-    },
-  }
-
-  createResolvers(resolvers)
-}
+exports.createResolvers = regionAndImageResolvers
 
 /*
 Create Dynamic Pages
@@ -244,7 +78,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   /*
   Regions & Subregions
-  ------------------------------------------------------------ 
+  ------------------------------------------------------------
   */
   const regionsQuery = await graphql(`
     query RegionsQuery {
