@@ -4,12 +4,17 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: document
+  path: content/data/product-prices.json
+  label: Product Prices
+  match: "**/*"
+  read_only: true
 - type: directory
   path: content/data/**/*
   label: Data
   create: all
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
 - type: directory
   path: content/pages
   label: Pages
