@@ -72,7 +72,7 @@
     "netlify-cli": "10.5.1",
     "postcss": "8.4.14",
     "prettier": "2.6.2",
-    "ts-jest": "28.0.4"
+    "ts-jest": "28.0.5"
   },
   "engines": {
     "node": ">=14.0.0",
