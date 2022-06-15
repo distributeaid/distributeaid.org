@@ -29,6 +29,15 @@ const Footer: FC<{ showDonateButton?: boolean }> = ({ showDonateButton }) => (
         </ExternalLink>
       </p>
     </div>
+    <nav className="my-4">
+      <Link className="link" to="/whistleblowing-policy">
+        Whistleblowing Policy
+      </Link>
+      {' · '}
+      <Link to="/code-of-conduct" className="link">
+        Code of Conduct
+      </Link>
+    </nav>
     <div className="mx-auto w-64">
       <SocialIconContainer position="footer" />
     </div>
