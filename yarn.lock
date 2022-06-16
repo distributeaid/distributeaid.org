@@ -1173,10 +1173,10 @@
     object-path "^0.11.4"
     pkg-up "^3.1.0"
 
-"@codesee/tracker@0.282.0":
-  version "0.282.0"
-  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.282.0.tgz#efe618f99544aea628747941b0677553dd5ab8fc"
-  integrity sha512-VU0hbYhzWfFu/AiRctqvC019/NTdg9svPGQhWiQoWUcHBIMhxDmPv54XLBs+bNuzePN27tDArUdlDR7S17+SWQ==
+"@codesee/tracker@0.283.0":
+  version "0.283.0"
+  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.283.0.tgz#1e578262194b3ec6398a243cd00366cd506d237e"
+  integrity sha512-jG53I0KY+q0R2VyN5oLzKjq1UC9uRBlUZ1nois/XnX94OAUi6HJh66lrudJcJZqyPCmM6Sjo5QkzC96pGR7/tw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
