@@ -2,6 +2,8 @@ DA Landing Site 2.0
 ===============================================================================
 
 [![CodeSee: View Architecture Diagram](./badge.svg)](https://app.codesee.io/maps/ddc21460-098f-11ec-b053-333e0b8cd199)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/distributeaid/distributeaid.org)
+
 
 Distribute Aid's landing site, where we get to tell the world who the heck we are and what the hell we're doing!
 
@@ -59,6 +61,12 @@ If the pull request does not require additional changes, the reviewer should mer
 
 Dev Setup
 ------------------------------------------------------------
+
+### Remote development:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/distributeaid/distributeaid.org)
+
+### Locally
 
 Install system dependencies:
 
