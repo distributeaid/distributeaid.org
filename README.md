@@ -66,6 +66,10 @@ Dev Setup
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/distributeaid/distributeaid.org)
 
+Gitpod allows us to pair on the cloud, as well as have an automatic setup with `.gitpod.yml` and get up and running right away.
+
+Pressing the "Open in Gitpod" button will start up an VSCode-based instance in the cloud allowing you to be up and running with the codebase. You'll need to sign in with GitHub.
+
 ### Locally
 
 Install system dependencies:
