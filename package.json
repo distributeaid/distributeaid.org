@@ -27,6 +27,7 @@
     "gatsby-plugin-typescript": "4.17.0",
     "gatsby-source-contentful": "7.15.0",
     "gatsby-source-filesystem": "4.17.0",
+    "gatsby-transformer-json": "^4.17.0",
     "gatsby-transformer-remark": "5.17.0",
     "gatsby-transformer-sharp": "4.17.0",
     "husky": "8.0.1",
