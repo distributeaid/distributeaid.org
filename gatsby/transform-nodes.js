@@ -88,11 +88,17 @@ module.exports = onCreateNode = ({
     const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
     if (value && !isNaN(value)) {
       const shipment = node['Shipment #']
-
+      const item = {
+        category: node['Category'],
+        item: node['Item'],
+        ageGender: node['Age / Gender'],
+        sizeStyle: node['Size / Style'],
+      }
       createNode({
         // Node Data
         value,
         shipment,
+        item,
 
         // Gatsby Fields
         id: createNodeId(`DA LineItem - ${node.id}`),
