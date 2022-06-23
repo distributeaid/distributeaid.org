@@ -2586,7 +2586,7 @@
   resolved "https://registry.yarnpkg.com/@n1ru4l/graphql-live-query/-/graphql-live-query-0.9.0.tgz#defaebdd31f625bee49e6745934f36312532b2bc"
   integrity sha512-BTpWy1e+FxN82RnLz4x1+JcEewVdfmUhV1C6/XYD5AjS7PQp9QFF7K8bCD6gzPTr2l+prvqOyVueQhFJxB1vfg==
 
-"@netlify/build@^27.1.6":
+"@netlify/build@^27.2.0":
   version "27.2.0"
   resolved "https://registry.yarnpkg.com/@netlify/build/-/build-27.2.0.tgz#bc221ed407e2a3e260851c2a6007a37e14ea382a"
   integrity sha512-Kn9OiZd7V2M+ZHKI57Poo58xkOpN40Q5cOD8orBpEo6ZulIAeJbLLSvVnclSqU8/cC3wzeb6XXSWfe9YMZ6bnw==
@@ -13980,12 +13980,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@10.6.1:
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.6.1.tgz#d0a29089b6a2124ec62c7ce31c4e299036044ecc"
-  integrity sha512-0GPFHrAp8da8R7ni7MFSOeKmOUFwU599+u0zxvM0vV0mgUDjXJbr4Jv1jssZlIl2yGtpBU1NxqbIsdPze1jNMA==
+netlify-cli@10.6.2:
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.6.2.tgz#5fd9228457f83147f4c91d2a06122b9579d841d0"
+  integrity sha512-AxBwpgLeKMr4aHXnem4xiTac0bweMp9e4Jl7Z5WrCgjsDWjIOfOV2Hh3QVgKfUQ6O44NbhYXfTDg2r4az+MzjA==
   dependencies:
-    "@netlify/build" "^27.1.6"
+    "@netlify/build" "^27.2.0"
     "@netlify/config" "^18.0.2"
     "@netlify/edge-bundler" "^1.4.1"
     "@netlify/framework-info" "^9.1.0"
