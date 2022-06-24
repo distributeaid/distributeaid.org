@@ -3,51 +3,81 @@ import SimpleLayout from '@layouts/Simple'
 import { ResponsiveSunburst } from '@nivo/sunburst'
 import { graphql } from 'gatsby'
 
+type Item = {
+  category: string
+  item: string
+  ageGender: string
+  sizeStyle: string
+}
+
+type LineItem = {
+  value: number
+  item: Item
+}
+
 type Props = {
   data: {
     lineItems: {
       nodes: { shipment: string; value: number }[]
     }
     categoryVisItems: {
-      nodes: {
-        value: number
-        item: {
-          category: string
-          item: string
-          ageGender: string
-          sizeStyle: string
-        }
-      }[]
+      nodes: LineItem[]
     }
   }
 }
 
-const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
-  const categories = categoryVisItems.nodes.reduce(
-    (currentObj: any, node: any) => {
-      currentObj[node.item.category] = {
-        id: node.item.category,
-        value: 0,
-        children: [],
-      }
-      return currentObj
-    },
-    {},
-  )
-  categoryVisItems.nodes.forEach((lineItemData) => {
-    const category = categories[lineItemData.item.category]
+function buildCategoryVisData(lineItems: LineItem[]) {
+  // 1. setup the structure for category data
+  const categories = lineItems.reduce((categories: any, node) => {
+    categories[node.item.category] = {
+      id: node.item.category,
+      value: 0,
+      children: {},
+    }
+    return categories
+  }, {})
+
+  // 2. setup the structure for item data
+  const itemsByCategory = lineItems.reduce((categories: any, node) => {
+    const category = categories[node.item.category]
+    const items = category.children
+    items[node.item.item] = {
+      id: node.item.item,
+      value: 0,
+      children: {},
+    }
+    return categories
+  }, categories)
+
+  // 3. sum the values for each lineItem
+  lineItems.forEach((lineItemData) => {
+    const category = itemsByCategory[lineItemData.item.category]
     category.value += lineItemData.value
-    // category.children.push({
-    //   id: lineItemData.item,
-    //   value: lineItemData.value,
-    //   children: []
-    // })
+
+    const item = category.children[lineItemData.item.item]
+    item.value += lineItemData.value
   })
+
+  // 4. format children attributes (object => array)
+  const lineItemVizdata = Object.values(itemsByCategory).map(
+    (category: any) => {
+      return {
+        ...category,
+        children: Object.values(category.children),
+      }
+    },
+  )
+
   const nivoData = {
     id: 'nivo',
     color: 'hsl(350, 70%, 50%)',
-    children: Object.values(categories),
+    children: lineItemVizdata,
   }
+  return nivoData
+}
+
+const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
+  const nivoData = buildCategoryVisData(categoryVisItems.nodes)
   return (
     <SimpleLayout pageTitle="Regions">
       <section className="h-screen w-full">
