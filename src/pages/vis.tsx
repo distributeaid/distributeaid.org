@@ -63,7 +63,7 @@ function buildGlobeVisData(lineItems: LineItem[]) {
         startLng: originCoords?.lon,
         endLat: destCoords?.lat,
         endLng: destCoords?.lon,
-        color: 'red',
+        color: ['blue', 'rgb(8, 43, 118)'],
       }
     })
     .filter((node) => {
@@ -145,6 +145,10 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
           backgroundColor="#eeeeee"
           arcsData={arcsData}
           arcColor={'color'}
+          arcDashLength={0.8}
+          arcDashGap={0.2}
+          arcDashAnimateTime={() => Math.random() * 4000 + 500}
+          arcStroke={1.1}
         />
       </section>
       <section className="h-screen w-full">
