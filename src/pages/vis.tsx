@@ -21,6 +21,7 @@ type Shipment = {
 }
 type LineItem = {
   value: number
+  count: number
   item: Item
   shipment: Shipment
 }
@@ -73,7 +74,9 @@ function buildGlobeVisData(lineItems: LineItem[]) {
   return arcsData
 }
 
-function buildCategoryVisData(lineItems: LineItem[]) {
+type LineItemKey = keyof LineItem
+
+function buildCategoryVisData(lineItems: LineItem[], selector: LineItemKey) {
   // 1. setup the structure for category data
   const categories = lineItems.reduce((categories: any, node) => {
     categories[node.item.category] = {
@@ -100,7 +103,7 @@ function buildCategoryVisData(lineItems: LineItem[]) {
   lineItems.forEach((lineItemData) => {
     const category = itemsByCategory[lineItemData.item.category]
     const item = category.children[lineItemData.item.item]
-    item.value += lineItemData.value
+    item.value += lineItemData[selector]
   })
 
   // 4. format children attributes (object => array)
@@ -122,12 +125,14 @@ function buildCategoryVisData(lineItems: LineItem[]) {
 
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
   const globeEl = useRef() as any
-  const nivoData = buildCategoryVisData(categoryVisItems.nodes)
+  const nivoData = buildCategoryVisData(categoryVisItems.nodes, 'value')
   const arcsData = buildGlobeVisData(categoryVisItems.nodes) as any
   console.log('arcsData', arcsData)
   const totalValue = categoryVisItems.nodes.reduce((total, lineItem) => {
     return total + lineItem.value
   }, 0)
+
+  const nivoCountData = buildCategoryVisData(categoryVisItems.nodes, 'count')
 
   useEffect(() => {
     // Auto-rotate
@@ -174,6 +179,29 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
           animate={false}
         />
       </section>
+      <section className="h-screen w-full">
+        <ResponsiveSunburst
+          // docs: https://nivo.rocks/sunburst/
+
+          // base
+          data={nivoCountData}
+          id="name"
+          value="value"
+          valueFormat=" >-,"
+          // style
+          childColor={{
+            from: 'color',
+            modifiers: [['brighter', 0.25]],
+          }}
+          borderWidth={2}
+          // arc labels
+          arcLabel="id"
+          enableArcLabels={true}
+          arcLabelsSkipAngle={2}
+          // animation
+          animate={false}
+        />
+      </section>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         {lineItems.nodes.map((lineItem) => {
           return <div>{lineItem.value}</div>
@@ -202,6 +230,7 @@ export const pageQuery = graphql`
     categoryVisItems: allDaLineItem {
       nodes {
         value
+        count
         shipment {
           origin
           destination
