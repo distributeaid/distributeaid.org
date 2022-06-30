@@ -86,7 +86,8 @@ module.exports = onCreateNode = ({
   } else if (node.internal.type === 'CombinedManifestsJson') {
     const rawValue = node['$ Total']
     const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
-    if (value && !isNaN(value)) {
+    const count = parseInt(node['Count']?.replaceAll(/[\,|\.]/g, ''))
+    if (value && !isNaN(value) && count && !isNaN(count)) {
       const rawShipment = node['Shipment #']
       const shipmentComponents = rawShipment.match(
         /^(\d{2})-(\d{3})-([A-Z]{3})-([A-Z]{3})$/,
@@ -109,6 +110,7 @@ module.exports = onCreateNode = ({
       createNode({
         // Node Data
         value,
+        count,
         rawShipment,
         shipment,
         item,
