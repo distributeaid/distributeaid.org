@@ -3179,10 +3179,10 @@
     unixify "^1.0.0"
     yargs "^17.0.0"
 
-"@netlify/zip-it-and-ship-it@^5.13.1":
-  version "5.13.1"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.13.1.tgz#7dd156397cc0cc443f585478b842bd0fbdd72b6e"
-  integrity sha512-1lb6II3aXmuDtNvb49PZlNX51JZydmxE2C27AaqO7OI0A+hXtVf7gGhitRMKuL1lhORpD5S9IgdD/1DwAkUvCQ==
+"@netlify/zip-it-and-ship-it@^5.13.2":
+  version "5.13.2"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.13.2.tgz#811444ce0d465fad7b9c81b5c3de0b5a7e577271"
+  integrity sha512-WOS0XRlHgSMBzrzEik2Q1o8tMj5/DOeSA6YgpL8UubEkSmgiFGvcHXDSLN4802wYNU9aVbmAwLhn25ZcfJip8Q==
   dependencies:
     "@babel/parser" "7.16.8"
     "@netlify/binary-info" "^1.0.0"
@@ -14262,10 +14262,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@10.10.1:
-  version "10.10.1"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.10.1.tgz#e1648bbf60c596c7337d9718653a7a7683c96dd5"
-  integrity sha512-l7VQQx4NpONkTjgsBQ/W2sjeqOAmMkIsf9y3/8OXV5sbnlJOJ2ZDuwMtx9s3+SJXbuTiP503rmRXyevMlaJlYA==
+netlify-cli@10.10.2:
+  version "10.10.2"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.10.2.tgz#9241cf3644ae4dd7e16f9b5494df98521d044be6"
+  integrity sha512-m9jP+jWNQeYFyR3zm0ebDCX2WwLOC9WAGs9eNtBJ9162nJO0xRozSUqEXu++kqBy5u1VVGEx+1U7YTXHEULglA==
   dependencies:
     "@netlify/build" "^27.4.1"
     "@netlify/config" "^18.1.1"
@@ -14273,7 +14273,7 @@ netlify-cli@10.10.1:
     "@netlify/framework-info" "^9.1.1"
     "@netlify/local-functions-proxy" "^1.1.1"
     "@netlify/plugins-list" "^6.35.0"
-    "@netlify/zip-it-and-ship-it" "^5.13.1"
+    "@netlify/zip-it-and-ship-it" "^5.13.2"
     "@octokit/rest" "^18.0.0"
     "@sindresorhus/slugify" "^1.1.0"
     ansi-escapes "^5.0.0"
