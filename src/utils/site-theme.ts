@@ -58,6 +58,10 @@ export function getSequentialColorList(name = 'navy') {
   return siteColors.byName[name]
 }
 
+export function getColor(name = 'navy', shade = '700') {
+  return siteColors.byNameAndShade[name][shade]
+}
+
 export function getDivergingColorList(nameA = 'rosemary', nameB = 'purple') {
   const colorsA = siteColors.byName[nameA].reverse()
   const colorsB = siteColors.byName[nameB]

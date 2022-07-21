@@ -1,4 +1,3 @@
-import { ReactNode } from '@reach/router/node_modules/@types/react'
 import React, { FC } from 'react'
 import { useState, useRef, useEffect } from 'react'
 import Globe from 'react-globe.gl'
@@ -79,6 +78,9 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
     globeEl.current.controls().enableZoom = false
     globeEl.current.controls().autoRotate = true
     globeEl.current.controls().autoRotateSpeed = 0.2
+
+    // Set starting coordinates
+    globeEl.current.pointOfView(49.18, -0.37, 2.5)
   }, [])
 
   return (
@@ -86,7 +88,7 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
       ref={globeEl}
       globeImageUrl="/uploads/earth-light.jpg"
       bumpImageUrl="/uploads/earth-topology.png"
-      backgroundColor="#eeeeee"
+      backgroundColor="#eeeeee00"
       arcsData={arcsData}
       arcColor={'color'}
       arcDashLength={0.8}
