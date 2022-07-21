@@ -56,7 +56,6 @@ module.exports = {
         },
       },
       minHeight: {
-        'half-screen': '50vh',
         /**
          * Viewport height minus the header height
          */
@@ -67,10 +66,13 @@ module.exports = {
          * Height of the navigation at the top of the page
          */
         nav: '4rem',
+
         /**
          * Viewport height minus the header height
          */
         content: 'calc(100vh - 4rem)',
+
+        'screen/2': '50vh',
       },
       fontFamily: {
         sans: `Lato, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
