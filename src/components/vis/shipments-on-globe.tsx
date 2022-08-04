@@ -79,8 +79,18 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
     globeEl.current.controls().autoRotate = true
     globeEl.current.controls().autoRotateSpeed = 0.2
 
+    const avgLng =
+      arcsData.reduce((previous: number, current: { endLng: number }) => {
+        return previous + current.endLng
+      }, 0) / arcsData.length
+
+    const avgLat =
+      arcsData.reduce((previous: number, current: { endLat: number }) => {
+        return previous + current.endLat
+      }, 0) / arcsData.length
+
     // Set starting coordinates
-    globeEl.current.pointOfView(49.18, -0.37, 2.5)
+    globeEl.current.pointOfView({ lat: avgLat, lng: avgLng, altitude: 2.5 })
   }, [])
 
   return (
