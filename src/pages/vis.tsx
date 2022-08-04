@@ -2,6 +2,9 @@ import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { ResponsiveSunburst } from '@nivo/sunburst'
 import { graphql } from 'gatsby'
+import Globe from 'react-globe.gl'
+import { useState, useRef, useEffect } from 'react'
+import { getCoordsAlpha3 } from 'utils/iso-3166'
 
 type Item = {
   category: string
@@ -10,20 +13,64 @@ type Item = {
   sizeStyle: string
 }
 
+type Shipment = {
+  year: string
+  number: string
+  origin: string
+  destination: string
+}
 type LineItem = {
   value: number
   item: Item
+  shipment: Shipment
+}
+
+type Node = {
+  shipment: {
+    year: string
+    number: string
+    origin: string
+    destination: string
+  }
+  value: number
 }
 
 type Props = {
   data: {
     lineItems: {
-      nodes: { shipment: string; value: number }[]
+      nodes: Node[]
     }
     categoryVisItems: {
       nodes: LineItem[]
     }
   }
+}
+
+function buildGlobeVisData(lineItems: LineItem[]) {
+  const arcsData = lineItems
+    .map((node) => {
+      if (node?.shipment?.origin === node?.shipment?.destination) {
+        return null
+      }
+      let originCoords = getCoordsAlpha3(node?.shipment?.origin)
+      let destCoords = getCoordsAlpha3(node?.shipment?.destination)
+      if (!originCoords || !destCoords) {
+        console.log('WHAAAA')
+        return null
+      }
+      return {
+        startLat: originCoords?.lat,
+        startLng: originCoords?.lon,
+        endLat: destCoords?.lat,
+        endLng: destCoords?.lon,
+        color: 'red',
+      }
+    })
+    .filter((node) => {
+      return node !== null
+    })
+  console.log('DATA', arcsData)
+  return arcsData
 }
 
 function buildCategoryVisData(lineItems: LineItem[]) {
@@ -74,13 +121,32 @@ function buildCategoryVisData(lineItems: LineItem[]) {
 }
 
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
+  const globeEl = useRef() as any
   const nivoData = buildCategoryVisData(categoryVisItems.nodes)
+  const arcsData = buildGlobeVisData(categoryVisItems.nodes) as any
+  console.log('arcsData', arcsData)
   const totalValue = categoryVisItems.nodes.reduce((total, lineItem) => {
     return total + lineItem.value
   }, 0)
 
+  useEffect(() => {
+    // Auto-rotate
+    globeEl.current.controls().enableZoom = false
+    globeEl.current.controls().autoRotate = true
+    globeEl.current.controls().autoRotateSpeed = 0.2
+  }, [])
   return (
     <SimpleLayout pageTitle="Regions">
+      <section className="h-screen w-full">
+        <Globe
+          ref={globeEl}
+          globeImageUrl="/uploads/earth-light.jpg"
+          bumpImageUrl="/uploads/earth-topology.png"
+          backgroundColor="#eeeeee"
+          arcsData={arcsData}
+          arcColor={'color'}
+        />
+      </section>
       <section className="h-screen w-full">
         <ResponsiveSunburst
           // docs: https://nivo.rocks/sunburst/
@@ -122,13 +188,20 @@ export const pageQuery = graphql`
       filter: { value: { gt: 10000 } }
     ) {
       nodes {
-        shipment
+        shipment {
+          origin
+          destination
+        }
         value
       }
     }
     categoryVisItems: allDaLineItem {
       nodes {
         value
+        shipment {
+          origin
+          destination
+        }
         item {
           category
           item
