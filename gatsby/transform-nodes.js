@@ -9,7 +9,6 @@ module.exports = onCreateNode = ({
   getNode,
 }) => {
   const { createNode, createNodeField } = actions
-
   // Forestry Files
   if (
     node.internal.type === 'MarkdownRemark' &&
@@ -17,7 +16,6 @@ module.exports = onCreateNode = ({
     minimatch(node.fileAbsolutePath, '**/content/**/*.md')
   ) {
     const fm = node.frontmatter
-
     // Regions
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
@@ -82,11 +80,32 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
+    } else {
+      // do nothing for other markdown remark types
     }
+  } else if (node.internal.type === 'CombinedManifestsJson') {
+    const rawValue = node['$ Total']
+    const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
+    if (value && !isNaN(value)) {
+      const shipment = node['Shipment #']
 
-    // Other Pages
-    else {
-      // do nothing for now
+      createNode({
+        // Node Data
+        value,
+        shipment,
+
+        // Gatsby Fields
+        id: createNodeId(`DA LineItem - ${node.id}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DaLineItem',
+          contentDigest: createContentDigest(`${value} ${shipment}`),
+        },
+      })
+    } else {
+      console.warn(`Line Item missing value, raw value: ${rawValue}`)
     }
+    // Other Pages
   }
 }
