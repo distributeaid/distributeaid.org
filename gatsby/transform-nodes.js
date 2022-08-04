@@ -87,7 +87,19 @@ module.exports = onCreateNode = ({
     const rawValue = node['$ Total']
     const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
     if (value && !isNaN(value)) {
-      const shipment = node['Shipment #']
+      const rawShipment = node['Shipment #']
+      const shipmentComponents = rawShipment.match(
+        /^(\d{2})-(\d{3})-([A-Z]{3})-([A-Z]{3})$/,
+      )
+      const shipment =
+        shipmentComponents !== null
+          ? {
+              year: shipmentComponents[1],
+              number: shipmentComponents[2],
+              origin: shipmentComponents[3],
+              destination: shipmentComponents[4],
+            }
+          : undefined
       const item = {
         category: node['Category'],
         item: node['Item'],
@@ -97,6 +109,7 @@ module.exports = onCreateNode = ({
       createNode({
         // Node Data
         value,
+        rawShipment,
         shipment,
         item,
 
