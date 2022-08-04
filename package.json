@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "4.20.0",
     "gatsby-transformer-remark": "5.20.0",
     "gatsby-transformer-sharp": "4.20.0",
+    "gatsby-transformer-json": "^4.17.0",
     "husky": "8.0.1",
     "lodash": "4.17.21",
     "minimatch": "5.1.0",
