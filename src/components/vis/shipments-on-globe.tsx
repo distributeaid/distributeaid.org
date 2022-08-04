@@ -94,20 +94,22 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
   }, [])
 
   return (
-    <Globe
-      ref={globeEl}
-      globeImageUrl="/uploads/earth-light.jpg"
-      bumpImageUrl="/uploads/earth-topology.png"
-      backgroundColor="#eeeeee00"
-      arcsData={arcsData}
-      arcColor={'color'}
-      arcDashLength={0.8}
-      arcDashGap={0.2}
-      arcDashAnimateTime={() => Math.random() * 4000 + 500}
-      arcStroke={1.1}
-      width={384}
-      height={384}
-    />
+    <div className="hover:cursor-grab active:cursor-grabbing">
+      <Globe
+        ref={globeEl}
+        globeImageUrl="/uploads/earth-light.jpg"
+        bumpImageUrl="/uploads/earth-topology.png"
+        backgroundColor="#eeeeee00"
+        arcsData={arcsData}
+        arcColor={'color'}
+        arcDashLength={0.8}
+        arcDashGap={0.2}
+        arcDashAnimateTime={() => Math.random() * 4000 + 500}
+        arcStroke={1.1}
+        width={384}
+        height={384}
+      />
+    </div>
   )
 }
 
