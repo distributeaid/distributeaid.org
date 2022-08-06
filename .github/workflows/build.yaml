@@ -50,11 +50,11 @@ jobs:
 
       - name: Start dev server
         run: |
-          nohup yarn dev > /dev/null 2>&1 & echo $! > run.pid
+          nohup yarn dev > server.log 2>&1 & echo $! > run.pid
           echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
 
       - name: Wait for server to be up
-        run: until nc -w 10 127.0.0.1 8000; do sleep 1; done
+        run: until nc -w 10 127.0.0.1 8000; do tail server.log; sleep 1; done
 
       - name: Generate types
         run: yarn run gen-types
