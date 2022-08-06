@@ -84,9 +84,10 @@ module.exports = onCreateNode = ({
       // do nothing for other markdown remark types
     }
   } else if (node.internal.type === 'CombinedManifestsJson') {
-    const rawValue = node['$ Total']
-    const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
-    const count = parseInt(node['Count']?.replaceAll(/[\,|\.]/g, ''))
+    const rawValue = node['$ Total'] ?? '0'
+    const countValue = node['Count'] ?? '0'
+    const value = parseFloat(rawValue.replaceAll(/[\$,]/g, ''))
+    const count = parseInt(countValue.replaceAll(/[\,|\.]/g, ''))
     if (value && !isNaN(value) && count && !isNaN(count)) {
       const rawShipment = node['Shipment #']
       const shipmentComponents = rawShipment.match(
