@@ -54,7 +54,7 @@ jobs:
           echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
 
       - name: Wait for server to be up
-        run: until nc -w 10 127.0.0.1 8000; do cat server.log; sleep 10; done
+        run: until nc -w 10 127.0.0.1 8000; do tail -n 20 server.log; sleep 10; done
         timeout-minutes: 5
 
       - name: Generate types
