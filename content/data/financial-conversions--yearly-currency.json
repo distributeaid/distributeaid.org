@@ -1,1 +1,87 @@
-[{"Year":"2020","Currency":"BAM","1 USD =":"1.697027667","Notes":"Bosnia-Herzegovina convertible mark"},{"Year":"2020","Currency":"EUR","1 USD =":"0.8676716667","Notes":"Euro"},{"Year":"2020","Currency":"GBP","1 USD =":"0.7794375556","Notes":"British pound"},{"Year":"2020","Currency":"LBP","1 USD =":"1512.076422","Notes":"Lebanese pound"},{"Year":"2020","Currency":"RSD","1 USD =":"102.013376","Notes":"Serbian dinar"},{"Year":"2021","Currency":"BAM","1 USD =":"1.656645833","Notes":"Bosnia-Herzegovina convertible mark"},{"Year":"2021","Currency":"EUR","1 USD =":"0.8454908333","Notes":"Euro"},{"Year":"2021","Currency":"GBP","1 USD =":"0.7270859167","Notes":"British pound"},{"Year":"2021","Currency":"LBP","1 USD =":"1519.213342","Notes":"Lebanese pound"},{"Year":"2021","Currency":"RSD","1 USD =":"99.38283333","Notes":"Serbian dinar"},{"Year":"2022","Currency":"BAM","1 USD =":"1.7582475","Notes":"Bosnia-Herzegovina convertible mark"},{"Year":"2022","Currency":"EUR","1 USD =":"0.898357","Notes":"Euro"},{"Year":"2022","Currency":"GBP","1 USD =":"0.75186025","Notes":"British pound"},{"Year":"2022","Currency":"LBP","1 USD =":"1514.04165","Notes":"Lebanese pound"},{"Year":"2022","Currency":"RSD","1 USD =":"105.776275","Notes":"Serbian dinar"}]
+[
+  {
+    "Year": "2020",
+    "Currency": "BAM",
+    "1 USD =": "1.697027667",
+    "Notes": "Bosnia-Herzegovina convertible mark"
+  },
+  {
+    "Year": "2020",
+    "Currency": "EUR",
+    "1 USD =": "0.8676716667",
+    "Notes": "Euro"
+  },
+  {
+    "Year": "2020",
+    "Currency": "GBP",
+    "1 USD =": "0.7794375556",
+    "Notes": "British pound"
+  },
+  {
+    "Year": "2020",
+    "Currency": "LBP",
+    "1 USD =": "1512.076422",
+    "Notes": "Lebanese pound"
+  },
+  {
+    "Year": "2020",
+    "Currency": "RSD",
+    "1 USD =": "102.013376",
+    "Notes": "Serbian dinar"
+  },
+  {
+    "Year": "2021",
+    "Currency": "BAM",
+    "1 USD =": "1.656645833",
+    "Notes": "Bosnia-Herzegovina convertible mark"
+  },
+  {
+    "Year": "2021",
+    "Currency": "EUR",
+    "1 USD =": "0.8454908333",
+    "Notes": "Euro"
+  },
+  {
+    "Year": "2021",
+    "Currency": "GBP",
+    "1 USD =": "0.7270859167",
+    "Notes": "British pound"
+  },
+  {
+    "Year": "2021",
+    "Currency": "LBP",
+    "1 USD =": "1519.213342",
+    "Notes": "Lebanese pound"
+  },
+  {
+    "Year": "2021",
+    "Currency": "RSD",
+    "1 USD =": "99.38283333",
+    "Notes": "Serbian dinar"
+  },
+  {
+    "Year": "2022",
+    "Currency": "BAM",
+    "1 USD =": "1.7582475",
+    "Notes": "Bosnia-Herzegovina convertible mark"
+  },
+  { "Year": "2022", "Currency": "EUR", "1 USD =": "0.898357", "Notes": "Euro" },
+  {
+    "Year": "2022",
+    "Currency": "GBP",
+    "1 USD =": "0.75186025",
+    "Notes": "British pound"
+  },
+  {
+    "Year": "2022",
+    "Currency": "LBP",
+    "1 USD =": "1514.04165",
+    "Notes": "Lebanese pound"
+  },
+  {
+    "Year": "2022",
+    "Currency": "RSD",
+    "1 USD =": "105.776275",
+    "Notes": "Serbian dinar"
+  }
+]
