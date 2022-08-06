@@ -1,11 +1,13 @@
-import { FC, Suspense } from 'react'
+import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
-import ShipmentsOnGlobeVis from '@components/vis/shipments-on-globe'
 import ValueByCategoryAndItemVis from '@components/vis/value-by-category-and-item'
 import CountByCategoryAndItemVis from '@components/vis/count-by-category-and-item'
 import LineItemTable from '@components/vis/line-item-table'
-import SmartLink from '@components/link/SmartLink'
+
+const ShipmentsOnGlobeVis = React.lazy(
+  () => import('@components/vis/shipments-on-globe'),
+)
 
 type Item = {
   category: string

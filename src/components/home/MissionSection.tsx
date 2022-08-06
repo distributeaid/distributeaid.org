@@ -2,8 +2,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import MarkdownContent from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
-import { FC, Suspense } from 'react'
-import ShipmentsOnGlobeVis from '@components/vis/shipments-on-globe'
+import React, { FC, Suspense } from 'react'
+
+const ShipmentsOnGlobeVis = React.lazy(
+  () => import('@components/vis/shipments-on-globe'),
+)
 
 type Props = {
   missionStatement: string
