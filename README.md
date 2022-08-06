@@ -68,7 +68,7 @@ Pressing the "Open in Gitpod" button will start up an VSCode-based instance in t
 
 Install system dependencies:
 
-- Node v14
+- Node v16
 - Yarn v1.22.5
 
 Install project dependencies:
