@@ -1,10 +1,18 @@
 import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
-import ValueByCategoryAndItemVis from '@components/vis/value-by-category-and-item'
-import CountByCategoryAndItemVis from '@components/vis/count-by-category-and-item'
-import LineItemTable from '@components/vis/line-item-table'
 
+// These modules have dependencies to libraries which depend on browser features
+// Use React Suspense to only load them when the page is rendered in the browser
+const ValueByCategoryAndItemVis = React.lazy(
+  () => import('@components/vis/value-by-category-and-item'),
+)
+const CountByCategoryAndItemVis = React.lazy(
+  () => import('@components/vis/count-by-category-and-item'),
+)
+const LineItemTable = React.lazy(
+  () => import('@components/vis/line-item-table'),
+)
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
@@ -52,27 +60,26 @@ type Props = {
 
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
   const isSSR = typeof window === 'undefined'
+  if (isSSR) return null
   return (
-    <SimpleLayout pageTitle="Experimental Data Visualizations">
-      <div className="grid grid-cols-3 gap-4">
-        <section className="h-96 w-96">
-          {!isSSR && (
-            <Suspense fallback={<div />}>
-              <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />
-            </Suspense>
-          )}
-        </section>
-        <section className="h-96 w-96">
-          <ValueByCategoryAndItemVis categoryVisItems={categoryVisItems} />
-        </section>
-        <section className="h-96 w-96">
-          <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
-        </section>
-        <section>
-          <LineItemTable lineItems={lineItems} />
-        </section>
-      </div>
-    </SimpleLayout>
+    <Suspense fallback={<div />}>
+      <SimpleLayout pageTitle="Experimental Data Visualizations">
+        <div className="grid grid-cols-3 gap-4">
+          <section className="h-96 w-96">
+            <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />
+          </section>
+          <section className="h-96 w-96">
+            <ValueByCategoryAndItemVis categoryVisItems={categoryVisItems} />
+          </section>
+          <section className="h-96 w-96">
+            <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
+          </section>
+          <section>
+            <LineItemTable lineItems={lineItems} />
+          </section>
+        </div>
+      </SimpleLayout>
+    </Suspense>
   )
 }
 
