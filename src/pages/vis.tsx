@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import ShipmentsOnGlobeVis from '@components/vis/shipments-on-globe'
@@ -49,11 +49,16 @@ type Props = {
 }
 
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
+  const isSSR = typeof window === 'undefined'
   return (
     <SimpleLayout pageTitle="Experimental Data Visualizations">
       <div className="grid grid-cols-3 gap-4">
         <section className="h-96 w-96">
-          <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />
+          {!isSSR && (
+            <Suspense fallback={<div />}>
+              <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />
+            </Suspense>
+          )}
         </section>
         <section className="h-96 w-96">
           <ValueByCategoryAndItemVis categoryVisItems={categoryVisItems} />

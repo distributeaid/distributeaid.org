@@ -2,15 +2,16 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import MarkdownContent from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 import ShipmentsOnGlobeVis from '@components/vis/shipments-on-globe'
-import { getColor } from '@utils/'
 
 type Props = {
   missionStatement: string
 }
 
 const MissionSection: FC<Props> = ({ missionStatement }) => {
+  const isSSR = typeof window === 'undefined'
+
   const data = useStaticQuery(graphql`
     query GlobeVisQuery {
       categoryVisItems: allDaLineItem {
@@ -43,7 +44,11 @@ const MissionSection: FC<Props> = ({ missionStatement }) => {
           src={mapImage}
           alt="Map of where Distribute Aid has operated in the past"
         /> */}
-        <ShipmentsOnGlobeVis categoryVisItems={data.categoryVisItems} />
+        {!isSSR && (
+          <Suspense fallback={<div />}>
+            <ShipmentsOnGlobeVis categoryVisItems={data.categoryVisItems} />
+          </Suspense>
+        )}
         <SocialIconContainer position="side" />
       </div>
     </section>
