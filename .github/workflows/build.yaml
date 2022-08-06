@@ -52,15 +52,12 @@ jobs:
         run: |
           nohup yarn dev > /dev/null 2>&1 & echo $! > run.pid
           echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
-          # Wait a while for dev server to boot
-          sleep 30
+
+      - name: Wait for server to be up
+        run: until nc -w 10 127.0.0.1 8000; do sleep 1; done
 
       - name: Generate types
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 1
-          max_attempts: 3
-          command: yarn run gen-types
+        run: yarn run gen-types
 
       - name: Kill dev server
         run: kill ${{ env.DEVSERVER_PID }}
