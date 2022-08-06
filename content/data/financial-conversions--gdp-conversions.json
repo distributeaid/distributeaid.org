@@ -1,1 +1,851 @@
-[{"Country":"Belgium","Year":"2020","GDP per capita, PPP, USD":"53,089.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.840","Country code":"BEL"},{"Country":"Bosnia","Year":"2020","GDP per capita, PPP, USD":"15,591.60","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.247","Country code":"BIH"},{"Country":"Croatia","Year":"2020","GDP per capita, PPP, USD":"28,780.20","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.455","Country code":"HRV"},{"Country":"France","Year":"2020","GDP per capita, PPP, USD":"46,991.20","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.743","Country code":"FRA"},{"Country":"Germany","Year":"2020","GDP per capita, PPP, USD":"54,844.50","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.868","Country code":"DEU"},{"Country":"Greece","Year":"2020","GDP per capita, PPP, USD":"27,948.60","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.442","Country code":"GRC"},{"Country":"Italy ","Year":"2020","GDP per capita, PPP, USD":"41,902.10","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.663","Country code":"ITA"},{"Country":"Lebanon","Year":"2020","GDP per capita, PPP, USD":"12,118.60","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.192","Country code":"LBN"},{"Country":"Moldova","Year":"2020","GDP per capita, PPP, USD":"13,000.40","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.206","Country code":"MDA"},{"Country":"Norway","Year":"2020","GDP per capita, PPP, USD":"62,644.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.991","Country code":"NOR"},{"Country":"Poland","Year":"2020","GDP per capita, PPP, USD":"34,287.00","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.542","Country code":"POL"},{"Country":"Romania","Year":"2020","GDP per capita, PPP, USD":"32,099.40","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.508","Country code":"ROM"},{"Country":"Serbia","Year":"2020","GDP per capita, PPP, USD":"19,093.90","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.302","Country code":"SRB"},{"Country":"Spain","Year":"2020","GDP per capita, PPP, USD":"37,756.40","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.597","Country code":"ESP"},{"Country":"Switzerland","Year":"2020","GDP per capita, PPP, USD":"71,745.30","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"1.135","Country code":"CHE"},{"Country":"UK","Year":"2020","GDP per capita, PPP, USD":"46,482.90","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"0.735","Country code":"GBR"},{"Country":"China","Year":"2020","GDP per capita, PPP, USD":"17,210.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.272","Country code":"CHN"},{"Country":"Pakistan\t","Year":"2020","GDP per capita, PPP, USD":"4,812.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.076","Country code":"PAK"},{"Country":"Austria","Year":"2020","GDP per capita, PPP, USD":"55,686.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.881","Country code":"AUT"},{"Country":"United States","Year":"2020","GDP per capita, PPP, USD":"63,206.50","Source":"IMF 2021","Last Updated":"2022-05-09","Ratio US to country":"1.000","Country code":"USA"},{"Country":"Belgium","Year":"2021","GDP per capita, PPP, USD":"53,089.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.840","Country code":"BEL","Notes":"2020 numbers, need updated"},{"Country":"Bosnia","Year":"2021","GDP per capita, PPP, USD":"15,591.60","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.247","Country code":"BIH","Notes":"2020 numbers, need updated"},{"Country":"Croatia","Year":"2021","GDP per capita, PPP, USD":"28,780.20","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.455","Country code":"HRV","Notes":"2020 numbers, need updated"},{"Country":"France","Year":"2021","GDP per capita, PPP, USD":"46,991.20","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.743","Country code":"FRA","Notes":"2020 numbers, need updated"},{"Country":"Germany","Year":"2021","GDP per capita, PPP, USD":"54,844.50","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.868","Country code":"DEU","Notes":"2020 numbers, need updated"},{"Country":"Greece","Year":"2021","GDP per capita, PPP, USD":"27,948.60","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.442","Country code":"GRC","Notes":"2020 numbers, need updated"},{"Country":"Italy ","Year":"2021","GDP per capita, PPP, USD":"41,902.10","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.663","Country code":"ITA","Notes":"2020 numbers, need updated"},{"Country":"Lebanon","Year":"2021","GDP per capita, PPP, USD":"12,118.60","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.192","Country code":"LBN","Notes":"2020 numbers, need updated"},{"Country":"Moldova","Year":"2021","GDP per capita, PPP, USD":"13,000.40","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.206","Country code":"MDA","Notes":"2020 numbers, need updated"},{"Country":"Norway","Year":"2021","GDP per capita, PPP, USD":"62,644.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.991","Country code":"NOR","Notes":"2020 numbers, need updated"},{"Country":"Poland","Year":"2021","GDP per capita, PPP, USD":"34,287.00","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.542","Country code":"POL","Notes":"2020 numbers, need updated"},{"Country":"Romania","Year":"2021","GDP per capita, PPP, USD":"32,099.40","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.508","Country code":"ROM","Notes":"2020 numbers, need updated"},{"Country":"Serbia","Year":"2021","GDP per capita, PPP, USD":"19,093.90","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.302","Country code":"SRB","Notes":"2020 numbers, need updated"},{"Country":"Spain","Year":"2021","GDP per capita, PPP, USD":"37,756.40","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.597","Country code":"ESP","Notes":"2020 numbers, need updated"},{"Country":"Switzerland","Year":"2021","GDP per capita, PPP, USD":"71,745.30","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"1.135","Country code":"CHE","Notes":"2020 numbers, need updated"},{"Country":"UK","Year":"2021","GDP per capita, PPP, USD":"46,482.90","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"0.735","Country code":"GBR","Notes":"2020 numbers, need updated"},{"Country":"China","Year":"2021","GDP per capita, PPP, USD":"17,210.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.272","Country code":"CHN","Notes":"2020 numbers, need updated"},{"Country":"Pakistan\t","Year":"2021","GDP per capita, PPP, USD":"4,812.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.076","Country code":"PAK","Notes":"2020 numbers, need updated"},{"Country":"Austria","Year":"2021","GDP per capita, PPP, USD":"55,686.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.881","Country code":"AUT","Notes":"2020 numbers, need updated"},{"Country":"United States","Year":"2021","GDP per capita, PPP, USD":"63,206.50","Source":"IMF 2021","Last Updated":"2022-02-10","Ratio US to country":"1.000","Country code":"USA","Notes":"2020 numbers, need updated"},{"Country":"Belgium","Year":"2022","GDP per capita, PPP, USD":"53,089.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.840","Country code":"BEL","Notes":"2020 numbers, need updated"},{"Country":"Bosnia","Year":"2022","GDP per capita, PPP, USD":"15,591.60","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.247","Country code":"BIH","Notes":"2020 numbers, need updated"},{"Country":"Croatia","Year":"2022","GDP per capita, PPP, USD":"28,780.20","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.455","Country code":"HRV","Notes":"2020 numbers, need updated"},{"Country":"France","Year":"2022","GDP per capita, PPP, USD":"46,991.20","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.743","Country code":"FRA","Notes":"2020 numbers, need updated"},{"Country":"Germany","Year":"2022","GDP per capita, PPP, USD":"54,844.50","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.868","Country code":"DEU","Notes":"2020 numbers, need updated"},{"Country":"Greece","Year":"2022","GDP per capita, PPP, USD":"27,948.60","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.442","Country code":"GRC","Notes":"2020 numbers, need updated"},{"Country":"Italy ","Year":"2022","GDP per capita, PPP, USD":"41,902.10","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.663","Country code":"ITA","Notes":"2020 numbers, need updated"},{"Country":"Lebanon","Year":"2022","GDP per capita, PPP, USD":"12,118.60","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.192","Country code":"LBN","Notes":"2020 numbers, need updated"},{"Country":"Moldova","Year":"2022","GDP per capita, PPP, USD":"13,000.40","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.206","Country code":"MDA","Notes":"2020 numbers, need updated"},{"Country":"Norway","Year":"2022","GDP per capita, PPP, USD":"62,644.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.991","Country code":"NOR","Notes":"2020 numbers, need updated"},{"Country":"Poland","Year":"2022","GDP per capita, PPP, USD":"34,287.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.542","Country code":"POL","Notes":"2020 numbers, need updated"},{"Country":"Romania","Year":"2022","GDP per capita, PPP, USD":"32,099.40","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.508","Country code":"ROM","Notes":"2020 numbers, need updated"},{"Country":"Serbia","Year":"2022","GDP per capita, PPP, USD":"19,093.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.302","Country code":"SRB","Notes":"2020 numbers, need updated"},{"Country":"Spain","Year":"2022","GDP per capita, PPP, USD":"37,756.40","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.597","Country code":"ESP","Notes":"2020 numbers, need updated"},{"Country":"Switzerland","Year":"2022","GDP per capita, PPP, USD":"71,745.30","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"1.135","Country code":"CHE","Notes":"2020 numbers, need updated"},{"Country":"UK","Year":"2022","GDP per capita, PPP, USD":"46,482.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.735","Country code":"GBR","Notes":"2020 numbers, need updated"},{"Country":"China","Year":"2022","GDP per capita, PPP, USD":"17,210.80","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.272","Country code":"CHN","Notes":"2020 numbers, need updated"},{"Country":"Pakistan\t","Year":"2022","GDP per capita, PPP, USD":"4,812.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.076","Country code":"PAK","Notes":"2020 numbers, need updated"},{"Country":"Austria","Year":"2022","GDP per capita, PPP, USD":"55,686.00","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.881","Country code":"AUT","Notes":"2020 numbers, need updated"},{"Country":"United States","Year":"2022","GDP per capita, PPP, USD":"63,206.50","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"1.000","Country code":"USA","Notes":"2020 numbers, need updated"},{"Country":"Netherlands (the)","Year":"2020","GDP per capita, PPP, USD":"59,266.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.938","Country code":"NLD"},{"Country":"Netherlands (the)","Year":"2021","GDP per capita, PPP, USD":"59,266.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.938","Country code":"NLD","Notes":"2020 numbers, need updated"},{"Country":"Netherlands (the)","Year":"2022","GDP per capita, PPP, USD":"59,266.90","Source":"IMF 2021","Last Updated":"2022-05-11","Ratio US to country":"0.938","Country code":"NLD","Notes":"2020 numbers, need updated"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"},{"Country":"","Year":"","GDP per capita, PPP, USD":"","Source":"","Last Updated":"","Ratio US to country":"#VALUE!"}]
+[
+  {
+    "Country": "Belgium",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "53,089.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.840",
+    "Country code": "BEL"
+  },
+  {
+    "Country": "Bosnia",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "15,591.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.247",
+    "Country code": "BIH"
+  },
+  {
+    "Country": "Croatia",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "28,780.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.455",
+    "Country code": "HRV"
+  },
+  {
+    "Country": "France",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "46,991.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.743",
+    "Country code": "FRA"
+  },
+  {
+    "Country": "Germany",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "54,844.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.868",
+    "Country code": "DEU"
+  },
+  {
+    "Country": "Greece",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "27,948.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.442",
+    "Country code": "GRC"
+  },
+  {
+    "Country": "Italy ",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "41,902.10",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.663",
+    "Country code": "ITA"
+  },
+  {
+    "Country": "Lebanon",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "12,118.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.192",
+    "Country code": "LBN"
+  },
+  {
+    "Country": "Moldova",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "13,000.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.206",
+    "Country code": "MDA"
+  },
+  {
+    "Country": "Norway",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "62,644.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.991",
+    "Country code": "NOR"
+  },
+  {
+    "Country": "Poland",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "34,287.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.542",
+    "Country code": "POL"
+  },
+  {
+    "Country": "Romania",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "32,099.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.508",
+    "Country code": "ROM"
+  },
+  {
+    "Country": "Serbia",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "19,093.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.302",
+    "Country code": "SRB"
+  },
+  {
+    "Country": "Spain",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "37,756.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.597",
+    "Country code": "ESP"
+  },
+  {
+    "Country": "Switzerland",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "71,745.30",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "1.135",
+    "Country code": "CHE"
+  },
+  {
+    "Country": "UK",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "46,482.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "0.735",
+    "Country code": "GBR"
+  },
+  {
+    "Country": "China",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "17,210.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.272",
+    "Country code": "CHN"
+  },
+  {
+    "Country": "Pakistan\t",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "4,812.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.076",
+    "Country code": "PAK"
+  },
+  {
+    "Country": "Austria",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "55,686.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.881",
+    "Country code": "AUT"
+  },
+  {
+    "Country": "United States",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "63,206.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-09",
+    "Ratio US to country": "1.000",
+    "Country code": "USA"
+  },
+  {
+    "Country": "Belgium",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "53,089.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.840",
+    "Country code": "BEL",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Bosnia",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "15,591.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.247",
+    "Country code": "BIH",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Croatia",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "28,780.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.455",
+    "Country code": "HRV",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "France",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "46,991.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.743",
+    "Country code": "FRA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Germany",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "54,844.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.868",
+    "Country code": "DEU",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Greece",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "27,948.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.442",
+    "Country code": "GRC",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Italy ",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "41,902.10",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.663",
+    "Country code": "ITA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Lebanon",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "12,118.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.192",
+    "Country code": "LBN",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Moldova",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "13,000.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.206",
+    "Country code": "MDA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Norway",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "62,644.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.991",
+    "Country code": "NOR",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Poland",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "34,287.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.542",
+    "Country code": "POL",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Romania",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "32,099.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.508",
+    "Country code": "ROM",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Serbia",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "19,093.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.302",
+    "Country code": "SRB",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Spain",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "37,756.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.597",
+    "Country code": "ESP",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Switzerland",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "71,745.30",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "1.135",
+    "Country code": "CHE",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "UK",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "46,482.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "0.735",
+    "Country code": "GBR",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "China",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "17,210.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.272",
+    "Country code": "CHN",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Pakistan\t",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "4,812.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.076",
+    "Country code": "PAK",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Austria",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "55,686.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.881",
+    "Country code": "AUT",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "United States",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "63,206.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-02-10",
+    "Ratio US to country": "1.000",
+    "Country code": "USA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Belgium",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "53,089.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.840",
+    "Country code": "BEL",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Bosnia",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "15,591.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.247",
+    "Country code": "BIH",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Croatia",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "28,780.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.455",
+    "Country code": "HRV",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "France",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "46,991.20",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.743",
+    "Country code": "FRA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Germany",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "54,844.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.868",
+    "Country code": "DEU",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Greece",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "27,948.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.442",
+    "Country code": "GRC",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Italy ",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "41,902.10",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.663",
+    "Country code": "ITA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Lebanon",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "12,118.60",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.192",
+    "Country code": "LBN",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Moldova",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "13,000.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.206",
+    "Country code": "MDA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Norway",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "62,644.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.991",
+    "Country code": "NOR",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Poland",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "34,287.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.542",
+    "Country code": "POL",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Romania",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "32,099.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.508",
+    "Country code": "ROM",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Serbia",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "19,093.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.302",
+    "Country code": "SRB",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Spain",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "37,756.40",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.597",
+    "Country code": "ESP",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Switzerland",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "71,745.30",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "1.135",
+    "Country code": "CHE",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "UK",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "46,482.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.735",
+    "Country code": "GBR",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "China",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "17,210.80",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.272",
+    "Country code": "CHN",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Pakistan\t",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "4,812.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.076",
+    "Country code": "PAK",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Austria",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "55,686.00",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.881",
+    "Country code": "AUT",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "United States",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "63,206.50",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "1.000",
+    "Country code": "USA",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Netherlands (the)",
+    "Year": "2020",
+    "GDP per capita, PPP, USD": "59,266.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.938",
+    "Country code": "NLD"
+  },
+  {
+    "Country": "Netherlands (the)",
+    "Year": "2021",
+    "GDP per capita, PPP, USD": "59,266.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.938",
+    "Country code": "NLD",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "Netherlands (the)",
+    "Year": "2022",
+    "GDP per capita, PPP, USD": "59,266.90",
+    "Source": "IMF 2021",
+    "Last Updated": "2022-05-11",
+    "Ratio US to country": "0.938",
+    "Country code": "NLD",
+    "Notes": "2020 numbers, need updated"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  },
+  {
+    "Country": "",
+    "Year": "",
+    "GDP per capita, PPP, USD": "",
+    "Source": "",
+    "Last Updated": "",
+    "Ratio US to country": "#VALUE!"
+  }
+]
