@@ -1,43 +1,67 @@
-import { last } from 'lodash'
 import { FC } from 'react'
 import crateImage from '../../images/da-in-numbers/crate.svg'
-import heartImage from '../../images/da-in-numbers/heart.svg'
-import peopleImage from '../../images/da-in-numbers/people.svg'
 import routeImage from '../../images/da-in-numbers/route.svg'
+import handsParcel from '../../images/da-in-numbers/hands-parcel.svg'
+import handsPluses from '../../images/da-in-numbers/hands-pluses.svg'
+import pallet from '../../images/da-in-numbers/pallet.svg'
+import shakingHands from '../../images/da-in-numbers/hands-shaking.svg'
 
 const numberFormatter = new Intl.NumberFormat()
-const moneyFormatter = new Intl.NumberFormat(undefined, {
+const usdFormatter = new Intl.NumberFormat(undefined, {
   style: 'currency',
   currency: 'USD',
   maximumFractionDigits: 0,
   minimumFractionDigits: 0,
 })
+const eurFormatter = new Intl.NumberFormat(undefined, {
+  style: 'currency',
+  currency: 'EUR',
+  maximumFractionDigits: 0,
+  minimumFractionDigits: 0,
+})
 
-const content = [
+const content: CardProps[] = [
   {
-    figure: numberFormatter.format(2031432),
-    description: 'aid items delivered',
+    figure: numberFormatter.format(32),
+    description: 'shipments',
     image: crateImage,
   },
   {
-    figure: numberFormatter.format(962302),
+    figure: numberFormatter.format(1117000),
     description: 'needs met',
-    image: peopleImage,
+    image: handsParcel,
   },
   {
-    figure: moneyFormatter.format(2578255),
+    figure: eurFormatter.format(6124150),
     description: 'value to end-beneficiary',
-    image: heartImage,
+    image: handsPluses,
+    addon: {
+      figure: usdFormatter.format(14730500),
+      description: 'retail value (based on USA GDP)',
+    },
   },
   {
-    figure: `${numberFormatter.format(72463)} km`,
-    description: 'transport arranged',
+    figure: `${numberFormatter.format(96500)} km`,
+    description: 'traveled',
     image: routeImage,
+    addon: {
+      figure: `${numberFormatter.format(202000)} kg`,
+      description: 'shipped',
+    },
   },
   {
-    figure: `${numberFormatter.format(214284)} kg`,
-    description: 'aid shipped',
-    image: routeImage,
+    figure: numberFormatter.format(4400000),
+    description: 'items shipped',
+    image: pallet,
+  },
+  {
+    figure: numberFormatter.format(142),
+    description: 'organizations worked with',
+    image: shakingHands,
+    addon: {
+      figure: numberFormatter.format(40),
+      description: 'active team members',
+    },
   },
 ]
 
@@ -45,9 +69,13 @@ type CardProps = {
   figure: string
   description: string
   image: string
+  addon?: {
+    figure: string
+    description: string
+  }
 }
 
-const Card: FC<CardProps> = ({ figure, description, image }) => (
+const Card: FC<CardProps> = ({ figure, description, image, addon }) => (
   <div
     className="flex justify-center items-center flex-col px-4 m-4"
     style={{ maxWidth: '150px' }}
@@ -57,18 +85,38 @@ const Card: FC<CardProps> = ({ figure, description, image }) => (
       width="100%"
       className="block mx-auto mb-2"
       alt={description}
+      style={{ aspectRatio: '1' }}
     />
     <p className="text-2xl font-medium whitespace-nowrap">{figure}</p>
     <p className="text-gray-700 mb-2 whitespace-nowrap">{description}</p>
+    {addon && (
+      <>
+        <p className="text-xl font-medium whitespace-nowrap">{addon.figure}</p>
+        <p className="text-gray-700 mb-2 whitespace-nowrap">
+          {addon.description}
+        </p>
+      </>
+    )}
   </div>
 )
 
 const YearInNumbersSection: FC = () => (
   <section className="py-8 md:py-16 max-w-7xl mx-auto">
-    <h2 className="text-4xl font-semibold mb-8 p-4 text-center">
-      Aid delivered in 2021
+    <h2 className="text-4xl font-semibold p-4 text-center">
+      July 2021&mdash;June 2022 in numbers
     </h2>
-    <div className="flex justify-center items-end flex-wrap">
+    <p className="text-center">
+      Read more in our{' '}
+      <a
+        href="https://prezi.com/i/view/DzjydpaXoACQHRpcsXvJ"
+        target={'_blank'}
+        className="link"
+      >
+        latest annual report
+      </a>
+      .
+    </p>
+    <div className="flex justify-center items-start flex-wrap mt-8">
       {content.map((section, i) => (
         <Card {...section} key={`section-${i}`} />
       ))}
