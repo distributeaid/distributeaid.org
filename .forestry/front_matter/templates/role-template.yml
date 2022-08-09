@@ -1,4 +1,67 @@
 ---
 label: Role Template
 hide_body: true
-fields: []
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+    min: 4
+    max: 64
+  label: Title
+- name: desc
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: location
+  type: select
+  default: Europe
+  config:
+    required: true
+    options:
+    - Europe
+    - " United States"
+    - Remote
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Location
+- name: domain
+  type: select
+  default: Staff
+  config:
+    required: true
+    options:
+    - Board
+    - Advisory Board
+    - Staff
+    - Volunteer
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Domain
+- name: commitment
+  type: select
+  default: full-time
+  config:
+    required: true
+    options:
+    - Full-Time
+    - Contributor
+    - Supporter
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Commitment
