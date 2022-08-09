@@ -65,3 +65,5 @@ fields:
       file: 
       path: 
   label: Commitment
+pages:
+- content/blocks/logistics-coordinator.md
