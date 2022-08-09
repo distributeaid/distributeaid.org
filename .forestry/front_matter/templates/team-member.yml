@@ -1,4 +1,88 @@
 ---
-label: Team Member
+label: Team Member Template
 hide_body: true
-fields: []
+display_field: name
+fields:
+- name: name
+  type: text
+  config:
+    required: true
+    min: 2
+  label: Name
+- name: bio
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+    max: 512
+  label: Bio
+- name: link
+  type: text
+  config:
+    required: false
+  label: Link
+- name: profilePhoto
+  type: file
+  config:
+    maxSize: 64
+  label: Profile photo
+- name: beyondDA
+  type: field_group
+  config: {}
+  fields:
+  - name: isRelevant
+    type: boolean
+    label: Relevant?
+    default: false
+  - name: companyName
+    type: text
+    config:
+      required: false
+    label: Company Name
+    showOnly:
+      field: isRelevant
+      value: true
+  - name: companyLink
+    type: text
+    config:
+      required: false
+    label: Company Link
+    showOnly:
+      field: isRelevant
+      value: true
+  - name: desc
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+    showOnly:
+      field: isRelevant
+      value: true
+  label: Beyond DA
+- name: roles
+  type: field_group_list
+  fields:
+  - name: role
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: blocks
+        file: 
+        path: 
+    label: Role
+  config:
+    min: 1
+    max: 
+    labelField: 
+  label: Roles
