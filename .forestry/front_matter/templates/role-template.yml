@@ -66,5 +66,6 @@ fields:
       path: 
   label: Commitment
 pages:
+- content/blocks/board-member.md
 - content/blocks/code-contributor.md
 - content/blocks/logistics-coordinator.md
