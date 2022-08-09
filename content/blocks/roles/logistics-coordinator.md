@@ -2,7 +2,6 @@
 location: Europe
 domain: Staff
 commitment: Full-Time
-title: Executive Director
+title: Logistics Coordinator
 desc: ''
-
 ---
