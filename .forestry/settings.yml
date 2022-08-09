@@ -11,8 +11,8 @@ sections:
   match: "**/*"
   new_doc_ext: json
 - type: directory
-  path: content/blocks
-  label: Blocks
+  path: content/blocks/roles
+  label: Roles
   create: all
   match: "**/*"
   templates:
