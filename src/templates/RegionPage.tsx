@@ -45,12 +45,18 @@ const RegionPage: FC<TemplateProps> = ({ pageContext: { region } }) => {
         })}
       </ul>
 
-      <h2>Overview</h2>
-      <MarkdownContent content={region.overview} />
-
-      <h2>Government Response</h2>
-      <MarkdownContent content={region.governmentResponse} />
-
+      <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
+        <div className="p-4 bg-navy-100">
+          <h2 className="text-center text-2xl text-navy-700">Overview</h2>
+          <MarkdownContent content={region.overview} />
+        </div>
+        <div className="p-4 bg-navy-50">
+          <h2 className="text-center text-2xl text-navy-700">
+            Government Response
+          </h2>
+          <MarkdownContent content={region.governmentResponse} />
+        </div>
+      </div>
       <UpdateList list={region.newsUpdates} />
       <LinkList list={region.stayInformed} />
     </SimpleLayout>
