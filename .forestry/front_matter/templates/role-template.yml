@@ -67,6 +67,7 @@ fields:
   label: Commitment
 pages:
 - content/blocks/roles/administrative-coordinator.md
+- content/blocks/roles/administrative-intern.md
 - content/blocks/roles/advisor.md
 - content/blocks/roles/design-contributor.md
 - content/blocks/roles/director-of-operations.md
