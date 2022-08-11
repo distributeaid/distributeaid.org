@@ -67,5 +67,6 @@ fields:
   label: Commitment
 pages:
 - content/blocks/roles/administrative-coordinator.md
+- content/blocks/roles/director-of-operations.md
 - content/blocks/roles/head-of-finances-and-external-communications.md
 - content/blocks/roles/head-of-projects-and-administration.md
