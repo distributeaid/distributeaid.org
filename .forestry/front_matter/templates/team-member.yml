@@ -104,7 +104,7 @@ fields:
   config:
     min: 1
     max: 
-    labelField: 
+    labelField: role
   label: Roles
 pages:
 - content/blocks/members/weston-lindner.md
