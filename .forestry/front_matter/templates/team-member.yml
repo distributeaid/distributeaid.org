@@ -86,3 +86,5 @@ fields:
     max: 
     labelField: 
   label: Roles
+pages:
+- content/blocks/members/weston-lindner.md
