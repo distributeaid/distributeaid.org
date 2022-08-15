@@ -81,6 +81,26 @@ fields:
         file: 
         path: 
     label: Role
+  - name: start
+    type: datetime
+    label: Start
+    description: ''
+    config:
+      required: true
+      date_format: YYYY-MM-DD
+      time_format: 
+      display_utc: false
+    default: ''
+  - name: end
+    type: datetime
+    label: End
+    description: ''
+    config:
+      required: false
+      date_format: YYYY-MM-DD
+      time_format: 
+      display_utc: false
+    default: ''
   config:
     min: 1
     max: 
