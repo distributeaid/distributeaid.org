@@ -16210,10 +16210,10 @@ react-fast-compare@^3.1.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-globe.gl@2.22.1:
-  version "2.22.1"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.22.1.tgz#79b0899f89660d63ca5e847e5a4e7937e923e0b4"
-  integrity sha512-mfF9y7OAmfPCd/euChJZmHJ8jnH1v714Pkv7DUd1kPZDWmTLHNlMpTr0iaYmBOIv1FAe91BvS8ImCbBG+kgh6Q==
+react-globe.gl@2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.22.2.tgz#a6d6360ad424a43dad5b039905873a9b4a5ed7a6"
+  integrity sha512-5u1eSC5VN7Epv+koobdEoj7JqoNuXJvGv5SUhFapyw9Ca4e+UePKcUzN92bUkHrol8cYcX726etbwT31cLFraA==
   dependencies:
     globe.gl "^2.26"
     prop-types "^15.8"
