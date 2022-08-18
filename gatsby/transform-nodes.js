@@ -16,13 +16,13 @@ module.exports = onCreateNode = ({
     minimatch(node.fileAbsolutePath, '**/content/**/*.md')
   ) {
     const fm = node.frontmatter
+
     // Regions
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
     ) {
       const fileRelativePath = path.join(
         'content',
-        'pages',
         getNode(node.parent).relativePath,
       )
 
@@ -56,7 +56,6 @@ module.exports = onCreateNode = ({
     ) {
       const fileRelativePath = path.join(
         'content',
-        'pages',
         getNode(node.parent).relativePath,
       )
 
@@ -77,6 +76,79 @@ module.exports = onCreateNode = ({
         children: [],
         internal: {
           type: 'DASubregion',
+          contentDigest: createContentDigest(fm),
+        },
+      })
+    }
+
+    // Team Roles
+    else if (minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')) {
+      const fileRelativePath = path.join(
+        'content',
+        getNode(node.parent).relativePath,
+      )
+
+      createNode({
+        // Node Data
+        title: fm.title,
+        desc: fm.desc,
+        location: fm.location,
+        domain: fm.domain,
+        commitment: fm.commitment,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+
+        // Gatsby Fields
+        id: createNodeId(
+          `DA Team Role - ${fm.title} ${fm.location}  ${fm.commitment}`,
+        ),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DATeamRole',
+          contentDigest: createContentDigest(fm),
+        },
+      })
+    }
+
+    // Team Members
+    else if (
+      minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
+    ) {
+      const fileRelativePath = path.join(
+        'content',
+        getNode(node.parent).relativePath,
+      )
+
+      const roleData = fm.roles.map((role) => {
+        return {
+          fileRelativePath: role.role,
+          start: role.start,
+          end: role.end,
+          isActive: role.end === null,
+          role: null,
+        }
+      })
+
+      createNode({
+        // Node Data
+        name: fm.name,
+        bio: fm.bio,
+        link: fm.link,
+        beyondDA: fm.beyondDA,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+        profilePhotoFileRelativePath: fm.profilePhoto,
+        roleData: roleData,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Team Member - ${fm.name}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DATeamMember',
           contentDigest: createContentDigest(fm),
         },
       })
