@@ -9512,7 +9512,7 @@ gatsby-page-utils@^2.21.0:
     lodash "^4.17.21"
     micromatch "^4.0.5"
 
-gatsby-parcel-config@^0.12.0:
+gatsby-parcel-config@0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/gatsby-parcel-config/-/gatsby-parcel-config-0.12.0.tgz#130d22f66cfee001a8e700bffcea144c69d6ea6d"
   integrity sha512-ZGCo2gLhXNFcjkpDu2rUw5/cCxU6rP3hQ4QgWcHbrfDBU8jPxn2UCZp0rFTslLdbZAD3kjVhPkKCwIgoUpE4+g==
@@ -9663,10 +9663,10 @@ gatsby-sharp@^0.15.0:
     "@types/sharp" "^0.30.5"
     sharp "^0.30.7"
 
-gatsby-source-contentful@7.19.0:
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.19.0.tgz#9558cb0ae34c91b769f5f4e2a81f75d106311896"
-  integrity sha512-HmW+0umIY095LT9CbNP/02od+qM3xWDsosUTB17UWi4izDa+gc9TF6w19GB/VrHSpCSpNOeKpfZbq+NdC5zx9Q==
+gatsby-source-contentful@7.19.1:
+  version "7.19.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.19.1.tgz#5227a5a607c3554f8cd51a4a18ddb0a7f5321f9a"
+  integrity sha512-zBfLqhtkMtKyWQ2/Esjgwzpz4SNqqz6QdQbyIOOp42kznq7RhIU8Ic2hzk3hab7VJv/ZoNn7Jk36JDb4rdxZ2A==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@contentful/rich-text-react-renderer" "^15.12.1"
@@ -9679,7 +9679,7 @@ gatsby-source-contentful@7.19.0:
     fs-extra "^10.1.0"
     gatsby-core-utils "^3.21.0"
     gatsby-plugin-utils "^3.15.0"
-    gatsby-source-filesystem "^4.21.0"
+    gatsby-source-filesystem "^4.21.1"
     is-online "^9.0.1"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.21"
@@ -9687,10 +9687,10 @@ gatsby-source-contentful@7.19.0:
     semver "^7.3.7"
     url "^0.11.0"
 
-gatsby-source-filesystem@4.21.0, gatsby-source-filesystem@^4.21.0:
-  version "4.21.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.21.0.tgz#201f178b94a0f175a51491ed931d9dd5570b1b8d"
-  integrity sha512-DS89LSdZLRQv7CbqzBvB7kHH3gX4Hf2R31Rg16BP6lfbUb6pBDjYGt08w1I47QA4+6hMdeZacQ8qtbtYXIhizQ==
+gatsby-source-filesystem@4.21.1, gatsby-source-filesystem@^4.21.1:
+  version "4.21.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.21.1.tgz#e1666090b6d4cd71bd8f142b9327c7b4d00d46f6"
+  integrity sha512-YPbmR9nSq9cXRCdQ8S3uT9sb/IzLB7GloUn9ZT0KJLoCHl/YzmoFMERb5gOdFAoy2clX5L7ARSUV6rIbXBrSlA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     chokidar "^3.5.3"
@@ -9702,7 +9702,7 @@ gatsby-source-filesystem@4.21.0, gatsby-source-filesystem@^4.21.0:
     pretty-bytes "^5.4.1"
     progress "^2.0.3"
     valid-url "^1.0.9"
-    xstate "^4.26.1"
+    xstate "4.32.1"
 
 gatsby-telemetry@^3.21.0:
   version "3.21.0"
@@ -9782,10 +9782,10 @@ gatsby-worker@^1.21.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@4.21.0:
-  version "4.21.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.21.0.tgz#a966c7dd48938d5597193a62e697d29ad3d54532"
-  integrity sha512-N6IgLXyxuyay8hDCzMuaQ0aGA/eVCz6pGs4KRjv+6hbI3DC+UG5Hn2HyFsx0Mn5gDzdl0DWHeEDhTVujH5KGSA==
+gatsby@4.21.1:
+  version "4.21.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.21.1.tgz#f9d187466e3cf9d28c373af14c943bb696148a5e"
+  integrity sha512-gaDtFgvLmNpn3Et0Dl0Gx6NzO2EBxxFULsaV191XO1POgreKMmN1svb7OMJ5Ry2/yZo/eaJLPriKsJ7DU2Q+Hw==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"
@@ -9871,7 +9871,7 @@ gatsby@4.21.0:
     gatsby-legacy-polyfills "^2.21.0"
     gatsby-link "^4.21.0"
     gatsby-page-utils "^2.21.0"
-    gatsby-parcel-config "^0.12.0"
+    gatsby-parcel-config "0.12.0"
     gatsby-plugin-page-creator "^4.21.0"
     gatsby-plugin-typescript "^4.21.0"
     gatsby-plugin-utils "^3.15.0"
@@ -9946,7 +9946,7 @@ gatsby@4.21.0:
     webpack-merge "^5.8.0"
     webpack-stats-plugin "^1.0.3"
     webpack-virtual-modules "^0.3.2"
-    xstate "^4.26.0"
+    xstate "4.32.1"
     yaml-loader "^0.6.0"
   optionalDependencies:
     gatsby-sharp "^0.15.0"
@@ -19497,7 +19497,7 @@ xss@^1.0.6:
     commander "^2.20.3"
     cssfilter "0.0.10"
 
-xstate@^4.26.0, xstate@^4.26.1:
+xstate@4.32.1:
   version "4.32.1"
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.32.1.tgz#1a09c808a66072938861a3b4acc5b38460244b70"
   integrity sha512-QYUd+3GkXZ8i6qdixnOn28bL3EvA++LONYL/EMWwKlFSh/hiLndJ8YTnz77FDs+JUXcwU7NZJg7qoezoRHc4GQ==
