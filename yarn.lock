@@ -2741,6 +2741,25 @@
     tmp-promise "^3.0.3"
     uuid "^8.3.2"
 
+"@netlify/edge-bundler@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-1.13.0.tgz#0b68bc7034d5d0c71959c789cdf0961050fcab75"
+  integrity sha512-5LDNouZP2tUt3m6NyKkEgor9PycIEq7wxUgrRSpiUcZVV7CNU/CUxxpXJb11/wEFq2bWZp3/xqzxqbR7vpqFNg==
+  dependencies:
+    common-path-prefix "^3.0.0"
+    del "^6.0.0"
+    env-paths "^3.0.0"
+    execa "^6.0.0"
+    glob-to-regexp "^0.4.1"
+    node-fetch "^3.1.1"
+    node-stream-zip "^1.15.0"
+    p-retry "^5.1.1"
+    p-wait-for "^4.1.0"
+    path-key "^4.0.0"
+    semver "^7.3.5"
+    tmp-promise "^3.0.3"
+    uuid "^8.3.2"
+
 "@netlify/esbuild-android-64@0.14.25":
   version "0.14.25"
   resolved "https://registry.yarnpkg.com/@netlify/esbuild-android-64/-/esbuild-android-64-0.14.25.tgz#a8aeb8c1c2c767165f534a2dadbfcfbd30bfb6e5"
@@ -4314,6 +4333,11 @@
   integrity sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==
   dependencies:
     "@types/node" "*"
+
+"@types/retry@0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
+  integrity sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==
 
 "@types/rimraf@^2.0.2":
   version "2.0.5"
@@ -14087,14 +14111,14 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-11.0.0.tgz#26171730837f180ffaca83f9a733b3a720618db5"
-  integrity sha512-nQnG6TmRoBYhisgVpG6HL9alJijCxKzLkjBFiZVPqd5YXR0fvDZptR5l3PCMWOehm6qYihP/5R/qaq+hhGEgsA==
+netlify-cli@11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-11.1.0.tgz#28fa11be731fbb5081e4ff617122fa3396c9f496"
+  integrity sha512-oru5f0tOH1eFcz9TiUdC1QrtG8alPBrR0lfCKvHmwykQ/8d9WVqelPWzKp99+gGguC3me7UxWPG3tGZooSdWsA==
   dependencies:
     "@netlify/build" "^27.14.0"
     "@netlify/config" "^18.2.0"
-    "@netlify/edge-bundler" "^1.12.1"
+    "@netlify/edge-bundler" "^1.13.0"
     "@netlify/framework-info" "^9.2.0"
     "@netlify/local-functions-proxy" "^1.1.1"
     "@netlify/plugins-list" "^6.39.0"
@@ -14993,6 +15017,14 @@ p-reduce@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/p-reduce/-/p-reduce-3.0.0.tgz#f11773794792974bd1f7a14c72934248abff4160"
   integrity sha512-xsrIUgI0Kn6iyDYm9StOpOeK29XM1aboGji26+QEortiFST1hGZaUQOLhtEbqHErPpGW/aSz6allwK2qcptp0Q==
+
+p-retry@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-5.1.1.tgz#1950b9be441474a67f852811c1d4ec955885d2c8"
+  integrity sha512-i69WkEU5ZAL8mrmdmVviWwU+DN+IUF8f4sSJThoJ3z5A7Nn5iuO5ROX3Boye0u+uYQLOSfgFl7SuFZCjlAVbQA==
+  dependencies:
+    "@types/retry" "0.12.1"
+    retry "^0.13.1"
 
 p-some@^5.0.0:
   version "5.0.0"
@@ -16794,7 +16826,7 @@ retext-english@^3.0.4:
     parse-english "^4.0.0"
     unherit "^1.0.4"
 
-retry@0.13.1:
+retry@0.13.1, retry@^0.13.1:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.13.1.tgz#185b1587acf67919d63b357349e03537b2484658"
   integrity sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==
