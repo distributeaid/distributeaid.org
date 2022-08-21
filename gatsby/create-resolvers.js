@@ -1,5 +1,9 @@
 module.exports = createResolvers = ({ createResolvers, getNode }) => {
   const resolvers = {
+    /*
+    Region
+    ------------------------------------------------------------
+    */
     DARegion: {
       subregions: {
         type: ['DASubregion'],
@@ -19,6 +23,10 @@ module.exports = createResolvers = ({ createResolvers, getNode }) => {
       map: imageSharpResolver(getNode, 'mapFileRelativePath'),
     },
 
+    /*
+    Subregion
+    ------------------------------------------------------------
+    */
     DASubregion: {
       region: {
         type: 'DARegion',
@@ -38,6 +46,17 @@ module.exports = createResolvers = ({ createResolvers, getNode }) => {
       map: imageSharpResolver(getNode, 'mapFileRelativePath'),
     },
 
+    /*
+    Team Member
+    ------------------------------------------------------------
+    TODO: Consider creating the DATeamTenure nodes in transform-nodes and
+          using Gatsby's @link directive in createSchemaCustomization to
+          automatically link them to the DATeamMember.
+
+          This technique may be applicable to all our resolvers.
+
+          https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields
+    */
     DATeamMember: {
       roles: {
         type: ['DATeamTenure'],
@@ -80,6 +99,10 @@ module.exports = createResolvers = ({ createResolvers, getNode }) => {
   createResolvers(resolvers)
 }
 
+/*
+Helpers
+================================================================================
+*/
 const imageSharpResolver = (getNode, pathKey) => {
   return {
     type: 'ImageSharp',

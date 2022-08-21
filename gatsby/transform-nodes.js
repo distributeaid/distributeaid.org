@@ -9,7 +9,11 @@ module.exports = onCreateNode = ({
   getNode,
 }) => {
   const { createNode, createNodeField } = actions
-  // Forestry Files
+
+  /*
+  Forestry Data
+  ================================================================================
+  */
   if (
     node.internal.type === 'MarkdownRemark' &&
     node.fileAbsolutePath &&
@@ -17,7 +21,10 @@ module.exports = onCreateNode = ({
   ) {
     const fm = node.frontmatter
 
-    // Regions
+    /*
+    Regions
+    ------------------------------------------------------------
+    */
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
     ) {
@@ -48,10 +55,12 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    }
+    } else if (
 
-    // Subregions
-    else if (
+    /*
+    Subregions
+    ------------------------------------------------------------
+    */
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
       const fileRelativePath = path.join(
@@ -79,10 +88,14 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    }
+    } else if (
 
-    // Team Roles
-    else if (minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')) {
+    /*
+    Team Roles
+    ------------------------------------------------------------
+    */
+      minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')
+    ) {
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -110,10 +123,12 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    }
+    } else if (
 
-    // Team Members
-    else if (
+    /*
+    Team Members
+    ------------------------------------------------------------
+    */
       minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
     ) {
       const fileRelativePath = path.join(
@@ -155,6 +170,16 @@ module.exports = onCreateNode = ({
     } else {
       // do nothing for other markdown remark types
     }
+
+    /*
+  Json Data
+  ================================================================================
+  */
+
+    /*
+  Line Items
+  ------------------------------------------------------------
+  */
   } else if (node.internal.type === 'CombinedManifestsJson') {
     const rawValue = node['$ Total']
     const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
