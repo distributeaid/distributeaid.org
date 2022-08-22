@@ -16,8 +16,13 @@ const COMPONENTS: Components = {
   a: ({ node, ...props }) => <ExternalLink className="link" {...props} />,
 }
 
+// NOTE: Use the `prose` classes from the Tailwind Typography Plugin to style
+//       markdown content! https://tailwindcss.com/docs/typography-plugin
+
 const MarkdownContent: FC<Props> = ({ content }) => (
-  <ReactMarkdown children={content} components={COMPONENTS} />
+  <div className="prose">
+    <ReactMarkdown children={content} components={COMPONENTS} />
+  </div>
 )
 
 export default MarkdownContent
