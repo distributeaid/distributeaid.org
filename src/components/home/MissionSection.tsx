@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import MarkdownContent from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import React, { FC, Suspense } from 'react'
+import worldMapImage from '../../images/homepage-banner-image.svg'
 
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
@@ -47,11 +48,16 @@ const MissionSection: FC<Props> = ({ missionStatement }) => {
           src={mapImage}
           alt="Map of where Distribute Aid has operated in the past"
         /> */}
-        {!isSSR && (
-          <Suspense fallback={<div />}>
-            <ShipmentsOnGlobeVis categoryVisItems={data.categoryVisItems} />
-          </Suspense>
-        )}
+        <div className="motion-reduce:hidden">
+          {!isSSR && (
+            <Suspense fallback={<div />}>
+              <ShipmentsOnGlobeVis categoryVisItems={data.categoryVisItems} />
+            </Suspense>
+          )}
+        </div>
+        <div className="motion-safe:hidden">
+          <img src={worldMapImage} className="mx-auto block" alt="" />
+        </div>
         <SocialIconContainer position="side" />
       </div>
     </section>
