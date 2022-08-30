@@ -17,7 +17,22 @@ const sampleImgAlt =
 
 const PageTemplate: FC = () => (
   <SimpleLayout pageTitle="Page Template">
-    <h1>Hello beautiful human!</h1>
+    {/* single content left aligned */}
+    <section className="flex justify-left">
+      <div className="lg:max-w-screen-md">
+        <h1 className="text-2xl font-bold m-4">Hello beautiful human!</h1>
+      </div>
+    </section>
+
+    {/* side-by-side content */}
+    <section className="flex justify-center space-x-8">
+      <div className="lg:max-w-screen-sm">
+        <MarkdownContent content={content} />
+      </div>
+      <div className="lg:max-w-screen-sm grow">
+        <img src={sampleImg} alt={sampleImgAlt} />
+      </div>
+    </section>
 
     {/* single content centered */}
     <section className="flex justify-center">
@@ -31,16 +46,6 @@ const PageTemplate: FC = () => (
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-      </div>
-    </section>
-
-    {/* side-by-side content */}
-    <section className="flex justify-center space-x-8">
-      <div className="lg:max-w-screen-sm">
-        <MarkdownContent content={content} />
-      </div>
-      <div className="lg:max-w-screen-sm grow">
-        <img src={sampleImg} alt={sampleImgAlt} />
       </div>
     </section>
   </SimpleLayout>
