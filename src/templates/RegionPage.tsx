@@ -19,15 +19,20 @@ type TemplateProps = {
 const RegionPage: FC<TemplateProps> = ({ pageContext: { region } }) => {
   return (
     <SimpleLayout pageTitle={`Region: ${region.name}`}>
-      <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
-
-      <div className="w-full">
-        <GatsbyImage
-          key={region.name}
-          image={region.map.gatsbyImageData}
-          alt={`Map highlighting the ${region.name} region.`}
-          className="mb-4 w-full h-32"
-        />
+      <div className="relative mb-4">
+        <div className="absolute inset-0 z-10 flex justify-center">
+          <div className="bg-navy-700 bg-opacity-75 px-6 flex flex-col justify-center">
+            <h1 className="text-4xl text-white flex-none">{region.name}</h1>
+          </div>
+        </div>
+        <div className="w-full">
+          <GatsbyImage
+            key={region.name}
+            image={region.map.gatsbyImageData}
+            alt={`Map highlighting the ${region.name} region.`}
+            className="w-full h-32"
+          />
+        </div>
       </div>
 
       <ul>
