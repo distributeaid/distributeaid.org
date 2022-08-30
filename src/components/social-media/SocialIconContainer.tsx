@@ -5,7 +5,7 @@ import facebookSrc from '../../images/social-icons/facebook.svg'
 import twitterSrc from '../../images/social-icons/twitter.svg'
 import linkedInSrc from '../../images/social-icons/linked-in.svg'
 import instagramSrc from '../../images/social-icons/instagram.svg'
-import githubSrc from '../../images/social-icons/github.png'
+import githubSrc from '../../images/social-icons/github.svg'
 import SocialMediaLink from './SocialMediaLink'
 import { getThemeLargeScreenWidth } from 'utils/site-theme'
 
