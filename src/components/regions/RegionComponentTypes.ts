@@ -11,8 +11,8 @@ export type Region = {
   map: {
     gatsbyImageData: IGatsbyImageData
   }
-  overview: string
-  governmentResponse: string
+  overview: string //markdown string
+  governmentResponse: string //markdown string
   newsUpdates: UpdateList
   stayInformed: LinkList
   subregions: Subregion[]
@@ -28,7 +28,7 @@ export type Subregion = {
   map: {
     gatsbyImageData: IGatsbyImageData
   }
-  overview: string
+  overview: string //markdown string
   population: {
     count: number
     trend: string
