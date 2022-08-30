@@ -22,12 +22,12 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
     <SimpleLayout pageTitle={`Region: ${region.name}`}>
       <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
 
-      <div className="w-64">
+      <div className="w-full">
         <GatsbyImage
           key={region.name}
           image={region.map.gatsbyImageData}
           alt={`Map highlighting the ${region.name} region.`}
-          className="mb-4 w-full"
+          className="mb-4 w-full h-32"
         />
       </div>
 
