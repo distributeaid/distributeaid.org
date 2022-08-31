@@ -106,8 +106,8 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
         arcDashGap={0.2}
         arcDashAnimateTime={() => Math.random() * 4000 + 500}
         arcStroke={1.1}
-        width={384}
-        height={384}
+        width={350}
+        height={350}
       />
     </div>
   )
