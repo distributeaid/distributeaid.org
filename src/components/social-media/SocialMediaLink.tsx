@@ -10,7 +10,7 @@ interface Props {
 const SocialMediaLink: FC<Props> = ({ href, src, altText }) => {
   return (
     <ExternalLink href={href}>
-      <aside className="w-16 h-16 flex flex-col justify-center items-center">
+      <aside className="w-16 h-16 flex flex-col justify-center items-center -mr-4">
         <img width="40" src={src} alt={altText} />
       </aside>
     </ExternalLink>

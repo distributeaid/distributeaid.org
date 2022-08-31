@@ -17,3 +17,4 @@ By contributing to this project you agree to:
 - Aaron Pedwell
 - Maurits Lourens
 - Olu Niyi-Awosusi
+- Cristian Matos Richards
