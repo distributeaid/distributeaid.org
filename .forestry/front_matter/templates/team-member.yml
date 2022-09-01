@@ -9,6 +9,12 @@ fields:
     required: true
     min: 2
   label: Name
+- name: pronouns
+  type: text
+  config:
+    required: true
+    min: 2
+  label: Pronouns
 - name: bio
   type: textarea
   default: ''
@@ -107,5 +113,7 @@ fields:
     labelField: role
   label: Roles
 pages:
-- content/blocks/members/taylorFairbank.md
+- content/blocks/members/nicole-tingle.md
+- content/blocks/members/sara-lonegard.md
+- content/blocks/members/taylor-fairbank.md
 - content/blocks/members/weston-lindner.md

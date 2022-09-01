@@ -1,5 +1,9 @@
 module.exports = createResolvers = ({ createResolvers, getNode }) => {
   const resolvers = {
+    /*
+    Region
+    ------------------------------------------------------------
+    */
     DARegion: {
       subregions: {
         type: ['DASubregion'],
@@ -16,9 +20,13 @@ module.exports = createResolvers = ({ createResolvers, getNode }) => {
         },
       },
 
-      map: imageSharpResolver(getNode),
+      map: imageSharpResolver(getNode, 'mapFileRelativePath'),
     },
 
+    /*
+    Subregion
+    ------------------------------------------------------------
+    */
     DASubregion: {
       region: {
         type: 'DARegion',
@@ -35,14 +43,67 @@ module.exports = createResolvers = ({ createResolvers, getNode }) => {
         },
       },
 
-      map: imageSharpResolver(getNode),
+      map: imageSharpResolver(getNode, 'mapFileRelativePath'),
+    },
+
+    /*
+    Team Member
+    ------------------------------------------------------------
+    TODO: Consider creating the DATeamTenure nodes in transform-nodes and
+          using Gatsby's @link directive in createSchemaCustomization to
+          automatically link them to the DATeamMember.
+
+          This technique may be applicable to all our resolvers.
+
+          https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields
+    */
+    DATeamMember: {
+      roles: {
+        type: ['DATeamTenure'],
+        resolve: async (source, args, context, info) => {
+          const roleFileRelativePaths = source.roleData.map((role) => {
+            return role.fileRelativePath
+          })
+
+          const results = await context.nodeModel.findAll({
+            query: {
+              filter: {
+                fileRelativePath: { in: roleFileRelativePaths },
+              },
+            },
+            type: 'DATeamRole',
+          })
+          const entries = Array.from(results.entries)
+
+          const roles = source.roleData.map((role) => {
+            const entry = entries.find((entry) => {
+              return entry.fileRelativePath === role.fileRelativePath
+            })
+
+            return {
+              role: entry,
+              start: role.start,
+              end: role.end,
+              isActive: role.isActive,
+            }
+          })
+
+          return roles
+        },
+      },
+
+      profilePhoto: imageSharpResolver(getNode, 'profilePhotoFileRelativePath'),
     },
   }
 
   createResolvers(resolvers)
 }
 
-const imageSharpResolver = (getNode) => {
+/*
+Helpers
+================================================================================
+*/
+const imageSharpResolver = (getNode, pathKey) => {
   return {
     type: 'ImageSharp',
     resolve: async (source, args, context, info) => {
@@ -50,7 +111,7 @@ const imageSharpResolver = (getNode) => {
         query: {
           filter: {
             absolutePath: {
-              glob: `**/static${source.mapFileRelativePath}`,
+              glob: `**/static${source[pathKey]}`,
             },
           },
         },

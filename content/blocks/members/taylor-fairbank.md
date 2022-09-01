@@ -1,8 +1,8 @@
 ---
 name: Taylor Fairbank
 bio: Hello!
-link: ''
-profilePhoto: ''
+link: https://www.linkedin.com/in/jtfairbank/
+profilePhoto: "/uploads/2021-summer-square.jpeg"
 beyondDA:
   isRelevant: false
   companyName: ''
@@ -10,7 +10,8 @@ beyondDA:
   desc: ''
 roles:
 - role: content/blocks/roles/director-of-operations.md
-  start: 2018-10-31T23:00:00Z
+  start: 2018-10-31T23:00:00.000+00:00
   end: 
+pronouns: he/him
 
 ---
