@@ -56,8 +56,7 @@ module.exports = onCreateNode = ({
         },
       })
     } else if (
-
-    /*
+      /*
     Subregions
     ------------------------------------------------------------
     */
@@ -89,8 +88,7 @@ module.exports = onCreateNode = ({
         },
       })
     } else if (
-
-    /*
+      /*
     Team Roles
     ------------------------------------------------------------
     */
@@ -124,8 +122,7 @@ module.exports = onCreateNode = ({
         },
       })
     } else if (
-
-    /*
+      /*
     Team Members
     ------------------------------------------------------------
     */
@@ -152,6 +149,7 @@ module.exports = onCreateNode = ({
         bio: fm.bio,
         link: fm.link,
         beyondDA: fm.beyondDA,
+        pronouns: fm.pronouns,
 
         // Metadata
         fileRelativePath: fileRelativePath,
