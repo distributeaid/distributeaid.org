@@ -7,6 +7,21 @@ fields:
   config:
     maxSize: 64
   label: Asset
+- name: fileType
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - PDF
+    - BitmapImage
+    - VectorImage
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: File Type
 - name: title
   type: text
   config:
