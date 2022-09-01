@@ -19,3 +19,4 @@ By contributing to this project you agree to:
 - Olu Niyi-Awosusi
 - Cristian Matos Richards
 - Anthony Van Ong
+- Jason Fritsche
