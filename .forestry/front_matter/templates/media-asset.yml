@@ -1,4 +1,56 @@
 ---
 label: Media Asset
 hide_body: true
-fields: []
+fields:
+- name: asset
+  type: file
+  config:
+    maxSize: 64
+  label: Asset
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: caption
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Caption
+- name: attribution
+  type: text
+  config:
+    required: true
+  label: Photo Attribution
+- name: dateUploaded
+  type: datetime
+  label: Date Uploaded
+  description: ''
+  config:
+    required: false
+    date_format: YYYY-MM-DD
+    time_format: 
+    display_utc: false
+  default: now
+- name: dateTaken
+  type: datetime
+  label: Date Taken
+  description: ''
+  config:
+    required: false
+    date_format: YYYY-MM-DD
+    time_format: 
+    display_utc: false
+- name: altText
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Alt text
