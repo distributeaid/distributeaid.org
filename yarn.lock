@@ -1142,10 +1142,10 @@
   resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.5.4.tgz#1a89069978734e132fa4a59414ddb64e4b94fde7"
   integrity sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==
 
-"@codesee/babel-plugin-instrument@0.363.0":
-  version "0.363.0"
-  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.363.0.tgz#4d3ee1405507afe63cff5519b7d63abd3bf075c2"
-  integrity sha512-2SOhiwIhV9LtpgfqRzOzWBPn2vbPQhJHfQIRV5Ujr59tcY3pEYYhIg9CpsrIrEW6RevEh4bjYTEVVXSb8TLYTQ==
+"@codesee/babel-plugin-instrument@0.364.0":
+  version "0.364.0"
+  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.364.0.tgz#5060143ca49fd874f098f27448d176b60529f731"
+  integrity sha512-QfG2SX7ds2sWEX4ee1ZufV+7AvDMnpTdV7XJthZbgrhpUgXbJah6hkZ5gUIOtJyZxDcjvSfM9barZSK7sEZ1KQ==
   dependencies:
     "@babel/plugin-syntax-jsx" "^7.12.13"
     "@babel/plugin-transform-typescript" "^7.14.4"
