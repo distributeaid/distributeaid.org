@@ -12,10 +12,11 @@ beyondDA:
   desc: ''
 roles:
 - role: content/blocks/roles/administrative-coordinator.md
-  end: 2022-05-30T22:00:00Z
-  start: 2021-01-01T10:18:01Z
+  end: 2022-05-30T22:00:00.000+00:00
+  start: 2021-01-01T10:18:01.000+00:00
 - role: content/blocks/roles/regional-director-for-europe.md
-  start: 2022-05-31T22:00:00Z
+  start: 2022-05-31T22:00:00.000+00:00
   end: 
+pronouns: she/her
 
 ---
