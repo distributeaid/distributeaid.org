@@ -107,5 +107,5 @@ fields:
     labelField: role
   label: Roles
 pages:
-- content/blocks/members/taylorFairbank.md
+- content/blocks/members/taylor-fairbank.md
 - content/blocks/members/weston-lindner.md
