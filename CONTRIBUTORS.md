@@ -18,3 +18,4 @@ By contributing to this project you agree to:
 - Maurits Lourens
 - Olu Niyi-Awosusi
 - Cristian Matos Richards
+- Anthony Van Ong
