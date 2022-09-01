@@ -12,5 +12,6 @@ roles:
 - role: content/blocks/roles/director-of-operations.md
   start: 2018-10-31T23:00:00.000+00:00
   end: 
+pronouns: he/him
 
 ---
