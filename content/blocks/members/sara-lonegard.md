@@ -12,9 +12,10 @@ beyondDA:
 roles:
 - role: content/blocks/roles/board-member.md
   end: 
-  start: 2019-01-01T10:21:16Z
+  start: 2019-01-01T10:21:16.000+00:00
 - role: content/blocks/roles/executive-director.md
-  start: 2018-12-31T23:00:00Z
+  start: 2018-12-31T23:00:00.000+00:00
   end: 
+pronouns: he/him
 
 ---
