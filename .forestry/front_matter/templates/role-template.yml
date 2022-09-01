@@ -3,6 +3,12 @@ label: Role Template
 hide_body: true
 display_field: title
 fields:
+- name: pronouns
+  type: text
+  config:
+    required: false
+    min: 
+  label: Pronouns
 - name: title
   type: text
   config:
