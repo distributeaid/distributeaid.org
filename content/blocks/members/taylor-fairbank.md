@@ -1,8 +1,8 @@
 ---
 name: Taylor Fairbank
 bio: Hello!
-link: ''
-profilePhoto: ''
+link: https://www.linkedin.com/in/jtfairbank/
+profilePhoto: "/uploads/2021-summer-square.jpeg"
 beyondDA:
   isRelevant: false
   companyName: ''
