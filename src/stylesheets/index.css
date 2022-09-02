@@ -43,7 +43,7 @@
 }
 
 .link {
-  @apply text-navy-700 hover: underline font-semibold;
+  @apply text-navy-700 hover:underline font-semibold;
 }
 
 .video-iframe {
