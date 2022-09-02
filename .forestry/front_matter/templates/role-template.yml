@@ -34,6 +34,22 @@ fields:
       file: 
       path: 
   label: Location
+- name: team
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Administration
+    - Operations
+    - Technology
+    - Governance
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Team
 - name: domain
   type: select
   default: Staff
