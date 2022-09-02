@@ -42,9 +42,9 @@
   width: 298px;
 }
 
-/* .link {
-  @apply text-navy-700 hover:underline font-semibold;
-} */
+.link {
+  @apply text-navy-700 hover: underline font-semibold;
+}
 
 .video-iframe {
   aspect-ratio: 16/9;
