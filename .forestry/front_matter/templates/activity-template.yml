@@ -1,4 +1,66 @@
 ---
 label: Activity Template
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: desc
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+    max: 280
+  label: One Sentence Description
+- name: challenge
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: The Problem It Solves
+- name: explanation
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: How It Works
+- name: benefits
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: The Benefits
+- name: regions
+  type: field_group_list
+  fields:
+  - name: region
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: regions
+        file: 
+        path: 
+    label: region
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Relevant Regions
