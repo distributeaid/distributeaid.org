@@ -95,7 +95,7 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
 
   const [globeDimensions, setGlobeDimensions] = useState(384)
 
-  let resizeGlobeSize = () => {
+  const resizeGlobeSize = () => {
     let globeSectionWidth =
       document.getElementById('globe-section')?.clientWidth
 
