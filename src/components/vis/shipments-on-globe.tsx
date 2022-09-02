@@ -71,7 +71,6 @@ function buildGlobeVisData(lineItems: LineItem[]) {
 const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
   const globeEl = useRef() as any
   const arcsData = buildGlobeVisData(categoryVisItems.nodes) as any
-  // console.log('arcsData', arcsData)
   const globeRef = useRef()
 
   useEffect(() => {
