@@ -53,7 +53,7 @@ jobs:
           nohup yarn dev > server.log 2>&1 & echo $! > run.pid
           echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
 
-      - name: Wait for server to be up
+      - name: Wait for dev server to be up
         run: until nc -w 10 127.0.0.1 8000; do tail -n 20 server.log; sleep 10; done
         timeout-minutes: 5
 
@@ -70,3 +70,23 @@ jobs:
         with:
           name: build-${{ github.sha }}
           path: public
+
+      - name: Start prod sever
+        run: |
+          nohup yarn run serve > prod-server.log 2>&1 & echo $! > run.pid
+          echo "PRODSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
+
+      - name: Install playwright
+        run: npx playwright install
+
+      - name: Wait for prod server to be up
+        run: until nc -w 10 127.0.0.1 9000; do tail -n 20 prod-server.log; sleep 10; done
+        timeout-minutes: 5
+
+      - name: Run end-to-end tests
+        env:
+          PORT: 9000
+        run: yarn run test:e2e
+
+      - name: Kill prod server
+        run: kill ${{ env.PRODSERVER_PID }}
