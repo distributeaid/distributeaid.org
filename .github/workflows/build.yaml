@@ -71,6 +71,44 @@ jobs:
           name: build-${{ github.sha }}
           path: public
 
+  e2e-tests:
+    name: Run the end-to-end test
+
+    needs: [build]
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-${{ github.sha }}
+          path: public
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn
+
       - name: Start prod sever
         run: |
           nohup yarn run serve > prod-server.log 2>&1 & echo $! > run.pid
@@ -86,7 +124,7 @@ jobs:
       - name: Run end-to-end tests
         env:
           PORT: 9000
-        run: yarn run test:e2e
+        run: npx playwright test --project=${{ matrix.browser }}
 
       - name: Kill prod server
         run: kill ${{ env.PRODSERVER_PID }}
