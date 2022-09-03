@@ -201,7 +201,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   */
   const routesQuery = await graphql(`
     query RoutePagesQuery {
-      allFile(filter: { relativeDirectory: { eq: "routes" } }) {
+      allFile(filter: { relativeDirectory: { eq: "pages/routes" } }) {
         nodes {
           id
           childMarkdownRemark {
