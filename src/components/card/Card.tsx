@@ -9,7 +9,7 @@ type Props = {
   subtitle?: string
   additionalHeaderContent?: ReactNode | ReactNode[]
   body?: ReactNode
-  actions?: Action | Action[]
+  actions?: Action[]
   transparentBorder?: boolean
   transparentBody?: boolean
 }
@@ -27,27 +27,19 @@ const Card: FC<Props> = (props) => {
     transparentBody = false,
   } = props
 
-  // creates the SmartLink component/s for action/s
-  const createActionLinks = (
-    actions: Action | Action[],
-  ): JSX.Element | JSX.Element[] => {
-    const createAction = (action: Action) => (
-      <SmartLink
-        className="inline-block bg-navy-700 hover:bg-navy-800 rounded text-white px-6 py-3 mb-1 font-medium tracking-wide"
-        href={action.url}
-      >
-        {action.label}
-      </SmartLink>
-    )
+  // creates a single SmartLink component
+  const createAction = (action: Action) => (
+    <SmartLink
+      className="inline-block bg-navy-700 hover:bg-navy-800 rounded text-white px-6 py-3 mb-1 font-medium tracking-wide"
+      href={action.url}
+    >
+      {action.label}
+    </SmartLink>
+  )
 
-    if (Array.isArray(actions)) {
-      const actionLinks = actions.map((action) => createAction(action))
-      return actionLinks
-    } else {
-      const actionLink = createAction(actions)
-      return actionLink
-    }
-  }
+  // creates the SmartLink component/s for actions
+  const createActionLinks = (actions: Action[]): JSX.Element | JSX.Element[] =>
+    actions.map((action) => createAction(action))
 
   return (
     <article

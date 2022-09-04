@@ -33,10 +33,12 @@ const RoutesSection: FC = () => (
           </p>
         </>
       }
-      actions={{
-        url: '/routes/uk-to-france/',
-        label: 'Ship aid to France!',
-      }}
+      actions={[
+        {
+          url: '/routes/uk-to-france/',
+          label: 'Ship aid to France!',
+        },
+      ]}
     />
     <Card
       header={
@@ -57,10 +59,12 @@ const RoutesSection: FC = () => (
           </p>
         </>
       }
-      actions={{
-        url: '/routes/uk-to-lebanon/',
-        label: 'Ship aid to Lebanon!',
-      }}
+      actions={[
+        {
+          url: '/routes/uk-to-lebanon/',
+          label: 'Ship aid to Lebanon!',
+        },
+      ]}
     />
     <Card
       title="Custom Shipments"
@@ -99,10 +103,12 @@ const RoutesSection: FC = () => (
           </div>
         </>
       }
-      actions={{
-        url: 'mailto:logistics@distributeaid.org',
-        label: 'Contact Us!',
-      }}
+      actions={[
+        {
+          url: 'mailto:logistics@distributeaid.org',
+          label: 'Contact Us!',
+        },
+      ]}
     />
   </section>
 )
