@@ -89,10 +89,12 @@ const RegionsPage: FC<Props> = ({
             title={region.name}
             additionalHeaderContent={createSubregionLinks(region)}
             body={createRegionsCardBody(region)}
-            actions={{
-              url: createRegionHref(region),
-              label: 'View Region',
-            }}
+            actions={[
+              {
+                url: createRegionHref(region),
+                label: 'View Region',
+              },
+            ]}
           />
         ))}
       </section>
