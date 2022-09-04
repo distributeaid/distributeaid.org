@@ -7,21 +7,6 @@ fields:
   config:
     maxSize: 64
   label: Asset
-- name: fileType
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - PDF
-    - BitmapImage
-    - VectorImage
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: File Type
 - name: title
   type: text
   config:
@@ -40,7 +25,7 @@ fields:
   type: text
   config:
     required: true
-  label: Photo Attribution
+  label: Attribution
 - name: dateUploaded
   type: datetime
   label: Date Uploaded
@@ -51,9 +36,10 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: dateTaken
+  hidden: true
+- name: date
   type: datetime
-  label: Date Taken
+  label: Date
   description: ''
   config:
     required: false

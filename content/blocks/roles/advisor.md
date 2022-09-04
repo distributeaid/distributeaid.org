@@ -4,5 +4,5 @@ domain: Advisory Board
 commitment: Supporter
 title: Advisor
 desc: ''
-
+team: Governance
 ---

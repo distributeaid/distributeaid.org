@@ -9,20 +9,27 @@ module.exports = onCreateNode = ({
   getNode,
 }) => {
   const { createNode, createNodeField } = actions
-  // Forestry Files
+
+  /*
+  Forestry Data
+  ================================================================================
+  */
   if (
     node.internal.type === 'MarkdownRemark' &&
     node.fileAbsolutePath &&
     minimatch(node.fileAbsolutePath, '**/content/**/*.md')
   ) {
     const fm = node.frontmatter
-    // Regions
+
+    /*
+    Regions
+    ------------------------------------------------------------
+    */
     if (
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
     ) {
       const fileRelativePath = path.join(
         'content',
-        'pages',
         getNode(node.parent).relativePath,
       )
 
@@ -48,15 +55,15 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    }
-
-    // Subregions
-    else if (
+    } else if (
+      /*
+    Subregions
+    ------------------------------------------------------------
+    */
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
       const fileRelativePath = path.join(
         'content',
-        'pages',
         getNode(node.parent).relativePath,
       )
 
@@ -80,9 +87,97 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
+    } else if (
+      /*
+    Team Roles
+    ------------------------------------------------------------
+    */
+      minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')
+    ) {
+      const fileRelativePath = path.join(
+        'content',
+        getNode(node.parent).relativePath,
+      )
+
+      createNode({
+        // Node Data
+        title: fm.title,
+        desc: fm.desc,
+        location: fm.location,
+        domain: fm.domain,
+        commitment: fm.commitment,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+
+        // Gatsby Fields
+        id: createNodeId(
+          `DA Team Role - ${fm.title} ${fm.location}  ${fm.commitment}`,
+        ),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DATeamRole',
+          contentDigest: createContentDigest(fm),
+        },
+      })
+    } else if (
+      /*
+    Team Members
+    ------------------------------------------------------------
+    */
+      minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
+    ) {
+      const fileRelativePath = path.join(
+        'content',
+        getNode(node.parent).relativePath,
+      )
+
+      const roleData = fm.roles.map((role) => {
+        return {
+          fileRelativePath: role.role,
+          start: role.start,
+          end: role.end,
+          isActive: role.end === null,
+          role: null,
+        }
+      })
+
+      createNode({
+        // Node Data
+        name: fm.name,
+        bio: fm.bio,
+        link: fm.link,
+        beyondDA: fm.beyondDA,
+        pronouns: fm.pronouns,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+        profilePhotoFileRelativePath: fm.profilePhoto,
+        roleData: roleData,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Team Member - ${fm.name}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DATeamMember',
+          contentDigest: createContentDigest(fm),
+        },
+      })
     } else {
       // do nothing for other markdown remark types
     }
+
+    /*
+  Json Data
+  ================================================================================
+  */
+
+    /*
+  Line Items
+  ------------------------------------------------------------
+  */
   } else if (node.internal.type === 'CombinedManifestsJson') {
     const rawValue = node['$ Total']
     const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))

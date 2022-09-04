@@ -9,6 +9,12 @@ fields:
     required: true
     min: 2
   label: Name
+- name: pronouns
+  type: text
+  config:
+    required: true
+    min: 2
+  label: Pronouns
 - name: bio
   type: textarea
   default: ''

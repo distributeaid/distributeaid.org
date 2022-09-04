@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import Globe from 'react-globe.gl'
 import { getCoordsAlpha3 } from 'utils/iso-3166'
 
@@ -71,7 +71,7 @@ function buildGlobeVisData(lineItems: LineItem[]) {
 const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
   const globeEl = useRef() as any
   const arcsData = buildGlobeVisData(categoryVisItems.nodes) as any
-  console.log('arcsData', arcsData)
+  const globeRef = useRef()
 
   useEffect(() => {
     // Auto-rotate
@@ -93,8 +93,34 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
     globeEl.current.pointOfView({ lat: avgLat, lng: avgLng, altitude: 2.5 })
   }, [])
 
+  const [globeDimensions, setGlobeDimensions] = useState(384)
+
+  const resizeGlobeSize = () => {
+    const globeSectionWidth =
+      document.getElementById('globe-section')?.clientWidth
+
+    if (globeSectionWidth) {
+      if (globeSectionWidth >= 384) {
+        setGlobeDimensions(384)
+      } else {
+        setGlobeDimensions(globeSectionWidth)
+      }
+    } else {
+      setGlobeDimensions(384)
+    }
+  }
+
+  useEffect(() => {
+    resizeGlobeSize()
+    window.addEventListener('resize', resizeGlobeSize)
+    return () => window.removeEventListener('resize', resizeGlobeSize)
+  }, [])
+
   return (
-    <div className="hover:cursor-grab active:cursor-grabbing">
+    <div
+      id="globe-section"
+      className="hover:cursor-grab active:cursor-grabbing"
+    >
       <Globe
         ref={globeEl}
         globeImageUrl="/uploads/earth-light.jpg"
@@ -106,8 +132,8 @@ const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
         arcDashGap={0.2}
         arcDashAnimateTime={() => Math.random() * 4000 + 500}
         arcStroke={1.1}
-        width={384}
-        height={384}
+        width={globeDimensions}
+        height={globeDimensions}
       />
     </div>
   )

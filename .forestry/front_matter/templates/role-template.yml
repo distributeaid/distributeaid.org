@@ -3,12 +3,6 @@ label: Role Template
 hide_body: true
 display_field: title
 fields:
-- name: pronouns
-  type: text
-  config:
-    required: false
-    min: 
-  label: Pronouns
 - name: title
   type: text
   config:
@@ -40,6 +34,22 @@ fields:
       file: 
       path: 
   label: Location
+- name: team
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Administration
+    - Operations
+    - Technology
+    - Governance
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Team
 - name: domain
   type: select
   default: Staff
