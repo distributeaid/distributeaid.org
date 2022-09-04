@@ -51,7 +51,7 @@ const Card: FC<Props> = (props) => {
       <div className="m-3 flex flex-col flex-1">
         {title ? <h2 className="text-xl font-semibold mb-1">{title}</h2> : null}
         {subtitle ? <p className="text-gray-600 mb-6">{subtitle}</p> : null}
-        {additionalHeaderContent ? <div>{additionalHeaderContent}</div> : null}
+        {additionalHeaderContent ? <>{additionalHeaderContent}</> : null}
         {actions ? (
           <div className="self-center p-4">{createActionLinks(actions)}</div>
         ) : null}
