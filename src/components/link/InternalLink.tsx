@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Link } from 'gatsby'
 
 type Props = {
+  children?: ReactNode
   to: string
   className?: string
 }

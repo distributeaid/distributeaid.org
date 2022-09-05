@@ -80,7 +80,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome]
 
     steps:
       - uses: actions/checkout@v3
@@ -108,6 +108,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn
+
+      - name: Run unit tests
+        run: yarn test
 
       - name: Start prod sever
         run: |
