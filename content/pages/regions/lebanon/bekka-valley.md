@@ -10,5 +10,4 @@ newsUpdates:
 name: Bekka Valley
 overview: TODO
 map: ''
-
 ---

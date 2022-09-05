@@ -5,5 +5,4 @@ commitment: Supporter
 title: Board Member
 desc: ''
 team: Governance
-
 ---
