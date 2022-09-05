@@ -10,5 +10,4 @@ newsUpdates:
 name: Beirut
 overview: TODO
 map: ''
-
 ---
