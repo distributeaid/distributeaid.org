@@ -109,6 +109,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Run unit tests
+        run: yarn test
+
       - name: Start prod sever
         run: |
           nohup yarn run serve > prod-server.log 2>&1 & echo $! > run.pid

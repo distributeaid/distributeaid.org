@@ -32,6 +32,7 @@
     "gatsby-transformer-remark": "5.22.0",
     "gatsby-transformer-sharp": "4.22.0",
     "husky": "8.0.1",
+    "jest-environment-jsdom": "29.0.2",
     "lodash": "4.17.21",
     "minimatch": "5.1.0",
     "playwright": "^1.25.1",
