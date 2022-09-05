@@ -5,5 +5,4 @@ commitment: Contributor
 title: Design Contributor
 desc: ''
 team: Technology
-
 ---

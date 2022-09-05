@@ -5,5 +5,4 @@ commitment: Full-Time
 title: Regional Director for Europe
 desc: ''
 team: Administration
-
 ---
