@@ -30,6 +30,7 @@ const Card: FC<Props> = (props) => {
   // creates a single SmartLink component
   const createAction = (action: Action) => (
     <SmartLink
+      key={action.label}
       className="inline-block bg-navy-700 hover:bg-navy-800 rounded text-white px-6 py-3 mb-1 font-medium tracking-wide"
       href={action.url}
     >
@@ -46,6 +47,7 @@ const Card: FC<Props> = (props) => {
       className={`border flex flex-col 
       ${transparentBorder ? 'border-transparent' : null}
       ${transparentBody ? 'bg-transparent' : 'bg-white'}`}
+      data-testid="card"
     >
       {header ? header : null}
       <div className="m-3 flex flex-col flex-1">
