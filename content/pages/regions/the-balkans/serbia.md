@@ -2,7 +2,8 @@
 population:
   count: 4630
   trend: Unkown
-  description: Accurate population numbers are hard to ascertain as people in The
+  description:
+    Accurate population numbers are hard to ascertain as people in The
     Balkans tend to be on the move.  Numbers can change substantially from season
     to season due to drastic temperature fluctuations, events in Greece, and other
     reasons.
@@ -16,5 +17,4 @@ overview: |-
 
   The Serbian government runs a handful of refugee camps, most of which are located in isolated areas.  NGO access to these camps has been barred since the pandemic began.
 map: ''
-
 ---
