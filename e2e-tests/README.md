@@ -5,7 +5,7 @@ This folder contains end-to-end tests implemented using
 
 Start the development server, then run
 
-    yarn run test-e2e
+    yarn run test:e2e
 
 to run the end-to-end tests.
 
@@ -13,4 +13,4 @@ to run the end-to-end tests.
 
 You can launch the [Playwright Inspector](https://playwright.dev/docs/debug) by setting the environment variable `PWDEBUG` to `1`.
 
-    PWDEBUG=1 yarn run test-e2e
+    PWDEBUG=1 yarn run test:e2e
