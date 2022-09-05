@@ -80,7 +80,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome]
 
     steps:
       - uses: actions/checkout@v3
@@ -127,7 +127,7 @@ jobs:
       - name: Run end-to-end tests
         env:
           PORT: 9000
-        run: npx playwright test --project=${{ matrix.browser }} --retries=3
+        run: npx playwright test --project=${{ matrix.browser }}
 
       - name: Kill prod server
         run: kill ${{ env.PRODSERVER_PID }}
