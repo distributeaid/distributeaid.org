@@ -14,3 +14,13 @@ to run the end-to-end tests.
 You can launch the [Playwright Inspector](https://playwright.dev/docs/debug) by setting the environment variable `PWDEBUG` to `1`.
 
     PWDEBUG=1 yarn run test:e2e
+
+## Browser selection
+
+### Chrome
+
+    npx playwright test --project=chrome
+
+### Firefox
+
+    npx playwright test --project=firefox

@@ -72,3 +72,6 @@ public
 .netlify
 
 .DS_Store
+
+# end-to-end tests
+test-results/
