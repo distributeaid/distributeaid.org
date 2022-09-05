@@ -34,6 +34,22 @@ fields:
       file: 
       path: 
   label: Location
+- name: team
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Administration
+    - Operations
+    - Technology
+    - Governance
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Team
 - name: domain
   type: select
   default: Staff
@@ -74,3 +90,4 @@ pages:
 - content/blocks/roles/head-of-finances-and-external-communications.md
 - content/blocks/roles/head-of-projects-and-administration.md
 - content/blocks/roles/logistics-intern.md
+- content/blocks/roles/regional-director-for-europe.md

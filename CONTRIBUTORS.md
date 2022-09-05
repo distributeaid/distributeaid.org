@@ -17,4 +17,6 @@ By contributing to this project you agree to:
 - Aaron Pedwell
 - Maurits Lourens
 - Olu Niyi-Awosusi
+- Cristian Matos Richards
+- Anthony Van Ong
 - Jenn Junod (Teach Jenn Tech)
