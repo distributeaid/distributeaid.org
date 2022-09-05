@@ -1,4 +1,4 @@
-import Card from './Card'
+import { Card } from './Card'
 import { render } from '@testing-library/react'
 
 describe('<Card/>', () => {
@@ -23,18 +23,20 @@ describe('<Card/>', () => {
     )
 
     const card = getByTestId('card')
-    expect(card).toContainHTML(
-      '<h2 class="text-xl font-semibold mb-1">hello world</h2>',
-    )
-    expect(card).toContainHTML(
-      '<p class="text-gray-600 mb-6">card test subtitle</p>',
-    )
-    expect(card).toContainHTML('<div><p>body paragraph</p></div>')
+    expect(card).toHaveTextContent(/hello world/)
+    expect(card).toHaveTextContent(/card test subtitle/)
+    expect(card).toHaveTextContent(/body paragraph/)
     const actionEl = getByText('test label')
     expect(actionEl).toHaveAttribute('href', 'test/path')
   })
   it('renders the children', () => {
     const { getByText } = render(<Card>Card children</Card>)
     expect(getByText('Card children')).toBeTruthy()
+  })
+
+  it('should allow to set the body color', () => {
+    const { getByTestId } = render(<Card bodyColor="green" />)
+    const card = getByTestId('card')
+    expect(card).toHaveClass('green')
   })
 })

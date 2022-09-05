@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import InternalLink from '@components/link/InternalLink'
-import Card from '@components/card/Card'
+import { Card } from '@components/card/Card'
 
 const RoutesSection: FC = () => (
   <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
@@ -10,7 +10,7 @@ const RoutesSection: FC = () => (
         <StaticImage
           src={'../../images/home/help-refugees-warehouse-calais.jpg'}
           alt="Calais warehouse"
-          className="mb-4 object-cover w-full"
+          className="mb-1 object-cover w-full"
           height={200}
         />
       }
@@ -45,7 +45,7 @@ const RoutesSection: FC = () => (
         <StaticImage
           src={'../../images/home/the-free-shop-unloading.jpg'}
           alt="Two volunteers unloading a truck"
-          className="mb-4 object-cover w-full"
+          className="mb-1 object-cover w-full"
           height={200}
         />
       }
@@ -73,7 +73,7 @@ const RoutesSection: FC = () => (
         <StaticImage
           src={'../../images/home/bobby-moving-a-pallet-iha.jpg'}
           alt="Volunteer Bobby moving a pallet"
-          className="mb-4 object-cover w-full"
+          className="mb-1 object-cover w-full"
           height={200}
         />
       }

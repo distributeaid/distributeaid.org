@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: `jsdom`,
-  testMatch: ['**/?(*.)+(test).js'],
+  testRegex: '.+\\.(test|spec)\\.(j|t)sx?$',
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
   transform: {
     '^.+\\.[jt]sx?$': '<rootDir>/jest-preprocess.js',
