@@ -3,19 +3,21 @@ newsUpdates:
   title: News Updates
   visibleCount: 5
   updates:
-  - title: Lebanon's Economic Crisis Impacts Refugees
-    content: In late 2021, 54% of refugees in the region declared a loss in employment
-      or income and 95% of refugee households [could not afford](https://data2.unhcr.org/en/documents/details/90852)
-      enough food. [Thousands of displaced families and individuals are facing evictions](https://www.nrc.no/news/2022/february/lebanon-syrian-refugees-face-evictions-as-they-take-desperate-measures-to-survive-the-winter/)
-      as they cannot pay rent.
-    date: 2022-02-12T02:41:19Z
-    pinned: false
+    - title: Lebanon's Economic Crisis Impacts Refugees
+      content:
+        In late 2021, 54% of refugees in the region declared a loss in employment
+        or income and 95% of refugee households [could not afford](https://data2.unhcr.org/en/documents/details/90852)
+        enough food. [Thousands of displaced families and individuals are facing evictions](https://www.nrc.no/news/2022/february/lebanon-syrian-refugees-face-evictions-as-they-take-desperate-measures-to-survive-the-winter/)
+        as they cannot pay rent.
+      date: 2022-02-12T02:41:19Z
+      pinned: false
 stayInformed:
   title: Stay Informed
   links: []
 name: Lebanon
-map: "/uploads/lebanon.png"
-overview: Lebanon's largest population of refugees is in Bekaa, which hosts[ 39% of
+map: '/uploads/lebanon.png'
+overview:
+  Lebanon's largest population of refugees is in Bekaa, which hosts[ 39% of
   total registered refugees](https://data2.unhcr.org/en/situations/syria/location/71).
   The lowest population is in South Lebanon, with [90,832 registered refugees.](https://data2.unhcr.org/en/situations/syria/location/71)
   Since many do not get registered, the actual number is likely much higher. Lebanon,
@@ -23,7 +25,8 @@ overview: Lebanon's largest population of refugees is in Bekaa, which hosts[ 39%
   political and social crises. [**1.5 million refugees**](https://www.thenewhumanitarian.org/opinion/2022/1/18/Syrian-refugees-Lebanon-help-protection-pressure-leave)
   are at particular risk. Their rights and freedoms, economic opportunities, and relations
   with host communities have deteriorated amid wide-felt poverty and hardship.
-governmentResponse: "Experiencing a massive decrease in international and national
+governmentResponse:
+  "Experiencing a massive decrease in international and national
   funding for refugees, the Lebanese government [has yet to propose a long-term and
   viable plan](https://apnews.com/article/business-middle-east-lebanon-beirut-hezbollah-6fba3e7874b69381d194a029f51bda49)
   to improve the situation for refugees and Lebanese citizens struggling to make ends
@@ -40,7 +43,6 @@ governmentResponse: "Experiencing a massive decrease in international and nation
   and deportation.  \n  \nTODO: bit about the beirut blast displacing lebanese poeple,
   and the general economic crisis affecting lebanese people as well"
 subregions:
-- content/pages/regions/lebanon/beirut.md
-- content/pages/regions/lebanon/bekka-valley.md
-
+  - content/pages/regions/lebanon/beirut.md
+  - content/pages/regions/lebanon/bekka-valley.md
 ---

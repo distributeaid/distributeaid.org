@@ -3,23 +3,25 @@ newsUpdates:
   title: News Updates
   visibleCount: 5
   updates:
-  - title: Millions Flee to Safety After Russia Invades Ukraine
-    content: As of the 6th of April, around 2.5 million people have fled to Poland,
-      663,000 to Romania, 404,000 to Hungary, and 401,000 to Moldova. Moldova has
-      already taken in more[ refugees than during the second world war.](https://edition.cnn.com/videos/world/2022/03/08/moldova-ukraine-refugee-crisis-watson-pkg-vpx.cnn)
-      Slovakia’s refugee population, around 1,000 at the start of 2022, is now over
-      100,000. It is expected that these numbers will only increase as the war continues.
-    date: 2022-04-07T01:16:19Z
-    pinned: false
+    - title: Millions Flee to Safety After Russia Invades Ukraine
+      content:
+        As of the 6th of April, around 2.5 million people have fled to Poland,
+        663,000 to Romania, 404,000 to Hungary, and 401,000 to Moldova. Moldova has
+        already taken in more[ refugees than during the second world war.](https://edition.cnn.com/videos/world/2022/03/08/moldova-ukraine-refugee-crisis-watson-pkg-vpx.cnn)
+        Slovakia’s refugee population, around 1,000 at the start of 2022, is now over
+        100,000. It is expected that these numbers will only increase as the war continues.
+      date: 2022-04-07T01:16:19Z
+      pinned: false
 stayInformed:
   title: Stay Informed
   links:
-  - url: https://www.humanitarianresponse.info/sites/www.humanitarianresponse.info/files/documents/files/hno_2021-eng_-_2021-02-09.pdf
-    description: ''
-    label: Humanitarian Needs in Ukraine - OCHA
+    - url: https://www.humanitarianresponse.info/sites/www.humanitarianresponse.info/files/documents/files/hno_2021-eng_-_2021-02-09.pdf
+      description: ''
+      label: Humanitarian Needs in Ukraine - OCHA
 name: Eastern Europe
-map: "/uploads/eastern-europe.png"
-overview: Eastern Europe as a region, includes Ukraine, Romania, Moldova, Hungary,
+map: '/uploads/eastern-europe.png'
+overview:
+  Eastern Europe as a region, includes Ukraine, Romania, Moldova, Hungary,
   Slovakia, and Poland.  It mostly act as places of transition for people wanting
   to seek asylum in other EU countries- although not always.  Since Russia's war in
   the Ukraine began, millions of Ukrainians have fled to neighboring countries.
@@ -28,11 +30,10 @@ governmentResponse: |-
 
   Eastern European countries have been much more welcoming to Ukrainian refugees than those fleeing conflict in the Middle East or North Africa.
 subregions:
-- content/pages/regions/eastern-europe/ukraine.md
-- content/pages/regions/eastern-europe/moldova.md
-- content/pages/regions/eastern-europe/romania.md
-- content/pages/regions/eastern-europe/slovakia.md
-- content/pages/regions/eastern-europe/poland.md
-- content/pages/regions/eastern-europe/hungary.md
-
+  - content/pages/regions/eastern-europe/ukraine.md
+  - content/pages/regions/eastern-europe/moldova.md
+  - content/pages/regions/eastern-europe/romania.md
+  - content/pages/regions/eastern-europe/slovakia.md
+  - content/pages/regions/eastern-europe/poland.md
+  - content/pages/regions/eastern-europe/hungary.md
 ---

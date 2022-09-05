@@ -5,5 +5,4 @@ commitment: Supporter
 title: Advisor
 desc: ''
 team: Governance
-
 ---
