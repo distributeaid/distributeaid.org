@@ -1,7 +1,7 @@
 /*
 Page Tree Traversal Helpers
 ------------------------------------------------------------
-NOTE: In JS so it can be used by `/.js` too.
+NOTE: In JS so it can be used by `/gatsby-node.js` too.
 */
 
 function BFS(root, handlePage, filterChildren = null) {
