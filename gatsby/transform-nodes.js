@@ -106,13 +106,14 @@ module.exports = onCreateNode = ({
         location: fm.location,
         domain: fm.domain,
         commitment: fm.commitment,
+        team: fm.team,
 
         // Metadata
         fileRelativePath: fileRelativePath,
 
         // Gatsby Fields
         id: createNodeId(
-          `DA Team Role - ${fm.title} ${fm.location}  ${fm.commitment}`,
+          `DA Team Role - ${fm.title} ${fm.location}  ${fm.commitment} ${fm.team}`,
         ),
         parent: node.id,
         children: [],
