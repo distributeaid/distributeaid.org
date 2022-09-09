@@ -51,3 +51,7 @@ fields:
     schema:
       format: markdown
   label: Alt Text
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
