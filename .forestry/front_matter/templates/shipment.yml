@@ -1,4 +1,18 @@
 ---
 label: Shipment
 hide_body: true
-fields: []
+fields:
+- name: shipmentNumber
+  type: text
+  config:
+    required: true
+  label: Shipment Number
+- name: photos
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+  label: Photos
