@@ -7,19 +7,15 @@ fields:
   config:
     maxSize: 64
   label: Asset
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
 - name: caption
   type: textarea
   default: ''
   config:
-    required: false
+    required: true
     wysiwyg: false
     schema:
       format: markdown
+    max: 280
   label: Caption
 - name: attribution
   type: text
@@ -54,4 +50,4 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-  label: Alt text
+  label: Alt Text
