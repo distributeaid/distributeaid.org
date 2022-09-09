@@ -82,6 +82,16 @@ fields:
     label: Updates List
   label: News Updates
   description: News updates about humanitarian responses and related info in the region.
+- name: coverPhoto
+  type: field_group
+  config: {}
+  fields:
+  - name: coverPhotoFields
+    type: include
+    config: {}
+    template: media-asset
+    label: Cover Photo Fields
+  label: Cover Photo
 pages:
 - content/pages/regions/eastern-europe/hungary.md
 - content/pages/regions/eastern-europe/hungary.md
