@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@fontsource/lato": "4.5.9",
-    "@nivo/core": "0.79.0",
-    "@nivo/sunburst": "0.79.1",
+    "@nivo/core": "0.80.0",
+    "@nivo/sunburst": "0.80.0",
     "@playwright/test": "1.25.2",
     "@tailwindcss/line-clamp": "0.4.2",
     "@types/lodash": "4.14.184",
