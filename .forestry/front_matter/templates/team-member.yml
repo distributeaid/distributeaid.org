@@ -39,11 +39,11 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: test
+  - name: profilePhotoFields
     type: include
     config: {}
     template: media-asset
-    label: test
+    label: Profile Photo Fields
   label: Profile Photo
 - name: beyondDA
   type: field_group
@@ -122,11 +122,6 @@ fields:
     max: 
     labelField: role
   label: Roles
-- name: profile_photo_test
-  type: include
-  config: {}
-  template: media-asset
-  label: Profile Photo test
 pages:
 - content/blocks/members/florence-creedysmith.md
 - content/blocks/members/nicole-tingle.md
