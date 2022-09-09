@@ -72,6 +72,16 @@ fields:
       type: pages
       section: regions
   label: Sub Regions
+- name: coverPhoto
+  type: field_group
+  config: {}
+  fields:
+  - name: coverPhotoFields
+    type: include
+    config: {}
+    template: media-asset
+    label: Cover Photo Fields
+  label: Cover Photo
 pages:
 - content/pages/regions/eastern-europe/index.md
 - content/pages/regions/eastern-europe/index.md
