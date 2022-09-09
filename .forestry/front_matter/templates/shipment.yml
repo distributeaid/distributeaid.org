@@ -15,4 +15,5 @@ fields:
     max: 
     source:
       type: pages
+      section: shipment-photos
   label: Photos
