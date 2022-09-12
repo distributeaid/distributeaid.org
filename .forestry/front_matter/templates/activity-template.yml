@@ -65,4 +65,5 @@ fields:
     labelField: 
   label: Relevant Regions
 pages:
+- content/blocks/activities/ad-hoc-shipping.md
 - content/blocks/activities/aid-hubs-and-regular-routes.md
