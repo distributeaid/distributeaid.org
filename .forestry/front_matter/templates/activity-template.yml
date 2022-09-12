@@ -44,6 +44,27 @@ fields:
     schema:
       format: markdown
   label: The Benefits
+- name: category
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Powering Aid Supply Chains
+    - Connecting Communities
+    - Empowering Humanitarians
+    - Responding to Crises
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Category
+- name: headerPhoto
+  type: include
+  config: {}
+  template: media-asset
+  label: Header Photo
 - name: regions
   type: field_group_list
   fields:
@@ -64,22 +85,6 @@ fields:
     max: 
     labelField: 
   label: Relevant Regions
-- name: category
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - Powering Aid Supply Chains
-    - Connecting Communities
-    - Empowering Humanitarians
-    - Responding to Crises
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Category
 pages:
 - content/blocks/activities/ad-hoc-shipping.md
 - content/blocks/activities/aid-hubs-and-regular-routes.md
