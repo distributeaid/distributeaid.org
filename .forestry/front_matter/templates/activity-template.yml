@@ -83,6 +83,12 @@ fields:
 - name: headerPhoto
   type: field_group
   config: {}
+  fields:
+  - name: headerPhotoFields
+    type: include
+    config: {}
+    template: media-asset
+    label: Header Photo Fields
   label: Header Photo
 pages:
 - content/blocks/activities/ad-hoc-shipping.md
