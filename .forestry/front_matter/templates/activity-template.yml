@@ -60,11 +60,6 @@ fields:
       file: 
       path: 
   label: Category
-- name: headerPhoto
-  type: include
-  config: {}
-  template: media-asset
-  label: Header Photo
 - name: regions
   type: field_group_list
   fields:
@@ -85,6 +80,10 @@ fields:
     max: 
     labelField: 
   label: Relevant Regions
+- name: headerPhoto
+  type: field_group
+  config: {}
+  label: Header Photo
 pages:
 - content/blocks/activities/ad-hoc-shipping.md
 - content/blocks/activities/aid-hubs-and-regular-routes.md
