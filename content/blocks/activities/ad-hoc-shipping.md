@@ -21,5 +21,6 @@ benefits: |-
   * We ensure transparency in our communication with all of our partners.
   * We provide a service that is cost efficient and timely by working with a range of commercial shippers.
 regions: []
+category: Powering Aid Supply Chains
 
 ---
