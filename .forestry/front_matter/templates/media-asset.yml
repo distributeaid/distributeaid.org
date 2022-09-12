@@ -56,4 +56,5 @@ fields:
   default: []
   label: Tags
 pages:
+- content/blocks/shipments/22-001-CHE-GRC-1.md
 - content/blocks/shipments/22-038-USA-USA-1.md
