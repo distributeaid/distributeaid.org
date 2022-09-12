@@ -23,5 +23,6 @@ benefits: |-
   * Offering all incoming donations to all grassroots groups in an area increases cooperation and coordination.
   * We run regular route shipments which allow for both sending and receiving groups to plan ahead, thus improving their services.
 regions: []
+category: Powering Aid Supply Chains
 
 ---
