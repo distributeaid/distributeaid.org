@@ -40,7 +40,7 @@ sections:
   - linkslist
   - update
 - type: directory
-  path: content/blocks
+  path: content/blocks/activities
   label: Activities
   create: all
   match: "**/*"
