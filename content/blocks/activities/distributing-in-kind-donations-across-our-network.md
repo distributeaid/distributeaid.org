@@ -18,5 +18,6 @@ benefits: |-
   * Gives use to items that would otherwise go to waste or landfill.
   * Provides service-providing groups with bulk amounts of much-needed items.
 regions: []
+category: Powering Aid Supply Chains
 
 ---
