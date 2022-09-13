@@ -1,7 +1,6 @@
 const slugify = require('slugify')
 var minimatch = require('minimatch')
 const path = require('path')
-const PageTreeTraversal = require('./src/utils/PageTreeTraversal.js')
 const { spawn } = require('child_process')
 const onCreateNode = require('./gatsby/transform-nodes')
 const createResolvers = require('./gatsby/create-resolvers')
