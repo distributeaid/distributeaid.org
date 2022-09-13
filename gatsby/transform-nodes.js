@@ -1,33 +1,24 @@
 var minimatch = require('minimatch')
 const path = require('path')
 
-module.exports = onCreateNode = ({
-  node,
-  actions,
-  createNodeId,
-  createContentDigest,
-  getNode,
-}) => {
-  const { createNode, createNodeField } = actions
-
+module.exports = {
   /*
-  Forestry Data
+  Regions
   ================================================================================
   */
-  if (
-    node.internal.type === 'MarkdownRemark' &&
-    node.fileAbsolutePath &&
-    minimatch(node.fileAbsolutePath, '**/content/**/*.md')
-  ) {
-    const fm = node.frontmatter
-
-    /*
-    Regions
-    ------------------------------------------------------------
-    */
+  createRegionsFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  }) => {
     if (
+      node.internal.type === 'MarkdownRemark' &&
+      node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
     ) {
+      const fm = node.frontmatter
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -55,13 +46,26 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    } else if (
-      /*
-    Subregions
-    ------------------------------------------------------------
-    */
+    }
+  },
+
+  /*
+  Subregions
+  ================================================================================
+  */
+  createSubregionsFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  }) => {
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
+      const fm = node.frontmatter
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -87,13 +91,26 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    } else if (
-      /*
-    Team Roles
-    ------------------------------------------------------------
-    */
+    }
+  },
+
+  /*
+  Team Roles
+  ================================================================================
+  */
+  createTeamRolesFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  }) => {
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')
     ) {
+      const fm = node.frontmatter
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -122,13 +139,26 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    } else if (
-      /*
-    Team Members
-    ------------------------------------------------------------
-    */
+    }
+  },
+
+  /*
+  Team Members
+  ================================================================================
+  */
+  createTeamMembersFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  }) => {
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
     ) {
+      const fm = node.frontmatter
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -166,63 +196,63 @@ module.exports = onCreateNode = ({
           contentDigest: createContentDigest(fm),
         },
       })
-    } else {
-      // do nothing for other markdown remark types
     }
+  },
 
-    /*
-  Json Data
+  /*
+  Line Items
   ================================================================================
   */
+  createLineItemsFromJson: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+  }) => {
+    if (node.internal.type === 'CombinedManifestsJson') {
+      const rawValue = node['$ Total']
+      const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
+      const count = parseInt(node['Count']?.replaceAll(/[\,|\.]/g, ''))
+      if (value && !isNaN(value) && count && !isNaN(count)) {
+        const rawShipment = node['Shipment #']
+        const shipmentComponents = rawShipment.match(
+          /^(\d{2})-(\d{3})-([A-Z]{3})-([A-Z]{3})$/,
+        )
+        const shipment =
+          shipmentComponents !== null
+            ? {
+                year: shipmentComponents[1],
+                number: shipmentComponents[2],
+                origin: shipmentComponents[3],
+                destination: shipmentComponents[4],
+              }
+            : undefined
+        const item = {
+          category: node['Category'],
+          item: node['Item'],
+          ageGender: node['Age / Gender'],
+          sizeStyle: node['Size / Style'],
+        }
+        createNode({
+          // Node Data
+          value,
+          count,
+          rawShipment,
+          shipment,
+          item,
 
-    /*
-  Line Items
-  ------------------------------------------------------------
-  */
-  } else if (node.internal.type === 'CombinedManifestsJson') {
-    const rawValue = node['$ Total']
-    const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
-    const count = parseInt(node['Count']?.replaceAll(/[\,|\.]/g, ''))
-    if (value && !isNaN(value) && count && !isNaN(count)) {
-      const rawShipment = node['Shipment #']
-      const shipmentComponents = rawShipment.match(
-        /^(\d{2})-(\d{3})-([A-Z]{3})-([A-Z]{3})$/,
-      )
-      const shipment =
-        shipmentComponents !== null
-          ? {
-              year: shipmentComponents[1],
-              number: shipmentComponents[2],
-              origin: shipmentComponents[3],
-              destination: shipmentComponents[4],
-            }
-          : undefined
-      const item = {
-        category: node['Category'],
-        item: node['Item'],
-        ageGender: node['Age / Gender'],
-        sizeStyle: node['Size / Style'],
+          // Gatsby Fields
+          id: createNodeId(`DA LineItem - ${node.id}`),
+          parent: node.id,
+          children: [],
+          internal: {
+            type: 'DaLineItem',
+            contentDigest: createContentDigest(`${value} ${shipment}`),
+          },
+        })
+      } else {
+        // console.warn(`Line Item missing value, raw value: ${rawValue}`)
       }
-      createNode({
-        // Node Data
-        value,
-        count,
-        rawShipment,
-        shipment,
-        item,
-
-        // Gatsby Fields
-        id: createNodeId(`DA LineItem - ${node.id}`),
-        parent: node.id,
-        children: [],
-        internal: {
-          type: 'DaLineItem',
-          contentDigest: createContentDigest(`${value} ${shipment}`),
-        },
-      })
-    } else {
-      console.warn(`Line Item missing value, raw value: ${rawValue}`)
     }
-    // Other Pages
-  }
-}
+  },
+} // module.exports

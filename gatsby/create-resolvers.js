@@ -1,102 +1,113 @@
-module.exports = createResolvers = ({ createResolvers, getNode }) => {
-  const resolvers = {
-    /*
-    Region
-    ------------------------------------------------------------
-    */
-    DARegion: {
-      subregions: {
-        type: ['DASubregion'],
-        resolve: async (source, args, context, info) => {
-          const { entries: subregions } = await context.nodeModel.findAll({
-            query: {
-              filter: {
-                fileRelativePath: { in: source.subregionFileRelativePaths },
+module.exports = {
+  /*
+  Regions
+  ================================================================================
+  */
+  resolveRegionFields: ({ createResolvers, getNode }) => {
+    createResolvers({
+      DARegion: {
+        subregions: {
+          type: ['DASubregion'],
+          resolve: async (source, args, context, info) => {
+            const { entries: subregions } = await context.nodeModel.findAll({
+              query: {
+                filter: {
+                  fileRelativePath: { in: source.subregionFileRelativePaths },
+                },
               },
-            },
-            type: 'DASubregion',
-          })
-          return subregions
+              type: 'DASubregion',
+            })
+            return subregions
+          },
         },
+
+        map: imageSharpResolver(getNode, 'mapFileRelativePath'),
       },
+    })
+  },
 
-      map: imageSharpResolver(getNode, 'mapFileRelativePath'),
-    },
-
-    /*
-    Subregion
-    ------------------------------------------------------------
-    */
-    DASubregion: {
-      region: {
-        type: 'DARegion',
-        resolve: async (source, args, context, info) => {
-          const region = await context.nodeModel.findOne({
-            query: {
-              filter: {
-                subregionFileRelativePaths: { eq: source.fileRelativePath },
+  /*
+  Subregions
+  ================================================================================
+  */
+  resolveSubregionFields: ({ createResolvers, getNode }) => {
+    createResolvers({
+      DASubregion: {
+        region: {
+          type: 'DARegion',
+          resolve: async (source, args, context, info) => {
+            const region = await context.nodeModel.findOne({
+              query: {
+                filter: {
+                  subregionFileRelativePaths: { eq: source.fileRelativePath },
+                },
               },
-            },
-            type: 'DARegion',
-          })
-          return region
+              type: 'DARegion',
+            })
+            return region
+          },
         },
+
+        map: imageSharpResolver(getNode, 'mapFileRelativePath'),
       },
+    })
+  },
 
-      map: imageSharpResolver(getNode, 'mapFileRelativePath'),
-    },
+  /*
+  Team Members
+  ================================================================================
+  TODO: Consider creating the DATeamTenure nodes in transform-nodes and
+        using Gatsby's @link directive in createSchemaCustomization to
+        automatically link them to the DATeamMember.
 
-    /*
-    Team Member
-    ------------------------------------------------------------
-    TODO: Consider creating the DATeamTenure nodes in transform-nodes and
-          using Gatsby's @link directive in createSchemaCustomization to
-          automatically link them to the DATeamMember.
+        This technique may be applicable to all our resolvers.
 
-          This technique may be applicable to all our resolvers.
-
-          https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields
-    */
-    DATeamMember: {
-      roles: {
-        type: ['DATeamTenure'],
-        resolve: async (source, args, context, info) => {
-          const roleFileRelativePaths = source.roleData.map((role) => {
-            return role.fileRelativePath
-          })
-
-          const results = await context.nodeModel.findAll({
-            query: {
-              filter: {
-                fileRelativePath: { in: roleFileRelativePaths },
-              },
-            },
-            type: 'DATeamRole',
-          })
-          const entries = Array.from(results.entries)
-
-          const roles = source.roleData.map((role) => {
-            const entry = entries.find((entry) => {
-              return entry.fileRelativePath === role.fileRelativePath
+        https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields
+  */
+  resolveTeamMemberFields: ({ createResolvers, getNode }) => {
+    createResolvers({
+      DATeamMember: {
+        roles: {
+          type: ['DATeamTenure'],
+          resolve: async (source, args, context, info) => {
+            const roleFileRelativePaths = source.roleData.map((role) => {
+              return role.fileRelativePath
             })
 
-            return {
-              role: entry,
-              start: role.start,
-              end: role.end,
-              isActive: role.isActive,
-            }
-          })
+            const results = await context.nodeModel.findAll({
+              query: {
+                filter: {
+                  fileRelativePath: { in: roleFileRelativePaths },
+                },
+              },
+              type: 'DATeamRole',
+            })
+            const entries = Array.from(results.entries)
 
-          return roles
+            const roles = source.roleData.map((role) => {
+              const entry = entries.find((entry) => {
+                return entry.fileRelativePath === role.fileRelativePath
+              })
+
+              return {
+                role: entry,
+                start: role.start,
+                end: role.end,
+                isActive: role.isActive,
+              }
+            })
+
+            return roles
+          },
         },
+
+        profilePhoto: imageSharpResolver(
+          getNode,
+          'profilePhotoFileRelativePath',
+        ),
       },
-
-      profilePhoto: imageSharpResolver(getNode, 'profilePhotoFileRelativePath'),
-    },
-  }
-
-  createResolvers(resolvers)
+    })
+  },
 }
 
 /*
