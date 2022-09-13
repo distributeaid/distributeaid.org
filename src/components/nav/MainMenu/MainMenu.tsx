@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
-import BrandMark from '../../brand/BrandMark'
+import LogoMark from '../../brand/LogoMark'
 import DesktopNavigation from './MainMenuDesktop'
 import MobileNavigation from './MainMenuMobile'
 
@@ -28,9 +28,9 @@ const MainMenu: FunctionComponent = () => (
   <header className="py-2 bg-navy-800 h-nav sticky top-0 z-10">
     <div className="max-w-5xl px-4 mx-auto h-full flex items-center justify-between">
       <MobileNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
-      <div className="flex items-center w-16 h-16">
+      <div className="h-full">
         <Link to="/" className="text-white" aria-label="Go to the home page">
-          <BrandMark flavor="white" layout="logo" />
+          <LogoMark width="auto" height="100%" />
         </Link>
       </div>
       <DesktopNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
