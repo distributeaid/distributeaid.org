@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: ❓ Ask a question
     url: https://github.com/distributeaid/distributeaid.org/discussions
-    about: Ask questions on our GitHub Discussions forum
+    about: Ask questions on GitHub Discussions

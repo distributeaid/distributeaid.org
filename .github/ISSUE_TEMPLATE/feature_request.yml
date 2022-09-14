@@ -1,29 +1,7 @@
 name: 🚀 Feature request
 description: Suggest an idea or enhancement
-title: '[Feature]: '
-labels: ['feature', 'triage']
+labels: ['enhancement', 'triage']
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this feature request!
-  - type: dropdown
-    id: type-of-feature
-    attributes:
-      label: Type of feature
-      description: Select the type of feature request.
-      multiple: true
-      options:
-        - 🖌️ Style
-        - 👨‍💻 Refactor
-        - 🔥 Performance
-        - 📖 Documentation
-        - ✅ Test
-        - 🔁 CI
-        - 🤖 Build
-        - 🗃️ Chore
-        - ⏩ Revert
-        - Other
   - type: textarea
     id: description
     attributes:
