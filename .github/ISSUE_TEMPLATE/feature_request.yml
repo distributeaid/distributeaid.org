@@ -21,7 +21,11 @@ body:
         - Test
         - CI
         - Build
+<<<<<<< HEAD
         - Chore
+=======
+        - Chore 
+>>>>>>> b6b58cc3d9b210f5109b1ae9b11d9fc95b7ecc23
         - Revert
         - Other
   - type: textarea
