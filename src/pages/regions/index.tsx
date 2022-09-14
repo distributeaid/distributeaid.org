@@ -54,18 +54,6 @@ const RegionsPage: FC<Props> = ({
     })
   }
 
-  // generate the header for each Card
-  const createRegionsCardHeader = (region: Region): JSX.Element => {
-    return (
-      <GatsbyImage
-        key={region.name}
-        image={region.map.gatsbyImageData}
-        alt={`Map highlighting the ${region.name} region.`}
-        className="mb-4 w-full"
-      />
-    )
-  }
-
   const createRegionsCardBody = (region: Region): JSX.Element => {
     return (
       <>
@@ -85,9 +73,12 @@ const RegionsPage: FC<Props> = ({
         {regions.map((region) => (
           <Card
             key={region.name}
-            header={createRegionsCardHeader(region)}
+            dynamicCardImage={{
+              image: region.map.gatsbyImageData,
+              alt: `Map highlighting the ${region.name} region.`,
+            }}
             title={region.name}
-            additionalHeaderContent={createSubregionLinks(region)}
+            additionalHeaderContent={<div>{createSubregionLinks(region)}</div>}
             body={createRegionsCardBody(region)}
             actions={[
               {
