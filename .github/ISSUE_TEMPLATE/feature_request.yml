@@ -1,0 +1,26 @@
+name: 🚀 Feature request
+description: Suggest an idea or enhancement
+labels: ['enhancement', 'triage']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Description of your suggested enhancement.
+    validations:
+      required: true
+  - type: textarea
+    id: front-end-screenshots
+    attributes:
+      label: Front end feature screenshots
+      description: Provide sample content to show what information will be presented and a UI mock of the component.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/distributeaid/.github/blob/saga/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
