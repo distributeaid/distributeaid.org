@@ -1,7 +1,7 @@
 name: 🚀 Feature request
 description: Suggest an idea or enhancement
-title: "[Feature]: "
-labels: ["feature", "triage"]
+title: '[Feature]: '
+labels: ['feature', 'triage']
 body:
   - type: markdown
     attributes:
@@ -21,7 +21,7 @@ body:
         - Test
         - CI
         - Build
-        - Chore 
+        - Chore
         - Revert
         - Other
   - type: textarea
