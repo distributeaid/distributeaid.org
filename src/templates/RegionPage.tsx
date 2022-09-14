@@ -36,7 +36,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         </div>
       </div>
 
-      <ul>
+      <ul className="flex  justify-evenly my-5 text-2xl">
         {region.subregions.map((subregion) => {
           const href = `/regions/${slugify(region.name)}/${slugify(
             subregion.name,

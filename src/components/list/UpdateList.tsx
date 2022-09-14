@@ -15,13 +15,17 @@ const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
 
   return (
     <div>
-      <h2>{title}</h2>
-      <ol>
+      <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
+      <ol className="p-4">
         {updates.map(({ title, date, content }) => (
-          <li>
-            <h3>{title}</h3>
-            <p>{date}</p>
-            <MarkdownContent content={content} />
+          <li className="p-7">
+            <h3 className="text-center text-2xl">{title}</h3>
+            <p className="py-4 text-center">{date}</p>
+            <div className="w-full">
+              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center  text-gray-800 sm:text-lg">
+                <MarkdownContent content={content} />
+              </article>
+            </div>
           </li>
         ))}
       </ol>
