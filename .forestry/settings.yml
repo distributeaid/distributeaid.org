@@ -39,6 +39,20 @@ sections:
   - sub-region-page
   - linkslist
   - update
+- type: directory
+  path: content/blocks/activities
+  label: Activities
+  create: all
+  match: "**/*"
+  templates:
+  - activity-template
+- type: directory
+  path: content/blocks/shipments
+  label: Shipment Photos
+  create: all
+  match: "**/photos/*"
+  templates:
+  - media-asset
 - type: document
   path: content/site-settings.json
   label: Site Settings

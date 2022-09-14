@@ -10,8 +10,7 @@ beyondDA:
   companyLink: ''
   desc: ''
 roles:
-- role: content/blocks/roles/administrative-coordinator.md
-  start: 2022-09-04T22:00:00Z
-  end: 
-
+  - role: content/blocks/roles/administrative-coordinator.md
+    start: 2022-09-04T22:00:00Z
+    end:
 ---

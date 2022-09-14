@@ -10,13 +10,6 @@ jobs:
     environment:
       name: preview
 
-    env:
-      CONTENTFUL_ENVIRONMENT: master
-      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-      CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.CONTENTFUL_DELIVERY_TOKEN }}
-      CONTENTFUL_PREVIEW_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_TOKEN }}
-      CONTENTFUL_MANAGEMENT_TOKEN: ${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }}
-
     steps:
       - uses: actions/checkout@v3
 
@@ -38,15 +31,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn
-
-      - name: Configure Contentful
-        run: |
-          echo "CONTENTFUL_HOST='preview.contentful.com'" >> .env.development
-          echo "CONTENTFUL_SPACE_ID='${{ env.CONTENTFUL_SPACE_ID }}'" >> .env.development
-          echo "CONTENTFUL_ENVIRONMENT='${{ env.CONTENTFUL_ENVIRONMENT }}'" >> .env.development
-          echo "CONTENTFUL_DELIVERY_TOKEN='${{ env.CONTENTFUL_DELIVERY_TOKEN }}'" >> .env.development
-          echo "CONTENTFUL_PREVIEW_TOKEN='${{ env.CONTENTFUL_PREVIEW_TOKEN }}'" >> .env.development
-          echo "CONTENTFUL_MANAGEMENT_TOKEN='${{ env.CONTENTFUL_MANAGEMENT_TOKEN }}" >> .env.development
 
       - name: Start dev server
         run: |

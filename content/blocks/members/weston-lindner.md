@@ -18,4 +18,11 @@ roles:
     start: 2022-07-17T22:00:00.000+00:00
     end:
 pronouns: he/him
+profilePhoto_updated:
+  asset: ''
+  caption: test
+  attribution: test
+  dateUploaded:
+  date:
+  altText: test
 ---

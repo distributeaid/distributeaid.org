@@ -7,19 +7,15 @@ fields:
   config:
     maxSize: 64
   label: Asset
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
 - name: caption
   type: textarea
   default: ''
   config:
-    required: false
+    required: true
     wysiwyg: false
     schema:
       format: markdown
+    max: 280
   label: Caption
 - name: attribution
   type: text
@@ -54,4 +50,13 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-  label: Alt text
+  label: Alt Text
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+pages:
+- content/blocks/shipments/21-038-USA-FRA-1.md
+- content/blocks/shipments/22-001-CHE-GRC-1.md
+- content/blocks/shipments/22-038-USA-USA-1.md
+- content/blocks/shipments/Needs-Assessment-2022-Q2.md
