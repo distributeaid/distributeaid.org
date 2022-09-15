@@ -11,33 +11,8 @@ module.exports = {
       query RegionsQuery {
         regions: allDaRegion {
           nodes {
+            id
             name
-            map {
-              gatsbyImageData
-            }
-            overview
-            governmentResponse
-            newsUpdates {
-              title
-              visibleCount
-              updates {
-                title
-                content
-                date
-                pinned
-              }
-            }
-            stayInformed {
-              title
-              links {
-                label
-                url
-                description
-              }
-            }
-            subregions {
-              name
-            }
           }
         }
       }
@@ -49,13 +24,13 @@ module.exports = {
         strict: true,
       })
 
-      console.info(`creating region page at /routes/${regionSlug}`)
+      console.info(`creating region page at /regions/${regionSlug}`)
 
       createPage({
         path: `/regions/${regionSlug}`,
         component: path.resolve(`./src/templates/RegionPage.tsx`),
         context: {
-          region: region,
+          id: region.id,
         },
       })
     })
