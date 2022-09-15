@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -17,9 +18,9 @@ import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.s
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
 
 type TemplateProps = {
-  pageContext: {
-    pageFields: {
-      pagePath: string
+  data: {
+    route: {
+      slug: string
       routeOrigin: string
       routeDestination: string
       introduction: string
@@ -78,29 +79,29 @@ function formatCostInCurrency(cost: number, currency: string) {
   }
 }
 
-const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
+const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
   <SimpleLayout
-    pageTitle={`Route: ${pageFields.routeOrigin} to ${pageFields.routeDestination}`}
+    pageTitle={`Route: ${route.routeOrigin} to ${route.routeDestination}`}
   >
     <TextWithVisual
       positionOfVisual="right"
       visual={
         <RoutesSectionImage
           ariaLabel="Fork lift loading pallets into a truck"
-          image={pageFields.images.deliverySection}
+          image={route.images.deliverySection}
         />
       }
     >
       <header className="my-4 text-center">
         <h1 className="section__title">Delivery</h1>
         <h2 className="text-2xl">
-          Regular Route: {pageFields.routeOrigin}&rarr;
-          {pageFields.routeDestination}
+          Regular Route: {route.routeOrigin}&rarr;
+          {route.routeDestination}
         </h2>
       </header>
 
       <div className="section__body space-y-4">
-        <MarkdownContent content={pageFields.introduction} />
+        <MarkdownContent content={route.introduction} />
         <div className="tiles tiles--grid tiles--highlight mt-4">
           <div className="tile tile--column w-1/2">
             <div className="tile-icon mx-auto">
@@ -125,10 +126,8 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               />
             </div>
             <div className="tile-content">
-              <p className="mb-1">Service to {pageFields.routeDestination}</p>
-              <p>
-                Supporting {pageFields.frontlineGroups.length} Frontline Groups
-              </p>
+              <p className="mb-1">Service to {route.routeDestination}</p>
+              <p>Supporting {route.frontlineGroups.length} Frontline Groups</p>
             </div>
           </div>
 
@@ -182,7 +181,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="An aisle in a warehouse with shelves stacked high with pallets of boxes."
-          image={pageFields.images.reservationSection}
+          image={route.images.reservationSection}
         />
       }
     >
@@ -200,7 +199,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               Download the{' '}
               <a
                 className="font-bold underline"
-                href={pageFields.aidRequestFormUrl}
+                href={route.aidRequestFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -223,7 +222,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
             </p>
             <p className="h5">
               Submissions close:{' '}
-              {formatDate(pageFields.deadlines.submissionsDeadline)}
+              {formatDate(route.deadlines.submissionsDeadline)}
             </p>
           </li>
           <li>
@@ -238,7 +237,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
             </p>
             <p className="h5">
               Latest confirmation date:{' '}
-              {formatDate(pageFields.deadlines.confirmationDate)}
+              {formatDate(route.deadlines.confirmationDate)}
             </p>
           </li>
           <li>
@@ -254,8 +253,8 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               , and deliver the boxes of aid at the agreed time.
             </p>
             <p className="h5">
-              Staging period: {formatDate(pageFields.deadlines.stagingBegins)} -{' '}
-              {formatDate(pageFields.deadlines.stagingEnds)}
+              Staging period: {formatDate(route.deadlines.stagingBegins)} -{' '}
+              {formatDate(route.deadlines.stagingEnds)}
             </p>
           </li>
           <li>
@@ -267,8 +266,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               and acknowledgments from the frontline groups.
             </p>
             <p className="h5">
-              Shipment departs:{' '}
-              {formatDate(pageFields.deadlines.shipmentDeparture)}
+              Shipment departs: {formatDate(route.deadlines.shipmentDeparture)}
             </p>
           </li>
         </ol>
@@ -296,7 +294,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Mobile refugee support station with a few people gathering."
-          image={pageFields.images.groupsSection}
+          image={route.images.groupsSection}
         />
       }
     >
@@ -305,7 +303,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       </header>
       <div className="section__body mb-8">
         <div className="flex flex-wrap gap-6 justify-center">
-          {pageFields.frontlineGroups.map((group, index) => (
+          {route.frontlineGroups.map((group, index) => (
             <div
               className="w-full"
               style={{ maxWidth: 160 }}
@@ -344,7 +342,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <iframe
           className="w-full md:w-2/4 h-96 md:h-auto"
-          src={pageFields.mapUrl}
+          src={route.mapUrl}
           width="100%"
           height="100%"
         />
@@ -408,7 +406,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Pallets with lots of cans of food and a person celebrating the successful unloading."
-          image={pageFields.images.storageSection}
+          image={route.images.storageSection}
         />
       }
     >
@@ -438,8 +436,8 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               <p className="mb-1">
                 Standard Pallet -{' '}
                 {formatCostInCurrency(
-                  pageFields.costs.standardPaletteCost,
-                  pageFields.costs.currency,
+                  route.costs.standardPaletteCost,
+                  route.costs.currency,
                 )}
               </p>
               <p>1.2m x 1.0m x 1.70m high</p>
@@ -460,8 +458,8 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
               <p className="mb-1">
                 Half Pallet -{' '}
                 {formatCostInCurrency(
-                  pageFields.costs.halfPaletteCost,
-                  pageFields.costs.currency,
+                  route.costs.halfPaletteCost,
+                  route.costs.currency,
                 )}
               </p>
               <p>1.2m x 1.0m x 0.85m high</p>
@@ -486,8 +484,8 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
             <strong>
               Overflow pricing is{' '}
               {formatCostInCurrency(
-                pageFields.costs.overflowPricing,
-                pageFields.costs.currency,
+                route.costs.overflowPricing,
+                route.costs.currency,
               )}{' '}
               per banana box (500mm x 400mm x 250mm high, holds 15kg).
             </strong>
@@ -537,7 +535,7 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
       visual={
         <RoutesSectionImage
           ariaLabel="Three people sorting and packing clothes into boxes."
-          image={pageFields.images.palletsSection}
+          image={route.images.palletsSection}
         />
       }
     >
@@ -646,3 +644,41 @@ const RoutePage: FC<TemplateProps> = ({ pageContext: { pageFields } }) => (
 )
 
 export default RoutePage
+
+export const query = graphql`
+  query ($id: String!) {
+    route: daRoute(id: { eq: $id }) {
+      slug
+      id
+      routeOrigin
+      routeDestination
+      introduction
+      mapUrl
+      aidRequestFormUrl
+      images {
+        deliverySection
+        reservationSection
+        groupsSection
+        storageSection
+        palletsSection
+      }
+      costs {
+        currency
+        standardPaletteCost
+        overflowPricing
+        halfPaletteCost
+      }
+      deadlines {
+        submissionsDeadline
+        confirmationDate
+        stagingBegins
+        stagingEnds
+        shipmentDeparture
+      }
+      frontlineGroups {
+        logo
+        name
+      }
+    }
+  }
+`
