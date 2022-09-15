@@ -45,21 +45,8 @@ module.exports = {
       query SubregionsQuery {
         subregions: allDaSubregion {
           nodes {
+            id
             name
-            map {
-              gatsbyImageData
-            }
-            overview
-            newsUpdates {
-              title
-              visibleCount
-              updates {
-                title
-                content
-                date
-                pinned
-              }
-            }
             region {
               name
             }
@@ -87,7 +74,7 @@ module.exports = {
         path: `/regions/${regionSlug}/${subregionSlug}`,
         component: path.resolve(`./src/templates/SubregionPage.tsx`),
         context: {
-          subregion: subregion,
+          id: subregion.id,
         },
       })
     })
