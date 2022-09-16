@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import SimpleLayout from '@layouts/Simple'
 import { Region } from '@components/regions/RegionComponentTypes'
-import { Card } from '@components/card/Card'
+import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
 import MarkdownContent from '@components/markdown/MarkdownContent'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
+
 type Props = {
   data: {
     regions: {
@@ -77,6 +77,7 @@ const RegionsPage: FC<Props> = ({
               image: region.map.gatsbyImageData,
               alt: `Map highlighting the ${region.name} region.`,
             }}
+            imageVariant={ImageVariant.square}
             title={region.name}
             additionalHeaderContent={<div>{createSubregionLinks(region)}</div>}
             body={createRegionsCardBody(region)}

@@ -8,5 +8,4 @@ export type Action = {
 export type DynamicCardImage = {
   image: IGatsbyImageData
   alt: string
-  isRound?: boolean
 }

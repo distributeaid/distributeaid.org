@@ -4,6 +4,11 @@ import { FC, PropsWithChildren, ReactNode } from 'react'
 import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
+export enum ImageVariant {
+  square,
+  circle,
+}
+
 /**
  * creates a single SmartLink component
  */
@@ -20,6 +25,7 @@ export const Card: FC<
   PropsWithChildren<{
     header?: ReactNode // Can be either a StaticImage or anything you want to display in the header
     dynamicCardImage?: DynamicCardImage
+    imageVariant?: ImageVariant
     title?: string
     subtitle?: string
     additionalHeaderContent?: ReactNode | ReactNode[]
@@ -33,6 +39,7 @@ export const Card: FC<
   children,
   header,
   dynamicCardImage,
+  imageVariant,
   title,
   subtitle,
   additionalHeaderContent,
@@ -56,13 +63,15 @@ export const Card: FC<
   >
     {header && header}
     {dynamicCardImage && (
-      <div className={dynamicCardImage?.isRound ? `p-2` : ''}>
+      <div className={imageVariant === ImageVariant.circle ? `p-2` : ''}>
         <GatsbyImage
           data-testid="card-gatsby-image"
           image={dynamicCardImage.image}
           alt={dynamicCardImage.alt}
           className="mb-4"
-          imgClassName={dynamicCardImage?.isRound ? `rounded-full` : ''}
+          imgClassName={
+            imageVariant === ImageVariant.circle ? `rounded-full` : ''
+          }
         ></GatsbyImage>
       </div>
     )}

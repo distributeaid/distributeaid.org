@@ -1,4 +1,4 @@
-import { Card } from './Card'
+import { Card, ImageVariant } from './Card'
 import { render } from '@testing-library/react'
 
 describe('<Card/>', () => {
@@ -52,11 +52,14 @@ describe('<Card/>', () => {
             height: 100,
             images: {
               sources: [],
+              fallback: {
+                src: '',
+              },
             },
           },
           alt: 'alt text',
-          isRound: true,
         }}
+        imageVariant={ImageVariant.circle}
         subtitle="card test subtitle"
         body={<p>body paragraph</p>}
         actions={[
@@ -82,10 +85,12 @@ describe('<Card/>', () => {
             height: 100,
             images: {
               sources: [],
+              fallback: {
+                src: '',
+              },
             },
           },
           alt: 'alt text',
-          isRound: false,
         }}
         subtitle="card test subtitle"
         body={<p>body paragraph</p>}
