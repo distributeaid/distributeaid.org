@@ -58,6 +58,7 @@ export const Card: FC<
     {dynamicCardImage && (
       <div className={dynamicCardImage?.isRound ? `p-2` : ''}>
         <GatsbyImage
+          data-testid="card-gatsby-image"
           image={dynamicCardImage.image}
           alt={dynamicCardImage.alt}
           className="mb-4"
