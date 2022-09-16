@@ -92,5 +92,6 @@ fields:
   label: Header Photo
 pages:
 - content/blocks/activities/ad-hoc-shipping.md
-- content/blocks/activities/aid-hubs-and-regular-routes.md
-- content/blocks/activities/distributing-in-kind-donations-across-our-network.md
+- content/blocks/activities/hubs-regular-routes.md
+- content/blocks/activities/in-kind-donations.md
+- content/blocks/activities/needs-assessments.md
