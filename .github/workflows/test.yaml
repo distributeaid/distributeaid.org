@@ -80,6 +80,8 @@ jobs:
   lighthouse:
     name: 'Lighthouse CI'
 
+    needs: [build]
+
     runs-on: ubuntu-latest
 
     steps:
