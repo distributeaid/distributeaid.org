@@ -1,0 +1,33 @@
+name: Lighthouse CI
+
+on: push
+
+permissions:
+  statuses: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+      - name: Keep npm cache around to speed up installs
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci --no-audit
+      - name: Build
+        run: npm run build
+      - name: run Lighthouse CI
+        continue-on-error: true
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun

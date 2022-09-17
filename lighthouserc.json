@@ -1,0 +1,25 @@
+{
+  "ci": {
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "uses-http2": "off",
+        "uses-long-cache-ttl": "off",
+        "installable-manifest": "off",
+        "maskable-icon": "off",
+        "offline-start-url": "off",
+        "service-worker": "off",
+        "themed-omnibox": "off",
+        "splash-screen": "off",
+        "works-offline": "off",
+        "unused-javascript": ["error", { "maxLength": 3 }],
+        "uses-rel-preconnect": "off",
+        "legacy-javascript": "off",
+        "largest-contentful-paint": ["warning", { "minScore": 0.8 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
