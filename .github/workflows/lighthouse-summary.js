@@ -12,6 +12,11 @@ for (const reportFile of readdirSync(
       'utf-8',
     ),
   )
+  console.error(
+    JSON.stringify({
+      reportData,
+    }),
+  )
   const page = new URL(reportData.requestedUrl).pathname
 
   Object.values(reportData.categories).forEach(({ title, score }) => {
