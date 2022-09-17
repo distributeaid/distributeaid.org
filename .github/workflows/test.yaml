@@ -114,5 +114,5 @@ jobs:
       - name: run Lighthouse CI
         continue-on-error: true
         run: |
-          npm install -g @lhci/cli
-          lhci autorun
+          yarn add @lhci/cli
+          npx lhci autorun
