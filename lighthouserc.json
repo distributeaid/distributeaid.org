@@ -21,6 +21,8 @@
     "upload": {
       "target": "temporary-public-storage"
     },
-    "autodiscoverUrlBlocklist": ["/admin/index.html"]
+    "collect": {
+      "autodiscoverUrlBlocklist": ["/admin/index.html"]
+    }
   }
 }
