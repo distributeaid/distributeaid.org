@@ -3,9 +3,9 @@ const path = require('path')
 
 const report = {}
 
-for (const reportFile of readdirSync(
-  path.join(process.cwd(), '.lighthouseci'),
-).filter((f) => f.endsWith('.json'))) {
+for (const reportFile of readdirSync(path.join(process.cwd(), '.lighthouseci'))
+  .filter((f) => f.endsWith('.json'))
+  .filter((f) => f.startsWith('lhr-'))) {
   const reportData = JSON.parse(
     readFileSync(
       path.join(process.cwd(), '.lighthouseci', reportFile),

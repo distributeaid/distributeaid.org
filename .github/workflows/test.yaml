@@ -127,5 +127,5 @@ jobs:
           name: lighthouse-report-${{ github.sha }}
           path: .lighthouseci
 
-      - name: Publish Lighthouse CI report summary
+      - name: Lighthouse CI report
         run: node .github/workflows/lighthouse-summary.js >> $GITHUB_STEP_SUMMARY
