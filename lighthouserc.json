@@ -22,7 +22,9 @@
       "target": "temporary-public-storage"
     },
     "collect": {
-      "autodiscoverUrlBlocklist": ["/admin/index.html"]
+      "autodiscoverUrlBlocklist": ["/admin/index.html"],
+      "maxAutodiscoverUrls": 0,
+      "numberOfRuns": 1
     }
   }
 }

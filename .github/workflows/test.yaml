@@ -116,3 +116,9 @@ jobs:
         run: |
           yarn add @lhci/cli
           npx lhci autorun
+          node .github/workflows/lighthouse-summary.js >> $GITHUB_STEP_SUMMARY
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report-${{ github.sha }}
+          path: .lighthouseci
