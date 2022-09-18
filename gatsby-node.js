@@ -1,5 +1,6 @@
 const path = require('path')
 const schema = require('./gatsby/customize-schema')
+const sourcers = require('./gatsby/source-nodes')
 const transformers = require('./gatsby/transform-nodes')
 const resolvers = require('./gatsby/create-resolvers')
 const pages = require('./gatsby/create-pages')
@@ -10,6 +11,14 @@ Customize the GraqphQL Schema
 */
 exports.createSchemaCustomization = (gatsbyUtils) => {
   schema.defineTeamTypes(gatsbyUtils)
+}
+
+/*
+Source Nodes
+================================================================================
+*/
+exports.sourceNodes = async (gatsbyUtils) => {
+  await sourcers.sourceNeedsAssessmentData(gatsbyUtils)
 }
 
 /*
