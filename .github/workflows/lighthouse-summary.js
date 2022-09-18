@@ -1,28 +1,32 @@
-const { readdirSync, readFileSync } = require('fs')
+const { readdirSync, readFileSync, link } = require('fs')
 const path = require('path')
 
+const reportFolder = path.join(process.cwd(), '.lighthouseci')
+
+const linksJson = path.join(reportFolder, 'links.json')
+let links = {}
+try {
+  links = JSON.parse(readFileSync(linksJson, 'utf-8'))
+} catch {
+  console.error('Failed to load', linksJson)
+}
 const report = {}
 
-for (const reportFile of readdirSync(path.join(process.cwd(), '.lighthouseci'))
+for (const reportFile of readdirSync(reportFolder)
   .filter((f) => f.endsWith('.json'))
   .filter((f) => f.startsWith('lhr-'))) {
   const reportData = JSON.parse(
-    readFileSync(
-      path.join(process.cwd(), '.lighthouseci', reportFile),
-      'utf-8',
-    ),
+    readFileSync(path.join(reportFolder, reportFile), 'utf-8'),
   )
-  console.error(
-    JSON.stringify({
-      reportData,
-    }),
-  )
+
   const page = new URL(reportData.requestedUrl).pathname
 
-  Object.values(reportData.categories).forEach(({ title, score }) => {
-    if (report[page] === undefined) report[page] = {}
-    report[page][title] = score
-  })
+  Object.values(reportData.categories)
+    .filter(({ title }) => title !== 'PWA') // this site is not a PWA
+    .forEach(({ title, score }) => {
+      if (report[page] === undefined) report[page] = {}
+      report[page][title] = score
+    })
 }
 
 console.log(`# Lighthouse result`)
@@ -38,8 +42,16 @@ if (Object.values(report).length === 0) {
     `| ${['----', ...headers.map((s) => '-'.repeat(s.length))].join(' | ')} |`,
   )
   Object.entries(report).forEach(([page, scores]) => {
+    const reportUrl = Object.entries(links).find(([pageUrl]) =>
+      pageUrl.endsWith(page),
+    )?.[1]
+
+    let title = page
+    if (reportUrl !== undefined) {
+      title = `[${page}](${reportUrl})`
+    }
     console.log(
-      `| ${[page, ...headers.map((s) => Math.round(scores[s] * 100))].join(
+      `| ${[title, ...headers.map((s) => Math.round(scores[s] * 100))].join(
         ' | ',
       )} |`,
     )
