@@ -1,4 +1,4 @@
-import { Card } from './Card'
+import { Card, ImageVariant } from './Card'
 import { render } from '@testing-library/react'
 
 describe('<Card/>', () => {
@@ -29,6 +29,7 @@ describe('<Card/>', () => {
     const actionEl = getByText('test label')
     expect(actionEl).toHaveAttribute('href', 'test/path')
   })
+
   it('renders the children', () => {
     const { getByText } = render(<Card>Card children</Card>)
     expect(getByText('Card children')).toBeTruthy()
@@ -38,5 +39,70 @@ describe('<Card/>', () => {
     const { getByTestId } = render(<Card bodyColor="green" />)
     const card = getByTestId('card')
     expect(card).toHaveClass('green')
+  })
+
+  it('applies the round image styles when isRound is true', () => {
+    const { getByTestId } = render(
+      <Card
+        title="I have a round image"
+        dynamicCardImage={{
+          image: {
+            layout: 'constrained',
+            width: 100,
+            height: 100,
+            images: {
+              sources: [],
+              fallback: {
+                src: '',
+              },
+            },
+          },
+          alt: 'alt text',
+        }}
+        imageVariant={ImageVariant.circle}
+        subtitle="card test subtitle"
+        body={<p>body paragraph</p>}
+        actions={[
+          {
+            url: 'test/path',
+            label: 'test label',
+          },
+        ]}
+      />,
+    )
+    const cardImage = getByTestId('card-gatsby-image')
+    expect(cardImage).toHaveClass('rounded-full')
+  })
+
+  it('does not apply round style when isRound is false', () => {
+    const { getByTestId } = render(
+      <Card
+        title="I do not have a round image"
+        dynamicCardImage={{
+          image: {
+            layout: 'constrained',
+            width: 100,
+            height: 100,
+            images: {
+              sources: [],
+              fallback: {
+                src: '',
+              },
+            },
+          },
+          alt: 'alt text',
+        }}
+        subtitle="card test subtitle"
+        body={<p>body paragraph</p>}
+        actions={[
+          {
+            url: 'test/path',
+            label: 'test label',
+          },
+        ]}
+      />,
+    )
+    const cardImage = getByTestId('card-gatsby-image')
+    expect(cardImage).not.toHaveClass('rounded-full')
   })
 })
