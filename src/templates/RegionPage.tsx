@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
 
-import { Region, Subregion } from '@components/regions/RegionComponentTypes'
+import { Region } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
 import MarkdownContent from '@components/markdown/MarkdownContent'

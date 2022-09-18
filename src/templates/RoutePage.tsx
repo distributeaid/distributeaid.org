@@ -2,6 +2,8 @@ import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
+import { Route } from '@components/routes/RouteComponentTypes'
+
 import SimpleLayout from '../layouts/Simple'
 import TextWithVisual from '../components/routes/TextWithVisual'
 import RoutesSectionImage from '../components/routes/RoutesSectionImage'
@@ -19,38 +21,7 @@ import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
 
 type TemplateProps = {
   data: {
-    route: {
-      slug: string
-      routeOrigin: string
-      routeDestination: string
-      introduction: string
-      mapUrl: string
-      aidRequestFormUrl: string
-      images: {
-        deliverySection: string
-        reservationSection: string
-        groupsSection: string
-        storageSection: string
-        palletsSection: string
-      }
-      costs: {
-        currency: string
-        standardPaletteCost: number
-        overflowPricing: number
-        halfPaletteCost: number
-      }
-      deadlines: {
-        submissionsDeadline: string
-        confirmationDate: string
-        stagingBegins: string
-        stagingEnds: string
-        shipmentDeparture: string
-      }
-      frontlineGroups: {
-        logo: string
-        name: string
-      }[]
-    }
+    route: Route
   }
 }
 
@@ -648,7 +619,6 @@ export default RoutePage
 export const query = graphql`
   query ($id: String!) {
     route: daRoute(id: { eq: $id }) {
-      slug
       id
       routeOrigin
       routeDestination
