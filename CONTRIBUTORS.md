@@ -20,3 +20,4 @@ By contributing to this project you agree to:
 - Cristian Matos Richards
 - Anthony Van Ong
 - Jason Fritsche
+- Queen Raae

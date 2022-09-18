@@ -1,8 +1,9 @@
+import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
 
-import { Region, Subregion } from '@components/regions/RegionComponentTypes'
+import { Region } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
 import MarkdownContent from '@components/markdown/MarkdownContent'
@@ -11,12 +12,12 @@ import UpdateList from '@components/list/UpdateList'
 import SmartLink from '@components/link/SmartLink'
 
 type TemplateProps = {
-  pageContext: {
+  data: {
     region: Region
   }
 }
 
-const RegionPage: FC<TemplateProps> = ({ pageContext: { region } }) => {
+const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   return (
     <SimpleLayout pageTitle={`Region: ${region.name}`}>
       <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
@@ -58,3 +59,38 @@ const RegionPage: FC<TemplateProps> = ({ pageContext: { region } }) => {
 }
 
 export default RegionPage
+
+export const query = graphql`
+  query ($id: String!) {
+    region: daRegion(id: { eq: $id }) {
+      id
+      name
+      map {
+        gatsbyImageData
+      }
+      overview
+      governmentResponse
+      newsUpdates {
+        title
+        visibleCount
+        updates {
+          title
+          content
+          date
+          pinned
+        }
+      }
+      stayInformed {
+        title
+        links {
+          label
+          url
+          description
+        }
+      }
+      subregions {
+        name
+      }
+    }
+  }
+`

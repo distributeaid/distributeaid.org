@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
@@ -10,12 +11,12 @@ import MarkdownContent from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
 
 type TemplateProps = {
-  pageContext: {
+  data: {
     subregion: Subregion
   }
 }
 
-const RegionPage: FC<TemplateProps> = ({ pageContext: { subregion } }) => {
+const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
   return (
     <SimpleLayout
       pageTitle={`Subregion: ${subregion.name} (${subregion.region.name})`}
@@ -40,4 +41,29 @@ const RegionPage: FC<TemplateProps> = ({ pageContext: { subregion } }) => {
   )
 }
 
-export default RegionPage
+export default SubregionPage
+
+export const query = graphql`
+  query ($id: String!) {
+    subregion: daSubregion(id: { eq: $id }) {
+      name
+      map {
+        gatsbyImageData
+      }
+      overview
+      newsUpdates {
+        title
+        visibleCount
+        updates {
+          title
+          content
+          date
+          pinned
+        }
+      }
+      region {
+        name
+      }
+    }
+  }
+`

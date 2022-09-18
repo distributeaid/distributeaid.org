@@ -95,6 +95,65 @@ module.exports = {
   },
 
   /*
+  Routes
+  ================================================================================
+  */
+  createRoutesFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  }) => {
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      node.fileAbsolutePath &&
+      minimatch(node.fileAbsolutePath, '**/content/pages/routes/*.md')
+    ) {
+      const fm = node.frontmatter
+      const fileRelativePath = path.join(
+        'content',
+        getNode(node.parent).relativePath,
+      )
+      const fileNode = getNode(node.parent)
+      const slug = fileNode.name
+
+      createNode({
+        // Node Data
+        slug: slug,
+        routeOrigin: fm.routeOrigin,
+        routeDestination: fm.routeDestination,
+        population: fm.population,
+        introduction: fm.introduction,
+        mapUrl: fm.mapUrl,
+        aidRequestFormUrl: fm.aidRequestFormUrl,
+        images: {
+          deliverySection: fm.images?.deliverySection,
+          reservationSection: fm.images?.reservationSection,
+          groupsSection: fm.images?.groupsSection,
+          storageSection: fm.images?.storageSection,
+          palletsSection: fm.images?.palletsSection,
+        },
+        costs: fm.costs,
+        deadlines: fm.deadlines,
+        frontlineGroups: fm.frontlineGroups,
+
+        // Metadata
+        fileRelativePath: fileRelativePath,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Route - ${slug}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DARoute',
+          contentDigest: createContentDigest(fm),
+        },
+      })
+    }
+  },
+
+  /*
   Team Roles
   ================================================================================
   */

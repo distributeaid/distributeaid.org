@@ -11,33 +11,8 @@ module.exports = {
       query RegionsQuery {
         regions: allDaRegion {
           nodes {
+            id
             name
-            map {
-              gatsbyImageData
-            }
-            overview
-            governmentResponse
-            newsUpdates {
-              title
-              visibleCount
-              updates {
-                title
-                content
-                date
-                pinned
-              }
-            }
-            stayInformed {
-              title
-              links {
-                label
-                url
-                description
-              }
-            }
-            subregions {
-              name
-            }
           }
         }
       }
@@ -49,13 +24,13 @@ module.exports = {
         strict: true,
       })
 
-      console.info(`creating region page at /routes/${regionSlug}`)
+      console.info(`creating region page at /regions/${regionSlug}`)
 
       createPage({
         path: `/regions/${regionSlug}`,
         component: path.resolve(`./src/templates/RegionPage.tsx`),
         context: {
-          region: region,
+          id: region.id,
         },
       })
     })
@@ -70,21 +45,8 @@ module.exports = {
       query SubregionsQuery {
         subregions: allDaSubregion {
           nodes {
+            id
             name
-            map {
-              gatsbyImageData
-            }
-            overview
-            newsUpdates {
-              title
-              visibleCount
-              updates {
-                title
-                content
-                date
-                pinned
-              }
-            }
             region {
               name
             }
@@ -112,7 +74,7 @@ module.exports = {
         path: `/regions/${regionSlug}/${subregionSlug}`,
         component: path.resolve(`./src/templates/SubregionPage.tsx`),
         context: {
-          subregion: subregion,
+          id: subregion.id,
         },
       })
     })
@@ -124,63 +86,25 @@ module.exports = {
   */
   createRoutePages: async ({ graphql, actions: { createPage } }) => {
     const routesQuery = await graphql(`
-      query RoutePagesQuery {
-        allFile(filter: { relativeDirectory: { eq: "pages/routes" } }) {
+      query RoutesQuery {
+        routes: allDaRoute {
           nodes {
             id
-            childMarkdownRemark {
-              frontmatter {
-                pagePath
-                routeOrigin
-                routeDestination
-                introduction
-                mapUrl
-                aidRequestFormUrl
-                images {
-                  deliverySection
-                  reservationSection
-                  groupsSection
-                  storageSection
-                  palletsSection
-                }
-                costs {
-                  currency
-                  standardPaletteCost
-                  overflowPricing
-                  halfPaletteCost
-                }
-                deadlines {
-                  submissionsDeadline
-                  confirmationDate
-                  stagingBegins
-                  stagingEnds
-                  shipmentDeparture
-                }
-                frontlineGroups {
-                  logo
-                  name
-                }
-              }
-            }
-            relativeDirectory
+            slug
           }
         }
       }
     `)
 
-    routesQuery.data.allFile.nodes.forEach((route) => {
-      if (route.childMarkdownRemark?.frontmatter) {
-        console.info(
-          `creating route page at /routes/${route.childMarkdownRemark.frontmatter.pagePath}`,
-        )
-        createPage({
-          path: `/routes/${route.childMarkdownRemark.frontmatter.pagePath}`,
-          component: path.resolve(`./src/templates/RoutePage.tsx`),
-          context: {
-            pageFields: route.childMarkdownRemark.frontmatter,
-          },
-        })
-      }
+    routesQuery.data.routes.nodes.forEach((route) => {
+      console.info(`creating route page at /routes/${route.slug}`)
+      createPage({
+        path: `/routes/${route.slug}`,
+        component: path.resolve(`./src/templates/RoutePage.tsx`),
+        context: {
+          id: route.id,
+        },
+      })
     })
   },
 }

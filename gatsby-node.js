@@ -19,6 +19,7 @@ Transform Nodes
 exports.onCreateNode = (gatsbyUtils) => {
   transformers.createRegionsFromMarkdown(gatsbyUtils)
   transformers.createSubregionsFromMarkdown(gatsbyUtils)
+  transformers.createRoutesFromMarkdown(gatsbyUtils)
   transformers.createTeamRolesFromMarkdown(gatsbyUtils)
   transformers.createTeamMembersFromMarkdown(gatsbyUtils)
   transformers.createLineItemsFromJson(gatsbyUtils)
