@@ -49,7 +49,7 @@ const RoutesSection: FC = () => (
           height={200}
         />
       }
-      title="UK ➜ Lebanon Home Card"
+      title="UK ➜ Lebanon"
       subtitle="Pallets via DA Delivery"
       body={
         <>
