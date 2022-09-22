@@ -8,3 +8,34 @@ fields:
   template: media-asset
   hidden: false
   label: Image
+- name: alignmentPhoto
+  type: select
+  default: Center
+  config:
+    required: true
+    options:
+    - Left
+    - Center
+    - Right
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Image Alignment
+  hidden: false
+- name: alignmentCaption
+  type: select
+  default: Center
+  config:
+    required: false
+    options:
+    - Left
+    - Center
+    - Right
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Caption Alignment
