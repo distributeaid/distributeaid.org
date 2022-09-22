@@ -8,5 +8,3 @@ fields:
   template: media-asset
   hidden: false
   label: Image
-pages:
-- content/blocks/image-with-caption-test.md
