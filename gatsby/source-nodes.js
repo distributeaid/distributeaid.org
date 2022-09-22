@@ -28,15 +28,24 @@ module.exports = {
     }
     const resultData = await result.json()
 
+    const productNeeds = []
+    Object.entries(resultData.summary).forEach(([page, questions]) => {
+      if (categoryMap.hasOwnProperty(page)) {
+        Object.entries(questions).forEach(([question, units]) => {
+          const unitProp = Object.keys(units)[0]
+          const count = units[unitProp]
+          productNeeds.push(productMapper(page, question, unitProp, count))
+        })
+      }
+    })
+
     createNode({
       // Node Data
       survey: {
         ...survey,
         responseCount: resultData.stats.count,
       },
-      results: {
-        ...resultData.summary,
-      },
+      results: productNeeds,
 
       // Gatsby Fields
       id: createNodeId(
@@ -249,4 +258,16 @@ const unitMap = {
   pairs: { unit: 'Pairs' },
 }
 
-const productMapper = (category, item, unit, count) => {}
+const productMapper = (categoryKey, itemKey, unitKey, count) => {
+  const categoryPartial = categoryMap[categoryKey]
+  const itemPartial = itemMap[itemKey]
+  const unitPartial = unitMap[unitKey]
+  const countPartial = { count }
+
+  return {
+    ...categoryPartial,
+    ...itemPartial,
+    ...unitPartial,
+    ...countPartial,
+  }
+}
