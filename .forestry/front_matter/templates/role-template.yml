@@ -83,11 +83,20 @@ fields:
   label: Commitment
 pages:
 - content/blocks/roles/administrative-coordinator.md
+- content/blocks/roles/administrative-coordinator.md
+- content/blocks/roles/administrative-intern.md
 - content/blocks/roles/administrative-intern.md
 - content/blocks/roles/advisor.md
+- content/blocks/roles/advisor.md
+- content/blocks/roles/design-contributor.md
 - content/blocks/roles/design-contributor.md
 - content/blocks/roles/director-of-operations.md
+- content/blocks/roles/director-of-operations.md
+- content/blocks/roles/head-of-finances-and-external-communications.md
 - content/blocks/roles/head-of-finances-and-external-communications.md
 - content/blocks/roles/head-of-projects-and-administration.md
+- content/blocks/roles/head-of-projects-and-administration.md
 - content/blocks/roles/logistics-intern.md
+- content/blocks/roles/logistics-intern.md
+- content/blocks/roles/regional-director-for-europe.md
 - content/blocks/roles/regional-director-for-europe.md
