@@ -9,6 +9,7 @@ module.exports = {
   sourceNeedsAssessmentData: async ({
     actions: { createNode },
     createContentDigest,
+    reporter,
     createNodeId,
   }) => {
     const survey = {
@@ -17,9 +18,14 @@ module.exports = {
       quarter: 'q3',
       region: 'southernGreece',
     }
-    const result = await fetch(
-      `https://storage.needs-assessment.distributeaid.dev/form/${survey.id}/summary?basicInfo.region=${survey.region}&timeOfYear.quarter=${survey.quarter}`,
-    )
+    const url = `https://storage.needs-assessment.distributeaid.dev/form/${survey.id}/summary?basicInfo.region=${survey.region}&timeOfYear.quarter=${survey.quarter}`
+    const result = await fetch(url)
+    if (result.status !== 200) {
+      reporter.panic(
+        `Build failed`,
+        new Error(`Could not source needs assessment data: ${url}`),
+      )
+    }
     const resultData = await result.json()
 
     createNode({
