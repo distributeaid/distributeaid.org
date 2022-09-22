@@ -1,4 +1,10 @@
 ---
 label: 'Block: Image with Caption'
 hide_body: true
-fields: []
+fields:
+- name: asset
+  type: include
+  config: {}
+  template: media-asset
+  hidden: false
+  label: Image
