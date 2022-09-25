@@ -1,4 +1,4 @@
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { FC } from 'react'
 
 type Props = {

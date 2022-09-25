@@ -7,7 +7,7 @@ import { Region, Subregion } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
 import UpdateList from '@components/list/UpdateList'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
 
 type TemplateProps = {
@@ -33,8 +33,12 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </small>
       </h1>
 
-      <h2>Overview</h2>
-      <MarkdownContent content={subregion.overview} />
+      <section className="text-center p-4 bg-navy-100 m-auto">
+        <h2 className="text-center text-2xl text-navy-700">Overview</h2>
+        <div className="text-center m-auto">
+          <MarkdownContent content={subregion.overview} />
+        </div>
+      </section>
 
       <UpdateList list={subregion.newsUpdates} />
     </SimpleLayout>

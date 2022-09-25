@@ -96,5 +96,8 @@ module.exports = {
       backgroundColor: ['active', 'even', 'odd'],
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
+  ],
 }
