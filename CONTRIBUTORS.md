@@ -21,3 +21,4 @@ By contributing to this project you agree to:
 - Anthony Van Ong
 - Jason Fritsche
 - Queen Raae
+- KeSha Smith
