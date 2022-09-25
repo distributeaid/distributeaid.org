@@ -24,7 +24,7 @@ const Donate: FC = () => {
         </h1>
 
         <div className="lg:flex max-w-5xl mx-auto">
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="patreon">
             <div className="text-center">
               <StaticImage
                 placeholder="tracedSVG"
@@ -51,7 +51,7 @@ const Donate: FC = () => {
               account and get access to exclusive updates about our work.
             </p>
           </div>
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="opencollective">
             <img
               src={openCollectiveImage}
               width="100"
@@ -77,8 +77,7 @@ const Donate: FC = () => {
               .
             </p>
           </div>
-
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="bank">
             <img
               src={directTransferImage}
               width="100"
