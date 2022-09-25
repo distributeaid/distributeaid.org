@@ -6,7 +6,7 @@ import slugify from 'utils/slugify'
 import { Region } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
 import SmartLink from '@components/link/SmartLink'

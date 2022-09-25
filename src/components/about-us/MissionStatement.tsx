@@ -1,4 +1,4 @@
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
 import logoBlueSrc from '../../images/logomark_blue.svg'

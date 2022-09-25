@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { UpdateList as UpdateListType } from '@components/list/ListTypes'
 
 import SmartLink from '@components/link/SmartLink'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
 type Props = {
   list: UpdateListType

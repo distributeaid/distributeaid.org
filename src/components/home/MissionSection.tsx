@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import React, { FC, Suspense } from 'react'
 import worldMapImage from '../../images/homepage-banner-image.svg'

@@ -7,7 +7,7 @@ import { Region, Subregion } from '@components/regions/RegionComponentTypes'
 
 import SimpleLayout from 'layouts/Simple'
 import UpdateList from '@components/list/UpdateList'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
 
 type TemplateProps = {
