@@ -13,17 +13,21 @@ const TeamPage: FC<Props> = ({ data }) => {
   const members = data.allDaTeamMember.nodes
   return (
     <SimpleLayout pageTitle="Team">
-      <h1 className="text-2xl">Meet the Team</h1>
-      <ul>
-        {members.map((member: any) => {
-          return (
-            <li>
-              <span>{member.name}</span>
-              <span>({member.pronouns})</span>
-            </li>
-          )
-        })}
-      </ul>
+      <div>
+        <h1 className="text-3xl">Meet the Team</h1>
+        <h2 className="text-2xl">Staff</h2>
+        <ul className="grid grid-cols-5 gap-4">
+          {members.map((member: any) => {
+            return (
+              <li>
+                <span>{member.name}</span>
+                <span>({member.pronouns})</span>
+              </li>
+            )
+          })}
+        </ul>
+        <h2 className="text-2xl">Volunteers</h2>
+      </div>
     </SimpleLayout>
   )
 }
