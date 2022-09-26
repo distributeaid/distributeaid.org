@@ -15,10 +15,8 @@ module.exports = {
     const survey = {
       id: '01G4X7XTMCD6MFHDT5KS7Z27GF',
       year: '2022',
-      quarter: 'q3',
-      region: 'southernGreece',
     }
-    const url = `https://storage.needs-assessment.distributeaid.dev/form/${survey.id}/summary?basicInfo.region=${survey.region}&timeOfYear.quarter=${survey.quarter}`
+    const url = `https://storage.needs-assessment.distributeaid.dev/form/${survey.id}/summary?groupBy=timeOfYear.quarter,basicInfo.region`
     const result = await fetch(url)
     if (result.status !== 200) {
       reporter.panic(
@@ -28,42 +26,49 @@ module.exports = {
     }
     const resultData = await result.json()
 
-    const productNeeds = []
-    Object.entries(resultData.summary).forEach(([page, questions]) => {
-      if (categoryMap.hasOwnProperty(page)) {
-        Object.entries(questions).forEach(([question, units]) => {
-          const unitProp = Object.keys(units)[0]
-          const count = units[unitProp]
-          productNeeds.push(productMapper(page, question, unitProp, count))
+    Object.entries(resultData.summary).forEach(([quarter, places]) => {
+      Object.entries(places).forEach(([place, pages]) => {
+        Object.entries(pages).forEach(([page, questions]) => {
+          if (categoryMap.hasOwnProperty(page)) {
+            Object.entries(questions).forEach(([question, units]) => {
+              const unitProp = Object.keys(units)[0]
+              const product = productMapper(page, question, unitProp)
+              const need = units[unitProp]
+
+              createNode({
+                // Node Data
+                survey: {
+                  ...survey,
+                  quarter,
+                  place,
+                },
+                product,
+                need,
+
+                // Gatsby Fields
+                id: createNodeId(
+                  `DA Need - ${survey.id} ${quarter} ${place} ${JSON.stringify(
+                    product,
+                  )}`,
+                ),
+                parent: null,
+                children: [],
+                internal: {
+                  type: `DANeed`,
+                  contentDigest: createContentDigest(resultData),
+                },
+              })
+            })
+          }
         })
-      }
-    })
-
-    createNode({
-      // Node Data
-      survey: {
-        ...survey,
-        responseCount: resultData.stats.count,
-      },
-      results: productNeeds,
-
-      // Gatsby Fields
-      id: createNodeId(
-        `DA Needs Assessment Summary - ${survey.id} ${survey.year} ${survey.quarter} ${survey.region}`,
-      ),
-      parent: null,
-      children: [],
-      internal: {
-        type: `DANeedsAssessmentSummary`,
-        contentDigest: createContentDigest(resultData),
-      },
+      })
     })
   },
 }
 
 const categoryMap = {
   hygieneItems: { category: 'Hygiene' },
-  shelter: { catgory: 'Shelter' },
+  shelter: { category: 'Shelter' },
   education: { category: 'Education' },
   foodItems: { category: 'Food' },
   womensClothing: { category: 'Clothing', ageGender: 'Woman' },
@@ -258,16 +263,14 @@ const unitMap = {
   pairs: { unit: 'Pairs' },
 }
 
-const productMapper = (categoryKey, itemKey, unitKey, count) => {
+const productMapper = (categoryKey, itemKey, unitKey) => {
   const categoryPartial = categoryMap[categoryKey]
   const itemPartial = itemMap[itemKey]
   const unitPartial = unitMap[unitKey]
-  const countPartial = { count }
 
   return {
     ...categoryPartial,
     ...itemPartial,
     ...unitPartial,
-    ...countPartial,
   }
 }
