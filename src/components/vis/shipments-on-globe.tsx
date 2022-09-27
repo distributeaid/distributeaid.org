@@ -50,7 +50,6 @@ function buildGlobeVisData(lineItems: LineItem[]) {
       let originCoords = getCoordsAlpha3(node?.shipment?.origin)
       let destCoords = getCoordsAlpha3(node?.shipment?.destination)
       if (!originCoords || !destCoords) {
-        console.log('WHAAAA')
         return null
       }
       return {
@@ -64,7 +63,6 @@ function buildGlobeVisData(lineItems: LineItem[]) {
     .filter((node) => {
       return node !== null
     })
-  console.log('DATA', arcsData)
   return arcsData
 }
 
