@@ -22,3 +22,4 @@ By contributing to this project you agree to:
 - Jason Fritsche
 - Queen Raae
 - KeSha Smith
+- Federico Chaves
