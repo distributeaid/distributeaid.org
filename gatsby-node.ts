@@ -4,6 +4,7 @@ import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
 import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
 import transformers from './gatsby/transform-nodes'
+import { createFundraisersFromMarkdown } from './gatsby/transformers/fundraisers'
 
 /*
 Customize the GraqphQL Schema
@@ -34,6 +35,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = (args) => {
   transformers.createTeamRolesFromMarkdown(args)
   transformers.createTeamMembersFromMarkdown(args)
   transformers.createLineItemsFromJson(args)
+  createFundraisersFromMarkdown(args)
 }
 
 /*

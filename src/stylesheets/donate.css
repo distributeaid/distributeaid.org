@@ -1,0 +1,126 @@
+main.donate {
+  background-color: rgb(8 43 118);
+
+  min-height: 200vh;
+}
+
+main.donate .faded-bg {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vw * 9 / 16);
+  background-image: url(/uploads/donate-soap-distribution.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+main.donate .faded-bg::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(10, 231, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(8 43 118) 100%
+  );
+}
+
+main.donate > * {
+  position: relative;
+}
+
+main.donate > header h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 150%;
+  text-shadow: 0 0 10px #000000a3;
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate > header h1 {
+    font-size: 300%;
+  }
+}
+
+/* Progress */
+
+main.donate section.fundraiser {
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0px 0px 20px 9px #00000047;
+}
+
+@media only screen and (min-width: 600px) {
+  main.donate section.fundraiser {
+    margin: 0 2rem;
+    width: calc(100% - 4rem);
+    max-width: 960px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate section.fundraiser {
+    font-size: 150%;
+  }
+}
+
+main.donate section.fundraiser .progress {
+  height: 25px;
+  width: 100%;
+  background-color: #a7a7a7;
+  position: relative;
+  margin: 1rem 0;
+  box-shadow: 0px 0px 5px 1px #0000002e;
+}
+
+main.donate section.fundraiser .progress .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  background-color: hsl(246, 69%, 59%);
+  box-shadow: 0px 0px 5px 1px hsl(246, 69%, 59%);
+  transition: width 2s ease-in-out;
+}
+
+main.donate section.fundraiser h1 {
+  color: hsl(246, 69%, 59%);
+}
+
+main.donate section.fundraiser dl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-auto-rows: auto;
+  grid-auto-flow: column;
+}
+
+main.donate section.fundraiser dl .target {
+  text-align: right;
+}
+
+/** Ways to donate **/
+
+main.donate section.ways-to-donate {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px 9px #00000047;
+}
+
+@media only screen and (min-width: 600px) {
+  main.donate section.ways-to-donate {
+    flex-direction: row;
+  }
+}

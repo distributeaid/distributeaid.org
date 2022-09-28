@@ -396,4 +396,4 @@ export default {
       }
     }
   },
-} // module.exports
+}

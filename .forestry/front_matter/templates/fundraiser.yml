@@ -1,0 +1,36 @@
+---
+label: Fundraiser
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+    min: 2
+  label: Title
+  description: The title of the fundraiser.
+- name: target
+  type: number
+  config:
+    required: true
+    min: 1
+  label: Target
+  description: The target amount.
+- name: raised
+  type: number
+  config:
+    required: true
+    min: 0
+  label: Raised
+  description: The amount already raised.
+- name: currency
+  type: text
+  config:
+    required: true
+    min: 3
+    max: 3
+  label: Currency
+  description: |
+    Possible values are the ISO 4217 currency codes, such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current currency & funds code list at https://www.iban.com/currency-codes.
+pages:
+- content/blocks/fundraisers/afghanistan-earthquake.md
