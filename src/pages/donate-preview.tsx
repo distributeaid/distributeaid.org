@@ -54,12 +54,12 @@ const DonatePage: FC<Props> = ({
       className={'donate'}
       footer={<Footer showDonateButton={false} />}
     >
-      <div className="faded-bg" />
-      <header className="max-w-5xl mx-auto py-12 lg:py-20 text-center">
+      <div className="bg" />
+      <header>
         <h1>{title}</h1>
       </header>
       {fundraiser && <FundraiserHighlight fundraiser={fundraiser} />}
-      <section className="ways-to-donate max-w-5xl px-5 py-5 mx-auto my-10 lg:my-20">
+      <section className="ways-to-donate">
         <WaysToDonate />
       </section>
     </SimpleLayout>

@@ -1,10 +1,22 @@
 main.donate {
-  background-color: rgb(8 43 118);
-
-  min-height: 200vh;
+  background-color: var(--color-da);
+  padding-bottom: 1px;
+}
+@media only screen and (min-width: 1024px) {
+  main.donate {
+    padding-bottom: 4rem;
+  }
 }
 
-main.donate .faded-bg {
+main.donate {
+  --color-dark: #000000dd;
+  --color-light: #ffffffdd;
+  --color-da: rgb(8 43 118);
+  --color-accent: hsl(246, 69%, 59%);
+  color: var(--color-dark);
+}
+
+main.donate .bg {
   content: ' ';
   position: absolute;
   top: 0;
@@ -14,11 +26,11 @@ main.donate .faded-bg {
   background-image: url(/uploads/donate-soap-distribution.webp);
   background-size: contain;
   background-repeat: no-repeat;
-  filter: blur(2px);
+  filter: blur(4px);
   opacity: 0.8;
 }
 
-main.donate .faded-bg::before {
+main.donate .bg::before {
   content: ' ';
   position: absolute;
   width: 100%;
@@ -27,7 +39,7 @@ main.donate .faded-bg::before {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgb(8 43 118) 100%
+    var(--color-da) 100%
   );
 }
 
@@ -35,8 +47,17 @@ main.donate > * {
   position: relative;
 }
 
+/* Header */
+
+main.donate > header {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
 main.donate > header h1 {
-  color: white;
+  color: var(--color-light);
   font-weight: bold;
   font-size: 150%;
   text-shadow: 0 0 10px #000000a3;
@@ -53,23 +74,24 @@ main.donate > header h1 {
 main.donate section.fundraiser {
   text-transform: uppercase;
   font-weight: 900;
-  background-color: white;
+  background-color: var(--color-light);
   padding: 2rem;
-  box-shadow: 0px 0px 20px 9px #00000047;
 }
 
 @media only screen and (min-width: 600px) {
   main.donate section.fundraiser {
-    margin: 0 2rem;
+    padding: 2rem;
+    margin: 2rem auto;
     width: calc(100% - 4rem);
-    max-width: 960px;
-    margin: auto;
+    max-width: 1000px;
+    box-shadow: 0px 0px 20px 9px #00000047;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   main.donate section.fundraiser {
     font-size: 150%;
+    padding: 4rem;
   }
 }
 
@@ -87,13 +109,13 @@ main.donate section.fundraiser .progress .bar {
   top: 0;
   left: 0;
   height: 25px;
-  background-color: hsl(246, 69%, 59%);
-  box-shadow: 0px 0px 5px 1px hsl(246, 69%, 59%);
+  background-color: var(--color-accent);
+  box-shadow: 0px 0px 5px 1px var(--color-accent);
   transition: width 2s ease-in-out;
 }
 
 main.donate section.fundraiser h1 {
-  color: hsl(246, 69%, 59%);
+  color: var(--color-accent);
 }
 
 main.donate section.fundraiser dl {
@@ -113,14 +135,25 @@ main.donate section.fundraiser dl .target {
 /** Ways to donate **/
 
 main.donate section.ways-to-donate {
-  background-color: white;
+  background-color: var(--color-light);
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 20px 9px #00000047;
+  margin-top: 1px;
+  padding: 1rem;
 }
 
 @media only screen and (min-width: 600px) {
   main.donate section.ways-to-donate {
     flex-direction: row;
+    margin: 2rem auto;
+    width: calc(100% - 4rem);
+    max-width: 1000px;
+    box-shadow: 0px 0px 20px 9px #00000047;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate section.ways-to-donate {
+    padding: 3rem;
   }
 }
