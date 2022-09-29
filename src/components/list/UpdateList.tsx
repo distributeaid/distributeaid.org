@@ -20,9 +20,9 @@ const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
         {updates.map(({ title, date, content }) => (
           <li className="p-7">
             <h3 className="text-center text-2xl">{title}</h3>
-            <p className="py-4 text-center">{date}</p>
+            <p className="py-4 text-center">{new Date(date).toUTCString()}</p>
             <div className="w-full">
-              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center  text-gray-800 sm:text-lg">
+              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center text-gray-800 sm:text-lg">
                 <MarkdownContent content={content} />
               </article>
             </div>
