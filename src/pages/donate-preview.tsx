@@ -1,20 +1,14 @@
 import Footer from '@components/Footer'
+import { Fundraiser } from '@components/fundraiser/Fundraiser'
+import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
+import { FundraisersOverview } from '@components/fundraiser/FundraisersOverview'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { summarizeFundraisers } from 'data/summarizeFundraisers'
 import { graphql } from 'gatsby'
-import { FC, useLayoutEffect, useState } from 'react'
+import { FC } from 'react'
 import '../stylesheets/donate.css'
 import { WaysToDonate } from './donate'
-
-type Fundraiser = {
-  id: string
-  name: string
-  title: string
-  target: number
-  raised: number
-  currency: string
-}
 
 type Props = {
   data: {
@@ -28,7 +22,7 @@ type Props = {
         }[]
       }
     }
-    allDaFundRaiser: {
+    allDaFundraiser: {
       nodes: Fundraiser[]
     }
   }
@@ -49,7 +43,7 @@ const DonatePage: FC<Props> = ({
     markdownRemark: {
       frontmatter: { title, pageTitle, currencyConversionsToEUR },
     },
-    allDaFundRaiser: { nodes: fundraisers },
+    allDaFundraiser: { nodes: fundraisers },
   },
 }) => {
   return (
@@ -62,63 +56,21 @@ const DonatePage: FC<Props> = ({
         <h1>{title}</h1>
       </header>
       {fundraisers.length > 0 && (
-        <FundraiserHighlight
-          fundraiser={{
-            currency: 'EUR',
-            ...summarizeFundraisers(fundraisers, currencyConversionsToEUR),
-            title: 'Overall campaign progress',
-          }}
-        />
+        <>
+          <FundraiserProgress
+            title={'Overall campaign progress'}
+            fundraiser={{
+              currency: 'EUR',
+              ...summarizeFundraisers(fundraisers, currencyConversionsToEUR),
+            }}
+          />
+          <FundraisersOverview fundraisers={fundraisers} />
+        </>
       )}
       <section className="ways-to-donate">
         <WaysToDonate />
       </section>
     </SimpleLayout>
-  )
-}
-
-const FundraiserHighlight: FC<{
-  fundraiser: Pick<Fundraiser, 'currency' | 'raised' | 'target' | 'title'>
-}> = ({ fundraiser: { currency, raised, target, title } }) => {
-  const moneyFormatter = new Intl.NumberFormat(undefined, {
-    style: 'currency',
-    currency: currency,
-    maximumFractionDigits: 0,
-    minimumFractionDigits: 0,
-  })
-
-  const [progress, setProgress] = useState<number>(0)
-
-  // Animate the progress bar
-  useLayoutEffect(() => {
-    let isMounted = true
-    const t = setTimeout(() => {
-      if (isMounted) setProgress(Math.round((raised / target) * 100))
-    }, 250)
-    return () => {
-      isMounted = false
-      clearTimeout(t)
-    }
-  }, [])
-
-  return (
-    <section className="fundraiser">
-      <h1>{title}</h1>
-      <div className="progress">
-        <div
-          className="bar"
-          style={{
-            width: `${progress}%`,
-          }}
-        />
-      </div>
-      <dl>
-        <dt className="raised">Raised so far:</dt>
-        <dd className="raised money">{moneyFormatter.format(raised)}</dd>
-        <dt className="target">Target:</dt>
-        <dd className="target money">{moneyFormatter.format(target)}</dd>
-      </dl>
-    </section>
   )
 }
 
@@ -136,7 +88,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allDaFundRaiser {
+    allDaFundraiser {
       nodes {
         id
         name
@@ -144,6 +96,9 @@ export const pageQuery = graphql`
         target
         raised
         currency
+        abstract
+        hero
+        gallery
       }
     }
   }

@@ -71,7 +71,7 @@ main.donate > header h1 {
 
 /* Progress */
 
-main.donate section.fundraiser {
+main.donate section.progress {
   text-transform: uppercase;
   font-weight: 900;
   background-color: var(--color-light);
@@ -79,7 +79,7 @@ main.donate section.fundraiser {
 }
 
 @media only screen and (min-width: 600px) {
-  main.donate section.fundraiser {
+  main.donate section.progress {
     padding: 2rem;
     margin: 2rem auto;
     width: calc(100% - 4rem);
@@ -89,13 +89,13 @@ main.donate section.fundraiser {
 }
 
 @media only screen and (min-width: 1024px) {
-  main.donate section.fundraiser {
+  main.donate section.progress {
     font-size: 150%;
     padding: 4rem;
   }
 }
 
-main.donate section.fundraiser .progress {
+main.donate section.progress .progress {
   height: 25px;
   width: 100%;
   background-color: #a7a7a7;
@@ -104,7 +104,7 @@ main.donate section.fundraiser .progress {
   box-shadow: 0px 0px 5px 1px #0000002e;
 }
 
-main.donate section.fundraiser .progress .bar {
+main.donate section.progress .progress .bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -114,11 +114,11 @@ main.donate section.fundraiser .progress .bar {
   transition: width 2s ease-in-out;
 }
 
-main.donate section.fundraiser h1 {
+main.donate section.progress h1 {
   color: var(--color-accent);
 }
 
-main.donate section.fundraiser dl {
+main.donate section.progress dl {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -128,8 +128,108 @@ main.donate section.fundraiser dl {
   grid-auto-flow: column;
 }
 
-main.donate section.fundraiser dl .target {
+main.donate section.progress dl .target {
   text-align: right;
+}
+
+/** Fundraiser card **/
+main.donate section.card {
+  background-color: var(--color-light);
+  margin-top: 1px;
+}
+main.donate section.card div.prose {
+  padding: 2rem;
+}
+@media only screen and (min-width: 600px) {
+  main.donate section.card div.prose {
+    padding: 1rem;
+  }
+}
+main.donate section.card header {
+  position: relative;
+  background-color: var(--color-da);
+}
+main.donate section.card header h1 {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  color: var(--color-light);
+  font-weight: bold;
+  font-size: 125%;
+  text-shadow: 0 0 10px #000000a3;
+}
+
+main.donate section.card header {
+  aspect-ratio: 3 / 2;
+  opacity: 0.75;
+}
+
+/** Fundraisers overview **/
+
+@media only screen and (min-width: 600px) {
+  main.donate article.fundraisers {
+    margin: 2rem auto;
+    width: calc(100% - 4rem);
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    grid-auto-rows: auto;
+  }
+
+  main.donate section.card {
+    box-shadow: 0px 0px 20px 9px #00000047;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate article.fundraisers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/** Fundraiser page **/
+
+@media only screen and (min-width: 600px) {
+  main.donate article.fundraiser {
+    margin: 2rem auto;
+    width: calc(100% - 4rem);
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    grid-auto-rows: auto;
+  }
+}
+
+main.donate article.fundraiser .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1px;
+  grid-auto-rows: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  main.donate article.fundraiser .gallery {
+    grid-row-gap: 2rem;
+  }
+  main.donate article.fundraiser .gallery > * {
+    box-shadow: 0px 0px 20px 9px #00000047;
+  }
+}
+
+main.donate article.fundraiser main {
+  background-color: var(--color-light);
+}
+main.donate article.fundraiser main div.prose {
+  padding: 2rem;
+}
+@media only screen and (min-width: 600px) {
+  main.donate article.fundraiser main {
+    box-shadow: 0px 0px 20px 9px #00000047;
+  }
 }
 
 /** Ways to donate **/

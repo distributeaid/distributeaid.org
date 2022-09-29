@@ -29,12 +29,16 @@ export const createFundraisersFromMarkdown = ({
       target: fm.target,
       raised: fm.raised,
       currency: fm.currency,
+      abstract: fm.abstract,
+      hero: fm.hero,
+      gallery: fm.gallery,
+      body: node.rawMarkdownBody,
       fileRelativePath,
       id: createNodeId(`Fundraiser - ${fileName}`),
       parent: node.id,
       children: [],
       internal: {
-        type: 'DAFundRaiser',
+        type: 'DAFundraiser',
         contentDigest: createContentDigest(fm),
       },
     })
