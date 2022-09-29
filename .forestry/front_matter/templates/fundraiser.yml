@@ -33,9 +33,29 @@ fields:
   label: Currency
   description: 'Possible values are the ISO 4217 currency codes, such as "USD" for
     the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current
-    currency & funds code list at https://www.iban.com/currency-codes.
-
-    '
+    currency & funds code list at https://www.iban.com/currency-codes.'
+- name: abstract
+  type: textarea
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Abstract
+  description: This text appears on the overview page
+- type: file
+  name: hero
+  label: Hero
+  description: Provide the hero image for the fundraiser
+  hidden: false
+  config:
+    required: true
+- type: image_gallery
+  name: gallery
+  label: Gallery
+  description: Provide additional photos for the fundraiser
+  config:
+    required: true
 pages:
 - content/blocks/fundraisers/afghanistan-earthquake.md
 - content/blocks/fundraisers/ukraine-response.md
