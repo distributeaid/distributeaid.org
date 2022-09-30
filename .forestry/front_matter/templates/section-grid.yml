@@ -79,10 +79,13 @@ fields:
         path: 
     label: Order
   label: Metadata
-- name: blocks
-  type: field_group_list
+- name: contentBlocks
+  type: blocks
+  label: Content Blocks
+  template_types:
+  - block-youtube-embed
+  - block-image-with-caption
+  - block-title
   config:
     min: 
     max: 
-    labelField: 
-  label: Content Blocks
