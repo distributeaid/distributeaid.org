@@ -79,10 +79,6 @@ fields:
         path: 
     label: Order
   label: Metadata
-- name: contentBlocks
-  type: field_group
-  config: {}
-  label: Content Blocks
 - name: blocks
   type: field_group_list
   config:
