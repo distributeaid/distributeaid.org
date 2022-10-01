@@ -17,3 +17,28 @@ hero: ''
 gallery: []
 
 ---
+The project is…
+
+We’ve become Europe's largest grassroots mutual aid supply chain. This has been achieved through:
+
+* Re-building the fragmentation that prevented effective collaboration and long-term planning.
+* Strengthening aid groups capacity to run their projects whilst promoting hyper local humanitarian action.
+* Multiply collective impact of the border grassroots network across Europe.
+
+Current activities…
+
+* Creating communication streams
+* Aid-matching, needs assessment - filtering aid so groups are getting what they need
+* Alleviating the logistical burden of delivering humanitarian aid through shipments
+* Recentering efforts
+* Regular route UK-Northern France
+
+Your money will help us…
+
+* Subsidize costs of in-kind donations to our network of groups
+  * Example of what % of the costs grassroots paid for a recent in-kind donation
+  * I.e. one truck from UK to France costs $2,000; loading labor fuel, renting mode of transport, fuel…
+* Stipends of logistics coordinators
+* Cost of phone bill
+* Self-taught but find ourselves as experts, would love to join training courses ..etc which cost money (give examples & costs)
+* Office costs.
