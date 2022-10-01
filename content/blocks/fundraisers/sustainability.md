@@ -25,8 +25,9 @@ The project is…
 
 Current activities…
 
-  
 As well as our recently launched [project based offset program](https://drive.google.com/file/d/17q5VbZmS9PauLgoiSvsHG_dz9ku1_xRz/view?usp=sharing).
+
+![Sustainability](/uploads/sus.png)
 
 Your money will help us…
 
