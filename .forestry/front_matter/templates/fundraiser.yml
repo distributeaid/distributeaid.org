@@ -31,9 +31,9 @@ fields:
     min: 3
     max: 3
   label: Currency
-  description: 'Possible values are the ISO 4217 currency codes, such as "USD" for
+  description: Possible values are the ISO 4217 currency codes, such as "USD" for
     the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current
-    currency & funds code list at https://www.iban.com/currency-codes.'
+    currency & funds code list at https://www.iban.com/currency-codes.
 - name: abstract
   type: textarea
   config:
@@ -58,4 +58,5 @@ fields:
     required: true
 pages:
 - content/blocks/fundraisers/afghanistan-earthquake.md
+- content/blocks/fundraisers/europe.md
 - content/blocks/fundraisers/ukraine-response.md
