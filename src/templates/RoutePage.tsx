@@ -163,9 +163,9 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
       <div className="section__body">
         <ol className="space-y-8">
           <li className="">
-            <h4 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               1. Submit Your Aid Delivery Request
-            </h4>
+            </h3>
             <p className="mb-4">
               Download the{' '}
               <a
@@ -197,9 +197,9 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
             </p>
           </li>
           <li>
-            <h4 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               2. Consult Frontline Groups
-            </h4>
+            </h3>
             <p className="mb-4">
               We'll check in with the frontline groups during the offer period,
               to confirm which offered donations they want and to prioritise
@@ -212,9 +212,9 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
             </p>
           </li>
           <li>
-            <h4 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               3. Drop Off @ Staging Hubs
-            </h4>
+            </h3>
             <p className="mb-4">
               Schedule a drop-off appointment with your local Staging Hub, pay
               them the flat-rate{' '}
@@ -229,7 +229,7 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
             </p>
           </li>
           <li>
-            <h4 className="text-lg font-semibold mb-4">4. Deliver The Aid</h4>
+            <h3 className="text-lg font-semibold mb-4">4. Deliver The Aid</h3>
             <p className="mb-4">
               <strong>And that's it!</strong> Take an evening off to celebrate a
               job well done, we got it from here. Once your aid is delivered
@@ -316,6 +316,7 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
           src={route.mapUrl}
           width="100%"
           height="100%"
+          title='routeMap'
         />
       }
     >
@@ -439,9 +440,9 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
           </div>
         </div>
 
-        <h3 className="font-bold mb-4 mt-8">
+        <h2 className="font-bold mb-4 mt-8">
           What if my aid doesn't fit exactly?
-        </h3>
+        </h2>
 
         <ul className="space-y-4">
           <li>
@@ -514,9 +515,9 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
         <h1 className="section__title">All About Pallets</h1>
       </header>
       <div className="section__body">
-        <h3 className="font-bold">
+        <h2 className="font-bold">
           How many Standard Pallet spaces do I need?
-        </h3>
+        </h2>
 
         <div className="tiles tiles--column">
           <div className="tile flex">
