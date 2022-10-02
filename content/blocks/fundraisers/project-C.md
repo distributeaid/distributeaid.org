@@ -9,7 +9,7 @@ abstract: |-
   Integer feugiat nibh at feugiat dictum. Aliquam non tortor at diam congue posuere.
 gallery:
   - url: /uploads/pallet-storage.jpg
-    alt: Alternative Text 
+  alt: Alternative Text, but very long to show wrapping of alternative text.
   - url: /uploads/img_1103.jpg
     alt: Alternative Text 
   - url: /uploads/how-we-help-refugees.jpg

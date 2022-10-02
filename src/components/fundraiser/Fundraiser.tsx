@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import { FundraiserProgress, FundraiserProgressBar } from './FundraiserProgress'
+import { FundraiserProgressBar } from './FundraiserProgress'
 
 export type Fundraiser = {
   id: string
@@ -23,7 +23,7 @@ export type Fundraiser = {
   gallery: Photo[]
 }
 
-type Photo = {
+export type Photo = {
   /**
    * URL to media file
    */
@@ -48,8 +48,4 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
     <FundraiserProgressBar fundraiser={fundraiser} />
     <MarkdownContent content={fundraiser.abstract} />
   </section>
-)
-
-export const FundraiserPhoto: FC<{ photo: Photo }> = ({ photo }) => (
-  <img alt={photo.alt} src={photo.url} />
 )

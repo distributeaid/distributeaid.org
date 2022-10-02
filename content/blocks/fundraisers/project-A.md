@@ -9,13 +9,13 @@ abstract: |-
   Proin imperdiet euismod dui a scelerisque. Maecenas commodo id nibh eu aliquam.
 gallery:
 - url: /uploads/forklift-loading.jpg
-  alt: Alternative Text
+  alt: Alternative Text, but very long to show wrapping of alternative text.
 - url: /uploads/whatsapp-image-2022-01-28-at-12-14-01-1.jpeg
-  alt: Alternative Text
+  alt: Alternative Text, but longer
 - url: /uploads/unloading-image-2022-05-02-at-12-14-57-pm.jpeg
   alt: Alternative Text
 - url: /uploads/the-free-shop-unloading.jpg
-  alt: Alternative Text
+  alt: Alternative Text, but very long to show wrapping of alternative text.
 ---
 
 This is the detailed project description shown on the project page.

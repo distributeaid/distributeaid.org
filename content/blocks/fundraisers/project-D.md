@@ -9,7 +9,7 @@ abstract: |-
   Vivamus diam felis, pellentesque eget fringilla ut, pharetra in orci. Suspendisse eleifend, lorem nec tristique consectetur, ligula mi finibus nibh, a finibus diam ante vitae nisi. Aliquam porttitor lacus eget purus viverra, sagittis interdum justo aliquam.
 gallery:
   - url: /uploads/collection-and-sorting.jpg
-    alt: Alternative Text
+  alt: Alternative Text, but very long to show wrapping of alternative text.
   - url: /uploads/calais-food-collective-unloading.jpg
     alt: Alternative Text
   - url: /uploads/forklift-loading.jpg

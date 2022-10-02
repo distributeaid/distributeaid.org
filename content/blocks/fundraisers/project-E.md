@@ -9,7 +9,7 @@ abstract: |-
   Aenean ultricies enim augue, eu dictum nisl eleifend quis. Nam consequat, massa id porttitor finibus, augue dolor sagittis felis, vel pellentesque odio nibh in erat.
 gallery:
   - url: /uploads/whatsapp-image-2022-01-28-at-12-14-01-1.jpeg
-    alt: Alternative Text
+  alt: Alternative Text, but very long to show wrapping of alternative text.
   - url: /uploads/unloading-image-2022-05-02-at-12-14-57-pm.jpeg
     alt: Alternative Text
   - url: /uploads/the-free-shop-unloading.jpg
