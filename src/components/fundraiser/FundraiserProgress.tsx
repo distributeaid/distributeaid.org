@@ -18,7 +18,8 @@ export const FundraiserProgress: FC<{
   useLayoutEffect(() => {
     let isMounted = true
     const t = setTimeout(() => {
-      if (isMounted) setProgress(Math.round((raised / target) * 100))
+      if (isMounted)
+        setProgress(Math.min(100, Math.round((raised / target) * 100)))
     }, 250)
     return () => {
       isMounted = false
