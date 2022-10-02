@@ -23,3 +23,4 @@ By contributing to this project you agree to:
 - Queen Raae
 - KeSha Smith
 - Noel Castillon
+- Pree Robertson
