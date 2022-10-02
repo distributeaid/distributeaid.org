@@ -44,21 +44,24 @@ module.exports = {
       const resultData = await result.json()
 
       Object.entries(resultData.summary).forEach(([quarter, places]) => {
-        Object.entries(places).forEach(([place, pages]) => {
+        quarter = quarter.toUpperCase()
+
+        Object.entries(places).forEach(([placeKey, pages]) => {
           Object.entries(pages).forEach(([page, questions]) => {
             if (categoryMap.hasOwnProperty(page)) {
               Object.entries(questions).forEach(([question, units]) => {
-                const unitProp = Object.keys(units)[0]
-                const product = productMapper(page, question, unitProp)
-                const need = units[unitProp]
+                const unitKey = Object.keys(units)[0]
+                const need = Object.values(units)[0]
+                const product = productMapper(page, question, unitKey)
+                const place = placeMapper(placeKey)
 
                 createNode({
                   // Node Data
                   survey: {
                     ...survey,
                     quarter,
-                    place,
                   },
+                  place,
                   product,
                   need,
 
@@ -291,4 +294,32 @@ const productMapper = (categoryKey, itemKey, unitKey) => {
     ...itemPartial,
     ...unitPartial,
   }
+}
+
+const placeMap = {
+  calais: { region: 'France', subregion: 'Northern France' },
+  paris: { region: 'France', subregion: 'Paris' },
+  chios: { region: 'Greece', subregion: 'Aegean Islands' },
+  samos: { region: 'Greece', subregion: 'Aegean Islands' },
+  lesvos: { region: 'Greece', subregion: 'Aegean Islands' },
+  northernGreece: { region: 'Greece', subregion: 'Northern Greece' },
+  southernGreece: { region: 'Greece', subregion: 'Southern Greece' },
+  beirut: { region: 'Lebanon', subregion: 'Beirut' },
+  bekka: { region: 'Lebanon', subregion: 'Bekka Valley' },
+  saida: { region: 'Lebanon', subregion: 'Saida' },
+  lebanon: { region: 'Lebanon', subregion: null },
+  bosnia: { region: 'The Balkans', subregion: 'Bosnia' },
+  serbia: { region: 'The Balkans', subregion: 'Serbia' },
+  croatia: { region: 'The Balkans', subregion: 'Croatia' },
+  ventimiglia: { region: 'Italy', subregion: 'Northern Italy' },
+  romania: { region: 'Eastern Europe', subregion: 'Romania' },
+  poland: { region: 'Eastern Europe', subregion: 'Poland' },
+  moldova: { region: 'Eastern Europe', subregion: 'Moldova' },
+  slovakia: { region: 'Eastern Europe', subregion: 'Slovakia' },
+  hungary: { region: 'Eastern Europe', subregion: 'Hungary' },
+  other: { region: null, subregion: null },
+}
+
+const placeMapper = (placeKey) => {
+  return placeMap[placeKey]
 }
