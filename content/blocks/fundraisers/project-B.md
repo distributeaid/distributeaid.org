@@ -9,7 +9,7 @@ abstract: |-
   In finibus sapien ac dui ornare, sit amet interdum felis tincidunt. Fusce ultricies, urna in cursus laoreet, felis tortor tempus turpis, ac molestie nulla magna eu nibh. Phasellus luctus dignissim ornare. 
 gallery:
   - url: /uploads/img_1103.jpg
-  alt: Alternative Text, but very long to show wrapping of alternative text.
+    alt: Alternative Text, but very long to show wrapping of alternative text.
   - url: /uploads/how-we-help-refugees.jpg
     alt: Alternative Text 
   - url: /uploads/donate-soap-distribution.webp
