@@ -1,6 +1,6 @@
 module.exports = {
   // Remove unused classes in prod to decrease the size of the CSS bundle
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
       colors: {
