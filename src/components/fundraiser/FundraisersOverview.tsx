@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'gatsby'
-import type { FundraiserCard } from './Fundraiser'
+import type { Fundraiser } from './Fundraiser'
 import { FundraiserCard as FundraiserComponent } from './Fundraiser'
 
 export const FundraisersOverview: FC<{ fundraisers: Fundraiser[] }> = ({

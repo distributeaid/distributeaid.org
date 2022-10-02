@@ -25,6 +25,14 @@ type Props = {
     allDaFundraiser: {
       nodes: Fundraiser[]
     }
+    thumbnails350px: {
+      nodes: {
+        parent: {
+          absolutePath: string
+        }
+        gatsbyImageData: any
+      }[]
+    }
   }
 }
 
@@ -44,8 +52,24 @@ const DonatePage: FC<Props> = ({
       frontmatter: { title, pageTitle, currencyConversionsToEUR },
     },
     allDaFundraiser: { nodes: fundraisers },
+    thumbnails350px: { nodes: thumbnails350px },
   },
 }) => {
+  fundraisers.forEach((fundraiser) => {
+    fundraiser.gallery = fundraiser.gallery.map((photo) => {
+      const gatsbyImageData = thumbnails350px.find(
+        ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
+      )?.gatsbyImageData
+      if (gatsbyImageData === undefined) {
+        console.error(`Could not find gatsbyImageData for ${photo.url}`)
+      }
+      return {
+        ...photo,
+        gatsbyImageData,
+      }
+    })
+  })
+
   return (
     <SimpleLayout
       className={'donate'}
@@ -102,6 +126,18 @@ export const pageQuery = graphql`
           url
           alt
         }
+      }
+    }
+    thumbnails350px: allImageSharp(
+      filter: { original: { src: { glob: "/static/**" } } }
+    ) {
+      nodes {
+        parent {
+          ... on File {
+            absolutePath
+          }
+        }
+        gatsbyImageData(width: 350)
       }
     }
   }

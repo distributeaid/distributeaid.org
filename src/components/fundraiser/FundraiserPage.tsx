@@ -10,13 +10,16 @@ import { FC } from 'react'
 import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import '../../stylesheets/donate.css'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-const FundraiserPhoto: FC<{ photo: Photo }> = ({ photo }) => (
-  <div className="photo">
-    <img alt={photo.alt} src={photo.url} />
-    <span>{photo.alt}</span>
-  </div>
-)
+const FundraiserPhoto: FC<{ photo: Photo }> = ({ photo }) => {
+  return (
+    <div className="photo">
+      <GatsbyImage alt={photo.alt} image={photo.gatsbyImageData} />
+      <span>{photo.alt}</span>
+    </div>
+  )
+}
 
 export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
   pageContext: fundraiser,
@@ -41,8 +44,8 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
           <MarkdownContent content={fundraiser.body} />
         </main>
         <aside className="gallery">
-          {fundraiser.gallery.map(({ alt, url }) => (
-            <FundraiserPhoto photo={{ alt, url }} key={url} />
+          {fundraiser.gallery.map((photo) => (
+            <FundraiserPhoto photo={photo} key={photo.url} />
           ))}
         </aside>
       </article>

@@ -9,7 +9,7 @@ abstract: |-
   Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 gallery:
   - url: /uploads/how-we-help-refugees.jpg
-  alt: Alternative Text, but very long to show wrapping of alternative text.
+    alt: Alternative Text, but very long to show wrapping of alternative text.
   - url: /uploads/donate-soap-distribution.webp
     alt: Alternative Text
   - url: /uploads/collection-and-sorting.jpg

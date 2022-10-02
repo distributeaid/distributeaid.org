@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { FundraiserProgressBar } from './FundraiserProgress'
+import { getSrc } from 'gatsby-plugin-image'
 
 export type Fundraiser = {
   id: string
@@ -32,6 +33,10 @@ export type Photo = {
    * Alternative text
    */
   alt: string
+  /**
+   * Image process by sharp
+   */
+  gatsbyImageData: any
 }
 
 export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
@@ -40,7 +45,11 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
   <section className="card">
     <header>
       <div
-        style={{ backgroundImage: `url('${fundraiser.gallery[0].url}')` }}
+        style={{
+          backgroundImage: `url('${getSrc(
+            fundraiser.gallery[0].gatsbyImageData,
+          )}')`,
+        }}
         className="bg"
       />
       <h1>{fundraiser.title}</h1>
