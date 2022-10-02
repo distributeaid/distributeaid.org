@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { FundraiserProgress, FundraiserProgressBar } from './FundraiserProgress'
 
 export type Fundraiser = {
   id: string
@@ -17,13 +18,20 @@ export type Fundraiser = {
    */
   body: string
   /**
-   * Image URL
-   */
-  hero: string
-  /**
    * Image URLs
    */
-  gallery: string[]
+  gallery: Photo[]
+}
+
+type Photo = {
+  /**
+   * URL to media file
+   */
+  url: string
+  /**
+   * Alternative text
+   */
+  alt: string
 }
 
 export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
@@ -31,14 +39,17 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
 }) => (
   <section className="card">
     <header>
-      <FundraiserPhoto fundraiser={fundraiser} url={fundraiser.hero} />
+      <div
+        style={{ backgroundImage: `url('${fundraiser.gallery[0].url}')` }}
+        className="bg"
+      />
       <h1>{fundraiser.title}</h1>
     </header>
+    <FundraiserProgressBar fundraiser={fundraiser} />
     <MarkdownContent content={fundraiser.abstract} />
   </section>
 )
 
-export const FundraiserPhoto: FC<{ fundraiser: Fundraiser; url: string }> = ({
-  fundraiser,
-  url,
-}) => <img alt={fundraiser.title} src={url} />
+export const FundraiserPhoto: FC<{ photo: Photo }> = ({ photo }) => (
+  <img alt={photo.alt} src={photo.url} />
+)

@@ -63,6 +63,7 @@ const DonatePage: FC<Props> = ({
               currency: 'EUR',
               ...summarizeFundraisers(fundraisers, currencyConversionsToEUR),
             }}
+            converted={true}
           />
           <FundraisersOverview fundraisers={fundraisers} />
         </>
@@ -97,8 +98,10 @@ export const pageQuery = graphql`
         raised
         currency
         abstract
-        hero
-        gallery
+        gallery {
+          url
+          alt
+        }
       }
     }
   }

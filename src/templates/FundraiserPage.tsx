@@ -29,8 +29,8 @@ const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
       <article className="fundraiser">
         <aside className="gallery">
           <FundraiserCard fundraiser={fundraiser} />
-          {fundraiser.gallery.map((url) => (
-            <FundraiserPhoto fundraiser={fundraiser} url={url} key={url} />
+          {fundraiser.gallery.map(({ alt, url }) => (
+            <FundraiserPhoto photo={{ alt, url }} key={url} />
           ))}
         </aside>
         <main>

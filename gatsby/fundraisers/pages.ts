@@ -15,8 +15,10 @@ export const createFundraisersPages = async ({
           raised
           currency
           abstract
-          hero
-          gallery
+          gallery {
+            url
+            alt
+          }
           body
         }
       }
@@ -36,7 +38,6 @@ export const createFundraisersPages = async ({
         raised: fundraiser.raised,
         currency: fundraiser.currency,
         abstract: fundraiser.abstract,
-        hero: fundraiser.hero,
         gallery: fundraiser.gallery,
         body: fundraiser.body,
       },

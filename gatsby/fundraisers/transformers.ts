@@ -30,7 +30,6 @@ export const createFundraisersFromMarkdown = ({
       raised: fm.raised,
       currency: fm.currency,
       abstract: fm.abstract,
-      hero: fm.hero,
       gallery: fm.gallery,
       body: node.rawMarkdownBody,
       fileRelativePath,

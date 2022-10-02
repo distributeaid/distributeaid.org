@@ -3,5 +3,7 @@ pageTitle: Donate
 title: Support vulnerable communities worldwide by donating to Distribute Aid's projects
 currencyConversionsToEUR:
 - currency: GBP
-  conversionRate: 1.13    
+  conversionRate: 1.13
+- currency: USD
+  conversionRate: 1.02  
 ---

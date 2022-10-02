@@ -43,21 +43,33 @@ fields:
       format: markdown
   label: Abstract
   description: This text appears on the overview page
-- type: file
-  name: hero
-  label: Hero
-  description: Provide the hero image for the fundraiser
-  hidden: false
-  config:
-    required: true
-- type: image_gallery
+- type: field_group_list
   name: gallery
   label: Gallery
-  description: Provide additional photos for the fundraiser
+  description:  Provide photos for the fundraiser. The first photos is used as the hero image for the fundraiser.
+  hidden: false
+  fields:
+  - type: file
+    name: url
+    label: URL
+    hidden: false
+    config:
+      required: true
+  - name: alt
+    type: text
+    config:
+      required: true
+      min: 2
+    label: Alternative text
+    description: Description of the photo, used as the alternative text.
   config:
+    labelField: alt
     required: true
+    min: 1
 pages:
-- content/blocks/fundraisers/afghanistan-earthquake.md
-- content/blocks/fundraisers/europe.md
-- content/blocks/fundraisers/sustainability.md
-- content/blocks/fundraisers/ukraine-response.md
+- content/blocks/fundraisers/project-A.md
+- content/blocks/fundraisers/project-B.md
+- content/blocks/fundraisers/project-C.md
+- content/blocks/fundraisers/project-D.md
+- content/blocks/fundraisers/project-E.md
+- content/blocks/fundraisers/project-F.md
