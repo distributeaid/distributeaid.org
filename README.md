@@ -64,6 +64,8 @@ Gitpod allows us to pair on the cloud, as well as have an automatic setup with `
 
 Pressing the "Open in Gitpod" button will start up an VSCode-based instance in the cloud allowing you to be up and running with the codebase. You'll need to sign in with GitHub.
 
+> **Note**: When choosing VS Code desktop with Gitpod always be sure to select Linux from the dropdown as the operating system when prompted.
+
 ### Locally
 
 Install system dependencies:
