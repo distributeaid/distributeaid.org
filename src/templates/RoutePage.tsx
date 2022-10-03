@@ -316,7 +316,7 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
           src={route.mapUrl}
           width="100%"
           height="100%"
-          title='routeMap'
+          title="routeMap"
         />
       }
     >
