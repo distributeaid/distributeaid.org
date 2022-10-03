@@ -7,9 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    environment:
-      name: preview
-
     steps:
       - uses: actions/checkout@v3
 
