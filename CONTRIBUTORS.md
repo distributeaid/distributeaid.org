@@ -24,4 +24,4 @@ By contributing to this project you agree to:
 - KeSha Smith
 - Noel Castillon
 - Pree Robertson
-- Emily Reed 
+- Emily Reed
