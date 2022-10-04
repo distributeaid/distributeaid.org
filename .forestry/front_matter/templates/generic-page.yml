@@ -10,26 +10,9 @@ fields:
   description: 'NOTE: the URL will be generated based on this field (e.g. About Us
     -&gt; distributeaid.org/about-us), so make sure you give this a good, general
     title that isn''t likely to change.'
-- name: sections1
-  type: list
-  config:
-    use_select: true
-    min: 
-    max: 
-    source:
-      type: pages
-      section: content-sections
-  label: Content Sections (Sortable List)
-- name: sections2
-  type: field_group_list
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Content Sections (Repeatable Field Group)
-- name: sections3
+- name: sections
   type: blocks
-  label: Content Sections (Blocks)
+  label: Content Sections
   template_types:
   - section-grid
   config:
