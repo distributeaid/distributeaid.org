@@ -32,3 +32,5 @@ fields:
   config:
     min: 
     max: 
+pages:
+- content/pages/our-story.md
