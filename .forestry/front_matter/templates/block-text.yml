@@ -1,4 +1,13 @@
 ---
 label: 'Block: Text'
 hide_body: true
-fields: []
+fields:
+- name: text
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Text
