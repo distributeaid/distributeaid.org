@@ -24,6 +24,26 @@ sections:
     date: 
   - template: block-title
     text: Our Story
+  - template: block-image-with-caption
+    dateUploaded: 2022-10-04T09:16:23Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    caption: " "
+    attribution: " "
+    altText: " "
+    asset: ''
+    date: 
+  - template: block-image-with-caption
+    dateUploaded: 2022-10-04T09:16:34Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    caption: " "
+    attribution: " "
+    altText: " "
+    asset: ''
+    date: 
 slug: our-story
 
 ---
