@@ -7,9 +7,14 @@ fields:
   config:
     required: true
   label: Page Title
-  description: 'NOTE: the URL will be generated based on this field (e.g. About Us
-    -&gt; distributeaid.org/about-us), so make sure you give this a good, general
-    title that isn''t likely to change.'
+- name: slug
+  type: text
+  config:
+    required: false
+  label: URL slug
+  description: A URL slug refers to the end part of a URL after the backslash (“/”)
+    that identifies the specific page or post. e.g. the "about-us" in distributeaid.org/about-us.  This
+    should bet set once and then basically never changed.
 - name: sections
   type: blocks
   label: Content Sections
