@@ -22,5 +22,6 @@ sections:
     attribution: Collective Aid
     altText: Several volunteers unload and carry boxes from a full truck to a warehouse.
     date: 
+slug: our-story
 
 ---
