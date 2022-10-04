@@ -21,6 +21,7 @@ const RegionsPage: FC<Props> = ({
     regions: { nodes: regions },
   },
 }) => {
+  console.log('dataatatatata', regions)
   const createRegionHref = (region: Region) => {
     const regionSlug = slugify(region.name)
     return `/regions/${regionSlug}`
@@ -96,8 +97,11 @@ const RegionsPage: FC<Props> = ({
 
 export default RegionsPage
 
-export const pageQuery = graphql`
-  query RegionsQuery {
+export const query = graphql`
+  query MyQuery($id: String) {
+    markdownRemark(id: { eq: $id }) {
+      id
+    }
     regions: allDaRegion {
       nodes {
         name

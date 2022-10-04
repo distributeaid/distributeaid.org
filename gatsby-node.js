@@ -41,8 +41,8 @@ Create Dynamic Pages
 */
 exports.createPages = async (gatsbyUtils) => {
   // await pages.createRegionPages(gatsbyUtils)
-  await pages.createSubregionPages(gatsbyUtils)
-  await pages.createRoutePages(gatsbyUtils)
+  // await pages.createSubregionPages(gatsbyUtils)
+  // await pages.createRoutePages(gatsbyUtils)
 }
 
 /*
