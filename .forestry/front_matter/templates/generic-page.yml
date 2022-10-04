@@ -13,9 +13,12 @@ fields:
 - name: sections1
   type: list
   config:
-    use_select: false
+    use_select: true
     min: 
     max: 
+    source:
+      type: pages
+      section: content-sections
   label: Content Sections (Sortable List)
 - name: sections2
   type: field_group_list
