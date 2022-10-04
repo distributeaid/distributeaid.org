@@ -17,6 +17,9 @@ sections:
   create: all
   match: "**/*"
   templates:
+  - block-title
+  - block-text
+  - block-youtube-embed
   - block-image-with-caption
 - type: directory
   path: content/blocks/members
