@@ -13,4 +13,11 @@ describe('<YouTubeEmbed/>', () => {
     expect(screen.getByText('the title of the video'))
     expect(screen.getByTitle('YouTube embed')).toBeInTheDocument()
   })
+
+  it('does not render title when none is given', () => {
+    render(<YouTubeEmbed videoUrl="https://example.com/video" />)
+
+    expect(screen.getByTitle('YouTube embed')).toBeInTheDocument()
+    expect(screen.queryByTestId('videoTitle')).not.toBeInTheDocument()
+  })
 })
