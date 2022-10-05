@@ -6,7 +6,7 @@ export const YouTubeEmbed: FC<
     videoTitle?: string
   }>
 > = ({ videoUrl, videoTitle }) => (
-  <figure className="video-container">
+  <figure>
     <iframe
       className="aspect-video w-full"
       src={videoUrl}
