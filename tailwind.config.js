@@ -1,4 +1,7 @@
-module.exports = {
+// @ts-check
+
+/** @type {import('tailwindcss').Config} */
+const config = {
   // Remove unused classes in prod to decrease the size of the CSS bundle
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
@@ -74,7 +77,23 @@ module.exports = {
         'screen/2': '50vh',
       },
       fontFamily: {
-        sans: `Lato, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+        sans: [
+          'Lato',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
       boxShadow: {
         sm: '0px 1px 2px 0px #000000 5%',
@@ -100,3 +119,5 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 }
+
+module.exports = config
