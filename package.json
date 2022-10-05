@@ -95,7 +95,6 @@
     "netlify"
   ],
   "license": "AGPL-3.0-only",
-  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/distributeaid/distributeaid.org.git"
