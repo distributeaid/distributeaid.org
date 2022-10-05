@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby'
+
+const config: GatsbyConfig = {
   siteMetadata: {
     domain: 'distributeaid.org',
   },
@@ -61,3 +63,5 @@ module.exports = {
     },
   ],
 }
+
+export default config

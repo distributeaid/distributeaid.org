@@ -1,9 +1,11 @@
-module.exports = {
+import { CreateResolversArgs, Node } from 'gatsby'
+
+export default {
   /*
   Regions
   ================================================================================
   */
-  resolveRegionFields: ({ createResolvers, getNode }) => {
+  resolveRegionFields: ({ createResolvers, getNode }: CreateResolversArgs) => {
     createResolvers({
       DARegion: {
         subregions: {
@@ -30,7 +32,10 @@ module.exports = {
   Subregions
   ================================================================================
   */
-  resolveSubregionFields: ({ createResolvers, getNode }) => {
+  resolveSubregionFields: ({
+    createResolvers,
+    getNode,
+  }: CreateResolversArgs) => {
     createResolvers({
       DASubregion: {
         region: {
@@ -64,7 +69,10 @@ module.exports = {
 
         https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields
   */
-  resolveTeamMemberFields: ({ createResolvers, getNode }) => {
+  resolveTeamMemberFields: ({
+    createResolvers,
+    getNode,
+  }: CreateResolversArgs) => {
     createResolvers({
       DATeamMember: {
         roles: {
@@ -114,7 +122,10 @@ module.exports = {
 Helpers
 ================================================================================
 */
-const imageSharpResolver = (getNode, pathKey) => {
+const imageSharpResolver = (
+  getNode: CreateResolversArgs['getNode'],
+  pathKey: string,
+) => {
   return {
     type: 'ImageSharp',
     resolve: async (source, args, context, info) => {
