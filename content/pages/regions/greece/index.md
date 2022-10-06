@@ -55,8 +55,6 @@ newsUpdates:
         [and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
       date: 2021-10-01T22:27:13Z
       pinned: false
-     
-     
      title: Cash Support Program Fails Asylum Seekers
 stayInformedLinks:
   - linkLabel: Report from Refugees International (2022)
