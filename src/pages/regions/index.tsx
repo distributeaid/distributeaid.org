@@ -21,7 +21,6 @@ const RegionsPage: FC<Props> = ({
     regions: { nodes: regions },
   },
 }) => {
-  console.log('dataatatatata', regions)
   const createRegionHref = (region: Region) => {
     const regionSlug = slugify(region.name)
     return `/regions/${regionSlug}`

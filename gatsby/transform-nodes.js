@@ -23,9 +23,12 @@ module.exports = {
         'content',
         getNode(node.parent).relativePath,
       )
+      const fileNode = getNode(node.parent)
+      const slug = fileNode.name
 
       createNode({
         // Node Data
+        slug: slug,
         name: fm.name,
         overview: fm.overview,
         governmentResponse: fm.governmentResponse,
@@ -66,13 +69,13 @@ module.exports = {
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
       const fm = node.frontmatter
-      const fileRelativePath = path.join(
-        'content',
-        getNode(node.parent).relativePath,
-      )
+      const fileNode = getNode(node.parent)
+      const fileRelativePath = path.join('content', fileNode.relativePath)
+      const slug = fileNode.name
 
       createNode({
         // Node Data
+        slug: slug,
         name: fm.name,
         overview: fm.overview,
         population: fm.population,
