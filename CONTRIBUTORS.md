@@ -25,4 +25,5 @@ By contributing to this project you agree to:
 - Noel Castillon
 - Pree Robertson
 - Emily Reed
+- Frédéric Bonnet
 - Rabea Gleissner
