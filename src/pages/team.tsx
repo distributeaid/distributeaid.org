@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
+import PageData from '@components/PageData'
 
 type Props = {
   data: {
@@ -12,7 +13,7 @@ type Props = {
 const TeamPage: FC<Props> = ({ data }) => {
   const members = data.allDaTeamMember.nodes
   return (
-    <SimpleLayout pageTitle="Team">
+    <SimpleLayout>
       <h1 className="text-2xl">Meet the Team</h1>
       <ul>
         {members.map((member: any) => {
@@ -29,6 +30,15 @@ const TeamPage: FC<Props> = ({ data }) => {
 }
 
 export default TeamPage
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <title>Team - Distribute Aid</title>
+      <PageData />
+    </>
+  )
+}
 
 export const pageQuery = graphql`
   query TeamQuery {

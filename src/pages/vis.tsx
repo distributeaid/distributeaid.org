@@ -1,6 +1,7 @@
 import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
+import PageData from '@components/PageData'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
@@ -63,7 +64,7 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
   if (isSSR) return null
   return (
     <Suspense fallback={<div />}>
-      <SimpleLayout pageTitle="Experimental Data Visualizations">
+      <SimpleLayout>
         <div className="grid grid-cols-3 gap-4">
           <section className="h-96 w-96">
             <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />
@@ -84,6 +85,15 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
 }
 
 export default RegionsPage
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <title>Experimental Data Visualizations - Distribute Aid</title>
+      <PageData />
+    </>
+  )
+}
 
 export const pageQuery = graphql`
   query VisQuery {
