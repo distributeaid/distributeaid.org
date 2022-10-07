@@ -10,6 +10,7 @@ import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
 import SmartLink from '@components/link/SmartLink'
+import PageData from '@components/PageData'
 
 type TemplateProps = {
   data: {
@@ -19,7 +20,7 @@ type TemplateProps = {
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   return (
-    <SimpleLayout pageTitle={`Region: ${region.name}`}>
+    <SimpleLayout>
       <div className="relative mb-4">
         <div className="absolute inset-0 z-10 flex justify-center">
           <div className="bg-navy-700 bg-opacity-75 px-6 flex flex-col justify-center">
@@ -70,6 +71,15 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 }
 
 export default RegionPage
+
+export function Head({ data: { region } }: TemplateProps) {
+  return (
+    <>
+      <title>{`Region: ${region.name}`}</title>
+      <PageData />
+    </>
+  )
+}
 
 export const query = graphql`
   query ($id: String!) {
