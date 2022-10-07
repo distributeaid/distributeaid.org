@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { Link } from 'gatsby'
+import { HeadProps, Link } from 'gatsby'
+import PageData from '@components/PageData'
 
 const CodeOfConduct: FC = () => (
-  <SimpleLayout pageTitle="Code of Conduct">
+  <SimpleLayout>
     <div className="pt-8 md:pt-20">
       <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
         Code of Conduct
@@ -258,3 +259,12 @@ const CodeOfConduct: FC = () => (
 )
 
 export default CodeOfConduct
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <title>Code of Conduct - Distribute Aid</title>
+      <PageData />
+    </>
+  )
+}
