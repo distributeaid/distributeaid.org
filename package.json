@@ -53,7 +53,7 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "7.19.0",
     "@codesee/babel-plugin-instrument": "0.386.0",
-    "@codesee/tracker": "0.384.0",
+    "@codesee/tracker": "0.386.0",
     "@distributeaid/shared-config": "distributeaid/shared-config",
     "@graphql-codegen/cli": "2.13.5",
     "@graphql-codegen/typescript": "2.7.3",
