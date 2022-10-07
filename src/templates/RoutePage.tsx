@@ -18,6 +18,7 @@ import sackIcon from '../images/regular-routes/icons/openmoji_bag.svg'
 import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
+import PageData from '@components/PageData'
 
 type TemplateProps = {
   data: {
@@ -51,9 +52,7 @@ function formatCostInCurrency(cost: number, currency: string) {
 }
 
 const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
-  <SimpleLayout
-    pageTitle={`Route: ${route.routeOrigin} to ${route.routeDestination}`}
-  >
+  <SimpleLayout>
     <TextWithVisual
       positionOfVisual="right"
       visual={
@@ -616,6 +615,15 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
 )
 
 export default RoutePage
+
+export function Head({ data: { route } }: TemplateProps) {
+  return (
+    <>
+      <title>{`Route: ${route.routeOrigin} to ${route.routeDestination}`}</title>
+      <PageData />
+    </>
+  )
+}
 
 export const query = graphql`
   query ($id: String!) {

@@ -9,6 +9,7 @@ import SimpleLayout from 'layouts/Simple'
 import UpdateList from '@components/list/UpdateList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
+import PageData from '@components/PageData'
 
 type TemplateProps = {
   data: {
@@ -18,9 +19,7 @@ type TemplateProps = {
 
 const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
   return (
-    <SimpleLayout
-      pageTitle={`Subregion: ${subregion.name} (${subregion.region.name})`}
-    >
+    <SimpleLayout>
       <h1 className="text-2xl font-semibold text-gray-800">
         {subregion.name}
         <small>
@@ -46,6 +45,15 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
 }
 
 export default SubregionPage
+
+export function Head({ data: { subregion } }: TemplateProps) {
+  return (
+    <>
+      <title>{`Subregion: ${subregion.name} (${subregion.region.name})`}</title>
+      <PageData />
+    </>
+  )
+}
 
 export const query = graphql`
   query ($id: String!) {
