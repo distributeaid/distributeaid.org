@@ -26,3 +26,4 @@ By contributing to this project you agree to:
 - Pree Robertson
 - Emily Reed
 - Frédéric Bonnet
+- Rabea Gleissner
