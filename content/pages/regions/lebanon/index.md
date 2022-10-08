@@ -17,7 +17,7 @@ stayInformed:
 name: Lebanon
 map: '/uploads/lebanon.png'
 overview:
-  Lebanon's largest population of refugees is in Bekaa, which hosts[ 39% of
+  Lebanon's largest population of refugees is in Bekaa, which hosts [39% of
   total registered refugees](https://data2.unhcr.org/en/situations/syria/location/71).
   The lowest population is in South Lebanon, with [90,832 registered refugees.](https://data2.unhcr.org/en/situations/syria/location/71)
   Since many do not get registered, the actual number is likely much higher. Lebanon,
@@ -36,7 +36,7 @@ governmentResponse:
   preventing settlements from becoming permanent shelters has led to the systematic
   destruction of homes.\n\n[1 million Syrian refugees live in temporary shelters across
   2,000 communities](https://www.concernusa.org/story/largest-refugee-crises/). Economic
-  insecurity in Lebanon has resulted in[ 9 out of 10 Syrian refugees falling into
+  insecurity in Lebanon has resulted in [9 out of 10 Syrian refugees falling into
   extreme poverty](https://ec.europa.eu/echo/news-stories/stories/syrian-refugees-lebanon-between-hammer-and-anvil_en).
   The lack of legal residency creates barriers to jobs and essential services such
   as education and healthcare, leaving refugees vulnerable to exploitation, eviction
