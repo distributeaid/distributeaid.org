@@ -1,7 +1,14 @@
-var minimatch = require('minimatch')
-const path = require('path')
+import { CreateNodeArgs } from 'gatsby'
+import minimatch from 'minimatch'
+import path from 'path'
 
-module.exports = {
+import {
+  Region,
+  Subregion,
+} from '../src/components/regions/RegionComponentTypes'
+import { Route } from '../src/components/routes/RouteComponentTypes'
+
+export default {
   /*
   Regions
   ================================================================================
@@ -12,13 +19,16 @@ module.exports = {
     createNodeId,
     createContentDigest,
     getNode,
-  }) => {
+  }: CreateNodeArgs) => {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
-      minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/index.md')
+      minimatch(
+        node.fileAbsolutePath as string,
+        '**/content/pages/regions/*/index.md',
+      )
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as Region
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -62,7 +72,7 @@ module.exports = {
     createNodeId,
     createContentDigest,
     getNode,
-  }) => {
+  }: CreateNodeArgs) => {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
@@ -107,13 +117,13 @@ module.exports = {
     createNodeId,
     createContentDigest,
     getNode,
-  }) => {
+  }: CreateNodeArgs) => {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/pages/routes/*.md')
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as Route
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -166,13 +176,13 @@ module.exports = {
     createNodeId,
     createContentDigest,
     getNode,
-  }) => {
+  }: CreateNodeArgs) => {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as any
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -214,13 +224,13 @@ module.exports = {
     createNodeId,
     createContentDigest,
     getNode,
-  }) => {
+  }: CreateNodeArgs) => {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
       minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as any
       const fileRelativePath = path.join(
         'content',
         getNode(node.parent).relativePath,
@@ -270,7 +280,7 @@ module.exports = {
     actions: { createNode },
     createNodeId,
     createContentDigest,
-  }) => {
+  }: CreateNodeArgs) => {
     if (node.internal.type === 'CombinedManifestsJson') {
       const rawValue = node['$ Total']
       const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))

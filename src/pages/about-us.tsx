@@ -6,6 +6,7 @@ import BoardMembers from '@components/about-us/BoardMembers'
 import AboutOurMission from '@components/about-us/AboutOurMission'
 import Timeline from '@components/about-us/Timeline'
 import { graphql } from 'gatsby'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -22,6 +23,10 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'About us'} />
+}
+
 const AboutUsPage: FC<Props> = ({
   data: {
     markdownRemark: { frontmatter },
@@ -30,7 +35,7 @@ const AboutUsPage: FC<Props> = ({
   const { missionStatement, aboutOurMission, timelineItems } = frontmatter
 
   return (
-    <SimpleLayout pageTitle="About us">
+    <SimpleLayout>
       <AboutHero />
       <MissionStatement missionStatement={missionStatement} />
       <BoardMembers />

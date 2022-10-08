@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -9,10 +10,15 @@ type Props = {
     }
   }
 }
+
+export function Head() {
+  return <PageHeader title={'Team'} />
+}
+
 const TeamPage: FC<Props> = ({ data }) => {
   const members = data.allDaTeamMember.nodes
   return (
-    <SimpleLayout pageTitle="Team">
+    <SimpleLayout>
       <h1 className="text-2xl">Meet the Team</h1>
       <ul>
         {members.map((member: any) => {

@@ -2,13 +2,12 @@ name: Build
 
 on:
   push:
+    branches: [saga]
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    environment:
-      name: preview
 
     steps:
       - uses: actions/checkout@v3
@@ -53,7 +52,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: build-${{ github.sha }}
-          path: public
+          path: |
+            public
+            .cache
 
   e2e-tests:
     name: Run the end-to-end test
@@ -72,7 +73,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build-${{ github.sha }}
-          path: public
 
       - uses: actions/setup-node@v3
         with:

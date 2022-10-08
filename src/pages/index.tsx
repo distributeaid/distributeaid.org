@@ -8,6 +8,7 @@ import MissionSection from '@components/home/MissionSection'
 import HowWeHelpSection from '@components/home/HowWeHelpSection'
 import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import ImageCarousel from '@components/home/ImageCarousel'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -27,6 +28,10 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Home'} />
+}
+
 const HomePage: FC<Props> = ({
   data: {
     markdownRemark: { frontmatter },
@@ -35,7 +40,7 @@ const HomePage: FC<Props> = ({
   const { headline, missionStatement, howWeHelpBlock } = frontmatter
 
   return (
-    <SimpleLayout pageTitle="Home">
+    <SimpleLayout>
       <ImageCarousel headline={headline} />
       <MissionSection missionStatement={missionStatement} />
       <RoutesSection />

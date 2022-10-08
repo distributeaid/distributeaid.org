@@ -1,14 +1,12 @@
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
-
-import { Region, Subregion } from '@components/regions/RegionComponentTypes'
-
+import { Subregion } from '@components/regions/RegionComponentTypes'
 import SimpleLayout from 'layouts/Simple'
 import UpdateList from '@components/list/UpdateList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
+import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {
@@ -16,11 +14,17 @@ type TemplateProps = {
   }
 }
 
+export function Head({ data: { subregion } }: TemplateProps) {
+  return (
+    <PageHeader
+      title={`Subregion: ${subregion.name} (${subregion.region.name})`}
+    />
+  )
+}
+
 const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
   return (
-    <SimpleLayout
-      pageTitle={`Subregion: ${subregion.name} (${subregion.region.name})`}
-    >
+    <SimpleLayout>
       <h1 className="text-2xl font-semibold text-gray-800">
         {subregion.name}
         <small>
