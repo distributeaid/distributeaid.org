@@ -30,9 +30,9 @@ newsUpdates:
   '0':
     newsUpdateTitle: Greece Cash-Support Policy Creates Hunger Crisis
     newsUpdateDescription:
-        Greece recently took over responsibility for making cash support payments
-        to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en) to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece) a [human rights](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
-        [and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
+      Greece recently took over responsibility for making cash support payments
+      to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en) to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece) a [human rights](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
+      [and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
   title: News Updates
   visibleCount: 5
   updates:
@@ -52,7 +52,7 @@ newsUpdates:
         [and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
       date: 2021-10-01T22:27:13Z
       pinned: false
-     title: Cash Support Program Fails Asylum Seekers
+      title: Cash Support Program Fails Asylum Seekers
 stayInformedLinks:
   - linkLabel: Report from Refugees International (2022)
     linkURL: https://static1.squarespace.com/static/506c8ea1e4b01d9450dd53f5/t/6216a3799be96a3b07de2089/1645650812924/Greece+Report+-+Feb+2022.pdf
@@ -63,12 +63,12 @@ title: News Updates
 visibleCount: '5'
 updates:
   - content:
-        Greece recently took over responsibility for making cash support payments
-        to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
-        to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)
-        a [human rights
-       ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
-       and [hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
+      Greece recently took over responsibility for making cash support payments
+      to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
+      to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)
+      a [human rights
+      ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
+      and [hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
     date: '2021-10-01T19:14:30Z'
     pinned: true
     title: Cash Support Program Failing After Greece Takes Over
@@ -97,8 +97,8 @@ newsUpdates2:
         to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
         to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)
         a [human rights
-       ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
-       and [hunger crisis] (https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
+        ](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
+        and [hunger crisis] (https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
       pinned: false
       date: '2021-10-01T22:20:30Z'
 stayInformed:
