@@ -42,9 +42,7 @@ Create Dynamic Pages
 ================================================================================
 */
 export const createPages: GatsbyNode['createPages'] = async (args) => {
-  await pages.createRegionPages(args)
-  await pages.createSubregionPages(args)
-  await pages.createRoutePages(args)
+  // Currently all pages are created using the Filesystem Route API
 }
 
 /*
