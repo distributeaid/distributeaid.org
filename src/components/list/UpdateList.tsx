@@ -17,8 +17,8 @@ const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
     <div>
       <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
       <ol className="p-4">
-        {updates.map(({ title, date, content }) => (
-          <li className="p-7">
+        {updates.map(({ title, date, content }, i) => (
+          <li className="p-7" key={i}>
             <h3 className="text-center text-2xl">{title}</h3>
             <p className="py-4 text-center">{new Date(date).toUTCString()}</p>
             <div className="w-full">

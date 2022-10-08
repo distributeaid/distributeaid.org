@@ -13,8 +13,8 @@ const LinkList: FC<Props> = ({ list: { title, links } }) => {
     <div>
       <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
       <dl className="p-4">
-        {links.map(({ label, url, description }) => (
-          <div className="p-7">
+        {links.map(({ label, url, description }, i) => (
+          <div className="p-7" key={i}>
             <dt className="text-center text-2xl">
               <SmartLink className="link" href={url}>
                 {label}

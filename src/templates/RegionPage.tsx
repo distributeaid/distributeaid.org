@@ -42,12 +42,12 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
       </div>
 
       <ul className="flex  justify-evenly my-5 text-2xl">
-        {region.subregions.map((subregion) => {
+        {region.subregions.map((subregion, i) => {
           const href = `/regions/${slugify(region.name)}/${slugify(
             subregion.name,
           )}`
           return (
-            <li>
+            <li key={i}>
               <SmartLink className="link" href={href}>
                 {subregion.name}
               </SmartLink>
