@@ -7,7 +7,7 @@ import { Route } from '@components/routes/RouteComponentTypes'
 import SimpleLayout from '../layouts/Simple'
 import TextWithVisual from '../components/routes/TextWithVisual'
 import RoutesSectionImage from '../components/routes/RoutesSectionImage'
-import { MarkdownContent } from '../components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 
 const netIcon = require('../images/regular-routes/icons/noun_net_2428552.svg')

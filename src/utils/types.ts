@@ -29,3 +29,7 @@ export function enumValues<O extends object, K extends keyof O = keyof O>(
 ): K[] {
   return Object.values(obj) as K[]
 }
+
+export function getAttributeValue<T>(object: any, attributeName: string): T {
+  return object[attributeName]
+}

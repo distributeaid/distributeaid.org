@@ -1,5 +1,6 @@
 import cx from 'classnames'
 import { FunctionComponent, ReactNode } from 'react'
+import { getAttributeValue } from '../../utils/types'
 
 interface Props {
   label: ReactNode
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const ReadOnlyField: FunctionComponent<Props> = (props) => {
-  if (!props.children) {
+  if (!getAttributeValue(props, 'children')) {
     return null
   }
 
@@ -30,7 +31,9 @@ const ReadOnlyField: FunctionComponent<Props> = (props) => {
         {props.label}
       </label>
       <span>
-        {props.children || <span className="text-gray-600">&lt;empty&gt;</span>}
+        {getAttributeValue<any>(props, 'children') || (
+          <span className="text-gray-600">&lt;empty&gt;</span>
+        )}
       </span>
     </div>
   )
