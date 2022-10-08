@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import React, { FC, Suspense } from 'react'
-import worldMapImage from '../../images/homepage-banner-image.svg'
 import ReactMarkdown from 'react-markdown'
+
+const worldMapImage = require('../../images/homepage-banner-image.svg')
 
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),

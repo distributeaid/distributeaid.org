@@ -1,10 +1,11 @@
 import { FC } from 'react'
-import crateImage from '../../images/da-in-numbers/crate.svg'
-import routeImage from '../../images/da-in-numbers/route.svg'
-import handsParcel from '../../images/da-in-numbers/hands-parcel.svg'
-import handsPluses from '../../images/da-in-numbers/hands-pluses.svg'
-import pallet from '../../images/da-in-numbers/pallet.svg'
-import shakingHands from '../../images/da-in-numbers/hands-shaking.svg'
+
+const crateImage = require('../../images/da-in-numbers/crate.svg')
+const routeImage = require('../../images/da-in-numbers/route.svg')
+const handsParcel = require('../../images/da-in-numbers/hands-parcel.svg')
+const handsPluses = require('../../images/da-in-numbers/hands-pluses.svg')
+const pallet = require('../../images/da-in-numbers/pallet.svg')
+const shakingHands = require('../../images/da-in-numbers/hands-shaking.svg')
 
 const numberFormatter = new Intl.NumberFormat()
 const usdFormatter = new Intl.NumberFormat(undefined, {

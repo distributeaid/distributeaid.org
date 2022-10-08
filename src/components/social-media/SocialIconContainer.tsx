@@ -1,13 +1,14 @@
 import { FC, useEffect, useState } from 'react'
 
 import siteSettings from '../../../content/site-settings.json'
-import facebookSrc from '../../images/social-icons/facebook.svg'
-import twitterSrc from '../../images/social-icons/twitter.svg'
-import linkedInSrc from '../../images/social-icons/linked-in.svg'
-import instagramSrc from '../../images/social-icons/instagram.svg'
-import githubSrc from '../../images/social-icons/github.svg'
 import SocialMediaLink from './SocialMediaLink'
 import { getThemeLargeScreenWidth } from 'utils/site-theme'
+
+const facebookSrc = require('../../images/social-icons/facebook.svg')
+const twitterSrc = require('../../images/social-icons/twitter.svg')
+const linkedInSrc = require('../../images/social-icons/linked-in.svg')
+const instagramSrc = require('../../images/social-icons/instagram.svg')
+const githubSrc = require('../../images/social-icons/github.svg')
 
 const socialMediaDetails = [
   {
