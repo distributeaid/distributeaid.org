@@ -619,7 +619,7 @@ export default RoutePage
 export function Head({ data: { route } }: TemplateProps) {
   return (
     <>
-      <title>{`Route: ${route.routeOrigin} to ${route.routeDestination}`}</title>
+      <title>{`Route: ${route.routeOrigin} to ${route.routeDestination} - Distribute Aid`}</title>
       <PageData />
     </>
   )
