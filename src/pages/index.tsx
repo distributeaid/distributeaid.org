@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { graphql, HeadProps } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import SimpleLayout from '@layouts/Simple'
 
@@ -8,7 +8,7 @@ import MissionSection from '@components/home/MissionSection'
 import HowWeHelpSection from '@components/home/HowWeHelpSection'
 import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import ImageCarousel from '@components/home/ImageCarousel'
-import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -26,6 +26,10 @@ type Props = {
       }
     }
   }
+}
+
+export function Head() {
+  return <PageHeader title={'Home'} />
 }
 
 const HomePage: FC<Props> = ({
@@ -47,15 +51,6 @@ const HomePage: FC<Props> = ({
 }
 
 export default HomePage
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>Home - Distribute Aid</title>
-      <PageData />
-    </>
-  )
-}
 
 export const pageQuery = graphql`
   query HomePageQuery {

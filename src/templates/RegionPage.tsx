@@ -10,12 +10,16 @@ import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
 import SmartLink from '@components/link/SmartLink'
-import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {
     region: Region
   }
+}
+
+export function Head() {
+  return <PageHeader title={'Regions'} />
 }
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
@@ -71,15 +75,6 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 }
 
 export default RegionPage
-
-export function Head({ data: { region } }: TemplateProps) {
-  return (
-    <>
-      <title>{`Region: ${region.name}`}</title>
-      <PageData />
-    </>
-  )
-}
 
 export const query = graphql`
   query ($id: String!) {

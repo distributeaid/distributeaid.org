@@ -1,20 +1,25 @@
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import slugify from 'utils/slugify'
-
-import { Region, Subregion } from '@components/regions/RegionComponentTypes'
-
+import { Subregion } from '@components/regions/RegionComponentTypes'
 import SimpleLayout from 'layouts/Simple'
 import UpdateList from '@components/list/UpdateList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
-import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {
     subregion: Subregion
   }
+}
+
+export function Head({ data: { subregion } }: TemplateProps) {
+  return (
+    <PageHeader
+      title={`Subregion: ${subregion.name} (${subregion.region.name})`}
+    />
+  )
 }
 
 const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
@@ -45,15 +50,6 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
 }
 
 export default SubregionPage
-
-export function Head({ data: { subregion } }: TemplateProps) {
-  return (
-    <>
-      <title>{`Subregion: ${subregion.name} (${subregion.region.name})`}</title>
-      <PageData />
-    </>
-  )
-}
 
 export const query = graphql`
   query ($id: String!) {

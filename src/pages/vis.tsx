@@ -2,6 +2,7 @@ import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql, HeadProps } from 'gatsby'
 import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
@@ -59,6 +60,10 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Experimental Data Visualizations'} />
+}
+
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
   const isSSR = typeof window === 'undefined'
   if (isSSR) return null
@@ -85,15 +90,6 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
 }
 
 export default RegionsPage
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>Experimental Data Visualizations - Distribute Aid</title>
-      <PageData />
-    </>
-  )
-}
 
 export const pageQuery = graphql`
   query VisQuery {

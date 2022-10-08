@@ -8,6 +8,7 @@ import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
 import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -15,6 +16,10 @@ type Props = {
       nodes: Region[]
     }
   }
+}
+
+export function Head() {
+  return <PageHeader title={'Regions'} />
 }
 
 const RegionsPage: FC<Props> = ({
@@ -96,15 +101,6 @@ const RegionsPage: FC<Props> = ({
 }
 
 export default RegionsPage
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>Regions - Distribute Aid</title>
-      <PageData />
-    </>
-  )
-}
 
 export const pageQuery = graphql`
   query RegionsQuery {

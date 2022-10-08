@@ -10,7 +10,7 @@ const base = baseUrl()
 test.describe('Home', () => {
   it('should should have the correct title', async ({ page }) => {
     await page.goto(base)
-    await expect(page).toHaveTitle('Home - Distribute Aid')
+    await expect(page).toHaveTitle('Home · Distribute Aid')
   })
 
   it('should have a link to the France route', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('Home', () => {
       new URL('/routes/uk-to-france/', base).toString(),
     )
 
-    await expect(page).toHaveTitle('Route: UK to France - Distribute Aid')
+    await expect(page).toHaveTitle('Route: UK to France · Distribute Aid')
   })
 
   it('should have a link to the Lebanon route', async ({ page }) => {
@@ -38,6 +38,6 @@ test.describe('Home', () => {
       new URL('/routes/uk-to-lebanon/', base).toString(),
     )
 
-    await expect(page).toHaveTitle('Route: UK to Lebanon - Distribute Aid')
+    await expect(page).toHaveTitle('Route: UK to Lebanon · Distribute Aid')
   })
 })

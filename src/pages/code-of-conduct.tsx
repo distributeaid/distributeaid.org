@@ -1,7 +1,11 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { HeadProps, Link } from 'gatsby'
-import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
+
+export function Head() {
+  return <PageHeader title={'Code of Conduct'} />
+}
 
 const CodeOfConduct: FC = () => (
   <SimpleLayout>
@@ -259,12 +263,3 @@ const CodeOfConduct: FC = () => (
 )
 
 export default CodeOfConduct
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>Code of Conduct - Distribute Aid</title>
-      <PageData />
-    </>
-  )
-}
