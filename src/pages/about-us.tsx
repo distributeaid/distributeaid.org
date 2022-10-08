@@ -5,8 +5,8 @@ import MissionStatement from '@components/about-us/MissionStatement'
 import BoardMembers from '@components/about-us/BoardMembers'
 import AboutOurMission from '@components/about-us/AboutOurMission'
 import Timeline from '@components/about-us/Timeline'
-import { graphql, HeadProps } from 'gatsby'
-import PageData from '@components/PageData'
+import { graphql } from 'gatsby'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -21,6 +21,10 @@ type Props = {
       }
     }
   }
+}
+
+export function Head() {
+  return <PageHeader title={'About us'} />
 }
 
 const AboutUsPage: FC<Props> = ({
@@ -42,15 +46,6 @@ const AboutUsPage: FC<Props> = ({
 }
 
 export default AboutUsPage
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>About us - Distribute Aid</title>
-      <PageData />
-    </>
-  )
-}
 
 export const pageQuery = graphql`
   query AboutUsPageQuery {

@@ -19,6 +19,7 @@ import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {
@@ -49,6 +50,14 @@ function formatCostInCurrency(cost: number, currency: string) {
     case 'USD':
       return '$' + cost.toFixed(2)
   }
+}
+
+export function Head({ data: { route } }: TemplateProps) {
+  return (
+    <PageHeader
+      title={`Route: ${route.routeOrigin} to ${route.routeDestination}`}
+    />
+  )
 }
 
 const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
@@ -615,15 +624,6 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
 )
 
 export default RoutePage
-
-export function Head({ data: { route } }: TemplateProps) {
-  return (
-    <>
-      <title>{`Route: ${route.routeOrigin} to ${route.routeDestination} - Distribute Aid`}</title>
-      <PageData />
-    </>
-  )
-}
 
 export const query = graphql`
   query ($id: String!) {

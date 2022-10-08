@@ -7,8 +7,11 @@ import Button from '@components/button/Button'
 import BankInformationModal from '@components/donate/BankInfoModal'
 import SimpleLayout from '@layouts/Simple'
 import Footer from '@components/Footer'
-import { HeadProps } from 'gatsby'
-import PageData from '@components/PageData'
+import { PageHeader } from '@components/PageHeader'
+
+export function Head() {
+  return <PageHeader title={'How to donate'} />
+}
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
 
@@ -107,15 +110,6 @@ const Donate: FC = () => {
         />
       </div>
     </SimpleLayout>
-  )
-}
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <title>How to donate - Distribute Aid</title>
-      <PageData />
-    </>
   )
 }
 
