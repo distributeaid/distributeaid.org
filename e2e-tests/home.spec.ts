@@ -12,6 +12,19 @@ test.describe('Home', () => {
     await page.goto(base)
     await expect(page).toHaveTitle('Home · Distribute Aid')
   })
+  it('should should have the correct description', async ({ page }) => {
+    await page.goto(base)
+    const metaDescription = page.locator('meta[name="description"]')
+    await expect(metaDescription).toHaveAttribute(
+      'content',
+      'Humanitarian aid delivery reimagined. By supporting a huge network of grassroots organisations, we ensure that donations get to where they are needed most.',
+    )
+  })
+
+  it('should have the HTML lang attribute', async ({ page }) => {
+    await page.goto(base)
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  })
 
   it('should have a link to the France route', async ({ page }) => {
     await page.goto(base)
