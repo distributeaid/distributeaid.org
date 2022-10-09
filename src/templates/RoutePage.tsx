@@ -8,6 +8,7 @@ import SimpleLayout from '../layouts/Simple'
 import TextWithVisual from '../components/routes/TextWithVisual'
 import RoutesSectionImage from '../components/routes/RoutesSectionImage'
 import { MarkdownContent } from '../components/markdown/MarkdownContent'
+import { PageHeader } from '@components/PageHeader'
 
 import netIcon from '../images/regular-routes/icons/noun_net_2428552.svg'
 import mapIcon from '../images/regular-routes/icons/noun_Maps_3610706.svg'
@@ -18,8 +19,6 @@ import sackIcon from '../images/regular-routes/icons/openmoji_bag.svg'
 import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
-import PageData from '@components/PageData'
-import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {

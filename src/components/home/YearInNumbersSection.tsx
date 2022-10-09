@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import crateImage from '../../images/da-in-numbers/crate.svg'
 import routeImage from '../../images/da-in-numbers/route.svg'
 import handsParcel from '../../images/da-in-numbers/hands-parcel.svg'
