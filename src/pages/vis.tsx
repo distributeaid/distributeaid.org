@@ -1,7 +1,6 @@
 import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql, HeadProps } from 'gatsby'
-import PageData from '@components/PageData'
 import { PageHeader } from '@components/PageHeader'
 
 // These modules have dependencies to libraries which depend on browser features

@@ -7,7 +7,6 @@ import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
-import PageData from '@components/PageData'
 import { PageHeader } from '@components/PageHeader'
 
 type Props = {
