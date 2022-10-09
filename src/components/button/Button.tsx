@@ -1,6 +1,5 @@
 import cx from 'classnames'
 import { ButtonHTMLAttributes, FunctionComponent, Ref } from 'react'
-import ButtonIcon from './ButtonIcon'
 
 /**
  * By default, it should look like a neutral button
@@ -31,7 +30,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   forwardRef?: Ref<HTMLButtonElement>
 }
 
-const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
+const Button: FunctionComponent<ButtonProps> = ({
   variant = 'default',
   slim = false,
   type = 'button',
@@ -72,7 +71,5 @@ const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
     </button>
   )
 }
-
-Button.Icon = ButtonIcon
 
 export default Button
