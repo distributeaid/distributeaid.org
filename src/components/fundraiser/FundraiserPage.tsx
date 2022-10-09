@@ -1,9 +1,5 @@
 import Footer from '@components/Footer'
-import {
-  Fundraiser,
-  FundraiserCard,
-  Photo,
-} from '@components/fundraiser/Fundraiser'
+import { Fundraiser, Photo } from '@components/fundraiser/Fundraiser'
 import SimpleLayout from '@layouts/Simple'
 import { WaysToDonate } from '@pages/donate'
 import { FC } from 'react'
@@ -11,6 +7,16 @@ import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import '../../stylesheets/donate.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { PageHeader } from '@components/PageHeader'
+
+export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {
+  return (
+    <PageHeader
+      title={`Donate to ${fundraiser.title}`}
+      description={`Support Distribute Aid's project ${fundraiser.title} by donating`}
+    />
+  )
+}
 
 const FundraiserPhoto: FC<{ photo: Photo }> = ({ photo }) => {
   return (
@@ -26,8 +32,6 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
 }) => {
   return (
     <SimpleLayout
-      pageTitle={`Donate to ${fundraiser.title}`}
-      pageDescription={`Support Distribute Aid's project ${fundraiser.title} by donating`}
       className={'donate fundraiser'}
       footer={<Footer showDonateButton={false} />}
     >
