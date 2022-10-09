@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Modal from 'react-modal'
 import Button from '@components/button/Button'
 

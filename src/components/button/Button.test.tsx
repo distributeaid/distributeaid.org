@@ -1,5 +1,5 @@
 import Button from './Button'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 
 describe('Button', () => {
   it('renders the children', () => {

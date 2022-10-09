@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { FC } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Globe from 'react-globe.gl'
 import { getCoordsAlpha3 } from 'utils/iso-3166'
 
@@ -23,23 +23,11 @@ type LineItem = {
   shipment: Shipment
 }
 
-type Node = {
-  shipment: {
-    year: string
-    number: string
-    origin: string
-    destination: string
-  }
-  value: number
-}
-
 type Props = {
   categoryVisItems: {
     nodes: LineItem[]
   }
 }
-
-type LineItemKey = keyof LineItem
 
 function buildGlobeVisData(lineItems: LineItem[]) {
   const arcsData = lineItems
@@ -69,7 +57,6 @@ function buildGlobeVisData(lineItems: LineItem[]) {
 const ShipmentsOnGlobeVis: FC<Props> = ({ categoryVisItems }) => {
   const globeEl = useRef() as any
   const arcsData = buildGlobeVisData(categoryVisItems.nodes) as any
-  const globeRef = useRef()
 
   useEffect(() => {
     // Auto-rotate

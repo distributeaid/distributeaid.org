@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
 import { NavLinkItem } from './MainMenu'

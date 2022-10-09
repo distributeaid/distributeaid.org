@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { HeadProps, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import { PageHeader } from '@components/PageHeader'
 
 export function Head() {

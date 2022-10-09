@@ -1,4 +1,3 @@
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'

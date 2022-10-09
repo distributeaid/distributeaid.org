@@ -50,7 +50,7 @@ const formatCostInCurrency = (cost: number, currency: string) => {
     })
   }
 
-  return formatters[currency].format(cost)
+  return formatters[currency]?.format(cost) ?? `${currency} ${cost.toFixed(2)}`
 }
 
 export function Head({ data: { route } }: TemplateProps) {
