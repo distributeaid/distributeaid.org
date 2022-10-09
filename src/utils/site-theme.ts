@@ -1,6 +1,5 @@
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../tailwind.config.js'
-import { getAttributeValue } from './types'
 
 const siteTheme = resolveConfig(tailwindConfig).theme
 
@@ -70,8 +69,5 @@ export function getDivergingColorList(nameA = 'rosemary', nameB = 'purple') {
 }
 
 export function getThemeLargeScreenWidth() {
-  return parseInt(
-    getAttributeValue<string>(siteTheme?.screens, 'lg').replace('px', ''),
-    10,
-  )
+  return parseInt(siteTheme?.screens?.lg.replace('px', ''), 10)
 }
