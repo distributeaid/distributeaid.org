@@ -1,16 +1,16 @@
 import cx from 'classnames'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
-interface Props {
-  label: ReactNode
-  /**
-   * Hide the field if it has no children
-   */
-  hideIfEmpty?: boolean
-  stacked?: boolean
-}
-
-const ReadOnlyField: FunctionComponent<Props> = (props) => {
+const ReadOnlyField: FunctionComponent<
+  PropsWithChildren<{
+    label: ReactNode
+    /**
+     * Hide the field if it has no children
+     */
+    hideIfEmpty?: boolean
+    stacked?: boolean
+  }>
+> = (props) => {
   if (!props.children) {
     return null
   }
