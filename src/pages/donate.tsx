@@ -7,8 +7,8 @@ import SimpleLayout from '@layouts/Simple'
 import Footer from '@components/Footer'
 import { PageHeader } from '@components/PageHeader'
 
-const openCollectiveImage = require('../images/opencollective_logo.svg')
-const directTransferImage = require('../images/direct_transfer.svg')
+import openCollectiveImage from '../images/opencollective_logo.svg'
+import directTransferImage from '../images/direct_transfer.svg'
 
 export function Head() {
   return <PageHeader title={'How to donate'} />

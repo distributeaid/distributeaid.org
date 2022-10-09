@@ -3,7 +3,7 @@ import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 
-const logoBlueSrc = require('../../images/logomark_blue.svg')
+import logoBlueSrc from '../../images/logomark_blue.svg'
 
 type Props = {
   missionStatement: string

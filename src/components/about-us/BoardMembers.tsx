@@ -1,5 +1,5 @@
 import { FC } from 'react'
-const boardSrc = require('images/about-us/board.jpg')
+import boardSrc from '../../images/about-us/board.jpg'
 
 const BoardMembers: FC = () => (
   <div className="max-w-7xl mx-auto text-center py-20 px-4 text-lg">
