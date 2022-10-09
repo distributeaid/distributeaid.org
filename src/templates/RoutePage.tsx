@@ -38,17 +38,19 @@ function formatDate(date: string) {
   })
 }
 
-function formatCostInCurrency(cost: number, currency: string) {
-  switch (currency) {
-    case 'GBP':
-      return '£' + cost.toFixed(2)
-    case 'EUR':
-      return cost.toFixed(2) + '€'
-    case 'SEK':
-      return cost.toFixed(2) + ' kr'
-    case 'USD':
-      return '$' + cost.toFixed(2)
+const formatters: Record<string, Intl.NumberFormat> = {}
+
+const formatCostInCurrency = (cost: number, currency: string) => {
+  if (formatters[currency] === undefined) {
+    formatters[currency] = new Intl.NumberFormat(undefined, {
+      style: 'currency',
+      currency,
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    })
   }
+
+  return formatters[currency].format(cost)
 }
 
 export function Head({ data: { route } }: TemplateProps) {
