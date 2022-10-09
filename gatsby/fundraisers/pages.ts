@@ -63,7 +63,6 @@ export const createFundraisersPages = async ({
     const allImages = fundraiser.body.matchAll(/!\[[^\]]+\]\((?<url>[^)]+)\)/g)
     const replacements = {}
     for (const match of allImages) {
-      console.log(match.groups)
       const gatsbyImageData = size600px.find(({ parent: { absolutePath } }) =>
         absolutePath.endsWith(match.groups.url),
       ).gatsbyImageData
