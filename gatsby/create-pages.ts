@@ -1,13 +1,24 @@
-const slugify = require('slugify')
-const path = require('path')
+import slugify from 'slugify'
+import path from 'path'
+import { CreatePagesArgs, Node } from 'gatsby'
+import {
+  Region,
+  Subregion,
+} from '../src/components/regions/RegionComponentTypes'
+import { Route } from '../src/components/routes/RouteComponentTypes'
 
-module.exports = {
+export default {
   /*
   Region Pages
   ================================================================================
   */
-  createRegionPages: async ({ graphql, actions: { createPage } }) => {
-    const regionsQuery = await graphql(`
+  createRegionPages: async ({
+    graphql,
+    actions: { createPage },
+  }: CreatePagesArgs) => {
+    const regionsQuery = await graphql<{
+      regions: { nodes: [Node & Region] }
+    }>(`
       query RegionsQuery {
         regions: allDaRegion {
           nodes {
@@ -18,7 +29,7 @@ module.exports = {
       }
     `)
 
-    regionsQuery.data.regions.nodes.forEach((region) => {
+    regionsQuery.data?.regions.nodes.forEach((region) => {
       const regionSlug = slugify(region.name, {
         lower: true,
         strict: true,
@@ -40,8 +51,13 @@ module.exports = {
   Subregion Pages
   ================================================================================
   */
-  createSubregionPages: async ({ graphql, actions: { createPage } }) => {
-    const subregionsQuery = await graphql(`
+  createSubregionPages: async ({
+    graphql,
+    actions: { createPage },
+  }: CreatePagesArgs) => {
+    const subregionsQuery = await graphql<{
+      subregions: { nodes: [Node & Subregion] }
+    }>(`
       query SubregionsQuery {
         subregions: allDaSubregion {
           nodes {
@@ -55,7 +71,7 @@ module.exports = {
       }
     `)
 
-    subregionsQuery.data.subregions.nodes.forEach((subregion) => {
+    subregionsQuery.data?.subregions.nodes.forEach((subregion) => {
       const regionSlug = slugify(subregion.region.name, {
         lower: true,
         strict: true,
@@ -84,8 +100,13 @@ module.exports = {
   Route Pages
   ================================================================================
   */
-  createRoutePages: async ({ graphql, actions: { createPage } }) => {
-    const routesQuery = await graphql(`
+  createRoutePages: async ({
+    graphql,
+    actions: { createPage },
+  }: CreatePagesArgs) => {
+    const routesQuery = await graphql<{
+      routes: { nodes: [Node & Route] }
+    }>(`
       query RoutesQuery {
         routes: allDaRoute {
           nodes {
@@ -96,7 +117,7 @@ module.exports = {
       }
     `)
 
-    routesQuery.data.routes.nodes.forEach((route) => {
+    routesQuery.data?.routes.nodes.forEach((route) => {
       console.info(`creating route page at /routes/${route.slug}`)
       createPage({
         path: `/routes/${route.slug}`,

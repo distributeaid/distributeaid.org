@@ -1,12 +1,15 @@
 ---
 title: Ad Hoc Shipping
-desc: Distribute Aid offers logistics expertise so that any humanitarian group seeking
+desc:
+  Distribute Aid offers logistics expertise so that any humanitarian group seeking
   to move aid from one place to another can do it safely, cheaply, and efficiently.
-challenge: Small grassroots organisations who have sourced aid do not have the capacity
+challenge:
+  Small grassroots organisations who have sourced aid do not have the capacity
   or connections to organise cross-border shipments. In addition, aid donating groups
   do not have sufficient information on where their donations are most needed and
   can have the greatest impact.
-explanation: Due to our large network of contacts and continuous needs assessments,
+explanation:
+  Due to our large network of contacts and continuous needs assessments,
   we can ensure that donations sent through us are allocated to those groups that
   need it most. We can also coordinate deliveries to several end-receivers in the
   same region, to ensure efficiency in shipping and make sure all items go to immediate
@@ -23,12 +26,11 @@ benefits: |-
 regions: []
 category: Powering Aid Supply Chains
 headerPhoto:
-  asset: "/uploads/unloading-image-2022-05-02-at-12-14-57-pm.jpeg"
+  asset: '/uploads/unloading-image-2022-05-02-at-12-14-57-pm.jpeg'
   caption: Volunteers unload a truck of humanitarian aid—that's a lot of boxes!
-  attribution: "?"
-  dateUploaded: 
+  attribution: '?'
+  dateUploaded:
   date: 1798-12-31T22:45:00Z
   altText: Volunteers unload boxes of humanitarian aid from a truck.
   tags: []
-
 ---

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import SimpleLayout from '@layouts/Simple'
 import { Region } from '@components/regions/RegionComponentTypes'
 import { Card, ImageVariant } from '@components/card/Card'
@@ -7,6 +7,7 @@ import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
+import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {
@@ -14,6 +15,10 @@ type Props = {
       nodes: Region[]
     }
   }
+}
+
+export function Head() {
+  return <PageHeader title={'Regions'} />
 }
 
 const RegionsPage: FC<Props> = ({
@@ -68,7 +73,7 @@ const RegionsPage: FC<Props> = ({
   }
 
   return (
-    <SimpleLayout pageTitle="Regions">
+    <SimpleLayout>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         {regions.map((region) => (
           <Card

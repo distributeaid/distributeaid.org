@@ -7,7 +7,7 @@ newsUpdates:
       content:
         As of the 6th of April, around 2.5 million people have fled to Poland,
         663,000 to Romania, 404,000 to Hungary, and 401,000 to Moldova. Moldova has
-        already taken in more[ refugees than during the second world war.](https://edition.cnn.com/videos/world/2022/03/08/moldova-ukraine-refugee-crisis-watson-pkg-vpx.cnn)
+        already taken in more [refugees than during the second world war](https://edition.cnn.com/videos/world/2022/03/08/moldova-ukraine-refugee-crisis-watson-pkg-vpx.cnn).
         Slovakia’s refugee population, around 1,000 at the start of 2022, is now over
         100,000. It is expected that these numbers will only increase as the war continues.
       date: 2022-04-07T01:16:19Z

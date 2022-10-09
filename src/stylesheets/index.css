@@ -45,27 +45,3 @@
 .link {
   @apply text-navy-700 hover:underline font-semibold;
 }
-
-.video-iframe {
-  aspect-ratio: 16/9;
-  width: 100%;
-}
-
-/* Fallback for browsers that don't support aspect-ratio */
-@supports not (aspect-ratio: auto) {
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .video-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}

@@ -5,11 +5,21 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: content/sections
+  label: Content Sections
+  create: all
+  match: "**/*"
+  templates:
+  - section-grid
+- type: directory
   path: content/blocks/content-blocks
   label: Content Blocks
   create: all
   match: "**/*"
   templates:
+  - block-title
+  - block-text
+  - block-youtube-embed
   - block-image-with-caption
 - type: directory
   path: content/blocks/members

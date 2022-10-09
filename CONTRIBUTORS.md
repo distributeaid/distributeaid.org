@@ -22,4 +22,9 @@ By contributing to this project you agree to:
 - Jason Fritsche
 - Queen Raae
 - KeSha Smith
+- Noel Castillon
+- Pree Robertson
+- Emily Reed
+- Frédéric Bonnet
+- Rabea Gleissner
 - Federico Chaves

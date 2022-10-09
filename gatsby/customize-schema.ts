@@ -1,5 +1,9 @@
-module.exports = {
-  defineTeamTypes: ({ actions: { createTypes } }) => {
+import { CreateSchemaCustomizationArgs } from 'gatsby'
+
+export default {
+  defineTeamTypes: ({
+    actions: { createTypes },
+  }: CreateSchemaCustomizationArgs) => {
     const typeDefs = `
       type DATeamTenure implements Node {
         role: DATeamRole

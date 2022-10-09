@@ -43,8 +43,8 @@ type LineItemKey = keyof LineItem
 const LineItemTable: FC<Props> = ({ lineItems }) => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
-      {lineItems.nodes.map((lineItem) => {
-        return <div>{lineItem.value}</div>
+      {lineItems.nodes.map((lineItem, i) => {
+        return <div key={i}>{lineItem.value}</div>
       })}
     </div>
   )
