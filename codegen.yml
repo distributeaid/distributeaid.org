@@ -6,5 +6,10 @@ generates:
     plugins:
       - 'typescript'
       - 'typescript-document-nodes'
+      - add:
+          content: |
+            // @ts-nocheck
+            // Opt-out of TypeScript type checking because this file has errors (TS2300: Duplicate identifier).
+            // This does not create run-time issues, so it is safe to ignore.
     config:
       gqlImport: gatsby#graphql
