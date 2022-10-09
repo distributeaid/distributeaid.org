@@ -1,6 +1,6 @@
-import slugify from 'slugify'
-import path from 'path'
 import { CreatePagesArgs, Node } from 'gatsby'
+import path from 'path'
+import slugify from 'slugify'
 import {
   Region,
   Subregion,

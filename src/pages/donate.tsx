@@ -1,14 +1,14 @@
-import { FC, useState } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import ExternalLink from '@components/link/ExternalLink'
 import Button from '@components/button/Button'
 import BankInformationModal from '@components/donate/BankInfoModal'
-import SimpleLayout from '@layouts/Simple'
 import Footer from '@components/Footer'
+import ExternalLink from '@components/link/ExternalLink'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
+import { StaticImage } from 'gatsby-plugin-image'
+import { FC, useState } from 'react'
 
-import openCollectiveImage from '../images/opencollective_logo.svg'
 import directTransferImage from '../images/direct_transfer.svg'
+import openCollectiveImage from '../images/opencollective_logo.svg'
 
 export function Head() {
   return <PageHeader title={'How to donate'} />

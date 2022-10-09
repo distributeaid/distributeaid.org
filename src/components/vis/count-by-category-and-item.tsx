@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import { ResponsiveSunburst } from '@nivo/sunburst'
+import { FC } from 'react'
 
 type Item = {
   category: string

@@ -1,6 +1,6 @@
-import { FC, useEffect, useRef, useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import WordMark from '@components/brand/WordMark'
+import { graphql, useStaticQuery } from 'gatsby'
+import { FC, useEffect, useRef, useState } from 'react'
 import CarouselTile from './CarouselTile'
 
 const CAROUSEL_TIMER_MS = 5000 as const

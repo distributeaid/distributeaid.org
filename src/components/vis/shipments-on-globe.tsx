@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import { useState, useRef, useEffect } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { getCoordsAlpha3 } from 'utils/iso-3166'
 

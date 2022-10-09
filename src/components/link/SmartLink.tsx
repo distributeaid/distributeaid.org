@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes } from '@reach/router/node_modules/@types/react'
 import { FC } from 'react'
-import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
+import InternalLink from './InternalLink'
 
 const SmartLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({
   href = '/',

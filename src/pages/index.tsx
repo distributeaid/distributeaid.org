@@ -1,13 +1,13 @@
-import { FC } from 'react'
 import { graphql } from 'gatsby'
+import { FC } from 'react'
 
 import SimpleLayout from '@layouts/Simple'
 
-import RoutesSection from '@components/home/RoutesSection'
-import MissionSection from '@components/home/MissionSection'
 import HowWeHelpSection from '@components/home/HowWeHelpSection'
-import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import ImageCarousel from '@components/home/ImageCarousel'
+import MissionSection from '@components/home/MissionSection'
+import RoutesSection from '@components/home/RoutesSection'
+import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import { PageHeader } from '@components/PageHeader'
 
 type Props = {

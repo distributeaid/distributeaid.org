@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
-import { PageHeader } from '@components/PageHeader'
+import { FC } from 'react'
 
 type Props = {
   data: {

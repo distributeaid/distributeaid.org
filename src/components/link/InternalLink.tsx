@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react'
 import { Link } from 'gatsby'
+import { FC, ReactNode } from 'react'
 
 type Props = {
   children?: ReactNode

@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { Link } from 'gatsby'
-import { PageHeader } from '@components/PageHeader'
+import { FC } from 'react'
 
 export function Head() {
   return <PageHeader title={'Whistleblowing Policy'} />

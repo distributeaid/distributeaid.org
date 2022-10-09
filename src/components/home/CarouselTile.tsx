@@ -1,5 +1,5 @@
-import { FC, useEffect, useRef } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { FC, useEffect, useRef } from 'react'
 
 type Props = {
   images: any[]

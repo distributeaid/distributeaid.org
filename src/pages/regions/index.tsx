@@ -1,13 +1,13 @@
-import { FC } from 'react'
-import { graphql } from 'gatsby'
-import SimpleLayout from '@layouts/Simple'
-import { Region } from '@components/regions/RegionComponentTypes'
 import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { PageHeader } from '@components/PageHeader'
+import { Region } from '@components/regions/RegionComponentTypes'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
-import { PageHeader } from '@components/PageHeader'
 
 type Props = {
   data: {

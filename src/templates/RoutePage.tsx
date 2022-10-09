@@ -1,24 +1,24 @@
 import { graphql } from 'gatsby'
-import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import { FC } from 'react'
 
 import { Route } from '@components/routes/RouteComponentTypes'
 
-import SimpleLayout from '../layouts/Simple'
-import TextWithVisual from '../components/routes/TextWithVisual'
-import RoutesSectionImage from '../components/routes/RoutesSectionImage'
-import { MarkdownContent } from '../components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
+import { MarkdownContent } from '../components/markdown/MarkdownContent'
+import RoutesSectionImage from '../components/routes/RoutesSectionImage'
+import TextWithVisual from '../components/routes/TextWithVisual'
+import SimpleLayout from '../layouts/Simple'
 
-import netIcon from '../images/regular-routes/icons/noun_net_2428552.svg'
-import mapIcon from '../images/regular-routes/icons/noun_Maps_3610706.svg'
-import truckIcon from '../images/regular-routes/icons/openmoji_truck.svg'
 import heartBillIcon from '../images/regular-routes/icons/noun_Heart_Bill_98293.svg'
-import boxIcon from '../images/regular-routes/icons/openmoji_box.svg'
-import sackIcon from '../images/regular-routes/icons/openmoji_bag.svg'
-import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
-import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
+import mapIcon from '../images/regular-routes/icons/noun_Maps_3610706.svg'
+import netIcon from '../images/regular-routes/icons/noun_net_2428552.svg'
 import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
+import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
+import sackIcon from '../images/regular-routes/icons/openmoji_bag.svg'
+import boxIcon from '../images/regular-routes/icons/openmoji_box.svg'
+import truckIcon from '../images/regular-routes/icons/openmoji_truck.svg'
+import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
 
 type TemplateProps = {
   data: {
