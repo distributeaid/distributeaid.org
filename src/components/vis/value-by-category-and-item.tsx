@@ -1,5 +1,4 @@
-import { ReactNode } from '@reach/router/node_modules/@types/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { ResponsiveSunburst } from '@nivo/sunburst'
 
 type Item = {
@@ -20,16 +19,6 @@ type LineItem = {
   count: number
   item: Item
   shipment: Shipment
-}
-
-type Node = {
-  shipment: {
-    year: string
-    number: string
-    origin: string
-    destination: string
-  }
-  value: number
 }
 
 type Props = {
@@ -89,9 +78,6 @@ function buildCategoryVisData(lineItems: LineItem[], selector: LineItemKey) {
 
 const ValueByCategoryAndItemVis: FC<Props> = ({ categoryVisItems }) => {
   const nivoData = buildCategoryVisData(categoryVisItems.nodes, 'value')
-  const totalValue = categoryVisItems.nodes.reduce((total, lineItem) => {
-    return total + lineItem.value
-  }, 0)
 
   return (
     // NOTE: the containing element must have a set width & height

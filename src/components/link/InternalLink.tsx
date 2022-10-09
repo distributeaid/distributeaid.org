@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 type Props = {
   children?: ReactNode
   to: string
-  className?: string
+  className?: string | undefined
 }
 
 const InternalLink: FC<Props> = ({ children, ...otherProps }) => (

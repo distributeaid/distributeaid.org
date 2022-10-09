@@ -1,26 +1,4 @@
-import { ReactNode } from '@reach/router/node_modules/@types/react'
-import React, { FC } from 'react'
-import { ResponsiveSunburst } from '@nivo/sunburst'
-
-type Item = {
-  category: string
-  item: string
-  ageGender: string
-  sizeStyle: string
-}
-
-type Shipment = {
-  year: string
-  number: string
-  origin: string
-  destination: string
-}
-type LineItem = {
-  value: number
-  count: number
-  item: Item
-  shipment: Shipment
-}
+import { FC } from 'react'
 
 type Node = {
   shipment: {
@@ -37,8 +15,6 @@ type Props = {
     nodes: Node[]
   }
 }
-
-type LineItemKey = keyof LineItem
 
 const LineItemTable: FC<Props> = ({ lineItems }) => {
   return (

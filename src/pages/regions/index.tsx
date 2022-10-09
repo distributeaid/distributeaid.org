@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { graphql, HeadProps } from 'gatsby'
+import { graphql } from 'gatsby'
 import SimpleLayout from '@layouts/Simple'
 import { Region } from '@components/regions/RegionComponentTypes'
 import { Card, ImageVariant } from '@components/card/Card'

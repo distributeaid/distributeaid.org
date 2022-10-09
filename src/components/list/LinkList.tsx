@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { LinkList as LinkListType } from '@components/list/ListTypes'
 
