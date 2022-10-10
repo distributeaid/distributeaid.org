@@ -1,13 +1,13 @@
 import Footer from '@components/Footer'
 import { Fundraiser, Photo } from '@components/fundraiser/Fundraiser'
-import SimpleLayout from '@layouts/Simple'
-import { WaysToDonate } from '@pages/donate'
-import { FC } from 'react'
 import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import '../../stylesheets/donate.css'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
+import { WaysToDonate } from '@pages/donate'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { FC } from 'react'
+import '../../stylesheets/donate.css'
 
 export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {
   return (

@@ -1,5 +1,5 @@
-import path from 'path'
 import { getSrc } from 'gatsby-plugin-image'
+import path from 'path'
 
 export const createFundraisersPages = async ({
   graphql,

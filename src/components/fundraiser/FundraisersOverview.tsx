@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import { Link } from 'gatsby'
+import { FC } from 'react'
 import type { Fundraiser } from './Fundraiser'
 import { FundraiserCard as FundraiserComponent } from './Fundraiser'
 

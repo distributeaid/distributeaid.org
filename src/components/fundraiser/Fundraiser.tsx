@@ -1,7 +1,7 @@
-import { FC } from 'react'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import { FundraiserProgressBar } from './FundraiserProgress'
 import { getSrc } from 'gatsby-plugin-image'
+import { FC } from 'react'
+import { FundraiserProgressBar } from './FundraiserProgress'
 
 export type Fundraiser = {
   id: string
