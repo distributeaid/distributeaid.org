@@ -1,5 +1,5 @@
 ---
-title: Hendrerit Faucibus Commodo
+title: Humanitarian Logistics
 target: 16500
 raised: 2000
 currency: USD

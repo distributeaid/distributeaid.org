@@ -1,5 +1,5 @@
 ---
-title: Lorem Ipsum Dolor Sit Amet Fundraiser
+title: Ukraine Response Project
 target: 15000
 raised: 11355
 currency: GBP

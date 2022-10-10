@@ -1,5 +1,5 @@
 ---
-title: Feugiat Fringilla Pharetra Fundraiser
+title: Tech for Good
 target: 16500
 raised: 2000
 currency: USD

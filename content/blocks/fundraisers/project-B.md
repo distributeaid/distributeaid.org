@@ -1,5 +1,5 @@
 ---
-title: Consectetur Adipiscing Elit response
+title: US Disaster Relief
 target: 25000
 raised: 500
 currency: EUR

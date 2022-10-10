@@ -35,7 +35,7 @@ main.donate > .bg {
   }
 }
 
-main.donate .bg::before {
+main.donate > .bg::before {
   content: ' ';
   position: absolute;
   width: 100%;
@@ -132,7 +132,7 @@ main.donate .progressBar .bar {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
+  height: 100%;
   background-color: var(--color-da);
   border-right: 1px solid rgba(255, 255, 255, 0.75);
   transition: width 2s ease-in-out;
@@ -142,7 +142,7 @@ main.donate .progressBar span {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
+  height: 100%;
   transition: left 2s ease-in-out;
   padding-left: 1rem;
   font-size: 16px;
@@ -152,69 +152,88 @@ main.donate .progressBar.over75 span {
   color: white;
 }
 
-/** Fundraiser card **/
-main.donate section.card {
-  margin-top: 1px;
-  height: 100%;
-}
-main.donate section.card div.prose {
-  padding: 2rem;
-}
-@media only screen and (min-width: 600px) {
-  main.donate section.card div.prose {
-    padding: 1rem;
+@media only screen and (min-width: 1024px) {
+  main.donate .progressBar {
+    height: 50px;
   }
-}
-main.donate section.card header {
-  position: relative;
-}
-main.donate section.card header h1 {
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  font-weight: bold;
-  font-size: 125%;
-  text-shadow: var(--color-da) 1px 0px 2px, var(--color-da) 0px 1px 2px,
-    var(--color-da) -1px 0px 2px, var(--color-da) 0px -1px 2px;
-}
+  main.donate .progressBar span {
+    font-size: 34px;
+    font-weight: bold;
+  }
 
-main.donate section.card header > .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  background-size: contain;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-}
-
-main.donate section.card header {
-  aspect-ratio: 3 / 2;
+  main.donate .progressBar.over75 span {
+    margin-left: -6rem;
+  }
 }
 
 /** Fundraisers overview **/
-
-@media only screen and (min-width: 600px) {
-  main.donate article.fundraisers {
-    margin: 2rem auto;
-    width: calc(100% - 4rem);
-    max-width: 1024px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    grid-auto-rows: auto;
+main.donate .fundraisers {
+  width: 100%;
+  max-width: 1024px;
+  padding: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  main.donate .fundraisers {
+    margin: 0 auto;
+    padding: 0;
   }
 }
-
+main.donate .fundraisers .card {
+  height: calc(100vw / 2 * 0.5);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
 @media only screen and (min-width: 1024px) {
-  main.donate article.fundraisers {
-    grid-template-columns: repeat(3, 1fr);
+  main.donate .fundraisers .card {
+    height: calc(1024px / 2 * 0.6);
   }
+}
+main.donate .fundraisers .card a.bg {
+  height: 100%;
+  width: 100%;
+}
+main.donate .fundraisers .card a.title {
+  height: calc(100% - (24px * 2));
+  line-height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+@media only screen and (min-width: 600px) {
+  main.donate .fundraisers .card a.title {
+    font-size: 150%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.donate .fundraisers .card a.title {
+    height: calc(100% - (50px * 2));
+    font-size: 300%;
+  }
+}
+main.donate .fundraisers .card:nth-child(2n) a.title {
+  justify-content: flex-end;
+}
+main.donate .fundraisers .card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+main.donate .fundraisers .card:nth-child(2n + 1) > div:first-child {
+  order: 2;
+}
+main.donate .fundraisers .card .bg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main.donate .fundraisers .progressBar {
+  background-color: white;
 }
 
 /** Fundraiser page **/

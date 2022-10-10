@@ -1,4 +1,4 @@
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { Link } from 'gatsby'
 import { getSrc } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import { FundraiserProgressBar } from './FundraiserProgress'
@@ -46,19 +46,21 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
 
   return (
     <section className="card">
-      <header>
-        {bgImage && (
-          <div
-            style={{
-              backgroundImage: `url('${getSrc(bgImage)}')`,
-            }}
-            className="bg"
-          />
-        )}
-        <h1>{fundraiser.title}</h1>
-      </header>
-      <FundraiserProgressBar fundraiser={fundraiser} />
-      <MarkdownContent content={fundraiser.abstract} />
+      <div>
+        <Link to={`/donate/${fundraiser.name}`} className="title">
+          <h2>{fundraiser.title}</h2>
+        </Link>
+        <FundraiserProgressBar fundraiser={fundraiser} />
+      </div>
+      {bgImage && (
+        <Link
+          to={`/donate/${fundraiser.name}`}
+          className="bg"
+          style={{
+            backgroundImage: `url('${getSrc(bgImage)}')`,
+          }}
+        ></Link>
+      )}
     </section>
   )
 }

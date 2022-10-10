@@ -25,7 +25,7 @@ type Props = {
     allDaFundraiser: {
       nodes: Fundraiser[]
     }
-    thumbnails350px: {
+    thumbnails500px: {
       nodes: {
         parent: {
           absolutePath: string
@@ -52,12 +52,12 @@ const DonatePage: FC<Props> = ({
       frontmatter: { title, pageTitle, currencyConversionsToEUR },
     },
     allDaFundraiser: { nodes: fundraisers },
-    thumbnails350px: { nodes: thumbnails350px },
+    thumbnails500px: { nodes: thumbnails500px },
   },
 }) => {
   fundraisers.forEach((fundraiser) => {
     fundraiser.gallery = fundraiser.gallery.map((photo) => {
-      const gatsbyImageData = thumbnails350px.find(
+      const gatsbyImageData = thumbnails500px.find(
         ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
       )?.gatsbyImageData
       if (gatsbyImageData === undefined) {
@@ -128,7 +128,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    thumbnails350px: allImageSharp(
+    thumbnails500px: allImageSharp(
       filter: { original: { src: { glob: "/static/**" } } }
     ) {
       nodes {
@@ -137,7 +137,7 @@ export const pageQuery = graphql`
             absolutePath
           }
         }
-        gatsbyImageData(width: 350)
+        gatsbyImageData(width: 500)
       }
     }
   }

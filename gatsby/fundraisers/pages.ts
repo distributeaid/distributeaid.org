@@ -8,7 +8,7 @@ export const createFundraisersPages = async ({
   const {
     data: {
       fundraisers: { nodes: fundraisers },
-      thumbnails350px: { nodes: thumbnails350px },
+      thumbnails500px: { nodes: thumbnails500px },
       size600px: { nodes: size600px },
     },
   } = await graphql(`
@@ -29,7 +29,7 @@ export const createFundraisersPages = async ({
           body
         }
       }
-      thumbnails350px: allImageSharp(
+      thumbnails500px: allImageSharp(
         filter: { original: { src: { glob: "/static/**" } } }
       ) {
         nodes {
@@ -38,7 +38,7 @@ export const createFundraisersPages = async ({
               absolutePath
             }
           }
-          gatsbyImageData(width: 350)
+          gatsbyImageData(width: 500)
         }
       }
       size600px: allImageSharp(
@@ -89,12 +89,12 @@ export const createFundraisersPages = async ({
         currency: fundraiser.currency,
         abstract: fundraiser.abstract,
         gallery: fundraiser.gallery.map((photo) => {
-          const gatsbyImageData = thumbnails350px.find(
+          const gatsbyImageData = thumbnails500px.find(
             ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
-          ).gatsbyImageData
+          )?.gatsbyImageData
           if (gatsbyImageData === undefined) {
             console.error(
-              `Failed to find thumbnails350px gatsbyImageData for photo ${photo.url}!`,
+              `Failed to find thumbnails500px gatsbyImageData for photo ${photo.url}!`,
             )
           }
           return {
