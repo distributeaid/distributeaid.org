@@ -41,20 +41,24 @@ export type Photo = {
 
 export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
   fundraiser,
-}) => (
-  <section className="card">
-    <header>
-      <div
-        style={{
-          backgroundImage: `url('${getSrc(
-            fundraiser.gallery[0].gatsbyImageData,
-          )}')`,
-        }}
-        className="bg"
-      />
-      <h1>{fundraiser.title}</h1>
-    </header>
-    <FundraiserProgressBar fundraiser={fundraiser} />
-    <MarkdownContent content={fundraiser.abstract} />
-  </section>
-)
+}) => {
+  const bgImage = fundraiser.gallery[0]?.gatsbyImageData
+
+  return (
+    <section className="card">
+      <header>
+        {bgImage && (
+          <div
+            style={{
+              backgroundImage: `url('${getSrc(bgImage)}')`,
+            }}
+            className="bg"
+          />
+        )}
+        <h1>{fundraiser.title}</h1>
+      </header>
+      <FundraiserProgressBar fundraiser={fundraiser} />
+      <MarkdownContent content={fundraiser.abstract} />
+    </section>
+  )
+}
