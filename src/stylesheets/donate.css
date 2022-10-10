@@ -1,5 +1,9 @@
 main.donate {
-  background-color: var(--color-da);
+  --color-dark: #000000dd;
+  --color-light: #ffffffdd;
+  --color-da: #082b76;
+  color: var(--color-da);
+  background-color: white;
   padding-bottom: 1px;
 }
 @media only screen and (min-width: 1024px) {
@@ -8,26 +12,27 @@ main.donate {
   }
 }
 
-main.donate {
-  --color-dark: #000000dd;
-  --color-light: #ffffffdd;
-  --color-da: rgb(8 43 118);
-  --color-accent: hsl(246, 69%, 59%);
-  color: var(--color-dark);
-}
-
 main.donate > .bg {
   content: ' ';
   position: absolute;
-  top: 0;
+  top: 64px;
   left: 0;
   width: 100%;
-  height: calc(100vw * 9 / 16);
-  background-image: url(/uploads/donate-soap-distribution.webp);
-  background-size: contain;
+  max-width: 1024px;
+  height: auto;
+  aspect-ratio: 16/6;
+  background-image: url(/uploads/donate-soap-distribution-white.webp);
+  background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(4px);
-  opacity: 0.8;
+  margin: 0 auto;
+  opacity: 0.25;
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate > .bg {
+    left: calc((100vw - 1024px) / 2);
+    opacity: 1;
+  }
 }
 
 main.donate .bg::before {
@@ -35,12 +40,8 @@ main.donate .bg::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(10, 231, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    var(--color-da) 100%
-  );
+  background: white;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
 main.donate > * {
@@ -50,32 +51,35 @@ main.donate > * {
 /* Header */
 
 main.donate > header {
-  padding: 2rem;
-  max-width: 1000px;
+  padding: 2rem 2rem 0 2rem;
+  max-width: 1024px;
   margin: auto;
-  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  main.donate > header {
+    margin-top: 12rem;
+  }
 }
 
 main.donate > header h1 {
-  color: var(--color-light);
   font-weight: bold;
   font-size: 150%;
-  text-shadow: 0 0 10px #000000a3;
+  text-shadow: 0 0 10px white;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
   main.donate > header h1 {
-    font-size: 300%;
+    font-size: 200%;
   }
 }
 
 /* Progress */
 
 main.donate section.progress {
-  text-transform: uppercase;
   font-weight: 900;
-  background-color: var(--color-light);
-  padding: 2rem;
+  padding: 2rem 2rem 0 2rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -83,34 +87,25 @@ main.donate section.progress {
     padding: 2rem;
     margin: 2rem auto;
     width: calc(100% - 4rem);
-    max-width: 1000px;
-    box-shadow: 0px 0px 20px 9px #00000047;
+    max-width: 1024px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   main.donate section.progress {
     font-size: 150%;
-    padding: 4rem;
+    padding: 2rem 4rem 4rem 4rem;
   }
 }
 
+main.donate section.progress ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 90%;
+}
+
 main.donate section.progress h1 {
-  color: var(--color-accent);
-}
-
-main.donate section.progress dl {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-auto-rows: auto;
-  grid-auto-flow: column;
-}
-
-main.donate section.progress dl .target {
-  text-align: right;
+  font-weight: normal;
 }
 
 main.donate section.progress .progressBar {
@@ -119,9 +114,8 @@ main.donate section.progress .progressBar {
 
 main.donate section.progress .conversionNote {
   text-transform: none;
-  opacity: 0.7;
-  font-size: 80%;
-  margin: 1rem 0 0 0;
+  opacity: 0.5;
+  font-size: 60%;
   text-align: right;
 }
 
@@ -129,9 +123,8 @@ main.donate section.progress .conversionNote {
 main.donate .progressBar {
   height: 25px;
   width: 100%;
-  background-color: #a7a7a7;
+  background-color: #d3d3d3;
   position: relative;
-  box-shadow: 0px 0px 5px 1px #0000002e;
   overflow: hidden;
 }
 
@@ -140,8 +133,8 @@ main.donate .progressBar .bar {
   top: 0;
   left: 0;
   height: 25px;
-  background-color: var(--color-accent);
-  box-shadow: 0px 0px 5px 1px var(--color-accent);
+  background-color: var(--color-da);
+  border-right: 1px solid rgba(255, 255, 255, 0.75);
   transition: width 2s ease-in-out;
 }
 
@@ -153,16 +146,14 @@ main.donate .progressBar span {
   transition: left 2s ease-in-out;
   padding-left: 1rem;
   font-size: 16px;
-  color: var(--color-dark);
 }
 main.donate .progressBar.over75 span {
   margin-left: -4rem;
-  color: var(--color-light);
+  color: white;
 }
 
 /** Fundraiser card **/
 main.donate section.card {
-  background-color: var(--color-light);
   margin-top: 1px;
   height: 100%;
 }
@@ -181,7 +172,6 @@ main.donate section.card header h1 {
   padding: 1rem;
   position: absolute;
   bottom: 0;
-  color: var(--color-light);
   font-weight: bold;
   font-size: 125%;
   text-shadow: var(--color-da) 1px 0px 2px, var(--color-da) 0px 1px 2px,
@@ -197,9 +187,7 @@ main.donate section.card header > .bg {
   aspect-ratio: 3 / 2;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.8;
   overflow: hidden;
-  background-color: var(--color-da);
   background-position: center;
   background-size: cover;
 }
@@ -214,16 +202,12 @@ main.donate section.card header {
   main.donate article.fundraisers {
     margin: 2rem auto;
     width: calc(100% - 4rem);
-    max-width: 1000px;
+    max-width: 1024px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     grid-auto-rows: auto;
-  }
-
-  main.donate section.card {
-    box-shadow: 0px 0px 20px 9px #00000047;
   }
 }
 
@@ -254,7 +238,7 @@ main.donate article.fundraiser .prose img {
   main.donate article.fundraiser {
     margin: 2rem auto;
     width: calc(100% - 4rem);
-    max-width: 1000px;
+    max-width: 1024px;
   }
 }
 
@@ -279,9 +263,6 @@ main.donate article.fundraiser .gallery {
     margin-left: 2rem;
     grid-template-columns: 1fr;
   }
-  main.donate article.fundraiser .gallery > * {
-    box-shadow: 0px 0px 20px 9px #00000047;
-  }
 }
 
 main.donate article.fundraiser .gallery .photo {
@@ -293,7 +274,6 @@ main.donate article.fundraiser .gallery .photo span {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: var(--color-light);
   text-shadow: var(--color-da) 1px 0px 2px, var(--color-da) 0px 1px 2px,
     var(--color-da) -1px 0px 2px, var(--color-da) 0px -1px 2px;
   background: transparent;
@@ -312,11 +292,6 @@ main.donate article.fundraiser main {
 main.donate article.fundraiser main div.prose {
   padding: 2rem;
 }
-@media only screen and (min-width: 600px) {
-  main.donate article.fundraiser main {
-    box-shadow: 0px 0px 20px 9px #00000047;
-  }
-}
 
 /** Ways to donate **/
 
@@ -333,8 +308,7 @@ main.donate section.ways-to-donate {
     flex-direction: row;
     margin: 2rem auto;
     width: calc(100% - 4rem);
-    max-width: 1000px;
-    box-shadow: 0px 0px 20px 9px #00000047;
+    max-width: 1024px;
   }
 }
 

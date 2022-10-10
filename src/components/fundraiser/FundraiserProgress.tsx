@@ -16,20 +16,24 @@ export const FundraiserProgress: FC<{
 
   return (
     <section className="progress">
-      <h1>{title}</h1>
       <FundraiserProgressBar fundraiser={{ currency, raised, target }} />
-      <dl>
-        <dt className="raised">Raised so far:</dt>
-        <dd className="raised money">
-          {converted ? '~' : ''}
-          {moneyFormatter.format(raised)}
-        </dd>
-        <dt className="target">Target:</dt>
-        <dd className="target money">
-          {converted ? '~' : ''}
-          {moneyFormatter.format(target)}
-        </dd>
-      </dl>
+      <h1>{title}</h1>
+      <ul>
+        <li>
+          <span className="raised">Raised so far:</span>{' '}
+          <span className="raised money">
+            {converted ? '~' : ''}
+            {moneyFormatter.format(raised)}
+          </span>
+        </li>
+        <li>
+          <span className="target">Target:</span>{' '}
+          <span className="target money">
+            {converted ? '~' : ''}
+            {moneyFormatter.format(target)}
+          </span>
+        </li>
+      </ul>
       {converted && (
         <p className="conversionNote">
           <small>Note: sums include currency conversions.</small>
