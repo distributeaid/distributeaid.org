@@ -47,7 +47,9 @@ module.exports = {
           new Error(`Could not source needs assessment data: ${url}`),
         )
       }
+
       const resultData = await result.json()
+      console.info(`sourced needs assessment survey from ${url}`)
 
       Object.entries(resultData.summary).forEach(([quarter, places]) => {
         quarter = quarter.toUpperCase()
@@ -61,8 +63,7 @@ module.exports = {
                 const product = productMapper(page, question, unitKey)
                 const place = placeMapper(placeKey)
 
-                createNode({
-                  // Node Data
+                const nodeData = {
                   survey: {
                     ...survey,
                     quarter,
@@ -70,18 +71,23 @@ module.exports = {
                   place,
                   product,
                   need,
+                }
+
+                createNode({
+                  // Node Data
+                  ...nodeData,
 
                   // Gatsby Fields
                   id: createNodeId(
-                    `DA Need - ${
-                      survey.id
-                    } ${quarter} ${place} ${JSON.stringify(product)}`,
+                    `DA Need - ${survey.id} ${quarter} ${JSON.stringify(
+                      place,
+                    )} ${JSON.stringify(product)}`,
                   ),
                   parent: null,
                   children: [],
                   internal: {
                     type: `DANeed`,
-                    contentDigest: createContentDigest(resultData),
+                    contentDigest: createContentDigest(nodeData),
                   },
                 })
               })

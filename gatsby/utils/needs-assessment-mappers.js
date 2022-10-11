@@ -177,7 +177,8 @@ const unitMap = {
   diapersSize5: { unit: 'Item' },
   diapersSize6: { unit: 'Item' },
   washCycles: { unit: 'Wash Cycle' }, // 1L bottle = 38, 5k bag = 90
-  bottle1l: { unit: '1l' },
+  bag5k: { sizeStyle: 'Powder', unit: '5kg' },
+  bottle1l: { sizeStyle: 'Liquid', unit: '1l' },
   pack100: { unit: '100 Count' },
 
   // shelter
@@ -188,11 +189,13 @@ const unitMap = {
   //       so the unit is set at the item level.
 
   // foodItems
-  kg: { unit: '1kg' },
-  l: { unit: '1l' },
+  kg: { unit: 'kg' },
+  l: { unit: 'l' },
   cans: { unit: 'Item' },
+  servings: { unit: 'Serving' },
   // tea: 1 serving = 0.003 kg
   // coffee: 1 serving = 0.01 kg
+  epal: { unit: 'Euro Pallet' },
 
   // all clothing
   // most units are just items: {unit: "Item"} which is already listed above

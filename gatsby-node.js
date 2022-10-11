@@ -10,6 +10,7 @@ Customize the GraqphQL Schema
 ================================================================================
 */
 exports.createSchemaCustomization = (gatsbyUtils) => {
+  schema.defineNeedTypes(gatsbyUtils)
   schema.defineTeamTypes(gatsbyUtils)
 }
 
