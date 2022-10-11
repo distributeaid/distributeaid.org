@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
+import { PageHeader } from '@components/PageHeader'
 import { Route } from '@components/routes/RouteComponentTypes'
 
 import SimpleLayout from '../../layouts/Simple'
@@ -50,10 +51,16 @@ function formatCostInCurrency(cost: number, currency: string) {
   }
 }
 
+export function Head({ data: { route } }: TemplateProps) {
+  return (
+    <PageHeader
+      title={`Route: ${route.routeOrigin} to ${route.routeDestination}`}
+    />
+  )
+}
+
 const Routes: FC<TemplateProps> = ({ data: { route } }) => (
-  <SimpleLayout
-    pageTitle={`Route: ${route.routeOrigin} to ${route.routeDestination}`}
-  >
+  <SimpleLayout>
     <TextWithVisual
       positionOfVisual="right"
       visual={

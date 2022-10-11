@@ -18,8 +18,8 @@ type TemplateProps = {
   }
 }
 
-export function Head() {
-  return <PageHeader title={'Regions'} />
+export function Head({ data: { region } }: TemplateProps) {
+  return <PageHeader title={`Region: ${region.name}`} />
 }
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
