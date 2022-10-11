@@ -1,7 +1,7 @@
 import ReactMarkdown, { Components } from 'react-markdown'
 
-import { FC, ReactElement, ReactNode } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
+import { FC, ReactElement, ReactNode } from 'react'
 
 // Customize the components we render in markdown
 // https://github.com/remarkjs/react-markdown#appendix-b-components

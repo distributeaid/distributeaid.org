@@ -1,4 +1,4 @@
-import { CreateResolversArgs, Node } from 'gatsby'
+import { CreateResolversArgs } from 'gatsby'
 
 export default {
   /*

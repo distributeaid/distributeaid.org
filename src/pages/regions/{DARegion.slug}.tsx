@@ -1,15 +1,15 @@
 import { graphql } from 'gatsby'
-import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { FC } from 'react'
 
 import { Region } from '@components/regions/RegionComponentTypes'
 
-import SimpleLayout from 'layouts/Simple'
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import SmartLink from '@components/link/SmartLink'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
-import SmartLink from '@components/link/SmartLink'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from 'layouts/Simple'
 
 type TemplateProps = {
   data: {

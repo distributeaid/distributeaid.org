@@ -34,3 +34,6 @@ jobs:
 
       - name: Check if all source code is formatted correctly
         run: npx prettier -c ./
+
+      - name: Ensure TypeScript compiles
+        run: npx tsc --pretty

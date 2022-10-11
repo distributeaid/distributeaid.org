@@ -1,9 +1,8 @@
 import type { GatsbyNode } from 'gatsby'
 
+import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
 import transformers from './gatsby/transform-nodes'
-import resolvers from './gatsby/create-resolvers'
-import pages from './gatsby/create-pages'
 
 /*
 Customize the GraqphQL Schema

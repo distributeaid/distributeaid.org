@@ -1,12 +1,12 @@
-import { FC } from 'react'
-import SimpleLayout from '@layouts/Simple'
 import AboutHero from '@components/about-us/AboutHero'
-import MissionStatement from '@components/about-us/MissionStatement'
-import BoardMembers from '@components/about-us/BoardMembers'
 import AboutOurMission from '@components/about-us/AboutOurMission'
+import BoardMembers from '@components/about-us/BoardMembers'
+import MissionStatement from '@components/about-us/MissionStatement'
 import Timeline from '@components/about-us/Timeline'
-import { graphql } from 'gatsby'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 
 type Props = {
   data: {

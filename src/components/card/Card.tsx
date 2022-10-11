@@ -1,8 +1,8 @@
 import SmartLink from '@components/link/SmartLink'
-import { Action, DynamicCardImage } from 'types/card-types'
-import { FC, PropsWithChildren, ReactNode } from 'react'
 import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { FC, PropsWithChildren, ReactNode } from 'react'
+import { Action, DynamicCardImage } from 'types/card-types'
 
 export enum ImageVariant {
   square,

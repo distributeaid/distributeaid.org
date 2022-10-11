@@ -1,6 +1,6 @@
-import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 import Footer from '@components/Footer'
 import MainMenu from '@components/nav/MainMenu/MainMenu'
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 interface Props {
   footer?: ReactNode
