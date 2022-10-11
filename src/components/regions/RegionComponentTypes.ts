@@ -7,6 +7,7 @@ Region
 */
 
 export type Region = {
+  pagePath?: string
   name: string
   map: {
     gatsbyImageData: IGatsbyImageData
@@ -30,6 +31,7 @@ Subregion
 */
 
 export type Subregion = {
+  pagePath?: string
   name: string
   map: {
     gatsbyImageData: IGatsbyImageData

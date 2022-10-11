@@ -24,7 +24,7 @@ test.describe('Regions', () => {
     await regionButton.click()
 
     await expect(page).toHaveURL(
-      new URL('/regions/the-balkans', base).toString(),
+      new URL('/regions/the-balkans/', base).toString(),
     )
 
     await expect(page).toHaveTitle('Region: The Balkans · Distribute Aid')
@@ -40,7 +40,7 @@ test.describe('Regions', () => {
     await subregionLink.click()
 
     await expect(page).toHaveURL(
-      new URL('/regions/the-balkans/serbia', base).toString(),
+      new URL('/regions/the-balkans/serbia/', base).toString(),
     )
 
     await expect(page).toHaveTitle(
@@ -50,7 +50,7 @@ test.describe('Regions', () => {
 })
 
 test.describe('Region', () => {
-  const greekRegion = new URL('/regions/greece', base).toString()
+  const greekRegion = new URL('/regions/greece/', base).toString()
 
   it('should should have the correct title', async ({ page }) => {
     await page.goto(greekRegion)
@@ -65,7 +65,7 @@ test.describe('Region', () => {
     await subregionLink.click()
 
     await expect(page).toHaveURL(
-      new URL('/regions/greece/aegean-islands', base).toString(),
+      new URL('/regions/greece/aegean-islands/', base).toString(),
     )
 
     await expect(page).toHaveTitle(
@@ -75,7 +75,7 @@ test.describe('Region', () => {
 })
 
 test.describe('Subregion', () => {
-  const beirutSubregion = new URL('/regions/lebanon/beirut', base).toString()
+  const beirutSubregion = new URL('/regions/lebanon/beirut/', base).toString()
 
   it('should should have the correct title', async ({ page }) => {
     await page.goto(beirutSubregion)
@@ -91,7 +91,7 @@ test.describe('Subregion', () => {
 
     await regionLink.click()
 
-    await expect(page).toHaveURL(new URL('/regions/lebanon', base).toString())
+    await expect(page).toHaveURL(new URL('/regions/lebanon/', base).toString())
 
     await expect(page).toHaveTitle('Region: Lebanon · Distribute Aid')
   })

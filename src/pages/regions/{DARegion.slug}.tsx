@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import slugify from 'utils/slugify'
 
 import { Region } from '@components/regions/RegionComponentTypes'
 
@@ -43,12 +42,9 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 
       <ul className="flex  justify-evenly my-5 text-2xl">
         {region.subregions.map((subregion, i) => {
-          const href = `/regions/${slugify(region.name)}/${slugify(
-            subregion.name,
-          )}`
           return (
             <li key={i}>
-              <SmartLink className="link" href={href}>
+              <SmartLink className="link" href={subregion.pagePath}>
                 {subregion.name}
               </SmartLink>
             </li>
@@ -105,6 +101,9 @@ export const query = graphql`
         }
       }
       subregions {
+        pagePath: gatsbyPath(
+          filePath: "/regions/{DASubregion.region__slug}/{DASubregion.slug}"
+        )
         name
       }
     }

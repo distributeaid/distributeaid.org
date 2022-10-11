@@ -5,9 +5,7 @@ import { Region } from '@components/regions/RegionComponentTypes'
 import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
-import PageData from '@components/PageData'
 import { PageHeader } from '@components/PageHeader'
 
 type Props = {
@@ -27,11 +25,6 @@ const RegionsPage: FC<Props> = ({
     regions: { nodes: regions },
   },
 }) => {
-  const createRegionHref = (region: Region) => {
-    const regionSlug = slugify(region.name)
-    return `/regions/${regionSlug}`
-  }
-
   // totals up and returns the population count for a region
   const getRegionPopulationCount = (region: Region): string => {
     const populationCount = region.subregions
@@ -44,15 +37,12 @@ const RegionsPage: FC<Props> = ({
 
   // creates subregion links for a given region
   const createSubregionLinks = (region: Region): JSX.Element[] => {
-    const regionHref = createRegionHref(region)
     return region.subregions.map((subregion, index, array) => {
-      const subregionSlug = slugify(subregion.name)
-      const subregionHref = `${regionHref}/${subregionSlug}`
       const seperator = getOxfordCommaSeparator(index, array)
       return (
         <span key={subregion.name}>
           {seperator}
-          <SmartLink className="link" href={subregionHref}>
+          <SmartLink className="link" href={subregion.pagePath}>
             {subregion.name}
           </SmartLink>
         </span>
@@ -89,7 +79,7 @@ const RegionsPage: FC<Props> = ({
             body={createRegionsCardBody(region)}
             actions={[
               {
-                url: createRegionHref(region),
+                url: region.pagePath,
                 label: 'View Region',
               },
             ]}
@@ -109,12 +99,16 @@ export const query = graphql`
     }
     regions: allDaRegion {
       nodes {
+        pagePath: gatsbyPath(filePath: "/regions/{DARegion.slug}")
         name
         map {
           gatsbyImageData
         }
         overview
         subregions {
+          pagePath: gatsbyPath(
+            filePath: "/regions/{DASubregion.region__slug}/{DASubregion.slug}"
+          )
           name
           population {
             count
