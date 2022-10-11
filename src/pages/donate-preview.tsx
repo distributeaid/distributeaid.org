@@ -7,7 +7,6 @@ import SimpleLayout from '@layouts/Simple'
 import { summarizeFundraisers } from 'data/summarizeFundraisers'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import '../stylesheets/donate.css'
 import { WaysToDonate } from './donate'
 
 type Props = {
