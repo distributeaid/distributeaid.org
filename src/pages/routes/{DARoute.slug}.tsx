@@ -346,7 +346,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         <div className="mb-12 flex">
           <div className="tile-icon">
             <StaticImage
-              src="../images/regular-routes/pallet-aid-logo.256.png"
+              src="../../images/regular-routes/pallet-aid-logo.256.png"
               alt="Hub Logo: Pallet Aid (PA)"
               height={80}
               width={80}

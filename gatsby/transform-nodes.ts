@@ -34,7 +34,7 @@ export default {
         getNode(node.parent).relativePath,
       )
       const fileNode = getNode(node.parent)
-      const slug = fileNode.name
+      const slug = fileNode.relativeDirectory.split('/').pop()
 
       createNode({
         // Node Data
