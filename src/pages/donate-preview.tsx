@@ -136,7 +136,11 @@ export const pageQuery = graphql`
             absolutePath
           }
         }
-        gatsbyImageData(width: 500)
+        gatsbyImageData(
+          width: 500
+          aspectRatio: 1.2
+          transformOptions: { fit: COVER }
+        )
       }
     }
   }

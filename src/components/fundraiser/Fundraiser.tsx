@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import { getSrc } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import { FundraiserProgressBar } from './FundraiserProgress'
 
@@ -42,7 +42,7 @@ export type Photo = {
 export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
   fundraiser,
 }) => {
-  const bgImage = fundraiser.gallery[0]?.gatsbyImageData
+  const bgImage = fundraiser.gallery[0]
 
   return (
     <section className="card">
@@ -53,13 +53,9 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
         <FundraiserProgressBar fundraiser={fundraiser} />
       </div>
       {bgImage && (
-        <Link
-          to={`/donate/${fundraiser.name}`}
-          className="bg"
-          style={{
-            backgroundImage: `url('${getSrc(bgImage)}')`,
-          }}
-        ></Link>
+        <Link to={`/donate/${fundraiser.name}`} className="bg">
+          <GatsbyImage alt={bgImage.alt} image={bgImage.gatsbyImageData} />
+        </Link>
       )}
     </section>
   )
