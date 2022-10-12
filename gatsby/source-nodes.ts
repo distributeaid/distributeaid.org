@@ -1,8 +1,13 @@
-import { SourceNodeArgs } from 'gatsby'
+import { SourceNodesArgs } from 'gatsby'
 
 import fetch from 'node-fetch'
 
 import mappers from './utils/needs-assessment-mappers'
+
+type NeedsAssessmentSummary = {
+  summary: Record<string, Record<string, Record<string, number>>>
+  stats: { count: number }
+}
 
 export default {
   /*
@@ -14,7 +19,7 @@ export default {
     createContentDigest,
     reporter,
     createNodeId,
-  }: SourceNodeArgs) => {
+  }: SourceNodesArgs) => {
     // NOTE: previous surveys were conducted with Google Forms, then Qualtrics.
     //       need to load the data manually
     const surveys = [
@@ -45,7 +50,7 @@ export default {
         )
       }
 
-      const resultData = await result.json()
+      const resultData = (await result.json()) as NeedsAssessmentSummary
       console.info(`sourced needs assessment survey from ${url}`)
 
       Object.entries(resultData.summary).forEach(([quarter, places]) => {
@@ -56,9 +61,23 @@ export default {
             if (mappers.isProductSurveyPage(page)) {
               Object.entries(questions).forEach(([question, units]) => {
                 const unitKey = Object.keys(units)[0]
+                if (unitKey === undefined) {
+                  console.error(`No unit key defined for ${page}.${question}`)
+                  return
+                }
                 const need = Object.values(units)[0]
                 const product = mappers.productMapper(page, question, unitKey)
-                const place = mappers.placeMapper(placeKey)
+                if (product === undefined) {
+                  console.error(
+                    `No product defined for ${page}.${question}.${unitKey}`,
+                  )
+                  return
+                }
+                const place = places[placeKey]
+                if (place === undefined) {
+                  console.error(`No place defined for ${placeKey}`)
+                  return
+                }
 
                 const nodeData = {
                   survey: {

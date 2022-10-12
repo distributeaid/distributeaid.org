@@ -2,7 +2,8 @@
 Product Mapper
 ================================================================================
 */
-const categoryMap = {
+type Category = { category: string; ageGender?: string }
+export const categoryMap: Record<string, Category> = {
   hygieneItems: { category: 'Hygiene' },
   shelter: { category: 'Shelter' },
   education: { category: 'Education' },
@@ -14,7 +15,14 @@ const categoryMap = {
   babyClothing: { category: 'Clothing', ageGender: 'Baby' },
 }
 
-const itemMap = {
+type Item = {
+  item: string
+  sizeStyle?: string
+  category?: string
+  ageGender?: string
+  unit?: string
+}
+const itemMap: Record<string, Item> = {
   // hygieneItems
   clothMasks: { item: 'Mask', sizeStyle: 'Cloth' },
   surgicalMasks: { item: 'Mask', sizeStyle: 'Surgical' },
@@ -157,7 +165,8 @@ const itemMap = {
   babyGloves: { item: 'Gloves' },
 }
 
-const unitMap = {
+type Unit = { unit: string; sizeStyle?: string }
+const unitMap: Record<string, Unit> = {
   // hygieneItems
   masks: { unit: 'Item' },
   bars100g: { unit: '100g' },
@@ -202,14 +211,25 @@ const unitMap = {
   pairs: { unit: 'Pairs' },
 }
 
-const isProductSurveyPage = (categoryKey) => {
+const isProductSurveyPage = (categoryKey: string) => {
   return categoryMap.hasOwnProperty(categoryKey)
 }
 
-const productMapper = (categoryKey, itemKey, unitKey) => {
+const productMapper = (
+  categoryKey: string,
+  itemKey: string,
+  unitKey: string,
+): (Unit & Category & Item) | undefined => {
   const categoryPartial = categoryMap[categoryKey]
   const itemPartial = itemMap[itemKey]
   const unitPartial = unitMap[unitKey]
+
+  if (
+    categoryPartial === undefined ||
+    itemPartial === undefined ||
+    unitPartial === undefined
+  )
+    return undefined
 
   return {
     ...categoryPartial,
@@ -222,7 +242,7 @@ const productMapper = (categoryKey, itemKey, unitKey) => {
 Place mapper
 ================================================================================
 */
-const placeMap = {
+export const places: Record<string, { region?: string; subregion?: string }> = {
   calais: { region: 'France', subregion: 'Northern France' },
   paris: { region: 'France', subregion: 'Paris' },
   chios: { region: 'Greece', subregion: 'Aegean Islands' },
@@ -233,7 +253,7 @@ const placeMap = {
   beirut: { region: 'Lebanon', subregion: 'Beirut' },
   bekka: { region: 'Lebanon', subregion: 'Bekka Valley' },
   saida: { region: 'Lebanon', subregion: 'Saida' },
-  lebanon: { region: 'Lebanon', subregion: null },
+  lebanon: { region: 'Lebanon' },
   bosnia: { region: 'The Balkans', subregion: 'Bosnia' },
   serbia: { region: 'The Balkans', subregion: 'Serbia' },
   croatia: { region: 'The Balkans', subregion: 'Croatia' },
@@ -243,11 +263,7 @@ const placeMap = {
   moldova: { region: 'Eastern Europe', subregion: 'Moldova' },
   slovakia: { region: 'Eastern Europe', subregion: 'Slovakia' },
   hungary: { region: 'Eastern Europe', subregion: 'Hungary' },
-  other: { region: null, subregion: null },
-}
-
-const placeMapper = (placeKey) => {
-  return placeMap[placeKey]
+  other: {},
 }
 
 /*
@@ -257,5 +273,4 @@ Exports
 export default {
   isProductSurveyPage,
   productMapper,
-  placeMapper,
 }
