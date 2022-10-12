@@ -211,11 +211,11 @@ const unitMap: Record<string, Unit> = {
   pairs: { unit: 'Pairs' },
 }
 
-const isProductSurveyPage = (categoryKey: string) => {
+export const isProductSurveyPage = (categoryKey: string) => {
   return categoryMap.hasOwnProperty(categoryKey)
 }
 
-const productMapper = (
+export const productMapper = (
   categoryKey: string,
   itemKey: string,
   unitKey: string,
@@ -264,13 +264,4 @@ export const places: Record<string, { region?: string; subregion?: string }> = {
   slovakia: { region: 'Eastern Europe', subregion: 'Slovakia' },
   hungary: { region: 'Eastern Europe', subregion: 'Hungary' },
   other: {},
-}
-
-/*
-Exports
-================================================================================
-*/
-export default {
-  isProductSurveyPage,
-  productMapper,
 }
