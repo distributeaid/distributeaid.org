@@ -9,6 +9,7 @@ export type Route = {
   introduction: string
   mapUrl: string
   aidRequestFormUrl: string
+  population: number
   images: {
     deliverySection: string
     reservationSection: string

@@ -1,10 +1,14 @@
 import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
-import slugify from '../src/utils/slugify'
-
 import { Region } from '../src/components/regions/RegionComponentTypes'
 import { Route } from '../src/components/routes/RouteComponentTypes'
+import slugify from '../src/utils/slugify'
+
+/*
+ * Note: some TypeScript errors have been silenced below,
+ * to enable type checking for *new* code. Feel free to resolve.
+ */
 
 export default {
   /*
@@ -74,6 +78,7 @@ export default {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
+      // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
       const fm = node.frontmatter
@@ -123,6 +128,7 @@ export default {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
+      // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/pages/routes/*.md')
     ) {
       const fm = node.frontmatter as Route
@@ -182,11 +188,13 @@ export default {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
+      // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/blocks/roles/*.md')
     ) {
       const fm = node.frontmatter as any
       const fileRelativePath = path.join(
         'content',
+        // @ts-ignore
         getNode(node.parent).relativePath,
       )
 
@@ -230,14 +238,17 @@ export default {
     if (
       node.internal.type === 'MarkdownRemark' &&
       node.fileAbsolutePath &&
+      // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/blocks/members/*.md')
     ) {
       const fm = node.frontmatter as any
       const fileRelativePath = path.join(
         'content',
+        // @ts-ignore
         getNode(node.parent).relativePath,
       )
 
+      // @ts-ignore
       const roleData = fm.roles.map((role) => {
         return {
           fileRelativePath: role.role,
@@ -285,10 +296,13 @@ export default {
   }: CreateNodeArgs) => {
     if (node.internal.type === 'CombinedManifestsJson') {
       const rawValue = node['$ Total']
+      // @ts-ignore
       const value = parseFloat(rawValue?.replaceAll(/[\$,]/g, ''))
+      // @ts-ignore
       const count = parseInt(node['Count']?.replaceAll(/[\,|\.]/g, ''))
       if (value && !isNaN(value) && count && !isNaN(count)) {
         const rawShipment = node['Shipment #']
+        // @ts-ignore
         const shipmentComponents = rawShipment.match(
           /^(\d{2})-(\d{3})-([A-Z]{3})-([A-Z]{3})$/,
         )

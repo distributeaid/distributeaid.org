@@ -1,5 +1,10 @@
 import { CreateResolversArgs } from 'gatsby'
 
+/*
+ * Note: some TypeScript errors have been silenced below,
+ * to enable type checking for *new* code. Feel free to resolve.
+ */
+
 export default {
   /*
   Regions
@@ -10,6 +15,7 @@ export default {
       DARegion: {
         subregions: {
           type: ['DASubregion'],
+          // @ts-ignore
           resolve: async (source, args, context, info) => {
             const { entries: subregions } = await context.nodeModel.findAll({
               query: {
@@ -40,6 +46,7 @@ export default {
       DASubregion: {
         region: {
           type: 'DARegion',
+          // @ts-ignore
           resolve: async (source, args, context, info) => {
             const region = await context.nodeModel.findOne({
               query: {
@@ -77,7 +84,9 @@ export default {
       DATeamMember: {
         roles: {
           type: ['DATeamTenure'],
+          // @ts-ignore
           resolve: async (source, args, context, info) => {
+            // @ts-ignore
             const roleFileRelativePaths = source.roleData.map((role) => {
               return role.fileRelativePath
             })
@@ -92,8 +101,10 @@ export default {
             })
             const entries = Array.from(results.entries)
 
+            // @ts-ignore
             const roles = source.roleData.map((role) => {
               const entry = entries.find((entry) => {
+                // @ts-ignore
                 return entry.fileRelativePath === role.fileRelativePath
               })
 
@@ -128,6 +139,7 @@ const imageSharpResolver = (
 ) => {
   return {
     type: 'ImageSharp',
+    // @ts-ignore
     resolve: async (source, args, context, info) => {
       const file = await context.nodeModel.findOne({
         query: {
