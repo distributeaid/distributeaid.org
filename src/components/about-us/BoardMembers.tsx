@@ -6,6 +6,8 @@ const BoardMembers: FC = () => (
   <div>
     <Image
       image={boardSrc}
+      width={600}
+      height={300}
       altText={
         'Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank'
       }
@@ -15,8 +17,9 @@ const BoardMembers: FC = () => (
       attribution={'DistributeAid'}
       alignmentPhoto={'mx-auto'}
       alignmentCaption={'text-center'}
+      span={''}
     />
-    <div className="max-w-7xl mx-auto text-right py-20 px-4 text-lg">
+    {/* <div className="max-w-7xl mx-auto text-center py-20 px-4 text-lg">
       <img
         className="mx-auto mb-4"
         style={{
@@ -35,7 +38,7 @@ const BoardMembers: FC = () => (
         <br />
         Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank
       </p>
-    </div>
+    </div> */}
   </div>
 )
 
