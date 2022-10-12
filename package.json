@@ -72,7 +72,7 @@
     "jest-environment-jsdom": "29.1.2",
     "jest-extended": "3.1.0",
     "netlify-cli": "12.0.7",
-    "postcss": "8.4.17",
+    "postcss": "8.4.18",
     "prettier": "2.7.1",
     "prettier-plugin-organize-imports": "3.1.1",
     "ts-jest": "29.0.3"
