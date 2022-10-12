@@ -1,14 +1,12 @@
-import { graphql } from 'gatsby'
-import { FC } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import slugify from 'utils/slugify'
-
-import { Region, Subregion } from '@components/regions/RegionComponentTypes'
-
-import SimpleLayout from 'layouts/Simple'
-import UpdateList from '@components/list/UpdateList'
-import MarkdownContent from '@components/markdown/MarkdownContent'
 import SmartLink from '@components/link/SmartLink'
+import UpdateList from '@components/list/UpdateList'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { PageHeader } from '@components/PageHeader'
+import { Subregion } from '@components/regions/RegionComponentTypes'
+import { graphql } from 'gatsby'
+import SimpleLayout from 'layouts/Simple'
+import { FC } from 'react'
+import slugify from 'utils/slugify'
 
 type TemplateProps = {
   data: {
@@ -16,11 +14,17 @@ type TemplateProps = {
   }
 }
 
+export function Head({ data: { subregion } }: TemplateProps) {
+  return (
+    <PageHeader
+      title={`Subregion: ${subregion.name} (${subregion.region.name})`}
+    />
+  )
+}
+
 const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
   return (
-    <SimpleLayout
-      pageTitle={`Subregion: ${subregion.name} (${subregion.region.name})`}
-    >
+    <SimpleLayout>
       <h1 className="text-2xl font-semibold text-gray-800">
         {subregion.name}
         <small>
@@ -33,8 +37,12 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </small>
       </h1>
 
-      <h2>Overview</h2>
-      <MarkdownContent content={subregion.overview} />
+      <section className="text-center p-4 bg-navy-100 m-auto">
+        <h2 className="text-center text-2xl text-navy-700">Overview</h2>
+        <div className="text-center m-auto">
+          <MarkdownContent content={subregion.overview} />
+        </div>
+      </section>
 
       <UpdateList list={subregion.newsUpdates} />
     </SimpleLayout>

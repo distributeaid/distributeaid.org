@@ -1,15 +1,16 @@
 import { graphql } from 'gatsby'
-import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { FC } from 'react'
 import slugify from 'utils/slugify'
 
 import { Region } from '@components/regions/RegionComponentTypes'
 
-import SimpleLayout from 'layouts/Simple'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import SmartLink from '@components/link/SmartLink'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
-import SmartLink from '@components/link/SmartLink'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from 'layouts/Simple'
 
 type TemplateProps = {
   data: {
@@ -17,27 +18,36 @@ type TemplateProps = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Regions'} />
+}
+
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   return (
-    <SimpleLayout pageTitle={`Region: ${region.name}`}>
-      <h1 className="text-2xl font-semibold text-gray-800">{region.name}</h1>
-
-      <div className="w-64">
-        <GatsbyImage
-          key={region.name}
-          image={region.map.gatsbyImageData}
-          alt={`Map highlighting the ${region.name} region.`}
-          className="mb-4 w-full"
-        />
+    <SimpleLayout>
+      <div className="relative mb-4">
+        <div className="absolute inset-0 z-10 flex justify-center">
+          <div className="bg-navy-700 bg-opacity-75 px-6 flex flex-col justify-center">
+            <h1 className="text-4xl text-white flex-none">{region.name}</h1>
+          </div>
+        </div>
+        <div className="w-full">
+          <GatsbyImage
+            key={region.name}
+            image={region.map.gatsbyImageData}
+            alt={`Map highlighting the ${region.name} region.`}
+            className="w-full h-32"
+          />
+        </div>
       </div>
 
-      <ul>
-        {region.subregions.map((subregion) => {
+      <ul className="flex  justify-evenly my-5 text-2xl">
+        {region.subregions.map((subregion, i) => {
           const href = `/regions/${slugify(region.name)}/${slugify(
             subregion.name,
           )}`
           return (
-            <li>
+            <li key={i}>
               <SmartLink className="link" href={href}>
                 {subregion.name}
               </SmartLink>
@@ -46,12 +56,18 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         })}
       </ul>
 
-      <h2>Overview</h2>
-      <MarkdownContent content={region.overview} />
-
-      <h2>Government Response</h2>
-      <MarkdownContent content={region.governmentResponse} />
-
+      <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
+        <div className="p-4 bg-navy-100">
+          <h2 className="text-center text-2xl text-navy-700">Overview</h2>
+          <MarkdownContent content={region.overview} />
+        </div>
+        <div className="p-4 bg-navy-50">
+          <h2 className="text-center text-2xl text-navy-700">
+            Government Response
+          </h2>
+          <MarkdownContent content={region.governmentResponse} />
+        </div>
+      </div>
       <UpdateList list={region.newsUpdates} />
       <LinkList list={region.stayInformed} />
     </SimpleLayout>

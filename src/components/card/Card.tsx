@@ -1,7 +1,13 @@
 import SmartLink from '@components/link/SmartLink'
-import { Action } from 'types/card-types'
-import { FC, PropsWithChildren, ReactNode } from 'react'
 import classNames from 'classnames'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { FC, PropsWithChildren, ReactNode } from 'react'
+import { Action, DynamicCardImage } from 'types/card-types'
+
+export enum ImageVariant {
+  square,
+  circle,
+}
 
 /**
  * creates a single SmartLink component
@@ -17,7 +23,9 @@ const createAction = (action: Action) => (
 )
 export const Card: FC<
   PropsWithChildren<{
-    header?: ReactNode // will be either a StaticImage or GatsbyImage
+    header?: ReactNode // Can be either a StaticImage or anything you want to display in the header
+    dynamicCardImage?: DynamicCardImage
+    imageVariant?: ImageVariant
     title?: string
     subtitle?: string
     additionalHeaderContent?: ReactNode | ReactNode[]
@@ -30,6 +38,8 @@ export const Card: FC<
 > = ({
   children,
   header,
+  dynamicCardImage,
+  imageVariant,
   title,
   subtitle,
   additionalHeaderContent,
@@ -52,6 +62,19 @@ export const Card: FC<
     data-testid="card"
   >
     {header && header}
+    {dynamicCardImage && (
+      <div className={imageVariant === ImageVariant.circle ? `p-2` : ''}>
+        <GatsbyImage
+          data-testid="card-gatsby-image"
+          image={dynamicCardImage.image}
+          alt={dynamicCardImage.alt}
+          className="mb-4"
+          imgClassName={
+            imageVariant === ImageVariant.circle ? `rounded-full` : ''
+          }
+        ></GatsbyImage>
+      </div>
+    )}
     <div className="m-3 flex flex-col flex-1">
       <div className="text-center">
         {title && <h2 className="text-xl font-semibold mb-1">{title}</h2>}

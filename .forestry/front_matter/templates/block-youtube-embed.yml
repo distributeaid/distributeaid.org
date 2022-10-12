@@ -1,0 +1,15 @@
+---
+label: 'Block: Youtube Embed'
+hide_body: true
+fields:
+- name: embed
+  type: text
+  config:
+    required: true
+  label: Youtube Embed
+  hidden: false
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title (to appear above the video)

@@ -1,6 +1,7 @@
-import MarkdownContent from '@components/markdown/MarkdownContent'
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import { FC } from 'react'
+import ReactMarkdown from 'react-markdown'
+
 import logoBlueSrc from '../../images/logomark_blue.svg'
 
 type Props = {
@@ -20,7 +21,7 @@ const MissionStatement: FC<Props> = ({ missionStatement }) => (
             alt="Distribute Aid Logo: A flock of doves stylized by stacking wings behind the main outline of a dove."
           />
           <div className="flex-grow">
-            <MarkdownContent content={missionStatement} />
+            <ReactMarkdown children={missionStatement} />
           </div>
         </div>
       </div>

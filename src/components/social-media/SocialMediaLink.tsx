@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
+import { FC } from 'react'
 
 interface Props {
   href: string

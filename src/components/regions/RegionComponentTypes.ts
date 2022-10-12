@@ -1,5 +1,5 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { LinkList, UpdateList } from '@components/list/ListTypes'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 /*
 Region
@@ -11,7 +11,13 @@ export type Region = {
   map: {
     gatsbyImageData: IGatsbyImageData
   }
+  /**
+   * Markdown string
+   */
   overview: string
+  /**
+   * Markdown string
+   */
   governmentResponse: string
   newsUpdates: UpdateList
   stayInformed: LinkList
@@ -28,6 +34,9 @@ export type Subregion = {
   map: {
     gatsbyImageData: IGatsbyImageData
   }
+  /**
+   * Markdown string
+   */
   overview: string
   population: {
     count: number

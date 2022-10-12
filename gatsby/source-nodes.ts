@@ -1,13 +1,10 @@
-const fetch = (...args) =>
-  import('node-fetch').then(({ default: fetch }) => fetch(...args))
+import { SourceNodeArgs } from 'gatsby'
 
-const {
-  isProductSurveyPage,
-  productMapper,
-  placeMapper,
-} = require('./utils/needs-assessment-mappers')
+import fetch from 'node-fetch'
 
-module.exports = {
+import mappers from './utils/needs-assessment-mappers'
+
+export default {
   /*
   Needs Assessment Data
   ================================================================================
@@ -17,7 +14,7 @@ module.exports = {
     createContentDigest,
     reporter,
     createNodeId,
-  }) => {
+  }: SourceNodeArgs) => {
     // NOTE: previous surveys were conducted with Google Forms, then Qualtrics.
     //       need to load the data manually
     const surveys = [
@@ -56,12 +53,12 @@ module.exports = {
 
         Object.entries(places).forEach(([placeKey, pages]) => {
           Object.entries(pages).forEach(([page, questions]) => {
-            if (isProductSurveyPage(page)) {
+            if (mappers.isProductSurveyPage(page)) {
               Object.entries(questions).forEach(([question, units]) => {
                 const unitKey = Object.keys(units)[0]
                 const need = Object.values(units)[0]
-                const product = productMapper(page, question, unitKey)
-                const place = placeMapper(placeKey)
+                const product = mappers.productMapper(page, question, unitKey)
+                const place = mappers.placeMapper(placeKey)
 
                 const nodeData = {
                   survey: {

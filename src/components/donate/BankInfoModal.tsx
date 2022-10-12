@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import Modal from 'react-modal'
 import Button from '@components/button/Button'
+import { FC } from 'react'
+import Modal from 'react-modal'
 
 type Props = {
   isOpen: boolean

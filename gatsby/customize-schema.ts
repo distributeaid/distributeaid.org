@@ -1,9 +1,13 @@
-module.exports = {
+import { CreateSchemaCustomizationArgs } from 'gatsby'
+
+export default {
   /*
   Need
   ================================================================================
   */
-  defineNeedTypes: ({ actions: { createTypes } }) => {
+  defineNeedTypes: ({
+    actions: { createTypes },
+  }: CreateSchemaCustomizationArgs) => {
     const typeDefs = `
       type DANeedSurvey {
         id: String!
@@ -39,7 +43,9 @@ module.exports = {
   Team Tenure
   ================================================================================
   */
-  defineTeamTypes: ({ actions: { createTypes } }) => {
+  defineTeamTypes: ({
+    actions: { createTypes },
+  }: CreateSchemaCustomizationArgs) => {
     const typeDefs = `
       type DATeamTenure implements Node {
         role: DATeamRole

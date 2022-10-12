@@ -1,5 +1,5 @@
-import MarkdownContent from '@components/markdown/MarkdownContent'
 import { FC } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 type Props = {
   content: string
@@ -11,7 +11,7 @@ const AboutOurMission: FC<Props> = ({ content }) => (
       <h2 className="text-2xl font-semibold mb-8 text-gray-800">
         About our mission
       </h2>
-      <MarkdownContent content={content} />
+      <ReactMarkdown children={content} />
     </div>
   </section>
 )

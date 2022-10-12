@@ -254,7 +254,7 @@ const placeMapper = (placeKey) => {
 Exports
 ================================================================================
 */
-module.exports = {
+export default {
   isProductSurveyPage,
   productMapper,
   placeMapper,

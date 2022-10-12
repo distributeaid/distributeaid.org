@@ -1,19 +1,24 @@
-import { FC } from 'react'
-import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import SimpleLayout from '@layouts/Simple'
-import { Region } from '@components/regions/RegionComponentTypes'
-import { Card } from '@components/card/Card'
+import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
-import MarkdownContent from '@components/markdown/MarkdownContent'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import { PageHeader } from '@components/PageHeader'
+import { Region } from '@components/regions/RegionComponentTypes'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 import slugify from 'utils/slugify'
 import { getOxfordCommaSeparator } from 'utils/strings'
+
 type Props = {
   data: {
     regions: {
       nodes: Region[]
     }
   }
+}
+
+export function Head() {
+  return <PageHeader title={'Regions'} />
 }
 
 const RegionsPage: FC<Props> = ({
@@ -54,18 +59,6 @@ const RegionsPage: FC<Props> = ({
     })
   }
 
-  // generate the header for each Card
-  const createRegionsCardHeader = (region: Region): JSX.Element => {
-    return (
-      <GatsbyImage
-        key={region.name}
-        image={region.map.gatsbyImageData}
-        alt={`Map highlighting the ${region.name} region.`}
-        className="mb-4 w-full"
-      />
-    )
-  }
-
   const createRegionsCardBody = (region: Region): JSX.Element => {
     return (
       <>
@@ -80,14 +73,18 @@ const RegionsPage: FC<Props> = ({
   }
 
   return (
-    <SimpleLayout pageTitle="Regions">
+    <SimpleLayout>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         {regions.map((region) => (
           <Card
             key={region.name}
-            header={createRegionsCardHeader(region)}
+            dynamicCardImage={{
+              image: region.map.gatsbyImageData,
+              alt: `Map highlighting the ${region.name} region.`,
+            }}
+            imageVariant={ImageVariant.square}
             title={region.name}
-            additionalHeaderContent={createSubregionLinks(region)}
+            additionalHeaderContent={<div>{createSubregionLinks(region)}</div>}
             body={createRegionsCardBody(region)}
             actions={[
               {

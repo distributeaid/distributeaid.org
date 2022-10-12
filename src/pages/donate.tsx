@@ -1,12 +1,18 @@
-import { FC, useState } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import openCollectiveImage from '../images/opencollective_logo.svg'
-import directTransferImage from '../images/direct_transfer.svg'
-import ExternalLink from '@components/link/ExternalLink'
 import Button from '@components/button/Button'
 import BankInformationModal from '@components/donate/BankInfoModal'
-import SimpleLayout from '@layouts/Simple'
 import Footer from '@components/Footer'
+import ExternalLink from '@components/link/ExternalLink'
+import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
+import { StaticImage } from 'gatsby-plugin-image'
+import { FC, useState } from 'react'
+
+import directTransferImage from '../images/direct_transfer.svg'
+import openCollectiveImage from '../images/opencollective_logo.svg'
+
+export function Head() {
+  return <PageHeader title={'How to donate'} />
+}
 
 const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
 
@@ -14,17 +20,14 @@ const Donate: FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   return (
-    <SimpleLayout
-      pageTitle="How to donate"
-      footer={<Footer showDonateButton={false} />}
-    >
+    <SimpleLayout footer={<Footer showDonateButton={false} />}>
       <div className="pt-8 md:pt-20" style={{ minHeight: '80vh' }}>
         <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
           Support Distribute Aid to help more people in need:
         </h1>
 
         <div className="lg:flex max-w-5xl mx-auto">
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="patreon">
             <div className="text-center">
               <StaticImage
                 placeholder="tracedSVG"
@@ -51,7 +54,7 @@ const Donate: FC = () => {
               account and get access to exclusive updates about our work.
             </p>
           </div>
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="opencollective">
             <img
               src={openCollectiveImage}
               width="100"
@@ -77,8 +80,7 @@ const Donate: FC = () => {
               .
             </p>
           </div>
-
-          <div className={cardClasses}>
+          <div className={cardClasses} data-test="bank">
             <img
               src={directTransferImage}
               width="100"

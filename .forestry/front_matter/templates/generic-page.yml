@@ -1,0 +1,34 @@
+---
+label: Generic Page
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Page Title
+- name: slug
+  type: text
+  config:
+    required: false
+  label: URL slug
+  description: A URL slug refers to the end part of a URL after the backslash (“/”)
+    that identifies the specific page or post. e.g. the "about-us" in distributeaid.org/about-us.  This
+    should bet set once and then basically never changed.
+- name: desc
+  type: text
+  config:
+    required: false
+  label: Metadata Description
+  description: This description will appear under the link in Google search results
+    and is important for search engine optimization (SEO).
+- name: sections
+  type: blocks
+  label: Content Sections
+  template_types:
+  - section-grid
+  config:
+    min: 
+    max: 
+pages:
+- content/pages/our-story.md
