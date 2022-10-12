@@ -10,6 +10,7 @@ import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
 import SmartLink from '@components/link/SmartLink'
+import { PageHeader } from '@components/PageHeader'
 
 type TemplateProps = {
   data: {
@@ -17,9 +18,13 @@ type TemplateProps = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Regions'} />
+}
+
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   return (
-    <SimpleLayout pageTitle={`Region: ${region.name}`}>
+    <SimpleLayout>
       <div className="relative mb-4">
         <div className="absolute inset-0 z-10 flex justify-center">
           <div className="bg-navy-700 bg-opacity-75 px-6 flex flex-col justify-center">
@@ -37,12 +42,12 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
       </div>
 
       <ul className="flex  justify-evenly my-5 text-2xl">
-        {region.subregions.map((subregion) => {
+        {region.subregions.map((subregion, i) => {
           const href = `/regions/${slugify(region.name)}/${slugify(
             subregion.name,
           )}`
           return (
-            <li>
+            <li key={i}>
               <SmartLink className="link" href={href}>
                 {subregion.name}
               </SmartLink>

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { checkForConsoleErrors } from './lib/checkForConsoleErrors.js'
+import { checkForConsoleErrors } from './lib/checkForConsoleErrors'
 import { baseUrl } from './lib/testHost'
 const it = test
 

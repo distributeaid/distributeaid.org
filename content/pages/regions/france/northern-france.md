@@ -23,7 +23,7 @@ governmentResponse:
   livable areas and frequently seize property. [Human Rights Observers witnessed at
   least 156 evictions in February alone, and roughly 627 tents and tarps were destroyed
   across Calais and Grande-Synthe.](https://humanrightsobservers.org/monthly-observations/)
-  These evictions[ regularly subject people to violence and police brutality](http://www.laubergedesmigrants.fr/wp-content/uploads/2021/05/HRO-2020-Annual-Report_All.pdf).
+  These evictions [regularly subject people to violence and police brutality](http://www.laubergedesmigrants.fr/wp-content/uploads/2021/05/HRO-2020-Annual-Report_All.pdf).
 populationTrend:
   Fluctuating, likely to increase. It is difficult to gather accurate
   data on the number of displaced people in Northern France. The population is largely

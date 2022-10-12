@@ -1,6 +1,7 @@
 import React, { FC, Suspense } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
+import { PageHeader } from '@components/PageHeader'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
@@ -58,12 +59,16 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Experimental Data Visualizations'} />
+}
+
 const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
   const isSSR = typeof window === 'undefined'
   if (isSSR) return null
   return (
     <Suspense fallback={<div />}>
-      <SimpleLayout pageTitle="Experimental Data Visualizations">
+      <SimpleLayout>
         <div className="grid grid-cols-3 gap-4">
           <section className="h-96 w-96">
             <ShipmentsOnGlobeVis categoryVisItems={categoryVisItems} />

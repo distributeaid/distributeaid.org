@@ -1,12 +1,7 @@
-name: Ensure source code is properly formatted
+name: Ensure source code is properly formatted (PR)
 
 on:
-  push:
-    branches: [saga]
-
-permissions:
-  contents: write
-  pull-requests: write
+  pull_request:
 
 jobs:
   style:
@@ -37,17 +32,8 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Format source code with prettier
-        run: npx prettier --write ./
+      - name: Check if all source code is formatted correctly
+        run: npx prettier -c ./
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          commit-message: 'style: auto-format source code'
-          committer: 'github-actions[bot] <actions@example.com>'
-          author: 'github-actions[bot] <actions@example.com>'
-          branch: format-source
-          delete-branch: true
-          title: 'Auto-format source'
-          body: 'Ensure source code is properly formatted'
-          labels: enhancement
+      - name: Ensure TypeScript compiles
+        run: npx tsc --pretty

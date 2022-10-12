@@ -1,9 +1,14 @@
 import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
-import { Link } from 'gatsby'
+import { HeadProps, Link } from 'gatsby'
+import { PageHeader } from '@components/PageHeader'
+
+export function Head() {
+  return <PageHeader title={'Whistleblowing Policy'} />
+}
 
 const WhistleblowingPolicy: FC = () => (
-  <SimpleLayout pageTitle="Whistleblowing Policy">
+  <SimpleLayout>
     <div className="pt-8 md:pt-20">
       <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
         Whistleblowing Policy
