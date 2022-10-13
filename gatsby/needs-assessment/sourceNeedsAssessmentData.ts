@@ -86,7 +86,7 @@ export const sourceNeedsAssessmentData = async ({
               need,
             }
 
-            await createNode({
+            createNode({
               // Node Data
               ...nodeData,
 

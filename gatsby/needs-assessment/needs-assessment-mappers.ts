@@ -1,9 +1,10 @@
+import { Product, ProductPartial } from 'src/types/product-types'
+
 /*
 Product Mapper
 ================================================================================
 */
-type Category = { category: string; ageGender?: string }
-export const categoryMap: Record<string, Category> = {
+export const categoryMap: Record<string, ProductPartial> = {
   hygieneItems: { category: 'Hygiene' },
   shelter: { category: 'Shelter' },
   education: { category: 'Education' },
@@ -15,14 +16,7 @@ export const categoryMap: Record<string, Category> = {
   babyClothing: { category: 'Clothing', ageGender: 'Baby' },
 }
 
-type Item = {
-  item: string
-  sizeStyle?: string
-  category?: string
-  ageGender?: string
-  unit?: string
-}
-const itemMap: Record<string, Item> = {
+const itemMap: Record<string, ProductPartial> = {
   // hygieneItems
   clothMasks: { item: 'Mask', sizeStyle: 'Cloth' },
   surgicalMasks: { item: 'Mask', sizeStyle: 'Surgical' },
@@ -165,8 +159,7 @@ const itemMap: Record<string, Item> = {
   babyGloves: { item: 'Gloves' },
 }
 
-type Unit = { unit: string; sizeStyle?: string }
-const unitMap: Record<string, Unit> = {
+const unitMap: Record<string, ProductPartial> = {
   // hygieneItems
   masks: { unit: 'Item' },
   bars100g: { unit: '100g' },
@@ -219,22 +212,21 @@ export const productMapper = (
   categoryKey: string,
   itemKey: string,
   unitKey: string,
-): (Unit & Category & Item) | undefined => {
-  const categoryPartial = categoryMap[categoryKey]
-  const itemPartial = itemMap[itemKey]
-  const unitPartial = unitMap[unitKey]
+): Product | undefined => {
+  const product = {
+    ...categoryMap[categoryKey],
+    ...itemMap[itemKey],
+    ...unitMap[unitKey],
+  }
 
   if (
-    categoryPartial === undefined ||
-    itemPartial === undefined ||
-    unitPartial === undefined
-  )
+    product.category === undefined ||
+    product.item === undefined ||
+    product.unit === undefined
+  ) {
     return undefined
-
-  return {
-    ...categoryPartial,
-    ...itemPartial,
-    ...unitPartial,
+  } else {
+    return product
   }
 }
 

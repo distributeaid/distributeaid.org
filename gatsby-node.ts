@@ -21,7 +21,7 @@ Source Nodes
 ================================================================================
 */
 export const sourceNodes: GatsbyNode['sourceNodes'] = async (args) => {
-  sourceNeedsAssessmentData(args)
+  await sourceNeedsAssessmentData(args)
 }
 
 /*
