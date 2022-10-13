@@ -1,4 +1,4 @@
-import { Product, ProductPartial } from 'src/types/product-types'
+import { Product, ProductPartial } from '../../src/types/product-types'
 
 /*
 Product Mapper
