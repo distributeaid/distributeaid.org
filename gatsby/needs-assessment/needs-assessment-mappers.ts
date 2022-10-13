@@ -213,7 +213,7 @@ export const productMapper = (
   itemKey: string,
   unitKey: string,
 ): Product | undefined => {
-  const product = {
+  const product: ProductPartial = {
     ...categoryMap[categoryKey],
     ...itemMap[itemKey],
     ...unitMap[unitKey],
@@ -226,7 +226,7 @@ export const productMapper = (
   ) {
     return undefined
   } else {
-    return product
+    return product as Product
   }
 }
 
