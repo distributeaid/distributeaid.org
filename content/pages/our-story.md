@@ -69,6 +69,13 @@ sections:
     date: 
   - template: timeline
     timelineItems:
+    - period: Summer 2018
+      description: When sorting donations in Scotland Sara had the idea for Distribute
+        Aid to make it easier for people to help
+    - period: Fall 2018
+      description: Sara and Taylor (co-founders) spent 3 months visiting and volunteering
+        with 50+ aid organisations in Europe to discover the most effective ways to
+        help
     - period: January 2019
       description: Distribute Aid became a registered charity in Sweden
     - period: October 2019
@@ -85,13 +92,6 @@ sections:
     - period: Spring 2021
       description: Distribute Aid set up aid hubs and regular routes from the U.K.
         to help grassroots organisations continue to send aid after Brexit.
-    - period: Summer 2018
-      description: When sorting donations in Scotland Sara had the idea for Distribute
-        Aid to make it easier for people to help
-    - period: Fall 2018
-      description: Sara and Taylor (co-founders) spent 3 months visiting and volunteering
-        with 50+ aid organisations in Europe to discover the most effective ways to
-        help
 slug: our-story
 desc: ''
 
