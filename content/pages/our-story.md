@@ -23,6 +23,16 @@ sections:
     date: 2022-10-14T14:08:47Z
     altText: Two people sit at a desk and work, one of them on a laptop and one of
       them in a notebook.
+- template: section-grid
+  metadata:
+    margins: Margined
+    numCols: 1
+    numRows: 1
+    colOrRowBound: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
+  - template: block-title
+    text: 'Our Story: A letter from Sara Lönegård and Taylor Fairbank, our founders.'
 slug: our-story
 desc: ''
 
