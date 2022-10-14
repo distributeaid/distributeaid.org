@@ -67,6 +67,24 @@ sections:
     altText: Two people sit at a desk, hard at work.  One of them is working on a
       laptop and the other one is working in a notebook.
     date: 
+  - template: timeline
+    timelineItems:
+    - period: March 2020
+      description: Flexport.org rewarded Distribute Aid with a $50,000 grant to provide
+        emergency aid shipments
+    - period: Fall 2020
+      description: Distribute Aid facilitated the international response to the Moria
+        fire, tripling its number of aid shipments to date
+    - period: Spring 2021
+      description: Distribute Aid set up aid hubs and regular routes from the U.K.
+        to help grassroots organisations continue to send aid after Brexit.
+    - period: Summer 2018
+      description: When sorting donations in Scotland Sara had the idea for Distribute
+        Aid to make it easier for people to help
+    - period: Fall 2018
+      description: Sara and Taylor (co-founders) spent 3 months visiting and volunteering
+        with 50+ aid organisations in Europe to discover the most effective ways to
+        help
 slug: our-story
 desc: ''
 
