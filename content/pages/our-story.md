@@ -56,6 +56,17 @@ sections:
       Sara Lönegård, Executive Director and Founder
 
       Taylor Fairbank, Director of Operations and Co-Founder
+  - template: block-image-with-caption
+    dateUploaded: 2022-10-14T14:13:51Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    asset: "/uploads/50297749_521554841683858_669757054109351936_n.jpg"
+    caption: Taylor Fairbank and Sara Lonegard, our founders
+    attribution: Distribute Aid
+    altText: Two people sit at a desk, hard at work.  One of them is working on a
+      laptop and the other one is working in a notebook.
+    date: 
 slug: our-story
 desc: ''
 
