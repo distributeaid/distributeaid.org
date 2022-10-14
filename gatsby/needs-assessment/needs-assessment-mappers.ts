@@ -4,7 +4,7 @@ import { Product, ProductPartial } from '../../src/types/product-types'
 Product Mapper
 ================================================================================
 */
-export const categoryMap: Record<string, ProductPartial> = {
+const categoryMap: Record<string, ProductPartial> = {
   hygieneItems: { category: 'Hygiene' },
   shelter: { category: 'Shelter' },
   education: { category: 'Education' },
@@ -204,7 +204,7 @@ const unitMap: Record<string, ProductPartial> = {
   pairs: { unit: 'Pairs' },
 }
 
-export const isProductSurveyPage = (categoryKey: string) => {
+export const isProductSurveyPage = (categoryKey: string): boolean => {
   return categoryMap.hasOwnProperty(categoryKey)
 }
 
@@ -234,7 +234,12 @@ export const productMapper = (
 Place mapper
 ================================================================================
 */
-export const places: Record<string, { region?: string; subregion?: string }> = {
+type PlacePartial = {
+  region?: string
+  subregion?: string
+}
+
+const placeMap: Record<string, PlacePartial> = {
   calais: { region: 'France', subregion: 'Northern France' },
   paris: { region: 'France', subregion: 'Paris' },
   chios: { region: 'Greece', subregion: 'Aegean Islands' },
@@ -256,4 +261,8 @@ export const places: Record<string, { region?: string; subregion?: string }> = {
   slovakia: { region: 'Eastern Europe', subregion: 'Slovakia' },
   hungary: { region: 'Eastern Europe', subregion: 'Hungary' },
   other: {},
+}
+
+export const placeMapper = (placeKey: string): PlacePartial | undefined => {
+  return placeMap[placeKey]
 }

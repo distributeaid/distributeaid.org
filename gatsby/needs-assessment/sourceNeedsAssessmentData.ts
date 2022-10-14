@@ -2,7 +2,7 @@ import fetch from 'cross-fetch'
 import { SourceNodesArgs } from 'gatsby'
 import {
   isProductSurveyPage,
-  places as placesMap,
+  placeMapper,
   productMapper,
 } from './needs-assessment-mappers'
 
@@ -70,7 +70,7 @@ export const sourceNeedsAssessmentData = async ({
               )
               continue
             }
-            const place = placesMap[placeKey]
+            const place = placeMapper(placeKey)
             if (place === undefined) {
               reporter.error(`No place defined for ${placeKey}`)
               continue
