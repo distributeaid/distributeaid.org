@@ -2,13 +2,21 @@
 label: 'Block: Timeline'
 hide_body: true
 fields:
-- name: period
-  type: text
+- name: timelineItems
+  type: field_group_list
+  fields:
+  - name: period
+    type: text
+    config:
+      required: false
+    label: Period
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
   config:
-    required: false
-  label: Period
-- name: description
-  type: text
-  config:
-    required: false
-  label: Description
+    min: 
+    max: 
+    labelField: 
+  label: Timeline Items
