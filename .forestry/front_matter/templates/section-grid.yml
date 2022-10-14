@@ -87,6 +87,7 @@ fields:
   - block-title
   - block-youtube-embed
   - block-text
+  - timeline
   config:
     min: 
     max: 
