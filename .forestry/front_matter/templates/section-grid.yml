@@ -54,7 +54,7 @@ fields:
     type: number
     label: Number of Rows
     description: ''
-    default: 0
+    default: 1
     required: true
     config:
       min: 1
@@ -83,9 +83,10 @@ fields:
   type: blocks
   label: Content Blocks
   template_types:
-  - block-youtube-embed
   - block-image-with-caption
   - block-title
+  - block-youtube-embed
+  - block-text
   config:
     min: 
     max: 
