@@ -69,8 +69,8 @@ sections:
     date: 
   - template: timeline
     timelineItems:
-    - period: ''
-      description: ''
+    - period: October 2019
+      description: Distribute Aid facilitated its first large in-kind donation
     - period: January 2020
       description: Distribute Aid received the "Most Direct Human Impact" award by
         the UN Technology and Innovation Lab
