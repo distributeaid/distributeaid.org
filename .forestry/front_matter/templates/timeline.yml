@@ -1,4 +1,14 @@
 ---
-label: Timeline
+label: 'Block: Timeline'
 hide_body: true
-fields: []
+fields:
+- name: period
+  type: text
+  config:
+    required: false
+  label: Period
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
