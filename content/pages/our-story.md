@@ -69,6 +69,8 @@ sections:
     date: 
   - template: timeline
     timelineItems:
+    - period: January 2019
+      description: Distribute Aid became a registered charity in Sweden
     - period: October 2019
       description: Distribute Aid facilitated its first large in-kind donation
     - period: January 2020
