@@ -69,6 +69,11 @@ sections:
     date: 
   - template: timeline
     timelineItems:
+    - period: ''
+      description: ''
+    - period: January 2020
+      description: Distribute Aid received the "Most Direct Human Impact" award by
+        the UN Technology and Innovation Lab
     - period: March 2020
       description: Flexport.org rewarded Distribute Aid with a $50,000 grant to provide
         emergency aid shipments
