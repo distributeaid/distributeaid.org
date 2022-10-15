@@ -54,9 +54,9 @@ describe('Processes Needs Assessment Data', () => {
       stats: { count: 2 },
     }
 
-    // @ts-ignore - intentionally ignoring type missmatch to test error handling
     const { needsDatas, lookupMissLog } = processNeedsAssessment(
       validSurveyId,
+      // @ts-ignore - intentionally ignoring type missmatch to test error handling
       invalidNeedsAssessmentData,
     )
     expect(needsDatas.length).toBe(1)
