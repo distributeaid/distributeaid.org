@@ -234,7 +234,7 @@ export const productMapper = (
 Place mapper
 ================================================================================
 */
-type PlacePartial = {
+export type PlacePartial = {
   region?: string
   subregion?: string
 }

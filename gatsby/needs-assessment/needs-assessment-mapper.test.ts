@@ -4,7 +4,7 @@ import {
   productMapper,
 } from './needs-assessment-mappers'
 
-describe('Is Product Survey Page', () => {
+describe('Is Product Survey', () => {
   it('returns true for known product category keys', () => {
     const productSurveyPage = isProductSurveyPage('shelter')
     expect(productSurveyPage).toBe(true)

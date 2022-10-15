@@ -3,7 +3,7 @@ import type { GatsbyNode } from 'gatsby'
 import pages from './gatsby/create-pages'
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
-import { sourceNeedsAssessmentData } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
+import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
 import transformers from './gatsby/transform-nodes'
 
 /*
@@ -21,7 +21,7 @@ Source Nodes
 ================================================================================
 */
 export const sourceNodes: GatsbyNode['sourceNodes'] = async (args) => {
-  await sourceNeedsAssessmentData(args)
+  await sourceNeedsAssessments(args)
 }
 
 /*
