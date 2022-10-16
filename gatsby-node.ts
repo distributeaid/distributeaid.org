@@ -1,6 +1,5 @@
 import type { GatsbyNode } from 'gatsby'
 
-import pages from './gatsby/create-pages'
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
 import transformers from './gatsby/transform-nodes'
@@ -35,16 +34,6 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveRegionFields(args)
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
-}
-
-/*
-Create Dynamic Pages
-================================================================================
-*/
-export const createPages: GatsbyNode['createPages'] = async (args) => {
-  await pages.createRegionPages(args)
-  await pages.createSubregionPages(args)
-  await pages.createRoutePages(args)
 }
 
 /*
