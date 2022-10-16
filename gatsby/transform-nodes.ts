@@ -1,7 +1,10 @@
 import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
-import { Region } from '../src/components/regions/RegionComponentTypes'
+import {
+  Region,
+  Subregion,
+} from '../src/components/regions/RegionComponentTypes'
 import { Route } from '../src/components/routes/RouteComponentTypes'
 import slugify from '../src/utils/slugify'
 
@@ -81,7 +84,9 @@ export default {
       // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as Subregion
+
+      // @ts-ignore
       const fileNode = getNode(node.parent)
       const slug = slugify(fileNode.name)
       const regionSlug = slugify(fileNode.relativeDirectory.split('/').pop())
