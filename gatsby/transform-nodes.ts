@@ -4,7 +4,10 @@ import path from 'path'
 
 import slugify from '../src/utils/slugify'
 
-import { Region } from '../src/components/regions/RegionComponentTypes'
+import {
+  Region,
+  Subregion,
+} from '../src/components/regions/RegionComponentTypes'
 import { Route } from '../src/components/routes/RouteComponentTypes'
 
 /*
@@ -87,7 +90,7 @@ export default {
       // @ts-ignore
       minimatch(node.fileAbsolutePath, '**/content/pages/regions/*/!(index).md')
     ) {
-      const fm = node.frontmatter
+      const fm = node.frontmatter as Subregion
 
       // @ts-ignore
       const fileNode = getNode(node.parent)
