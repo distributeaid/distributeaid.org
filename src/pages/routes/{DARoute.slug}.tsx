@@ -2,23 +2,23 @@ import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 
+import { PageHeader } from '@components/PageHeader'
 import { Route } from '@components/routes/RouteComponentTypes'
 
-import { PageHeader } from '@components/PageHeader'
-import { MarkdownContent } from '../components/markdown/MarkdownContent'
-import RoutesSectionImage from '../components/routes/RoutesSectionImage'
-import TextWithVisual from '../components/routes/TextWithVisual'
-import SimpleLayout from '../layouts/Simple'
+import { MarkdownContent } from '../../components/markdown/MarkdownContent'
+import RoutesSectionImage from '../../components/routes/RoutesSectionImage'
+import TextWithVisual from '../../components/routes/TextWithVisual'
+import SimpleLayout from '../../layouts/Simple'
 
-import heartBillIcon from '../images/regular-routes/icons/noun_Heart_Bill_98293.svg'
-import mapIcon from '../images/regular-routes/icons/noun_Maps_3610706.svg'
-import netIcon from '../images/regular-routes/icons/noun_net_2428552.svg'
-import palletIcon from '../images/regular-routes/icons/noun_Pallet_3307940.svg'
-import halfPalletIcon from '../images/regular-routes/icons/noun_Pallet_3364535.svg'
-import sackIcon from '../images/regular-routes/icons/openmoji_bag.svg'
-import boxIcon from '../images/regular-routes/icons/openmoji_box.svg'
-import truckIcon from '../images/regular-routes/icons/openmoji_truck.svg'
-import vanIcon from '../images/regular-routes/icons/openmoji_van.svg'
+import heartBillIcon from '../../images/regular-routes/icons/noun_Heart_Bill_98293.svg'
+import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
+import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
+import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
+import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
+import sackIcon from '../../images/regular-routes/icons/openmoji_bag.svg'
+import boxIcon from '../../images/regular-routes/icons/openmoji_box.svg'
+import truckIcon from '../../images/regular-routes/icons/openmoji_truck.svg'
+import vanIcon from '../../images/regular-routes/icons/openmoji_van.svg'
 
 type TemplateProps = {
   data: {
@@ -61,7 +61,7 @@ export function Head({ data: { route } }: TemplateProps) {
   )
 }
 
-const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
+const Routes: FC<TemplateProps> = ({ data: { route } }) => (
   <SimpleLayout>
     <TextWithVisual
       positionOfVisual="right"
@@ -348,7 +348,7 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
         <div className="mb-12 flex">
           <div className="tile-icon">
             <StaticImage
-              src="../images/regular-routes/pallet-aid-logo.256.png"
+              src="../../images/regular-routes/pallet-aid-logo.256.png"
               alt="Hub Logo: Pallet Aid (PA)"
               height={80}
               width={80}
@@ -624,7 +624,7 @@ const RoutePage: FC<TemplateProps> = ({ data: { route } }) => (
   </SimpleLayout>
 )
 
-export default RoutePage
+export default Routes
 
 export const query = graphql`
   query ($id: String!) {
