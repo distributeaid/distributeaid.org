@@ -37,14 +37,6 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
 }
 
 /*
-Create Dynamic Pages
-================================================================================
-*/
-export const createPages: GatsbyNode['createPages'] = async (args) => {
-  // Currently all pages are created using the Filesystem Route API
-}
-
-/*
 Config
 ================================================================================
 */
