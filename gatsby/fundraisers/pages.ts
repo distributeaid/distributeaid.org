@@ -1,17 +1,26 @@
-import { getSrc } from 'gatsby-plugin-image'
+import { Fundraiser } from '@components/fundraiser/Fundraiser'
+import { CreatePagesArgs } from 'gatsby'
+import { getSrc, ImageDataLike } from 'gatsby-plugin-image'
 import path from 'path'
+
+type Images = {
+  nodes: {
+    parent: {
+      absolutePath: string
+    }
+    gatsbyImageData: ImageDataLike
+  }[]
+}
 
 export const createFundraisersPages = async ({
   graphql,
   actions: { createPage },
-}) => {
-  const {
-    data: {
-      fundraisers: { nodes: fundraisers },
-      thumbnails500px: { nodes: thumbnails500px },
-      size600px: { nodes: size600px },
-    },
-  } = await graphql(`
+}: CreatePagesArgs) => {
+  const { data } = await graphql<{
+    fundraisers: { nodes: Fundraiser[] }
+    thumbnails500px: Images
+    size600px: Images
+  }>(`
     query Fundraisers {
       fundraisers: allDaFundraiser {
         nodes {
@@ -56,22 +65,32 @@ export const createFundraisersPages = async ({
     }
   `)
 
-  fundraisers.forEach((fundraiser) => {
+  data?.fundraisers?.nodes.forEach((fundraiser) => {
     console.info(`creating fundraiser page at /donate/${fundraiser.name}`)
 
     // Make inline images responsive
     const allImages = fundraiser.body.matchAll(/!\[[^\]]+\]\((?<url>[^)]+)\)/g)
-    const replacements = {}
+    const replacements: Record<string, string> = {}
     for (const match of allImages) {
-      const gatsbyImageData = size600px.find(({ parent: { absolutePath } }) =>
-        absolutePath.endsWith(match.groups.url),
-      ).gatsbyImageData
+      const url = match.groups?.url
+      if (url === undefined) continue
+      const gatsbyImageData = data?.size600px?.nodes.find(
+        ({ parent: { absolutePath } }) => absolutePath.endsWith(url),
+      )?.gatsbyImageData
       if (gatsbyImageData === undefined) {
         console.error(
-          `Failed to find size600px gatsbyImageData for photo ${match.groups.url}!`,
+          `Failed to find size600px gatsbyImageData for photo ${url}!`,
         )
+        continue
       }
-      replacements[match.groups.url] = getSrc(gatsbyImageData)
+      const src = getSrc(gatsbyImageData)
+      if (src === undefined) {
+        console.error(
+          `Failed to get src from gatsbyImageData for photo ${url}!`,
+        )
+        continue
+      }
+      replacements[url] = src
     }
     const body = Object.entries(replacements)
       .sort(([k1], [k2]) => k1.localeCompare(k2))
@@ -89,7 +108,7 @@ export const createFundraisersPages = async ({
         currency: fundraiser.currency,
         abstract: fundraiser.abstract,
         gallery: fundraiser.gallery.map((photo) => {
-          const gatsbyImageData = thumbnails500px.find(
+          const gatsbyImageData = data?.thumbnails500px?.nodes.find(
             ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
           )?.gatsbyImageData
           if (gatsbyImageData === undefined) {

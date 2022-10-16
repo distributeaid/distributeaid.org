@@ -1,5 +1,9 @@
+import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
+import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
+import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
+import { nodeParent } from '../utils/untypedAccess/nodeParent'
 
 /**
  * Creates the fundraiser nodes
@@ -10,19 +14,22 @@ export const createFundraisersFromMarkdown = ({
   createNodeId,
   createContentDigest,
   getNode,
-}) => {
+}: CreateNodeArgs) => {
   if (
     node.internal.type === 'MarkdownRemark' &&
     node.fileAbsolutePath &&
-    minimatch(node.fileAbsolutePath, '**/content/blocks/fundraisers/*.md')
+    minimatch(
+      getStringProperty(node, 'fileAbsolutePath'),
+      '**/content/blocks/fundraisers/*.md',
+    )
   ) {
-    const fm = node.frontmatter
     const fileRelativePath = path.join(
       'content',
-      getNode(node.parent).relativePath,
+      getStringProperty(getNode(nodeParent(node)), 'relativePath'),
     )
     const fileName = path.parse(fileRelativePath).name
 
+    const fm = getObjectProperty(node, 'frontmatter')
     createNode({
       name: fileName,
       title: fm.title,
