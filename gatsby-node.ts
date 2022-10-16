@@ -2,6 +2,7 @@ import type { GatsbyNode } from 'gatsby'
 
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
+import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
 import transformers from './gatsby/transform-nodes'
 
 /*
@@ -10,8 +11,17 @@ Customize the GraqphQL Schema
 */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
   (args) => {
+    schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
   }
+
+/*
+Source Nodes
+================================================================================
+*/
+export const sourceNodes: GatsbyNode['sourceNodes'] = async (args) => {
+  await sourceNeedsAssessments(args)
+}
 
 /*
 Transform Nodes

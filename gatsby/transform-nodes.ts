@@ -296,7 +296,6 @@ export default {
           'content',
           getStringProperty(getNode(nodeParent(node)), 'relativePath'),
         )
-
         const fm = getObjectProperty(node, 'frontmatter')
         const roleData = Array.isArray(fm.roles)
           ? fm.roles.map((role) => ({
