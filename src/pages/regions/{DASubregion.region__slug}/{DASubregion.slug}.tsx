@@ -27,7 +27,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
       <h1 className="text-2xl font-semibold text-gray-800">
         {subregion.name}
         <small>
-          <SmartLink className="link" href={subregion.region.pagePath}>
+          <SmartLink className="link" href={subregion.region.path}>
             {subregion.region.name}
           </SmartLink>
         </small>
@@ -66,7 +66,7 @@ export const query = graphql`
         }
       }
       region {
-        pagePath: gatsbyPath(filePath: "/regions/{DARegion.slug}")
+        path
         name
       }
     }

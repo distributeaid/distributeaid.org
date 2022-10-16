@@ -44,7 +44,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         {region.subregions.map((subregion, i) => {
           return (
             <li key={i}>
-              <SmartLink className="link" href={subregion.pagePath}>
+              <SmartLink className="link" href={subregion.path}>
                 {subregion.name}
               </SmartLink>
             </li>
@@ -101,9 +101,7 @@ export const query = graphql`
         }
       }
       subregions {
-        pagePath: gatsbyPath(
-          filePath: "/regions/{DASubregion.region__slug}/{DASubregion.slug}"
-        )
+        path
         name
       }
     }

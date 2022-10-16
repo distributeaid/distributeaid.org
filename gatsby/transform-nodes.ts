@@ -1,11 +1,9 @@
 import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
+import slugify from '../src/utils/slugify'
 
-import {
-  Region,
-  Subregion,
-} from '../src/components/regions/RegionComponentTypes'
+import { Region } from '../src/components/regions/RegionComponentTypes'
 import { Route } from '../src/components/routes/RouteComponentTypes'
 
 export default {
@@ -29,22 +27,22 @@ export default {
       )
     ) {
       const fm = node.frontmatter as Region
-      const fileRelativePath = path.join(
-        'content',
-        getNode(node.parent).relativePath,
-      )
       const fileNode = getNode(node.parent)
-      const slug = fileNode.relativeDirectory.split('/').pop()
+      const slug = slugify(fileNode.relativeDirectory.split('/').pop())
+      const fileRelativePath = path.join('content', fileNode.relativePath)
 
       createNode({
         // Node Data
-        slug: slug,
         name: fm.name,
         overview: fm.overview,
         governmentResponse: fm.governmentResponse,
         newsUpdates: fm.newsUpdates,
         stayInformed: fm.stayInformed,
         subregionFileRelativePaths: fm.subregions,
+
+        // navigation
+        slug: slug,
+        path: `/regions/${slug}/`,
 
         // Metadata
         fileRelativePath: fileRelativePath,
@@ -80,16 +78,20 @@ export default {
     ) {
       const fm = node.frontmatter
       const fileNode = getNode(node.parent)
+      const slug = slugify(fileNode.name)
+      const regionSlug = slugify(fileNode.relativeDirectory.split('/').pop())
       const fileRelativePath = path.join('content', fileNode.relativePath)
-      const slug = fileNode.name
 
       createNode({
         // Node Data
-        slug: slug,
         name: fm.name,
         overview: fm.overview,
         population: fm.population,
         newsUpdates: fm.newsUpdates,
+
+        // navigation
+        slug: slug,
+        path: `/regions/${regionSlug}/${slug}/`,
 
         // Metadata
         fileRelativePath: fileRelativePath,
@@ -124,16 +126,12 @@ export default {
       minimatch(node.fileAbsolutePath, '**/content/pages/routes/*.md')
     ) {
       const fm = node.frontmatter as Route
-      const fileRelativePath = path.join(
-        'content',
-        getNode(node.parent).relativePath,
-      )
       const fileNode = getNode(node.parent)
-      const slug = fileNode.name
+      const slug = slugify(fileNode.name)
+      const fileRelativePath = path.join('content', fileNode.relativePath)
 
       createNode({
         // Node Data
-        slug: slug,
         routeOrigin: fm.routeOrigin,
         routeDestination: fm.routeDestination,
         population: fm.population,
@@ -150,6 +148,10 @@ export default {
         costs: fm.costs,
         deadlines: fm.deadlines,
         frontlineGroups: fm.frontlineGroups,
+
+        // navigation
+        slug: slug,
+        path: `/routes/${slug}/`,
 
         // Metadata
         fileRelativePath: fileRelativePath,

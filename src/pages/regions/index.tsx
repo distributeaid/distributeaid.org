@@ -42,7 +42,7 @@ const RegionsPage: FC<Props> = ({
       return (
         <span key={subregion.name}>
           {seperator}
-          <SmartLink className="link" href={subregion.pagePath}>
+          <SmartLink className="link" href={subregion.path}>
             {subregion.name}
           </SmartLink>
         </span>
@@ -79,7 +79,7 @@ const RegionsPage: FC<Props> = ({
             body={createRegionsCardBody(region)}
             actions={[
               {
-                url: region.pagePath,
+                url: region.path,
                 label: 'View Region',
               },
             ]}
@@ -99,16 +99,14 @@ export const query = graphql`
     }
     regions: allDaRegion {
       nodes {
-        pagePath: gatsbyPath(filePath: "/regions/{DARegion.slug}")
+        path
         name
         map {
           gatsbyImageData
         }
         overview
         subregions {
-          pagePath: gatsbyPath(
-            filePath: "/regions/{DASubregion.region__slug}/{DASubregion.slug}"
-          )
+          path
           name
           population {
             count

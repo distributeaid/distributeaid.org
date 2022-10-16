@@ -1,7 +1,7 @@
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export type Action = {
-  url?: string
+  url: string
   label: string
 }
 
