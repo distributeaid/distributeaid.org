@@ -1,4 +1,4 @@
-name: Build
+name: Test
 
 on:
   push:
@@ -6,73 +6,11 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install dependencies
-        run: yarn
-
-      - name: Start dev server
-        run: |
-          nohup yarn dev > server.log 2>&1 & echo $! > run.pid
-          echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
-
-      - name: Wait for dev server to be up
-        run: until nc -w 10 127.0.0.1 8000; do tail -n 20 server.log; sleep 10; done
-        timeout-minutes: 5
-
-      - name: Generate types
-        run: yarn run gen-types
-
-      - name: Kill dev server
-        run: kill ${{ env.DEVSERVER_PID }}
-
-      - name: Build
-        run: yarn build
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: build-${{ github.sha }}
-          path: |
-            public
-            .cache
-
-  e2e-tests:
-    name: Run the end-to-end test
-
-    needs: [build]
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        browser: [chrome]
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: build-${{ github.sha }}
 
       - uses: actions/setup-node@v3
         with:
@@ -96,6 +34,29 @@ jobs:
       - name: Run unit tests
         run: yarn test
 
+      - name: Start dev server
+        run: |
+          nohup yarn dev > server.log 2>&1 & echo $! > run.pid
+          echo "DEVSERVER_PID=`cat run.pid`" >> $GITHUB_ENV
+
+      - name: Wait for dev server to be up
+        run: until nc -w 10 127.0.0.1 8000; do tail -n 20 server.log; sleep 10; done
+        timeout-minutes: 5
+
+      - name: Generate types
+        run: yarn run gen-types
+
+      - name: Kill dev server
+        run: kill ${{ env.DEVSERVER_PID }}
+
+      - name: Build
+        run: yarn build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-${{ github.sha }}
+          path: public
+
       - name: Start prod sever
         run: |
           nohup yarn run serve > prod-server.log 2>&1 & echo $! > run.pid
@@ -111,7 +72,7 @@ jobs:
       - name: Run end-to-end tests
         env:
           PORT: 9000
-        run: npx playwright test --project=${{ matrix.browser }}
+        run: npx playwright test --project=chrome
 
       - name: Kill prod server
         run: kill ${{ env.PRODSERVER_PID }}
