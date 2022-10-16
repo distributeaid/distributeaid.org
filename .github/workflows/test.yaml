@@ -83,7 +83,7 @@ jobs:
   lighthouse:
     name: 'Lighthouse CI'
 
-    needs: [build]
+    needs: [test]
 
     runs-on: ubuntu-latest
 
