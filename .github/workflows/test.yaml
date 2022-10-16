@@ -93,6 +93,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build-${{ github.sha }}
+          path: public
 
       - uses: actions/setup-node@v3
         with:
