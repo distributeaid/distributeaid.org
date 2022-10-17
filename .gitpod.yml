@@ -1,6 +1,6 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: yarn install # runs during prebuild
+  - init: yarn install && npx playwright install-deps # runs during prebuild
     command: yarn dev
   - init: bash
 
