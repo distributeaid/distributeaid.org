@@ -13,14 +13,14 @@ sections:
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
-    dateUploaded: 2022-10-14T13:55:26Z
+    dateUploaded: 2022-10-14T13:55:26.000+00:00
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
     caption: " "
     attribution: Distribute Aid
     asset: "/uploads/50297749_521554841683858_669757054109351936_n.jpg"
-    date: 2022-10-14T14:08:47Z
+    date: 2022-10-14T14:08:47.000+00:00
     altText: Two people sit at a desk and work, one of them on a laptop and one of
       them in a notebook.
 - template: section-grid
@@ -35,8 +35,6 @@ sections:
     text: 'Our Story: A letter from Sara Lönegård and Taylor Fairbank, our founders.'
   - template: block-text
     text: |-
-      A letter from Sara Lönegård and Taylor Fairbank, our founders.
-
       In 2018, we volunteered with a grassroots aid group in Scotland that gathered second-hand donations and sent them out to refugee aid groups a few times a year. We witnessed firsthand what can be accomplished when communities come together to protect the dignity of marginalised people around the world. We met passionate humanitarians working hard to respond to crises and transport aid to people whose basic needs weren’t being met. We saw the advantages that grassroots aid organisations have over larger organisations: they’re enthusiastic, nimble, diverse, and extremely adept at galvanizing their local communities to get involved.
 
       We also saw the challenges that grassroots groups faced pursuing their missions. Successfully moving humanitarian aid large distances between countries is complicated and requires real logistical expertise, which can be hard to come by. Sending groups with aid to donate (like the one we worked with) don’t have time to reach out to tens of direct aid groups in different countries to find an aid recipient with enough warehouse space. On the other side, receiving groups that serve beneficiaries directly don’t have the time or resources to contact tens of sending groups to try to source aid. And organisations all over the network face challenges with long-term planning, given the high turnover of volunteers and the unpredictability of geopolitical events that cause human migration. During our time in Scotland, we wondered what would be necessary to assist this network in meeting these challenges.
@@ -57,7 +55,7 @@ sections:
 
       Taylor Fairbank, Director of Operations and Co-Founder
   - template: block-image-with-caption
-    dateUploaded: 2022-10-14T14:13:51Z
+    dateUploaded: 2022-10-14T14:13:51.000+00:00
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
