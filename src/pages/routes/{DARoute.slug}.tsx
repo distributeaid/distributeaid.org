@@ -403,6 +403,14 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
           and spread the cost evenly for all groups sending aid.
         </p>
 
+        <p className="mb-6">
+          We've recently had to raise prices to match current economic
+          conditions. However, we are applying for funding for upcoming
+          shipments to help offset these. This funding will be applied evenly
+          across all pallets on the shipment, so please do offer as much aid as
+          you can and we'll confirm the final total before the drop-off date.
+        </p>
+
         <div className="tiles tiles--row ">
           <div className="tile tile--column">
             <div className="tile-icon mx-auto mb-2">
