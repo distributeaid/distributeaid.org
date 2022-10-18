@@ -1,6 +1,7 @@
 main.donate {
   --color-dark: #000000dd;
   --color-light: #ffffffdd;
+  --color-content-dim: #e2e7f1;
   --color-da: #082b76;
   color: var(--color-da);
   background-color: white;
@@ -87,7 +88,7 @@ main.donate section.progress {
   main.donate section.progress {
     padding: 2rem;
     margin: 2rem auto;
-    width: calc(100% - 4rem);
+    width: 100%;
     max-width: 1024px;
   }
 }
@@ -95,7 +96,8 @@ main.donate section.progress {
 @media only screen and (min-width: 1024px) {
   main.donate section.progress {
     font-size: 150%;
-    padding: 2rem 4rem 4rem 4rem;
+    margin: 4rem auto;
+    padding: 0;
   }
 }
 
@@ -107,10 +109,6 @@ main.donate section.progress ul {
 
 main.donate section.progress h1 {
   font-weight: normal;
-}
-
-main.donate section.progress .progressBar {
-  margin: 1rem 0;
 }
 
 main.donate section.progress .conversionNote {
@@ -238,80 +236,68 @@ main.donate .fundraisers .progressBar {
   background-color: white;
 }
 
-/** Fundraiser page **/
+/** Breakout pages **/
+main.donate.breakout {
+}
+@media only screen and (min-width: 1024px) {
+  main.donate.breakout {
+    padding-bottom: 0;
+  }
+}
 
 @media only screen and (min-width: 1024px) {
-  main.donate article.fundraiser {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-main.donate article.fundraiser .prose {
-  max-width: 100%;
-}
-main.donate article.fundraiser .prose img {
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  main.donate article.fundraiser {
-    margin: 2rem auto;
-    width: calc(100% - 4rem);
-    max-width: 1024px;
-  }
-}
-
-main.donate article.fundraiser .gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 1px;
-  grid-column-gap: 1px;
-  grid-auto-rows: auto;
-}
-
-@media only screen and (min-width: 600px) {
-  main.donate article.fundraiser .gallery {
+  main.donate.breakout article {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: calc(1205px + 4rem);
+    margin: 0 auto;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  main.donate article.fundraiser .gallery {
-    grid-row-gap: 2rem;
-    min-width: 300px;
-    margin-left: 2rem;
-    grid-template-columns: 1fr;
-  }
+main.donate.breakout div.proseWrapper {
+  background-color: var(--color-content-dim);
+  padding: 2rem;
 }
 
-main.donate article.fundraiser .gallery .photo {
-  position: relative;
-  margin-top: 1px;
+main.donate.breakout header {
+  background-color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 300%;
+  padding: 3rem 2rem;
 }
 
-main.donate article.fundraiser .gallery .photo span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  text-shadow: var(--color-da) 1px 0px 2px, var(--color-da) 0px 1px 2px,
-    var(--color-da) -1px 0px 2px, var(--color-da) 0px -1px 2px;
-  background: transparent;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    var(--color-da) 100%
-  );
-  padding: 1rem;
+main.donate.breakout .gallery {
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.donate.breakout .gallery .gatsby-image-wrapper {
   width: 100%;
 }
 
-main.donate article.fundraiser main {
-  background-color: var(--color-light);
+@media only screen and (min-width: 1024px) {
+  main.donate.breakout .progress {
+    padding: 4rem;
+  }
 }
-main.donate article.fundraiser main div.prose {
-  padding: 2rem;
+
+/* Extra wide */
+
+@media only screen and (min-width: 1400px) {
+  main.donate.breakout article {
+    max-width: calc(1205px + 8rem);
+  }
+  main.donate.breakout header {
+    padding: 6rem 4rem;
+  }
+  main.donate.breakout div.proseWrapper {
+    padding: 4rem;
+  }
 }
 
 /** Ways to donate **/
