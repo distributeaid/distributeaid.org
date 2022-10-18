@@ -4,19 +4,19 @@ routeOrigin: UK
 routeDestination: France
 costs:
   currency: GBP
-  standardPaletteCost: 75
-  halfPaletteCost: 45
-  overflowPricing: 2.5
+  standardPaletteCost: 100
+  halfPaletteCost: 70
+  overflowPricing: 5
 introduction: |-
   Distribute Aid is hoping to send a regular route for humanitarian aid shipments between the UK and France around May. We won't let pandemics, Brexit, or global supply chain disruptions stop the flow of aid to those who need it most! ♥
 
   If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2022-10-23T00:00:00Z
-  confirmationDate: 2022-10-28T00:00:00Z
-  stagingBegins: 2022-11-07T23:00:00Z
-  stagingEnds: 2022-11-11T00:00:00Z
-  shipmentDeparture: 2022-11-14T00:00:00Z
+  submissionsDeadline: 2022-10-23T00:00:00.000+00:00
+  confirmationDate: 2022-10-28T00:00:00.000+00:00
+  stagingBegins: 2022-11-07T23:00:00.000+00:00
+  stagingEnds: 2022-11-11T00:00:00.000+00:00
+  shipmentDeparture: 2022-11-14T00:00:00.000+00:00
 frontlineGroups:
 - name: L'Auberge des Migrants
   logo: "/uploads/auberge-logo-256.jpg"
