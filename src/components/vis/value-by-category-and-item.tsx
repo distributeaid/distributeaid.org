@@ -1,12 +1,6 @@
 import { ResponsiveSunburst } from '@nivo/sunburst'
 import { FC } from 'react'
-
-type Item = {
-  category: string
-  item: string
-  ageGender: string
-  sizeStyle: string
-}
+import { Product } from '../../types/product-types'
 
 type Shipment = {
   year: string
@@ -17,7 +11,7 @@ type Shipment = {
 type LineItem = {
   value: number
   count: number
-  item: Item
+  item: Product
   shipment: Shipment
 }
 

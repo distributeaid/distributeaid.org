@@ -2,6 +2,7 @@ import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
+import { Product } from '../types/product-types'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
@@ -18,13 +19,6 @@ const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
 
-type Item = {
-  category: string
-  item: string
-  ageGender: string
-  sizeStyle: string
-}
-
 type Shipment = {
   year: string
   number: string
@@ -34,7 +28,7 @@ type Shipment = {
 type LineItem = {
   value: number
   count: number
-  item: Item
+  item: Product
   shipment: Shipment
 }
 
