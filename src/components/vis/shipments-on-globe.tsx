@@ -1,13 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { getCoordsAlpha3 } from 'utils/iso-3166'
-
-type Item = {
-  category: string
-  item: string
-  ageGender: string
-  sizeStyle: string
-}
+import { Product } from '../../types/product-types'
 
 type Shipment = {
   year: string
@@ -18,7 +12,7 @@ type Shipment = {
 type LineItem = {
   value: number
   count: number
-  item: Item
+  item: Product
   shipment: Shipment
 }
 
