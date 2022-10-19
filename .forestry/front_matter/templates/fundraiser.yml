@@ -67,8 +67,9 @@ fields:
     required: true
     min: 1
 pages:
-- content/blocks/fundraisers/project-A.md
-- content/blocks/fundraisers/project-B.md
-- content/blocks/fundraisers/project-C.md
-- content/blocks/fundraisers/project-D.md
-- content/blocks/fundraisers/project-E.md
+- content/blocks/fundraisers/european-refugee-response.md
+- content/blocks/fundraisers/humanitarian-logistics.md
+- content/blocks/fundraisers/sustainable-supply-chains.md
+- content/blocks/fundraisers/tech-for-good.md
+- content/blocks/fundraisers/ukraine-response-project.md
+- content/blocks/fundraisers/us-disaster-relief.md
