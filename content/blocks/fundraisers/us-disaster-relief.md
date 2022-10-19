@@ -10,8 +10,6 @@ abstract: |-
 gallery:
   - url: /uploads/fundraisers/us-disaster-relief-hero.jpg
     alt: Alternative Text, but very long to show wrapping of alternative text.
-  - url: /uploads/fundraisers/us-disaster-relief-gallery-01.jpg
-    alt: Alternative Text
   - url: /uploads/fundraisers/us-disaster-relief-gallery-02.jpg
     alt: Alternative Text
   - url: /uploads/fundraisers/us-disaster-relief-gallery-03.jpg

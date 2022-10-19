@@ -10,7 +10,7 @@ abstract: |-
 gallery:
   - url: /uploads/fundraisers/sustainable-supply-chains-hero.jpg
     alt: Alternative Text, but very long to show wrapping of alternative text.
-  - url: /uploads/fundraisers/sustainable-supply-chains-gallery-01.jpg
+  - url: /uploads/fundraisers/tech-for-good-hero.jpg
     alt: Alternative Text
   - url: /uploads/fundraisers/sustainable-supply-chains-gallery-02.jpg
     alt: Alternative Text

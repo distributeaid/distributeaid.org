@@ -10,8 +10,6 @@ abstract: |-
 gallery:
   - url: /uploads/fundraisers/humanitarian-logistics-hero.jpg
     alt: Alternative Text, but very long to show wrapping of alternative text.
-  - url: /uploads/fundraisers/humanitarian-logistics-gallery-01.jpg
-    alt: Alternative Text
   - url: /uploads/fundraisers/humanitarian-logistics-gallery-02.jpg
     alt: Alternative Text
   - url: /uploads/fundraisers/humanitarian-logistics-gallery-03.jpg

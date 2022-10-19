@@ -10,7 +10,7 @@ abstract: |-
 gallery:
   - url: /uploads/fundraisers/ukraine-response-project-hero.jpg
     alt: Alternative Text, but very long to show wrapping of alternative text.
-  - url: /uploads/fundraisers/ukraine-response-project-gallery-01.jpg
+  - url: /uploads/fundraisers/european-refugee-response-hero.jpg
     alt: Alternative Text
   - url: /uploads/fundraisers/ukraine-response-project-gallery-02.jpg
     alt: Alternative Text
