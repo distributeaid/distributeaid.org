@@ -4,6 +4,7 @@ import heartBillIcon from '../../images/regular-routes/icons/noun_Heart_Bill_982
 import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
 import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
 import truckIcon from '../../images/regular-routes/icons/openmoji_truck.svg'
+import IconWithText from './IconWithText'
 import { RouteFrontlineGroup, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
 import TextWithVisual from './TextWithVisual'
@@ -23,7 +24,6 @@ const Delivery: FC<DeliveryProps> = ({
   routeDestination,
   routeOrigin,
 }) => {
-  console.log('here')
   return (
     <TextWithVisual
       positionOfVisual="right"
@@ -45,61 +45,26 @@ const Delivery: FC<DeliveryProps> = ({
       <div className="section__body space-y-4">
         <MarkdownContent content={introduction} />
         <div className="tiles tiles--grid tiles--highlight mt-4">
-          <div className="tile tile--column w-1/2">
-            <div className="tile-icon mx-auto">
-              <img
-                className="icon icon--responsive"
-                src={netIcon}
-                alt="Hub Icon: Multiple nodes connected to a center hub."
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">1 UK Staging Hubs</p>
-              <p>Coventry</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/2">
-            <div className="tile-icon mx-auto">
-              <img
-                className="icon icon--responsive"
-                src={mapIcon}
-                alt="Map Icon: A destination marker on a map."
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Service to {routeDestination}</p>
-              <p>Supporting {frontlineGroups.length} Frontline Groups</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/2">
-            <div className="tile-icon mx-auto">
-              <img
-                className="icon icon--responsive"
-                src={truckIcon}
-                alt="Truck Icon: A truck in motion."
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Regular Shipments</p>
-              <p>Scaled To Demand</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column w-1/2">
-            <div className="tile-icon mx-auto">
-              <img
-                className="icon icon--responsive"
-                src={heartBillIcon}
-                alt="Money Icon: A currency bill with a heart in the middle."
-              />
-            </div>
-            <div className="tile-content">
-              <p className="mb-1">Fair Flat-Rate Pricing</p>
-              <p>All-Inclusive, At-Cost</p>
-            </div>
-          </div>
+          <IconWithText
+            icon={netIcon}
+            altText="Hub Icon: Multiple nodes connected to a center hub."
+            description="UK Staging Hub in Coventry"
+          />
+          <IconWithText
+            icon={mapIcon}
+            altText="Map Icon: A destination marker on a map."
+            description={`Service to ${routeDestination}, supporting ${frontlineGroups.length} frontline groups`}
+          />
+          <IconWithText
+            icon={truckIcon}
+            altText="Truck Icon: A truck in motion."
+            description={'Regular shipments, scaled to demand'}
+          />
+          <IconWithText
+            icon={heartBillIcon}
+            altText="Money Icon: A currency bill with a heart in the middle."
+            description="Fair flat-rate pricing, all-inclusive, at-cost"
+          />
         </div>
       </div>
 
