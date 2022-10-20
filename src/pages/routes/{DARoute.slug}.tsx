@@ -261,7 +261,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
       </div>
 
       <footer>
-        <p className="photo-credit text-center">
+        <p className="text-sm italic text-center">
           Questions? Comments? Contact us all at{' '}
           <a
             href="mailto:hubs@distributeaid.org"
