@@ -4,6 +4,10 @@ import { Product } from '../../../types/product-types'
 
 import { Region, Subregion } from '../../regions/RegionComponentTypes'
 
+import { theme } from '../nivo-theme'
+
+import { getVisualizationColors } from '../../../utils/site-theme'
+
 export type Need = {
   id: string
   need: number
@@ -89,6 +93,11 @@ const buildNivoData = (
 
 export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
   const dataProps = buildNivoData(diapersByRegion)
+  const colors = getVisualizationColors({
+    swatches: ['purple', 'rosemary', 'turquoise', 'beige'],
+    weights: [400, 600],
+    randomize: true,
+  })
 
   return (
     // NOTE: the containing element must have a set width & height
@@ -99,10 +108,13 @@ export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
       layout="horizontal"
       padding={0.25}
       innerPadding={1}
-      margin={{ top: 80, right: 20, bottom: 20, left: 100 }}
+      margin={{ top: 80, right: 100, bottom: 40, left: 250 }}
       valueFormat={(value) => `${Number(value).toLocaleString('en-US')}`}
+      //style
+      theme={theme}
+      colors={colors}
       // labels
-      labelSkipWidth={20}
+      labelSkipWidth={50}
       labelSkipHeight={20}
       // grid & axis
       enableGridX={true}
@@ -111,12 +123,16 @@ export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
         tickSize: 5,
         tickPadding: 5,
         format: (value) => `${Number(value).toLocaleString('en-US')}`,
-        legend: '# Items Needed',
+      }}
+      axisRight={null}
+      axisBottom={{
+        tickSize: 5,
+        tickPadding: 5,
+        format: (value) => `${Number(value).toLocaleString('en-US')}`,
+        legend: '# Needed',
         legendPosition: 'start',
         legendOffset: -40,
       }}
-      axisRight={null}
-      axisBottom={null}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,
@@ -129,12 +145,12 @@ export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
         {
           dataFrom: 'keys',
           toggleSerie: true,
-          anchor: 'top',
+          anchor: 'top-right',
           direction: 'row',
           translateX: 0,
           translateY: -60,
           itemsSpacing: 2,
-          itemWidth: 120,
+          itemWidth: 175,
           itemHeight: 20,
           itemDirection: 'left-to-right',
           itemOpacity: 0.8,

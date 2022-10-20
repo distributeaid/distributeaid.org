@@ -52,3 +52,37 @@ export function getColors({
   // ['#F2ECF5', '#E9DFEE', '#D7C6E0', '#C6ACD2', '#B493C4', '#A284B0']
   return colors
 }
+
+export function getVisualizationColors({
+  swatches,
+  weights,
+  randomize,
+}: {
+  swatches: string[]
+  weights: number[]
+  randomize: boolean
+}): string[] {
+  const themeColors = theme?.colors as Record<
+    string,
+    KeyValuePair<number, string>
+  > // {rosemary: {200: '#F2ECF5', 300: '#E9DFEE', etc}, etc}
+
+  const colors: string[] = []
+
+  for (const [swatch, colorsByWeight] of Object.entries(themeColors)) {
+    if (swatches.includes(swatch)) {
+      for (const [weight, color] of Object.entries(colorsByWeight)) {
+        if (weights.includes(parseInt(weight))) {
+          colors.push(color)
+        }
+      }
+    }
+  }
+
+  if (randomize) {
+    colors.sort(() => Math.random() - 0.5)
+  }
+
+  // ['#F2ECF5', '#E9DFEE', '#D7C6E0', '#C6ACD2', '#B493C4', '#A284B0']
+  return colors
+}
