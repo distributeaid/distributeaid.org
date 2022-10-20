@@ -83,7 +83,7 @@ const RegionsPage: FC<Props> = ({
           <section className="h-96 w-96">
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
           </section>
-          <section className="h-96 w-full col-span-2 border-2 border-navy-500">
+          <section className="h-screen w-full col-span-3 border-2 border-navy-500">
             <DiapersByRegionVis diapersByRegion={diapersByRegion.nodes} />
           </section>
           <section>
@@ -130,7 +130,7 @@ export const pageQuery = graphql`
 
     diapersByRegion: allDaNeed(
       filter: {
-        survey: { year: { eq: "2022" }, quarter: { eq: "q2" } }
+        survey: { year: { eq: "2022" }, quarter: { eq: "q3" } }
         place: { region: { name: { eq: "Greece" } } }
         product: { item: { glob: "Diaper" } }
       }
