@@ -5,6 +5,7 @@ import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
 import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
 import truckIcon from '../../images/regular-routes/icons/openmoji_truck.svg'
 import IconWithText from './IconWithText'
+import PhotoCredit from './PhotoCredit'
 import { RouteFrontlineGroup, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
 import TextWithVisual from './TextWithVisual'
@@ -69,19 +70,10 @@ const Delivery: FC<DeliveryProps> = ({
           />
         </div>
       </div>
-
-      <footer>
-        <p className="text-sm italic text-center">
-          <span>Background Photo Credit:</span>{' '}
-          <a
-            href="https://www.facebook.com/groups/hertsforrefugees/permalink/3488608217903521/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mark Lampert of Herts For Refugees
-          </a>
-        </p>
-      </footer>
+      <PhotoCredit
+        url="https://www.facebook.com/groups/hertsforrefugees/permalink/3488608217903521/"
+        description="Mark Lampert of Herts For Refugees"
+      />
     </TextWithVisual>
   )
 }

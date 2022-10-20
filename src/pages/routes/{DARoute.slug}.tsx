@@ -10,6 +10,7 @@ import TextWithVisual from '../../components/routes/TextWithVisual'
 import SimpleLayout from '../../layouts/Simple'
 
 import Delivery from '@components/routes/Delivery'
+import PhotoCredit from '@components/routes/PhotoCredit'
 import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import sackIcon from '../../images/regular-routes/icons/openmoji_bag.svg'
@@ -163,20 +164,10 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         </ol>
       </div>
 
-      <footer>
-        <p className="photo-credit text-center">
-          <span>Background Photo Credit:</span>{' '}
-          <a href="https://unsplash.com/@ruchindra?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
-            Ruchindra Gunasekara
-          </a>{' '}
-          <span>
-            on{' '}
-            <a href="https://unsplash.com/s/photos/warehouse?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
-              Unsplash
-            </a>
-          </span>
-        </p>
-      </footer>
+      <PhotoCredit
+        url="https://unsplash.com/@ruchindra?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+        description="Ruchindra Gunasekara on Unsplash"
+      />
     </TextWithVisual>
 
     <TextWithVisual
@@ -213,18 +204,10 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         </div>
       </div>
 
-      <footer>
-        <p className="photo-credit text-center hide-sm">
-          <span>Background Photo Credit:</span>{' '}
-          <a
-            href="https://www.facebook.com/MobileRefugeeSupport/posts/1492064960999110"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mobile Refugee Support
-          </a>
-        </p>
-      </footer>
+      <PhotoCredit
+        url="https://www.facebook.com/MobileRefugeeSupport/posts/1492064960999110"
+        description="Mobile Refugee Support"
+      />
     </TextWithVisual>
 
     <TextWithVisual
@@ -415,18 +398,10 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         </ul>
       </div>
 
-      <footer>
-        <p className="photo-credit text-center">
-          <span>Background Photo Credit:</span>{' '}
-          <a
-            href="https://www.instagram.com/calais_food_collective/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Calais Food Collective
-          </a>
-        </p>
-      </footer>
+      <PhotoCredit
+        url="https://www.instagram.com/calais_food_collective/"
+        description="Calais Food Collective"
+      />
     </TextWithVisual>
 
     <TextWithVisual
@@ -527,18 +502,10 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         </div>
       </div>
 
-      <footer>
-        <p className="photo-credit text-center hide-sm">
-          <span>Background Photo Credit:</span>{' '}
-          <a
-            href="https://www.facebook.com/DGRefugeeAction"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Jay Rubenstien of Massive Outpouring of Love
-          </a>
-        </p>
-      </footer>
+      <PhotoCredit
+        url="https://www.facebook.com/DGRefugeeAction"
+        description="Jay Rubenstien of Massive Outpouring of Love"
+      />
     </TextWithVisual>
   </SimpleLayout>
 )
