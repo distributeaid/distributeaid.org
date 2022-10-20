@@ -10,13 +10,7 @@ export type Route = {
   mapUrl: string
   aidRequestFormUrl: string
   population: number
-  images: {
-    deliverySection: string
-    reservationSection: string
-    groupsSection: string
-    storageSection: string
-    palletsSection: string
-  }
+  images: RouteImages
   costs: {
     currency: string
     standardPaletteCost: number
@@ -30,8 +24,18 @@ export type Route = {
     stagingEnds: string
     shipmentDeparture: string
   }
-  frontlineGroups: {
-    logo: string
-    name: string
-  }[]
+  frontlineGroups: RouteFrontlineGroup[]
+}
+
+export type RouteImages = {
+  deliverySection: string
+  reservationSection: string
+  groupsSection: string
+  storageSection: string
+  palletsSection: string
+}
+
+export type RouteFrontlineGroup = {
+  logo: string
+  name: string
 }
