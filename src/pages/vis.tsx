@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
 import { Product } from '../types/product-types'
 
+import { Need } from '../components/vis/needs-assessment/diapers-by-region'
+
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
 const ValueByCategoryAndItemVis = React.lazy(
@@ -17,6 +19,9 @@ const LineItemTable = React.lazy(
 )
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
+)
+const DiapersByRegionVis = React.lazy(
+  () => import('@components/vis/needs-assessment/diapers-by-region'),
 )
 
 type Shipment = {
@@ -50,6 +55,9 @@ type Props = {
     categoryVisItems: {
       nodes: LineItem[]
     }
+    diapersByRegion: {
+      nodes: Need[]
+    }
   }
 }
 
@@ -57,7 +65,9 @@ export function Head() {
   return <PageHeader title={'Experimental Data Visualizations'} />
 }
 
-const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
+const RegionsPage: FC<Props> = ({
+  data: { lineItems, categoryVisItems, diapersByRegion },
+}) => {
   const isSSR = typeof window === 'undefined'
   if (isSSR) return null
   return (
@@ -72,6 +82,9 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
           </section>
           <section className="h-96 w-96">
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
+          </section>
+          <section className="h-96 w-full col-span-2 border-2 border-navy-500">
+            <DiapersByRegionVis diapersByRegion={diapersByRegion.nodes} />
           </section>
           <section>
             <LineItemTable lineItems={lineItems} />
@@ -111,6 +124,38 @@ export const pageQuery = graphql`
           item
           ageGender
           sizeStyle
+        }
+      }
+    }
+
+    diapersByRegion: allDaNeed(
+      filter: {
+        survey: { year: { eq: "2022" }, quarter: { eq: "q2" } }
+        place: { region: { name: { eq: "Greece" } } }
+        product: { item: { glob: "Diaper" } }
+      }
+    ) {
+      nodes {
+        need
+        product {
+          category
+          item
+          ageGender
+          sizeStyle
+          unit
+        }
+        place {
+          region {
+            name
+          }
+          subregion {
+            name
+          }
+        }
+        survey {
+          id
+          year
+          quarter
         }
       }
     }
