@@ -35,16 +35,18 @@ const Delivery: FC<DeliveryProps> = ({
       }
     >
       <header className="my-4 text-center">
-        <h1 className="section__title">Delivery</h1>
+        <h1 className="flex justify-center mb-1 uppercase text-4xl">
+          Delivery
+        </h1>
         <h2 className="text-2xl">
           Regular Route: {routeOrigin}&rarr;
           {routeDestination}
         </h2>
       </header>
 
-      <div className="section__body space-y-4">
+      <div className="mt-4">
         <MarkdownContent content={introduction} />
-        <div className="tiles tiles--grid tiles--highlight mt-4">
+        <div className="flex flex-wrap justify-center mt-4">
           <IconWithText
             icon={netIcon}
             altText="Hub Icon: Multiple nodes connected to a center hub."
@@ -69,7 +71,7 @@ const Delivery: FC<DeliveryProps> = ({
       </div>
 
       <footer>
-        <p className="photo-credit text-center">
+        <p className="text-sm italic text-center">
           <span>Background Photo Credit:</span>{' '}
           <a
             href="https://www.facebook.com/groups/hertsforrefugees/permalink/3488608217903521/"

@@ -57,13 +57,6 @@ Photos
   font-style: italic;
 }
 
-@media only screen and (max-device-width: 600px) {
-  .photo-credit {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .tiles {
   margin-bottom: 1rem;
 }

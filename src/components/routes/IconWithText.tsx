@@ -12,13 +12,11 @@ const IconWithText: FC<IconWithTextProps> = ({
   description,
 }) => {
   return (
-    <div className="tile tile--column w-1/2">
-      <div className="tile-icon mx-auto">
-        <img className="icon icon--responsive" src={icon} alt={altText} />
+    <div className="flex flex-wrap flex-col content-around w-1/2 h-40">
+      <div className="flex items-center justify-center mx-auto h-20 w-40">
+        <img className="w-20" src={icon} alt={altText} />
       </div>
-      <div className="w-40 m-auto">
-        <p>{description}</p>
-      </div>
+      <p className="text-sm w-40 text-center my-2">{description}</p>
     </div>
   )
 }
