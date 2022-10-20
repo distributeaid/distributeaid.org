@@ -25,6 +25,7 @@ export type Need = {
 
 type Props = {
   diapersByRegion: Need[]
+  category: string
 }
 
 // # needs by item, key'd by subregion
@@ -47,7 +48,7 @@ const buildNivoData = (
     const name =
       (product.ageGender ? `${product.ageGender} ` : '') +
       (product.sizeStyle ? `${product.sizeStyle} ` : '') +
-      `${product.item}s`
+      `${product.item}`
     const needs = needsByProduct[name] || []
     needs.push(need)
     needsByProduct[name] = needs
@@ -91,8 +92,18 @@ const buildNivoData = (
   }
 }
 
-export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
-  const dataProps = buildNivoData(diapersByRegion)
+const filter = (needs: Need[], category: string) => {
+  return needs.filter((need) => {
+    return need.product.category === category
+  })
+}
+
+export const DiapersByRegionVis: FC<Props> = ({
+  diapersByRegion,
+  category,
+}) => {
+  const filteredData = filter(diapersByRegion, category)
+  const dataProps = buildNivoData(filteredData)
   const colors = getVisualizationColors({
     swatches: ['purple', 'rosemary', 'turquoise', 'beige'],
     weights: [400, 600],
@@ -123,15 +134,15 @@ export const DiapersByRegionVis: FC<Props> = ({ diapersByRegion }) => {
         tickSize: 5,
         tickPadding: 5,
         format: (value) => `${Number(value).toLocaleString('en-US')}`,
+        legend: '# Needed',
+        legendPosition: 'start',
+        legendOffset: -40,
       }}
       axisRight={null}
       axisBottom={{
         tickSize: 5,
         tickPadding: 5,
         format: (value) => `${Number(value).toLocaleString('en-US')}`,
-        legend: '# Needed',
-        legendPosition: 'start',
-        legendOffset: -40,
       }}
       axisLeft={{
         tickSize: 5,
