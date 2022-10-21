@@ -83,8 +83,8 @@ const RegionsPage: FC<Props> = ({
           <section className="h-96 w-96">
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
           </section>
-          <section className="h-screen w-full col-span-3 border-2 border-navy-500">
-            <NeedsBarChart needs={needs.nodes} category="Clothing" />
+          <section className="col-span-3 border-2 border-navy-500">
+            <NeedsBarChart needs={needs.nodes} category="Hygiene" />
           </section>
           <section>
             <LineItemTable lineItems={lineItems} />
