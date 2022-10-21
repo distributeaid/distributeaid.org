@@ -2,11 +2,11 @@ import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
-import { Region } from '@components/regions/RegionComponentTypes'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { getOxfordCommaSeparator } from 'utils/strings'
+import { Region } from '../../types/place-types'
 
 type Props = {
   data: {
