@@ -90,24 +90,31 @@ const total = (needs: Need[]) => {
 export const NeedsBarChart: FC<Props> = ({ needs, category }) => {
   const filteredNeeds = filter(needs, category)
   const totalNeed = total(filteredNeeds)
+  const height = filteredNeeds.length * 18
   const dataProps = buildNivoData(filteredNeeds)
 
   return (
-    // NOTE: the containing element must have a set width & height
     // docs: https://nivo.rocks/bar/
-    <ResponsiveBar
-      // base
-      {...dataProps}
-      {...nivoProps.bar.horizontal}
-      axisTop={{
-        tickSize: 5,
-        tickPadding: 5,
-        format: (value: number) => `${Number(value).toLocaleString()}`,
-        legend: `Known Need: ${Number(totalNeed).toLocaleString()} Items`,
-        legendPosition: 'start',
-        legendOffset: -40,
+    <div
+      className="w-full"
+      style={{
+        height: `${height}px`,
       }}
-    />
+    >
+      <ResponsiveBar
+        // base
+        {...dataProps}
+        {...nivoProps.bar.horizontal}
+        axisTop={{
+          tickSize: 5,
+          tickPadding: 5,
+          format: (value: number) => `${Number(value).toLocaleString()}`,
+          legend: `Known Need: ${Number(totalNeed).toLocaleString()} Items`,
+          legendPosition: 'start',
+          legendOffset: -40,
+        }}
+      />
+    </div>
   )
 }
 
