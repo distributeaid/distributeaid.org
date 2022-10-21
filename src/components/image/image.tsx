@@ -11,9 +11,7 @@ type Image = {
   altText: string
   caption: string
   attribution: string
-  alignmentPhoto: string
-  alignmentCaption: string
-  span: string
+  alignment: 'left' | 'center' | 'right'
 }
 
 // const [isHovering, setIsHovering] = useState(false)
@@ -25,27 +23,36 @@ const Image: FC<Image> = ({
   altText,
   caption,
   attribution,
-  alignmentPhoto,
-  alignmentCaption,
-  span,
+  alignment,
 }) => {
+  var flexAlignment = 'justify-center'
+  var textAlignment = 'text-center'
+  if (alignment === 'right') {
+    flexAlignment = 'justify-end'
+    textAlignment = 'text-right'
+  } else if (alignment === 'left') {
+    flexAlignment = 'justify-start'
+    textAlignment = 'text-left'
+  }
+
   return (
-    <>
-      <div className="relative">
-        <div className="absolute inset-x-0 bottom-0 h-16 text-center bg-gray-900 opacity-75">
-          <span className="text-white mt-0.5">{attribution}</span>
+    <div className={`flex ${flexAlignment}`}>
+      <div
+        style={{
+          width: width,
+        }}
+      >
+        <div className="relative">
+          <div
+            className={`absolute inset-x-0 bottom-0 h-16 ${textAlignment} bg-gray-900 opacity-75`}
+          >
+            <span className="text-white mt-0.5">{attribution}</span>
+          </div>
+          <img src={image} alt={altText} height={height} />
         </div>
-        <img
-          src={image}
-          alt={altText}
-          className={alignmentPhoto}
-          width={width}
-          height={height}
-        />
+        <p className={`${textAlignment}`}>{caption}</p>
       </div>
-      <p className={alignmentCaption}>{caption}</p>
-      <p className={alignmentCaption}>{attribution}</p>
-    </>
+    </div>
   )
 }
 

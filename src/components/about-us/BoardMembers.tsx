@@ -15,9 +15,7 @@ const BoardMembers: FC = () => (
         'Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank'
       }
       attribution={'DistributeAid'}
-      alignmentPhoto={'mx-auto'}
-      alignmentCaption={'text-center'}
-      span={''}
+      alignment={'center'}
     />
     {/* <div className="max-w-7xl mx-auto text-center py-20 px-4 text-lg">
       <img
