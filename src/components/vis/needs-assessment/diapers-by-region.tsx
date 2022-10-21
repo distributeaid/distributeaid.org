@@ -4,9 +4,7 @@ import { Product } from '../../../types/product-types'
 
 import { Region, Subregion } from '../../regions/RegionComponentTypes'
 
-import { theme } from '../nivo-theme'
-
-import { getVisualizationColors } from '../../../utils/site-theme'
+import { nivoProps } from '../nivo-theme'
 
 export type Need = {
   id: string
@@ -98,17 +96,21 @@ const filter = (needs: Need[], category: string) => {
   })
 }
 
+const total = (needs: Need[]) => {
+  const total = needs.reduce((total, need) => {
+    return total + need.need
+  }, 0)
+
+  return Math.floor(total)
+}
+
 export const DiapersByRegionVis: FC<Props> = ({
   diapersByRegion,
   category,
 }) => {
-  const filteredData = filter(diapersByRegion, category)
-  const dataProps = buildNivoData(filteredData)
-  const colors = getVisualizationColors({
-    swatches: ['purple', 'rosemary', 'turquoise', 'beige'],
-    weights: [400, 600],
-    randomize: true,
-  })
+  const filteredNeeds = filter(diapersByRegion, category)
+  const totalNeed = total(filteredNeeds)
+  const dataProps = buildNivoData(filteredNeeds)
 
   return (
     // NOTE: the containing element must have a set width & height
@@ -116,66 +118,15 @@ export const DiapersByRegionVis: FC<Props> = ({
     <ResponsiveBar
       // base
       {...dataProps}
-      layout="horizontal"
-      padding={0.25}
-      innerPadding={1}
-      margin={{ top: 80, right: 100, bottom: 40, left: 250 }}
-      valueFormat={(value) => `${Number(value).toLocaleString('en-US')}`}
-      //style
-      theme={theme}
-      colors={colors}
-      // labels
-      labelSkipWidth={50}
-      labelSkipHeight={20}
-      // grid & axis
-      enableGridX={true}
-      enableGridY={false}
+      {...nivoProps.bar.horizontal}
       axisTop={{
         tickSize: 5,
         tickPadding: 5,
-        format: (value) => `${Number(value).toLocaleString('en-US')}`,
-        legend: '# Needed',
+        format: (value: number) => `${Number(value).toLocaleString()}`,
+        legend: `Known Need: ${Number(totalNeed).toLocaleString()} Items`,
         legendPosition: 'start',
         legendOffset: -40,
       }}
-      axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        format: (value) => `${Number(value).toLocaleString('en-US')}`,
-      }}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        legend: '',
-        legendPosition: 'end',
-        legendOffset: -20,
-      }}
-      // legends
-      legends={[
-        {
-          dataFrom: 'keys',
-          toggleSerie: true,
-          anchor: 'top-right',
-          direction: 'row',
-          translateX: 0,
-          translateY: -60,
-          itemsSpacing: 2,
-          itemWidth: 175,
-          itemHeight: 20,
-          itemDirection: 'left-to-right',
-          itemOpacity: 0.8,
-          symbolSize: 20,
-          effects: [
-            {
-              on: 'hover',
-              style: {
-                itemOpacity: 1,
-              },
-            },
-          ],
-        },
-      ]}
     />
   )
 }
