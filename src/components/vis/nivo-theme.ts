@@ -1,7 +1,13 @@
-export const colors = []
+import { getVisualizationColors } from '../../utils/site-theme'
+
+// docs: https://nivo.rocks/guides/colors/
+export const colors = getVisualizationColors({
+  swatches: ['purple', 'rosemary', 'turquoise', 'beige'],
+  weights: [400, 600],
+  randomize: true,
+})
 
 // docs: https://nivo.rocks/guides/theming/
-// You can pass this object to the `theme` property on Nivo components.
 export const theme = {
   background: '#ffffff',
   textColor: '#374151', // same as @tailwind/typeography's body text color
@@ -101,5 +107,66 @@ export const theme = {
     table: {},
     tableCell: {},
     tableCellValue: {},
+  },
+}
+
+export const nivoProps = {
+  bar: {
+    horizontal: {
+      layout: 'horizontal' as const,
+      padding: 0.25,
+      innerPadding: 1,
+      margin: { top: 80, right: 100, bottom: 40, left: 250 },
+      valueFormat: (value: number) => `${Number(value).toLocaleString()}`,
+      //style
+      theme: theme,
+      colors: colors,
+      // labels
+      labelSkipWidth: 50,
+      labelSkipHeight: 18,
+      // grid & axis
+      enableGridX: true,
+      enableGridY: false,
+      axisTop: {
+        tickSize: 5,
+        tickPadding: 5,
+        format: (value: number) => `${Number(value).toLocaleString()}`,
+      },
+      axisRight: null,
+      axisBottom: {
+        tickSize: 5,
+        tickPadding: 5,
+        format: (value: number) => `${Number(value).toLocaleString()}`,
+      },
+      axisLeft: {
+        tickSize: 5,
+        tickPadding: 5,
+      },
+      // legends
+      legends: [
+        {
+          dataFrom: 'keys' as const,
+          toggleSerie: true,
+          anchor: 'top-right' as const,
+          direction: 'row' as const,
+          translateX: 0,
+          translateY: -60,
+          itemsSpacing: 2,
+          itemWidth: 175,
+          itemHeight: 20,
+          itemDirection: 'left-to-right' as const,
+          itemOpacity: 0.8,
+          symbolSize: 20,
+          effects: [
+            {
+              on: 'hover' as const,
+              style: {
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
+      ],
+    },
   },
 }
