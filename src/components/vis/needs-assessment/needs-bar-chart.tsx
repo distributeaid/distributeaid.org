@@ -5,6 +5,7 @@ import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
 
 type Filters = {
+  quarter: string | undefined
   region: string | undefined
   category: string | undefined
 }
@@ -86,6 +87,10 @@ const filter = (needs: Need[], filters?: Filters) => {
   }
 
   return needs.filter((need) => {
+    const quarterMatch =
+      !filters.quarter ||
+      filters.quarter === `${need.survey.year} ${need.survey.quarter}`
+
     const regionMatch =
       !filters.region ||
       filters.region === need.place.region?.name ||
@@ -94,7 +99,7 @@ const filter = (needs: Need[], filters?: Filters) => {
     const categoryMatch =
       !filters.category || filters.category === need.product.category
 
-    return regionMatch && categoryMatch
+    return quarterMatch && regionMatch && categoryMatch
   })
 }
 
