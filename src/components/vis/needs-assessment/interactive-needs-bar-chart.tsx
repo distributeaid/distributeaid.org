@@ -40,16 +40,10 @@ const buildSelectOptions = (values: string[]) => {
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
   const regionOptions = buildSelectOptions(getRegions(needs))
-  const [region, setRegion] = useState<string | null>(
-    regionOptions[0]?.value || null,
-  )
+  const [region, setRegion] = useState<string | null>(null)
 
   const categoryOptions = buildSelectOptions(getCategories(needs))
-  const [category, setCategory] = useState<string | null>(
-    categoryOptions[0]?.value || null,
-  )
-
-  console.log(category)
+  const [category, setCategory] = useState<string | null>(null)
 
   return (
     <div>
@@ -62,23 +56,25 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <div className="flex items-center pr-5">
           <label className="pr-2">Region:</label>
           <Select
-            className="w-40"
+            className="w-64"
             options={regionOptions}
-            defaultValue={regionOptions[0]}
+            defaultValue={null}
             onChange={(option, actionMeta) => {
               setRegion(option?.value || null)
             }}
+            isClearable={true}
           />
         </div>
         <div className="flex items-center pr-5">
           <label className="pr-2">Category:</label>
           <Select
-            className="w-40"
+            className="w-64"
             options={categoryOptions}
-            defaultValue={categoryOptions[0]}
+            defaultValue={null}
             onChange={(option, actionMeta) => {
               setCategory(option?.value || null)
             }}
+            isClearable={true}
           />
         </div>
       </form>
