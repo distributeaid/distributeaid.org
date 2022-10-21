@@ -59,11 +59,10 @@ sections:
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
-    asset: "/uploads/50297749_521554841683858_669757054109351936_n.jpg"
+    asset: "/uploads/dsc_0427-129.jpg"
     caption: Taylor Fairbank and Sara Lonegard, our founders
     attribution: Distribute Aid
-    altText: Two people sit at a desk, hard at work.  One of them is working on a
-      laptop and the other one is working in a notebook.
+    altText: Two standing people smile for the camera in front of a brick wall.
     date: 
   - template: timeline
     timelineItems:
