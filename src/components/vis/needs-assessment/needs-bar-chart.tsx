@@ -1,25 +1,8 @@
 import { BarDatum, ResponsiveBar } from '@nivo/bar'
 import { FC } from 'react'
-import { Product } from '../../../types/product-types'
-
-import { Region, Subregion } from '../../regions/RegionComponentTypes'
+import { Need } from '../../../types/need-types'
 
 import { nivoProps } from '../nivo-theme'
-
-export type Need = {
-  id: string
-  need: number
-  survey: {
-    id: string
-    year: string
-    quarter: string
-  }
-  product: Product
-  place: {
-    region?: Region
-    subregion?: Subregion
-  }
-}
 
 type Props = {
   needs: Need[]

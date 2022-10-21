@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
 import { Product } from '../types/product-types'
 
-import { Need } from '../components/vis/needs-assessment/needs-bar-chart'
+import { Need } from '../types/need-types'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser

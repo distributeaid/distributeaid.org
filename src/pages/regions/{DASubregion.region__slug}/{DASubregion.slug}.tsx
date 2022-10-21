@@ -2,10 +2,10 @@ import SmartLink from '@components/link/SmartLink'
 import UpdateList from '@components/list/UpdateList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
-import { Subregion } from '@components/regions/RegionComponentTypes'
 import { graphql } from 'gatsby'
 import SimpleLayout from 'layouts/Simple'
 import { FC } from 'react'
+import { Subregion } from '../../../types/place-types'
 
 type TemplateProps = {
   data: {

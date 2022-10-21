@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 
-import { Region } from '@components/regions/RegionComponentTypes'
+import { Region } from '../../types/place-types'
 
 import SmartLink from '@components/link/SmartLink'
 import LinkList from '@components/list/LinkList'
