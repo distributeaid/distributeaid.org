@@ -54,7 +54,8 @@ const buildNivoData = (
       place: { subregion },
     } of needs) {
       const placeKey = subregion ? subregion.name : 'Other'
-      datum[placeKey] = need
+      const currentCount = (datum[placeKey] as number) || 0
+      datum[placeKey] = currentCount + need
       keys.add(placeKey)
     }
 

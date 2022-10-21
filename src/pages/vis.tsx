@@ -129,7 +129,10 @@ export const pageQuery = graphql`
     }
 
     needs: allDaNeed(
-      filter: { product: { unit: { nin: "Wash Cycle" } }, need: { gt: 0 } }
+      filter: {
+        product: { unit: { nin: "Wash Cycle" } }
+        need: { gt: 0, lt: 250000 }
+      }
     ) {
       nodes {
         need
