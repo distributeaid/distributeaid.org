@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
 import { Product } from '../types/product-types'
 
-import { Need } from '../components/vis/needs-assessment/diapers-by-region'
+import { Need } from '../components/vis/needs-assessment/needs-bar-chart'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
@@ -20,8 +20,8 @@ const LineItemTable = React.lazy(
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
-const DiapersByRegionVis = React.lazy(
-  () => import('@components/vis/needs-assessment/diapers-by-region'),
+const NeedsBarChart = React.lazy(
+  () => import('@components/vis/needs-assessment/needs-bar-chart'),
 )
 
 type Shipment = {
@@ -55,7 +55,7 @@ type Props = {
     categoryVisItems: {
       nodes: LineItem[]
     }
-    diapersByRegion: {
+    needs: {
       nodes: Need[]
     }
   }
@@ -66,7 +66,7 @@ export function Head() {
 }
 
 const RegionsPage: FC<Props> = ({
-  data: { lineItems, categoryVisItems, diapersByRegion },
+  data: { lineItems, categoryVisItems, needs },
 }) => {
   const isSSR = typeof window === 'undefined'
   if (isSSR) return null
@@ -84,10 +84,7 @@ const RegionsPage: FC<Props> = ({
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
           </section>
           <section className="h-screen w-full col-span-3 border-2 border-navy-500">
-            <DiapersByRegionVis
-              diapersByRegion={diapersByRegion.nodes}
-              category="Clothing"
-            />
+            <NeedsBarChart needs={needs.nodes} category="Clothing" />
           </section>
           <section>
             <LineItemTable lineItems={lineItems} />
@@ -131,7 +128,7 @@ export const pageQuery = graphql`
       }
     }
 
-    diapersByRegion: allDaNeed(
+    needs: allDaNeed(
       filter: {
         survey: { year: { eq: "2022" }, quarter: { eq: "q3" } }
         place: { region: { name: { eq: "Greece" } } }

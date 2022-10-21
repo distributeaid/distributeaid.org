@@ -22,7 +22,7 @@ export type Need = {
 }
 
 type Props = {
-  diapersByRegion: Need[]
+  needs: Need[]
   category: string
 }
 
@@ -104,11 +104,8 @@ const total = (needs: Need[]) => {
   return Math.floor(total)
 }
 
-export const DiapersByRegionVis: FC<Props> = ({
-  diapersByRegion,
-  category,
-}) => {
-  const filteredNeeds = filter(diapersByRegion, category)
+export const NeedsBarChart: FC<Props> = ({ needs, category }) => {
+  const filteredNeeds = filter(needs, category)
   const totalNeed = total(filteredNeeds)
   const dataProps = buildNivoData(filteredNeeds)
 
@@ -131,4 +128,4 @@ export const DiapersByRegionVis: FC<Props> = ({
   )
 }
 
-export default DiapersByRegionVis
+export default NeedsBarChart
