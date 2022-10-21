@@ -10,7 +10,18 @@ sections:
     numRows: 1
     colOrRowBound: Column-Bound
     order: top-to-bottom
-  contentBlocks: []
+  contentBlocks:
+  - template: block-image-with-caption
+    dateUploaded: 2022-10-21T14:14:31Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    asset: "/uploads/3.jpeg"
+    caption: " "
+    attribution: Distribute Aid
+    altText: The image contains hundreds of shipping containers and a few cranes in
+      a shipping yard.
+    date: 
 - template: section-grid
   metadata:
     margins: Margined
