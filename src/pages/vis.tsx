@@ -129,11 +129,7 @@ export const pageQuery = graphql`
     }
 
     needs: allDaNeed(
-      filter: {
-        survey: { year: { eq: "2022" }, quarter: { eq: "q4" } }
-        product: { unit: { nin: "Wash Cycle" } }
-        need: { gt: 0 }
-      }
+      filter: { product: { unit: { nin: "Wash Cycle" } }, need: { gt: 0 } }
     ) {
       nodes {
         need

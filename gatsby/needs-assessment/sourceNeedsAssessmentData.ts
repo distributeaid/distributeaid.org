@@ -151,6 +151,8 @@ export const processNeedsAssessment = (
             continue
           }
 
+          quarter = quarter.toUpperCase()
+
           const needsData = {
             id: `DA Need - ${surveyId.id} ${quarter} ${JSON.stringify(
               place,

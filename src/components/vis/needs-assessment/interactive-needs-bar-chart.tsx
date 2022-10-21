@@ -9,14 +9,14 @@ type Props = {
   needs: Need[]
 }
 
-const getCategories = (needs: Need[]): string[] => {
-  const categories: Set<string> = new Set()
+const getQuarters = (needs: Need[]): string[] => {
+  const quarters: Set<string> = new Set()
 
   for (const need of needs) {
-    categories.add(need.product.category)
+    quarters.add(`${need.survey.year} ${need.survey.quarter}`)
   }
 
-  return Array.from(categories).sort()
+  return Array.from(quarters).sort().reverse()
 }
 
 const getRegions = (needs: Need[]): string[] => {
@@ -29,6 +29,16 @@ const getRegions = (needs: Need[]): string[] => {
   return Array.from(regions).sort()
 }
 
+const getCategories = (needs: Need[]): string[] => {
+  const categories: Set<string> = new Set()
+
+  for (const need of needs) {
+    categories.add(need.product.category)
+  }
+
+  return Array.from(categories).sort()
+}
+
 const buildSelectOptions = (values: string[]) => {
   return values.map((value) => {
     return {
@@ -39,6 +49,9 @@ const buildSelectOptions = (values: string[]) => {
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
+  const quarterOptions = buildSelectOptions(getQuarters(needs))
+  const [quarter, setQuarter] = useState<string | null>(null)
+
   const regionOptions = buildSelectOptions(getRegions(needs))
   const [region, setRegion] = useState<string | null>(null)
 
@@ -53,6 +66,18 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           marginLeft: `${nivoProps.bar.horizontal.margin.left}px`,
         }}
       >
+        <div className="flex items-center pr-5">
+          <label className="pr-2">Survey:</label>
+          <Select
+            className="w-64"
+            options={quarterOptions}
+            defaultValue={null}
+            onChange={(option, actionMeta) => {
+              setQuarter(option?.value || null)
+            }}
+            isClearable={true}
+          />
+        </div>
         <div className="flex items-center pr-5">
           <label className="pr-2">Region:</label>
           <Select
@@ -83,6 +108,7 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         needs={needs}
         options={{
           filters: {
+            quarter: quarter || undefined,
             region: region || undefined,
             category: category || undefined,
           },
