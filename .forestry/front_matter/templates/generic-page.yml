@@ -31,4 +31,5 @@ fields:
     min: 
     max: 
 pages:
+- content/pages/contact-us.md
 - content/pages/our-story.md
