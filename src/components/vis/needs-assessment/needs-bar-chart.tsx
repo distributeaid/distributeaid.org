@@ -87,7 +87,10 @@ const filter = (needs: Need[], filters?: Filters) => {
 
   return needs.filter((need) => {
     const regionMatch =
-      !filters.region || filters.region === need.place.region?.name
+      !filters.region ||
+      filters.region === need.place.region?.name ||
+      (filters.region === 'Other' && !need.place.region)
+
     const categoryMatch =
       !filters.category || filters.category === need.product.category
 
@@ -103,13 +106,29 @@ const total = (needs: Need[]) => {
   return Math.floor(total)
 }
 
+const getBarsCount = ({
+  data,
+  indexBy,
+}: {
+  data: BarDatum[]
+  indexBy: string
+}): number => {
+  const bars: Set<string> = new Set()
+
+  for (const datum of data) {
+    bars.add(datum[indexBy] as string)
+  }
+
+  return bars.size
+}
+
 export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const barProps = nivoProps.bar.horizontal
   const filteredNeeds = filter(needs, options.filters)
   const totalNeed = total(filteredNeeds)
-  const height =
-    filteredNeeds.length * 20 + barProps.margin.top + barProps.margin.bottom
   const dataProps = buildNivoData(filteredNeeds)
+  const height =
+    barProps.margin.top + barProps.margin.bottom + 30 * getBarsCount(dataProps)
 
   return (
     // docs: https://nivo.rocks/bar/

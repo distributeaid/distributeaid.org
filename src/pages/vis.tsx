@@ -130,7 +130,7 @@ export const pageQuery = graphql`
 
     needs: allDaNeed(
       filter: {
-        survey: { year: { eq: "2022" }, quarter: { eq: "q3" } }
+        survey: { year: { eq: "2022" }, quarter: { eq: "q4" } }
         product: { unit: { nin: "Wash Cycle" } }
         need: { gt: 0 }
       }
