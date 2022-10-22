@@ -10,11 +10,19 @@ type Filters = {
   category: string | undefined
 }
 
+type Sort = {
+  by: string | undefined
+  order: string | undefined
+}
+
 type Props = {
   needs: Need[]
-  options: {
-    filters?: Filters
-  }
+  options:
+    | {
+        filters: Filters | undefined
+        sort: Sort | undefined
+      }
+    | undefined
 }
 
 // # needs by item, key'd by subregion
@@ -104,12 +112,72 @@ const filter = (needs: Need[], filters?: Filters) => {
   })
 }
 
-const total = (needs: Need[]) => {
-  const total = needs.reduce((total, need) => {
-    return total + need.need
-  }, 0)
+export const sortOptions = {
+  by: ['Label', 'Need', 'Random'],
+  order: ['Ascending', 'Descending'],
+}
 
-  return Math.floor(total)
+const sort = (indexBy: string, data: BarDatum[], sort?: Sort) => {
+  let sortBy = sortOptions.by[0]
+  if (sort?.by !== undefined && sortOptions.by.includes(sort.by)) {
+    sortBy = sort.by
+  }
+
+  let sortOrder = sortOptions.order[0]
+  if (sort?.order !== undefined && sortOptions.order.includes(sort.order)) {
+    sortOrder = sort.order
+  }
+
+  if (sortBy === 'Label') {
+    data.sort((a, b) => {
+      const aLabel = a[indexBy] as string
+      const bLabel = b[indexBy] as string
+
+      if (aLabel < bLabel) {
+        return 1
+      }
+      if (aLabel > bLabel) {
+        return -1
+      }
+      return 0
+    })
+  } else if (sortBy === 'Need') {
+    data.sort((a, b) => {
+      const aNeed = Object.entries(a).reduce((totalNeed, [key, need]) => {
+        if (key !== indexBy) {
+          return totalNeed + (need as number)
+        } else {
+          return totalNeed
+        }
+      }, 0)
+
+      const bNeed = Object.entries(b).reduce((totalNeed, [key, need]) => {
+        if (key !== indexBy) {
+          return totalNeed + (need as number)
+        } else {
+          return totalNeed
+        }
+      }, 0)
+
+      if (aNeed < bNeed) {
+        return 1
+      }
+      if (aNeed > bNeed) {
+        return -1
+      }
+      return 0
+    })
+  } else if (sortBy === 'Random') {
+    data.sort(() => {
+      return Math.random() - 0.5
+    })
+  }
+
+  if (sortOrder === 'Descending') {
+    data.reverse()
+  }
+
+  return data
 }
 
 const getBarsCount = ({
@@ -130,9 +198,9 @@ const getBarsCount = ({
 
 export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const barProps = nivoProps.bar.horizontal
-  const filteredNeeds = filter(needs, options.filters)
-  const totalNeed = total(filteredNeeds)
+  const filteredNeeds = filter(needs, options?.filters)
   const dataProps = buildNivoData(filteredNeeds)
+  const sortedData = sort(dataProps.indexBy, dataProps.data, options?.sort)
   const height =
     barProps.margin.top + barProps.margin.bottom + 30 * getBarsCount(dataProps)
 
@@ -146,15 +214,25 @@ export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
     >
       <ResponsiveBar
         // base
-        {...dataProps}
+        data={sortedData}
+        indexBy={dataProps.indexBy}
+        keys={dataProps.keys}
         {...barProps}
         axisTop={{
           tickSize: 5,
           tickPadding: 5,
           format: (value: number) => `${Number(value).toLocaleString()}`,
-          legend: `Known Need: ${Number(totalNeed).toLocaleString()} Items`,
+          legend: `Known Need (# Items)`,
           legendPosition: 'start',
           legendOffset: -40,
+        }}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          format: (value: number) => `${Number(value).toLocaleString()}`,
+          legend: `Known Need (# Items)`,
+          legendPosition: 'start',
+          legendOffset: 40,
         }}
       />
     </div>
