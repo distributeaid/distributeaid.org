@@ -78,90 +78,16 @@ main.donate > header h1 {
 }
 
 /* Progress */
-
-main.donate section.progress {
+main.donate > p.progress {
   font-weight: 900;
-  padding: 2rem 1rem 0 1rem;
-}
-
-@media only screen and (min-width: 600px) {
-  main.donate section.progress {
-    padding: 2rem;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 1024px;
-  }
+  padding: 2rem;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
-  main.donate section.progress {
+  main.donate > p.progress {
     font-size: 150%;
-    margin: 4rem auto;
-    padding: 0;
-  }
-}
-
-main.donate section.progress ul {
-  display: flex;
-  justify-content: space-between;
-  font-size: 90%;
-}
-
-main.donate section.progress h1 {
-  font-weight: normal;
-}
-
-main.donate section.progress .conversionNote {
-  text-transform: none;
-  opacity: 0.5;
-  font-size: 60%;
-  text-align: right;
-}
-
-/** Progress bar **/
-main.donate .progressBar {
-  height: 25px;
-  width: 100%;
-  background-color: #d3d3d3;
-  position: relative;
-  overflow: hidden;
-}
-
-main.donate .progressBar .bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-da);
-  border-right: 1px solid rgba(255, 255, 255, 0.75);
-  transition: width 2s ease-in-out;
-}
-
-main.donate .progressBar span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  transition: left 2s ease-in-out;
-  padding-left: 1rem;
-  font-size: 16px;
-}
-main.donate .progressBar.over75 span {
-  margin-left: -4rem;
-  color: white;
-}
-
-@media only screen and (min-width: 1024px) {
-  main.donate .progressBar {
-    height: 50px;
-  }
-  main.donate .progressBar span {
-    font-size: 34px;
-    font-weight: bold;
-  }
-
-  main.donate .progressBar.over75 span {
-    margin-left: -6rem;
+    padding: 4rem;
   }
 }
 
@@ -200,13 +126,13 @@ main.donate .fundraisers .card a.bg .gatsby-image-wrapper {
   width: 100%;
 }
 main.donate .fundraisers .card a.title {
-  height: calc(100% - (24px * 2));
   line-height: 110%;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  flex-direction: column;
 }
 @media only screen and (min-width: 600px) {
   main.donate .fundraisers .card a.title {
@@ -216,7 +142,6 @@ main.donate .fundraisers .card a.title {
 }
 @media only screen and (min-width: 1024px) {
   main.donate .fundraisers .card a.title {
-    height: calc(100% - (50px * 2));
     font-size: 300%;
   }
 }
@@ -227,18 +152,21 @@ main.donate .fundraisers .card:nth-child(2n + 2) a.title {
 main.donate .fundraisers .card > div:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 main.donate .fundraisers .card:nth-child(2n + 1) > div:first-child {
   order: 1;
 }
-main.donate .fundraisers .progressBar {
-  background-color: white;
+
+main.donate .fundraisers .card a.title .progress {
+  font-size: 50%;
+  width: 100%;
+}
+main.donate .fundraisers .card a.title h2 {
+  width: 100%;
 }
 
 /** Breakout pages **/
-main.donate.breakout {
-}
 @media only screen and (min-width: 1024px) {
   main.donate.breakout {
     padding-bottom: 0;
@@ -280,10 +208,11 @@ main.donate.breakout .gallery .gatsby-image-wrapper {
   width: 100%;
 }
 
-@media only screen and (min-width: 1024px) {
-  main.donate.breakout .progress {
-    padding: 4rem;
-  }
+main.donate.breakout .progress {
+  text-align: center;
+  font-weight: 900;
+  padding: 2rem;
+  font-size: 200%;
 }
 
 /* Extra wide */

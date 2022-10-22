@@ -1,8 +1,5 @@
 ---
 title: European Refugee Response
-target: 10000
-raised: 0
-currency: EUR
 abstract: |-
   This is the abstract that is shown on the overview page. It should give a brief overview over the project in one or two paragraphs.
 

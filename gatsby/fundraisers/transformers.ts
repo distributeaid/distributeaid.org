@@ -33,11 +33,9 @@ export const createFundraisersFromMarkdown = ({
     createNode({
       name: fileName,
       title: fm.title,
-      target: fm.target,
-      raised: fm.raised,
-      currency: fm.currency,
       abstract: fm.abstract,
       gallery: fm.gallery,
+      allocations: fm.allocations,
       body: node.rawMarkdownBody,
       fileRelativePath,
       id: createNodeId(`Fundraiser - ${fileName}`),

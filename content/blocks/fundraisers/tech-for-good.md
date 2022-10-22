@@ -1,8 +1,5 @@
 ---
 title: Tech for Good
-target: 16500
-raised: 2000
-currency: USD
 abstract: |-
   This is the abstract that is shown on the overview page. It should give a brief overview over the project in one or two paragraphs.
 
@@ -28,6 +25,10 @@ gallery:
     alt: Alternative Text
   - url: /uploads/fundraisers/tech-for-good-gallery-09.jpg
     alt: Alternative Text
+allocations:
+  - date: 2022-12-01
+    amountEUR: 6000
+    purpose: This text describes the purpose the allocated funds will be used for.
 ---
 
 This is the detailed project description shown on the project page.

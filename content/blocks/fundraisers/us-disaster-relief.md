@@ -1,8 +1,5 @@
 ---
 title: US Disaster Relief
-target: 25000
-raised: 500
-currency: EUR
 abstract: |-
   This is the abstract that is shown on the overview page. It should give a brief overview over the project in one or two paragraphs.
 
@@ -22,6 +19,10 @@ gallery:
     alt: Alternative Text
   - url: /uploads/fundraisers/us-disaster-relief-gallery-07.jpg
     alt: Alternative Text
+allocations:
+  - date: 2022-10-01
+    amountEUR: 500
+    purpose: This text describes the purpose the allocated funds will be used for.
 ---
 
 This is the detailed project description shown on the project page.

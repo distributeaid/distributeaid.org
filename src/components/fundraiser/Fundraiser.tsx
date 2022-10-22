@@ -1,15 +1,12 @@
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
-import { FundraiserProgressBar } from './FundraiserProgress'
+import { FundraiserProgress } from './FundraiserProgress'
 
 export type Fundraiser = {
   id: string
   name: string
   title: string
-  target: number
-  raised: number
-  currency: string
   /**
    * Markdown
    */
@@ -22,6 +19,23 @@ export type Fundraiser = {
    * Image URLs
    */
   gallery: Photo[]
+  /**
+   * Describes the funds allocated for this fundraisers.
+   */
+  allocations: {
+    /**
+     * The date when the allocation was made.
+     */
+    date: Date
+    /**
+     * The allocated amount in EUR
+     */
+    amountEUR: number
+    /**
+     * Describes the purpose the allocated funds will be used for.
+     */
+    purpose: string
+  }[]
 }
 
 export type Photo = {
@@ -49,8 +63,15 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
       <div>
         <Link to={`/donate/${fundraiser.name}`} className="title">
           <h2>{fundraiser.title}</h2>
+          <FundraiserProgress
+            currency="EUR"
+            raisedTitle="Allocated funds"
+            raised={(fundraiser.allocations ?? []).reduce(
+              (total, { amountEUR }) => total + amountEUR,
+              0,
+            )}
+          />
         </Link>
-        <FundraiserProgressBar fundraiser={fundraiser} />
       </div>
       {bgImage && (
         <Link to={`/donate/${fundraiser.name}`} className="bg">

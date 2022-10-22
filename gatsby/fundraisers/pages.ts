@@ -27,15 +27,17 @@ export const createFundraisersPages = async ({
           id
           name
           title
-          target
-          raised
-          currency
           abstract
           gallery {
             url
             alt
           }
           body
+          allocations {
+            date
+            amountEUR
+            purpose
+          }
         }
       }
       thumbnails500px: allImageSharp(
@@ -103,9 +105,6 @@ export const createFundraisersPages = async ({
         id: fundraiser.id,
         name: fundraiser.name,
         title: fundraiser.title,
-        target: fundraiser.target,
-        raised: fundraiser.raised,
-        currency: fundraiser.currency,
         abstract: fundraiser.abstract,
         gallery: fundraiser.gallery.map((photo) => {
           const gatsbyImageData = data?.thumbnails500px?.nodes.find(
@@ -121,6 +120,7 @@ export const createFundraisersPages = async ({
             gatsbyImageData,
           }
         }),
+        allocations: fundraiser.allocations,
         body,
       },
     })

@@ -10,30 +10,6 @@ fields:
     min: 2
   label: Title
   description: The title of the fundraiser.
-- name: target
-  type: number
-  config:
-    required: true
-    min: 1
-  label: Target
-  description: The target amount.
-- name: raised
-  type: number
-  config:
-    required: true
-    min: 0
-  label: Raised
-  description: The amount already raised.
-- name: currency
-  type: text
-  config:
-    required: true
-    min: 3
-    max: 3
-  label: Currency
-  description: Possible values are the ISO 4217 currency codes, such as "USD" for
-    the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current
-    currency & funds code list at https://www.iban.com/currency-codes.
 - name: abstract
   type: textarea
   config:
@@ -43,6 +19,40 @@ fields:
       format: markdown
   label: Abstract
   description: This text appears on the overview page
+- type: field_group_list
+  name: allocations
+  label: Funding allocations
+  description: Provide the planned funding allocations for this project
+  hidden: false
+  config:
+    labelField: purpose
+    required: false
+    min: 0
+  fields:
+  - name: date
+    type: datetime
+    label: Date
+    description: Date of allocation
+    config:
+      required: true
+      date_format: YYYY-MM-DD
+      time_format: 
+      display_utc: false
+    default: now
+  - name: amountEUR
+    type: number
+    config:
+      required: true
+      min: 1
+    label: Amount (EUR)
+    description: The amount of the allocated funds in EUR
+  - name: purpose
+    type: text
+    config:
+      required: true
+      min: 2
+    label: Purpose
+    description: Describes the purpose the allocated funds will be used for.
 - type: field_group_list
   name: gallery
   label: Gallery

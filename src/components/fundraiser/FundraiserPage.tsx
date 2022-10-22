@@ -40,8 +40,12 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
             <Gallery photos={fundraiser.gallery} />
           </div>
           <FundraiserProgress
-            fundraiser={fundraiser}
-            title={'Campaign progress'}
+            currency="EUR"
+            raisedTitle="Allocated funds"
+            raised={(fundraiser.allocations ?? []).reduce(
+              (total, { amountEUR }) => total + amountEUR,
+              0,
+            )}
           />
           <div className="ways-to-donate">
             <WaysToDonate />
