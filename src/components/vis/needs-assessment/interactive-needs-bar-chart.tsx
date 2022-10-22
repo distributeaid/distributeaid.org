@@ -3,7 +3,7 @@ import Select from 'react-select'
 
 import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
-import { NeedsBarChart } from './needs-bar-chart'
+import { NeedsBarChart, sortOptions } from './needs-bar-chart'
 
 type Props = {
   needs: Need[]
@@ -58,49 +58,85 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
   const categoryOptions = buildSelectOptions(getCategories(needs))
   const [category, setCategory] = useState<string | null>(null)
 
+  const sortByOptions = buildSelectOptions(sortOptions.by)
+  const [sortBy, setSortBy] = useState<string | null>('Label')
+
+  const sortOrderOptions = buildSelectOptions(sortOptions.order)
+  const [sortOrder, setSortOrder] = useState<string | null>('Ascending')
+
   return (
     <div>
       <form
-        className="w-min flex"
+        className="w-min prose"
         style={{
           marginLeft: `${nivoProps.bar.horizontal.margin.left}px`,
+          marginRight: `${nivoProps.bar.horizontal.margin.right}px`,
         }}
       >
-        <div className="flex items-center pr-5">
-          <label className="pr-2">Survey:</label>
-          <Select
-            className="w-64"
-            options={quarterOptions}
-            defaultValue={null}
-            onChange={(option, actionMeta) => {
-              setQuarter(option?.value || null)
-            }}
-            isClearable={true}
-          />
+        <h2>Filters</h2>
+        <div className="flex">
+          <div className="flex items-center pr-5">
+            <label className="pr-2">Survey:</label>
+            <Select
+              className="w-64"
+              options={quarterOptions}
+              defaultValue={null}
+              onChange={(option, actionMeta) => {
+                setQuarter(option?.value || null)
+              }}
+              isClearable={true}
+            />
+          </div>
+          <div className="flex items-center pr-5">
+            <label className="pr-2">Region:</label>
+            <Select
+              className="w-64"
+              options={regionOptions}
+              defaultValue={null}
+              onChange={(option, actionMeta) => {
+                setRegion(option?.value || null)
+              }}
+              isClearable={true}
+            />
+          </div>
+          <div className="flex items-center pr-5">
+            <label className="pr-2">Category:</label>
+            <Select
+              className="w-64"
+              options={categoryOptions}
+              defaultValue={null}
+              onChange={(option, actionMeta) => {
+                setCategory(option?.value || null)
+              }}
+              isClearable={true}
+            />
+          </div>
         </div>
-        <div className="flex items-center pr-5">
-          <label className="pr-2">Region:</label>
-          <Select
-            className="w-64"
-            options={regionOptions}
-            defaultValue={null}
-            onChange={(option, actionMeta) => {
-              setRegion(option?.value || null)
-            }}
-            isClearable={true}
-          />
-        </div>
-        <div className="flex items-center pr-5">
-          <label className="pr-2">Category:</label>
-          <Select
-            className="w-64"
-            options={categoryOptions}
-            defaultValue={null}
-            onChange={(option, actionMeta) => {
-              setCategory(option?.value || null)
-            }}
-            isClearable={true}
-          />
+
+        <h2>Sort</h2>
+        <div className="flex">
+          <div className="flex items-center pr-5">
+            <label className="pr-2">Sort&nbsp;By:</label>
+            <Select
+              className="w-64"
+              options={sortByOptions}
+              defaultValue={sortByOptions[0]}
+              onChange={(option, actionMeta) => {
+                setSortBy(option?.value || null)
+              }}
+            />
+          </div>
+          <div className="flex items-center pr-5">
+            <label className="pr-2">Order:</label>
+            <Select
+              className="w-64"
+              options={sortOrderOptions}
+              defaultValue={sortOrderOptions[0]}
+              onChange={(option, actionMeta) => {
+                setSortOrder(option?.value || null)
+              }}
+            />
+          </div>
         </div>
       </form>
 
@@ -111,6 +147,10 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
             quarter: quarter || undefined,
             region: region || undefined,
             category: category || undefined,
+          },
+          sort: {
+            by: sortBy || undefined,
+            order: sortOrder || undefined,
           },
         }}
       />
