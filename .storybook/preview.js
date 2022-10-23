@@ -1,5 +1,7 @@
 import '../gatsby-browser'
 
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -23,6 +25,9 @@ export const parameters = {
         value: '#333',
       },
     ],
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 }
 
