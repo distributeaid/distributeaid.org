@@ -1,7 +1,5 @@
 import { Need } from '../../../types/need-types'
 
-export type Index<T> = Record<string, T[]>
-
 /*
 Selectors
 ================================================================================
@@ -52,11 +50,12 @@ Indexers
 ================================================================================
 Group needs by a selector string.
 */
-type Indexer = (needs: Need[]) => Index<Need>
+export type Index = Record<string, Need[]>
+type Indexer = (needs: Need[]) => Index
 
 const indexBy = (selector: Selector): Indexer => {
   return (needs) => {
-    const needsByIndex: Index<Need> = {}
+    const needsByIndex: Index = {}
     return needs.reduce((needsByIndex, need) => {
       const index = selector(need)
       const needs = needsByIndex[index] || []

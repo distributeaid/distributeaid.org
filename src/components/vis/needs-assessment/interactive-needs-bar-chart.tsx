@@ -2,22 +2,27 @@ import { FC, useState } from 'react'
 
 import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
-import { axisOptionValues, NeedsBarChart, sortOptions } from './needs-bar-chart'
+import {
+  AxisOption,
+  NeedsBarChart,
+  SortByOption,
+  SortOrderOption,
+} from './needs-bar-chart'
 import { getCategories, getQuarters, getRegions } from './needs-helpers'
 
-import { ControlSection, InputControl, SelectControl } from '../vis-controls'
+import {
+  ControlSection,
+  SelectControl,
+  TextInputControl,
+} from '../vis-controls'
 
 type Props = {
   needs: Need[]
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const [indexBy, setIndexBy] = useState<string | undefined>(
-    axisOptionValues[0],
-  )
-  const [groupBy, setGroupBy] = useState<string | undefined>(
-    axisOptionValues[1],
-  )
+  const [indexBy, setIndexBy] = useState<AxisOption>(AxisOption.Product)
+  const [groupBy, setGroupBy] = useState<AxisOption>(AxisOption.Place)
 
   const [search, setSearch] = useState<string>('')
 
@@ -25,9 +30,9 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
   const [region, setRegion] = useState<string>()
   const [category, setCategory] = useState<string>()
 
-  const [sortBy, setSortBy] = useState<string | undefined>(sortOptions.by[0])
-  const [sortOrder, setSortOrder] = useState<string | undefined>(
-    sortOptions.order[0],
+  const [sortBy, setSortBy] = useState<SortByOption>(SortByOption.Label)
+  const [sortOrder, setSortOrder] = useState<SortOrderOption>(
+    SortOrderOption.Asc,
   )
 
   const barProps = nivoProps.bar.horizontal
@@ -38,20 +43,24 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Display" margin={barProps.margin}>
           <SelectControl
             label="Index By"
-            values={axisOptionValues}
+            values={Object.values(AxisOption)}
             defaultValue={indexBy}
-            setValue={setIndexBy}
+            setValue={(value: string) => {
+              setIndexBy(value as AxisOption)
+            }}
           />
           <SelectControl
             label="Group By"
-            values={axisOptionValues}
+            values={Object.values(AxisOption)}
             defaultValue={groupBy}
-            setValue={setGroupBy}
+            setValue={(value: string) => {
+              setGroupBy(value as AxisOption)
+            }}
           />
         </ControlSection>
 
         <ControlSection label="Search" margin={barProps.margin}>
-          <InputControl label="Term" setValue={setSearch} />
+          <TextInputControl label="Term" setValue={setSearch} />
         </ControlSection>
 
         <ControlSection label="Filter" margin={barProps.margin}>
@@ -78,15 +87,19 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Sort" margin={barProps.margin}>
           <SelectControl
             label="Sort&nbsp;By"
-            values={sortOptions.by}
+            values={Object.values(SortByOption)}
             defaultValue={sortBy}
-            setValue={setSortBy}
+            setValue={(value: string) => {
+              setSortBy(value as SortByOption)
+            }}
           />
           <SelectControl
             label="Order"
-            values={sortOptions.order}
+            values={Object.values(SortOrderOption)}
             defaultValue={sortOrder}
-            setValue={setSortOrder}
+            setValue={(value: string) => {
+              setSortOrder(value as SortOrderOption)
+            }}
           />
         </ControlSection>
       </form>

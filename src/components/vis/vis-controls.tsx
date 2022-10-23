@@ -1,6 +1,10 @@
 import { FC, PropsWithChildren } from 'react'
 import Select, { Props as SelectProps } from 'react-select'
 
+/*
+Control Section
+================================================================================
+*/
 type ControlSectionProps = {
   label?: string
   margin?: {
@@ -41,6 +45,10 @@ export const ControlSection: FC<PropsWithChildren<ControlSectionProps>> = ({
   )
 }
 
+/*
+Select Control
+================================================================================
+*/
 type SelectOption = {
   value: string
   label: string
@@ -50,7 +58,7 @@ type SelectControlProps = {
   label: string
   values: string[]
   defaultValue?: string | undefined
-  setValue: React.Dispatch<React.SetStateAction<string | undefined>>
+  setValue: (value: string) => void
 } & SelectProps
 
 export const SelectControl: FC<SelectControlProps> = ({
@@ -60,7 +68,7 @@ export const SelectControl: FC<SelectControlProps> = ({
   setValue,
   ...props
 }) => {
-  const options = values.map((value) => {
+  const options: SelectOption[] = values.map((value) => {
     return {
       value: value,
       label: value,
@@ -87,12 +95,16 @@ export const SelectControl: FC<SelectControlProps> = ({
   )
 }
 
-type InputControlProps = {
+/*
+Input Control
+================================================================================
+*/
+type TextInputControlProps = {
   label: string
-  setValue: React.Dispatch<React.SetStateAction<string>>
+  setValue: (value: string) => void
 }
 
-export const InputControl: FC<InputControlProps> = ({
+export const TextInputControl: FC<TextInputControlProps> = ({
   label,
   setValue,
   ...props

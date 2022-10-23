@@ -21,11 +21,17 @@ import {
   subregionSelector,
 } from './needs-helpers'
 
-type Axis = {
-  indexBy?: string | undefined
-  groupBy?: string | undefined
-}
+import {
+  indexCounter,
+  sortByLabel,
+  sortByRandom,
+  sortByValue,
+} from '../nivo-helpers'
 
+/*
+Filter
+================================================================================
+*/
 type Filters = {
   search?: string | undefined
   quarter?: string | undefined
@@ -33,20 +39,45 @@ type Filters = {
   category?: string | undefined
 }
 
-type Sort = {
-  by?: string | undefined
-  order?: string | undefined
+const filter = (needs: Need[], filters?: Filters) => {
+  if (filters === undefined) {
+    return needs
+  }
+
+  if (filters.search) {
+    needs = filterBySearch(needs, filters.search)
+  }
+  if (filters.quarter) {
+    needs = filterByQuarter(needs, filters.quarter)
+  }
+  if (filters.region) {
+    needs = filterByRegion(needs, filters.region)
+  }
+  if (filters.category) {
+    needs = filterByCategory(needs, filters.category)
+  }
+
+  return needs
 }
 
-type Options = {
-  axis?: Axis
-  filters?: Filters
-  sort?: Sort
+/*
+Index & Group
+================================================================================
+*/
+export enum AxisOption {
+  Product = 'Product',
+  Place = 'Place',
+  Time = 'Time',
+}
+
+type Axis = {
+  indexBy?: AxisOption | undefined
+  groupBy?: AxisOption | undefined
 }
 
 export const axisOptionValues = ['Product', 'Place', 'Time']
 
-const index = (needs: Need[], indexBy: string | undefined): Index<Need> => {
+const index = (needs: Need[], indexBy?: string): Index => {
   switch (indexBy) {
     case 'Product':
       return indexByCategory(needs)
@@ -59,29 +90,28 @@ const index = (needs: Need[], indexBy: string | undefined): Index<Need> => {
   }
 }
 
-const getSelector = (axisOptions: Axis | undefined): Selector => {
-  const axis = {
-    indexBy: axisOptions?.indexBy ? axisOptions.indexBy : 'Product',
-    groupBy: axisOptions?.groupBy ? axisOptions.groupBy : 'Place',
-  }
-
-  switch (axis.groupBy) {
+const groupBySelector = (axis?: Axis): Selector => {
+  switch (axis?.groupBy) {
     case 'Product':
-      return axis.indexBy !== 'Product' ? categorySelector : itemSelector
+      return axis?.indexBy !== 'Product' ? categorySelector : itemSelector
 
     case 'Place':
-      return axis.indexBy !== 'Place' ? regionSelector : subregionSelector
+      return axis?.indexBy !== 'Place' ? regionSelector : subregionSelector
 
     case 'Time':
       return quarterSelector
 
     default:
-      return axis.indexBy !== 'Place' ? regionSelector : subregionSelector
+      return axis?.indexBy !== 'Place' ? regionSelector : subregionSelector
   }
 }
 
+/*
+Build Nivo Data
+================================================================================
+*/
 const buildNivoData = (
-  needsByIndex: Index<Need>,
+  needsByIndex: Index,
   selector: Selector,
 ): {
   data: BarDatum[]
@@ -109,25 +139,24 @@ const buildNivoData = (
   }
 }
 
-const filter = (needs: Need[], filters?: Filters) => {
-  if (filters === undefined) {
-    return needs
-  }
+/*
+Sort
+================================================================================
+*/
+export enum SortByOption {
+  Label = 'Label',
+  Need = 'Need',
+  Random = 'Random',
+}
 
-  if (filters.search) {
-    needs = filterBySearch(needs, filters.search)
-  }
-  if (filters.quarter) {
-    needs = filterByQuarter(needs, filters.quarter)
-  }
-  if (filters.region) {
-    needs = filterByRegion(needs, filters.region)
-  }
-  if (filters.category) {
-    needs = filterByCategory(needs, filters.category)
-  }
+export enum SortOrderOption {
+  Asc = 'Ascending',
+  Desc = 'Descending',
+}
 
-  return needs
+type Sort = {
+  by?: SortByOption | undefined
+  order?: SortOrderOption | undefined
 }
 
 export const sortOptions = {
@@ -136,93 +165,53 @@ export const sortOptions = {
 }
 
 const sort = (data: BarDatum[], sort?: Sort) => {
-  let sortBy = sortOptions.by[0]
-  if (sort?.by !== undefined && sortOptions.by.includes(sort.by)) {
-    sortBy = sort.by
+  switch (sort?.by) {
+    case 'Label':
+      data = sortByLabel(data)
+      break
+    case 'Need':
+      data = sortByValue(data)
+      break
+    case 'Random':
+      data = sortByRandom(data)
+      break
+    default:
+      data = sortByLabel(data)
+      break
   }
 
-  let sortOrder = sortOptions.order[0]
-  if (sort?.order !== undefined && sortOptions.order.includes(sort.order)) {
-    sortOrder = sort.order
-  }
-
-  if (sortBy === 'Label') {
-    data.sort((a, b) => {
-      const aLabel = a.index as string
-      const bLabel = b.index as string
-
-      if (aLabel < bLabel) {
-        return 1
-      }
-      if (aLabel > bLabel) {
-        return -1
-      }
-      return 0
-    })
-  } else if (sortBy === 'Need') {
-    data.sort((a, b) => {
-      const aNeed = Object.entries(a).reduce((totalNeed, [key, need]) => {
-        if (key !== 'index') {
-          return totalNeed + (need as number)
-        } else {
-          return totalNeed
-        }
-      }, 0)
-
-      const bNeed = Object.entries(b).reduce((totalNeed, [key, need]) => {
-        if (key !== 'index') {
-          return totalNeed + (need as number)
-        } else {
-          return totalNeed
-        }
-      }, 0)
-
-      if (aNeed < bNeed) {
-        return 1
-      }
-      if (aNeed > bNeed) {
-        return -1
-      }
-      return 0
-    })
-  } else if (sortBy === 'Random') {
-    data.sort(() => {
-      return Math.random() - 0.5
-    })
-  }
-
-  if (sortOrder === 'Descending') {
-    data.reverse()
+  if (sort?.order === 'Descending') {
+    data = data.reverse()
   }
 
   return data
 }
 
-const getBarsCount = (data: BarDatum[]): number => {
-  const bars: Set<string> = new Set()
-
-  for (const datum of data) {
-    bars.add(datum.index as string)
-  }
-
-  return bars.size
-}
-
+/*
+Needs Bar Chart
+================================================================================
+*/
 type Props = {
   needs: Need[]
   options?: Options
 }
 
+type Options = {
+  axis?: Axis
+  filters?: Filters
+  sort?: Sort
+}
+
 export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const filteredNeeds = filter(needs, options?.filters)
   const needsByIndex = index(filteredNeeds, options?.axis?.indexBy)
-  const keyPicker = getSelector(options?.axis)
+  const keyPicker = groupBySelector(options?.axis)
   const { data, keys } = buildNivoData(needsByIndex, keyPicker)
   const sortedData = sort(data, options?.sort)
 
   const barProps = nivoProps.bar.horizontal
   const height =
-    barProps.margin.top + barProps.margin.bottom + 30 * getBarsCount(data)
+    barProps.margin.top + barProps.margin.bottom + 30 * indexCounter(sortedData)
 
   return (
     // docs: https://nivo.rocks/bar/
