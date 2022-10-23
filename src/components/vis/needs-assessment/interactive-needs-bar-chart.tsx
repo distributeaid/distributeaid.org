@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
 import { axisOptionValues, NeedsBarChart, sortOptions } from './needs-bar-chart'
+import { getCategories, getQuarters, getRegions } from './needs-helpers'
 
 import { ControlSection, InputControl, SelectControl } from '../vis-controls'
 
@@ -10,53 +11,23 @@ type Props = {
   needs: Need[]
 }
 
-const getQuarters = (needs: Need[]): string[] => {
-  const quarters: Set<string> = new Set()
-
-  for (const need of needs) {
-    quarters.add(`${need.survey.year} ${need.survey.quarter}`)
-  }
-
-  return Array.from(quarters).sort().reverse()
-}
-
-const getRegions = (needs: Need[]): string[] => {
-  const regions: Set<string> = new Set()
-
-  for (const need of needs) {
-    regions.add(need.place.region?.name || 'Other')
-  }
-
-  return Array.from(regions).sort()
-}
-
-const getCategories = (needs: Need[]): string[] => {
-  const categories: Set<string> = new Set()
-
-  for (const need of needs) {
-    categories.add(need.product.category)
-  }
-
-  return Array.from(categories).sort()
-}
-
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const [indexBy, setIndexBy] = useState<string | null>(
-    axisOptionValues[0] || null,
+  const [indexBy, setIndexBy] = useState<string | undefined>(
+    axisOptionValues[0],
   )
-  const [groupBy, setGroupBy] = useState<string | null>(
-    axisOptionValues[1] || null,
+  const [groupBy, setGroupBy] = useState<string | undefined>(
+    axisOptionValues[1],
   )
 
   const [search, setSearch] = useState<string>('')
 
-  const [quarter, setQuarter] = useState<string | null>(null)
-  const [region, setRegion] = useState<string | null>(null)
-  const [category, setCategory] = useState<string | null>(null)
+  const [quarter, setQuarter] = useState<string>()
+  const [region, setRegion] = useState<string>()
+  const [category, setCategory] = useState<string>()
 
-  const [sortBy, setSortBy] = useState<string | null>(sortOptions.by[0] || null)
-  const [sortOrder, setSortOrder] = useState<string | null>(
-    sortOptions.order[0] || null,
+  const [sortBy, setSortBy] = useState<string | undefined>(sortOptions.by[0])
+  const [sortOrder, setSortOrder] = useState<string | undefined>(
+    sortOptions.order[0],
   )
 
   const barProps = nivoProps.bar.horizontal
@@ -68,13 +39,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           <SelectControl
             label="Index By"
             values={axisOptionValues}
-            defaultValue={indexBy || undefined}
+            defaultValue={indexBy}
             setValue={setIndexBy}
           />
           <SelectControl
             label="Group By"
             values={axisOptionValues}
-            defaultValue={groupBy || undefined}
+            defaultValue={groupBy}
             setValue={setGroupBy}
           />
         </ControlSection>
@@ -108,13 +79,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           <SelectControl
             label="Sort&nbsp;By"
             values={sortOptions.by}
-            defaultValue={sortBy || undefined}
+            defaultValue={sortBy}
             setValue={setSortBy}
           />
           <SelectControl
             label="Order"
             values={sortOptions.order}
-            defaultValue={sortOrder || undefined}
+            defaultValue={sortOrder}
             setValue={setSortOrder}
           />
         </ControlSection>
@@ -124,18 +95,18 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         needs={needs}
         options={{
           axis: {
-            indexBy: indexBy || undefined,
-            groupBy: groupBy || undefined,
+            indexBy,
+            groupBy,
           },
           filters: {
-            search: search || undefined,
-            quarter: quarter || undefined,
-            region: region || undefined,
-            category: category || undefined,
+            search,
+            quarter,
+            region,
+            category,
           },
           sort: {
-            by: sortBy || undefined,
-            order: sortOrder || undefined,
+            by: sortBy,
+            order: sortOrder,
           },
         }}
       />

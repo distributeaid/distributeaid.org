@@ -50,7 +50,7 @@ type SelectControlProps = {
   label: string
   values: string[]
   defaultValue?: string | undefined
-  setValue: React.Dispatch<React.SetStateAction<string | null>>
+  setValue: React.Dispatch<React.SetStateAction<string | undefined>>
 } & SelectProps
 
 export const SelectControl: FC<SelectControlProps> = ({
@@ -79,7 +79,7 @@ export const SelectControl: FC<SelectControlProps> = ({
         defaultValue={defaultOption}
         onChange={(untypedOption: any, actionMeta) => {
           const option = untypedOption as SelectOption
-          setValue(option?.value || null)
+          setValue(option?.value)
         }}
         {...props}
       />
