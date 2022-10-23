@@ -60,6 +60,13 @@ const config: GatsbyConfig = {
         path: `./content/data/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`*.stories.*`],
+      },
+    },
   ],
 }
 
