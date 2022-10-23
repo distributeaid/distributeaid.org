@@ -8,6 +8,22 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    values: [
+      {
+        name: 'light',
+        value: '#EEE',
+      },
+      {
+        name: 'medium',
+        value: '#999',
+      },
+      {
+        name: 'dark',
+        value: '#333',
+      },
+    ],
+  },
 }
 
 // Gatsby's Link overrides:
