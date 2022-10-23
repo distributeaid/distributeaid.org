@@ -4,9 +4,26 @@ import { Need } from '../../../types/need-types'
 
 import { nivoProps } from '../nivo-theme'
 
+import {
+  categorySelector,
+  filterByCategory,
+  filterByQuarter,
+  filterByRegion,
+  filterBySearch,
+  Index,
+  indexByCategory,
+  indexByQuarter,
+  indexByRegion,
+  itemSelector,
+  quarterSelector,
+  regionSelector,
+  Selector,
+  subregionSelector,
+} from './needs-helpers'
+
 type Axis = {
   indexBy?: string | undefined
-  groupBy: string | undefined
+  groupBy?: string | undefined
 }
 
 type Filters = {
@@ -21,97 +38,51 @@ type Sort = {
   order?: string | undefined
 }
 
-type Props = {
-  needs: Need[]
-  options?:
-    | {
-        axis?: Axis | undefined
-        filters?: Filters | undefined
-        sort?: Sort | undefined
-      }
-    | undefined
+type Options = {
+  axis?: Axis
+  filters?: Filters
+  sort?: Sort
 }
 
 export const axisOptionValues = ['Product', 'Place', 'Time']
 
-const index = (
-  needs: Need[],
-  indexBy: string | undefined,
-): Record<string, Need[]> => {
-  if (!indexBy || !axisOptionValues.includes(indexBy)) {
-    indexBy = 'Product'
+const index = (needs: Need[], indexBy: string | undefined): Index<Need> => {
+  switch (indexBy) {
+    case 'Product':
+      return indexByCategory(needs)
+    case 'Place':
+      return indexByRegion(needs)
+    case 'Time':
+      return indexByQuarter(needs)
+    default:
+      return indexByCategory(needs)
   }
-
-  const needsByIndex = needs.reduce(function (
-    needsByIndex: Record<string, Need[]>,
-    need: Need,
-  ) {
-    let index = ''
-    if (indexBy === 'Place') {
-      index = need.place.region?.name || 'Other'
-    } else if (indexBy === 'Time') {
-      index = `${need.survey.year} ${need.survey.quarter}`
-    }
-    // default case: indexBy === 'Product' | unknown string | undefined
-    else {
-      index = need.product.category
-    }
-
-    const needs = needsByIndex[index] || []
-    needs.push(need)
-    needsByIndex[index] = needs
-    return needsByIndex
-  },
-  {})
-
-  return needsByIndex
 }
 
-type KeyPicker = (need: Need) => string
-
-const getKeyPicker = (axisOptions: Axis | undefined): KeyPicker => {
-  if (!axisOptions) {
-    axisOptions = {
-      indexBy: 'Product',
-      groupBy: 'Place',
-    }
-  }
-  if (!axisOptions.indexBy) {
-    axisOptions.indexBy = 'Product'
-  }
-  if (!axisOptions.groupBy) {
-    axisOptions.groupBy = 'Place'
+const getSelector = (axisOptions: Axis | undefined): Selector => {
+  const axis = {
+    indexBy: axisOptions?.indexBy ? axisOptions.indexBy : 'Product',
+    groupBy: axisOptions?.groupBy ? axisOptions.groupBy : 'Place',
   }
 
-  if (axisOptions.groupBy === 'Product') {
-    if (axisOptions.indexBy === 'Product') {
-      return (need) => {
-        const product = need.product
-        return (
-          (product.ageGender ? `${product.ageGender} ` : '') +
-          (product.sizeStyle ? `${product.sizeStyle} ` : '') +
-          `${product.item}`
-        )
-      }
-    } else {
-      return (need) => need.product.category
-    }
-  } else if (axisOptions.groupBy === 'Time') {
-    return (need) => `${need.survey.year} ${need.survey.quarter}`
-  }
-  // default case: groupBy === 'Place' | unknown string | undefined
-  else {
-    if (axisOptions.indexBy === 'Place') {
-      return (need) => need.place.subregion?.name || 'Other'
-    } else {
-      return (need) => need.place.region?.name || 'Other'
-    }
+  switch (axis.groupBy) {
+    case 'Product':
+      return axis.indexBy !== 'Product' ? categorySelector : itemSelector
+
+    case 'Place':
+      return axis.indexBy !== 'Place' ? regionSelector : subregionSelector
+
+    case 'Time':
+      return quarterSelector
+
+    default:
+      return axis.indexBy !== 'Place' ? regionSelector : subregionSelector
   }
 }
 
 const buildNivoData = (
-  needsByIndex: Record<string, Need[]>,
-  keyPicker: KeyPicker,
+  needsByIndex: Index<Need>,
+  selector: Selector,
 ): {
   data: BarDatum[]
   keys: string[]
@@ -123,7 +94,7 @@ const buildNivoData = (
     const datum: BarDatum = { index }
 
     for (const need of needs) {
-      const key = keyPicker(need)
+      const key = selector(need)
       const currentCount = (datum[key] as number) || 0
       datum[key] = currentCount + need.need
       keys.add(key)
@@ -143,30 +114,20 @@ const filter = (needs: Need[], filters?: Filters) => {
     return needs
   }
 
-  return needs.filter((need) => {
-    const needString = `${need.need.toLocaleString()} ${
-      need.product.category
-    } ${need.product.item} ${need.product.ageGender} ${
-      need.product.sizeStyle
-    } ${need.place.region?.name} ${need.place.subregion?.name}`
-    const searchMatch =
-      !filters.search ||
-      needString.toLowerCase().includes(filters.search.toLowerCase())
+  if (filters.search) {
+    needs = filterBySearch(needs, filters.search)
+  }
+  if (filters.quarter) {
+    needs = filterByQuarter(needs, filters.quarter)
+  }
+  if (filters.region) {
+    needs = filterByRegion(needs, filters.region)
+  }
+  if (filters.category) {
+    needs = filterByCategory(needs, filters.category)
+  }
 
-    const quarterMatch =
-      !filters.quarter ||
-      filters.quarter === `${need.survey.year} ${need.survey.quarter}`
-
-    const regionMatch =
-      !filters.region ||
-      filters.region === need.place.region?.name ||
-      (filters.region === 'Other' && !need.place.region)
-
-    const categoryMatch =
-      !filters.category || filters.category === need.product.category
-
-    return searchMatch && quarterMatch && regionMatch && categoryMatch
-  })
+  return needs
 }
 
 export const sortOptions = {
@@ -247,10 +208,15 @@ const getBarsCount = (data: BarDatum[]): number => {
   return bars.size
 }
 
+type Props = {
+  needs: Need[]
+  options?: Options
+}
+
 export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const filteredNeeds = filter(needs, options?.filters)
   const needsByIndex = index(filteredNeeds, options?.axis?.indexBy)
-  const keyPicker = getKeyPicker(options?.axis)
+  const keyPicker = getSelector(options?.axis)
   const { data, keys } = buildNivoData(needsByIndex, keyPicker)
   const sortedData = sort(data, options?.sort)
 
