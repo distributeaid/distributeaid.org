@@ -1,12 +1,21 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
+  - name: Dev Server
   - init: |
       yarn install
       yes | npx playwright install-deps
     command: yarn dev
+
+  - name: Storybook
+    command: |
+      gp ports await 8000
+      yarn storybook
+
   - init: bash
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 8000
+    onOpen: open-browser
+  - port: 6006
     onOpen: open-browser
