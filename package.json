@@ -25,6 +25,7 @@
     "gatsby": "4.24.4",
     "gatsby-alias-imports": "1.0.6",
     "gatsby-plugin-image": "2.24.0",
+    "gatsby-plugin-page-creator": "^4.24.1",
     "gatsby-plugin-sharp": "4.24.0",
     "gatsby-plugin-typescript": "4.24.0",
     "gatsby-source-filesystem": "4.24.0",
