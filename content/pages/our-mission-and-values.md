@@ -12,7 +12,7 @@ sections:
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
-    dateUploaded: 2022-10-21T14:14:31Z
+    dateUploaded: 2022-10-21T14:14:31.000+00:00
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
@@ -43,6 +43,16 @@ sections:
       **Our impact** has led to a 2.5x efficiency gain across our supply chain by increasing coordination, reducing costs, saving volunteer time, and preventing waste. Every $1 we spend on administration, projects, and logistics delivers $88 worth of aid to frontline organisations.
 
       We are a non-profit, non-political Swedish-registered charity with registration number #802521-4456.
+  - template: block-image-with-caption
+    dateUploaded: 2022-10-24T11:06:48Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    asset: "/uploads/20210402_161049.jpg"
+    caption: Our mission and values are central to everything we do.
+    attribution: Distribute Aid
+    altText: Six smiling people pose for a photo next to a bookshelf.
+    date: 
   - template: block-title
     text: Our Values
   - template: block-text
