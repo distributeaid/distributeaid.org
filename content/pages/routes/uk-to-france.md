@@ -12,7 +12,7 @@ introduction: |-
 
   If you're here because you want to donate goods for people on the move in France- **thank you!** Groups on the ground would not be able to provide the services they do without support from donations like yours.
 deadlines:
-  submissionsDeadline: 2022-10-23T00:00:00.000+00:00
+  submissionsDeadline: 2022-10-25T00:00:00Z
   confirmationDate: 2022-10-28T00:00:00.000+00:00
   stagingBegins: 2022-11-07T23:00:00.000+00:00
   stagingEnds: 2022-11-11T00:00:00.000+00:00
