@@ -4,7 +4,7 @@ import heartBillIcon from '../../images/regular-routes/icons/noun_Heart_Bill_982
 import mapIcon from '../../images/regular-routes/icons/noun_Maps_3610706.svg'
 import netIcon from '../../images/regular-routes/icons/noun_net_2428552.svg'
 import truckIcon from '../../images/regular-routes/icons/openmoji_truck.svg'
-import IconWithText from './IconWithText'
+import IconWithText from '../icon/IconWithText'
 import PhotoCredit from './PhotoCredit'
 import { RouteFrontlineGroup, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
