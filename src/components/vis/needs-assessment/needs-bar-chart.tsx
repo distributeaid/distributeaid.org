@@ -7,13 +7,17 @@ import { nivoProps } from '../nivo-theme'
 import {
   categorySelector,
   filterByCategory,
+  filterByItem,
   filterByQuarter,
   filterByRegion,
   filterBySearch,
+  filterBySubregion,
   Index,
   indexByCategory,
+  indexByItem,
   indexByQuarter,
   indexByRegion,
+  indexBySubregion,
   itemSelector,
   quarterSelector,
   regionSelector,
@@ -33,10 +37,12 @@ Filter
 ================================================================================
 */
 type Filters = {
-  search?: string | undefined
+  search?: string
   quarter?: string | undefined
   region?: string | undefined
+  subregion?: string | undefined
   category?: string | undefined
+  item?: string | undefined
 }
 
 const filter = (needs: Need[], filters?: Filters) => {
@@ -53,8 +59,14 @@ const filter = (needs: Need[], filters?: Filters) => {
   if (filters.region) {
     needs = filterByRegion(needs, filters.region)
   }
+  if (filters.subregion) {
+    needs = filterBySubregion(needs, filters.subregion)
+  }
   if (filters.category) {
     needs = filterByCategory(needs, filters.category)
+  }
+  if (filters.item) {
+    needs = filterByItem(needs, filters.item)
   }
 
   return needs
@@ -65,44 +77,49 @@ Index & Group
 ================================================================================
 */
 export enum AxisOption {
-  Product = 'Product',
-  Place = 'Place',
-  Time = 'Time',
+  Survey = 'Survey',
+  Region = 'Region',
+  Subregion = 'Subregion',
+  Category = 'Category',
+  Item = 'Item',
 }
 
 type Axis = {
-  indexBy?: AxisOption | undefined
-  groupBy?: AxisOption | undefined
+  indexBy?: AxisOption
+  groupBy?: AxisOption
 }
 
-export const axisOptionValues = ['Product', 'Place', 'Time']
-
-const index = (needs: Need[], indexBy?: string): Index => {
+const index = (needs: Need[], indexBy?: AxisOption): Index => {
   switch (indexBy) {
-    case 'Product':
-      return indexByCategory(needs)
-    case 'Place':
-      return indexByRegion(needs)
-    case 'Time':
+    case AxisOption.Survey:
       return indexByQuarter(needs)
+    case AxisOption.Category:
+      return indexByCategory(needs)
+    case AxisOption.Item:
+      return indexByItem(needs)
+    case AxisOption.Region:
+      return indexByRegion(needs)
+    case AxisOption.Subregion:
+      return indexBySubregion(needs)
     default:
       return indexByCategory(needs)
   }
 }
 
-const groupBySelector = (axis?: Axis): Selector => {
-  switch (axis?.groupBy) {
-    case 'Product':
-      return axis?.indexBy !== 'Product' ? categorySelector : itemSelector
-
-    case 'Place':
-      return axis?.indexBy !== 'Place' ? regionSelector : subregionSelector
-
-    case 'Time':
+const groupBySelector = (groupBy?: AxisOption): Selector => {
+  switch (groupBy) {
+    case AxisOption.Survey:
       return quarterSelector
-
+    case AxisOption.Category:
+      return categorySelector
+    case AxisOption.Item:
+      return itemSelector
+    case AxisOption.Region:
+      return regionSelector
+    case AxisOption.Subregion:
+      return subregionSelector
     default:
-      return axis?.indexBy !== 'Place' ? regionSelector : subregionSelector
+      return categorySelector
   }
 }
 
@@ -155,8 +172,8 @@ export enum SortOrderOption {
 }
 
 type Sort = {
-  by?: SortByOption | undefined
-  order?: SortOrderOption | undefined
+  by?: SortByOption
+  order?: SortOrderOption
 }
 
 export const sortOptions = {
@@ -205,7 +222,7 @@ type Options = {
 export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const filteredNeeds = filter(needs, options?.filters)
   const needsByIndex = index(filteredNeeds, options?.axis?.indexBy)
-  const keyPicker = groupBySelector(options?.axis)
+  const keyPicker = groupBySelector(options?.axis?.groupBy)
   const { data, keys } = buildNivoData(needsByIndex, keyPicker)
   const sortedData = sort(data, options?.sort)
 
