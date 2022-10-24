@@ -8,7 +8,15 @@ import {
   SortByOption,
   SortOrderOption,
 } from './needs-bar-chart'
-import { getCategories, getQuarters, getRegions } from './needs-helpers'
+import {
+  filterByCategory,
+  filterByRegion,
+  getCategories,
+  getItems,
+  getQuarters,
+  getRegions,
+  getSubregions,
+} from './needs-helpers'
 
 import {
   ControlSection,
@@ -21,14 +29,16 @@ type Props = {
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const [indexBy, setIndexBy] = useState<AxisOption>(AxisOption.Product)
-  const [groupBy, setGroupBy] = useState<AxisOption>(AxisOption.Place)
+  const [indexBy, setIndexBy] = useState<AxisOption>(AxisOption.Category)
+  const [groupBy, setGroupBy] = useState<AxisOption>(AxisOption.Region)
 
   const [search, setSearch] = useState<string>('')
 
   const [quarter, setQuarter] = useState<string>()
   const [region, setRegion] = useState<string>()
+  const [subregion, setSubregion] = useState<string>()
   const [category, setCategory] = useState<string>()
+  const [item, setItem] = useState<string>()
 
   const [sortBy, setSortBy] = useState<SortByOption>(SortByOption.Label)
   const [sortOrder, setSortOrder] = useState<SortOrderOption>(
@@ -71,15 +81,41 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
             isClearable={true}
           />
           <SelectControl
+            label="Region"
+            values={getRegions(needs)}
+            setValue={(value: string) => {
+              setRegion(value)
+
+              if (
+                value &&
+                subregion &&
+                !getSubregions(filterByRegion(needs, value)).includes(subregion)
+              ) {
+                setSubregion(undefined)
+              }
+            }}
+            isClearable={true}
+          />
+          <SelectControl
+            label="Subregion"
+            values={getSubregions(
+              region ? filterByRegion(needs, region) : needs,
+            )}
+            setValue={setSubregion}
+            isClearable={true}
+          />
+          <SelectControl
             label="Category"
             values={getCategories(needs)}
             setValue={setCategory}
             isClearable={true}
           />
           <SelectControl
-            label="Region"
-            values={getRegions(needs)}
-            setValue={setRegion}
+            label="Item"
+            values={getItems(
+              category ? filterByCategory(needs, category) : needs,
+            )}
+            setValue={setItem}
             isClearable={true}
           />
         </ControlSection>
@@ -115,7 +151,9 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
             search,
             quarter,
             region,
+            subregion,
             category,
+            item,
           },
           sort: {
             by: sortBy,
