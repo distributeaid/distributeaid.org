@@ -1,90 +1,153 @@
-import Button from '@components/button/Button'
-import BankInformationModal from '@components/donate/BankInfoModal'
 import Footer from '@components/Footer'
-import ExternalLink from '@components/link/ExternalLink'
+import {
+  Fundraiser,
+  FundraiserCard as FundraiserComponent,
+} from '@components/fundraiser/Fundraiser'
+import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
+import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
-import { FC, useState } from 'react'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 
-import directTransferImage from '../images/direct_transfer.svg'
-import openCollectiveImage from '../images/opencollective_logo.svg'
-
-export function Head() {
-  return <PageHeader title={'How to donate'} />
+type Props = {
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        title: string
+        pageTitle: string
+        raisedEUR: number
+      }
+    }
+    allDaFundraiser: {
+      nodes: Fundraiser[]
+    }
+    thumbnails500px: {
+      nodes: {
+        parent: {
+          absolutePath: string
+        }
+        gatsbyImageData: any
+      }[]
+    }
+  }
 }
 
-const cardClasses = 'p-4 max-w-xl mx-auto flex flex-col items-center space-y-4'
+export function Head({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, pageTitle },
+    },
+  },
+}: Props) {
+  return <PageHeader title={pageTitle} description={title} />
+}
 
-const Donate: FC = () => (
-  <SimpleLayout footer={<Footer showDonateButton={false} />}>
-    <div className="pt-8 md:pt-20" style={{ minHeight: '80vh' }}>
-      <h1 className="text-center text-gray-800 text-3xl font-medium mb-20">
-        Support Distribute Aid to help more people in need:
-      </h1>
-      <div className="lg:flex max-w-5xl mx-auto">
-        <WaysToDonate />
-      </div>
-    </div>
-  </SimpleLayout>
-)
+const DonatePage: FC<Props> = ({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, raisedEUR },
+    },
+    allDaFundraiser: { nodes: fundraisers },
+    thumbnails500px: { nodes: thumbnails500px },
+  },
+}) => {
+  fundraisers.forEach((fundraiser) => {
+    fundraiser.gallery = fundraiser.gallery.map((photo) => {
+      const gatsbyImageData = thumbnails500px.find(
+        ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
+      )?.gatsbyImageData
+      if (gatsbyImageData === undefined) {
+        console.error(`Could not find gatsbyImageData for ${photo.url}`)
+      }
+      return {
+        ...photo,
+        gatsbyImageData,
+      }
+    })
+  })
 
-export const WaysToDonate = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
-    <>
-      <div className={cardClasses} data-test="opencollective">
-        <img
-          src={openCollectiveImage}
-          width="100"
-          height="100"
-          className="mx-auto block"
-          alt=""
-        />
-        <ExternalLink
-          className="link py-2"
-          href="https://opencollective.com/distribute-aid-usa"
-        >
-          Open Collective
-        </ExternalLink>
-        <p className="mt-4 text-gray-700">
-          If you are in the US, you can make tax-deductible donations to support
-          Distribute Aid's USA based projects, through the{' '}
-          <ExternalLink
-            href="https://opencollective.com/distribute-aid-usa"
-            className="link"
-          >
-            Open Collective Foundation
-          </ExternalLink>
-          .
-        </p>
-      </div>
-      <div className={cardClasses} data-test="bank">
-        <img
-          src={directTransferImage}
-          width="100"
-          height="100"
-          className="mx-auto block"
-          alt=""
-        />
-        <Button variant="primary" onClick={() => setModalIsOpen(true)}>
-          View bank info
-        </Button>
-        <p className="mt-4 text-gray-700">
-          Make a donation directly to our bank account at Distribute Aid. Reach
-          out to{' '}
-          <ExternalLink className="link" href="mailto:hello@distributeaid.org">
-            hello@distributeaid.org
-          </ExternalLink>{' '}
-          if you have any questions.
-        </p>
-      </div>
-
-      <BankInformationModal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-      />
-    </>
+    <SimpleLayout
+      className={'donate'}
+      footer={<Footer showDonateButton={false} />}
+    >
+      <div className="bg" />
+      <header>
+        <h1>{title}</h1>
+      </header>
+      {fundraisers.length > 0 && (
+        <>
+          <FundraiserProgress
+            raisedTitle={'Total funds raised'}
+            currency={'EUR'}
+            raised={raisedEUR}
+          />
+          <article className="fundraisers">
+            {fundraisers.map((fundraiser) => (
+              <FundraiserComponent
+                key={fundraiser.id}
+                fundraiser={fundraiser}
+              />
+            ))}
+          </article>
+        </>
+      )}
+      <section className="bg-gray-50">
+        <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
+          <h2 className="text-center text-gray-800 text-3xl font-medium mb-20">
+            Support Distribute Aid to help more people in need:
+          </h2>
+          <WaysToDonate />
+        </div>
+      </section>
+    </SimpleLayout>
   )
 }
 
-export default Donate
+export default DonatePage
+
+export const pageQuery = graphql`
+  query DonateQuery {
+    markdownRemark(fileAbsolutePath: { glob: "**/content/pages/donate.md" }) {
+      frontmatter {
+        title
+        pageTitle
+        raisedEUR
+      }
+    }
+    allDaFundraiser {
+      nodes {
+        id
+        name
+        title
+        abstract
+        gallery {
+          url
+          alt
+        }
+        allocations {
+          date
+          amountEUR
+          purpose
+        }
+      }
+    }
+    thumbnails500px: allImageSharp(
+      filter: { original: { src: { glob: "/static/**" } } }
+    ) {
+      nodes {
+        parent {
+          ... on File {
+            absolutePath
+          }
+        }
+        gatsbyImageData(
+          width: 500
+          aspectRatio: 1.2
+          transformOptions: { fit: COVER }
+        )
+      }
+    }
+  }
+`

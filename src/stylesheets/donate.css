@@ -5,12 +5,6 @@ main.donate {
   --color-da: #082b76;
   color: var(--color-da);
   background-color: white;
-  padding-bottom: 1px;
-}
-@media only screen and (min-width: 1024px) {
-  main.donate {
-    padding-bottom: 4rem;
-  }
 }
 
 main.donate > .bg {
@@ -95,11 +89,11 @@ main.donate > p.progress {
 main.donate .fundraisers {
   width: 100%;
   max-width: 1024px;
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0 0 0;
 }
 @media only screen and (min-width: 1024px) {
   main.donate .fundraisers {
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
   }
 }
 main.donate .fundraisers .card {
@@ -127,8 +121,6 @@ main.donate .fundraisers .card a.bg .gatsby-image-wrapper {
 }
 main.donate .fundraisers .card a.title {
   line-height: 110%;
-  font-weight: bold;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -144,6 +136,10 @@ main.donate .fundraisers .card a.title {
   main.donate .fundraisers .card a.title {
     font-size: 300%;
   }
+}
+main.donate .fundraisers .card a.title h2 {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 main.donate .fundraisers .card:nth-child(2n + 2) a.title {
   justify-content: flex-end;
@@ -167,35 +163,6 @@ main.donate .fundraisers .card a.title h2 {
 }
 
 /** Breakout pages **/
-@media only screen and (min-width: 1024px) {
-  main.donate.breakout {
-    padding-bottom: 0;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  main.donate.breakout article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    max-width: calc(1205px + 4rem);
-    margin: 0 auto;
-  }
-}
-
-main.donate.breakout div.proseWrapper {
-  background-color: var(--color-content-dim);
-  padding: 2rem;
-}
-
-main.donate.breakout header {
-  background-color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 300%;
-  padding: 3rem 2rem;
-}
-
 main.donate.breakout .gallery {
   width: 100%;
   aspect-ratio: 3/2;
@@ -213,43 +180,4 @@ main.donate.breakout .progress {
   font-weight: 900;
   padding: 2rem;
   font-size: 200%;
-}
-
-/* Extra wide */
-
-@media only screen and (min-width: 1400px) {
-  main.donate.breakout article {
-    max-width: calc(1205px + 8rem);
-  }
-  main.donate.breakout header {
-    padding: 6rem 4rem;
-  }
-  main.donate.breakout div.proseWrapper {
-    padding: 4rem;
-  }
-}
-
-/** Ways to donate **/
-
-main.donate section.ways-to-donate {
-  background-color: var(--color-light);
-  display: flex;
-  flex-direction: column;
-  margin-top: 1px;
-  padding: 1rem;
-}
-
-@media only screen and (min-width: 600px) {
-  main.donate section.ways-to-donate {
-    flex-direction: row;
-    margin: 2rem auto;
-    width: calc(100% - 4rem);
-    max-width: 1024px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  main.donate section.ways-to-donate {
-    padding: 3rem;
-  }
 }

@@ -4,10 +4,10 @@ import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
-import { WaysToDonate } from '@pages/donate'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC, useEffect, useState } from 'react'
 import '../../stylesheets/donate.css'
+import { WaysToDonate } from './WaysToDonate'
 
 export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {
   return (
@@ -27,27 +27,30 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
       footer={<Footer showDonateButton={false} />}
     >
       <article>
-        <section>
-          <header>
-            <h1>{fundraiser.title}</h1>
-          </header>
-          <div className="proseWrapper">
-            <MarkdownContent content={fundraiser.body} />
-          </div>
+        <header className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-semibold my-16">{fundraiser.title}</h1>
+        </header>
+        <aside className="gallery max-w-5xl mx-auto">
+          <Gallery photos={fundraiser.gallery} />
+        </aside>
+        <section className="max-w-5xl mx-auto">
+          <MarkdownContent content={fundraiser.body} />
         </section>
-        <aside>
-          <div className="gallery">
-            <Gallery photos={fundraiser.gallery} />
-          </div>
+        <aside className="bg-gray-100 mt-16">
           <FundraiserProgress
             currency="EUR"
-            raisedTitle="Allocated funds"
+            raisedTitle="Allocated funds so far"
             raised={(fundraiser.allocations ?? []).reduce(
               (total, { amountEUR }) => total + amountEUR,
               0,
             )}
           />
-          <div className="ways-to-donate">
+        </aside>
+        <aside className="bg-gray-50">
+          <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
+            <h2 className="text-center text-gray-800 text-3xl font-medium mb-20">
+              Support Distribute Aid to help more people in need:
+            </h2>
             <WaysToDonate />
           </div>
         </aside>
