@@ -17,13 +17,7 @@ export type Route = {
     overflowPricing: number
     halfPaletteCost: number
   }
-  deadlines: {
-    submissionsDeadline: string
-    confirmationDate: string
-    stagingBegins: string
-    stagingEnds: string
-    shipmentDeparture: string
-  }
+  deadlines: RouteDeadlines
   frontlineGroups: RouteFrontlineGroup[]
 }
 
@@ -38,4 +32,12 @@ export type RouteImages = {
 export type RouteFrontlineGroup = {
   logo: string
   name: string
+}
+
+export type RouteDeadlines = {
+  submissionsDeadline: string
+  confirmationDate: string
+  stagingBegins: string
+  stagingEnds: string
+  shipmentDeparture: string
 }
