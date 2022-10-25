@@ -11,6 +11,7 @@ Customize the GraqphQL Schema
 */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
   (args) => {
+    schema.defineGenericPageTypes(args)
     schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
   }
@@ -28,6 +29,7 @@ Transform Nodes
 ================================================================================
 */
 export const onCreateNode: GatsbyNode['onCreateNode'] = (args) => {
+  transformers.createGenericPagesFromMarkdown(args)
   transformers.createRegionsFromMarkdown(args)
   transformers.createSubregionsFromMarkdown(args)
   transformers.createRoutesFromMarkdown(args)

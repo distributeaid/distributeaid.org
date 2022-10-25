@@ -2,6 +2,8 @@ import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
 import slugify from '../src/utils/slugify'
+import { getArrayProperty } from './utils/untypedAccess/getArrayProperty'
+import { getNumberProperty } from './utils/untypedAccess/getNumberProperty'
 import { getObjectProperty } from './utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from './utils/untypedAccess/getStringProperty'
 import { nodeParent } from './utils/untypedAccess/nodeParent'
@@ -11,6 +13,123 @@ import { nodeParent } from './utils/untypedAccess/nodeParent'
  * to enable type checking for *new* code. Feel free to resolve.
  */
 export default {
+  /*
+  Pages
+  ================================================================================
+  */
+  createGenericPagesFromMarkdown: ({
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+    reporter,
+  }: CreateNodeArgs) => {
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      'fileAbsolutePath' in node &&
+      minimatch(
+        getStringProperty(node, 'fileAbsolutePath'),
+        '**/content/pages/**/*.md',
+      ) &&
+      getObjectProperty(node, 'frontmatter').template === 'DAPageGeneric'
+    ) {
+      const fm = getObjectProperty(node, 'frontmatter')
+
+      const sections = getArrayProperty(fm, 'sections').map(
+        (section: Record<string, any>) => {
+          const meta = getObjectProperty(section, 'metadata')
+
+          const margins: Record<string, string> = {
+            Margined: 'MARGIN',
+            Banner: 'BANNER',
+          }
+          const margin = margins[getStringProperty(meta, 'margins')] || 'MARGIN'
+
+          const layouts: Record<string, string> = {
+            'Row-Bound': 'ROW',
+            'Column-Bound': 'COL',
+          }
+          const layout =
+            layouts[getStringProperty(meta, 'colOrRowBound')] || 'ROW'
+
+          const orders: Record<string, string> = {
+            'left-to-right': 'HORIZONTAL',
+            'top-to-bottom': 'VERTICAL',
+            random: 'RANDOM',
+          }
+          const order = orders[getStringProperty(meta, 'order')] || 'HORIZONTAL'
+
+          const blocks = getArrayProperty(section, 'contentBlocks')
+            .map((block: Record<string, any>) => {
+              switch (getStringProperty(block, 'template')) {
+                case 'block-title':
+                  return {
+                    text: getStringProperty(block, 'text'),
+                  }
+
+                case 'block-text':
+                  return {
+                    text: getStringProperty(block, 'text'),
+                  }
+
+                case 'block-youtube':
+                  return {
+                    title: getStringProperty(block, 'title'),
+                    embedUrl: getStringProperty(block, 'embed'),
+                  }
+
+                case 'block-timeline':
+                  return {
+                    entries: getArrayProperty(block, 'timelineItems'),
+                  }
+
+                case 'block-image-with-caption':
+                  return null
+
+                default:
+                  return null
+              }
+            })
+            .filter((block: Record<string, any> | null) => {
+              return block !== null
+            })
+
+          return {
+            options: {
+              margin,
+              layout,
+              cols: getNumberProperty(meta, 'numCols'),
+              rows: getNumberProperty(meta, 'numRows'),
+              order,
+            },
+            blocks,
+          }
+        },
+      )
+
+      createNode({
+        // Node Data
+        title: fm.title,
+        description: fm.desc,
+        sections: sections,
+
+        // navigation
+        slug: fm.slug,
+        path: `/${fm.slug}/`,
+
+        // Gatsby Fields
+        id: createNodeId(`DA Page Generic - ${fm.title}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'DAPageGeneric',
+          contentDigest: createContentDigest(fm),
+        },
+      })
+    }
+  },
+
   /*
   Regions
   ================================================================================

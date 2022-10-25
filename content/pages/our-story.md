@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Our Story
 sections1: []
 sections2: []
@@ -91,6 +92,5 @@ sections:
         to help grassroots organisations continue to send aid after Brexit.
 slug: our-story
 desc: ''
-type: ''
 
 ---

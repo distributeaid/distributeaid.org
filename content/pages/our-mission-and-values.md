@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Our Mission and Values
 slug: our-mission
 desc: Founded in 2019, Distribute Aid has grown into Europe's largest grassroots logistics

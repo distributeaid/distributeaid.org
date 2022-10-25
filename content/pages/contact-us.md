@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Contact Us
 slug: contact-us
 desc: ''
