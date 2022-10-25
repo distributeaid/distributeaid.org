@@ -2,11 +2,11 @@
 label: Generic Page
 hide_body: true
 fields:
-- name: type
+- name: template
   type: text
   config:
     required: true
-  label: Type
+  label: Template
   default: DAPageGeneric
   hidden: true
 - name: title
@@ -17,7 +17,8 @@ fields:
 - name: slug
   type: text
   config:
-    required: false
+    required: true
+    min: 5
   label: URL slug
   description: A URL slug refers to the end part of a URL after the backslash (“/”)
     that identifies the specific page or post. e.g. the "about-us" in distributeaid.org/about-us.  This
