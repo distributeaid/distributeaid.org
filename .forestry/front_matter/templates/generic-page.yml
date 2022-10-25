@@ -2,6 +2,13 @@
 label: Generic Page
 hide_body: true
 fields:
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  default: page-generic
+  hidden: true
 - name: title
   type: text
   config:
@@ -30,13 +37,6 @@ fields:
   config:
     min: 
     max: 
-- name: type
-  type: text
-  config:
-    required: true
-  label: Type
-  default: page-generic
-  hidden: true
 pages:
 - content/pages/contact-us.md
 - content/pages/our-mission-and-values.md
