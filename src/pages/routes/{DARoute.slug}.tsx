@@ -24,18 +24,6 @@ type TemplateProps = {
   }
 }
 
-function formatDate(date: string) {
-  const actualDate = new Date(date)
-  const timeDiff = actualDate.getTimezoneOffset() * 60000
-  const adjustedDate = new Date(actualDate.valueOf() + timeDiff)
-
-  return adjustedDate.toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
-
 const formatters: Record<string, Intl.NumberFormat> = {}
 
 const formatCostInCurrency = (cost: number, currency: string) => {
