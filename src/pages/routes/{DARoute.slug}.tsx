@@ -12,6 +12,7 @@ import SimpleLayout from '../../layouts/Simple'
 import Delivery from '@components/routes/Delivery'
 import PhotoCredit from '@components/routes/PhotoCredit'
 import Reservations from '@components/routes/Reservations'
+import SectionTitle from '@components/routes/SectionTitle'
 import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import sackIcon from '../../images/regular-routes/icons/openmoji_bag.svg'
@@ -71,9 +72,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         />
       }
     >
-      <header className="mb-4 text-center">
-        <h2 className="section__title">Frontline Groups</h2>
-      </header>
+      <SectionTitle title="Frontline Groups" />
       <div className="section__body mb-8">
         <div className="flex flex-wrap gap-6 justify-center">
           {route.frontlineGroups.map((group, index) => (
@@ -114,10 +113,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         />
       }
     >
-      <header className="mb-4 text-center">
-        <h1 className="section__title">UK Staging Hubs</h1>
-      </header>
-
+      <SectionTitle title="UK Staging Hubs" />
       <div className="section__body">
         <p className="mb-4">
           The most <strong>cost efficient and Brexit / pandemic-proof</strong>{' '}
@@ -176,10 +172,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         />
       }
     >
-      <header className="mb-4 text-center">
-        <h1 className="section__title">Storage &amp; Shipping (£)</h1>
-      </header>
-
+      <SectionTitle title="Storage &amp; Shipping (£)" />
       <div className="section__body">
         <p className="mb-6">
           We offer a flat, per-pallet and per-box storage and shipment charge
@@ -305,9 +298,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
         />
       }
     >
-      <header className="mb-4 text-center">
-        <h1 className="section__title">All About Pallets</h1>
-      </header>
+      <SectionTitle title="All About Pallets" />
       <div className="section__body">
         <h2 className="font-bold">
           How many Standard Pallet spaces do I need?

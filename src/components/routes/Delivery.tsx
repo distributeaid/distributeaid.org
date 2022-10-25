@@ -8,6 +8,7 @@ import IconWithText from '../icon/IconWithText'
 import PhotoCredit from './PhotoCredit'
 import { RouteFrontlineGroup, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
+import SectionTitle from './SectionTitle'
 import TextWithVisual from './TextWithVisual'
 
 type DeliveryProps = {
@@ -35,16 +36,10 @@ const Delivery: FC<DeliveryProps> = ({
         />
       }
     >
-      <header className="my-4 text-center">
-        <h1 className="flex justify-center mb-1 uppercase text-4xl">
-          Delivery
-        </h1>
-        <h2 className="text-2xl">
-          Regular Route: {routeOrigin}&rarr;
-          {routeDestination}
-        </h2>
-      </header>
-
+      <SectionTitle
+        title="Delivery"
+        subTitle={`Regular Route: ${routeOrigin} → ${routeDestination}`}
+      />
       <div className="mt-4">
         <MarkdownContent content={introduction} />
         <div className="flex flex-wrap justify-center mt-4">
