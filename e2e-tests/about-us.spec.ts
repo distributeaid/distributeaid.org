@@ -23,9 +23,7 @@ test.describe('About us', () => {
       'https://www.youtube.com/embed/msizPweg3kE',
     )
     await expect(
-      page.getByAltText(
-        'Distribute Aid Logo: A flock of doves stylized by stacking wings behind the main outline of a dove.',
-      ),
+      page.locator('p:has-text("Distribute Aid’s mission is to")'),
     ).toBeVisible()
 
     await expect(
