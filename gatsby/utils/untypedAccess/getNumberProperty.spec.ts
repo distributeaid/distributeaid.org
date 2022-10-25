@@ -5,7 +5,7 @@ describe('getStringProperty()', () => {
     expect(getNumberProperty({ foo: 161 }, 'foo')).toEqual(161))
 
   it('should throw an error if the object is undefined', () =>
-    expect(() => getNumberProperty(undefined, 161)).toThrow(
+    expect(() => getNumberProperty(undefined, '161')).toThrow(
       `Received undefined when trying to access property '161'!`,
     ))
 
