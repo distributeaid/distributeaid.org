@@ -7,7 +7,7 @@ fields:
   config:
     required: true
   label: Type
-  default: page-generic
+  default: DAPageGeneric
   hidden: true
 - name: title
   type: text
