@@ -26,20 +26,14 @@ const Image: FC<Image> = ({
 }) => {
   var flexAlignment = 'justify-center'
   var textAlignment = 'text-center'
-  //ternary
 
-  alignment === 'right' ? (flexAlignment = 'justify-end') : null
-  alignment === 'right' ? (textAlignment = 'text-right') : null
-  alignment === 'left' ? (flexAlignment = 'justify-start') : null
-  alignment === 'left' ? (textAlignment = 'text-left') : null
-
-  // if (alignment === 'right') {
-  //   flexAlignment = 'justify-end'
-  //   textAlignment = 'text-right'
-  // } else if (alignment === 'left') {
-  //   flexAlignment = 'justify-start'
-  //   textAlignment = 'text-left'
-  // }
+  if (alignment === 'right') {
+    flexAlignment = 'justify-end'
+    textAlignment = 'text-right'
+  } else if (alignment === 'left') {
+    flexAlignment = 'justify-start'
+    textAlignment = 'text-left'
+  }
   const [showSpan, setShowSpan] = React.useState(false)
 
   return (
