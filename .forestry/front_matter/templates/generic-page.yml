@@ -30,6 +30,13 @@ fields:
   config:
     min: 
     max: 
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  default: page-generic
+  hidden: true
 pages:
 - content/pages/contact-us.md
 - content/pages/our-mission-and-values.md
