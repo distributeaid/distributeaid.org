@@ -1,8 +1,7 @@
 import { handler } from '@tailwindcss/line-clamp'
 import { useStaticQuery } from 'gatsby'
+import React from 'react'
 import { FC } from 'react'
-import { useEffect, useState } from 'react'
-import { UseRowStateCellProps } from 'react-table'
 
 type Image = {
   image: string
@@ -27,13 +26,21 @@ const Image: FC<Image> = ({
 }) => {
   var flexAlignment = 'justify-center'
   var textAlignment = 'text-center'
-  if (alignment === 'right') {
-    flexAlignment = 'justify-end'
-    textAlignment = 'text-right'
-  } else if (alignment === 'left') {
-    flexAlignment = 'justify-start'
-    textAlignment = 'text-left'
-  }
+  //ternary
+
+  alignment === 'right' ? (flexAlignment = 'justify-end') : null
+  alignment === 'right' ? (textAlignment = 'text-right') : null
+  alignment === 'left' ? (flexAlignment = 'justify-start') : null
+  alignment === 'left' ? (textAlignment = 'text-left') : null
+
+  // if (alignment === 'right') {
+  //   flexAlignment = 'justify-end'
+  //   textAlignment = 'text-right'
+  // } else if (alignment === 'left') {
+  //   flexAlignment = 'justify-start'
+  //   textAlignment = 'text-left'
+  // }
+  const [showSpan, setShowSpan] = React.useState(false)
 
   return (
     <div className={`flex ${flexAlignment}`}>
@@ -42,11 +49,17 @@ const Image: FC<Image> = ({
           width: width,
         }}
       >
-        <div className="relative">
+        <div
+          className="relative"
+          onMouseEnter={() => setShowSpan(true)}
+          onMouseLeave={() => setShowSpan(false)}
+        >
           <div
-            className={`absolute inset-x-0 bottom-0 h-16 ${textAlignment} bg-gray-900 opacity-75`}
+            className={`absolute inset-x-0 bottom-0 h-16 flow-root ${textAlignment} bg-blue-900 opacity-75 ${
+              showSpan ? '' : 'hidden'
+            } `}
           >
-            <span className="text-white mt-0.5">{attribution}</span>
+            <span className="relative top-5 text-white">{attribution}</span>
           </div>
           <img src={image} alt={altText} height={height} />
         </div>
