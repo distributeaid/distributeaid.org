@@ -1,5 +1,5 @@
-import { YouTubeEmbed } from './YouTubeEmbed'
 import { render, screen } from '@testing-library/react'
+import { YouTubeEmbed } from './YouTubeEmbed'
 
 describe('<YouTubeEmbed/>', () => {
   it('renders the video and title', () => {

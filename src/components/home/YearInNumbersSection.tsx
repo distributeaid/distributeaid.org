@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
 import crateImage from '../../images/da-in-numbers/crate.svg'
-import routeImage from '../../images/da-in-numbers/route.svg'
 import handsParcel from '../../images/da-in-numbers/hands-parcel.svg'
 import handsPluses from '../../images/da-in-numbers/hands-pluses.svg'
-import pallet from '../../images/da-in-numbers/pallet.svg'
 import shakingHands from '../../images/da-in-numbers/hands-shaking.svg'
+import pallet from '../../images/da-in-numbers/pallet.svg'
+import routeImage from '../../images/da-in-numbers/route.svg'
 
 const numberFormatter = new Intl.NumberFormat()
 const usdFormatter = new Intl.NumberFormat(undefined, {

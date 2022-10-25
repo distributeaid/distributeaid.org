@@ -1,5 +1,5 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { LinkList, UpdateList } from '@components/list/ListTypes'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 /*
 Region
@@ -7,6 +7,9 @@ Region
 */
 
 export type Region = {
+  slug: string
+  path: string
+
   name: string
   map: {
     gatsbyImageData: IGatsbyImageData
@@ -30,6 +33,9 @@ Subregion
 */
 
 export type Subregion = {
+  slug: string
+  path: string
+
   name: string
   map: {
     gatsbyImageData: IGatsbyImageData

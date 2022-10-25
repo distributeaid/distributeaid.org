@@ -67,7 +67,7 @@ sections:
   path: content/blocks/shipments
   label: Shipment Photos
   create: all
-  match: "**/photos/*"
+  match: "**/*"
   templates:
   - media-asset
 - type: document

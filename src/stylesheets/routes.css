@@ -52,17 +52,6 @@ Legacy CSS for the routes pages
 Photos
 ------------------------------------------------------------
 */
-.photo-credit {
-  font-size: 0.875em;
-  font-style: italic;
-}
-
-@media only screen and (max-device-width: 600px) {
-  .photo-credit {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 .tiles {
   margin-bottom: 1rem;

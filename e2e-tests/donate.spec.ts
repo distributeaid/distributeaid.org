@@ -15,10 +15,6 @@ test.describe('Donate action', () => {
       await page.goto(base)
       await page.locator('header >> a:has-text("Donate"):visible').click()
       await expect(page).toHaveURL(new URL('/donate', base).toString())
-
-      expect(await page.locator('data-test=patreon').textContent()).toContain(
-        'Patreon',
-      )
       expect(
         await page.locator('data-test=opencollective').textContent(),
       ).toContain('Open Collective')
@@ -29,17 +25,6 @@ test.describe('Donate action', () => {
   })
 
   test.describe('Donate page', () => {
-    it('should show Patreon info', async ({ page }) => {
-      await page.goto(new URL('/donate', base).toString())
-      expect(await page.locator('data-test=patreon').textContent()).toContain(
-        'Patreon',
-      )
-      const link = page.locator('data-test=patreon >> a.link').first()
-      expect(await link.getAttribute('href')).toEqual(
-        'https://www.patreon.com/distributeaid',
-      )
-    })
-
     it('should show Open Collective info', async ({ page }) => {
       await page.goto(new URL('/donate', base).toString())
       expect(

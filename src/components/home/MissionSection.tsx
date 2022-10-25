@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import SocialIconContainer from '@components/social-media/SocialIconContainer'
 import React, { FC, Suspense } from 'react'

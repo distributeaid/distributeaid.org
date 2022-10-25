@@ -1,16 +1,15 @@
 import { graphql } from 'gatsby'
-import { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import slugify from 'utils/slugify'
+import { FC } from 'react'
 
 import { Region } from '@components/regions/RegionComponentTypes'
 
-import SimpleLayout from 'layouts/Simple'
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import SmartLink from '@components/link/SmartLink'
 import LinkList from '@components/list/LinkList'
 import UpdateList from '@components/list/UpdateList'
-import SmartLink from '@components/link/SmartLink'
+import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from 'layouts/Simple'
 
 type TemplateProps = {
   data: {
@@ -18,8 +17,8 @@ type TemplateProps = {
   }
 }
 
-export function Head() {
-  return <PageHeader title={'Regions'} />
+export function Head({ data: { region } }: TemplateProps) {
+  return <PageHeader title={`Region: ${region.name}`} />
 }
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
@@ -43,12 +42,9 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 
       <ul className="flex  justify-evenly my-5 text-2xl">
         {region.subregions.map((subregion, i) => {
-          const href = `/regions/${slugify(region.name)}/${slugify(
-            subregion.name,
-          )}`
           return (
             <li key={i}>
-              <SmartLink className="link" href={href}>
+              <SmartLink className="link" href={subregion.path}>
                 {subregion.name}
               </SmartLink>
             </li>
@@ -105,6 +101,7 @@ export const query = graphql`
         }
       }
       subregions {
+        path
         name
       }
     }

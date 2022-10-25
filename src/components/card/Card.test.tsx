@@ -1,5 +1,5 @@
-import { Card, ImageVariant } from './Card'
 import { render } from '@testing-library/react'
+import { Card, ImageVariant } from './Card'
 
 describe('<Card/>', () => {
   it('renders the card component', () => {

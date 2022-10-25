@@ -1,9 +1,9 @@
 import type { GatsbyNode } from 'gatsby'
 
-import schema from './gatsby/customize-schema'
-import transformers from './gatsby/transform-nodes'
 import resolvers from './gatsby/create-resolvers'
-import pages from './gatsby/create-pages'
+import schema from './gatsby/customize-schema'
+import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
+import transformers from './gatsby/transform-nodes'
 
 /*
 Customize the GraqphQL Schema
@@ -11,8 +11,17 @@ Customize the GraqphQL Schema
 */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
   (args) => {
+    schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
   }
+
+/*
+Source Nodes
+================================================================================
+*/
+export const sourceNodes: GatsbyNode['sourceNodes'] = async (args) => {
+  await sourceNeedsAssessments(args)
+}
 
 /*
 Transform Nodes
@@ -35,16 +44,6 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveRegionFields(args)
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
-}
-
-/*
-Create Dynamic Pages
-================================================================================
-*/
-export const createPages: GatsbyNode['createPages'] = async (args) => {
-  await pages.createRegionPages(args)
-  await pages.createSubregionPages(args)
-  await pages.createRoutePages(args)
 }
 
 /*

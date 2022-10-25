@@ -1,6 +1,6 @@
-import { FC } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
 import { Link } from 'gatsby'
+import { FC } from 'react'
 import siteSettings from '../../content/site-settings.json'
 import SocialIconContainer from './social-media/SocialIconContainer'
 

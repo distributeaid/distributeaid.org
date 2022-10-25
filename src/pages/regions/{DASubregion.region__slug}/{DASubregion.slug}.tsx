@@ -1,12 +1,11 @@
-import { graphql } from 'gatsby'
-import { FC } from 'react'
-import slugify from 'utils/slugify'
-import { Subregion } from '@components/regions/RegionComponentTypes'
-import SimpleLayout from 'layouts/Simple'
+import SmartLink from '@components/link/SmartLink'
 import UpdateList from '@components/list/UpdateList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import SmartLink from '@components/link/SmartLink'
 import { PageHeader } from '@components/PageHeader'
+import { Subregion } from '@components/regions/RegionComponentTypes'
+import { graphql } from 'gatsby'
+import SimpleLayout from 'layouts/Simple'
+import { FC } from 'react'
 
 type TemplateProps = {
   data: {
@@ -28,10 +27,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
       <h1 className="text-2xl font-semibold text-gray-800">
         {subregion.name}
         <small>
-          <SmartLink
-            className="link"
-            href={`/regions/${slugify(subregion.region.name)}`}
-          >
+          <SmartLink className="link" href={subregion.region.path}>
             {subregion.region.name}
           </SmartLink>
         </small>
@@ -70,6 +66,7 @@ export const query = graphql`
         }
       }
       region {
+        path
         name
       }
     }

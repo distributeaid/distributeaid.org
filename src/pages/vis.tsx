@@ -1,7 +1,7 @@
-import React, { FC, Suspense } from 'react'
-import SimpleLayout from '@layouts/Simple'
-import { graphql, HeadProps } from 'gatsby'
 import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import React, { FC, Suspense } from 'react'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser
