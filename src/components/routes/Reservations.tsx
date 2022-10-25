@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react'
 import PhotoCredit from './PhotoCredit'
 import { RouteDeadlines, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
+import SectionTitle from './SectionTitle'
 import TextWithVisual from './TextWithVisual'
 
 type ReservationsProps = {
@@ -32,10 +33,10 @@ const ReservationInstruction = ({
   children: ReactNode
 }) => {
   return (
-    <li className="">
+    <li>
       <h3 className="text-lg font-semibold mb-4">{subHeading}</h3>
       {children}
-      <p className="h5">{deadline}</p>
+      <p>{deadline}</p>
     </li>
   )
 }
@@ -56,11 +57,8 @@ const Reservations: FC<ReservationsProps> = ({
         />
       }
     >
-      <header className="mb-4 text-center">
-        <h2 className="section__title">Reserve Your Spot!</h2>
-      </header>
-
-      <div className="section__body">
+      <SectionTitle title="Reserve Your Spot!" />
+      <div className="mb-4">
         <ol className="space-y-8">
           <ReservationInstruction
             subHeading="1. Submit Your Aid Delivery Request"
