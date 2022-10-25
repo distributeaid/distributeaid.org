@@ -11,6 +11,7 @@ import SimpleLayout from '../../layouts/Simple'
 
 import Delivery from '@components/routes/Delivery'
 import PhotoCredit from '@components/routes/PhotoCredit'
+import Reservations from '@components/routes/Reservations'
 import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
 import sackIcon from '../../images/regular-routes/icons/openmoji_bag.svg'
@@ -67,109 +68,11 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
       routeOrigin={route.routeOrigin}
       frontlineGroups={route.frontlineGroups}
     />
-    <TextWithVisual
-      id="reserve-your-spot"
-      positionOfVisual="left"
-      visual={
-        <RoutesSectionImage
-          ariaLabel="An aisle in a warehouse with shelves stacked high with pallets of boxes."
-          image={route.images.reservationSection}
-        />
-      }
-    >
-      <header className="mb-4 text-center">
-        <h2 className="section__title">Reserve Your Spot!</h2>
-      </header>
-
-      <div className="section__body">
-        <ol className="space-y-8">
-          <li className="">
-            <h3 className="text-lg font-semibold mb-4">
-              1. Submit Your Aid Delivery Request
-            </h3>
-            <p className="mb-4">
-              Download the{' '}
-              <a
-                className="font-bold underline"
-                href={route.aidRequestFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Aid Delivery Request Form
-              </a>{' '}
-              and fill it in.
-            </p>
-            <p className="mb-4">
-              Email the completed form to{' '}
-              <a
-                className="font-bold underline"
-                href="mailto:hubs@distributeaid.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                hubs@distributeaid.org
-              </a>
-              . Your local Staging Hub will receive it and follow up if there
-              are any questions.
-            </p>
-            <p className="h5">
-              Submissions close:{' '}
-              {formatDate(route.deadlines.submissionsDeadline)}
-            </p>
-          </li>
-          <li>
-            <h3 className="text-lg font-semibold mb-4">
-              2. Consult Frontline Groups
-            </h3>
-            <p className="mb-4">
-              We'll check in with the frontline groups during the offer period,
-              to confirm which offered donations they want and to prioritise
-              deliveries that meet their biggest needs. Then we can confirm if
-              you have a place reserved on the next truck.
-            </p>
-            <p className="h5">
-              Latest confirmation date:{' '}
-              {formatDate(route.deadlines.confirmationDate)}
-            </p>
-          </li>
-          <li>
-            <h3 className="text-lg font-semibold mb-4">
-              3. Drop Off @ Staging Hubs
-            </h3>
-            <p className="mb-4">
-              Schedule a drop-off appointment with your local Staging Hub, pay
-              them the flat-rate{' '}
-              <a href="#storage-and-shipping-charge">
-                Storage &amp; Shipping charge
-              </a>
-              , and deliver the boxes of aid at the agreed time.
-            </p>
-            <p className="h5">
-              Staging period: {formatDate(route.deadlines.stagingBegins)} -{' '}
-              {formatDate(route.deadlines.stagingEnds)}
-            </p>
-          </li>
-          <li>
-            <h3 className="text-lg font-semibold mb-4">4. Deliver The Aid</h3>
-            <p className="mb-4">
-              <strong>And that's it!</strong> Take an evening off to celebrate a
-              job well done, we got it from here. Once your aid is delivered
-              we'll follow up with an after-shipment report, including photos
-              and acknowledgments from the frontline groups.
-            </p>
-            <p className="h5">
-              Shipment departs: {formatDate(route.deadlines.shipmentDeparture)}
-            </p>
-          </li>
-        </ol>
-      </div>
-
-      <PhotoCredit
-        url="https://unsplash.com/@ruchindra?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-        description="Ruchindra Gunasekara on Unsplash"
-      />
-    </TextWithVisual>
-
+    <Reservations
+      deadlines={route.deadlines}
+      images={route.images}
+      aidRequestFormUrl={route.aidRequestFormUrl}
+    />
     <TextWithVisual
       id="frontline-groups"
       positionOfVisual="right"
