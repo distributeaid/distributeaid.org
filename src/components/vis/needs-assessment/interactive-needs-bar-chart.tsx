@@ -38,27 +38,80 @@ import {
   updateSortOrderOption,
 } from '../nivo-options-helpers'
 
-const setOption = (
-  needs: Need[],
-  currentOptions: NeedsBarChartOptions,
-  setState: React.Dispatch<React.SetStateAction<NeedsBarChartOptions>>,
-  updateOption: NeedsOptionUpdater,
-): ((value: string) => void) => {
-  return (value) => {
-    const newOptions = updateOption(needs, currentOptions, value)
-    setState(newOptions)
-  }
-}
-
 type Props = {
   needs: Need[]
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const startingOptions = getDefaultOptions()
+  const url = new URL(window.location.href)
+  const optionsParam =
+    url.searchParams.get('InteractiveNeedsBarChartOptions') || '{}'
+  const savedOptions = JSON.parse(optionsParam)
+
+  let startingOptions = getDefaultOptions()
+  startingOptions = updateAxisIndexByOption(
+    needs,
+    startingOptions,
+    savedOptions?.axis?.indexBy,
+  )
+  startingOptions = updateAxisGroupByOption(
+    needs,
+    startingOptions,
+    savedOptions?.axis?.groupBy,
+  )
+  startingOptions = updateFilterSearchOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.search,
+  )
+  startingOptions = updateFilterQuarterOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.quarter,
+  )
+  startingOptions = updateFilterRegionOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.region,
+  )
+  startingOptions = updateFilterSubregionOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.subregion,
+  )
+  startingOptions = updateFilterCategoryOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.category,
+  )
+  startingOptions = updateFilterItemOption(
+    needs,
+    startingOptions,
+    savedOptions?.filters?.item,
+  )
+  startingOptions = updateSortByOption(
+    needs,
+    startingOptions,
+    savedOptions?.sort?.by,
+  )
+  startingOptions = updateSortOrderOption(
+    needs,
+    startingOptions,
+    savedOptions?.sort?.order,
+  )
+
   const [options, setOptions] = useState<NeedsBarChartOptions>(startingOptions)
+
   const setOptionPartial = (updateOption: NeedsOptionUpdater) => {
-    return setOption(needs, options, setOptions, updateOption)
+    return (value: string) => {
+      const newOptions = updateOption(needs, options, value)
+      url.searchParams.set(
+        'InteractiveNeedsBarChartOptions',
+        JSON.stringify(newOptions),
+      )
+      history.replaceState(null, '', url)
+      setOptions(newOptions)
+    }
   }
 
   const barProps = nivoProps.bar.horizontal
@@ -84,6 +137,7 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Search" margin={barProps.margin}>
           <TextInputControl
             label="Term"
+            value={options?.filters?.search}
             setValue={setOptionPartial(updateFilterSearchOption)}
           />
         </ControlSection>

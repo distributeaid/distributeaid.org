@@ -58,7 +58,6 @@ type SelectControlProps = {
   label: string
   values: string[]
   value?: string | undefined
-  defaultValue?: string | undefined
   setValue: (value: string) => void
 } & SelectProps
 
@@ -100,11 +99,13 @@ Input Control
 */
 type TextInputControlProps = {
   label: string
+  value?: string | undefined
   setValue: (value: string) => void
 }
 
 export const TextInputControl: FC<TextInputControlProps> = ({
   label,
+  value,
   setValue,
   ...props
 }) => {
@@ -114,6 +115,7 @@ export const TextInputControl: FC<TextInputControlProps> = ({
       <input
         className="w-64"
         type="text"
+        value={value}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           setValue(event.target.value)
         }}
