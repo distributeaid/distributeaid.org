@@ -28,3 +28,4 @@ By contributing to this project you agree to:
 - Frédéric Bonnet
 - Rabea Gleissner
 - Aksa
+- Lindsay Rainey
