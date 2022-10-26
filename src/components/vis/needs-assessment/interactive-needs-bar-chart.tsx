@@ -69,13 +69,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Display" margin={barProps.margin}>
           <SelectControl
             label="Index By"
-            values={getAxisIndexByOptions()}
+            values={getAxisIndexByOptions(needs, options)}
             value={options?.axis?.indexBy}
             setValue={setOptionPartial(updateAxisIndexByOption)}
           />
           <SelectControl
             label="Group By"
-            values={getAxisGroupByOptions()}
+            values={getAxisGroupByOptions(needs, options)}
             value={options?.axis?.groupBy}
             setValue={setOptionPartial(updateAxisGroupByOption)}
           />
@@ -91,14 +91,14 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Filter" margin={barProps.margin}>
           <SelectControl
             label="Survey"
-            values={getFilterQuarterOptions(needs)}
+            values={getFilterQuarterOptions(needs, options)}
             value={options?.filters?.quarter}
             setValue={setOptionPartial(updateFilterQuarterOption)}
             isClearable={true}
           />
           <SelectControl
             label="Region"
-            values={getFilterRegionOptions(needs)}
+            values={getFilterRegionOptions(needs, options)}
             value={options?.filters?.region}
             setValue={setOptionPartial(updateFilterRegionOption)}
             isClearable={true}
@@ -112,7 +112,7 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           />
           <SelectControl
             label="Category"
-            values={getFilterCategoryOptions(needs)}
+            values={getFilterCategoryOptions(needs, options)}
             value={options?.filters?.category}
             setValue={setOptionPartial(updateFilterCategoryOption)}
             isClearable={true}
@@ -129,13 +129,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Sort" margin={barProps.margin}>
           <SelectControl
             label="Sort&nbsp;By"
-            values={getSortByOptions()}
+            values={getSortByOptions(needs, options)}
             value={options.sort?.by}
             setValue={setOptionPartial(updateSortByOption)}
           />
           <SelectControl
             label="Order"
-            values={getSortOrderOptions()}
+            values={getSortOrderOptions(needs, options)}
             value={options.sort?.order}
             setValue={setOptionPartial(updateSortOrderOption)}
           />
