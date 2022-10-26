@@ -100,7 +100,8 @@ Input Control
 type TextInputControlProps = {
   label: string
   value?: string | undefined
-  setValue: (value: string) => void
+  setValue?: (value: string) => void
+  disabled?: boolean
 }
 
 export const TextInputControl: FC<TextInputControlProps> = ({
@@ -117,8 +118,9 @@ export const TextInputControl: FC<TextInputControlProps> = ({
         type="text"
         value={value}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setValue(event.target.value)
+          setValue && setValue(event.target.value)
         }}
+        {...props}
       />
     </div>
   )

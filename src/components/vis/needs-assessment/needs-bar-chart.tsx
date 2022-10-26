@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 import { Need } from '../../../types/need-types'
 
-import { buildNivoData, indexCounter } from '../nivo-helpers'
+import { buildNivoData, getTotalValue, indexCounter } from '../nivo-helpers'
 import { nivoProps } from '../nivo-theme'
 
 import { sort } from '../nivo-options-helpers'
@@ -18,10 +18,11 @@ import {
 
 type Props = {
   needs: Need[]
+  title?: string
   options?: NeedsBarChartOptions
 }
 
-export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
+export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
   const filteredNeeds = filter(needs, options?.filters)
   const needsByIndex = index(filteredNeeds, options?.axis?.indexBy)
   const keySelector = selectBy(options?.axis?.groupBy)
@@ -33,14 +34,34 @@ export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
   const height =
     barProps.margin.top + barProps.margin.bottom + 30 * indexCounter(sortedData)
 
+  const total = getTotalValue(sortedData)
+
+  console.log(barProps.margin)
+
   return (
     // docs: https://nivo.rocks/bar/
     <div
-      className="w-full"
+      className="w-full pt-8 border-t-2 mt-8"
       style={{
         height: `${height}px`,
       }}
     >
+      <header
+        className="prose mb-8"
+        style={{
+          marginLeft: barProps.margin.left,
+          marginRight: barProps.margin.right,
+        }}
+      >
+        <h1 className="mb-2 text-navy-800">{title}</h1>
+        <h3 className="mt-2 text-navy-700 flex items-center gap-2">
+          <span>Now showing</span>
+          <span className="text-3xl text-navy-600 font-normal">
+            {total.toLocaleString()}
+          </span>
+          <span>total known needs.</span>
+        </h3>
+      </header>
       <ResponsiveBar
         // base
         data={sortedData}
@@ -51,7 +72,7 @@ export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
           tickSize: 5,
           tickPadding: 5,
           format: (value: number) => `${Number(value).toLocaleString()}`,
-          legend: `Known Need (# Items)`,
+          legend: `# Items`,
           legendPosition: 'start',
           legendOffset: -40,
         }}
@@ -59,7 +80,7 @@ export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
           tickSize: 5,
           tickPadding: 5,
           format: (value: number) => `${Number(value).toLocaleString()}`,
-          legend: `Known Need (# Items)`,
+          legend: `# Items`,
           legendPosition: 'start',
           legendOffset: 40,
         }}
