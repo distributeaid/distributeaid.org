@@ -2,22 +2,7 @@ import { FC, useState } from 'react'
 
 import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
-import {
-  AxisOption,
-  NeedsBarChart,
-  NeedsBarChartOptions,
-  SortByOption,
-  SortOrderOption,
-} from './needs-bar-chart'
-import {
-  filterByCategory,
-  filterByRegion,
-  getCategories,
-  getItems,
-  getQuarters,
-  getRegions,
-  getSubregions,
-} from './needs-helpers'
+import { NeedsBarChart } from './needs-bar-chart'
 
 import {
   ControlSection,
@@ -26,9 +11,16 @@ import {
 } from '../vis-controls'
 
 import {
+  getAxisGroupByOptions,
+  getAxisIndexByOptions,
   getDefaultOptions,
-  OptionUpdater,
-  setOption,
+  getFilterCategoryOptions,
+  getFilterItemOptions,
+  getFilterQuarterOptions,
+  getFilterRegionOptions,
+  getFilterSubregionOptions,
+  NeedsBarChartOptions,
+  NeedsOptionUpdater,
   updateAxisGroupByOption,
   updateAxisIndexByOption,
   updateFilterCategoryOption,
@@ -37,18 +29,35 @@ import {
   updateFilterRegionOption,
   updateFilterSearchOption,
   updateFilterSubregionOption,
+} from './needs-options-helpers'
+
+import {
+  getSortByOptions,
+  getSortOrderOptions,
   updateSortByOption,
   updateSortOrderOption,
-} from './needs-options-helpers'
+} from '../nivo-options-helpers'
+
+const setOption = (
+  needs: Need[],
+  currentOptions: NeedsBarChartOptions,
+  setState: React.Dispatch<React.SetStateAction<NeedsBarChartOptions>>,
+  updateOption: NeedsOptionUpdater,
+): ((value: string) => void) => {
+  return (value) => {
+    const newOptions = updateOption(needs, currentOptions, value)
+    setState(newOptions)
+  }
+}
 
 type Props = {
   needs: Need[]
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const startingOptions: NeedsBarChartOptions = getDefaultOptions()
+  const startingOptions = getDefaultOptions()
   const [options, setOptions] = useState<NeedsBarChartOptions>(startingOptions)
-  const setOptionPartial = (updateOption: OptionUpdater) => {
+  const setOptionPartial = (updateOption: NeedsOptionUpdater) => {
     return setOption(needs, options, setOptions, updateOption)
   }
 
@@ -60,13 +69,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Display" margin={barProps.margin}>
           <SelectControl
             label="Index By"
-            values={Object.values(AxisOption)}
+            values={getAxisIndexByOptions()}
             value={options?.axis?.indexBy}
             setValue={setOptionPartial(updateAxisIndexByOption)}
           />
           <SelectControl
             label="Group By"
-            values={Object.values(AxisOption)}
+            values={getAxisGroupByOptions()}
             value={options?.axis?.groupBy}
             setValue={setOptionPartial(updateAxisGroupByOption)}
           />
@@ -82,43 +91,35 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Filter" margin={barProps.margin}>
           <SelectControl
             label="Survey"
-            values={getQuarters(needs)}
+            values={getFilterQuarterOptions(needs)}
             value={options?.filters?.quarter}
             setValue={setOptionPartial(updateFilterQuarterOption)}
             isClearable={true}
           />
           <SelectControl
             label="Region"
-            values={getRegions(needs)}
+            values={getFilterRegionOptions(needs)}
             value={options?.filters?.region}
             setValue={setOptionPartial(updateFilterRegionOption)}
             isClearable={true}
           />
           <SelectControl
             label="Subregion"
-            values={getSubregions(
-              options.filters?.region
-                ? filterByRegion(needs, options.filters.region)
-                : needs,
-            )}
+            values={getFilterSubregionOptions(needs, options)}
             value={options?.filters?.subregion}
             setValue={setOptionPartial(updateFilterSubregionOption)}
             isClearable={true}
           />
           <SelectControl
             label="Category"
-            values={getCategories(needs)}
+            values={getFilterCategoryOptions(needs)}
             value={options?.filters?.category}
             setValue={setOptionPartial(updateFilterCategoryOption)}
             isClearable={true}
           />
           <SelectControl
             label="Item"
-            values={getItems(
-              options.filters?.category
-                ? filterByCategory(needs, options.filters?.category)
-                : needs,
-            )}
+            values={getFilterItemOptions(needs, options)}
             value={options?.filters?.item}
             setValue={setOptionPartial(updateFilterItemOption)}
             isClearable={true}
@@ -128,13 +129,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         <ControlSection label="Sort" margin={barProps.margin}>
           <SelectControl
             label="Sort&nbsp;By"
-            values={Object.values(SortByOption)}
+            values={getSortByOptions()}
             value={options.sort?.by}
             setValue={setOptionPartial(updateSortByOption)}
           />
           <SelectControl
             label="Order"
-            values={Object.values(SortOrderOption)}
+            values={getSortOrderOptions()}
             value={options.sort?.order}
             setValue={setOptionPartial(updateSortOrderOption)}
           />

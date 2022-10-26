@@ -5,28 +5,32 @@ Selectors
 ================================================================================
 Select a comparable string representing some aspect of a need.
 */
-export type Selector = (need: Need) => string
+type KeySelector = (entry: Need) => string
 
-export const quarterSelector: Selector = ({ survey }) =>
+export const selectQuarter: KeySelector = ({ survey }) =>
   `${survey.year} ${survey.quarter}`
-export const regionSelector: Selector = ({ place }) =>
+export const selectRegion: KeySelector = ({ place }) =>
   place.region?.name || 'Other'
-export const subregionSelector: Selector = ({ place }) =>
+export const selectSubregion: KeySelector = ({ place }) =>
   place.subregion?.name || 'Other'
-export const categorySelector: Selector = ({ product }) => product.category
-export const itemSelector: Selector = ({ product }) =>
+export const selectCategory: KeySelector = ({ product }) => product.category
+export const selectItem: KeySelector = ({ product }) =>
   (product.ageGender ? `${product.ageGender} ` : '') +
   (product.sizeStyle ? `${product.sizeStyle} ` : '') +
   `${product.item}`
+
+type ValueSelector = (entry: Need) => number
+
+export const selectNeed: ValueSelector = ({ need }) => need
 
 /*
 Mapper
 ================================================================================
 Maps a list of needs to a unique list of selector strings.
 */
-export type Mapper = (needs: Need[]) => string[]
+type Mapper = (needs: Need[]) => string[]
 
-const mapBy = (selector: Selector, desc: boolean = false): Mapper => {
+const mapBy = (selector: KeySelector, desc: boolean = false): Mapper => {
   return (needs) => {
     const props = needs.map(selector)
     const uniqueProps = new Set(props)
@@ -39,11 +43,11 @@ const mapBy = (selector: Selector, desc: boolean = false): Mapper => {
   }
 }
 
-export const getQuarters = mapBy(quarterSelector, true)
-export const getRegions = mapBy(regionSelector)
-export const getSubregions = mapBy(subregionSelector)
-export const getCategories = mapBy(categorySelector)
-export const getItems = mapBy(itemSelector)
+export const getQuarters = mapBy(selectQuarter, true)
+export const getRegions = mapBy(selectRegion)
+export const getSubregions = mapBy(selectSubregion)
+export const getCategories = mapBy(selectCategory)
+export const getItems = mapBy(selectItem)
 
 /*
 Indexers
@@ -51,9 +55,10 @@ Indexers
 Group needs by a selector string.
 */
 export type Index = Record<string, Need[]>
+
 type Indexer = (needs: Need[]) => Index
 
-const indexBy = (selector: Selector): Indexer => {
+const indexBy = (selector: KeySelector): Indexer => {
   return (needs) => {
     const needsByIndex: Index = {}
     return needs.reduce((needsByIndex, need) => {
@@ -66,11 +71,11 @@ const indexBy = (selector: Selector): Indexer => {
   }
 }
 
-export const indexByQuarter = indexBy(quarterSelector)
-export const indexByRegion = indexBy(regionSelector)
-export const indexBySubregion = indexBy(subregionSelector)
-export const indexByCategory = indexBy(categorySelector)
-export const indexByItem = indexBy(itemSelector)
+export const indexByQuarter = indexBy(selectQuarter)
+export const indexByRegion = indexBy(selectRegion)
+export const indexBySubregion = indexBy(selectSubregion)
+export const indexByCategory = indexBy(selectCategory)
+export const indexByItem = indexBy(selectItem)
 
 /*
 Filters
@@ -80,9 +85,9 @@ Filters the needs by selector strings.
 Note that search acts as a filter against a partial case-insensitive match of
 any selector string.
 */
-export type Filter = (needs: Need[], term: string) => Need[]
+type Filter = (needs: Need[], term: string) => Need[]
 
-const filterBy = (selector: Selector): Filter => {
+const filterBy = (selector: KeySelector): Filter => {
   return (needs, term) => {
     return needs.filter((need) => {
       return term === selector(need)
@@ -90,20 +95,20 @@ const filterBy = (selector: Selector): Filter => {
   }
 }
 
-export const filterByQuarter = filterBy(quarterSelector)
-export const filterByRegion = filterBy(regionSelector)
-export const filterBySubregion = filterBy(subregionSelector)
-export const filterByCategory = filterBy(categorySelector)
-export const filterByItem = filterBy(itemSelector)
+export const filterByQuarter = filterBy(selectQuarter)
+export const filterByRegion = filterBy(selectRegion)
+export const filterBySubregion = filterBy(selectSubregion)
+export const filterByCategory = filterBy(selectCategory)
+export const filterByItem = filterBy(selectItem)
 
 export const filterBySearch: Filter = (needs, term) => {
   return needs.filter((need) => {
     const needString =
-      `${quarterSelector(need)} ` +
-      `${regionSelector(need)} ` +
-      `${subregionSelector(need)} ` +
-      `${categorySelector(need)} ` +
-      `${itemSelector(need)} `
+      `${selectQuarter(need)} ` +
+      `${selectRegion(need)} ` +
+      `${selectSubregion(need)} ` +
+      `${selectCategory(need)} ` +
+      `${selectItem(need)} `
     return needString.toLowerCase().includes(term.toLowerCase())
   })
 }
