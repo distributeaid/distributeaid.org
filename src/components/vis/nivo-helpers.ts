@@ -52,6 +52,12 @@ export const indexCounter = (data: BarDatum[]): number => {
   return bars.size
 }
 
+export const getTotalValue = (data: BarDatum[]): number => {
+  return data.reduce((total, datum) => {
+    return total + getIndexValue(datum)
+  }, 0)
+}
+
 /*
 Sort BarDatum[]
 ================================================================================
@@ -75,8 +81,8 @@ export const sortByLabel: Sorter = (data) => {
 
 export const sortByValue: Sorter = (data) => {
   return data.sort((a, b) => {
-    const aValue = getTotalValue(a)
-    const bValue = getTotalValue(b)
+    const aValue = getIndexValue(a)
+    const bValue = getIndexValue(b)
 
     if (aValue < bValue) {
       return 1
@@ -98,7 +104,7 @@ export const sortByRandom: Sorter = (data) => {
 Manipliate BarDatum
 ================================================================================
 */
-const getTotalValue = (datum: BarDatum): number => {
+const getIndexValue = (datum: BarDatum): number => {
   return Object.entries(datum).reduce((totalValue, [key, value]) => {
     if (key !== 'index' && typeof value === 'number') {
       return totalValue + value
