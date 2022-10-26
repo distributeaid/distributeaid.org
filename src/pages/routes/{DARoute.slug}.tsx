@@ -10,6 +10,7 @@ import TextWithVisual from '../../components/routes/TextWithVisual'
 import SimpleLayout from '../../layouts/Simple'
 
 import Delivery from '@components/routes/Delivery'
+import Frontline from '@components/routes/Frontline'
 import PhotoCredit from '@components/routes/PhotoCredit'
 import Reservations from '@components/routes/Reservations'
 import SectionTitle from '@components/routes/SectionTitle'
@@ -62,43 +63,7 @@ const Routes: FC<TemplateProps> = ({ data: { route } }) => (
       images={route.images}
       aidRequestFormUrl={route.aidRequestFormUrl}
     />
-    <TextWithVisual
-      id="frontline-groups"
-      positionOfVisual="right"
-      visual={
-        <RoutesSectionImage
-          ariaLabel="Mobile refugee support station with a few people gathering."
-          image={route.images.groupsSection}
-        />
-      }
-    >
-      <SectionTitle title="Frontline Groups" />
-      <div className="section__body mb-8">
-        <div className="flex flex-wrap gap-6 justify-center">
-          {route.frontlineGroups.map((group, index) => (
-            <div
-              className="w-full"
-              style={{ maxWidth: 160 }}
-              key={`group-${index}`}
-            >
-              {/* TODO size the images correctly */}
-              <img
-                className="icon icon--responsive mx-auto rounded-full"
-                src={group.logo}
-                alt={`Frontline Group Logo: ${group.name}`}
-                style={{ width: 120 }}
-              />
-              <div className="text-center text-sm mt-4">{group.name}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <PhotoCredit
-        url="https://www.facebook.com/MobileRefugeeSupport/posts/1492064960999110"
-        description="Mobile Refugee Support"
-      />
-    </TextWithVisual>
+    <Frontline images={route.images} frontlineGroups={route.frontlineGroups} />
 
     <TextWithVisual
       id="uk-staging-hubs"
