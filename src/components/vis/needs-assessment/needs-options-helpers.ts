@@ -114,7 +114,10 @@ export const updateFilterSearchOption: NeedsOptionUpdater = (
   }
 }
 
-export const getFilterQuarterOptions = (needs: Need[]): string[] => {
+export const getFilterQuarterOptions = (
+  needs: Need[],
+  options: NeedsBarChartOptions,
+): string[] => {
   return getQuarters(needs)
 }
 
@@ -132,7 +135,10 @@ export const updateFilterQuarterOption: NeedsOptionUpdater = (
   }
 }
 
-export const getFilterCategoryOptions = (needs: Need[]): string[] => {
+export const getFilterCategoryOptions = (
+  needs: Need[],
+  options: NeedsBarChartOptions,
+): string[] => {
   return getCategories(needs)
 }
 
@@ -175,7 +181,10 @@ export const updateFilterItemOption: NeedsOptionUpdater = (
   }
 }
 
-export const getFilterRegionOptions = (needs: Need[]): string[] => {
+export const getFilterRegionOptions = (
+  needs: Need[],
+  options: NeedsBarChartOptions,
+): string[] => {
   return getRegions(needs)
 }
 
@@ -275,7 +284,10 @@ export const valueBy = () => {
   return selectNeed
 }
 
-export const getAxisIndexByOptions = (): string[] => {
+export const getAxisIndexByOptions = (
+  needs: Need[],
+  options: NeedsBarChartOptions,
+): string[] => {
   return Object.values(AxisOption)
 }
 
@@ -293,7 +305,10 @@ export const updateAxisIndexByOption: NeedsOptionUpdater = (
   }
 }
 
-export const getAxisGroupByOptions = (): string[] => {
+export const getAxisGroupByOptions = (
+  needs: Need[],
+  options: NeedsBarChartOptions,
+): string[] => {
   return Object.values(AxisOption)
 }
 
