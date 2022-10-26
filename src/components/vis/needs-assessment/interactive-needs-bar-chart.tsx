@@ -5,6 +5,7 @@ import { nivoProps } from '../nivo-theme'
 import {
   AxisOption,
   NeedsBarChart,
+  NeedsBarChartOptions,
   SortByOption,
   SortOrderOption,
 } from './needs-bar-chart'
@@ -24,26 +25,32 @@ import {
   TextInputControl,
 } from '../vis-controls'
 
+import {
+  getDefaultOptions,
+  OptionUpdater,
+  setOption,
+  updateAxisGroupByOption,
+  updateAxisIndexByOption,
+  updateFilterCategoryOption,
+  updateFilterItemOption,
+  updateFilterQuarterOption,
+  updateFilterRegionOption,
+  updateFilterSearchOption,
+  updateFilterSubregionOption,
+  updateSortByOption,
+  updateSortOrderOption,
+} from './needs-options-helpers'
+
 type Props = {
   needs: Need[]
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
-  const [indexBy, setIndexBy] = useState<AxisOption>(AxisOption.Category)
-  const [groupBy, setGroupBy] = useState<AxisOption>(AxisOption.Region)
-
-  const [search, setSearch] = useState<string>('')
-
-  const [quarter, setQuarter] = useState<string>()
-  const [region, setRegion] = useState<string>()
-  const [subregion, setSubregion] = useState<string>()
-  const [category, setCategory] = useState<string>()
-  const [item, setItem] = useState<string>()
-
-  const [sortBy, setSortBy] = useState<SortByOption>(SortByOption.Label)
-  const [sortOrder, setSortOrder] = useState<SortOrderOption>(
-    SortOrderOption.Asc,
-  )
+  const startingOptions: NeedsBarChartOptions = getDefaultOptions()
+  const [options, setOptions] = useState<NeedsBarChartOptions>(startingOptions)
+  const setOptionPartial = (updateOption: OptionUpdater) => {
+    return setOption(needs, options, setOptions, updateOption)
+  }
 
   const barProps = nivoProps.bar.horizontal
 
@@ -54,68 +61,66 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           <SelectControl
             label="Index By"
             values={Object.values(AxisOption)}
-            defaultValue={indexBy}
-            setValue={(value: string) => {
-              setIndexBy(value as AxisOption)
-            }}
+            value={options?.axis?.indexBy}
+            setValue={setOptionPartial(updateAxisIndexByOption)}
           />
           <SelectControl
             label="Group By"
             values={Object.values(AxisOption)}
-            defaultValue={groupBy}
-            setValue={(value: string) => {
-              setGroupBy(value as AxisOption)
-            }}
+            value={options?.axis?.groupBy}
+            setValue={setOptionPartial(updateAxisGroupByOption)}
           />
         </ControlSection>
 
         <ControlSection label="Search" margin={barProps.margin}>
-          <TextInputControl label="Term" setValue={setSearch} />
+          <TextInputControl
+            label="Term"
+            setValue={setOptionPartial(updateFilterSearchOption)}
+          />
         </ControlSection>
 
         <ControlSection label="Filter" margin={barProps.margin}>
           <SelectControl
             label="Survey"
             values={getQuarters(needs)}
-            setValue={setQuarter}
+            value={options?.filters?.quarter}
+            setValue={setOptionPartial(updateFilterQuarterOption)}
             isClearable={true}
           />
           <SelectControl
             label="Region"
             values={getRegions(needs)}
-            setValue={(value: string) => {
-              setRegion(value)
-
-              if (
-                value &&
-                subregion &&
-                !getSubregions(filterByRegion(needs, value)).includes(subregion)
-              ) {
-                setSubregion(undefined)
-              }
-            }}
+            value={options?.filters?.region}
+            setValue={setOptionPartial(updateFilterRegionOption)}
             isClearable={true}
           />
           <SelectControl
             label="Subregion"
             values={getSubregions(
-              region ? filterByRegion(needs, region) : needs,
+              options.filters?.region
+                ? filterByRegion(needs, options.filters.region)
+                : needs,
             )}
-            setValue={setSubregion}
+            value={options?.filters?.subregion}
+            setValue={setOptionPartial(updateFilterSubregionOption)}
             isClearable={true}
           />
           <SelectControl
             label="Category"
             values={getCategories(needs)}
-            setValue={setCategory}
+            value={options?.filters?.category}
+            setValue={setOptionPartial(updateFilterCategoryOption)}
             isClearable={true}
           />
           <SelectControl
             label="Item"
             values={getItems(
-              category ? filterByCategory(needs, category) : needs,
+              options.filters?.category
+                ? filterByCategory(needs, options.filters?.category)
+                : needs,
             )}
-            setValue={setItem}
+            value={options?.filters?.item}
+            setValue={setOptionPartial(updateFilterItemOption)}
             isClearable={true}
           />
         </ControlSection>
@@ -124,43 +129,19 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           <SelectControl
             label="Sort&nbsp;By"
             values={Object.values(SortByOption)}
-            defaultValue={sortBy}
-            setValue={(value: string) => {
-              setSortBy(value as SortByOption)
-            }}
+            value={options.sort?.by}
+            setValue={setOptionPartial(updateSortByOption)}
           />
           <SelectControl
             label="Order"
             values={Object.values(SortOrderOption)}
-            defaultValue={sortOrder}
-            setValue={(value: string) => {
-              setSortOrder(value as SortOrderOption)
-            }}
+            value={options.sort?.order}
+            setValue={setOptionPartial(updateSortOrderOption)}
           />
         </ControlSection>
       </form>
 
-      <NeedsBarChart
-        needs={needs}
-        options={{
-          axis: {
-            indexBy,
-            groupBy,
-          },
-          filters: {
-            search,
-            quarter,
-            region,
-            subregion,
-            category,
-            item,
-          },
-          sort: {
-            by: sortBy,
-            order: sortOrder,
-          },
-        }}
-      />
+      <NeedsBarChart needs={needs} options={options} />
     </div>
   )
 }

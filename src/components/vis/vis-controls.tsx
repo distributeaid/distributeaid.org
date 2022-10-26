@@ -57,6 +57,7 @@ type SelectOption = {
 type SelectControlProps = {
   label: string
   values: string[]
+  value?: string | undefined
   defaultValue?: string | undefined
   setValue: (value: string) => void
 } & SelectProps
@@ -64,7 +65,7 @@ type SelectControlProps = {
 export const SelectControl: FC<SelectControlProps> = ({
   label,
   values,
-  defaultValue,
+  value,
   setValue,
   ...props
 }) => {
@@ -74,9 +75,7 @@ export const SelectControl: FC<SelectControlProps> = ({
       label: value,
     }
   })
-  const defaultOption = defaultValue
-    ? { value: defaultValue, label: defaultValue }
-    : null
+  const valueOption = value ? { value: value, label: value } : null
 
   return (
     <div className="flex items-center">
@@ -84,7 +83,7 @@ export const SelectControl: FC<SelectControlProps> = ({
       <Select
         className="w-64 react-select"
         options={options}
-        defaultValue={defaultOption}
+        value={valueOption}
         onChange={(untypedOption: any, actionMeta) => {
           const option = untypedOption as SelectOption
           setValue(option?.value)

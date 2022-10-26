@@ -210,10 +210,10 @@ Needs Bar Chart
 */
 type Props = {
   needs: Need[]
-  options?: Options
+  options?: NeedsBarChartOptions
 }
 
-type Options = {
+export type NeedsBarChartOptions = {
   axis?: Axis
   filters?: Filters
   sort?: Sort
