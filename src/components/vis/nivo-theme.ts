@@ -116,7 +116,7 @@ export const nivoProps = {
       layout: 'horizontal' as const,
       padding: 0.25,
       innerPadding: 1,
-      margin: { top: 120, right: 100, bottom: 60, left: 250 },
+      margin: { top: 60, right: 100, bottom: 60, left: 250 },
       valueFormat: (value: number) => `${Number(value).toLocaleString()}`,
       //style
       theme: theme,
@@ -142,31 +142,6 @@ export const nivoProps = {
         tickSize: 5,
         tickPadding: 5,
       },
-      // legends
-      legends: [
-        {
-          dataFrom: 'keys' as const,
-          toggleSerie: true,
-          anchor: 'top-left' as const,
-          direction: 'row' as const,
-          translateX: 0,
-          translateY: -100,
-          itemsSpacing: 2,
-          itemWidth: 175,
-          itemHeight: 20,
-          itemDirection: 'left-to-right' as const,
-          itemOpacity: 0.8,
-          symbolSize: 20,
-          effects: [
-            {
-              on: 'hover' as const,
-              style: {
-                itemOpacity: 1,
-              },
-            },
-          ],
-        },
-      ],
     },
   },
 }

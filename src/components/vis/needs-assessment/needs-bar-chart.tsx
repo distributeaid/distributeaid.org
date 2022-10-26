@@ -31,12 +31,10 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
   const sortedData = sort(data, options?.sort)
 
   const barProps = nivoProps.bar.horizontal
-  const height =
-    barProps.margin.top + barProps.margin.bottom + 30 * indexCounter(sortedData)
+  const indexCount = indexCounter(sortedData)
+  const height = barProps.margin.top + barProps.margin.bottom + 40 * indexCount
 
   const total = getTotalValue(sortedData)
-
-  console.log(barProps.margin)
 
   return (
     // docs: https://nivo.rocks/bar/
@@ -47,7 +45,7 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
       }}
     >
       <header
-        className="prose mb-8"
+        className="prose mb-2"
         style={{
           marginLeft: barProps.margin.left,
           marginRight: barProps.margin.right,
@@ -76,14 +74,18 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
           legendPosition: 'start',
           legendOffset: -40,
         }}
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          format: (value: number) => `${Number(value).toLocaleString()}`,
-          legend: `# Items`,
-          legendPosition: 'start',
-          legendOffset: 40,
-        }}
+        axisBottom={
+          indexCount <= 9
+            ? {}
+            : {
+                tickSize: 5,
+                tickPadding: 5,
+                format: (value: number) => `${Number(value).toLocaleString()}`,
+                legend: `# Items`,
+                legendPosition: 'start',
+                legendOffset: 40,
+              }
+        }
       />
     </div>
   )
