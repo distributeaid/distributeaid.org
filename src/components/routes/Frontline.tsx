@@ -27,7 +27,7 @@ const Frontline: FC<FrontlineProps> = ({ images, frontlineGroups }) => {
         <div className="flex flex-wrap gap-6 justify-center">
           {frontlineGroups.map((group, index) => (
             <div
-              className="w-full"
+              className="w-full drop-shadow-md"
               style={{ maxWidth: 160 }}
               key={`group-${index}`}
             >
