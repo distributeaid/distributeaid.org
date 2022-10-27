@@ -27,3 +27,4 @@ By contributing to this project you agree to:
 - Emily Reed
 - Frédéric Bonnet
 - Rabea Gleissner
+- Aksa
