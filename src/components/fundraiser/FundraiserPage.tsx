@@ -26,34 +26,56 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
       className={'donate breakout'}
       footer={<Footer showDonateButton={false} />}
     >
-      <article>
-        <header className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-semibold my-16">{fundraiser.title}</h1>
-        </header>
-        <aside className="gallery max-w-5xl mx-auto">
-          <Gallery photos={fundraiser.gallery} />
-        </aside>
-        <section className="max-w-5xl mx-auto">
-          <MarkdownContent content={fundraiser.body} />
-        </section>
-        <aside className="bg-gray-100 mt-16">
-          <FundraiserProgress
-            currency="EUR"
-            raisedTitle="Allocated funds so far"
-            raised={(fundraiser.allocations ?? []).reduce(
-              (total, { amountEUR }) => total + amountEUR,
-              0,
-            )}
-          />
-        </aside>
-        <aside className="bg-gray-50">
-          <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
-            <h2 className="text-center text-gray-800 text-3xl font-medium mb-20">
-              Support Distribute Aid to help more people in need:
-            </h2>
-            <WaysToDonate />
-          </div>
-        </aside>
+      <article className="flex flex-row bg-navy-800">
+        <div className="flex flex-col w-1/2">
+          <header className="bg-white p-8">
+            <div className="prose">
+              <h1>
+                {fundraiser.title.split(' ').map((word) => (
+                  <>
+                    {word}
+                    <br />
+                  </>
+                ))}
+              </h1>
+            </div>
+          </header>
+          <section className="bg-navy-100 p-8">
+            <div className="prose">
+              <MarkdownContent content={fundraiser.body} />
+            </div>
+          </section>
+        </div>
+
+        <div className="flex flex-col w-1/2">
+          {fundraiser.gallery[1] && (
+            <aside>
+              <GatsbyImage
+                className="w-full object-fill"
+                alt={fundraiser.gallery[1].alt}
+                image={fundraiser.gallery[1].gatsbyImageData}
+              />
+            </aside>
+          )}
+          {/*
+          <aside className="gallery">
+            <Gallery photos={fundraiser.gallery} />
+          </aside>
+*/}
+          <aside className="px-8 py-16 bg-navy-700">
+            <FundraiserProgress
+              currency="EUR"
+              raisedTitle={fundraiser.title}
+              raised={66}
+              goal={99}
+            />
+          </aside>
+          <aside className="bg-white p-8">
+            <div className="prose">
+              <WaysToDonate />
+            </div>
+          </aside>
+        </div>
       </article>
     </SimpleLayout>
   )

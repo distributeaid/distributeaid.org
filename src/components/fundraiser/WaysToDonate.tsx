@@ -13,7 +13,7 @@ const cardClasses = 'p-4 flex flex-col items-center space-y-4'
 export const WaysToDonate = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
-    <div className="md:grid md:space-y-0 space-y-8 grid-flow-col grid-cols-3 max-w-5xl mx-auto">
+    <div className="prose md:grid md:space-y-0 space-y-8 grid-flow-col grid-cols-3 max-w-5xl mx-auto">
       <div className={cardClasses} data-test="paypal">
         <ExternalLink
           className="link py-2"

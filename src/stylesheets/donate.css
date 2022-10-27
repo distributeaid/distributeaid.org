@@ -163,6 +163,7 @@ main.donate .fundraisers .card a.title h2 {
 }
 
 /** Breakout pages **/
+/*
 main.donate.breakout .gallery {
   width: 100%;
   aspect-ratio: 3/2;
@@ -174,10 +175,4 @@ main.donate.breakout .gallery {
 main.donate.breakout .gallery .gatsby-image-wrapper {
   width: 100%;
 }
-
-main.donate.breakout .progress {
-  text-align: center;
-  font-weight: 900;
-  padding: 2rem;
-  font-size: 200%;
-}
+*/
