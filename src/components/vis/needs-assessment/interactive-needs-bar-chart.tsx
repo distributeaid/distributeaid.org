@@ -4,7 +4,7 @@ import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
 import { NeedsBarChart, sortOptions } from './needs-bar-chart'
 
-import { ControlSection, SelectControl } from '../vis-controls'
+import { ControlSection, InputControl, SelectControl } from '../vis-controls'
 
 type Props = {
   needs: Need[]
@@ -41,6 +41,7 @@ const getCategories = (needs: Need[]): string[] => {
 }
 
 export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
+  const [search, setSearch] = useState<string>('')
   const [quarter, setQuarter] = useState<string | null>(null)
   const [region, setRegion] = useState<string | null>(null)
   const [category, setCategory] = useState<string | null>(null)
@@ -54,7 +55,11 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
   return (
     <div>
       <form className="flex flex-col gap-10 prose max-w-none">
-        <ControlSection label="Filters" margin={barProps.margin}>
+        <ControlSection label="Search" margin={barProps.margin}>
+          <InputControl label="Term" setValue={setSearch} />
+        </ControlSection>
+
+        <ControlSection label="Filter" margin={barProps.margin}>
           <SelectControl
             label="Survey"
             values={getQuarters(needs)}
@@ -95,6 +100,7 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         needs={needs}
         options={{
           filters: {
+            search: search || undefined,
             quarter: quarter || undefined,
             region: region || undefined,
             category: category || undefined,

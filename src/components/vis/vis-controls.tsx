@@ -74,7 +74,7 @@ export const SelectControl: FC<SelectControlProps> = ({
     <div className="flex items-center">
       <label className="w-20 mr-2 text-right">{label}:</label>
       <Select
-        className="w-64"
+        className="w-64 react-select"
         options={options}
         defaultValue={defaultOption}
         onChange={(untypedOption: any, actionMeta) => {
@@ -82,6 +82,30 @@ export const SelectControl: FC<SelectControlProps> = ({
           setValue(option?.value || null)
         }}
         {...props}
+      />
+    </div>
+  )
+}
+
+type InputControlProps = {
+  label: string
+  setValue: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const InputControl: FC<InputControlProps> = ({
+  label,
+  setValue,
+  ...props
+}) => {
+  return (
+    <div className="flex items-center">
+      <label className="w-20 mr-2 text-right">{label}:</label>
+      <input
+        className="w-64"
+        type="text"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          setValue(event.target.value)
+        }}
       />
     </div>
   )
