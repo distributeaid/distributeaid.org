@@ -11,12 +11,7 @@ export type Route = {
   aidRequestFormUrl: string
   population: number
   images: RouteImages
-  costs: {
-    currency: string
-    standardPaletteCost: number
-    overflowPricing: number
-    halfPaletteCost: number
-  }
+  costs: RouteCosts
   deadlines: RouteDeadlines
   frontlineGroups: RouteFrontlineGroup[]
 }
@@ -40,4 +35,11 @@ export type RouteDeadlines = {
   stagingBegins: string
   stagingEnds: string
   shipmentDeparture: string
+}
+
+export type RouteCosts = {
+  currency: string
+  standardPaletteCost: number
+  overflowPricing: number
+  halfPaletteCost: number
 }
