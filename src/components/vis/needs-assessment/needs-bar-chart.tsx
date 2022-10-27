@@ -4,9 +4,16 @@ import { Need } from '../../../types/need-types'
 
 import { nivoProps } from '../nivo-theme'
 
+type Filters = {
+  region: string | undefined
+  category: string | undefined
+}
+
 type Props = {
   needs: Need[]
-  category: string
+  options: {
+    filters?: Filters
+  }
 }
 
 // # needs by item, key'd by subregion
@@ -73,9 +80,18 @@ const buildNivoData = (
   }
 }
 
-const filter = (needs: Need[], category: string) => {
+const filter = (needs: Need[], filters?: Filters) => {
+  if (filters === undefined) {
+    return needs
+  }
+
   return needs.filter((need) => {
-    return need.product.category === category
+    const regionMatch =
+      !filters.region || filters.region === need.place.region?.name
+    const categoryMatch =
+      !filters.category || filters.category === need.product.category
+
+    return regionMatch && categoryMatch
   })
 }
 
@@ -87,10 +103,12 @@ const total = (needs: Need[]) => {
   return Math.floor(total)
 }
 
-export const NeedsBarChart: FC<Props> = ({ needs, category }) => {
-  const filteredNeeds = filter(needs, category)
+export const NeedsBarChart: FC<Props> = ({ needs, options }) => {
+  const barProps = nivoProps.bar.horizontal
+  const filteredNeeds = filter(needs, options.filters)
   const totalNeed = total(filteredNeeds)
-  const height = filteredNeeds.length * 18
+  const height =
+    filteredNeeds.length * 20 + barProps.margin.top + barProps.margin.bottom
   const dataProps = buildNivoData(filteredNeeds)
 
   return (
@@ -104,7 +122,7 @@ export const NeedsBarChart: FC<Props> = ({ needs, category }) => {
       <ResponsiveBar
         // base
         {...dataProps}
-        {...nivoProps.bar.horizontal}
+        {...barProps}
         axisTop={{
           tickSize: 5,
           tickPadding: 5,
