@@ -6,6 +6,7 @@
 @import './burger.css';
 @import './routes.css';
 @import './timeline.css';
+@import './react-select.css';
 
 .team-page-container {
   width: 70%;

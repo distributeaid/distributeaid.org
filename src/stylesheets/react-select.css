@@ -1,0 +1,8 @@
+/*
+Override @tailwindcss/forms styles to ensure compatibility with react-select.
+NOTE: requires "react-select" to be a classname.
+<Select className="react-select ..." />
+*/
+.react-select input:focus {
+  box-shadow: 0 0 0 #0000;
+}

@@ -5,22 +5,23 @@ import { Need } from '../../../types/need-types'
 import { nivoProps } from '../nivo-theme'
 
 type Filters = {
-  quarter: string | undefined
-  region: string | undefined
-  category: string | undefined
+  search?: string | undefined
+  quarter?: string | undefined
+  region?: string | undefined
+  category?: string | undefined
 }
 
 type Sort = {
-  by: string | undefined
-  order: string | undefined
+  by?: string | undefined
+  order?: string | undefined
 }
 
 type Props = {
   needs: Need[]
-  options:
+  options?:
     | {
-        filters: Filters | undefined
-        sort: Sort | undefined
+        filters?: Filters | undefined
+        sort?: Sort | undefined
       }
     | undefined
 }
@@ -70,19 +71,6 @@ const buildNivoData = (
     data.push(datum)
   }
 
-  data.sort((a, b) => {
-    const aLabel = a[indexBy] as string
-    const bLabel = b[indexBy] as string
-
-    if (aLabel > bLabel) {
-      return -1
-    }
-    if (aLabel < bLabel) {
-      return 1
-    }
-    return 0
-  })
-
   return {
     data,
     indexBy,
@@ -96,6 +84,11 @@ const filter = (needs: Need[], filters?: Filters) => {
   }
 
   return needs.filter((need) => {
+    const needString = `${need.need} ${need.product.item} ${need.product.ageGender} ${need.product.sizeStyle} ${need.product.item} ${need.place.subregion}`
+    const searchMatch =
+      !filters.search ||
+      needString.toLowerCase().includes(filters.search.toLowerCase())
+
     const quarterMatch =
       !filters.quarter ||
       filters.quarter === `${need.survey.year} ${need.survey.quarter}`
@@ -108,7 +101,7 @@ const filter = (needs: Need[], filters?: Filters) => {
     const categoryMatch =
       !filters.category || filters.category === need.product.category
 
-    return quarterMatch && regionMatch && categoryMatch
+    return searchMatch && quarterMatch && regionMatch && categoryMatch
   })
 }
 
