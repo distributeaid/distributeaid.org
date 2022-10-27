@@ -1,11 +1,11 @@
 import Footer from '@components/Footer'
-import { Fundraiser, Photo } from '@components/fundraiser/Fundraiser'
-import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
+import { Fundraiser } from '@components/fundraiser/Fundraiser'
+import { FundraiserProgressBar } from '@components/fundraiser/FundraiserProgressBar'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import '../../stylesheets/donate.css'
 import { WaysToDonate } from './WaysToDonate'
 
@@ -63,7 +63,7 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
           </aside>
 */}
           <aside className="px-8 py-16 bg-navy-700">
-            <FundraiserProgress
+            <FundraiserProgressBar
               currency="EUR"
               raisedTitle={fundraiser.title}
               raised={66}
@@ -81,26 +81,26 @@ export const FundraiserPage: FC<{ pageContext: Fundraiser }> = ({
   )
 }
 
-const Gallery: FC<{ photos: Photo[] }> = ({ photos }) => {
-  const [current, setCurrent] = useState<string | undefined>(photos[0]?.url)
+// const Gallery: FC<{ photos: Photo[] }> = ({ photos }) => {
+//   const [current, setCurrent] = useState<string | undefined>(photos[0]?.url)
 
-  useEffect(() => {
-    if (photos.length === 0) return
-    if (current === undefined) return
-    const i = setInterval(() => {
-      const currentPhoto = photos.find(({ url }) => url === current)
-      if (currentPhoto === undefined) return
-      const index = photos.indexOf(currentPhoto)
-      setCurrent((photos[index + 1] ?? photos[0])?.url)
-    }, 5000)
-    return () => {
-      clearInterval(i)
-    }
-  }, [photos, current])
+//   useEffect(() => {
+//     if (photos.length === 0) return
+//     if (current === undefined) return
+//     const i = setInterval(() => {
+//       const currentPhoto = photos.find(({ url }) => url === current)
+//       if (currentPhoto === undefined) return
+//       const index = photos.indexOf(currentPhoto)
+//       setCurrent((photos[index + 1] ?? photos[0])?.url)
+//     }, 5000)
+//     return () => {
+//       clearInterval(i)
+//     }
+//   }, [photos, current])
 
-  const photo = photos.find(({ url }) => url === current)
+//   const photo = photos.find(({ url }) => url === current)
 
-  if (photo === undefined) return null
+//   if (photo === undefined) return null
 
-  return <GatsbyImage alt={photo.alt} image={photo.gatsbyImageData} />
-}
+//   return <GatsbyImage alt={photo.alt} image={photo.gatsbyImageData} />
+// }

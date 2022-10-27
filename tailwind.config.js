@@ -1,6 +1,6 @@
 // @ts-check
 
-const colors = require('tailwindcss/colors')
+// const colors = require('tailwindcss/colors')
 
 // helpers for @tailwindcss/typography styles
 // see: https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
@@ -12,7 +12,7 @@ const round = (num) =>
     .replace(/\.0$/, '')
 
 /** @type {(px: number) => string} */
-const rem = (px) => `${round(px / 16)}rem`
+// const rem = (px) => `${round(px / 16)}rem`
 
 /** @type {(px: number, base: number) => string} */
 const em = (px, base) => `${round(px / base)}em`
