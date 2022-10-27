@@ -116,7 +116,7 @@ export const nivoProps = {
       layout: 'horizontal' as const,
       padding: 0.25,
       innerPadding: 1,
-      margin: { top: 80, right: 100, bottom: 40, left: 250 },
+      margin: { top: 120, right: 100, bottom: 40, left: 250 },
       valueFormat: (value: number) => `${Number(value).toLocaleString()}`,
       //style
       theme: theme,
@@ -147,10 +147,10 @@ export const nivoProps = {
         {
           dataFrom: 'keys' as const,
           toggleSerie: true,
-          anchor: 'top-right' as const,
+          anchor: 'top-left' as const,
           direction: 'row' as const,
           translateX: 0,
-          translateY: -60,
+          translateY: -100,
           itemsSpacing: 2,
           itemWidth: 175,
           itemHeight: 20,

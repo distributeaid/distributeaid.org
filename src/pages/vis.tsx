@@ -20,8 +20,8 @@ const LineItemTable = React.lazy(
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
-const NeedsBarChart = React.lazy(
-  () => import('@components/vis/needs-assessment/needs-bar-chart'),
+const InteractiveNeedsBarChart = React.lazy(
+  () => import('@components/vis/needs-assessment/interactive-needs-bar-chart'),
 )
 
 type Shipment = {
@@ -84,7 +84,7 @@ const RegionsPage: FC<Props> = ({
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
           </section>
           <section className="col-span-3 border-2 border-navy-500">
-            <NeedsBarChart needs={needs.nodes} category="Hygiene" />
+            <InteractiveNeedsBarChart needs={needs.nodes} />
           </section>
           <section>
             <LineItemTable lineItems={lineItems} />
@@ -131,7 +131,6 @@ export const pageQuery = graphql`
     needs: allDaNeed(
       filter: {
         survey: { year: { eq: "2022" }, quarter: { eq: "q3" } }
-        place: { region: { name: { eq: "Greece" } } }
         product: { unit: { nin: "Wash Cycle" } }
         need: { gt: 0 }
       }
