@@ -1,0 +1,612 @@
+[
+  {
+    "need": 75,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "Cloth",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "N95 / FFP2",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 2100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Soap",
+      "sizeStyle": "Bar",
+      "unit": "100g"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 545,
+    "product": { "category": "Hygiene", "item": "Shampoo", "unit": "250ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 245,
+    "product": { "category": "Hygiene", "item": "Toothbrush", "unit": "Item" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 625,
+    "product": { "category": "Hygiene", "item": "Toothpaste", "unit": "100ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Sanitary Pad",
+      "sizeStyle": "Reusable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Sanitary Pad",
+      "sizeStyle": "Disposable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 725,
+    "product": { "category": "Hygiene", "item": "Deodorant", "unit": "100ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 20,
+    "product": {
+      "category": "Hygiene",
+      "item": "Washing Detergent",
+      "sizeStyle": "Powder",
+      "unit": "5kg"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 2100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "Surgical",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 525,
+    "product": {
+      "category": "Hygiene",
+      "item": "Soap",
+      "sizeStyle": "Liquid",
+      "unit": "250ml"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 225,
+    "product": {
+      "category": "Hygiene",
+      "item": "Razor",
+      "sizeStyle": "Disposable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 250,
+    "product": { "category": "Hygiene", "item": "Condom", "unit": "Item" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 25,
+    "product": {
+      "category": "Hygiene",
+      "item": "Bleach",
+      "sizeStyle": "Liquid",
+      "unit": "1l"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Southern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 5527,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "N95 / FFP2",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 8500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Soap",
+      "sizeStyle": "Bar",
+      "unit": "100g"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 7700,
+    "product": {
+      "category": "Hygiene",
+      "item": "Soap",
+      "sizeStyle": "Liquid",
+      "unit": "250ml"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 9980,
+    "product": { "category": "Hygiene", "item": "Shampoo", "unit": "250ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 5800,
+    "product": { "category": "Hygiene", "item": "Toothbrush", "unit": "Item" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 7800,
+    "product": { "category": "Hygiene", "item": "Toothpaste", "unit": "100ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 5700,
+    "product": {
+      "category": "Hygiene",
+      "item": "Sanitary Pad",
+      "sizeStyle": "Disposable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 3060,
+    "product": {
+      "category": "Hygiene",
+      "item": "Washing Detergent",
+      "sizeStyle": "Liquid",
+      "unit": "1l"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 10500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "Surgical",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 3300,
+    "product": { "category": "Hygiene", "item": "Deodorant", "unit": "100ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1250,
+    "product": {
+      "category": "Hygiene",
+      "item": "Razor",
+      "sizeStyle": "Disposable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1050,
+    "product": {
+      "category": "Hygiene",
+      "item": "Shaving Foam",
+      "unit": "200ml"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 5000,
+    "product": { "category": "Hygiene", "item": "Condom", "unit": "Item" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 100,
+    "product": {
+      "category": "Hygiene",
+      "item": "Diaper",
+      "ageGender": "Adult",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "Cloth",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1000,
+    "product": {
+      "category": "Hygiene",
+      "item": "Sanitary Pad",
+      "sizeStyle": "Reusable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Bleach",
+      "sizeStyle": "Liquid",
+      "unit": "1l"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Northern Greece" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Mask",
+      "sizeStyle": "N95 / FFP2",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Aegean Islands" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 10,
+    "product": {
+      "category": "Hygiene",
+      "item": "Washing Detergent",
+      "sizeStyle": "Liquid",
+      "unit": "1l"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Aegean Islands" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 5,
+    "product": {
+      "category": "Hygiene",
+      "item": "Bleach",
+      "sizeStyle": "Liquid",
+      "unit": "1l"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Aegean Islands" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1000,
+    "product": { "category": "Hygiene", "item": "Shampoo", "unit": "250ml" },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Aegean Islands" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  },
+  {
+    "need": 1500,
+    "product": {
+      "category": "Hygiene",
+      "item": "Razor",
+      "sizeStyle": "Disposable",
+      "unit": "Item"
+    },
+    "place": {
+      "region": { "name": "Greece" },
+      "subregion": { "name": "Aegean Islands" }
+    },
+    "survey": {
+      "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+      "year": "2022",
+      "quarter": "Q2"
+    }
+  }
+]
