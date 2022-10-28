@@ -11,13 +11,6 @@ fields:
     max: 64
   label: Region Name
   default: ''
-- name: map
-  type: file
-  config:
-    maxSize: 2
-  label: Map
-  description: A photo of a map for the region.  Should be at least 512x512, and in
-    square dimensions.
 - name: overview
   type: textarea
   default: ''
@@ -28,6 +21,13 @@ fields:
       format: markdown
   label: Overview
   description: An overview of the humanitarian situation in this region.
+- name: map
+  type: file
+  config:
+    maxSize: 2
+  label: Map
+  description: A photo of a map for the region.  Should be at least 512x512, and in
+    square dimensions.
 - name: governmentResponse
   type: textarea
   default: ''
