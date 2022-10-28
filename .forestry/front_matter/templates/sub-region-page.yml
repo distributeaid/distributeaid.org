@@ -20,6 +20,15 @@ fields:
       format: markdown
   label: Overview
   description: An overview of the humanitarian situation in this sub-region.
+- name: governmentResponse
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Government Response
 - name: map
   type: file
   config:
