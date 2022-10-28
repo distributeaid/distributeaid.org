@@ -36,7 +36,7 @@ const ReservationInstruction = ({
     <li>
       <h3 className="text-lg font-semibold mb-4">{subHeading}</h3>
       {children}
-      <p>{deadline}</p>
+      <p className="-ml-4">{deadline}</p>
     </li>
   )
 }
@@ -58,16 +58,16 @@ const Reservations: FC<ReservationsProps> = ({
       }
     >
       <SectionTitle title="Reserve Your Spot!" />
-      <div className="mb-4">
-        <ol className="space-y-8">
+      <div className="mb-4 ml-4">
+        <ol className="list-decimal space-y-8 marker:text-lg marker:font-semibold">
           <ReservationInstruction
-            subHeading="1. Submit Your Aid Delivery Request"
+            subHeading="Submit Your Aid Delivery Request"
             deadline={`Submissions close: ${formatDate(
               deadlines.submissionsDeadline,
             )}`}
           >
             <>
-              <p className="mb-4">
+              <p className="mb-4 -ml-4">
                 Download the{' '}
                 <a
                   className="font-bold underline"
@@ -79,7 +79,7 @@ const Reservations: FC<ReservationsProps> = ({
                 </a>{' '}
                 and fill it in.
               </p>
-              <p className="mb-4">
+              <p className="mb-4 -ml-4">
                 Email the completed form to{' '}
                 <a
                   className="font-bold underline"
@@ -95,12 +95,12 @@ const Reservations: FC<ReservationsProps> = ({
             </>
           </ReservationInstruction>
           <ReservationInstruction
-            subHeading="2. Consult Frontline Groups"
+            subHeading="Consult Frontline Groups"
             deadline={`Latest confirmation date: ${formatDate(
               deadlines.confirmationDate,
             )}`}
           >
-            <p className="mb-4">
+            <p className="mb-4 -ml-4">
               We'll check in with the frontline groups during the offer period,
               to confirm which offered donations they want and to prioritise
               deliveries that meet their biggest needs. Then we can confirm if
@@ -108,12 +108,12 @@ const Reservations: FC<ReservationsProps> = ({
             </p>
           </ReservationInstruction>
           <ReservationInstruction
-            subHeading="3. Drop Off @ Staging Hubs"
+            subHeading="Drop Off @ Staging Hubs"
             deadline={`Staging period: ${formatDate(
               deadlines.stagingBegins,
             )} - ${formatDate(deadlines.stagingEnds)}`}
           >
-            <p className="mb-4">
+            <p className="mb-4 -ml-4">
               Schedule a drop-off appointment with your local Staging Hub, pay
               them the flat-rate{' '}
               <a href="#storage-and-shipping-charge">
@@ -123,12 +123,12 @@ const Reservations: FC<ReservationsProps> = ({
             </p>
           </ReservationInstruction>
           <ReservationInstruction
-            subHeading="4. Deliver The Aid"
+            subHeading="Deliver The Aid"
             deadline={`Shipment departs: ${formatDate(
               deadlines.shipmentDeparture,
             )}`}
           >
-            <p className="mb-4">
+            <p className="mb-4 -ml-4">
               And that's it! Take an evening off to celebrate a job well done,
               we got it from here. Once your aid is delivered we'll follow up
               with an after-shipment report, including photos and

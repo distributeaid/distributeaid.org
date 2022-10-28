@@ -11,13 +11,6 @@ fields:
     max: 64
   label: Region Name
   default: ''
-- name: map
-  type: file
-  config:
-    maxSize: 2
-  label: Map
-  description: A photo of a map for the region.  Should be at least 512x512, and in
-    square dimensions.
 - name: overview
   type: textarea
   default: ''
@@ -39,6 +32,54 @@ fields:
   label: Government Response
   description: How the government is currently handling relevant humanitarian issues
     in this region.
+- name: map
+  type: file
+  config:
+    maxSize: 2
+  label: Map
+  description: A photo of a map for the region.  Should be at least 512x512, and in
+    square dimensions.
+- name: population
+  type: field_group
+  config: {}
+  fields:
+  - name: count
+    type: number
+    label: Count
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: trend
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - Increasing
+      - Decreasing
+      - Stable
+      - Unknown
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Trend
+    description: Categorize the trend.
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Description
+  label: Population
 - name: newsUpdates
   type: field_group
   config: {}
