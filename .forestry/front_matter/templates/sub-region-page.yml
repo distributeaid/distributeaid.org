@@ -91,6 +91,16 @@ fields:
     label: Updates List
   label: News Updates
   description: News updates about humanitarian responses and related info in the region.
+- name: stayInformed
+  type: field_group
+  config: {}
+  fields:
+  - name: linksList
+    type: include
+    config: {}
+    template: linkslist
+    label: Links List
+  label: Stay Informed Links
 - name: coverPhoto
   type: field_group
   config: {}
