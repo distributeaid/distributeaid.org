@@ -21,6 +21,17 @@ fields:
       format: markdown
   label: Overview
   description: An overview of the humanitarian situation in this region.
+- name: governmentResponse
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Government Response
+  description: How the government is currently handling relevant humanitarian issues
+    in this region.
 - name: map
   type: file
   config:
@@ -69,17 +80,6 @@ fields:
         format: markdown
     label: Description
   label: Population
-- name: governmentResponse
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Government Response
-  description: How the government is currently handling relevant humanitarian issues
-    in this region.
 - name: newsUpdates
   type: field_group
   config: {}
