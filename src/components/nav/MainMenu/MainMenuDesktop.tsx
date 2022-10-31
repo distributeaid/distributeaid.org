@@ -45,7 +45,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({
           </nav>
         )}
         <Link
-          to="/donate"
+          to="/donate/"
           className="py-2 px-6 rounded bg-white transition-colors text-navy-700"
         >
           Donate
