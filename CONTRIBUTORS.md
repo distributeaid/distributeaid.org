@@ -29,3 +29,4 @@ By contributing to this project you agree to:
 - Rabea Gleissner
 - Aksa
 - Lindsay Rainey
+- Tymur Levtsun
