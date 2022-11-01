@@ -1,5 +1,22 @@
 // @ts-check
 
+// const colors = require('tailwindcss/colors')
+
+// helpers for @tailwindcss/typography styles
+// see: https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+/** @type {(num: number) => string} */
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+
+/** @type {(px: number) => string} */
+// const rem = (px) => `${round(px / 16)}rem`
+
+/** @type {(px: number, base: number) => string} */
+const em = (px, base) => `${round(px / base)}em`
+
 /** @type {import('tailwindcss').Config} */
 const config = {
   // Remove unused classes in prod to decrease the size of the CSS bundle
@@ -102,6 +119,69 @@ const config = {
         md: '0px 1px 2px 0px #000000 6%, box-shadow: 0px 1px 3px 0px #000000 10%',
         lg: '0px 4px 6px -2px #000000 5%, 0px 10px 15px -3px #000000 10%',
       },
+
+      // unfortunately @tailwindcss/typeography doesn't ship types
+      /** @ts-ignore */
+      typography: ({ theme }) => ({
+        // docs: https://tailwindcss.com/docs/typography-plugin#customizing-the-css
+        // code: https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: em(54, 16),
+              marginTop: '0',
+              marginBottom: em(48, 54),
+              lineHeight: round(67.5 / 54),
+              textTransform: 'uppercase',
+            },
+            h2: {
+              fontSize: em(24, 16),
+              marginTop: em(48, 24),
+              marginBottom: em(24, 24),
+              lineHeight: round(32 / 24),
+            },
+            h3: {
+              fontSize: em(20, 16),
+              marginTop: em(32, 20),
+              marginBottom: em(12, 20),
+              lineHeight: round(32 / 20),
+            },
+
+            '--tw-prose-body': theme('colors.gray[800]'),
+            '--tw-prose-headings': theme('colors.navy[700]'),
+            '--tw-prose-lead': theme('colors.gray[600]'),
+            '--tw-prose-links': theme('colors.navy[900]'),
+            '--tw-prose-bold': theme('colors.navy[900]'),
+            '--tw-prose-counters': theme('colors.gray[500]'),
+            '--tw-prose-bullets': theme('colors.gray[300]'),
+            '--tw-prose-hr': theme('colors.gray[200]'),
+            '--tw-prose-quotes': theme('colors.gray[900]'),
+            '--tw-prose-quote-borders': theme('colors.gray[200]'),
+            '--tw-prose-captions': theme('colors.gray[500]'),
+            '--tw-prose-code': theme('colors.gray[900]'),
+            '--tw-prose-pre-code': theme('colors.gray[200]'),
+            '--tw-prose-pre-bg': theme('colors.gray[800]'),
+            '--tw-prose-th-borders': theme('colors.gray[300]'),
+            '--tw-prose-td-borders': theme('colors.gray[200]'),
+            '--tw-prose-invert-body': theme('colors.gray[300]'),
+            '--tw-prose-invert-headings': theme('colors.white'),
+            '--tw-prose-invert-lead': theme('colors.gray[400]'),
+            '--tw-prose-invert-links': theme('colors.white'),
+            '--tw-prose-invert-bold': theme('colors.white'),
+            '--tw-prose-invert-counters': theme('colors.gray[400]'),
+            '--tw-prose-invert-bullets': theme('colors.gray[600]'),
+            '--tw-prose-invert-hr': theme('colors.gray[700]'),
+            '--tw-prose-invert-quotes': theme('colors.gray[100]'),
+            '--tw-prose-invert-quote-borders': theme('colors.gray[700]'),
+            '--tw-prose-invert-captions': theme('colors.gray[400]'),
+            '--tw-prose-invert-code': theme('colors.white'),
+            '--tw-prose-invert-pre-code': theme('colors.gray[300]'),
+            '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+            '--tw-prose-invert-th-borders': theme('colors.gray[600]'),
+            '--tw-prose-invert-td-borders': theme('colors.gray[700]'),
+          },
+        },
+      }),
     },
   },
   variants: {
