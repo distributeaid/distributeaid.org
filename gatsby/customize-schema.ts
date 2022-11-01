@@ -13,12 +13,14 @@ export default {
         title: String!
         slug: String!
         desc: String
-        sections: [DAPageSection!]!
+        sections: [DASectionTypes!]!
       }
 
-      type DAPageSection {
+      union DASectionTypes = DAPageSectionGrid
+
+      type DAPageSectionGrid implements Node {
         options: DAPageSectionOptions!
-        blocks: [DABlockTypes]
+        blocks: [DABlockTypes!]!
       }
 
       type DAPageSectionOptions {
@@ -49,26 +51,26 @@ export default {
         DAPageBlockTitle |
         DAPageBlockText |
         DAPageBlockYoutube |
-        DAPageBlockTimeline        
+        DAPageBlockTimeline
 
-      type DAPageBlockTitle {
+      type DAPageBlockTitle implements Node {
         text: String!
       }
 
-      type DAPageBlockText {
+      type DAPageBlockText implements Node {
         text: String!
       }
 
-      type DAPageBlockYoutube {
+      type DAPageBlockYoutube implements Node {
         title: String
         embedUrl: String!
       }
 
-      type DAPageBlockTimeline {
+      type DAPageBlockTimeline implements Node {
         entries: [DAPageBlockTimelineEntry!]!
       }
 
-      type DAPageBlockTimelineEntry {
+      type DAPageBlockTimelineEntry implements Node {
         period: String
         description: String
       }

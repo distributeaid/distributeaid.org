@@ -38,6 +38,89 @@ export default {
 
       const sections = getArrayProperty(fm, 'sections').map(
         (section: Record<string, any>) => {
+          const blocks = getArrayProperty(section, 'contentBlocks')
+            .map((block: Record<string, any>) => {
+              switch (getStringProperty(block, 'template')) {
+                case 'block-title':
+                  var text = getStringProperty(block, 'text')
+                  return {
+                    // node data
+                    text,
+
+                    // Gatsby Fields
+                    id: createNodeId(`DAPageBlockTitle - ${text}`),
+                    parent: node.id,
+                    children: [],
+                    internal: {
+                      type: 'DAPageBlockTitle',
+                      contentDigest: createContentDigest(text),
+                    },
+                  }
+
+                case 'block-text':
+                  var text = getStringProperty(block, 'text')
+                  return {
+                    // node data
+                    text,
+
+                    // Gatsby Fields
+                    id: createNodeId(`DAPageBlockText - ${text}`),
+                    parent: node.id,
+                    children: [],
+                    internal: {
+                      type: 'DAPageBlockText',
+                      contentDigest: createContentDigest(text),
+                    },
+                  }
+
+                case 'block-youtube':
+                  var embedUrl = getStringProperty(block, 'embed')
+                  return {
+                    // node data
+                    title: getStringProperty(block, 'title'),
+                    embedUrl,
+
+                    // Gatsby Fields
+                    id: createNodeId(`DAPageBlockYoutube - ${embedUrl}`),
+                    parent: node.id,
+                    children: [],
+                    internal: {
+                      type: 'DAPageBlockYoutube',
+                      contentDigest: createContentDigest(embedUrl),
+                    },
+                  }
+
+                case 'block-timeline':
+                  var entries = getArrayProperty(block, 'timelineItems')
+                  return {
+                    // node data
+                    entries,
+
+                    // Gatsby Fields
+                    id: createNodeId(
+                      `DAPageBlockTimeline - ${JSON.stringify(entries)}`,
+                    ),
+                    parent: node.id,
+                    children: [],
+                    internal: {
+                      type: 'DAPageBlockYoutube',
+                      contentDigest: createContentDigest(
+                        JSON.stringify(entries),
+                      ),
+                    },
+                  }
+
+                case 'block-image-with-caption':
+                  return null
+
+                default:
+                  return null
+              }
+            })
+            .filter((block: Record<string, any> | null) => {
+              return block !== null
+            })
+
           const meta = getObjectProperty(section, 'metadata')
 
           const margins: Record<string, string> = {
@@ -60,42 +143,9 @@ export default {
           }
           const order = orders[getStringProperty(meta, 'order')] || 'HORIZONTAL'
 
-          const blocks = getArrayProperty(section, 'contentBlocks')
-            .map((block: Record<string, any>) => {
-              switch (getStringProperty(block, 'template')) {
-                case 'block-title':
-                  return {
-                    text: getStringProperty(block, 'text'),
-                  }
-
-                case 'block-text':
-                  return {
-                    text: getStringProperty(block, 'text'),
-                  }
-
-                case 'block-youtube':
-                  return {
-                    title: getStringProperty(block, 'title'),
-                    embedUrl: getStringProperty(block, 'embed'),
-                  }
-
-                case 'block-timeline':
-                  return {
-                    entries: getArrayProperty(block, 'timelineItems'),
-                  }
-
-                case 'block-image-with-caption':
-                  return null
-
-                default:
-                  return null
-              }
-            })
-            .filter((block: Record<string, any> | null) => {
-              return block !== null
-            })
-
           return {
+            // node data
+            blocks,
             options: {
               margin,
               layout,
@@ -103,7 +153,15 @@ export default {
               rows: getNumberProperty(meta, 'numRows'),
               order,
             },
-            blocks,
+
+            // Gatsby Fields
+            id: createNodeId(`DAPageSectionGrid - ${JSON.stringify(blocks)}`),
+            parent: node.id,
+            children: [],
+            internal: {
+              type: 'DAPageSectionGrid',
+              contentDigest: createContentDigest(JSON.stringify(blocks)),
+            },
           }
         },
       )
