@@ -2,10 +2,9 @@ import { FC, useState } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { Card, ImageVariant } from '@components/card/Card'
-// import DomainDropdown from '@components/team/Team'
 import ExternalLink from '@components/link/ExternalLink'
 import React from 'react'
-import console from 'console'
+import DomainDropdown from '@components/team/DomainDropdown'
 
 type Props = {
   data: {
@@ -17,29 +16,18 @@ type Props = {
 
 const TeamPage: FC<Props> = ({ data }) => {
   const members = data.allDaTeamMember.nodes
-  const domains = Array.from(new Set(members.map((member) => member.memberDomain?.roles[0]?.role?.domain)))
+  const domains = Array.from(
+    new Set(members.map((member) => member?.roles[0]?.role?.domain)),
+  )
 
-  const membersByDomain = domains.map(domain => {
+  const membersByDomain = domains.map((domain) => {
     return {
       domainName: domain,
-      members: members.filter(member => member.memberDomain?.roles[0]?.role?.domain === domain)
+      members: members.filter(
+        (member) => member?.roles[0]?.role?.domain === domain,
+      ),
     }
   })
-  console.log(JSON.stringify(domains))
-  console.log(JSON.stringify(membersByDomain))
-
-  const [showStaff, setShowStaff] = useState(false)
-  const getClickStaff = () => {
-    setShowStaff(!showStaff)
-  }
-  const [showVolunteers, setShowVolunteers] = useState(false)
-  const handleClickVolunteers = () => {
-    setShowVolunteers(!showVolunteers)
-  }
-  const [showBoard, setShowBoard] = useState(false)
-  const handleClickBoard = () => {
-    setShowBoard(!showBoard)
-  }
 
   return (
     <SimpleLayout pageTitle="Team">
@@ -52,8 +40,14 @@ const TeamPage: FC<Props> = ({ data }) => {
       {/* {domains.map((memberDomain) =>( */}
 
       {/* This dropdown is for the staff domain */}
-
-      <div
+      {membersByDomain.map(
+        ({ domainName, members }: { domainName: string; members: any[] }) => (
+          <>
+            <DomainDropdown domainName={domainName} members={members} />
+          </>
+        ),
+      )}
+      {/* <div
         id="memberdata"
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto"
       >
@@ -65,11 +59,11 @@ const TeamPage: FC<Props> = ({ data }) => {
             }}
             imageVariant={ImageVariant.square}
 
-          // actions={[{label:member.name, url:member.link}]}
+            // actions={[{label:member.name, url:member.link}]}
 
-          // title={`${member?.roles[0]?.role?.title} (${member?.roles[0]?.role?.commitment})`}
+            // title={`${member?.roles[0]?.role?.title} (${member?.roles[0]?.role?.commitment})`}
 
-          // body={member.bio}
+            // body={member.bio}
           >
             <h3 className="text-2xl text-gray-600 mb-4 pl-4 pr-4">
               <ExternalLink className="link" href={member.link}>
@@ -82,7 +76,7 @@ const TeamPage: FC<Props> = ({ data }) => {
             <h4 className="pb-8 pl-4 pr-4 space-y-2">{member.bio}</h4>
           </Card>
         ))}
-      </div>
+      </div> */}
     </SimpleLayout>
   )
 }

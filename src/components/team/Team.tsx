@@ -6,7 +6,7 @@ import { FC, useState } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import React from 'react'
 
-const DomainDropdown = (
+const Team = (
   {
     // className,
   },
