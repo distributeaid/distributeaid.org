@@ -4,7 +4,9 @@ import { graphql } from 'gatsby'
 import { Card, ImageVariant } from '@components/card/Card'
 import ExternalLink from '@components/link/ExternalLink'
 import React from 'react'
-import DomainDropdown from '@components/team/DomainDropdown'
+import DomainDropdown from '@components/team/DomainMobile'
+import DomainDesktop from '@components/team/DomainDesktop'
+import DomainMobile from '@components/team/DomainMobile'
 
 type Props = {
   data: {
@@ -43,7 +45,8 @@ const TeamPage: FC<Props> = ({ data }) => {
       {membersByDomain.map(
         ({ domainName, members }: { domainName: string; members: any[] }) => (
           <>
-            <DomainDropdown domainName={domainName} members={members} />
+            <DomainDesktop domainName={domainName} members={members} />
+            <DomainMobile domainName={domainName} members={members} />
           </>
         ),
       )}
