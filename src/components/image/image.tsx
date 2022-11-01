@@ -1,7 +1,4 @@
-import { handler } from '@tailwindcss/line-clamp'
-import { useStaticQuery } from 'gatsby'
-import React from 'react'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 type Image = {
   image: string
@@ -44,11 +41,13 @@ const Image: FC<Image> = ({
         }}
       >
         <div
+          data-testid="hover-trigger"
           className="relative"
           onMouseEnter={() => setShowSpan(true)}
           onMouseLeave={() => setShowSpan(false)}
         >
           <div
+            data-testid="hover-result"
             className={`absolute inset-x-0 bottom-0 h-16 flow-root ${textAlignment} bg-blue-900 opacity-75 ${
               showSpan ? '' : 'hidden'
             } `}
