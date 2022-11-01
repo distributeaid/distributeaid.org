@@ -65,7 +65,7 @@ sections:
     attribution: Distribute Aid
     altText: Two standing people smile for the camera in front of a brick wall.
     date: 
-  - template: timeline
+  - template: block-timeline
     timelineItems:
     - period: Summer 2018
       description: When sorting donations in Scotland Sara had the idea for Distribute

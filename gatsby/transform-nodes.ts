@@ -2,11 +2,11 @@ import { CreateNodeArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
 import slugify from '../src/utils/slugify'
-import { getArrayProperty } from './utils/untypedAccess/getArrayProperty'
-import { getNumberProperty } from './utils/untypedAccess/getNumberProperty'
 import { getObjectProperty } from './utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from './utils/untypedAccess/getStringProperty'
 import { nodeParent } from './utils/untypedAccess/nodeParent'
+
+import { deriveGenericPageNode } from './generic-pages/pages'
 
 /*
  * Note: some TypeScript errors have been silenced below,
@@ -17,14 +17,11 @@ export default {
   Pages
   ================================================================================
   */
-  createGenericPagesFromMarkdown: ({
-    node,
-    actions: { createNode },
-    createNodeId,
-    createContentDigest,
-    getNode,
-    reporter,
-  }: CreateNodeArgs) => {
+  createGenericPagesFromMarkdown: (args: CreateNodeArgs) => {
+    const {
+      node,
+      actions: { createNode },
+    } = args
     if (
       node.internal.type === 'MarkdownRemark' &&
       'fileAbsolutePath' in node &&
@@ -35,156 +32,8 @@ export default {
       getObjectProperty(node, 'frontmatter').template === 'DAPageGeneric'
     ) {
       const fm = getObjectProperty(node, 'frontmatter')
-
-      const sections = getArrayProperty(fm, 'sections').map(
-        (section: Record<string, any>) => {
-          const blocks = getArrayProperty(section, 'contentBlocks')
-            .map((block: Record<string, any>) => {
-              switch (getStringProperty(block, 'template')) {
-                case 'block-title':
-                  var text = getStringProperty(block, 'text')
-                  return {
-                    // node data
-                    text,
-
-                    // Gatsby Fields
-                    id: createNodeId(`DAPageBlockTitle - ${text}`),
-                    parent: node.id,
-                    children: [],
-                    internal: {
-                      type: 'DAPageBlockTitle',
-                      contentDigest: createContentDigest(text),
-                    },
-                  }
-
-                case 'block-text':
-                  var text = getStringProperty(block, 'text')
-                  return {
-                    // node data
-                    text,
-
-                    // Gatsby Fields
-                    id: createNodeId(`DAPageBlockText - ${text}`),
-                    parent: node.id,
-                    children: [],
-                    internal: {
-                      type: 'DAPageBlockText',
-                      contentDigest: createContentDigest(text),
-                    },
-                  }
-
-                case 'block-youtube':
-                  var embedUrl = getStringProperty(block, 'embed')
-                  return {
-                    // node data
-                    title: getStringProperty(block, 'title'),
-                    embedUrl,
-
-                    // Gatsby Fields
-                    id: createNodeId(`DAPageBlockYoutube - ${embedUrl}`),
-                    parent: node.id,
-                    children: [],
-                    internal: {
-                      type: 'DAPageBlockYoutube',
-                      contentDigest: createContentDigest(embedUrl),
-                    },
-                  }
-
-                case 'block-timeline':
-                  var entries = getArrayProperty(block, 'timelineItems')
-                  return {
-                    // node data
-                    entries,
-
-                    // Gatsby Fields
-                    id: createNodeId(
-                      `DAPageBlockTimeline - ${JSON.stringify(entries)}`,
-                    ),
-                    parent: node.id,
-                    children: [],
-                    internal: {
-                      type: 'DAPageBlockYoutube',
-                      contentDigest: createContentDigest(
-                        JSON.stringify(entries),
-                      ),
-                    },
-                  }
-
-                case 'block-image-with-caption':
-                  return null
-
-                default:
-                  return null
-              }
-            })
-            .filter((block: Record<string, any> | null) => {
-              return block !== null
-            })
-
-          const meta = getObjectProperty(section, 'metadata')
-
-          const margins: Record<string, string> = {
-            Margined: 'MARGIN',
-            Banner: 'BANNER',
-          }
-          const margin = margins[getStringProperty(meta, 'margins')] || 'MARGIN'
-
-          const layouts: Record<string, string> = {
-            'Row-Bound': 'ROW',
-            'Column-Bound': 'COL',
-          }
-          const layout =
-            layouts[getStringProperty(meta, 'colOrRowBound')] || 'ROW'
-
-          const orders: Record<string, string> = {
-            'left-to-right': 'HORIZONTAL',
-            'top-to-bottom': 'VERTICAL',
-            random: 'RANDOM',
-          }
-          const order = orders[getStringProperty(meta, 'order')] || 'HORIZONTAL'
-
-          return {
-            // node data
-            blocks,
-            options: {
-              margin,
-              layout,
-              cols: getNumberProperty(meta, 'numCols'),
-              rows: getNumberProperty(meta, 'numRows'),
-              order,
-            },
-
-            // Gatsby Fields
-            id: createNodeId(`DAPageSectionGrid - ${JSON.stringify(blocks)}`),
-            parent: node.id,
-            children: [],
-            internal: {
-              type: 'DAPageSectionGrid',
-              contentDigest: createContentDigest(JSON.stringify(blocks)),
-            },
-          }
-        },
-      )
-
-      createNode({
-        // Node Data
-        title: fm.title,
-        description: fm.desc,
-        sections: sections,
-
-        // navigation
-        slug: fm.slug,
-        path: `/${fm.slug}/`,
-
-        // Gatsby Fields
-        id: createNodeId(`DA Page Generic - ${fm.title}`),
-        parent: node.id,
-        children: [],
-        internal: {
-          type: 'DAPageGeneric',
-          contentDigest: createContentDigest(fm),
-        },
-      })
+      const page = deriveGenericPageNode(fm, node.id, args)
+      createNode(page)
     }
   },
 

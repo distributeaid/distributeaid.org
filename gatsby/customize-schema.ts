@@ -1,82 +1,20 @@
 import { CreateSchemaCustomizationArgs } from 'gatsby'
 
+import { schema as blockTypes } from './generic-pages/content-blocks'
+import { schema as pageTypes } from './generic-pages/pages'
+import { schema as sectionTypes } from './generic-pages/sections'
+
 export default {
   /*
   Page
   ================================================================================
   */
-  defineGenericPageTypes: ({
+  definePageTypes: ({
     actions: { createTypes },
   }: CreateSchemaCustomizationArgs) => {
-    const typeDefs = `
-      type DAPageGeneric implements Node @dontInfer {
-        title: String!
-        slug: String!
-        desc: String
-        sections: [DASectionTypes!]!
-      }
-
-      union DASectionTypes = DAPageSectionGrid
-
-      type DAPageSectionGrid implements Node {
-        options: DAPageSectionOptions!
-        blocks: [DABlockTypes!]!
-      }
-
-      type DAPageSectionOptions {
-        margin: DAPageSectionOptionMargin
-        layout: DAPageSectionOptionLayout
-        cols: Int
-        rows: Int
-        order: DAPageSectionOptionOrder
-      }
-
-      enum DAPageSectionOptionMargin {
-        MARGINED
-        BANNER
-      }
-
-      enum DAPageSectionOptionLayout {
-        COL
-        ROW
-      }
-
-      enum DAPageSectionOptionOrder {
-        HORIZONTAL
-        VERTICAL
-        RANDOM
-      }
-
-      union DABlockTypes =
-        DAPageBlockTitle |
-        DAPageBlockText |
-        DAPageBlockYoutube |
-        DAPageBlockTimeline
-
-      type DAPageBlockTitle implements Node {
-        text: String!
-      }
-
-      type DAPageBlockText implements Node {
-        text: String!
-      }
-
-      type DAPageBlockYoutube implements Node {
-        title: String
-        embedUrl: String!
-      }
-
-      type DAPageBlockTimeline implements Node {
-        entries: [DAPageBlockTimelineEntry!]!
-      }
-
-      type DAPageBlockTimelineEntry implements Node {
-        period: String
-        description: String
-      }
-    `
-
-    createTypes(typeDefs)
+    createTypes(blockTypes)
+    createTypes(sectionTypes)
+    createTypes(pageTypes)
   },
 
   /*
