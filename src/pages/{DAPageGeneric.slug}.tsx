@@ -22,7 +22,7 @@ const GenericPage: FC<Props> = ({ data: { page } }) => {
   return (
     <SimpleLayout>
       <article>
-        <header className="prose">
+        <header className="prose mx-auto">
           <h1>{page.title}</h1>
         </header>
 

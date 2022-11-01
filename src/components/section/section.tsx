@@ -5,6 +5,8 @@ import {
   SectionGrid as SectionGridType,
 } from '../../types/generic-page.d'
 
+import { getBackgroundColors } from '../../utils/site-theme'
+
 import { Blocks } from './content-block'
 import { SectionGrid } from './sections/section-grid'
 
@@ -13,24 +15,40 @@ type SectionsProps = PropsWithChildren<{
 }>
 
 export const Sections: FC<SectionsProps> = ({ sections }) => {
-  const sectionElems = sections.map((section, i) => (
-    <Section key={i} section={section} />
-  ))
+  const colors = getBackgroundColors()
+
+  const sectionElems = sections.map((section, i) => {
+    console.log(i, colors[i % colors.length])
+    return (
+      <Section
+        key={i}
+        section={section}
+        style={{
+          backgroundColor: colors[i % colors.length],
+        }}
+      />
+    )
+  })
 
   return <>{sectionElems}</>
 }
 
 type SectionProps = {
   section: SectionType
+  [key: string]: any
 }
 
-export const Section: FC<SectionProps> = ({ section }) => {
+export const Section: FC<SectionProps> = ({ section, ...props }) => {
   const blocks = <Blocks blocks={section.blocks} />
 
   switch (section.internal.type) {
     case 'DASectionGrid':
       return (
-        <SectionGrid section={section as SectionGridType} children={blocks} />
+        <SectionGrid
+          section={section as SectionGridType}
+          children={blocks}
+          {...props}
+        />
       )
     default:
       throw new Error(

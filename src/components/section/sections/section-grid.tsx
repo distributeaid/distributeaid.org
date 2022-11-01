@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 
 import {
   Layout,
@@ -9,38 +9,48 @@ import {
 
 type SectionGridProps = {
   section: SectionGridType
-  children: ReactNode
+  children: JSX.Element
+  [key: string]: any
 }
 
 export const SectionGrid: FC<SectionGridProps> = ({
   section: { options },
   children,
+  ...props
 }) => {
-  let classes: string[] = ['prose']
-  classes = classes.concat(getMarginClasses(options))
-  classes = classes.concat(getLayoutClasses(options))
+  if (!children || children.props.blocks < 1) {
+    return null
+  }
 
-  return <section className={classes.join(' ')}>{children}</section>
+  const classes: string[] = ['prose']
+  classes.push(getMarginClasses(options))
+  classes.push(getLayoutClasses(options))
+
+  return (
+    <section {...props}>
+      <div className={classes.join(' ')}>{children}</div>
+    </section>
+  )
 }
 
-const getMarginClasses = (options: SectionGridOptions): string[] => {
+const getMarginClasses = (options: SectionGridOptions): string => {
   switch (options.margin) {
     case Margin.BANNER:
-      return ['no-max-w']
+      return 'no-max-w py-4'
     case Margin.MARGIN:
-      return ['mx-auto']
+      return 'mx-auto py-4'
     default:
-      return ['mx-auto']
+      return 'mx-auto py-4'
   }
 }
 
-const getLayoutClasses = (options: SectionGridOptions) => {
+const getLayoutClasses = (options: SectionGridOptions): string => {
   switch (options.layout) {
     case Layout.ROW:
-      return ['flex flex-row']
+      return 'flex flex-row'
     case Layout.COL:
-      return ['flex flex-col']
+      return 'flex flex-col'
     default:
-      return ['flex flex-row']
+      return 'flex flex-row'
   }
 }

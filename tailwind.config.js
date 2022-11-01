@@ -155,7 +155,7 @@ const config = {
             '--tw-prose-links': theme('colors.navy[900]'),
             '--tw-prose-bold': theme('colors.navy[900]'),
             '--tw-prose-counters': theme('colors.gray[500]'),
-            '--tw-prose-bullets': theme('colors.gray[300]'),
+            '--tw-prose-bullets': theme('colors.gray[800]'),
             '--tw-prose-hr': theme('colors.gray[200]'),
             '--tw-prose-quotes': theme('colors.gray[900]'),
             '--tw-prose-quote-borders': theme('colors.gray[200]'),

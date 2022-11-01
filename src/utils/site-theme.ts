@@ -12,7 +12,7 @@ export function getThemeLargeScreenWidth() {
 export function getBackgroundColors() {
   return getColors({
     swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
-    weights: [50, 100, 200],
+    weights: [50, 100],
     randomize: true,
   })
 }
