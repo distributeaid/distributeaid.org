@@ -1,4 +1,7 @@
 import { CreateNodeArgs, NodeInput } from 'gatsby'
+
+import { Layout, Margin, Order } from '../../src/types/generic-page.d'
+
 import { getArrayProperty } from '../utils/untypedAccess/getArrayProperty'
 import { getNumberProperty } from '../utils/untypedAccess/getNumberProperty'
 import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
@@ -15,15 +18,15 @@ export const schema = `
   }
 
   type DASectionGridOptions {
+    rows: Int
+    cols: Int
     margin: DASectionGridMargin
     layout: DASectionGridLayout
-    cols: Int
-    rows: Int
     order: DASectionGridOrder
   }
 
   enum DASectionGridMargin {
-    MARGINED
+    MARGIN
     BANNER
   }
 
@@ -93,14 +96,24 @@ export const deriveGridSectionNode: DeriveSectionFn = (
   )
   const order = deriveGridSectionOrder(getStringProperty(meta, 'order'))
 
+  let rows = meta.numRows ? getNumberProperty(meta, 'numRows') : 1
+  if (rows <= 0) {
+    rows = 1
+  }
+
+  let cols = meta.numCols ? getNumberProperty(meta, 'numCols') : 1
+  if (cols <= 0) {
+    cols = 1
+  }
+
   return {
     // node data
     blocks,
     options: {
+      rows,
+      cols,
       margin,
       layout,
-      cols: getNumberProperty(meta, 'numCols'),
-      rows: getNumberProperty(meta, 'numRows'),
       order,
     },
 
@@ -115,11 +128,6 @@ export const deriveGridSectionNode: DeriveSectionFn = (
   }
 }
 
-enum Margin {
-  MARGIN,
-  BANNER,
-}
-
 const deriveGridSectionMargin = (margin: string) => {
   switch (margin) {
     case 'Margined':
@@ -131,11 +139,6 @@ const deriveGridSectionMargin = (margin: string) => {
   }
 }
 
-enum Layout {
-  ROW,
-  COL,
-}
-
 const deriveGridSectionLayout = (layout: string) => {
   switch (layout) {
     case 'Row-Bound':
@@ -145,12 +148,6 @@ const deriveGridSectionLayout = (layout: string) => {
     default:
       return Layout.ROW
   }
-}
-
-enum Order {
-  HORIZONTAL,
-  VERTICAL,
-  RANDOM,
 }
 
 const deriveGridSectionOrder = (order: string) => {

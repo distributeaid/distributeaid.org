@@ -161,7 +161,7 @@ export const deriveTimelineBlockNode: DeriveBlockFn = (
     parent: parentId,
     children: [],
     internal: {
-      type: 'DABlockYoutube',
+      type: 'DABlockTimeline',
       contentDigest: createContentDigest(JSON.stringify(entries)),
     },
   }
