@@ -21,8 +21,10 @@ export function Head({ data: { page } }: Props) {
 const GenericPage: FC<Props> = ({ data: { page } }) => {
   return (
     <SimpleLayout>
-      <article className="prose">
-        <h1>{page.title}</h1>
+      <article>
+        <header className="prose">
+          <h1>{page.title}</h1>
+        </header>
 
         <Sections sections={page.sections} />
       </article>
