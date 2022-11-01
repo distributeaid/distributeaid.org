@@ -6,6 +6,8 @@ import { PageGeneric as PageGenericType } from '../types/generic-page'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from 'layouts/Simple'
 
+import { Sections } from '@components/section/section'
+
 type Props = {
   data: {
     page: PageGenericType
@@ -13,13 +15,17 @@ type Props = {
 }
 
 export function Head({ data: { page } }: Props) {
-  return <PageHeader title={`Region: ${page.title}`} />
+  return <PageHeader title={`Region: ${page.title}`} description={page.desc} />
 }
 
 const GenericPage: FC<Props> = ({ data: { page } }) => {
   return (
     <SimpleLayout>
-      <p>Hello world!</p>
+      <article className="prose">
+        <h1>{page.title}</h1>
+
+        <Sections sections={page.sections} />
+      </article>
     </SimpleLayout>
   )
 }
@@ -54,6 +60,7 @@ export const query = graphql`
               internal {
                 type
               }
+              text
             }
             ... on DABlockYoutube {
               internal {
@@ -68,7 +75,7 @@ export const query = graphql`
               }
               entries {
                 period
-                description
+                desc
               }
             }
           }

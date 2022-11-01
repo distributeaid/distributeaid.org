@@ -87,5 +87,5 @@ export type BlockTimelineEntry = {
   /**
    * Markdown string
    */
-  description?: string
+  desc?: string
 }

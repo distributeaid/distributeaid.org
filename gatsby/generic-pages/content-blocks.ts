@@ -28,7 +28,7 @@ export const schema = `
 
   type DABlockTimelineEntry implements Node {
     period: String
-    description: String
+    desc: String
   }
 `
 
@@ -151,7 +151,12 @@ export const deriveTimelineBlockNode: DeriveBlockFn = (
   parentId,
   { createNodeId, createContentDigest },
 ) => {
-  const entries = getArrayProperty(block, 'timelineItems')
+  const entries = getArrayProperty(block, 'timelineItems').map((entry) => {
+    return {
+      ...entry,
+      desc: entry.description,
+    }
+  })
   return {
     // node data
     entries,
