@@ -49,6 +49,14 @@ sections:
       **Our impact** has led to a 2.5x efficiency gain across our supply chain by increasing coordination, reducing costs, saving volunteer time, and preventing waste. Every $1 we spend on administration, projects, and logistics delivers $88 worth of aid to frontline organisations.
 
       We are a non-profit, non-political Swedish-registered charity with registration number #802521-4456.
+- template: section-grid
+  metadata:
+    margins: Margined
+    numCols: 1
+    numRows: 1
+    colOrRowBound: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
   - template: block-image-with-caption
     dateUploaded: 2022-10-24T11:06:48Z
     tags: []

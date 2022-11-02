@@ -96,14 +96,6 @@ sections:
     text: 'If you would like to support us, please visit our Donate page to see different
       options for how to donate: [distributeaid.org/donate](https://distributeaid.org/donate
       "https://distributeaid.org/donate").'
-- template: section-grid
-  metadata:
-    margins: Margined
-    numCols: 1
-    numRows: 1
-    colOrRowBound: Column-Bound
-    order: top-to-bottom
-  contentBlocks:
   - template: block-title
     text: Got Aid?
   - template: block-text

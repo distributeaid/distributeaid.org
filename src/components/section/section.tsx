@@ -16,7 +16,7 @@ type SectionsProps = PropsWithChildren<{
 
 export const Sections: FC<SectionsProps> = ({ sections }) => {
   return (
-    <div className="flex flex-row flex-wrap justify-items-stretch">
+    <div className="flex flex-wrap">
       {sections.map((section, i) => {
         const blockElems = <Blocks blocks={section.blocks} />
         if (blockElems.props.blocks < 1) {
@@ -25,12 +25,12 @@ export const Sections: FC<SectionsProps> = ({ sections }) => {
 
         return (
           <div
-            className="grow basis-1/2"
+            className="grow lg:w-1/2"
             style={{
               backgroundColor: getBackgroundColor(),
             }}
           >
-            <Section key={i} section={section} className="flex justify-center">
+            <Section key={i} section={section} className="prose mx-auto">
               {blockElems}
             </Section>
           </div>

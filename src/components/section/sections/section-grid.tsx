@@ -18,7 +18,7 @@ export const SectionGrid: FC<SectionGridProps> = ({
   children,
   ...props
 }) => {
-  const classes: string[] = ['prose']
+  const classes: string[] = []
   classes.push(getMarginClasses(options))
   classes.push(getLayoutClasses(options))
   if (props.className) {
