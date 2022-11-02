@@ -52,7 +52,11 @@ export const pageQuery = graphql`
         bio
         name
         profilePhoto {
-          gatsbyImageData
+          gatsbyImageData(
+            height: 256
+            aspectRatio: 1.5
+            transformOptions: { cropFocus: CENTER }
+          )
         }
         link
         roles {

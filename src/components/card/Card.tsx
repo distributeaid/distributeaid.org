@@ -68,7 +68,7 @@ export const Card: FC<
           data-testid="card-gatsby-image"
           image={dynamicCardImage.image}
           alt={dynamicCardImage.alt}
-          className="mb-4"
+          className="mb-4 w-full"
           imgClassName={
             imageVariant === ImageVariant.circle ? `rounded-full` : ''
           }
