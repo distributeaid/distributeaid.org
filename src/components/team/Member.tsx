@@ -1,22 +1,16 @@
-import { Card, ImageVariant } from '@components/card/Card'
+import { Card } from '@components/card/Card'
 import ExternalLink from '@components/link/ExternalLink'
-import { FC, useState } from 'react'
 
 type Props = {
   member: any
 }
 
-export const Member = ({
-  member
-}: {
-  member: any
-}) => (
-    <Card
+export const Member = ({ member }: { member: any }) => (
+  <Card
     dynamicCardImage={{
       image: member?.profilePhoto?.gatsbyImageData,
       alt: member.name,
     }}
-    imageVariant={ImageVariant.square}
   >
     <h3 className="text-2xl text-gray-600 mb-4 pl-4 pr-4">
       <ExternalLink className="link" href={member.link}>
@@ -28,4 +22,4 @@ export const Member = ({
 
     <h4 className="pb-8 pl-4 pr-4 space-y-2">{member.bio}</h4>
   </Card>
-);
+)
