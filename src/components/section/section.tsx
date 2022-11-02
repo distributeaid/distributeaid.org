@@ -15,19 +15,29 @@ type SectionsProps = PropsWithChildren<{
 }>
 
 export const Sections: FC<SectionsProps> = ({ sections }) => {
-  const sectionElems = sections.map((section, i) => {
-    return (
-      <Section
-        key={i}
-        section={section}
-        style={{
-          backgroundColor: getBackgroundColor(),
-        }}
-      />
-    )
-  })
+  return (
+    <div className="flex flex-row flex-wrap justify-items-stretch">
+      {sections.map((section, i) => {
+        const blockElems = <Blocks blocks={section.blocks} />
+        if (blockElems.props.blocks < 1) {
+          return null
+        }
 
-  return <>{sectionElems}</>
+        return (
+          <div
+            className="grow basis-1/2"
+            style={{
+              backgroundColor: getBackgroundColor(),
+            }}
+          >
+            <Section key={i} section={section} className="flex justify-center">
+              {blockElems}
+            </Section>
+          </div>
+        )
+      })}
+    </div>
+  )
 }
 
 type SectionProps = {
@@ -35,17 +45,13 @@ type SectionProps = {
   [key: string]: any
 }
 
-export const Section: FC<SectionProps> = ({ section, ...props }) => {
-  const blocks = <Blocks blocks={section.blocks} />
-
+export const Section: FC<SectionProps> = ({ section, children, ...props }) => {
   switch (section.internal.type) {
     case 'DASectionGrid':
       return (
-        <SectionGrid
-          section={section as SectionGridType}
-          children={blocks}
-          {...props}
-        />
+        <SectionGrid section={section as SectionGridType} {...props}>
+          {children}
+        </SectionGrid>
       )
     default:
       throw new Error(

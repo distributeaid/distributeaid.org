@@ -18,13 +18,12 @@ export const SectionGrid: FC<SectionGridProps> = ({
   children,
   ...props
 }) => {
-  if (!children || children.props.blocks < 1) {
-    return null
-  }
-
   const classes: string[] = ['prose']
   classes.push(getMarginClasses(options))
   classes.push(getLayoutClasses(options))
+  if (props.className) {
+    classes.push(props.className)
+  }
 
   return (
     <section {...props}>
@@ -36,11 +35,11 @@ export const SectionGrid: FC<SectionGridProps> = ({
 const getMarginClasses = (options: SectionGridOptions): string => {
   switch (options.margin) {
     case Margin.BANNER:
-      return 'max-w-none py-16'
+      return 'mx-8 my-12 max-w-none'
     case Margin.MARGIN:
-      return 'mx-auto py-16'
+      return 'mx-8 my-12'
     default:
-      return 'mx-auto py-16'
+      return 'mx-8 my-12'
   }
 }
 
