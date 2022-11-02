@@ -15,7 +15,7 @@ export enum ImageVariant {
 const createAction = (action: Action) => (
   <SmartLink
     key={action.label}
-    className="inline-block bg-navy-700 hover:bg-navy-800 rounded text-white px-6 py-3 mb-1 font-medium tracking-wide"
+    className="inline-block bg-navy-700 hover:bg-navy-800 rounded text-white px-6 py-3 mt-4 font-medium tracking-wide"
     href={action.url}
   >
     {action.label}
@@ -26,7 +26,7 @@ export const Card: FC<
     header?: ReactNode // Can be either a StaticImage or anything you want to display in the header
     dynamicCardImage?: DynamicCardImage
     imageVariant?: ImageVariant
-    title?: string
+    title?: ReactNode
     subtitle?: string
     additionalHeaderContent?: ReactNode | ReactNode[]
     body?: ReactNode
@@ -51,7 +51,7 @@ export const Card: FC<
 }) => (
   <section
     className={classNames(
-      'border flex flex-col',
+      'border',
       {
         'border-transparent': transparentBorder,
         'bg-transparent': transparentBody,
@@ -68,21 +68,21 @@ export const Card: FC<
           data-testid="card-gatsby-image"
           image={dynamicCardImage.image}
           alt={dynamicCardImage.alt}
-          className="mb-4 w-full"
+          className="w-full"
           imgClassName={
             imageVariant === ImageVariant.circle ? `rounded-full` : ''
           }
         ></GatsbyImage>
       </div>
     )}
-    <div className="m-3 flex flex-col flex-1">
+    <div className="mx-4 my-4">
       <div className="text-center">
-        {title && <h2 className="text-xl font-semibold mb-1">{title}</h2>}
-        {subtitle && <p className="text-gray-600 mb-6">{subtitle}</p>}
+        {title && <h2 className="text-xl font-semibold">{title}</h2>}
+        {subtitle && <p className="text-gray-600">{subtitle}</p>}
         {additionalHeaderContent && <>{additionalHeaderContent}</>}
         {actions && <>{actions.map(createAction)}</>}
       </div>
-      {body && <div className="mt-6 p-2 space-y-2">{body}</div>}
+      {body && <div className="mt-4">{body}</div>}
     </div>
     {children && <>{children}</>}
   </section>
