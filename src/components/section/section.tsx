@@ -5,7 +5,7 @@ import {
   SectionGrid as SectionGridType,
 } from '../../types/generic-page.d'
 
-import { getBackgroundColors } from '../../utils/site-theme'
+import { getBackgroundColor } from '../../utils/site-theme'
 
 import { Blocks } from './content-block'
 import { SectionGrid } from './sections/section-grid'
@@ -15,16 +15,13 @@ type SectionsProps = PropsWithChildren<{
 }>
 
 export const Sections: FC<SectionsProps> = ({ sections }) => {
-  const colors = getBackgroundColors()
-
   const sectionElems = sections.map((section, i) => {
-    console.log(i, colors[i % colors.length])
     return (
       <Section
         key={i}
         section={section}
         style={{
-          backgroundColor: colors[i % colors.length],
+          backgroundColor: getBackgroundColor(),
         }}
       />
     )

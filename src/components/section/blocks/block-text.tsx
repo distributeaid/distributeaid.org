@@ -10,7 +10,7 @@ type BlockTextProps = {
 
 export const BlockText: FC<BlockTextProps> = ({ block }) => {
   return (
-    <div className="border-l-2 pl-4 border-navy-400">
+    <div className="border-l-2 pl-6 border-navy-400">
       <MarkdownContent content={block.text} />
     </div>
   )

@@ -3,6 +3,8 @@ import { FC } from 'react'
 
 import { PageGeneric as PageGenericType } from '../types/generic-page'
 
+import { getBackgroundColor } from '../utils/site-theme'
+
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from 'layouts/Simple'
 
@@ -22,8 +24,15 @@ const GenericPage: FC<Props> = ({ data: { page } }) => {
   return (
     <SimpleLayout>
       <article>
-        <header className="prose mx-auto">
-          <h1>{page.title}</h1>
+        <header className="prose max-w-none text-center">
+          <h1
+            className="py-8"
+            style={{
+              backgroundColor: getBackgroundColor(),
+            }}
+          >
+            {page.title}
+          </h1>
         </header>
 
         <Sections sections={page.sections} />

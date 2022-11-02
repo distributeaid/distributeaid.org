@@ -36,11 +36,11 @@ export const SectionGrid: FC<SectionGridProps> = ({
 const getMarginClasses = (options: SectionGridOptions): string => {
   switch (options.margin) {
     case Margin.BANNER:
-      return 'no-max-w py-4'
+      return 'max-w-none py-16'
     case Margin.MARGIN:
-      return 'mx-auto py-4'
+      return 'mx-auto py-16'
     default:
-      return 'mx-auto py-4'
+      return 'mx-auto py-16'
   }
 }
 

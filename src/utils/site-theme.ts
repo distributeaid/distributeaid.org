@@ -9,12 +9,18 @@ export function getThemeLargeScreenWidth() {
   return parseInt(screens?.['lg']?.replace('px', '') ?? '1024px', 10)
 }
 
-export function getBackgroundColors() {
-  return getColors({
-    swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
-    weights: [50, 100],
-    randomize: true,
-  })
+let backgroundColorIndex = 0
+const colors = getColors({
+  swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
+  weights: [50, 100],
+  randomize: true,
+})
+
+export function getBackgroundColor() {
+  const color = colors[backgroundColorIndex]
+  backgroundColorIndex = (backgroundColorIndex + 1) % colors.length
+
+  return color
 }
 
 export function getColors({

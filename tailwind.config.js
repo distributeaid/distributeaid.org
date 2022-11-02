@@ -137,10 +137,10 @@ const config = {
               textTransform: 'uppercase',
             },
             h2: {
-              fontSize: em(24, 16),
-              marginTop: em(48, 24),
-              marginBottom: em(24, 24),
-              lineHeight: round(32 / 24),
+              fontSize: em(36, 16),
+              marginTop: em(64, 36),
+              marginBottom: em(36, 36),
+              lineHeight: round(48 / 36),
             },
             h3: {
               fontSize: em(20, 16),
@@ -153,7 +153,7 @@ const config = {
             '--tw-prose-headings': theme('colors.navy[700]'),
             '--tw-prose-lead': theme('colors.gray[600]'),
             '--tw-prose-links': theme('colors.navy[900]'),
-            '--tw-prose-bold': theme('colors.navy[900]'),
+            '--tw-prose-bold': theme('colors.navy[600]'),
             '--tw-prose-counters': theme('colors.gray[500]'),
             '--tw-prose-bullets': theme('colors.gray[800]'),
             '--tw-prose-hr': theme('colors.gray[200]'),
