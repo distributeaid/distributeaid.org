@@ -67,20 +67,16 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
         keys={keys}
         {...barProps}
         axisTop={{
-          tickSize: 5,
-          tickPadding: 5,
-          format: (value: number) => `${Number(value).toLocaleString()}`,
+          ...nivoProps.bar.horizontal.axisTop,
           legend: `# Items`,
           legendPosition: 'start',
           legendOffset: -40,
         }}
         axisBottom={
           indexCount <= 9
-            ? {}
+            ? nivoProps.bar.horizontal.axisBottom
             : {
-                tickSize: 5,
-                tickPadding: 5,
-                format: (value: number) => `${Number(value).toLocaleString()}`,
+                ...nivoProps.bar.horizontal.axisBottom,
                 legend: `# Items`,
                 legendPosition: 'start',
                 legendOffset: 40,

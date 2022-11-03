@@ -130,13 +130,13 @@ export const nivoProps = {
       axisTop: {
         tickSize: 5,
         tickPadding: 5,
-        format: (value: number) => `${Number(value).toLocaleString()}`,
+        format: (value: number) => `${formatNumber(value)}`,
       },
       axisRight: null,
       axisBottom: {
         tickSize: 5,
         tickPadding: 5,
-        format: (value: number) => `${Number(value).toLocaleString()}`,
+        format: (value: number) => `${formatNumber(value)}`,
       },
       axisLeft: {
         tickSize: 5,
@@ -144,4 +144,15 @@ export const nivoProps = {
       },
     },
   },
+}
+
+const formatNumber = (value: number) => {
+  if (value >= 1000000) {
+    const number = value / 1000000
+    return `${Number(number).toLocaleString()}m`
+  } else if (value >= 1000) {
+    const number = value / 1000
+    return `${Number(number).toLocaleString()}k`
+  }
+  return Number(value).toLocaleString()
 }
