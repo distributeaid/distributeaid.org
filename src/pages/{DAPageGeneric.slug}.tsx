@@ -17,7 +17,7 @@ type Props = {
 }
 
 export function Head({ data: { page } }: Props) {
-  return <PageHeader title={`Region: ${page.title}`} description={page.desc} />
+  return <PageHeader title={page.title} description={page.desc} />
 }
 
 const GenericPage: FC<Props> = ({ data: { page } }) => {
