@@ -3,7 +3,7 @@ import {
   validNeedsAssessmentData,
   validNeedsDatas,
   validSurveyId,
-} from './valid-needs-assessment-data.json'
+} from './valid-needs-assessment.data.json'
 
 describe('Processes Needs Assessment Data', () => {
   it('processes the needs assessment data correctly', () => {
