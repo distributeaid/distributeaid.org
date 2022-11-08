@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
+import IconWithTextXL from '../icon/IconWithTextXL'
 import PhotoCredit from './PhotoCredit'
 import { RouteCosts, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
@@ -40,7 +41,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
       }
     >
       <SectionTitle title="Storage &amp; Shipping (£)" />
-      <div className="section__body">
+      <div className="mt-4">
         <p className="mb-6">
           We offer a flat, per-pallet and per-box storage and shipment charge
           (S&amp;S) to take the stress out of budgeting to move your aid. By
@@ -56,47 +57,23 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
           you can and we'll confirm the final total before the drop-off date.
         </p>
 
-        <div className="tiles tiles--row ">
-          <div className="tile tile--column">
-            <div className="tile-icon mx-auto mb-2">
-              <img
-                className="icon icon--responsive mx-auto"
-                src={palletIcon}
-                alt="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
-                style={{ width: 100 }}
-              />
-            </div>
-            <div className="tile-content text-left">
-              <p className="mb-1">
-                Standard Pallet -{' '}
-                {formatCostInCurrency(
-                  costs.standardPaletteCost,
-                  costs.currency,
-                )}
-              </p>
-              <p>1.2m x 1.0m x 1.70m high</p>
-              <p>700kg</p>
-            </div>
-          </div>
-
-          <div className="tile tile--column">
-            <div className="tile-icon mx-auto mb-2">
-              <img
-                className="icon icon--responsive mx-auto"
-                src={halfPalletIcon}
-                alt="Half Pallet Icon: 3 boxes stacked in a pyramid on a pallet."
-                style={{ width: 100 }}
-              />
-            </div>
-            <div className="tile-content text-left">
-              <p className="mb-1">
-                Half Pallet -{' '}
-                {formatCostInCurrency(costs.halfPaletteCost, costs.currency)}
-              </p>
-              <p>1.2m x 1.0m x 0.85m high</p>
-              <p>350kg</p>
-            </div>
-          </div>
+        <div className="flex flex-wrap justify-center mt-4">
+          <IconWithTextXL
+            icon={palletIcon}
+            altText="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
+            line1={`Standard Pallet -${' '}
+            ${formatCostInCurrency(costs.standardPaletteCost, costs.currency)}`}
+            line2="1.2m x 1.0m x 1.70m high"
+            line3="700kg"
+          />
+          <IconWithTextXL
+            icon={halfPalletIcon}
+            altText="Half Pallet Icon: 3 boxes stacked in a pyramid on a pallet."
+            line1={`Half Pallet -${' '}
+            ${formatCostInCurrency(costs.halfPaletteCost, costs.currency)}`}
+            line2="1.2m x 1.0m x 0.85m high"
+            line3="350kg"
+          />
         </div>
 
         <h2 className="font-bold mb-4 mt-8">
