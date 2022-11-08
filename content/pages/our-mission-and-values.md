@@ -1,7 +1,12 @@
 ---
 title: Our Mission and Values
 slug: our-mission
-desc: ''
+desc: Founded in 2019, Distribute Aid has grown into Europe's largest grassroots logistics
+  organisation. We improve how aid is sourced, delivered, and distributed so as to
+  achieve a greater collective impact in serving the needs of displaced and otherwise
+  disadvantaged people. We have coordinated over 80 shipments of humanitarian aid
+  and worked with 140+ small charities and organisations in 12 countries across Europe,
+  Lebanon, and the United States of America.
 sections:
 - template: section-grid
   metadata:
