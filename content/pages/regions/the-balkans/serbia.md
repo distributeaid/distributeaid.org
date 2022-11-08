@@ -1,6 +1,6 @@
 ---
 population:
-  count: 6254
+  count: 8150
   trend: Increasing
   description: Accurate population numbers are hard to ascertain as people in The
     Balkans tend to be on the move.  Numbers can change substantially from season
