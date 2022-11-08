@@ -57,7 +57,7 @@ subregions:
 - content/pages/regions/the-balkans/bosnia.md
 - content/pages/regions/the-balkans/croatia.md
 population:
-  count: 8750
+  count: 11505
   trend: ''
   description: _The Balkan Route_ is the name given to the route taken by many persons
     on the move who head north from Turkey or Greece towards Western and Northern
