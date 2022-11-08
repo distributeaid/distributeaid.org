@@ -112,6 +112,7 @@ fields:
     label: Cover Photo Fields
   label: Cover Photo
 pages:
+- content/pages/South Lebanon.md
 - content/pages/regions/eastern-europe/hungary.md
 - content/pages/regions/eastern-europe/hungary.md
 - content/pages/regions/eastern-europe/moldova.md
