@@ -123,6 +123,7 @@ fields:
     labelField: role
   label: Roles
 pages:
+- content/blocks/members/adele-maclean.md
 - content/blocks/members/axel-gaudinat.md
 - content/blocks/members/fionn-douthwaite.md
 - content/blocks/members/florence-creedysmith.md
