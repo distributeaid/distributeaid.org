@@ -57,7 +57,7 @@ stayInformedLinks:
   linkURL: https://static1.squarespace.com/static/506c8ea1e4b01d9450dd53f5/t/6216a3799be96a3b07de2089/1645650812924/Greece+Report+-+Feb+2022.pdf
   linkDescription: Describes the intensifying human rights abuse situation in Greece.
 name: Greece
-map: "/uploads/region-maps-5.png"
+map: "/uploads/2.png"
 title: News Updates
 visibleCount: '5'
 updates:
