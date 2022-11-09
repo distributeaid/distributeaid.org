@@ -1,14 +1,14 @@
 import { FC } from 'react'
 
 import {
-  Layout,
-  Margin,
-  SectionGrid as SectionGridType,
+  SectionGridNode,
+  SectionGridOptionLayout,
+  SectionGridOptionMargin,
   SectionGridOptions,
 } from '../../../types/generic-page.d'
 
 type SectionGridProps = {
-  section: SectionGridType
+  section: SectionGridNode
   children: JSX.Element
   [key: string]: any
 }
@@ -34,9 +34,9 @@ export const SectionGrid: FC<SectionGridProps> = ({
 
 const getMarginClasses = (options: SectionGridOptions): string => {
   switch (options.margin) {
-    case Margin.BANNER:
+    case SectionGridOptionMargin.BANNER:
       return 'mx-8 my-12 max-w-none'
-    case Margin.MARGIN:
+    case SectionGridOptionMargin.MARGIN:
       return 'mx-8 my-12'
     default:
       return 'mx-8 my-12'
@@ -45,9 +45,9 @@ const getMarginClasses = (options: SectionGridOptions): string => {
 
 const getLayoutClasses = (options: SectionGridOptions): string => {
   switch (options.layout) {
-    case Layout.ROW:
+    case SectionGridOptionLayout.ROW:
       return 'flex flex-row'
-    case Layout.COL:
+    case SectionGridOptionLayout.COL:
       return 'flex flex-col'
     default:
       return 'flex flex-row'

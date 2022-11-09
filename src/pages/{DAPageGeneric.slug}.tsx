@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import { FC } from 'react'
 
-import { PageGeneric as PageGenericType } from '../types/generic-page'
+import { PageGenericNode } from '../types/generic-page'
 
 import { getBackgroundColor } from '../utils/site-theme'
 
@@ -12,7 +12,7 @@ import { Sections } from '@components/section/section'
 
 type Props = {
   data: {
-    page: PageGenericType
+    page: PageGenericNode
   }
 }
 

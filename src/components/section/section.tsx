@@ -1,9 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
-import {
-  Section as SectionType,
-  SectionGrid as SectionGridType,
-} from '../../types/generic-page.d'
+import { SectionGridNode, SectionNode } from '../../types/generic-page.d'
 
 import { getBackgroundColor } from '../../utils/site-theme'
 
@@ -11,7 +8,7 @@ import { Blocks } from './content-block'
 import { SectionGrid } from './sections/section-grid'
 
 type SectionsProps = PropsWithChildren<{
-  sections: SectionType[]
+  sections: SectionNode[]
 }>
 
 export const Sections: FC<SectionsProps> = ({ sections }) => {
@@ -41,7 +38,7 @@ export const Sections: FC<SectionsProps> = ({ sections }) => {
 }
 
 type SectionProps = {
-  section: SectionType
+  section: SectionNode
   [key: string]: any
 }
 
@@ -49,7 +46,7 @@ export const Section: FC<SectionProps> = ({ section, children, ...props }) => {
   switch (section.internal.type) {
     case 'DASectionGrid':
       return (
-        <SectionGrid section={section as SectionGridType} {...props}>
+        <SectionGrid section={section as SectionGridNode} {...props}>
           {children}
         </SectionGrid>
       )

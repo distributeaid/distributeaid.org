@@ -1,6 +1,8 @@
-import { CreateNodeArgs, NodeInput } from 'gatsby'
+import { CreateNodeArgs } from 'gatsby'
 import { getArrayProperty } from '../utils/untypedAccess/getArrayProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
+
+import { BlockNodeInput } from '../../src/types/generic-page.d'
 
 export const schema = `
   union DABlockTypes =
@@ -35,12 +37,16 @@ export const schema = `
 type DeriveBlocksFn = (
   blocks: Record<string, any>[],
   parentId: string,
-  { createNodeId, createContentDigest }: CreateNodeArgs,
-) => NodeInput[]
+  createNodeArgs: CreateNodeArgs,
+) => BlockNodeInput[]
 
-export const deriveBlockNodes: DeriveBlocksFn = (blocks, ...args) => {
-  return blocks.reduce((derivedBlocks: NodeInput[], block) => {
-    const derivedBlock = deriveBlockNode(block, ...args)
+export const deriveBlockNodes: DeriveBlocksFn = (
+  blocks,
+  parentId,
+  createNodeArts,
+) => {
+  return blocks.reduce((derivedBlocks: BlockNodeInput[], block) => {
+    const derivedBlock = deriveBlockNode(block, parentId, createNodeArts)
     if (derivedBlock) {
       derivedBlocks.push(derivedBlock)
     }
@@ -51,33 +57,38 @@ export const deriveBlockNodes: DeriveBlocksFn = (blocks, ...args) => {
 type DeriveBlockFn = (
   block: Record<string, any>,
   parentId: string,
-  { createNodeId, createContentDigest }: CreateNodeArgs,
-) => NodeInput | null
+  createNodeArgs: CreateNodeArgs,
+) => BlockNodeInput | null
 
-export const deriveBlockNode: DeriveBlockFn = (...args) => {
-  const block = args[0]
-  const { reporter } = args[2]
+export const deriveBlockNode: DeriveBlockFn = (
+  block,
+  parentId,
+  createNodeArgs,
+) => {
+  const { reporter } = createNodeArgs
   const blockType = getStringProperty(block, 'template')
 
   switch (blockType) {
     case 'block-title':
-      return deriveTitleBlockNode(...args)
+      return deriveTitleBlockNode(block, parentId, createNodeArgs)
 
     case 'block-text':
-      return deriveTextBlockNode(...args)
+      return deriveTextBlockNode(block, parentId, createNodeArgs)
 
     case 'block-youtube':
-      return deriveYoutubeBlockNode(...args)
+      return deriveYoutubeBlockNode(block, parentId, createNodeArgs)
 
     case 'block-timeline':
-      return deriveTimelineBlockNode(...args)
+      return deriveTimelineBlockNode(block, parentId, createNodeArgs)
 
     case 'block-image-with-caption':
-      reporter.warn('Content Block "Image with Caption" not implemented yet.')
+      reporter.warn(
+        `Dropping content block type="${blockType}", since it is not implemented yet.`,
+      )
       return null
 
     default:
-      reporter.warn(`Unkown Content Block type: "${blockType}"`)
+      reporter.warn(`Dropping unkown content block: type="${blockType}"`)
       return null
   }
 }

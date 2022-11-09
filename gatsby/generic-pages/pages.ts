@@ -1,6 +1,8 @@
-import { CreateNodeArgs, NodeInput } from 'gatsby'
+import { CreateNodeArgs } from 'gatsby'
 import { getArrayProperty } from '../utils/untypedAccess/getArrayProperty'
 import { deriveSectionNodes } from './sections'
+
+import { PageGenericNodeInput } from '../../src/types/generic-page.d'
 
 export const schema = `
   type DAPageGeneric implements Node @dontInfer {
@@ -14,17 +16,27 @@ export const schema = `
 type DerivePageFn = (
   page: Record<string, any>,
   parentId: string,
-  args: CreateNodeArgs,
-) => NodeInput
+  createNodeArgs: CreateNodeArgs,
+) => PageGenericNodeInput
 
-export const deriveGenericPageNode: DerivePageFn = (page, parentId, args) => {
-  const { createNodeId, createContentDigest } = args
+export const deriveGenericPageNode: DerivePageFn = (
+  page,
+  parentId,
+  createNodeArgs,
+) => {
+  const { createNodeId, createContentDigest, reporter } = createNodeArgs
 
   const sections = deriveSectionNodes(
     getArrayProperty(page, 'sections'),
     parentId,
-    args,
+    createNodeArgs,
   )
+
+  if (sections.length === 0) {
+    reporter.panic(
+      new Error(`Page title="${page.title}" is empty after processsing.`),
+    )
+  }
 
   return {
     // Node Data

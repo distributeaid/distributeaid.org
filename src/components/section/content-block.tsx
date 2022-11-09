@@ -1,16 +1,16 @@
 import { FC } from 'react'
 
 import {
-  Block as BlockType,
-  BlockText as BlockTextType,
-  BlockTitle as BlockTitleType,
+  BlockNode,
+  BlockTextNode,
+  BlockTitleNode,
 } from '../../types/generic-page.d'
 
 import { BlockText } from './blocks/block-text'
 import { BlockTitle } from './blocks/block-title'
 
 type BlocksProps = {
-  blocks: BlockType[]
+  blocks: BlockNode[]
 }
 
 export const Blocks: FC<BlocksProps> = ({ blocks }) => {
@@ -20,15 +20,15 @@ export const Blocks: FC<BlocksProps> = ({ blocks }) => {
 }
 
 type BlockProps = {
-  block: BlockType
+  block: BlockNode
 }
 
 export const Block: FC<BlockProps> = ({ block }) => {
   switch (block.internal.type) {
     case 'DABlockTitle':
-      return <BlockTitle block={block as BlockTitleType} />
+      return <BlockTitle block={block as BlockTitleNode} />
     case 'DABlockText':
-      return <BlockText block={block as BlockTextType} />
+      return <BlockText block={block as BlockTextNode} />
 
     // wishlist
     case 'DABlockYoutube':

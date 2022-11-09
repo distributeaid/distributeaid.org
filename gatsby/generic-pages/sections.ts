@@ -1,6 +1,11 @@
-import { CreateNodeArgs, NodeInput } from 'gatsby'
+import { CreateNodeArgs } from 'gatsby'
 
-import { Layout, Margin, Order } from '../../src/types/generic-page.d'
+import {
+  SectionGridOptionLayout,
+  SectionGridOptionMargin,
+  SectionGridOptionOrder,
+  SectionNodeInput,
+} from '../../src/types/generic-page.d'
 
 import { getArrayProperty } from '../utils/untypedAccess/getArrayProperty'
 import { getNumberProperty } from '../utils/untypedAccess/getNumberProperty'
@@ -45,13 +50,20 @@ export const schema = `
 type DeriveSectionsFn = (
   sections: Record<string, any>[],
   parentId: string,
-  { createNodeId, createContentDigest }: CreateNodeArgs,
-) => NodeInput[]
+  createNodeArgs: CreateNodeArgs,
+) => SectionNodeInput[]
 
-export const deriveSectionNodes: DeriveSectionsFn = (sections, ...args) => {
-  return sections.reduce((derivedSections: NodeInput[], section) => {
-    const derivedSection = deriveSectionNode(section, ...args)
-    if (derivedSection) {
+export const deriveSectionNodes: DeriveSectionsFn = (
+  sections,
+  parentId,
+  createNodeArgs,
+) => {
+  return sections.reduce((derivedSections: SectionNodeInput[], section, i) => {
+    const { reporter } = createNodeArgs
+    const derivedSection = deriveSectionNode(section, parentId, createNodeArgs)
+    if (derivedSection && derivedSection.blocks.length === 0) {
+      reporter.warn(`Dropping empty section: #${i}`)
+    } else if (derivedSection) {
       derivedSections.push(derivedSection)
     }
     return derivedSections
@@ -61,20 +73,23 @@ export const deriveSectionNodes: DeriveSectionsFn = (sections, ...args) => {
 type DeriveSectionFn = (
   section: Record<string, any>,
   parentId: string,
-  { createNodeId, createContentDigest }: CreateNodeArgs,
-) => NodeInput | null
+  createNodeArgs: CreateNodeArgs,
+) => SectionNodeInput | null
 
-export const deriveSectionNode: DeriveSectionFn = (...args) => {
-  const section = args[0]
-  const { reporter } = args[2]
+export const deriveSectionNode: DeriveSectionFn = (
+  section,
+  parentId,
+  createNodeArgs,
+) => {
+  const { reporter } = createNodeArgs
   const sectionType = getStringProperty(section, 'template')
 
   switch (sectionType) {
     case 'section-grid':
-      return deriveGridSectionNode(...args)
+      return deriveGridSectionNode(section, parentId, createNodeArgs)
 
     default:
-      reporter.warn(`Unkown Content Block type: "${sectionType}"`)
+      reporter.warn(`Dropping unkown section: type="${sectionType}"`)
       return null
   }
 }
@@ -82,12 +97,12 @@ export const deriveSectionNode: DeriveSectionFn = (...args) => {
 export const deriveGridSectionNode: DeriveSectionFn = (
   section,
   parentId,
-  args,
+  createNodeArgs,
 ) => {
-  const { createNodeId, createContentDigest } = args
+  const { createNodeId, createContentDigest } = createNodeArgs
 
   const blocksData = getArrayProperty(section, 'contentBlocks')
-  const blocks = deriveBlockNodes(blocksData, parentId, args)
+  const blocks = deriveBlockNodes(blocksData, parentId, createNodeArgs)
 
   const meta = getObjectProperty(section, 'metadata')
   const margin = deriveGridSectionMargin(getStringProperty(meta, 'margins'))
@@ -131,34 +146,34 @@ export const deriveGridSectionNode: DeriveSectionFn = (
 const deriveGridSectionMargin = (margin: string) => {
   switch (margin) {
     case 'Margined':
-      return Margin.MARGIN
+      return SectionGridOptionMargin.MARGIN
     case 'Banner':
-      return Margin.BANNER
+      return SectionGridOptionMargin.BANNER
     default:
-      return Margin.BANNER
+      return SectionGridOptionMargin.BANNER
   }
 }
 
 const deriveGridSectionLayout = (layout: string) => {
   switch (layout) {
     case 'Row-Bound':
-      return Layout.ROW
+      return SectionGridOptionLayout.ROW
     case 'Column-Bound':
-      return Layout.COL
+      return SectionGridOptionLayout.COL
     default:
-      return Layout.ROW
+      return SectionGridOptionLayout.ROW
   }
 }
 
 const deriveGridSectionOrder = (order: string) => {
   switch (order) {
     case 'left-to-right':
-      return Order.HORIZONTAL
+      return SectionGridOptionOrder.HORIZONTAL
     case 'top-to-bottom':
-      return Order.VERTICAL
+      return SectionGridOptionOrder.VERTICAL
     case 'random':
-      return Order.RANDOM
+      return SectionGridOptionOrder.RANDOM
     default:
-      return Order.HORIZONTAL
+      return SectionGridOptionOrder.HORIZONTAL
   }
 }
