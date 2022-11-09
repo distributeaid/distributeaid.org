@@ -111,6 +111,15 @@ fields:
     template: media-asset
     label: Cover Photo Fields
   label: Cover Photo
+- name: longText
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Wiki Text
 pages:
 - content/pages/South Lebanon.md
 - content/pages/Southern Lebanon.md
