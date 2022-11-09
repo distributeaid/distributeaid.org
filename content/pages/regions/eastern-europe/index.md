@@ -18,25 +18,15 @@ stayInformed:
     description: ''
     label: Humanitarian Needs in Ukraine - OCHA
 name: Eastern Europe
-map: "/uploads/eastern-europe.png"
-overview: The current situation in Eastern Europe has been heavily affected by the
-  Russian invasion of Ukraine. It is estimated that over 11 [million people have crossed
-  the border](https://data.unhcr.org/en/situations/ukraine) since the invasion began
-  in February 2022. Most of the people who have left Ukraine are now temporarily residing
-  in the bordering states. [The area includes parts of two major migration paths](http://www.infomigrants.net/en/post/36391/the-main-migration-routes-to-the-european-union)
-  taken by people entering the European Union from the Middle East and Central Asia.
-  The first route involves the Eastern border via Russia, Ukraine, and Belarus. The
-  second route is the Balkan route, which has included Hungary and Romania in the
-  past as well.
-governmentResponse: "[Eastern Europe has been characterised by right-wing governments](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780190274559.001.0001/oxfordhb-9780190274559-e-28)
-  making legislative changes which have worsened the situation for displaced people.
-  Pushbacks, violence by authorities, and hostile attitudes by locals are common in
-  the region. Given that the authorities often have violent responses towards people
-  on the move, the need for medical support is usually great. Grassroots groups oftentimes
-  have to provide the services which governments neglect. These groups usually also
-  provide food, WASH, clothing, and other NFIs. Even simple services such as providing
-  general information is often neglected by the governments in the region and has
-  to be done by the grassroots groups that operate there."
+map: "/uploads/region-maps-12.png"
+overview: Eastern Europe as a region, includes Ukraine, Romania, Moldova, Hungary,
+  Slovakia, and Poland.  It mostly act as places of transition for people wanting
+  to seek asylum in other EU countries- although not always.  Since Russia's war in
+  the Ukraine began, millions of Ukrainians have fled to neighboring countries.
+governmentResponse: |-
+  Governance in this region has been characterised by right-wing populism, as seen in Hungary and Poland, which results in fewer rights for people on the move. Humanitarian aid organisations have been forced out of the region by government hostility, despite the critical need for medicine, warm clothing, and shelter. Construction of a $353 million fence along half the border is underway, adding to the growing anti-immigration EU policies often referred to as “[Fortress Europe](https://www.theguardian.com/commentisfree/2021/aug/01/the-guardian-view-on-fortress-europe-a-continent-losing-its-moral-compass)_”_. Romania, one of the transitory countries for people travelling from the southeast into the EU, [has the largest number of illegal pushbacks recorded by UNHCR](https://www.infomigrants.net/en/post/32629/romania-poor-peoples-route-to-europe).
+
+  Eastern European countries have been much more welcoming to Ukrainian refugees than those fleeing conflict in the Middle East or North Africa.
 subregions:
 - content/pages/regions/eastern-europe/ukraine.md
 - content/pages/regions/eastern-europe/moldova.md
@@ -47,10 +37,7 @@ subregions:
 population:
   count: 
   trend: ''
-  description: The current situation in Eastern Europe has been heavily affected by
-    the Russian invasion of Ukraine. It is estimated that over 11 [million people
-    have crossed the border](https://data.unhcr.org/en/situations/ukraine) since the
-    invasion began in February 2022.
+  description: ''
 coverPhoto:
   asset: ''
   caption: " "
