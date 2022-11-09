@@ -14,7 +14,7 @@ stayInformed:
   title: Stay Informed
   links: []
 name: Lebanon
-map: "/uploads/region-maps-7.png"
+map: "/uploads/3.png"
 overview: Lebanon's largest population of refugees is in Bekaa, which hosts [39% of
   total registered refugees](https://data2.unhcr.org/en/situations/syria/location/71).
   The lowest population is in South Lebanon, with [90,832 registered refugees.](https://data2.unhcr.org/en/situations/syria/location/71)
