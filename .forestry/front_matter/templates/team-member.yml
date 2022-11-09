@@ -123,7 +123,9 @@ fields:
     labelField: role
   label: Roles
 pages:
+- content/blocks/members/axel-gaudinat.md
 - content/blocks/members/florence-creedysmith.md
+- content/blocks/members/gabriela-mucientes.md
 - content/blocks/members/kayleigh-thorpe.md
 - content/blocks/members/nicole-tingle.md
 - content/blocks/members/sara-lonegard.md
