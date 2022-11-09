@@ -1,3 +1,4 @@
+import { shuffle } from 'lodash'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import { KeyValuePair } from 'tailwindcss/types/config.js'
 import tailwindConfig from '../../tailwind.config.js'
@@ -10,11 +11,12 @@ export function getThemeLargeScreenWidth() {
 }
 
 let backgroundColorIndex = 0
-const colors = getColors({
-  swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
-  weights: [50, 100],
-  randomize: true,
-})
+const colors = shuffle(
+  getColors({
+    swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
+    weights: [50, 100],
+  }),
+)
 
 export function getBackgroundColor() {
   const color = colors[backgroundColorIndex]
@@ -26,11 +28,9 @@ export function getBackgroundColor() {
 export function getColors({
   swatches,
   weights,
-  randomize,
 }: {
   swatches: string[]
   weights: number[]
-  randomize?: boolean
 }): string[] {
   const themeColors = theme?.colors as Record<
     string,
@@ -47,10 +47,6 @@ export function getColors({
         colors.push(color)
       }
     }
-  }
-
-  if (randomize) {
-    colors.sort(() => Math.random() - 0.5)
   }
 
   // ['#F2ECF5', '#E9DFEE', '#D7C6E0', '#C6ACD2', '#B493C4', '#A284B0']

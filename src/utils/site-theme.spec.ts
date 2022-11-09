@@ -29,21 +29,4 @@ describe('getBackgroundColors(swatches, weights, randomize?)', () => {
     })
     expect(color).toStrictEqual([])
   })
-  it('can randomize the color order', () => {
-    const randomSpy = jest
-      .spyOn(Math, 'random')
-      .mockReturnValueOnce(0.6)
-      .mockReturnValueOnce(0.4)
-
-    const color = getColors({
-      swatches: ['navy'],
-      weights: [50, 100],
-    })
-
-    expect(randomSpy).toHaveBeenCalledTimes(2)
-
-    expect(color).toStrictEqual(['#EEF4FD', '#F8FAFE'])
-
-    jest.spyOn(global.Math, 'random').mockRestore()
-  })
 })
