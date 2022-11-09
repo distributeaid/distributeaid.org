@@ -1,6 +1,6 @@
+import Image from '@components/image/Image'
 import { FC } from 'react'
 import boardSrc from '../../images/about-us/board.jpg'
-import Image from '@components/image/image'
 
 const BoardMembers: FC = () => (
   <div>
