@@ -123,6 +123,15 @@ fields:
     template: media-asset
     label: Cover Photo Fields
   label: Cover Photo
+- name: longText
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Wiki Text
 pages:
 - content/pages/regions/eastern-europe/index.md
 - content/pages/regions/eastern-europe/index.md
