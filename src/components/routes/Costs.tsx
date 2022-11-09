@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import palletIcon from '../../images/regular-routes/icons/noun_Pallet_3307940.svg'
 import halfPalletIcon from '../../images/regular-routes/icons/noun_Pallet_3364535.svg'
-import IconWithTextXL from '../icon/IconWithTextXL'
+import IconWithText from '../icon/IconWithText'
 import PhotoCredit from './PhotoCredit'
 import { RouteCosts, RouteImages } from './RouteComponentTypes'
 import RoutesSectionImage from './RoutesSectionImage'
@@ -58,21 +58,33 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
         </p>
 
         <div className="flex flex-wrap justify-center mt-4">
-          <IconWithTextXL
+          <IconWithText
             icon={palletIcon}
             altText="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
-            line1={`Standard Pallet -${' '}
-            ${formatCostInCurrency(costs.standardPaletteCost, costs.currency)}`}
-            line2="1.2m x 1.0m x 1.70m high"
-            line3="700kg"
+            description={
+              <div className="text-sm w-40 text-center">
+                <p>{`Standard Pallet -${' '} ${formatCostInCurrency(
+                  costs.standardPaletteCost,
+                  costs.currency,
+                )}`}</p>
+                <p className="mt-1.5">1.2m x 1.0m x 1.70m high</p>
+                <p className="mt-1.5">700kg</p>
+              </div>
+            }
           />
-          <IconWithTextXL
+          <IconWithText
             icon={halfPalletIcon}
             altText="Half Pallet Icon: 3 boxes stacked in a pyramid on a pallet."
-            line1={`Half Pallet -${' '}
-            ${formatCostInCurrency(costs.halfPaletteCost, costs.currency)}`}
-            line2="1.2m x 1.0m x 0.85m high"
-            line3="350kg"
+            description={
+              <div className="text-sm w-40 text-center">
+                <p>{`Half Pallet -${' '} ${formatCostInCurrency(
+                  costs.halfPaletteCost,
+                  costs.currency,
+                )}`}</p>
+                <p className="mt-1.5">1.2m x 1.0m x 0.85m high</p>
+                <p className="mt-1.5">350kg</p>
+              </div>
+            }
           />
         </div>
 
