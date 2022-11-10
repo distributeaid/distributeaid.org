@@ -30,3 +30,4 @@ By contributing to this project you agree to:
 - Aksa
 - Lindsay Rainey
 - Tymur Levtsun
+- Tyler Alexander
