@@ -39,6 +39,7 @@ fields:
     min: 
     max: 
 pages:
+- content/pages/connecting-communities.md
 - content/pages/contact-us.md
 - content/pages/our-mission-and-values.md
 - content/pages/our-story.md
