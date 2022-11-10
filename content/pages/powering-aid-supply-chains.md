@@ -20,7 +20,7 @@ sections:
     caption: " "
     attribution: " "
     altText: " "
-    asset: ''
+    asset: "/uploads/3.jpeg"
     date: 
 - template: section-grid
   metadata:
