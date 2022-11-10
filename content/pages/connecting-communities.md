@@ -22,5 +22,13 @@ sections:
     attribution: " "
     altText: " "
     date: 
+- template: section-grid
+  metadata:
+    margins: Margined
+    numCols: 3
+    numRows: 1
+    colOrRowBound: Column-Bound
+    order: left-to-right
+  contentBlocks: []
 
 ---
