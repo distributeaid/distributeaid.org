@@ -11,6 +11,16 @@ sections:
     numRows: 1
     colOrRowBound: Row-Bound
     order: left-to-right
-  contentBlocks: []
+  contentBlocks:
+  - template: block-image-with-caption
+    dateUploaded: 2022-11-10T10:45:45Z
+    tags: []
+    alignmentPhoto: Center
+    alignmentCaption: Center
+    asset: "/uploads/3.jpeg"
+    caption: " "
+    attribution: " "
+    altText: " "
+    date: 
 
 ---
