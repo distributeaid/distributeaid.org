@@ -1,8 +1,9 @@
-import { deriveGenericPageNode } from './pages'
+import { jest } from '@jest/globals'
 
 import { CreateNodeArgs } from 'gatsby'
 
-import { jest } from '@jest/globals'
+import { factory } from '../../src/types/generic-page.test-helpers'
+import { deriveGenericPageNode } from './pages'
 
 // TODO
 // ----
@@ -13,7 +14,7 @@ import { jest } from '@jest/globals'
 // a counter so we can test that they are being called the appropriate # of
 // times for various sample input data.
 let argsMock = {
-  createNodeId: jest.fn((x) => 'node id'),
+  createNodeId: jest.fn((x) => 'node-id'),
   createContentDigest: jest.fn((x) => 'content digest'),
   reporter: {
     log: jest.fn((x) => undefined),
@@ -37,25 +38,28 @@ describe('Processes Page Data', () => {
 
   it('processes each type of page, section, and content block correctly', () => {
     // build our input
-    const sectionInput = getSectionGridInput({
-      contentBlocks: [getBlockTitleInput(), getBlockTextInput()],
+    const sectionData = factory.getSectionGridData({
+      contentBlocks: [factory.getBlockTitleData(), factory.getBlockTextData()],
     })
 
-    const pageInput = getPageInput({
-      sections: [sectionInput, sectionInput],
+    const pageData = factory.getPageData({
+      sections: [sectionData, sectionData],
     })
 
     // build our output
-    const section = getSectionGrid({
-      blocks: [getBlockTitle(), getBlockText()],
+    const section = factory.getSectionGridNodeInput({
+      blocks: [
+        factory.getBlockTitleNodeInput(),
+        factory.getBlockTextNodeInput(),
+      ],
     })
 
-    const page = getPage({
+    const page = factory.getPageNodeInput({
       sections: [section, section],
     })
 
     // compare
-    const derivedData = deriveGenericPageNode(pageInput, 'parent id', args)
+    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -67,13 +71,13 @@ describe('Processes Page Data', () => {
 
   it('panics on empty pages', () => {
     // build our input
-    const pageInput = getPageInput()
+    const pageData = factory.getPageData()
 
     // build our output
-    const page = getPage()
+    const page = factory.getPageNodeInput()
 
     // compare
-    const derivedData = deriveGenericPageNode(pageInput, 'parent id', args)
+    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -85,27 +89,27 @@ describe('Processes Page Data', () => {
 
   it('processes pages with empty sections gracefully by dropping them', () => {
     // build our input
-    const pageInput = getPageInput({
+    const pageData = factory.getPageData({
       sections: [
-        getSectionGridInput(),
-        getSectionGridInput({
-          contentBlocks: [getBlockTitleInput()],
+        factory.getSectionGridData(),
+        factory.getSectionGridData({
+          contentBlocks: [factory.getBlockTitleData()],
         }),
-        getSectionGridInput(),
+        factory.getSectionGridData(),
       ],
     })
 
     // build our output
-    const page = getPage({
+    const page = factory.getPageNodeInput({
       sections: [
-        getSectionGrid({
-          blocks: [getBlockTitle()],
+        factory.getSectionGridNodeInput({
+          blocks: [factory.getBlockTitleNodeInput()],
         }),
       ],
     })
 
     // compare
-    const derivedData = deriveGenericPageNode(pageInput, 'parent id', args)
+    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -117,31 +121,31 @@ describe('Processes Page Data', () => {
 
   it('handles unknown sections & content gracefully by dropping them', () => {
     // build our input
-    const pageInput = getPageInput({
+    const pageData = factory.getPageData({
       sections: [
-        getSectionUnknownInput(),
-        getSectionGridInput({
+        factory.getSectionUnknownData(),
+        factory.getSectionGridData({
           contentBlocks: [
-            getBlockUnknownInput(),
-            getBlockTitleInput(),
-            getBlockUnknownInput(),
+            factory.getBlockUnknownData(),
+            factory.getBlockTitleData(),
+            factory.getBlockUnknownData(),
           ],
         }),
-        getSectionUnknownInput(),
+        factory.getSectionUnknownData(),
       ],
     })
 
     // build our output
-    const page = getPage({
+    const page = factory.getPageNodeInput({
       sections: [
-        getSectionGrid({
-          blocks: [getBlockTitle()],
+        factory.getSectionGridNodeInput({
+          blocks: [factory.getBlockTitleNodeInput()],
         }),
       ],
     })
 
     // compare
-    const derivedData = deriveGenericPageNode(pageInput, 'parent id', args)
+    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -151,173 +155,3 @@ describe('Processes Page Data', () => {
     expect(argsMock.reporter.panic.mock.calls.length).toBe(0)
   })
 })
-
-/*
-Page
-------------------------------------------------------------
-*/
-const getPageInput = (props?: Record<string, any>) => {
-  return {
-    title: 'My Page Title',
-    slug: 'my-page',
-    desc: 'A custom test page.',
-    sections: [] as any[],
-    ...props,
-
-    template: 'DAPageGeneric',
-  }
-}
-
-const getPage = (props?: Record<string, any>) => {
-  return {
-    title: 'My Page Title',
-    description: 'A custom test page.',
-    sections: [] as any[],
-    slug: 'my-page',
-    path: '/my-page/',
-    id: 'node id',
-    parent: 'parent id',
-    children: [],
-    ...props,
-
-    internal: {
-      contentDigest: 'content digest',
-      ...props?.internal,
-
-      type: 'DAPageGeneric',
-    },
-  }
-}
-
-/*
-Section: Grid
-------------------------------------------------------------
-*/
-const getSectionGridInput = (props?: Record<string, any>) => {
-  return {
-    contentBlocks: [] as any[],
-    ...props,
-
-    metadata: {
-      margins: 'Margined',
-      numCols: 1,
-      numRows: 1,
-      colOrRowBound: 'Column-Bound',
-      order: 'top-to-bottom',
-      ...props?.metadata,
-    },
-
-    template: 'section-grid',
-  }
-}
-
-const getSectionGrid = (props?: Record<string, any>) => {
-  return {
-    id: 'node id',
-    parent: 'parent id',
-    children: [],
-    blocks: [] as any[],
-    ...props,
-
-    options: {
-      rows: 1,
-      cols: 1,
-      margin: 'MARGIN',
-      layout: 'COL',
-      order: 'VERTICAL',
-      ...props?.options,
-    },
-
-    internal: {
-      contentDigest: 'content digest',
-      ...props?.internal,
-
-      type: 'DASectionGrid',
-    },
-  }
-}
-
-/*
-Section: Unknown
-------------------------------------------------------------
-*/
-const getSectionUnknownInput = (props?: Record<string, any>) => {
-  return {
-    metadata: {},
-    contentBlocks: [] as any[],
-    ...props,
-
-    template: 'section-unknown',
-  }
-}
-
-/*
-Block: Title
-------------------------------------------------------------
-*/
-const getBlockTitleInput = (props?: Record<string, any>) => {
-  return {
-    text: 'General Inquiries',
-    ...props,
-
-    template: 'block-title',
-  }
-}
-
-const getBlockTitle = (props?: Record<string, any>) => {
-  return {
-    text: 'General Inquiries',
-    id: 'node id',
-    parent: 'parent id',
-    children: [],
-    ...props,
-
-    internal: {
-      contentDigest: 'content digest',
-      ...props?.internal,
-
-      type: 'DABlockTitle',
-    },
-  }
-}
-
-/*
-Block: Text
-------------------------------------------------------------
-*/
-const getBlockTextInput = (props?: Record<string, any>) => {
-  return {
-    text: 'The best way to get in touch with Distribute Aid is to email us at [me@example.org](mailto:me@example.org)!',
-    ...props,
-
-    template: 'block-text',
-  }
-}
-
-const getBlockText = (props?: Record<string, any>) => {
-  return {
-    id: 'node id',
-    parent: 'parent id',
-    children: [],
-    text: 'The best way to get in touch with Distribute Aid is to email us at [me@example.org](mailto:me@example.org)!',
-    ...props,
-
-    internal: {
-      contentDigest: 'content digest',
-      ...props?.internal,
-
-      type: 'DABlockText',
-    },
-  }
-}
-
-/*
-Block: Unknown
-------------------------------------------------------------
-*/
-const getBlockUnknownInput = (props?: Record<string, any>) => {
-  return {
-    ...props,
-    template: 'block-unknown',
-  }
-}

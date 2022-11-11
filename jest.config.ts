@@ -10,6 +10,8 @@ const config: Config = {
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
     '^@components/(.*)$': ['<rootDir>/src/components/$1'],
+    'react-markdown':
+      '<rootDir>/node_modules/react-markdown/react-markdown.min.js',
   },
   testPathIgnorePatterns: [
     `node_modules`,

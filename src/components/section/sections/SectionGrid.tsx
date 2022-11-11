@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import {
   SectionGridNode,
@@ -9,27 +9,33 @@ import {
 
 type SectionGridProps = {
   section: SectionGridNode
-  children: JSX.Element
+  className?: string
   [key: string]: any
 }
 
-export const SectionGrid: FC<SectionGridProps> = ({
-  section: { options },
+export const SectionGrid: FC<PropsWithChildren<SectionGridProps>> = ({
+  section: { options, blocks },
   children,
+  className,
   ...props
 }) => {
-  const classes: string[] = []
-  classes.push(getMarginClasses(options))
-  classes.push(getLayoutClasses(options))
-  if (props.className) {
-    classes.push(props.className)
-  }
+  const classes = getClasses(options, className)
 
   return (
     <section {...props}>
-      <div className={classes.join(' ')}>{children}</div>
+      <div className={classes}>{children}</div>
     </section>
   )
+}
+
+export const getClasses = (options: SectionGridOptions, className?: string) => {
+  const classes: string[] = []
+  classes.push(getMarginClasses(options))
+  classes.push(getLayoutClasses(options))
+  if (className) {
+    classes.push(className)
+  }
+  return classes.join(' ')
 }
 
 const getMarginClasses = (options: SectionGridOptions): string => {

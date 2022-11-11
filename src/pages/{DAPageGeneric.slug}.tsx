@@ -8,7 +8,7 @@ import { getBackgroundColor } from '../utils/site-theme'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from 'layouts/Simple'
 
-import { Sections } from '@components/section/section'
+import { Sections } from '@components/section/Section'
 
 type Props = {
   data: {

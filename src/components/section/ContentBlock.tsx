@@ -6,8 +6,8 @@ import {
   BlockTitleNode,
 } from '../../types/generic-page.d'
 
-import { BlockText } from './blocks/block-text'
-import { BlockTitle } from './blocks/block-title'
+import { BlockText } from './blocks/BlockText'
+import { BlockTitle } from './blocks/BlockTitle'
 
 type BlocksProps = {
   blocks: BlockNode[]
@@ -42,7 +42,7 @@ export const Block: FC<BlockProps> = ({ block }) => {
 
     default:
       throw new Error(
-        `Could not render block of unkown type "${block.internal.type}".  Recommended fix: 1) stub it out here and return null, 2) define the component and include it here as a case to render, or 3) exclude the block data from being added in the "deriveBlockNode" function in "/gatsby/generic-page/blocks"`,
+        `Could not render block of unknown type "${block.internal.type}".  Recommended fix: 1) stub it out here and return null, 2) define the component and include it here as a case to render, or 3) exclude the block data from being added in the "deriveBlockNode" function in "/gatsby/generic-page/blocks"`,
       )
   }
 }

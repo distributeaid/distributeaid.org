@@ -33,6 +33,11 @@ Sections
 export type SectionNodeInput = SectionGridNodeInput
 export type SectionNode = SectionGridNode
 
+/*
+Section: Grid
+------------------------------------------------------------
+*/
+
 /**
  * T should be BlockNode or BlockNodeInput
  */
@@ -82,14 +87,18 @@ export type BlockNodeInput =
   | BlockTextNodeInput
   | BlockYoutubeNodeInput
   | BlockTimelineNodeInput
+  | BlockImageNodeInput
+  | BlockCardNodeInput
 export type BlockNode =
   | BlockTitleNode
   | BlockTextNode
   | BlockYoutubeNode
   | BlockTimelineNode
+  | BlockImageNode
+  | BlockCardNode
 
 /*
-Block Title
+Block: Title
 ------------------------------------------------------------
 */
 interface BlockTitle {
@@ -100,7 +109,7 @@ export interface BlockTitleNodeInput extends BlockTitle, NodeInput {}
 export interface BlockTitleNode extends BlockTitle, Node {}
 
 /*
-Block Text
+Block: Text
 ------------------------------------------------------------
 */
 interface BlockText {
@@ -114,7 +123,7 @@ export interface BlockTextNodeInput extends BlockText, NodeInput {}
 export interface BlockTextNode extends BlockText, Node {}
 
 /*
-Block Youtube
+Block: Youtube
 ------------------------------------------------------------
 */
 interface BlockYoutube {
@@ -126,7 +135,7 @@ export interface BlockYoutubeNodeInput extends BlockYoutube, NodeInput {}
 export interface BlockYoutubeNode extends BlockYoutube, Node {}
 
 /*
-Block Timeline
+Block: Timeline
 ------------------------------------------------------------
 */
 interface BlockTimeline {
@@ -141,3 +150,33 @@ interface BlockTimeline {
 
 export interface BlockTimelineNodeInput extends BlockTimeline, NodeInput {}
 export interface BlockTimelineNode extends BlockTimeline, Node {}
+
+/*
+Block: Image
+------------------------------------------------------------
+Stub.
+*/
+interface BlockImage {}
+
+export interface BlockImageNodeInput extends BlockImage, NodeInput {}
+export interface BlockImageNode extends BlockImage, Node {}
+
+/*
+Block: Card
+------------------------------------------------------------
+Stub.
+*/
+interface BlockImage {}
+
+export interface BlockImageNodeInput extends BlockImage, NodeInput {}
+export interface BlockImageNode extends BlockImage, Node {}
+
+/*
+Block: Card
+------------------------------------------------------------
+Stub.
+*/
+interface BlockCard {}
+
+export interface BlockCardNodeInput extends BlockCard, NodeInput {}
+export interface BlockCardNode extends BlockCard, Node {}
