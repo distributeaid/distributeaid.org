@@ -22,6 +22,8 @@ sections:
     attribution: " "
     altText: " "
     date: 
+  - template: block-title
+    text: Connecting Communities
 - template: section-grid
   metadata:
     margins: Margined
