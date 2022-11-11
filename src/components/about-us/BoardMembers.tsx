@@ -1,27 +1,23 @@
+import Image from '@components/image/Image'
 import { FC } from 'react'
 import boardSrc from '../../images/about-us/board.jpg'
 
 const BoardMembers: FC = () => (
-  <div className="max-w-7xl mx-auto text-center py-20 px-4 text-lg">
-    <img
-      className="mx-auto mb-4"
-      style={{
-        width: 600,
-        height: 300,
-        objectFit: 'cover',
-        objectPosition: 'top',
-      }}
-      width="600"
-      height="300"
-      src={boardSrc}
-      alt="Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank"
+  <section className="py-12 lg:py-20">
+    <Image
+      image={boardSrc}
+      width={600}
+      height={300}
+      altText={
+        'Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank'
+      }
+      caption={
+        'Our board members from left to right: Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank'
+      }
+      attribution={'DistributeAid'}
+      alignment={'center'}
     />
-    <p className="text-gray-600">
-      Our board members from left to right:
-      <br />
-      Rudayna Abdo, Sara Lönegård, and Stephanie Fairbank
-    </p>
-  </div>
+  </section>
 )
 
 export default BoardMembers

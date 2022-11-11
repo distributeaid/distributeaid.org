@@ -27,7 +27,9 @@ By contributing to this project you agree to:
 - Emily Reed
 - Frédéric Bonnet
 - Rabea Gleissner
+- Federico Chaves
 - Aksa
 - Lindsay Rainey
 - Tymur Levtsun
 - Tyler Alexander
+- Federico Chaves
