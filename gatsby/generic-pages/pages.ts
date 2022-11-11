@@ -33,7 +33,7 @@ export const deriveGenericPageNode: DerivePageFn = (
   )
 
   if (sections.length === 0) {
-    reporter.panic(
+    reporter.error(
       new Error(`Page title="${page.title}" is empty after processsing.`),
     )
   }

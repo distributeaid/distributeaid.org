@@ -72,7 +72,9 @@ describe('Sections', () => {
     const surpressErrorLogs = jest.spyOn(console, 'error')
     surpressErrorLogs.mockImplementation(() => {})
 
-    sections[0] = factory.getSectionUnknownNode()
+    sections[0] = factory.getSectionUnknownNode({
+      blocks: [factory.getBlockTitleNode()],
+    })
     expect(() => {
       render(<Sections sections={sections} />)
     }).toThrow(/unknown/i)
@@ -115,10 +117,7 @@ describe('Section', () => {
     surpressErrorLogs.mockImplementation(() => {})
 
     let section = factory.getSectionUnknownNode({
-      blocks: [
-        factory.getBlockTitleNode({ text: 'My Title' }),
-        factory.getBlockTextNode({ text: 'My text.' }),
-      ],
+      blocks: [factory.getBlockTitleNode(), factory.getBlockTextNode()],
     })
     expect(() => {
       render(<Section section={section} />)
