@@ -3,7 +3,7 @@ import { FC } from 'react'
 import boardSrc from '../../images/about-us/board.jpg'
 
 const BoardMembers: FC = () => (
-  <div>
+  <section className="py-12 lg:py-20">
     <Image
       image={boardSrc}
       width={600}
@@ -17,7 +17,7 @@ const BoardMembers: FC = () => (
       attribution={'DistributeAid'}
       alignment={'center'}
     />
-  </div>
+  </section>
 )
 
 export default BoardMembers

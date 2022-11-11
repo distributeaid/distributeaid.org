@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 //import userEvent from '@testing-library/user-event'
-import Image from './Image'
+import Image, { getFlexAlignment, getTextAlignment } from './Image'
 
 describe('image', () => {
   it('renders texts', () => {
@@ -17,14 +17,34 @@ describe('image', () => {
         alignment={'center'}
       />,
     )
-    const attr = getByText('DistributeAid')
+    const attr = getByText('Photo Credit: DistributeAid')
     const paragraph = getByText('Our board members')
 
     expect(paragraph).toBeTruthy()
     expect(attr).toBeTruthy()
   })
 
-  it('Display image to the left, center or right', () => {
-    render(<Image />)
+  it('Align image to the left, center or right', () => {
+    let flexAlignmentRight = getFlexAlignment('right')
+    let flexAlignmentLeft = getFlexAlignment('left')
+    let flexAlignmentElse = getFlexAlignment('')
+    let flexAlignmentCenter = getFlexAlignment('center')
+
+    expect(flexAlignmentRight).toBe('justify-end')
+    expect(flexAlignmentLeft).toBe('justify-start')
+    expect(flexAlignmentElse).toBe('justify-center')
+    expect(flexAlignmentCenter).toBe('justify-center')
+  })
+
+  it('Align text to the left, center or right', () => {
+    let textAlignmentRight = getTextAlignment('right')
+    let textAlignmentLeft = getTextAlignment('left')
+    let textAlignmentElse = getTextAlignment('')
+    let textAlignmentCenter = getTextAlignment('center')
+
+    expect(textAlignmentRight).toBe('text-right')
+    expect(textAlignmentLeft).toBe('text-left')
+    expect(textAlignmentElse).toBe('text-center')
+    expect(textAlignmentCenter).toBe('text-center')
   })
 })

@@ -45,7 +45,7 @@ const Image: FC<Image> = ({
 
 export default Image
 
-const getFlexAlignment = (alignment: string) => {
+export const getFlexAlignment = (alignment: string) => {
   if (alignment === 'right') {
     return 'justify-end'
   } else if (alignment === 'left') {
@@ -55,7 +55,7 @@ const getFlexAlignment = (alignment: string) => {
   }
 }
 
-const getTextAlignment = (alignment: string) => {
+export const getTextAlignment = (alignment: string) => {
   if (alignment === 'right') {
     return 'text-right'
   } else if (alignment === 'left') {
