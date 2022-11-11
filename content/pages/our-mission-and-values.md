@@ -86,6 +86,5 @@ sections:
       **Impartiality and Unconditionality:** We take active steps to ensure that aid that is delivered using our services is distributed freely, fairly, and unconditionally by frontline groups.
 
       **Professionalism:** When we say we will do something, we do it, and we establish processes to prevent overpromises. We assume positive intent when communicating with other people and organisations. We empower our team members to maintain strong boundaries and be accountable to each other.
-template: ''
 
 ---
