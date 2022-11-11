@@ -91,5 +91,6 @@ sections:
         to help grassroots organisations continue to send aid after Brexit.
 slug: our-story
 desc: ''
+type: ''
 
 ---

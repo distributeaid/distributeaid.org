@@ -24,14 +24,14 @@ const DesktopNavigation: FunctionComponent<Props> = ({
           </Link>
         ))}
         {routeLinks && (
-          <nav className="nav-dropdown">
+          <nav className="group relative">
             <a
               href="#"
-              className="nav-dropdown-trigger py-2 px-4 text-white block rounded-t"
+              className="peer py-2 px-4 text-white block rounded-t cursor-default group-hover:bg-navy-700"
             >
               Routes
             </a>
-            <ul className="nav-dropdown-content bg-navy-700 shadow-lg">
+            <ul className="hidden peer-hover:flex hover:flex flex-col absolute right-0 bg-navy-700 shadow-lg">
               {routeLinks.map((route) => (
                 <Link
                   to={route.path}
@@ -45,7 +45,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({
           </nav>
         )}
         <Link
-          to="/donate"
+          to="/donate/"
           className="py-2 px-6 rounded bg-white transition-colors text-navy-700"
         >
           Donate

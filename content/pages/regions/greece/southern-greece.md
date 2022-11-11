@@ -1,6 +1,6 @@
 ---
 population:
-  count: 6250
+  count: 7098
   trend: Unkown
   description: ''
 newsUpdates:
@@ -13,4 +13,17 @@ overview: |-
 
   There are many community-led projects in Athens, including informal schools, free shops, street food / services, social centers, and squats.  However, warehousing is very expensive in the city so most larger hubs are located at the edges or in nearby towns.  Refugee camps are located in smaller towns surrounding the city.
 map: ''
+governmentResponse: ''
+stayInformed:
+  title: " "
+  links: []
+coverPhoto:
+  asset: ''
+  caption: " "
+  attribution: " "
+  dateUploaded: 
+  date: 
+  altText: " "
+  tags: []
+
 ---

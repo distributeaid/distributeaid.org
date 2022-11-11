@@ -11,19 +11,8 @@ export type Route = {
   aidRequestFormUrl: string
   population: number
   images: RouteImages
-  costs: {
-    currency: string
-    standardPaletteCost: number
-    overflowPricing: number
-    halfPaletteCost: number
-  }
-  deadlines: {
-    submissionsDeadline: string
-    confirmationDate: string
-    stagingBegins: string
-    stagingEnds: string
-    shipmentDeparture: string
-  }
+  costs: RouteCosts
+  deadlines: RouteDeadlines
   frontlineGroups: RouteFrontlineGroup[]
 }
 
@@ -38,4 +27,19 @@ export type RouteImages = {
 export type RouteFrontlineGroup = {
   logo: string
   name: string
+}
+
+export type RouteDeadlines = {
+  submissionsDeadline: string
+  confirmationDate: string
+  stagingBegins: string
+  stagingEnds: string
+  shipmentDeparture: string
+}
+
+export type RouteCosts = {
+  currency: string
+  standardPaletteCost: number
+  overflowPricing: number
+  halfPaletteCost: number
 }

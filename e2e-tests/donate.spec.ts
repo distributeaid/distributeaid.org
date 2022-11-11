@@ -14,7 +14,7 @@ test.describe('Donate action', () => {
     }) => {
       await page.goto(base)
       await page.locator('header >> a:has-text("Donate"):visible').click()
-      await expect(page).toHaveURL(new URL('/donate', base).toString())
+      await expect(page).toHaveURL(new URL('/donate/', base).toString())
       expect(
         await page.locator('data-test=opencollective').textContent(),
       ).toContain('Open Collective')
@@ -26,7 +26,7 @@ test.describe('Donate action', () => {
 
   test.describe('Donate page', () => {
     it('should show Open Collective info', async ({ page }) => {
-      await page.goto(new URL('/donate', base).toString())
+      await page.goto(new URL('/donate/', base).toString())
       expect(
         await page.locator('data-test=opencollective').textContent(),
       ).toContain('Open Collective')
@@ -37,7 +37,7 @@ test.describe('Donate action', () => {
     })
 
     it('should show Bank info', async ({ page }) => {
-      await page.goto(new URL('/donate', base).toString())
+      await page.goto(new URL('/donate/', base).toString())
       expect(await page.locator('data-test=bank').textContent()).toContain(
         'View bank info',
       )

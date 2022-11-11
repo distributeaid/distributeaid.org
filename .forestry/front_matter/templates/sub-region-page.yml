@@ -20,6 +20,15 @@ fields:
       format: markdown
   label: Overview
   description: An overview of the humanitarian situation in this sub-region.
+- name: governmentResponse
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Government Response
 - name: map
   type: file
   config:
@@ -82,6 +91,16 @@ fields:
     label: Updates List
   label: News Updates
   description: News updates about humanitarian responses and related info in the region.
+- name: stayInformed
+  type: field_group
+  config: {}
+  fields:
+  - name: linksList
+    type: include
+    config: {}
+    template: linkslist
+    label: Links List
+  label: Stay Informed Links
 - name: coverPhoto
   type: field_group
   config: {}
@@ -92,7 +111,18 @@ fields:
     template: media-asset
     label: Cover Photo Fields
   label: Cover Photo
+- name: longText
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Wiki Text
 pages:
+- content/pages/South Lebanon.md
+- content/pages/Southern Lebanon.md
 - content/pages/regions/eastern-europe/hungary.md
 - content/pages/regions/eastern-europe/hungary.md
 - content/pages/regions/eastern-europe/moldova.md

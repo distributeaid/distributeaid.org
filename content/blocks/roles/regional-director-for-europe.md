@@ -2,7 +2,8 @@
 location: Europe
 domain: Staff
 commitment: Full-Time
-title: Regional Director for Europe
+title: Director of Operations
 desc: ''
 team: Administration
+
 ---
