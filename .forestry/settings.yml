@@ -73,6 +73,13 @@ sections:
 - type: document
   path: content/site-settings.json
   label: Site Settings
+- type: directory
+  path: content/blocks/fundraisers
+  label: Fundraiser
+  create: all
+  match: "**/*"
+  templates:
+  - fundraiser
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
