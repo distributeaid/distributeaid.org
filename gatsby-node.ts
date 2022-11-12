@@ -2,6 +2,11 @@ import type { GatsbyNode } from 'gatsby'
 
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
+import { createFundraisersPages } from './gatsby/fundraisers/pages'
+import {
+  createFundraiserSchemaCustomization,
+  createFundraisersFromMarkdown,
+} from './gatsby/fundraisers/transformers'
 import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
 import transformers from './gatsby/transform-nodes'
 
@@ -14,6 +19,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     schema.definePageTypes(args)
     schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
+    createFundraiserSchemaCustomization(args)
   }
 
 /*
@@ -36,6 +42,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = (args) => {
   transformers.createTeamRolesFromMarkdown(args)
   transformers.createTeamMembersFromMarkdown(args)
   transformers.createLineItemsFromJson(args)
+  createFundraisersFromMarkdown(args)
 }
 
 /*
@@ -46,6 +53,14 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveRegionFields(args)
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
+}
+
+/*
+Create Dynamic Pages
+================================================================================
+*/
+export const createPages: GatsbyNode['createPages'] = async (args) => {
+  await createFundraisersPages(args)
 }
 
 /*

@@ -422,4 +422,4 @@ export default {
       }
     }
   },
-} // module.exports
+}
