@@ -53,7 +53,7 @@ const DonatePage: FC<Props> = ({
   fundraisers
     .sort(() => Math.random() - Math.random())
     .forEach((fundraiser) => {
-      fundraiser.gallery = fundraiser.gallery.map((photo) => {
+      fundraiser.galleryMeta = fundraiser.galleryMeta.map((photo) => {
         const gatsbyImageData = thumbnails500px.find(
           ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
         )?.gatsbyImageData
@@ -121,7 +121,7 @@ export const pageQuery = graphql`
         id
         name
         title
-        gallery {
+        galleryMeta {
           url
           alt
         }

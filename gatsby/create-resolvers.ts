@@ -133,7 +133,7 @@ export default {
 Helpers
 ================================================================================
 */
-const imageSharpResolver = (
+export const imageSharpResolver = (
   getNode: CreateResolversArgs['getNode'],
   pathKey: string,
 ) => {
@@ -146,6 +146,32 @@ const imageSharpResolver = (
           filter: {
             absolutePath: {
               glob: `**/static${source[pathKey]}`,
+            },
+          },
+        },
+        type: 'File',
+      })
+
+      const imageSharp = file ? getNode(file.children[0]) : null
+
+      return imageSharp
+    },
+  }
+}
+
+export const imagesSharpResolver = (
+  getNode: CreateResolversArgs['getNode'],
+  paths: string[],
+) => {
+  return {
+    type: 'ImageSharp',
+    // @ts-ignore
+    resolve: async (relativePaths, args, context, info) => {
+      const file = await context.nodeModel.findAll({
+        query: {
+          filter: {
+            relativePath: {
+              glob: relativePaths,
             },
           },
         },

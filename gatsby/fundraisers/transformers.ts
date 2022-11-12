@@ -1,6 +1,12 @@
-import { CreateNodeArgs, CreateSchemaCustomizationArgs } from 'gatsby'
+import {
+  CreateNodeArgs,
+  CreateResolversArgs,
+  CreateSchemaCustomizationArgs,
+} from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
+import { Photo } from '../../src/types/fundraiser.d'
+import { imagesSharpResolver } from '../create-resolvers'
 import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
 import { nodeParent } from '../utils/untypedAccess/nodeParent'
@@ -30,10 +36,17 @@ export const createFundraisersFromMarkdown = ({
     const fileName = path.parse(fileRelativePath).name
 
     const fm = getObjectProperty(node, 'frontmatter')
+    const galleryData = fm.gallery || []
+    const galleryMeta = galleryData.map((image: Photo) => {
+      return {
+        url: `**/static${image.url}`,
+        alt: image.alt,
+      }
+    })
     createNode({
       name: fileName,
       title: fm.title,
-      gallery: fm.gallery ?? [],
+      galleryMeta: galleryMeta,
       allocations: fm.allocations ?? [],
       body: node.rawMarkdownBody,
       fileRelativePath,
@@ -55,7 +68,8 @@ export const createFundraiserSchemaCustomization = ({
     type DAFundraiser implements Node {
       name: String!
       title: String!
-      gallery: [DAFundraiserPhoto]!,
+      gallery: [ImageSharp]
+      galleryMeta: [DAFundraiserPhoto]!
       allocations: [DAFundraiserAllocation]!
       body: String!
     }
@@ -72,4 +86,24 @@ export const createFundraiserSchemaCustomization = ({
     }
   `
   createTypes(typeDefs)
+}
+
+export const createFundraiserResolvers = ({
+  createResolvers,
+  getNode,
+}: CreateResolversArgs) => {
+  createResolvers({
+    DAFundraiser: {
+      gallery: {
+        type: ['ImageSharp'],
+        // @ts-ignore
+        resolve: async (source, args, context, info) => {
+          const relativePaths = source.gallery
+            .map((image: Photo) => image.url)
+            .join('|')
+          return imagesSharpResolver(getNode, relativePaths)
+        },
+      },
+    },
+  })
 }

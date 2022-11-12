@@ -69,7 +69,7 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
     id: fundraiser.id,
     name: fundraiser.name,
     title: fundraiser.title,
-    gallery: fundraiser.gallery.map((photo) => {
+    galleryMeta: fundraiser.galleryMeta.map((photo) => {
       const gatsbyImageData = gallery.nodes.find(
         ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
       )?.gatsbyImageData
@@ -99,7 +99,7 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
           </h1>
         </header>
         <aside className="gallery max-w-5xl mx-auto">
-          <Gallery photos={processedFundraiser.gallery} />
+          <Gallery photos={processedFundraiser.galleryMeta} />
         </aside>
         <section className="max-w-5xl mx-auto px-4 lg:px-8 py-12 lg:py-24">
           <MarkdownContent content={processedFundraiser.body} />
@@ -135,7 +135,7 @@ export const query = graphql`
       id
       name
       title
-      gallery {
+      galleryMeta {
         url
         alt
       }

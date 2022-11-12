@@ -9,7 +9,7 @@ export type Fundraiser = {
   /**
    * Image URLs
    */
-  gallery: Photo[]
+  galleryMeta: Photo[]
   /**
    * Describes the funds allocated for this fundraisers.
    */
