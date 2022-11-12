@@ -1,7 +1,7 @@
-import { Fundraiser } from '@components/fundraiser/Fundraiser'
 import { CreatePagesArgs } from 'gatsby'
 import { getSrc, ImageDataLike } from 'gatsby-plugin-image'
 import path from 'path'
+import { Fundraiser } from '../../src/types/fundraiser.d'
 
 type Images = {
   nodes: {

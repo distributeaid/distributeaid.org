@@ -1,14 +1,12 @@
 import Footer from '@components/Footer'
-import {
-  Fundraiser,
-  FundraiserCard as FundraiserComponent,
-} from '@components/fundraiser/Fundraiser'
+import { FundraiserCard as FundraiserComponent } from '@components/fundraiser/Fundraiser'
 import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
+import { Fundraiser } from '../types/fundraiser.d'
 
 type Props = {
   data: {

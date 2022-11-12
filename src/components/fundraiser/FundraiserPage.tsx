@@ -1,5 +1,4 @@
 import Footer from '@components/Footer'
-import { Fundraiser, Photo } from '@components/fundraiser/Fundraiser'
 import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
@@ -7,6 +6,7 @@ import SimpleLayout from '@layouts/Simple'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC, useEffect, useState } from 'react'
 import '../../stylesheets/donate.css'
+import { Fundraiser, Photo } from '../../types/fundraiser.d'
 import { WaysToDonate } from './WaysToDonate'
 
 export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {

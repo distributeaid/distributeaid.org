@@ -1,6 +1,6 @@
-import { Fundraiser } from '@components/fundraiser/Fundraiser'
 import { FundraiserPage } from '@components/fundraiser/FundraiserPage'
 import { PageHeader } from '@components/PageHeader'
+import { Fundraiser } from '../types/fundraiser.d'
 
 export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {
   return (
