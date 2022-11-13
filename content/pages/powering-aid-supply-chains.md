@@ -7,7 +7,7 @@ sections:
 - template: section-grid
   metadata:
     margins: Banner
-    colOrRowBound: Row-Bound
+    layout: Row-Bound
     numCols: 1
     numRows: 1
     order: left-to-right
@@ -24,10 +24,10 @@ sections:
     date: 
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 3
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: left-to-right
   contentBlocks:
   - template: block-card

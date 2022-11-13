@@ -25,10 +25,14 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
-      "@templates/*": ["templates/*"],
+      "@data/*": ["data/*"],
+      "@images/*": ["images/*"],
+      "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
+      "@stylesheets/*": ["stylesheets/*"],
+      "@templates/*": ["templates/*"],
       "@types/*": ["types/*"],
-      "@layouts/*": ["layouts/*"]
+      "@utils/*": ["utils/*"]
     }
   }
 }

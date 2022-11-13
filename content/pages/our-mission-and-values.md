@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Our Mission and Values
 slug: our-mission
 desc: Founded in 2019, Distribute Aid has grown into Europe's largest grassroots logistics
@@ -13,7 +14,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
@@ -29,10 +30,10 @@ sections:
     date: 
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title
@@ -48,6 +49,14 @@ sections:
       **Our impact** has led to a 2.5x efficiency gain across our supply chain by increasing coordination, reducing costs, saving volunteer time, and preventing waste. Every $1 we spend on administration, projects, and logistics delivers $88 worth of aid to frontline organisations.
 
       We are a non-profit, non-political Swedish-registered charity with registration number #802521-4456.
+- template: section-grid
+  metadata:
+    margins: Default
+    numCols: 1
+    numRows: 1
+    layout: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
   - template: block-image-with-caption
     dateUploaded: 2022-10-24T11:06:48Z
     tags: []
@@ -77,6 +86,5 @@ sections:
       **Impartiality and Unconditionality:** We take active steps to ensure that aid that is delivered using our services is distributed freely, fairly, and unconditionally by frontline groups.
 
       **Professionalism:** When we say we will do something, we do it, and we establish processes to prevent overpromises. We assume positive intent when communicating with other people and organisations. We empower our team members to maintain strong boundaries and be accountable to each other.
-template: ''
 
 ---

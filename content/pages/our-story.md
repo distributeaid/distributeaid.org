@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Our Story
 sections1: []
 sections2: []
@@ -9,7 +10,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
@@ -25,10 +26,10 @@ sections:
       them in a notebook.
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title
@@ -64,7 +65,7 @@ sections:
     attribution: Distribute Aid
     altText: Two standing people smile for the camera in front of a brick wall.
     date: 
-  - template: timeline
+  - template: block-timeline
     timelineItems:
     - period: Summer 2018
       description: When sorting donations in Scotland Sara had the idea for Distribute
@@ -91,6 +92,5 @@ sections:
         to help grassroots organisations continue to send aid after Brexit.
 slug: our-story
 desc: ''
-type: ''
 
 ---

@@ -1,4 +1,5 @@
 ---
+template: DAPageGeneric
 title: Contact Us
 slug: contact-us
 desc: ''
@@ -8,7 +9,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
@@ -23,10 +24,10 @@ sections:
     date: 
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title
@@ -35,6 +36,14 @@ sections:
     text: General Inquiries
   - template: block-text
     text: The best way to get in touch with Distribute Aid is to email us at [hello@distributeaid.org](mailto:hello@distributeaid.org)!
+- template: section-grid
+  metadata:
+    margins: Default
+    numCols: 1
+    numRows: 1
+    layout: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
   - template: block-title
     text: Support Us
   - template: block-text
@@ -51,6 +60,14 @@ sections:
       Twitter: [twitter.com/DistributeAid](https://twitter.com/DistributeAid)
 
       LinkedIn: [linkedin.com/company/35541629/](https://www.linkedin.com/company/35541629/)
+- template: section-grid
+  metadata:
+    margins: Default
+    numCols: 1
+    numRows: 1
+    layout: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
   - template: block-title
     text: Volunteer With Us
   - template: block-text
@@ -65,6 +82,20 @@ sections:
       * Coders
       * Social Media specialists
       * Logistics specialists
+- template: section-grid
+  metadata:
+    margins: Default
+    numCols: 1
+    numRows: 1
+    layout: Column-Bound
+    order: top-to-bottom
+  contentBlocks:
+  - template: block-title
+    text: Support Us
+  - template: block-text
+    text: 'If you would like to support us, please visit our Donate page to see different
+      options for how to donate: [distributeaid.org/donate](https://distributeaid.org/donate
+      "https://distributeaid.org/donate").'
   - template: block-title
     text: Got Aid?
   - template: block-text
@@ -73,6 +104,5 @@ sections:
       and do not know of any collection groups local to you then you can email us
       at [hello@distributeaid.org](hello@distributeaid.org). If you want our support
       to organise a shipment, email us at [logistics@distributeaid.org](logistics@distributeaid.org).
-template: ''
 
 ---

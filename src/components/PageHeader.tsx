@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import Favicon from './Favicon'
 
-export const PageHeader: FC<{ title: string; description?: string }> = ({
-  title,
-  description,
-}) => (
+export const PageHeader: FC<{
+  title: string
+  description?: string | undefined
+}> = ({ title, description }) => (
   <>
     <title>{title} · Distribute Aid</title>
     <meta

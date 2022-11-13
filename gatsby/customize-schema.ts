@@ -1,6 +1,22 @@
 import { CreateSchemaCustomizationArgs } from 'gatsby'
 
+import { schema as blockTypes } from './generic-pages/content-blocks'
+import { schema as pageTypes } from './generic-pages/pages'
+import { schema as sectionTypes } from './generic-pages/sections'
+
 export default {
+  /*
+  Page
+  ================================================================================
+  */
+  definePageTypes: ({
+    actions: { createTypes },
+  }: CreateSchemaCustomizationArgs) => {
+    createTypes(blockTypes)
+    createTypes(sectionTypes)
+    createTypes(pageTypes)
+  },
+
   /*
   Need
   ================================================================================

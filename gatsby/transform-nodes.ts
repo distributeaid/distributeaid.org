@@ -6,11 +6,37 @@ import { getObjectProperty } from './utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from './utils/untypedAccess/getStringProperty'
 import { nodeParent } from './utils/untypedAccess/nodeParent'
 
+import { deriveGenericPageNode } from './generic-pages/pages'
+
 /*
  * Note: some TypeScript errors have been silenced below,
  * to enable type checking for *new* code. Feel free to resolve.
  */
 export default {
+  /*
+  Pages
+  ================================================================================
+  */
+  createGenericPagesFromMarkdown: (args: CreateNodeArgs) => {
+    const {
+      node,
+      actions: { createNode },
+    } = args
+    if (
+      node.internal.type === 'MarkdownRemark' &&
+      'fileAbsolutePath' in node &&
+      minimatch(
+        getStringProperty(node, 'fileAbsolutePath'),
+        '**/content/pages/**/*.md',
+      ) &&
+      getObjectProperty(node, 'frontmatter').template === 'DAPageGeneric'
+    ) {
+      const fm = getObjectProperty(node, 'frontmatter')
+      const page = deriveGenericPageNode(fm, node.id, args)
+      createNode(page)
+    }
+  },
+
   /*
   Regions
   ================================================================================
