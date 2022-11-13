@@ -14,7 +14,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
@@ -30,10 +30,10 @@ sections:
     date: 
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title
@@ -51,10 +51,10 @@ sections:
       We are a non-profit, non-political Swedish-registered charity with registration number #802521-4456.
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption

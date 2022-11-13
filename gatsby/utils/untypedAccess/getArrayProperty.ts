@@ -1,7 +1,7 @@
 import { getProperty } from './getProperty'
 
 /**
- * Helper function for untyped urray access
+ * Helper function for untyped array access
  */
 export const getArrayProperty = (
   o: Record<string, any> | undefined,

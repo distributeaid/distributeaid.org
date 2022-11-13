@@ -106,9 +106,7 @@ export const deriveGridSectionNode: DeriveSectionFn = (
 
   const meta = getObjectProperty(section, 'metadata')
   const margin = deriveGridSectionMargin(getStringProperty(meta, 'margins'))
-  const layout = deriveGridSectionLayout(
-    getStringProperty(meta, 'colOrRowBound'),
-  )
+  const layout = deriveGridSectionLayout(getStringProperty(meta, 'layout'))
   const order = deriveGridSectionOrder(getStringProperty(meta, 'order'))
 
   let rows = meta.numRows ? getNumberProperty(meta, 'numRows') : 1
@@ -145,21 +143,19 @@ export const deriveGridSectionNode: DeriveSectionFn = (
 
 const deriveGridSectionMargin = (margin: string) => {
   switch (margin) {
-    case 'Margined':
-      return SectionGridOptionMargin.MARGIN
     case 'Banner':
       return SectionGridOptionMargin.BANNER
+    case 'Default':
     default:
-      return SectionGridOptionMargin.BANNER
+      return SectionGridOptionMargin.MARGIN
   }
 }
 
 const deriveGridSectionLayout = (layout: string) => {
   switch (layout) {
-    case 'Row-Bound':
-      return SectionGridOptionLayout.ROW
     case 'Column-Bound':
       return SectionGridOptionLayout.COL
+    case 'Row-Bound':
     default:
       return SectionGridOptionLayout.ROW
   }
@@ -167,12 +163,11 @@ const deriveGridSectionLayout = (layout: string) => {
 
 const deriveGridSectionOrder = (order: string) => {
   switch (order) {
-    case 'left-to-right':
-      return SectionGridOptionOrder.HORIZONTAL
     case 'top-to-bottom':
       return SectionGridOptionOrder.VERTICAL
     case 'random':
       return SectionGridOptionOrder.RANDOM
+    case 'left-to-right':
     default:
       return SectionGridOptionOrder.HORIZONTAL
   }

@@ -1,9 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
-
 import { SectionGridNode, SectionNode } from '../../types/generic-page.d'
-
 import { getBackgroundColor } from '../../utils/site-theme'
-
 import { Blocks } from './ContentBlock'
 import { SectionGrid } from './sections/SectionGrid'
 

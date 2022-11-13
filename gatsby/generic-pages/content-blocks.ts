@@ -88,7 +88,7 @@ export const deriveBlockNode: DeriveBlockFn = (
       return null
 
     default:
-      reporter.warn(`Dropping unkown content block: type="${blockType}"`)
+      reporter.warn(`Dropping unknown content block: type="${blockType}"`)
       return null
   }
 }

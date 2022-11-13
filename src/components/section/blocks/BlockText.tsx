@@ -1,7 +1,5 @@
 import { FC } from 'react'
-
 import { BlockTextNode } from '../../../types/generic-page.d'
-
 import { MarkdownContent } from '../../markdown/MarkdownContent'
 
 type BlockTextProps = {

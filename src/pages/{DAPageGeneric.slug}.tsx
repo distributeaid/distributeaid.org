@@ -1,14 +1,10 @@
-import { graphql } from 'gatsby'
-import { FC } from 'react'
-
-import { PageGenericNode } from '../types/generic-page'
-
-import { getBackgroundColor } from '../utils/site-theme'
-
 import { PageHeader } from '@components/PageHeader'
-import SimpleLayout from 'layouts/Simple'
-
 import { Sections } from '@components/section/Section'
+import { graphql } from 'gatsby'
+import SimpleLayout from 'layouts/Simple'
+import { FC } from 'react'
+import { PageGenericNode } from '../types/generic-page'
+import { getBackgroundColor } from '../utils/site-theme'
 
 type Props = {
   data: {

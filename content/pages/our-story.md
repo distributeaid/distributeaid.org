@@ -10,7 +10,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
@@ -26,10 +26,10 @@ sections:
       them in a notebook.
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 1
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title

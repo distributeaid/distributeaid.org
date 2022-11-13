@@ -1,5 +1,4 @@
 import { FC } from 'react'
-
 import { BlockTitleNode } from '../../../types/generic-page.d'
 
 type BlockTitleProps = {

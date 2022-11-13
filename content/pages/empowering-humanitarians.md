@@ -9,7 +9,7 @@ sections:
     margins: Banner
     numCols: 1
     numRows: 1
-    colOrRowBound: Row-Bound
+    layout: Row-Bound
     order: left-to-right
   contentBlocks:
   - template: block-image-with-caption
@@ -24,10 +24,10 @@ sections:
     date: 
 - template: section-grid
   metadata:
-    margins: Margined
+    margins: Default
     numCols: 3
     numRows: 1
-    colOrRowBound: Column-Bound
+    layout: Column-Bound
     order: left-to-right
   contentBlocks:
   - template: block-card

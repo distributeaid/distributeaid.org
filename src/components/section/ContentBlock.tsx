@@ -1,11 +1,9 @@
 import { FC } from 'react'
-
 import {
   BlockNode,
   BlockTextNode,
   BlockTitleNode,
 } from '../../types/generic-page.d'
-
 import { BlockText } from './blocks/BlockText'
 import { BlockTitle } from './blocks/BlockTitle'
 

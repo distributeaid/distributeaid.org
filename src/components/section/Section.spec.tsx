@@ -1,8 +1,6 @@
 import { render } from '@testing-library/react'
-
 import { SectionNode } from '../../types/generic-page.d'
 import { factory } from '../../types/generic-page.test-helpers'
-
 import { Section, Sections } from './Section'
 
 /*

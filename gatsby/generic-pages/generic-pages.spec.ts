@@ -1,41 +1,20 @@
 import { jest } from '@jest/globals'
-
 import { CreateNodeArgs } from 'gatsby'
-
 import { factory } from '../../src/types/generic-page.test-helpers'
 import { deriveGenericPageNode } from './pages'
 
-// TODO
-// ----
-// Can't figure out a better way to mock CreateNodeArgs to make TypeScript happy,
-// or a meaningful way to refactor them out of the data processing function.
-//
-// At the very least it'd be nice to have the reporter function mocks provide
-// a counter so we can test that they are being called the appropriate # of
-// times for various sample input data.
-let argsMock = {
-  createNodeId: jest.fn((x) => 'node-id'),
-  createContentDigest: jest.fn((x) => 'content digest'),
+const newArgsMock = () => ({
+  createNodeId: jest.fn(() => 'node-id'),
+  createContentDigest: jest.fn(() => 'content digest'),
   reporter: {
-    log: jest.fn((x) => undefined),
-    warn: jest.fn((x) => undefined),
-    error: jest.fn((x) => undefined),
-    panic: jest.fn((x) => undefined),
+    log: jest.fn(() => undefined),
+    warn: jest.fn(() => undefined),
+    error: jest.fn(() => undefined),
+    panic: jest.fn(() => undefined),
   },
-}
-// @ts-ignore
-let args = argsMock as CreateNodeArgs
+})
 
 describe('Processes Page Data', () => {
-  beforeEach(() => {
-    argsMock.createNodeId.mockClear()
-    argsMock.createContentDigest.mockClear()
-    argsMock.reporter.log.mockClear()
-    argsMock.reporter.warn.mockClear()
-    argsMock.reporter.error.mockClear()
-    argsMock.reporter.panic.mockClear()
-  })
-
   it('processes each type of page, section, and content block correctly', () => {
     // build our input
     const sectionData = factory.getSectionGridData({
@@ -58,8 +37,14 @@ describe('Processes Page Data', () => {
       sections: [section, section],
     })
 
+    const argsMock = newArgsMock()
+
     // compare
-    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
+    const derivedData = deriveGenericPageNode(
+      pageData,
+      'parent-id',
+      argsMock as unknown as CreateNodeArgs,
+    )
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -76,8 +61,14 @@ describe('Processes Page Data', () => {
     // build our output
     const page = factory.getPageNodeInput()
 
+    const argsMock = newArgsMock()
+
     // compare
-    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
+    const derivedData = deriveGenericPageNode(
+      pageData,
+      'parent-id',
+      argsMock as unknown as CreateNodeArgs,
+    )
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -108,8 +99,14 @@ describe('Processes Page Data', () => {
       ],
     })
 
+    const argsMock = newArgsMock()
+
     // compare
-    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
+    const derivedData = deriveGenericPageNode(
+      pageData,
+      'parent-id',
+      argsMock as unknown as CreateNodeArgs,
+    )
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects
@@ -144,8 +141,14 @@ describe('Processes Page Data', () => {
       ],
     })
 
+    const argsMock = newArgsMock()
+
     // compare
-    const derivedData = deriveGenericPageNode(pageData, 'parent-id', args)
+    const derivedData = deriveGenericPageNode(
+      pageData,
+      'parent-id',
+      argsMock as unknown as CreateNodeArgs,
+    )
     expect(derivedData).toStrictEqual(page)
 
     // check side-effects

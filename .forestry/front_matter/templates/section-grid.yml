@@ -8,11 +8,11 @@ fields:
   fields:
   - name: margins
     type: select
-    default: Margined
+    default: Default
     config:
       required: true
       options:
-      - Margined
+      - Default
       - Banner
       source:
         type: simple
@@ -22,8 +22,8 @@ fields:
     label: Banner or Margins?
     description: If you want the content to go all the way to the very edge of the
       page on both sides, select Banner.  If you want the content to have natural
-      margins (like most parts of the website), select Margined.
-  - name: colOrRowBound
+      margins (like most parts of the website), select Default.
+  - name: layout
     type: select
     default: []
     config:
@@ -48,7 +48,7 @@ fields:
       max: 8
       step: 
     showOnly:
-      field: colOrRowBound
+      field: layout
       value: Column-Bound
   - name: numRows
     type: number
@@ -61,7 +61,7 @@ fields:
       max: 8
       step: 
     showOnly:
-      field: colOrRowBound
+      field: layout
       value: Row-Bound
   - name: order
     type: select

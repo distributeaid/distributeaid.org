@@ -1,6 +1,6 @@
 import { getArrayProperty } from './getArrayProperty'
 
-describe('getObjectProperty()', () => {
+describe('getArrayProperty()', () => {
   it('should return a string property if present', () => {
     expect(getArrayProperty({ foo: ['bar'] }, 'foo')).toEqual(['bar'])
   })
@@ -15,7 +15,7 @@ describe('getObjectProperty()', () => {
       `Object '{}' has no property 'foo'!`,
     ))
 
-  it('should throw an error if the property is not a string', () =>
+  it('should throw an error if the property is not an Array', () =>
     expect(() => getArrayProperty({ foo: {} }, 'foo')).toThrow(
       `Property 'foo' on object '{\"foo\":{}}' does not match expected type!`,
     ))

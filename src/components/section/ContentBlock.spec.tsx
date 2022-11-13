@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react'
-
 import { BlockNode } from '../../types/generic-page.d'
 import { factory } from '../../types/generic-page.test-helpers'
 import { Block, Blocks } from './ContentBlock'
