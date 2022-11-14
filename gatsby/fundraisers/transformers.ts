@@ -1,12 +1,8 @@
-import {
-  CreateNodeArgs,
-  CreateResolversArgs,
-  CreateSchemaCustomizationArgs,
-} from 'gatsby'
-import { FileSystemNode } from 'gatsby-source-filesystem'
+import { CreateNodeArgs, CreateSchemaCustomizationArgs } from 'gatsby'
 import minimatch from 'minimatch'
 import path from 'path'
-import { Photo } from '../../src/types/fundraiser.d'
+import { PhotoData } from '../../src/types/photo.d'
+import { derivePhoto } from '../photos/photos'
 import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
 import { nodeParent } from '../utils/untypedAccess/nodeParent'
@@ -14,13 +10,15 @@ import { nodeParent } from '../utils/untypedAccess/nodeParent'
 /**
  * Creates the fundraiser nodes
  */
-export const createFundraisersFromMarkdown = ({
-  node,
-  actions: { createNode },
-  createNodeId,
-  createContentDigest,
-  getNode,
-}: CreateNodeArgs) => {
+export const createFundraisersFromMarkdown = (args: CreateNodeArgs) => {
+  const {
+    node,
+    actions: { createNode },
+    createNodeId,
+    createContentDigest,
+    getNode,
+  } = args
+
   if (
     node.internal.type === 'MarkdownRemark' &&
     node.fileAbsolutePath &&
@@ -37,16 +35,13 @@ export const createFundraisersFromMarkdown = ({
 
     const fm = getObjectProperty(node, 'frontmatter')
     const galleryData = fm.gallery || []
-    const galleryMeta = galleryData.map((image: Photo) => {
-      return {
-        url: image.url.replace('/uploads/', ''),
-        alt: image.alt,
-      }
+    const gallery = galleryData.map((image: PhotoData) => {
+      return derivePhoto(image, node.id, args)
     })
     createNode({
       name: fileName,
       title: fm.title,
-      galleryMeta: galleryMeta,
+      gallery: gallery,
       allocations: fm.allocations ?? [],
       body: node.rawMarkdownBody,
       fileRelativePath,
@@ -68,8 +63,7 @@ export const createFundraiserSchemaCustomization = ({
     type DAFundraiser implements Node {
       name: String!
       title: String!
-      gallery: [ImageSharp]
-      galleryMeta: [DAFundraiserPhoto!]
+      gallery: [DAPhoto!]!
       allocations: [DAFundraiserAllocation!]!
       body: String!
     }
@@ -79,45 +73,6 @@ export const createFundraiserSchemaCustomization = ({
       amountEUR: Int!
       purpose: String!
     }
-
-    type DAFundraiserPhoto {
-      url: String!
-      alt: String!
-    }
   `
   createTypes(typeDefs)
-}
-
-export const createFundraiserResolvers = (args: CreateResolversArgs) => {
-  const { createResolvers, getNode } = args
-  createResolvers({
-    DAFundraiser: {
-      gallery: {
-        type: ['ImageSharp'],
-        // @ts-ignore
-        resolve: async (source, args, context, info) => {
-          const relativePaths: string[] = source.galleryMeta.map(
-            (image: Photo) => image.url,
-          )
-
-          const { entries: files } = await context.nodeModel.findAll({
-            query: {
-              filter: {
-                relativePath: {
-                  in: relativePaths,
-                },
-              },
-            },
-            type: 'File',
-          })
-
-          const images = files.map((file: FileSystemNode) =>
-            file.children[0] ? getNode(file.children[0]) : null,
-          )
-
-          return images
-        },
-      },
-    },
-  })
 }

@@ -26,7 +26,10 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
       </div>
       {bgImage && (
         <Link to={`/donate/${fundraiser.name}`} className="bg">
-          <GatsbyImage alt={bgImage.alt} image={bgImage.gatsbyImageData} />
+          <GatsbyImage
+            alt={bgImage.alt}
+            image={bgImage.image.gatsbyImageData}
+          />
         </Link>
       )}
     </section>

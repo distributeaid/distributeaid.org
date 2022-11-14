@@ -3,11 +3,14 @@ import type { GatsbyNode } from 'gatsby'
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
 import {
-  createFundraiserResolvers,
   createFundraiserSchemaCustomization,
   createFundraisersFromMarkdown,
 } from './gatsby/fundraisers/transformers'
 import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
+import {
+  createPhotoResolvers,
+  createPhotoSchemaCustomization,
+} from './gatsby/photos/photos'
 import transformers from './gatsby/transform-nodes'
 
 /*
@@ -20,6 +23,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
     createFundraiserSchemaCustomization(args)
+    createPhotoSchemaCustomization(args)
   }
 
 /*
@@ -53,7 +57,7 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveRegionFields(args)
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
-  createFundraiserResolvers(args)
+  createPhotoResolvers(args)
 }
 
 /*

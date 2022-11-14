@@ -20,14 +20,6 @@ type Props = {
     allDaFundraiser: {
       nodes: Fundraiser[]
     }
-    thumbnails500px: {
-      nodes: {
-        parent: {
-          absolutePath: string
-        }
-        gatsbyImageData: any
-      }[]
-    }
   }
 }
 
@@ -47,25 +39,9 @@ const DonatePage: FC<Props> = ({
       frontmatter: { title, raisedEUR },
     },
     allDaFundraiser: { nodes: fundraisers },
-    thumbnails500px: { nodes: thumbnails500px },
   },
 }) => {
-  fundraisers
-    .sort(() => Math.random() - Math.random())
-    .forEach((fundraiser) => {
-      fundraiser.galleryMeta = fundraiser.galleryMeta.map((photo) => {
-        const gatsbyImageData = thumbnails500px.find(
-          ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
-        )?.gatsbyImageData
-        if (gatsbyImageData === undefined) {
-          console.error(`Could not find gatsbyImageData for ${photo.url}`)
-        }
-        return {
-          ...photo,
-          gatsbyImageData,
-        }
-      })
-    })
+  fundraisers.sort(() => Math.random() - Math.random())
 
   return (
     <SimpleLayout
@@ -121,31 +97,22 @@ export const pageQuery = graphql`
         id
         name
         title
-        galleryMeta {
-          url
+        gallery {
+          relativePath
           alt
+          image {
+            gatsbyImageData(
+              width: 500
+              aspectRatio: 1.2
+              transformOptions: { fit: COVER }
+            )
+          }
         }
         allocations {
           date
           amountEUR
           purpose
         }
-      }
-    }
-    thumbnails500px: allImageSharp(
-      filter: { original: { src: { glob: "/static/**" } } }
-    ) {
-      nodes {
-        parent {
-          ... on File {
-            absolutePath
-          }
-        }
-        gatsbyImageData(
-          width: 500
-          aspectRatio: 1.2
-          transformOptions: { fit: COVER }
-        )
       }
     }
   }

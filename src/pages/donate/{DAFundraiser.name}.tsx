@@ -11,8 +11,8 @@ import SimpleLayout from '../../layouts/Simple'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
 import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
-import { Gallery } from '@components/fundraiser/Gallery'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
+import { Gallery } from '@components/image/Gallery'
 
 import '../../stylesheets/donate.css'
 
@@ -65,27 +65,7 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
     .sort(([k1], [k2]) => k1.localeCompare(k2))
     .reduce((body, [k, v]) => body.replaceAll(k, v), fundraiser.body)
 
-  const processedFundraiser: Fundraiser = {
-    id: fundraiser.id,
-    name: fundraiser.name,
-    title: fundraiser.title,
-    galleryMeta: fundraiser.galleryMeta.map((photo) => {
-      const gatsbyImageData = gallery.nodes.find(
-        ({ parent: { absolutePath } }) => absolutePath.endsWith(photo.url),
-      )?.gatsbyImageData
-      if (gatsbyImageData === undefined) {
-        console.error(
-          `Failed to find thumbnails500px gatsbyImageData for photo ${photo.url}!`,
-        )
-      }
-      return {
-        ...photo,
-        gatsbyImageData,
-      }
-    }),
-    allocations: fundraiser.allocations,
-    body,
-  }
+  fundraiser.body = body
 
   return (
     <SimpleLayout
@@ -94,21 +74,19 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
     >
       <article>
         <header className="max-w-5xl mx-auto px-4 lg:px-8">
-          <h1 className="text-4xl font-semibold my-16">
-            {processedFundraiser.title}
-          </h1>
+          <h1 className="text-4xl font-semibold my-16">{fundraiser.title}</h1>
         </header>
         <aside className="gallery max-w-5xl mx-auto">
-          <Gallery photos={processedFundraiser.galleryMeta} />
+          <Gallery photos={fundraiser.gallery} />
         </aside>
         <section className="max-w-5xl mx-auto px-4 lg:px-8 py-12 lg:py-24">
-          <MarkdownContent content={processedFundraiser.body} />
+          <MarkdownContent content={fundraiser.body} />
         </section>
         <aside className="bg-gray-100 mt-16">
           <FundraiserProgress
             currency="EUR"
             raisedTitle="Allocated funds so far"
-            raised={(processedFundraiser.allocations ?? []).reduce(
+            raised={(fundraiser.allocations ?? []).reduce(
               (total, { amountEUR }) => total + amountEUR,
               0,
             )}
@@ -135,9 +113,12 @@ export const query = graphql`
       id
       name
       title
-      galleryMeta {
-        url
+      gallery {
+        relativePath
         alt
+        image {
+          gatsbyImageData(width: 1024)
+        }
       }
       body
       allocations {

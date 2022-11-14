@@ -1,3 +1,5 @@
+import { Photo } from './photo.d'
+
 export type Fundraiser = {
   id: string
   name: string
@@ -9,7 +11,7 @@ export type Fundraiser = {
   /**
    * Image URLs
    */
-  galleryMeta: Photo[]
+  gallery: Photo[]
   /**
    * Describes the funds allocated for this fundraisers.
    */
@@ -27,19 +29,4 @@ export type Fundraiser = {
      */
     purpose: string
   }[]
-}
-
-export type Photo = {
-  /**
-   * URL to media file
-   */
-  url: string
-  /**
-   * Alternative text
-   */
-  alt: string
-  /**
-   * Image process by sharp
-   */
-  gatsbyImageData: any
 }
