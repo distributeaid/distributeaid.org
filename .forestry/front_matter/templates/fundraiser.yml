@@ -10,6 +10,17 @@ fields:
     min: 2
   label: Title
   description: The title of the fundraiser.
+- name: target
+  type: number
+  label: Fundraiser Target
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
 - type: field_group_list
   name: allocations
   label: Funding allocations
