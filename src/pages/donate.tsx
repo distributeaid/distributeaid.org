@@ -1,6 +1,6 @@
 import Footer from '@components/Footer'
 import { FundraiserCard as FundraiserComponent } from '@components/fundraiser/Fundraiser'
-import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
+import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
@@ -43,6 +43,19 @@ const DonatePage: FC<Props> = ({
 }) => {
   fundraisers.sort(() => Math.random() - Math.random())
 
+  const allocated = fundraisers.reduce((total, fundraiser) => {
+    return (
+      total +
+      fundraiser.allocations.reduce((totalAllocated, allocation) => {
+        return allocation.amountEUR
+      }, 0)
+    )
+  }, 0)
+
+  const target = fundraisers.reduce((total, fundraiser) => {
+    return total + fundraiser.target
+  }, 0)
+
   return (
     <SimpleLayout
       className={'donate'}
@@ -54,11 +67,14 @@ const DonatePage: FC<Props> = ({
       </header>
       {fundraisers.length > 0 && (
         <>
-          <FundraiserProgress
-            raisedTitle={'Total funds raised'}
-            currency={'EUR'}
-            raised={raisedEUR}
-          />
+          <div className="mx-auto my-8 prose">
+            <ProgressBar
+              title={'Campaign Progress'}
+              currency={'EUR'}
+              allocated={allocated}
+              target={target}
+            />
+          </div>
           <article className="fundraisers">
             {fundraisers.map((fundraiser) => (
               <FundraiserComponent
@@ -108,6 +124,7 @@ export const pageQuery = graphql`
             )
           }
         }
+        target
         allocations {
           date
           amountEUR

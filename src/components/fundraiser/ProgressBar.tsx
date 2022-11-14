@@ -16,7 +16,7 @@ export const ProgressBar: FC<{
   const progressPercent = (allocated / target) * 100
 
   return (
-    <div className="prose text-navy-700">
+    <div className="text-navy-700">
       <div className="mb-4 py-1 px-1 bg-navy-400">
         <div
           className="bg-navy-900"
