@@ -16,9 +16,10 @@ gallery:
   alt: Volunteers loading a container full of boxes of donated items
 allocations:
 - date: 2022-11-16T11:07:12+01:00
-  amountEUR: 3000
+  amountEUR: 0
   purpose: 'Donate today to continue strengthening the community-based responses supporting
     people displaced by the war in Ukraine. '
+target: 3000
 
 ---
 Since Russia invaded Ukraine in February 2022, Distribute Aid has built a Ukraine Response Project to support emergency relief groups in Ukraine and the bordering regions including Poland, Moldova, and Romania.
