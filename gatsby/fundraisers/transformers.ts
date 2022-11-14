@@ -42,6 +42,7 @@ export const createFundraisersFromMarkdown = (args: CreateNodeArgs) => {
       name: fileName,
       title: fm.title,
       gallery: gallery,
+      target: fm.target,
       allocations: fm.allocations ?? [],
       body: node.rawMarkdownBody,
       fileRelativePath,
@@ -64,6 +65,7 @@ export const createFundraiserSchemaCustomization = ({
       name: String!
       title: String!
       gallery: [DAPhoto!]!
+      target: Int!
       allocations: [DAFundraiserAllocation!]!
       body: String!
     }

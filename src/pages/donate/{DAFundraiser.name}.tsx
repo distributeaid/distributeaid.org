@@ -10,7 +10,7 @@ import SimpleLayout from '../../layouts/Simple'
 
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
-import { FundraiserProgress } from '@components/fundraiser/FundraiserProgress'
+import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { Gallery } from '@components/image/Gallery'
 
@@ -96,17 +96,18 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
           <aside className="">
             <Gallery photos={fundraiser.gallery} />
           </aside>
-          <aside className="px-8 text-white bg-navy-700">
-            <FundraiserProgress
+          <aside className="p-8 bg-white prose">
+            <ProgressBar
+              title={fundraiser.title}
               currency="EUR"
-              raisedTitle="Allocated funds so far"
-              raised={(fundraiser.allocations ?? []).reduce(
+              allocated={(fundraiser.allocations ?? []).reduce(
                 (total, { amountEUR }) => total + amountEUR,
                 0,
               )}
+              target={fundraiser.target}
             />
           </aside>
-          <aside className="bg-white p-8">
+          <aside className="p-8 bg-white">
             <div className="prose">
               <h2 className="">
                 Support Distribute Aid to help more people in need:
@@ -140,6 +141,7 @@ export const query = graphql`
         }
       }
       body
+      target
       allocations {
         date
         amountEUR

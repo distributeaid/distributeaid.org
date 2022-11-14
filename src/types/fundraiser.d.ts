@@ -13,6 +13,10 @@ export type Fundraiser = {
    */
   gallery: Photo[]
   /**
+   * Describes the amount we'd like to allocate to this fundraiser.
+   */
+  target: number
+  /**
    * Describes the funds allocated for this fundraisers.
    */
   allocations: {
