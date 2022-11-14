@@ -61,15 +61,14 @@ const DonatePage: FC<Props> = ({
       className={'donate'}
       footer={<Footer showDonateButton={false} />}
     >
-      <div className="bg" />
-      <header>
+      <header className="prose">
         <h1>{title}</h1>
       </header>
       {fundraisers.length > 0 && (
         <>
           <div className="mx-auto my-8 prose">
             <ProgressBar
-              title={'Campaign Progress'}
+              title={'Overall Progress'}
               currency={'EUR'}
               allocated={allocated}
               target={target}
