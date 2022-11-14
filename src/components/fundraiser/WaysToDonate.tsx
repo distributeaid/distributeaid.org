@@ -11,7 +11,7 @@ export const WaysToDonate = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
     <div>
-      <div className="grid space-4 grid-flow-col grid-rows-3 items-start justify-items-center prose mx-auto">
+      <div className="grid space-4 grid-flow-col grid-rows-[repeat(3,_auto)] items-start justify-items-center prose mx-auto">
         {/* PayPal
         ------------------------------------------------------------ */}
         <ExternalLink
@@ -23,7 +23,7 @@ export const WaysToDonate = () => {
         <ExternalLink href="https://paypal.me/distributeaid" className="button">
           <Button variant="primary">PayPal.me</Button>
         </ExternalLink>
-        <p className="text-gray-700">
+        <p className="text-gray-700 text-sm">
           Donate via{' '}
           <ExternalLink href="https://paypal.me/distributeaid" className="link">
             Paypal
@@ -45,16 +45,16 @@ export const WaysToDonate = () => {
           />
         </ExternalLink>
         <ExternalLink
-          href="https://opencollective.com/distribute-aid-usa"
+          href="https://opencollective.com/distribute-aid-usa/donate"
           className="button"
         >
           <Button variant="primary">Open Collective</Button>
         </ExternalLink>
-        <p className="text-gray-700">
+        <p className="text-gray-700 text-sm">
           If you are in the US, you can make tax-deductible donations to support
           Distribute Aid's USA based projects, through the{' '}
           <ExternalLink
-            href="https://opencollective.com/distribute-aid-usa"
+            href="https://opencollective.com/distribute-aid-usa/donate"
             className="link"
           >
             Open Collective Foundation
@@ -75,7 +75,7 @@ export const WaysToDonate = () => {
         <Button variant="primary" onClick={() => setModalIsOpen(true)}>
           View bank info
         </Button>
-        <p className="text-gray-700">
+        <p className="text-gray-700 text-sm">
           Make a donation directly to our bank account at Distribute Aid. Reach
           out to{' '}
           <ExternalLink className="link" href="mailto:hello@distributeaid.org">
