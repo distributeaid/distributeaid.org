@@ -3,6 +3,7 @@ import type { GatsbyNode } from 'gatsby'
 import resolvers from './gatsby/create-resolvers'
 import schema from './gatsby/customize-schema'
 import {
+  createFundraiserResolvers,
   createFundraiserSchemaCustomization,
   createFundraisersFromMarkdown,
 } from './gatsby/fundraisers/transformers'
@@ -52,6 +53,7 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveRegionFields(args)
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
+  createFundraiserResolvers(args)
 }
 
 /*

@@ -3,10 +3,10 @@ import {
   CreateResolversArgs,
   CreateSchemaCustomizationArgs,
 } from 'gatsby'
+import { FileSystemNode } from 'gatsby-source-filesystem'
 import minimatch from 'minimatch'
 import path from 'path'
 import { Photo } from '../../src/types/fundraiser.d'
-import { imagesSharpResolver } from '../create-resolvers'
 import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
 import { nodeParent } from '../utils/untypedAccess/nodeParent'
@@ -39,7 +39,7 @@ export const createFundraisersFromMarkdown = ({
     const galleryData = fm.gallery || []
     const galleryMeta = galleryData.map((image: Photo) => {
       return {
-        url: `**/static${image.url}`,
+        url: image.url.replace('/uploads/', ''),
         alt: image.alt,
       }
     })
@@ -69,8 +69,8 @@ export const createFundraiserSchemaCustomization = ({
       name: String!
       title: String!
       gallery: [ImageSharp]
-      galleryMeta: [DAFundraiserPhoto]!
-      allocations: [DAFundraiserAllocation]!
+      galleryMeta: [DAFundraiserPhoto!]
+      allocations: [DAFundraiserAllocation!]!
       body: String!
     }
 
@@ -88,20 +88,34 @@ export const createFundraiserSchemaCustomization = ({
   createTypes(typeDefs)
 }
 
-export const createFundraiserResolvers = ({
-  createResolvers,
-  getNode,
-}: CreateResolversArgs) => {
+export const createFundraiserResolvers = (args: CreateResolversArgs) => {
+  const { createResolvers, getNode } = args
   createResolvers({
     DAFundraiser: {
       gallery: {
         type: ['ImageSharp'],
         // @ts-ignore
         resolve: async (source, args, context, info) => {
-          const relativePaths = source.gallery
-            .map((image: Photo) => image.url)
-            .join('|')
-          return imagesSharpResolver(getNode, relativePaths)
+          const relativePaths: string[] = source.galleryMeta.map(
+            (image: Photo) => image.url,
+          )
+
+          const { entries: files } = await context.nodeModel.findAll({
+            query: {
+              filter: {
+                relativePath: {
+                  in: relativePaths,
+                },
+              },
+            },
+            type: 'File',
+          })
+
+          const images = files.map((file: FileSystemNode) =>
+            file.children[0] ? getNode(file.children[0]) : null,
+          )
+
+          return images
         },
       },
     },
