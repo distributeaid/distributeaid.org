@@ -27,9 +27,10 @@ gallery:
     of humanitarian aid
 allocations:
 - date: 2022-11-16T11:15:24+01:00
-  amountEUR: 5000
+  amountEUR: 0
   purpose: 'Tech drives good - donate to this project and support Distribute Aid and
     its tech community in creating solutions for the humanitarian network. '
+target: 5000
 
 ---
 Technology based tools are increasingly shaping humanitarian relief responses worldwide. Distribute Aid works to integrate tech solutions across its operations so as to improve the efficiency and effectiveness of its projects. Our tech community is committed to supporting us in automating various internal and external processes to increase accessibility for our many partners and user-audiences.
