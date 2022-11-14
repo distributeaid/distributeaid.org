@@ -25,5 +25,11 @@ export const Gallery: FC<{ photos: Photo[] }> = ({ photos }) => {
 
   if (photo === undefined) return null
 
-  return <GatsbyImage alt={photo.alt} image={photo.image.gatsbyImageData} />
+  return (
+    <GatsbyImage
+      className="w-full"
+      alt={photo.alt}
+      image={photo.image.gatsbyImageData}
+    />
+  )
 }
