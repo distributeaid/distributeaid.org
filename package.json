@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource/lato": "4.5.10",
+    "@nivo/bar": "^0.80.0",
     "@nivo/core": "0.80.0",
     "@nivo/sunburst": "0.80.0",
     "@playwright/test": "1.27.1",
