@@ -17,6 +17,9 @@ const LineItemTable = React.lazy(
 const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
+const BabyClothingByRegion = React.lazy(
+  () => import('@components/vis/baby-clothing-by-region'),
+)
 
 type Item = {
   category: string
@@ -78,6 +81,10 @@ const RegionsPage: FC<Props> = ({ data: { lineItems, categoryVisItems } }) => {
           </section>
           <section className="h-96 w-96">
             <CountByCategoryAndItemVis categoryVisItems={categoryVisItems} />
+          </section>
+          {/* TODO Needs Assessment: Baby Clothing Data Visualization #626 */}
+          <section className="h-96 w-96">
+            <BabyClothingByRegion />
           </section>
           <section>
             <LineItemTable lineItems={lineItems} />
