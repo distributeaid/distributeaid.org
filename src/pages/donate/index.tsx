@@ -6,8 +6,8 @@ import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import { Fundraiser } from '../types/fundraiser.d'
-import { Direction } from '../types/layout.d'
+import { Fundraiser } from '../../types/fundraiser.d'
+import { Direction } from '../../types/layout.d'
 
 type Props = {
   data: {
