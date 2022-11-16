@@ -64,7 +64,7 @@ main.donate .fundraisers {
   }
 }
 main.donate .fundraisers .card {
-  height: calc(100vw / 2 * 0.7);
+  height: calc(100vw / 3);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -73,7 +73,7 @@ main.donate .fundraisers .card {
 }
 @media only screen and (min-width: 1024px) {
   main.donate .fundraisers .card {
-    height: calc(1024px / 2 * 0.7);
+    height: calc(1024px / 3);
   }
 }
 main.donate .fundraisers .card a.bg {

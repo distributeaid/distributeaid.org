@@ -62,7 +62,7 @@ const DonatePage: FC<Props> = ({
       </header>
       {fundraisers.length > 0 && (
         <>
-          <div className="mx-auto my-8 prose">
+          <div className="mx-auto my-8 max-w-screen-sm">
             <ProgressBar
               currency={'EUR'}
               allocated={allocated}
@@ -83,11 +83,15 @@ const DonatePage: FC<Props> = ({
           </article>
         </>
       )}
-      <section className="bg-gray-50">
-        <div className="px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
-          <h2 className="text-center text-gray-800 text-3xl font-medium mb-20">
-            Support Distribute Aid to help more people in need:
-          </h2>
+      <section className="bg-rosemary-50">
+        <div className="px-4 py-12">
+          <header className="prose max-w-none mx-auto mb-8">
+            <h2 className="text-center text-rosemary-800">
+              Ship aid to people in need.
+              <br />
+              Donate today:
+            </h2>
+          </header>
           <WaysToDonate />
         </div>
       </section>

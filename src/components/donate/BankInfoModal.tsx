@@ -1,6 +1,7 @@
 import Button from '@components/button/Button'
 import { FC } from 'react'
 import Modal from 'react-modal'
+import ExternalLink from '../link/ExternalLink'
 
 type Props = {
   isOpen: boolean
@@ -28,32 +29,42 @@ const BankInfoModal: FC<Props> = ({ isOpen, onRequestClose }) => (
       },
     }}
   >
-    <h3 className="text-xl leading-loose mb-4 tracking-wide text-navy-800">
-      Bank information
-    </h3>
-    <table>
-      <tbody>
-        <tr>
-          <td className="text-gray-700 font-medium py-1">Account holder:</td>
-          <td className="font-semibold text-navy-700 py-1 pl-2">
-            Distribute Aid
-          </td>
-        </tr>
-        <tr>
-          <td className="text-gray-700 font-medium py-1">IBAN:</td>
-          <td className="font-semibold text-navy-700 py-1 pl-2">
-            BE72 9672 1338 5616
-          </td>
-        </tr>
-        <tr>
-          <td className="text-gray-700 font-medium py-1">BIC:</td>
-          <td className="font-semibold text-navy-700 py-1 pl-2">TRWIBEB1XXX</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="prose">
+      <h3>Bank information</h3>
+      <p>
+        Make a donation directly to our bank account at Distribute Aid. Reach
+        out to{' '}
+        <ExternalLink className="link" href="mailto:hello@distributeaid.org">
+          hello@distributeaid.org
+        </ExternalLink>{' '}
+        if you have any questions.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td className="text-gray-700 font-medium py-1">Account holder:</td>
+            <td className="font-semibold text-navy-700 py-1 pl-2">
+              Distribute Aid
+            </td>
+          </tr>
+          <tr>
+            <td className="text-gray-700 font-medium py-1">IBAN:</td>
+            <td className="font-semibold text-navy-700 py-1 pl-2">
+              BE72 9672 1338 5616
+            </td>
+          </tr>
+          <tr>
+            <td className="text-gray-700 font-medium py-1">BIC:</td>
+            <td className="font-semibold text-navy-700 py-1 pl-2">
+              TRWIBEB1XXX
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <div className="mt-6 text-right">
-      <Button onClick={onRequestClose}>Close</Button>
+      <div className="mt-6 text-right">
+        <Button onClick={onRequestClose}>Close</Button>
+      </div>
     </div>
   </Modal>
 )

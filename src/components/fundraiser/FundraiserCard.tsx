@@ -21,8 +21,11 @@ export const FundraiserCard: FC<{
 
   return (
     <section className="card">
-      <div className={`px-4 py-6 ${borderClasses}`}>
-        <SmartLink href={`/donate/${fundraiser.name}`} className="title">
+      <div className={`px-4 py-6 my-6 ${borderClasses}`}>
+        <SmartLink
+          href={`/donate/${fundraiser.name}`}
+          className="title hover:drop-shadow-md"
+        >
           <h2>{fundraiser.title}</h2>
         </SmartLink>
         <div>
