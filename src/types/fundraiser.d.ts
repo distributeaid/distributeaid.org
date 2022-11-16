@@ -5,6 +5,10 @@ export type Fundraiser = {
   name: string
   title: string
   /**
+   * Deep link to the donate page on another platform.
+   */
+  donateUrl: string
+  /**
    * Markdown
    */
   body: string

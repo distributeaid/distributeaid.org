@@ -14,6 +14,9 @@ import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { Gallery } from '@components/image/Gallery'
 
+import Button from '@components/button/Button'
+import SmartLink from '@components/link/SmartLink'
+
 import '../../stylesheets/donate.css'
 
 type Props = {
@@ -72,47 +75,61 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
       className={'donate breakout'}
       footer={<Footer showDonateButton={false} />}
     >
-      <article className="flex flex-col lg:flex-row">
-        <div className="flex flex-col lg:w-1/2">
-          <header className="bg-white p-8">
-            <div className="prose">
-              <h1>
-                {fundraiser.title.split(' ').map((word) => (
-                  <>
-                    {word}
-                    <br />
-                  </>
-                ))}
-              </h1>
-            </div>
+      <article>
+        <div className="m-8 bg-white flex flex-col lg:flex-row">
+          <header className="p-4 text-right lg:w-1/2 lg:border-r-2 lg:border-navy-800 prose">
+            <h1 className="mb-0">
+              {fundraiser.title.split(' ').map((word) => {
+                if (word.length > 2) {
+                  return (
+                    <>
+                      {word}
+                      <br />
+                    </>
+                  )
+                } else {
+                  return <>{word} </>
+                }
+              })}
+            </h1>
           </header>
-          <section className="bg-navy-100 p-8">
-            <div className="prose">
-              <MarkdownContent content={fundraiser.body} />
+
+          <aside className="p-4 flex flex-col justify-center lg:w-1/2 lg:border-l-2 lg:border-navy-800">
+            <div>
+              <SmartLink href={fundraiser.donateUrl} className="button">
+                <Button variant="primary">Donate Now &#10140;</Button>
+              </SmartLink>
             </div>
-          </section>
-        </div>
-        <div className="flex flex-col lg:w-1/2">
-          <aside className="">
-            <Gallery photos={fundraiser.gallery} />
-          </aside>
-          <aside className="p-8 bg-white">
             <ProgressBar
-              title={fundraiser.title}
               currency="EUR"
               allocated={fundraiser.totalAllocated}
               target={fundraiser.target}
             />
           </aside>
-          <aside className="p-8 bg-white">
-            <div className="prose">
-              <h2 className="">
-                Support Distribute Aid to help more people in need:
-              </h2>
-              <WaysToDonate />
-            </div>
-          </aside>
         </div>
+
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:w-1/2">
+            <section className="bg-navy-100 p-8">
+              <div className="prose">
+                <MarkdownContent content={fundraiser.body} />
+              </div>
+            </section>
+          </div>
+
+          <div className="flex flex-col lg:w-1/2">
+            <aside className="">
+              <Gallery photos={fundraiser.gallery} />
+            </aside>
+          </div>
+        </div>
+
+        <aside className="p-8 bg-white">
+          <h2 className="">
+            Support Distribute Aid to help more people in need:
+          </h2>
+          <WaysToDonate />
+        </aside>
       </article>
     </SimpleLayout>
   )
@@ -126,6 +143,7 @@ export const query = graphql`
       id
       name
       title
+      donateUrl
       gallery {
         relativePath
         alt

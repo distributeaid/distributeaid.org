@@ -90,13 +90,11 @@ main.donate .fundraisers .card a.title {
   line-height: 110%;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
   flex-direction: column;
 }
 @media only screen and (min-width: 600px) {
   main.donate .fundraisers .card a.title {
     font-size: 150%;
-    padding: 0 2rem;
   }
 }
 @media only screen and (min-width: 1024px) {

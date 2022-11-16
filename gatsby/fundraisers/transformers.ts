@@ -14,6 +14,7 @@ export const createFundraiserSchemaCustomization = ({
     type DAFundraiser implements Node {
       name: String!
       title: String!
+      donateUrl: String!
       gallery: [DAPhoto!]!
       target: Int!
       totalAllocated: Int!
@@ -68,11 +69,10 @@ export const createFundraisersFromMarkdown = (args: CreateNodeArgs) => {
       0,
     )
 
-    console.log(totalAllocated)
-
     createNode({
       name: fileName,
       title: fm.title,
+      donateUrl: fm.donateUrl,
       gallery: gallery,
       target: fm.target,
       totalAllocated,

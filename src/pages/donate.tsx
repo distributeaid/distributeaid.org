@@ -63,7 +63,6 @@ const DonatePage: FC<Props> = ({
         <>
           <div className="mx-auto my-8 prose">
             <ProgressBar
-              title={'Overall Progress'}
               currency={'EUR'}
               allocated={allocated}
               target={target}
@@ -107,6 +106,7 @@ export const pageQuery = graphql`
         id
         name
         title
+        donateUrl
         gallery {
           relativePath
           alt
