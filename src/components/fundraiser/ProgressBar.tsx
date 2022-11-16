@@ -78,14 +78,14 @@ const getWrapperFlexClasses = (slim?: Boolean, direction?: Direction) => {
   }
 
   const commonClasses = 'flex justify-start gap-2 items-center'
-  const defaultVal = `${commonClasses} flex-row-reverse`
+  const defaultVal = `${commonClasses} flex-row`
 
   switch (direction) {
     case Direction.LTR:
       return defaultVal
 
     case Direction.RTL:
-      return `${commonClasses} flex-row`
+      return `${commonClasses} flex-row-reverse`
 
     default:
       return defaultVal
