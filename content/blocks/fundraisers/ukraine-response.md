@@ -2,18 +2,18 @@
 title: Ukraine Response Project
 gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-hero.jpg"
-  alt: a man giving a cardboard box (marked with a Ukrainian flag) full of aid to
+  alt: A man giving a cardboard box (marked with a Ukrainian flag) full of aid to
     two women in need
 - url: "/uploads/fundraisers/ukraine-response-gallery-02.jpg"
-  alt: five people posing next to a truck full of boxes of donated aid items
+  alt: Five people posing next to a truck full of boxes of donated aid items
 - url: "/uploads/fundraisers/ukraine-response-gallery-03.jpg"
-  alt: stacked boxes of donated items in a hallway
+  alt: Stacked boxes of donated items in a hallway
 - url: "/uploads/fundraisers/ukraine-response-gallery-04.jpg"
-  alt: a team of volunteers posing next to a loading bay holding up Ukrainian flags
+  alt: A team of volunteers posing next to a loading bay holding up Ukrainian flags
 - url: "/uploads/fundraisers/ukraine-response-gallery-05.jpg"
-  alt: volunteers unloading a truck full of boxes of donated items
+  alt: Volunteers unloading a truck full of boxes of donated items
 - url: "/uploads/fundraisers/ukraine-response-gallery-06.jpg"
-  alt: volunteers loading a container full of boxes of donated items
+  alt: Volunteers loading a container full of boxes of donated items
 allocations:
 - date: 2022-11-16T11:07:12+01:00
   amountEUR: 3000
