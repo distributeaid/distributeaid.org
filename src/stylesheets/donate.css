@@ -11,21 +11,21 @@ main.donate > * {
   position: relative;
 }
 
-/* Header */
+/*> div > header */
 
-main.donate > header {
+main.donate > div > header {
   padding: 2rem 1rem 0 1rem;
   max-width: 1024px;
   margin: auto;
 }
 
 @media only screen and (min-width: 1024px) {
-  main.donate > header {
+  main.donate > div > header {
     padding: 2rem 2rem 0 2rem;
   }
 }
 
-main.donate > header h1 {
+main.donate > div > header h1 {
   font-weight: bold;
   font-size: 150%;
   text-shadow: 0 0 10px white;
@@ -33,7 +33,7 @@ main.donate > header h1 {
 }
 
 @media only screen and (min-width: 1024px) {
-  main.donate > header h1 {
+  main.donate > div > header h1 {
     font-size: 200%;
   }
 }
@@ -56,11 +56,11 @@ main.donate > p.progress {
 main.donate .fundraisers {
   width: 100%;
   max-width: 1024px;
-  margin: 2rem 0 0 0;
+  margin: 0 0 0 0;
 }
 @media only screen and (min-width: 1024px) {
   main.donate .fundraisers {
-    margin: 2rem auto 0 auto;
+    margin: 0 auto 0 auto;
   }
 }
 main.donate .fundraisers .card {

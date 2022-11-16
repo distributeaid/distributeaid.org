@@ -57,32 +57,37 @@ const DonatePage: FC<Props> = ({
       className={'donate'}
       footer={<Footer showDonateButton={false} />}
     >
-      <header className="prose">
-        <h1>{title}</h1>
-      </header>
-      {fundraisers.length > 0 && (
-        <>
-          <div className="mx-auto my-8 max-w-screen-sm">
+      <div className="bg-navy-100 pb-8">
+        <header className="prose">
+          <h1>{title}</h1>
+        </header>
+
+        {fundraisers.length > 0 && (
+          <div className="mx-auto my-4 max-w-screen-sm">
             <ProgressBar
               currency={'EUR'}
               allocated={allocated}
               target={target}
             />
           </div>
-          <article className="fundraisers">
-            {fundraisers.map((fundraiser, i) => {
-              const direction = i % 2 == 0 ? Direction.LTR : Direction.RTL
-              return (
-                <FundraiserCard
-                  key={fundraiser.id}
-                  fundraiser={fundraiser}
-                  direction={direction}
-                />
-              )
-            })}
-          </article>
-        </>
+        )}
+      </div>
+
+      {fundraisers.length > 0 && (
+        <article className="fundraisers">
+          {fundraisers.map((fundraiser, i) => {
+            const direction = i % 2 == 0 ? Direction.LTR : Direction.RTL
+            return (
+              <FundraiserCard
+                key={fundraiser.id}
+                fundraiser={fundraiser}
+                direction={direction}
+              />
+            )
+          })}
+        </article>
       )}
+
       <section className="bg-rosemary-50">
         <div className="px-4 py-12">
           <header className="prose max-w-none mx-auto mb-8">

@@ -95,16 +95,16 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
           </header>
 
           <aside className="p-4 flex flex-col justify-center lg:w-1/2 lg:border-l-2 lg:border-navy-800">
-            <ProgressBar
-              currency="EUR"
-              allocated={fundraiser.totalAllocated}
-              target={fundraiser.target}
-            />
             <div>
               <SmartLink href={fundraiser.donateUrl} className="button">
                 <Button variant="primary">Donate Now &#10140;</Button>
               </SmartLink>
             </div>
+            <ProgressBar
+              currency="EUR"
+              allocated={fundraiser.totalAllocated}
+              target={fundraiser.target}
+            />
           </aside>
         </div>
 

@@ -39,10 +39,6 @@ export const ProgressBar: FC<{
   //       https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role
   return (
     <div className={`${wrapperFlexClasses} text-navy-700 prose max-w-none`}>
-      <div className={`${flexClasses} justify-between uppercase leading-tight`}>
-        {!slim && <div>Funded: {moneyFormatter.format(allocated)}</div>}
-        <div className="font-bold">Goal: {moneyFormatter.format(target)}</div>
-      </div>
       <div className={`flex-grow ${flexClasses} my-2 p-1 bg-navy-400`}>
         <div
           className="bg-navy-900"
@@ -51,6 +47,10 @@ export const ProgressBar: FC<{
           }}
         ></div>
         <div className="font-bold mx-2 text-navy-900">{progressPercent}%</div>
+      </div>
+      <div className={`${flexClasses} justify-between uppercase leading-tight`}>
+        {!slim && <div>Funded: {moneyFormatter.format(allocated)}</div>}
+        <div className="font-bold">Goal: {moneyFormatter.format(target)}</div>
       </div>
     </div>
   )
