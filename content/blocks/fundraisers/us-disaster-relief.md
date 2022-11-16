@@ -21,13 +21,6 @@ allocations:
   amountEUR: 8000
   purpose: 'Please donate to support our US team in their operations to increase the
     capacity of the U.S. grassroots network to serve the needs of their beneficiaries.  '
-- date: 2022-11-11T11:27:40+01:00
-  amountEUR: 8000
-  purpose: Please donate to support our U.S. team in their operations to increase
-    the capacity of the U.S. grassroots network to serve the needs of their beneficiaries.
-- date: 2022-10-01
-  amountEUR: 500
-  purpose: This text describes the purpose the allocated funds will be used for.
 
 ---
 Natural disasters including powerful hurricanes, droughts, wildfires, torrential rain storms and flooding; are on the rise across the U.S.. People are forcibly displaced to survive these climate emergencies. Relief grassroots communities are having to respond to emergency situations now, more than ever to support the vulnerable communities that are affected. 
