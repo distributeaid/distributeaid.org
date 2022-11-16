@@ -27,6 +27,7 @@ allocations:
     Support these groups today, so they are prepared for tomorrow.
   alt: volunteers unloading boxes of aid from a truck
 target: 6000
+donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
 ---
 We connect aid groups together to strengthen the sharing of information and resources to multiply their impact across relief responses.
