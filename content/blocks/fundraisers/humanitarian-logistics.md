@@ -25,7 +25,7 @@ The coordination of an aid shipment comes with a number of complex processes, pr
 
 Our experienced logistics team offers capacity building and assistance to free up capacity for organisations. In short, they enable groups to bypass long delays, avoid fines, and save potentially vital resources of both time and money in logistics and supply chain processes.
 
-Our team helps with:
+###### Our team helps with:
 
 * Creating packing lists for donated material items, attaching HS codes to each item, stating quantity, weight etc.
 * Identifying what exact transport is needed from start to end destinations.
