@@ -48,11 +48,12 @@ export const WaysToDonate = () => {
         <img src={directTransferImage} className="h-9 w-9" alt="Dollar sign" />
         <Divider />
         <Button variant="rosemary">Make a Bank Transfer</Button>
-        <BankInformationModal
-          isOpen={modalIsOpen}
-          onRequestClose={() => setModalIsOpen(false)}
-        />
       </div>
+      {/* NOTE: absolutely positioned, so not in flex flow */}
+      <BankInformationModal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+      />
     </div>
   )
 }

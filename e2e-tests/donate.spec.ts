@@ -17,10 +17,8 @@ test.describe('Donate action', () => {
       await expect(page).toHaveURL(new URL('/donate/', base).toString())
 
       expect(await page.locator('a:has-text("PayPal")')).toBeTruthy()
-      expect(await page.locator('a:has-text("Open Collective")')).toBeTruthy()
-      expect(
-        await page.locator('button:has-text("View bank info")'),
-      ).toBeTruthy()
+      expect(await page.locator('a:has-text("Card")')).toBeTruthy()
+      expect(await page.locator('button:has-text("Bank")')).toBeTruthy()
     })
   })
 
@@ -34,10 +32,10 @@ test.describe('Donate action', () => {
       )
     })
 
-    it('should show Open Collective info', async ({ page }) => {
+    it('should show Card info', async ({ page }) => {
       await page.goto(new URL('/donate/', base).toString())
-      expect(await page.locator('a:has-text("Open Collective")')).toBeTruthy()
-      const link = page.locator('a:has-text("Open Collective")').first()
+      expect(await page.locator('a:has-text("Card")')).toBeTruthy()
+      const link = page.locator('a:has-text("Card")').first()
       expect(await link.getAttribute('href')).toContain(
         'https://opencollective.com/distribute-aid-usa/',
       )
@@ -45,10 +43,8 @@ test.describe('Donate action', () => {
 
     it('should show Bank info', async ({ page }) => {
       await page.goto(new URL('/donate/', base).toString())
-      expect(
-        await page.locator('button:has-text("View bank info")'),
-      ).toBeTruthy()
-      await page.locator('button:has-text("View bank info")').click()
+      expect(await page.locator('button:has-text("Bank")')).toBeTruthy()
+      await page.locator('button:has-text("Bank")').click()
       const modalContent = await page
         .locator('.ReactModal__Content')
         .textContent()
