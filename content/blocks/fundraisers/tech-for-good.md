@@ -2,25 +2,25 @@
 title: Tech 4 Good
 gallery:
 - url: "/uploads/fundraisers/tech-for-good-hero.jpg"
-  alt: a computer screen displaying code
+  alt: A computer screen displaying code
 - url: "/uploads/fundraisers/tech-for-good-gallery-02.jpg"
-  alt: volunteers huddled together, posing for a photo
+  alt: Volunteers huddled together, posing for a photo
 - url: "/uploads/fundraisers/tech-for-good-gallery-03.jpg"
-  alt: two volunteers standing in a truck full of boxes, holding two boxes (labelled
+  alt: Two volunteers standing in a truck full of boxes, holding two boxes (labelled
     ‘Humanitarian Aid’) of aid items above their head
 - url: "/uploads/fundraisers/tech-for-good-gallery-04.jpg"
   alt: A group picture of volunteers posing inside a container full of boxes of aid
     donated to them
 - url: "/uploads/fundraisers/tech-for-good-gallery-05.jpg"
-  alt: volunteers standing next to rows of boxes posing for a photo
+  alt: Volunteers standing next to rows of boxes posing for a photo
 - url: "/uploads/fundraisers/tech-for-good-gallery-06.jpg"
-  alt: volunteers standing next to a truck they have filled to full capacity with
+  alt: Volunteers standing next to a truck they have filled to full capacity with
     boxes of donated items, posing for a photo
 - url: "/uploads/fundraisers/tech-for-good-gallery-07.jpg"
-  alt: volunteers standing next to a truck they have filled to full capacity with
+  alt: Volunteers standing next to a truck they have filled to full capacity with
     boxes of donated items, posing for a photo
 - url: "/uploads/fundraisers/tech-for-good-gallery-08.jpg"
-  alt: two volunteers and a truck driver posing for a photo inside a truck they have
+  alt: Two volunteers and a truck driver posing for a photo inside a truck they have
     filled with boxes of donated items
 - url: "/uploads/fundraisers/tech-for-good-gallery-09.jpg"
   alt: A group of people posing for a group picture inside a truck they have unloaded
