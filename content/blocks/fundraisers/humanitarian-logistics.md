@@ -2,16 +2,16 @@
 title: Humanitarian Logistics
 gallery:
 - url: "/uploads/fundraisers/humanitarian-logistics-hero.jpg"
-  alt: a container port
+  alt: A container port
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-02.jpg"
-  alt: a person using a circular saw to remove the locks on a container
+  alt: A person using a circular saw to remove the locks on a container
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-03.jpg"
-  alt: two people loading boxes into a container
+  alt: Two people loading boxes into a container
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-04.jpg"
-  alt: a forklift loading boxes onto a truck; the truck has the word ‘Logistics’ written
+  alt: A forklift loading boxes onto a truck; the truck has the word ‘Logistics’ written
     across it
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-05.jpg"
-  alt: a person in PPE gear, fumigating a truck full of boxes
+  alt: A person in PPE gear, fumigating a truck full of boxes
 allocations:
 - date: 2022-11-16T11:19:17+01:00
   amountEUR: 4000
