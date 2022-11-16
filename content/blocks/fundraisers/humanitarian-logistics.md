@@ -12,13 +12,18 @@ gallery:
     across it
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-05.jpg"
   alt: a person in PPE gear, fumigating a truck full of boxes
-allocations: []
+allocations:
+- date: 2022-11-16T11:19:17+01:00
+  amountEUR: 4000
+  purpose: Please donate to support our Logistics team to continue to provide their
+    services to  relief efforts across Europe and the Middle East.
+
 ---
 Creating sustainable supply chains across the humanitarian relief sector is critical to ensure that aid groups have access to the resources necessary to meet the needs of the communities they serve. Distribute Aid works to improve how aid is sourced, allocated, and distributed; by managing the logistics of sending material aid from and to aid groups.
 
 The coordination of an aid shipment comes with a number of complex processes, procedures, and paperwork that Distribute Aid handles for groups free of charge! We want to ensure that groups are offered the right guidance and assistance when it comes to humanitarian logistics.
 
-Our experienced logistics team offers capacity building and assistance to free up capacity for organisations. In short they enable groups to bypass long delays, avoid fines, and to save potentially vital resources of both time and money in logistics and supply chain processes.
+Our experienced logistics team offers capacity building and assistance to free up capacity for organisations. In short, they enable groups to bypass long delays, avoid fines, and save potentially vital resources of both time and money in logistics and supply chain processes.
 
 Our team helps with:
 
@@ -32,4 +37,4 @@ Our team helps with:
 * Working closely with customs agents
 * Acquiring tax exemptions for relief shipments
 * Dealing with unexpected complications, such as inspections and clearance delays
-* Staying updated on various shipping and trucking routes, identifying any potential hinderances to a particular route and communicating this with the rest of the team.
+* Staying updated on various shipping and trucking routes, identifying any potential hindrances to a particular route and communicating this with the rest of the team.
