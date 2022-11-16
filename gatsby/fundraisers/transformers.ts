@@ -7,6 +7,29 @@ import { getObjectProperty } from '../utils/untypedAccess/getObjectProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
 import { nodeParent } from '../utils/untypedAccess/nodeParent'
 
+export const createFundraiserSchemaCustomization = ({
+  actions: { createTypes },
+}: CreateSchemaCustomizationArgs) => {
+  const typeDefs = `
+    type DAFundraiser implements Node {
+      name: String!
+      title: String!
+      gallery: [DAPhoto!]!
+      target: Int!
+      totalAllocated: Int!
+      allocations: [DAFundraiserAllocation!]!
+      body: String!
+    }
+
+    type DAFundraiserAllocation {
+      date: Date!
+      amountEUR: Int!
+      purpose: String!
+    }
+  `
+  createTypes(typeDefs)
+}
+
 /**
  * Creates the fundraiser nodes
  */
@@ -38,11 +61,21 @@ export const createFundraisersFromMarkdown = (args: CreateNodeArgs) => {
     const gallery = galleryData.map((image: PhotoData) => {
       return derivePhoto(image, node.id, args)
     })
+    const totalAllocated = fm.allocations.reduce(
+      (total: number, { amountEUR }: { amountEUR: number }) => {
+        return total + amountEUR
+      },
+      0,
+    )
+
+    console.log(totalAllocated)
+
     createNode({
       name: fileName,
       title: fm.title,
       gallery: gallery,
       target: fm.target,
+      totalAllocated,
       allocations: fm.allocations ?? [],
       body: node.rawMarkdownBody,
       fileRelativePath,
@@ -55,26 +88,4 @@ export const createFundraisersFromMarkdown = (args: CreateNodeArgs) => {
       },
     })
   }
-}
-
-export const createFundraiserSchemaCustomization = ({
-  actions: { createTypes },
-}: CreateSchemaCustomizationArgs) => {
-  const typeDefs = `
-    type DAFundraiser implements Node {
-      name: String!
-      title: String!
-      gallery: [DAPhoto!]!
-      target: Int!
-      allocations: [DAFundraiserAllocation!]!
-      body: String!
-    }
-
-    type DAFundraiserAllocation {
-      date: Date!
-      amountEUR: Int!
-      purpose: String!
-    }
-  `
-  createTypes(typeDefs)
 }

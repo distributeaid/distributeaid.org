@@ -43,13 +43,8 @@ const DonatePage: FC<Props> = ({
 }) => {
   fundraisers.sort(() => Math.random() - Math.random())
 
-  const allocated = fundraisers.reduce((total, fundraiser) => {
-    return (
-      total +
-      fundraiser.allocations.reduce((totalAllocated, allocation) => {
-        return allocation.amountEUR
-      }, 0)
-    )
+  const allocated = fundraisers.reduce((total, { totalAllocated }) => {
+    return total + totalAllocated
   }, 0)
 
   const target = fundraisers.reduce((total, fundraiser) => {
@@ -124,6 +119,7 @@ export const pageQuery = graphql`
           }
         }
         target
+        totalAllocated
         allocations {
           date
           amountEUR

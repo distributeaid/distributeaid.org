@@ -96,14 +96,11 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
           <aside className="">
             <Gallery photos={fundraiser.gallery} />
           </aside>
-          <aside className="p-8 bg-white prose">
+          <aside className="p-8 bg-white">
             <ProgressBar
               title={fundraiser.title}
               currency="EUR"
-              allocated={(fundraiser.allocations ?? []).reduce(
-                (total, { amountEUR }) => total + amountEUR,
-                0,
-              )}
+              allocated={fundraiser.totalAllocated}
               target={fundraiser.target}
             />
           </aside>
@@ -142,6 +139,7 @@ export const query = graphql`
       }
       body
       target
+      totalAllocated
       allocations {
         date
         amountEUR

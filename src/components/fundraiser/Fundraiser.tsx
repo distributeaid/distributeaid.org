@@ -17,10 +17,7 @@ export const FundraiserCard: FC<{ fundraiser: Fundraiser }> = ({
           <FundraiserProgress
             currency="EUR"
             raisedTitle="Allocated funds so far"
-            raised={(fundraiser.allocations ?? []).reduce(
-              (total, { amountEUR }) => total + amountEUR,
-              0,
-            )}
+            raised={fundraiser.totalAllocated}
           />
         </Link>
       </div>

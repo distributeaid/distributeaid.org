@@ -17,6 +17,10 @@ export type Fundraiser = {
    */
   target: number
   /**
+   * The sum total of each allocation.
+   */
+  totalAllocated: number
+  /**
    * Describes the funds allocated for this fundraisers.
    */
   allocations: {
