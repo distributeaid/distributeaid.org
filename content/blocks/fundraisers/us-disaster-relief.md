@@ -2,7 +2,7 @@
 title: US Disaster & Refugee Relief
 gallery:
 - url: "/uploads/fundraisers/us-disaster-relief-hero.jpg"
-  alt: a girl holding up an illustrated book in front of her face in a class setting
+  alt: A girl holding up an illustrated book in front of her face in a class setting
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-02.jpg"
   alt: volunteers stacking donations of water
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-03.jpg"
