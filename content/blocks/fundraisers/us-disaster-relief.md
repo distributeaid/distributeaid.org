@@ -4,17 +4,17 @@ gallery:
 - url: "/uploads/fundraisers/us-disaster-relief-hero.jpg"
   alt: A girl holding up an illustrated book in front of her face in a class setting
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-02.jpg"
-  alt: volunteers stacking donations of water
+  alt: Volunteers stacking donations of water
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-03.jpg"
-  alt: volunteers distributing donations on a table set up next to a car
+  alt: Volunteers distributing donations on a table set up next to a car
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-04.jpg"
-  alt: individuals and children with luggage waiting to get on a bus
+  alt: Individuals and children with luggage waiting to get on a bus
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-05.jpg"
-  alt: a warehouse filled with lots of boxes of donations
+  alt: A warehouse filled with lots of boxes of donations
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-06.jpg"
-  alt: a team of volunteers posing next to a truck of donations they have loaded
+  alt: A team of volunteers posing next to a truck of donations they have loaded
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-07.jpg"
-  alt: 'a distribution of donations including: socks, scarfs, hand warmers, and informative
+  alt: 'A distribution of donations including: socks, scarfs, hand warmers, and informative
     leaflets'
 allocations:
 - date: 2022-11-11T16:06:00+01:00
