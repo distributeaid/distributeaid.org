@@ -1,5 +1,5 @@
 import Footer from '@components/Footer'
-import { FundraiserCard as FundraiserComponent } from '@components/fundraiser/Fundraiser'
+import { FundraiserCard } from '@components/fundraiser/FundraiserCard'
 import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { PageHeader } from '@components/PageHeader'
@@ -7,6 +7,7 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { Fundraiser } from '../types/fundraiser.d'
+import { Direction } from '../types/layout.d'
 
 type Props = {
   data: {
@@ -69,12 +70,16 @@ const DonatePage: FC<Props> = ({
             />
           </div>
           <article className="fundraisers">
-            {fundraisers.map((fundraiser) => (
-              <FundraiserComponent
-                key={fundraiser.id}
-                fundraiser={fundraiser}
-              />
-            ))}
+            {fundraisers.map((fundraiser, i) => {
+              const direction = i % 2 == 0 ? Direction.LTR : Direction.RTL
+              return (
+                <FundraiserCard
+                  key={fundraiser.id}
+                  fundraiser={fundraiser}
+                  direction={direction}
+                />
+              )
+            })}
           </article>
         </>
       )}
