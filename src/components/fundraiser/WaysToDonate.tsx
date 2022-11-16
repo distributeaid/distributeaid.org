@@ -35,7 +35,7 @@ export const WaysToDonate = () => {
         ------------------------------------------------------------ */}
         <ExternalLink
           className="self-center link block"
-          href="https://opencollective.com/distribute-aid-usa"
+          href="https://opencollective.com/distribute-aid-usa/donate?amount=20&interval=month&platformTip=0"
         >
           <img
             src={openCollectiveImage}
@@ -45,7 +45,7 @@ export const WaysToDonate = () => {
           />
         </ExternalLink>
         <ExternalLink
-          href="https://opencollective.com/distribute-aid-usa/donate"
+          href="https://opencollective.com/distribute-aid-usa/donate?amount=20&interval=month&platformTip=0"
           className="button"
         >
           <Button variant="primary">Open Collective</Button>
@@ -54,7 +54,7 @@ export const WaysToDonate = () => {
           If you are in the US, you can make tax-deductible donations to support
           Distribute Aid's USA based projects, through the{' '}
           <ExternalLink
-            href="https://opencollective.com/distribute-aid-usa/donate"
+            href="https://opencollective.com/distribute-aid-usa/"
             className="link"
           >
             Open Collective Foundation

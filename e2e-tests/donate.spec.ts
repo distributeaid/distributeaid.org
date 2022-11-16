@@ -15,35 +15,40 @@ test.describe('Donate action', () => {
       await page.goto(base)
       await page.locator('header >> a:has-text("Donate"):visible').click()
       await expect(page).toHaveURL(new URL('/donate/', base).toString())
+
+      expect(await page.locator('a:has-text("PayPal")')).toBeTruthy()
+      expect(await page.locator('a:has-text("Open Collective")')).toBeTruthy()
       expect(
-        await page.locator('data-test=opencollective').textContent(),
-      ).toContain('Open Collective')
-      expect(await page.locator('data-test=bank').textContent()).toContain(
-        'View bank info',
-      )
+        await page.locator('button:has-text("View bank info")'),
+      ).toBeTruthy()
     })
   })
 
   test.describe('Donate page', () => {
+    it('should show PayPal info', async ({ page }) => {
+      await page.goto(new URL('/donate/', base).toString())
+      expect(await page.locator('a:has-text("PayPal")')).toBeTruthy()
+      const link = page.locator('a:has-text("PayPal")').first()
+      expect(await link.getAttribute('href')).toContain(
+        'https://paypal.me/distributeaid',
+      )
+    })
+
     it('should show Open Collective info', async ({ page }) => {
       await page.goto(new URL('/donate/', base).toString())
-      expect(
-        await page.locator('data-test=opencollective').textContent(),
-      ).toContain('Open Collective')
-      const link = page.locator('data-test=opencollective >> a.link').first()
+      expect(await page.locator('a:has-text("Open Collective")')).toBeTruthy()
+      const link = page.locator('a:has-text("Open Collective")').first()
       expect(await link.getAttribute('href')).toContain(
-        'https://opencollective.com/distribute-aid-usa',
+        'https://opencollective.com/distribute-aid-usa/',
       )
     })
 
     it('should show Bank info', async ({ page }) => {
       await page.goto(new URL('/donate/', base).toString())
-      expect(await page.locator('data-test=bank').textContent()).toContain(
-        'View bank info',
-      )
-      await page
-        .locator('data-test=bank >> button:has-text("View bank info")')
-        .click()
+      expect(
+        await page.locator('button:has-text("View bank info")'),
+      ).toBeTruthy()
+      await page.locator('button:has-text("View bank info")').click()
       const modalContent = await page
         .locator('.ReactModal__Content')
         .textContent()
