@@ -1,6 +1,5 @@
 import Button from '@components/button/Button'
 import SmartLink from '@components/link/SmartLink'
-import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import { Fundraiser } from '../../types/fundraiser.d'
@@ -16,15 +15,16 @@ export const FundraiserCard: FC<{
   }
 
   const bgImage = fundraiser.gallery[0]
+  const borderClasses = getBorderClasses(direction)
   const flexJustifyClass = getFlexClasses(direction)
   const moreInfoArrow = getMoreInfoArrow(direction)
 
   return (
     <section className="card">
-      <div className="px-8">
-        <Link to={`/donate/${fundraiser.name}`} className="title">
+      <div className={`px-4 py-6 ${borderClasses}`}>
+        <SmartLink href={`/donate/${fundraiser.name}`} className="title">
           <h2>{fundraiser.title}</h2>
-        </Link>
+        </SmartLink>
         <div>
           <ProgressBar
             currency="EUR"
@@ -44,12 +44,12 @@ export const FundraiserCard: FC<{
         </div>
       </div>
       {bgImage && (
-        <Link to={`/donate/${fundraiser.name}`} className="bg">
+        <SmartLink href={`/donate/${fundraiser.name}`} className="bg">
           <GatsbyImage
             alt={bgImage.alt}
             image={bgImage.image.gatsbyImageData}
           />
-        </Link>
+        </SmartLink>
       )}
     </section>
   )
@@ -80,6 +80,22 @@ const getMoreInfoArrow = (direction?: Direction) => {
 
     case Direction.RTL:
       return <>&#129168; More Info</>
+
+    default:
+      return defaultVal
+  }
+}
+
+const getBorderClasses = (direction?: Direction) => {
+  const commonClasses = 'border-navy-900'
+  const defaultVal = `${commonClasses} ml-4 border-l-4`
+
+  switch (direction) {
+    case Direction.LTR:
+      return defaultVal
+
+    case Direction.RTL:
+      return `${commonClasses} mr-4 border-r-4`
 
     default:
       return defaultVal

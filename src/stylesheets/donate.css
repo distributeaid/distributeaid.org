@@ -69,6 +69,7 @@ main.donate .fundraisers .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  align-items: center;
 }
 @media only screen and (min-width: 1024px) {
   main.donate .fundraisers .card {
@@ -82,6 +83,9 @@ main.donate .fundraisers .card a.bg {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main.donate .fundraisers .card a.bg:hover {
+  opacity: 0.8;
 }
 main.donate .fundraisers .card a.bg .gatsby-image-wrapper {
   width: 100%;

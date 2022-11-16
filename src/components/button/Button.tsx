@@ -44,12 +44,12 @@ const Button: FunctionComponent<ButtonProps> = ({
     className,
     {
       // Default
-      'bg-white border-gray-300 text-gray-600 shadow-sm ring-gray-200 hover:text-gray-700 hover:shadow active:bg-gray-100 active:text-gray-900':
+      'bg-white border-gray-300 text-gray-600 shadow-sm ring-gray-200 hover:text-gray-800 hover:drop-shadow-md active:bg-gray-100 active:text-gray-900':
         variant === 'default' && !disabled,
       'bg-gray-50 border-gray-300 text-gray-400':
         variant === 'default' && disabled,
       // Primary variant
-      'bg-navy-700 border-transparent text-white ring-navy-300 hover:bg-navy-800 active:bg-navy-900':
+      'bg-navy-700 border-transparent text-white ring-navy-300 hover:bg-navy-800 hover:drop-shadow-md active:bg-navy-900 active:drop-shadow-none':
         variant === 'primary' && !disabled,
       'bg-navy-500 border-transparent text-navy-100':
         variant === 'primary' && disabled,
