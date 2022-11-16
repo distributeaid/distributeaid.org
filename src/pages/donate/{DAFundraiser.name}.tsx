@@ -109,8 +109,8 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
         </div>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col lg:w-1/2">
-            <section className="bg-navy-100 p-8">
+          <div className="flex flex-col lg:w-1/2 bg-navy-100">
+            <section className="p-8">
               <div className="prose">
                 <MarkdownContent content={fundraiser.body} />
               </div>

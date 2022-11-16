@@ -63,7 +63,7 @@ const DonatePage: FC<Props> = ({
         </header>
 
         {fundraisers.length > 0 && (
-          <div className="mx-auto my-4 max-w-screen-sm">
+          <div className="mx-auto mt-4 max-w-screen-sm">
             <ProgressBar
               currency={'EUR'}
               allocated={allocated}
