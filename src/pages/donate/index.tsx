@@ -57,13 +57,13 @@ const DonatePage: FC<Props> = ({
       className={'donate'}
       footer={<Footer showDonateButton={false} />}
     >
-      <div className="bg-navy-100 pb-8">
-        <header className="prose">
+      <div className="bg-navy-100 px-4 py-8">
+        <header className="prose prose-sm max-w-screen-sm mx-auto">
           <h1>{title}</h1>
         </header>
 
         {fundraisers.length > 0 && (
-          <div className="mx-auto mt-4 max-w-screen-sm">
+          <div className="mt-4 max-w-screen-sm mx-auto">
             <ProgressBar
               currency={'EUR'}
               allocated={allocated}
@@ -74,7 +74,7 @@ const DonatePage: FC<Props> = ({
       </div>
 
       {fundraisers.length > 0 && (
-        <article className="fundraisers">
+        <article className="fundraisers max-w-screen-lg mx-auto">
           {fundraisers.map((fundraiser, i) => {
             const direction = i % 2 == 0 ? Direction.LTR : Direction.RTL
             return (
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
           alt
           image {
             gatsbyImageData(
-              width: 500
+              width: 640
               aspectRatio: 1.2
               transformOptions: { fit: COVER }
             )

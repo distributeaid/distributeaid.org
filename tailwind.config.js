@@ -94,6 +94,7 @@ const config = {
         content: 'calc(100vh - 4rem)',
 
         'screen/2': '50vh',
+        'screen/3': '33vh',
       },
       fontFamily: {
         sans: [

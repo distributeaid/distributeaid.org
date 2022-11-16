@@ -16,17 +16,19 @@ export const FundraiserCard: FC<{
 
   const bgImage = fundraiser.gallery[0]
   const borderClasses = getBorderClasses(direction)
-  const flexJustifyClass = getFlexClasses(direction)
+  const titleAlignClasses = getTitleAlignClasses(direction)
+  const buttonFlexClasses = getButtonFlexClasses(direction)
   const moreInfoArrow = getMoreInfoArrow(direction)
+  const bgOrderClasses = getBgOrderClasses(direction)
 
   return (
-    <section className="card">
-      <div className={`px-4 py-6 my-6 ${borderClasses}`}>
+    <section className="card w-100 grid sm:grid-cols-2 items-center min-h-screen/3">
+      <div className={`${borderClasses} px-4 py-6 my-6`}>
         <SmartLink
           href={`/donate/${fundraiser.name}`}
-          className="title hover:drop-shadow-md"
+          className={`title ${titleAlignClasses} prose prose-sm md:prose-base lg:prose-lg hover:drop-shadow-md`}
         >
-          <h2>{fundraiser.title}</h2>
+          <h1 className="font-bold uppercase">{fundraiser.title}</h1>
         </SmartLink>
         <div>
           <ProgressBar
@@ -37,7 +39,7 @@ export const FundraiserCard: FC<{
             direction={direction}
           />
         </div>
-        <div className={`${flexJustifyClass} py-2`}>
+        <div className={`${buttonFlexClasses} py-2`}>
           <SmartLink href={fundraiser.donateUrl} className="button">
             <Button variant="primary">Donate Now</Button>
           </SmartLink>
@@ -47,8 +49,12 @@ export const FundraiserCard: FC<{
         </div>
       </div>
       {bgImage && (
-        <SmartLink href={`/donate/${fundraiser.name}`} className="bg">
+        <SmartLink
+          href={`/donate/${fundraiser.name}`}
+          className={`bg ${bgOrderClasses} w-full h-full flex justify-center items-center hover:opacity-80`}
+        >
           <GatsbyImage
+            className="w-full h-[192px] sm:h-full"
             alt={bgImage.alt}
             image={bgImage.image.gatsbyImageData}
           />
@@ -58,7 +64,39 @@ export const FundraiserCard: FC<{
   )
 }
 
-const getFlexClasses = (direction?: Direction) => {
+const getBorderClasses = (direction?: Direction) => {
+  const commonClasses = 'border-navy-300'
+  const defaultVal = `${commonClasses} ml-4 border-l-4`
+
+  switch (direction) {
+    case Direction.LTR:
+      return defaultVal
+
+    case Direction.RTL:
+      return `${commonClasses} mr-4 border-r-4`
+
+    default:
+      return defaultVal
+  }
+}
+
+const getTitleAlignClasses = (direction?: Direction) => {
+  const commonClasses = ''
+  const defaultVal = `${commonClasses} text-left`
+
+  switch (direction) {
+    case Direction.LTR:
+      return defaultVal
+
+    case Direction.RTL:
+      return `${commonClasses} text-right`
+
+    default:
+      return defaultVal
+  }
+}
+
+const getButtonFlexClasses = (direction?: Direction) => {
   const commonClasses = 'flex gap-4 justify-start items-center'
   const defaultVal = `${commonClasses} flex-row`
 
@@ -89,16 +127,16 @@ const getMoreInfoArrow = (direction?: Direction) => {
   }
 }
 
-const getBorderClasses = (direction?: Direction) => {
-  const commonClasses = 'border-navy-900'
-  const defaultVal = `${commonClasses} ml-4 border-l-4`
+const getBgOrderClasses = (direction?: Direction) => {
+  const commonClasses = 'order-last'
+  const defaultVal = `sm:order-first`
 
   switch (direction) {
     case Direction.LTR:
       return defaultVal
 
     case Direction.RTL:
-      return `${commonClasses} mr-4 border-r-4`
+      return `${commonClasses} sm:order-last`
 
     default:
       return defaultVal

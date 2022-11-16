@@ -38,8 +38,10 @@ export const ProgressBar: FC<{
   // TODO: use more accessible element like <progress>, or add aria info
   //       https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role
   return (
-    <div className={`${wrapperFlexClasses} text-navy-700 prose max-w-none`}>
-      <div className={`flex-grow ${flexClasses} my-2 p-1 bg-navy-400`}>
+    <div
+      className={`${wrapperFlexClasses} my-2 prose max-w-none text-navy-700`}
+    >
+      <div className={`flex-grow ${flexClasses} p-1 bg-navy-400`}>
         <div
           className="bg-navy-900"
           style={{
@@ -56,28 +58,29 @@ export const ProgressBar: FC<{
   )
 }
 
-const getFlexClasses = (direction?: Direction) => {
-  const commonClasses = 'flex justify-start items-stretch'
-  const defaultVal = `${commonClasses} flex-row`
+const getWrapperFlexClasses = (slim?: Boolean, direction?: Direction) => {
+  if (!slim) {
+    return 'flex flex-col gap-2'
+  }
+
+  const commonClasses =
+    'flex gap-2 justify-start items-center sm:flex-col sm:items-stretch md:items-center'
+  const defaultVal = `${commonClasses} flex-row md:flex-row`
 
   switch (direction) {
     case Direction.LTR:
       return defaultVal
 
     case Direction.RTL:
-      return `${commonClasses} flex-row-reverse`
+      return `${commonClasses} flex-row md:flex-row-reverse`
 
     default:
       return defaultVal
   }
 }
 
-const getWrapperFlexClasses = (slim?: Boolean, direction?: Direction) => {
-  if (!slim) {
-    return ''
-  }
-
-  const commonClasses = 'flex justify-start gap-2 items-center'
+const getFlexClasses = (direction?: Direction) => {
+  const commonClasses = 'flex justify-start items-stretch text-left'
   const defaultVal = `${commonClasses} flex-row`
 
   switch (direction) {

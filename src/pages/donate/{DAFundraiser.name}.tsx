@@ -76,9 +76,9 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
       footer={<Footer showDonateButton={false} />}
     >
       <article>
-        <div className="m-8 bg-white flex flex-col lg:flex-row">
-          <header className="p-4 text-right lg:w-1/2 lg:border-r-2 lg:border-navy-800 prose">
-            <h1 className="mb-0">
+        <div className="m-4 sm:my-8 sm:mx-4 bg-white flex flex-col sm:flex-row">
+          <header className="flex items-center justify-center prose-sm uppercase text-center sm:justify-end sm:p-4 sm:text-right sm:w-1/2 sm:border-r-4 sm:border-navy-800 lg:prose prose-h1:mb-0">
+            <h1 className="hidden md:block lg:mb-0">
               {fundraiser.title.split(' ').map((word) => {
                 if (word.length > 2) {
                   return (
@@ -92,10 +92,11 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
                 }
               })}
             </h1>
+            <h1 className="block md:hidden">{fundraiser.title}</h1>
           </header>
 
-          <aside className="p-4 flex flex-col justify-center lg:w-1/2 lg:border-l-2 lg:border-navy-800">
-            <div>
+          <aside className="p-4 pr-0 flex flex-col justify-center sm:w-1/2">
+            <div className="text-center sm:text-left">
               <SmartLink href={fundraiser.donateUrl} className="button">
                 <Button variant="primary">Donate Now &#10140;</Button>
               </SmartLink>
@@ -108,8 +109,8 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
           </aside>
         </div>
 
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col lg:w-1/2 bg-navy-100">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:w-1/2 bg-navy-100">
             <section className="p-8">
               <div className="prose">
                 <MarkdownContent content={fundraiser.body} />
@@ -117,9 +118,12 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
             </section>
           </div>
 
-          <div className="flex flex-col lg:w-1/2">
+          <div className="flex flex-col md:w-1/2">
             <aside className="">
-              <Gallery photos={fundraiser.gallery} />
+              <Gallery
+                gridClasses={`grid-cols-2 md:grid-cols-1 lg:grid-cols-2`}
+                photos={fundraiser.gallery}
+              />
             </aside>
           </div>
         </div>

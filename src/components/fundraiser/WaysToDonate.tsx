@@ -7,12 +7,12 @@ import directTransferImage from '../../images/direct_transfer.svg'
 import openCollectiveImage from '../../images/opencollective-wordmark.svg'
 import paypalLogo from '../../images/paypal-color.svg'
 
-const Divider = () => <hr className="w-[110%] h-1 bg-rosemary-900 px-8" />
+const Divider = () => <hr className="w-[110%] h-1 bg-rosemary-300 px-8" />
 
 export const WaysToDonate = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
-    <div className="flex flex-col gap-16 justify-center md:flex-row mx-auto bg-rosemary-50">
+    <div className="flex flex-col gap-8 md:gap-16 items-center justify-center md:flex-row bg-rosemary-50">
       {/* PayPal
       ------------------------------------------------------------ */}
       <ExternalLink
