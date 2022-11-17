@@ -3,17 +3,18 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import DomainDesktop from '@components/team/DomainDesktop'
 import DomainMobile from '@components/team/DomainMobile'
+import { Members } from '@components/team/MemberComponentTypes'
 
 type Props = {
   data: {
-    allDaTeamMember: {
-      nodes: any[]
+    members: {
+      nodes: Members[]
     }
   }
 }
 
 const TeamPage: FC<Props> = ({ data }) => {
-  const members = data.allDaTeamMember.nodes
+  const members = data.members.nodes
   const domains = Array.from(
     new Set(members.map((member) => member?.roles[0]?.role?.domain)),
   )
@@ -47,7 +48,7 @@ export default TeamPage
 
 export const pageQuery = graphql`
   query TeamQuery {
-    allDaTeamMember {
+    members: allDaTeamMember {
       nodes {
         bio
         name

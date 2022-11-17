@@ -1,8 +1,11 @@
 import { Card } from '@components/card/Card'
 import ExternalLink from '@components/link/ExternalLink'
+import { Members } from '@components/team/MemberComponentTypes'
 
 type Props = {
-  member: any
+  members: {
+    nodes: Members[]
+  }
 }
 
 export const Member = ({ member }: { member: any }) => (

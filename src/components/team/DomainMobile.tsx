@@ -1,8 +1,11 @@
 import { Member } from './Member'
+import { Members } from '@components/team/MemberComponentTypes'
 
 type Props = {
   domainName: string
-  members: any[]
+  members: {
+    nodes: Members[]
+  }
 }
 
 const DomainMobile = ({
