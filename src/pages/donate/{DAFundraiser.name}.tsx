@@ -77,7 +77,7 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
     >
       <article>
         <div className="m-4 sm:my-8 sm:mx-4 bg-white flex flex-col sm:flex-row">
-          <header className="flex items-center justify-center prose-sm uppercase text-center sm:justify-end sm:p-4 sm:text-right sm:w-1/2 sm:border-r-4 sm:border-navy-800 lg:prose prose-h1:mb-0">
+          <header className="flex items-center justify-center prose-sm uppercase text-center sm:justify-end sm:p-4 sm:pl-0 sm:text-right sm:w-1/2 sm:max-w-none sm:border-r-4 sm:border-navy-800 lg:prose lg:max-w-none prose-h1:mb-0">
             <h1 className="hidden md:block lg:mb-0">
               {fundraiser.title.split(' ').map((word) => {
                 if (word.length > 2) {
