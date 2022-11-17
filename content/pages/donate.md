@@ -1,6 +1,6 @@
 ---
 pageTitle: Donate
-title: Support people in crisis this winter.
+title: Support us today, so communities are prepared for tomorrow.
 raisedEUR: "0"
 
 ---
