@@ -1,5 +1,6 @@
 ---
 pageTitle: Donate
-title: Support vulnerable communities worldwide by donating to Distribute Aid's projects
-raisedEUR: 0
+title: Support people in crisis this winter.
+raisedEUR: "0"
+
 ---
