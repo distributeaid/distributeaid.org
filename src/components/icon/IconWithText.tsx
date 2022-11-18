@@ -18,7 +18,7 @@ const IconWithText: FC<IconWithTextProps> = ({
       className={`flex ${
         positionOfVisual === 'vertical'
           ? 'flex-wrap flex-col content-around w-1/2 h-40'
-          : 'justify-around border-b-2 mb-4 pb-4'
+          : 'justify-around py-4'
       }`}
     >
       {icon && (

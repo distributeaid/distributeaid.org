@@ -27,16 +27,16 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
     >
       <SectionTitle title="All About Pallets" />
       <div className="mt-4">
-        <h2 className="mb-4 font-bold">
+        <h2 className="font-bold">
           How many Standard Pallet spaces do I need?
         </h2>
 
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col mb-4 divide-y-2 divide-navy-700/50%">
           <IconWithText
             icon={vanIcon}
             altText="Van Icon: The Calais classic."
             description={
-              <div className="flex flex-col w-3/4">
+              <div className="flex flex-col justify-center w-4/5">
                 <p className="mb-1">Van Loads</p>
                 <p>
                   The Calais classic. Most Vans fit about{' '}
@@ -51,13 +51,13 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
             icon={sackIcon}
             altText="Bulk Bag Icon: A large sack."
             description={
-              <div className="flex flex-col w-3/4">
+              <div className="flex flex-col justify-center w-4/5">
                 <p className="mb-1">Bulk Bags</p>
                 <p>
                   Perfect for those larger, clumsier items like tents or
                   sleeping bags that are too awkward to box up.
                 </p>
-                <ul className="">
+                <ul className="mt-1">
                   <li>
                     Each Bulk Bag takes up one <strong>Half Pallet</strong>{' '}
                     space.
@@ -80,7 +80,7 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
             icon={boxIcon}
             altText="Confirmed Box Icon: The proverbial banana box."
             description={
-              <div className="flex flex-col w-3/4">
+              <div className="flex flex-col justify-center w-4/5">
                 <p className="mb-1">Banana Boxes</p>
                 <p>
                   Easy to acquire, small, and sturdy boxes. Each Banana Box
@@ -89,7 +89,7 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
                   could be used to fill a Standard or Half pallet. Banana Box
                   sizes can vary a bit, but a good rule of thumb is:
                 </p>
-                <ul className="">
+                <ul className="mt-1">
                   <li>
                     <strong>Dimensions:</strong> 500mm x 400mm x 250mm high,
                     holds 15kg
