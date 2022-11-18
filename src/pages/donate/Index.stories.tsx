@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Donate from './donate'
+import Donate from './index'
 
 export default {
   component: Donate,

@@ -14,9 +14,11 @@ gallery:
   alt: A person in PPE gear, fumigating a truck full of boxes
 allocations:
 - date: 2022-11-16T11:19:17+01:00
-  amountEUR: 4000
+  amountEUR: 0
   purpose: Please donate to support our Logistics team to continue to provide their
     services to  relief efforts across Europe and the Middle East.
+target: 4000
+donateUrl: https://opencollective.com/distribute-aid-usa/projects/humanitarian-logistics/donate?amount=20&interval=month&platformTip=0
 
 ---
 Creating sustainable supply chains across the humanitarian relief sector is critical to ensure that aid groups have access to the resources necessary to meet the needs of the communities they serve. Distribute Aid works to improve how aid is sourced, allocated, and distributed; by managing the logistics of sending material aid from and to aid groups.

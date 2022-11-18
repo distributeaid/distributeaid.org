@@ -21,10 +21,13 @@ gallery:
   alt: Volunteers unloading boxes of aid from a truck
 allocations:
 - date: 2022-11-16T11:23:03+01:00
-  amountEUR: 6000
+  amountEUR: 0
   purpose: Please donate to help us provide the grassroots relief effort with the
     lifesaving resources needed to continue to run their operations and services.
     Support these groups today, so they are prepared for tomorrow.
+  alt: volunteers unloading boxes of aid from a truck
+target: 6000
+donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
 ---
 We connect aid groups together to strengthen the sharing of information and resources to multiply their impact across relief responses.

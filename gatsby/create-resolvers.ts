@@ -133,7 +133,7 @@ export default {
 Helpers
 ================================================================================
 */
-const imageSharpResolver = (
+export const imageSharpResolver = (
   getNode: CreateResolversArgs['getNode'],
   pathKey: string,
 ) => {

@@ -64,7 +64,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: [`*.stories.*`],
+        ignore: [`**/*.stories.*`],
       },
     },
   ],

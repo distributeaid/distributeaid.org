@@ -17,6 +17,8 @@ allocations:
   purpose: Please donate to Distribute Aid, and together, we can build solutions that
     create sustainable humanitarian relief supply chains that protect our environment
     and our future.
+target: 1000
+donateUrl: https://opencollective.com/distribute-aid-usa/projects/sustainable-supply-chains/donate?amount=20&interval=month&platformTip=0
 
 ---
 The biggest threat to human life is climate change. Increasing temperatures are giving rise to slow-onset events leading to devastating environmental effects, in addition to climate change-related conflicts as land and water resources become more scarce. People are being forced to move and seek emergency refuge; leading to an immense increase in human displacement worldwide.

@@ -1,5 +1,6 @@
 ---
 pageTitle: Donate
-title: Support vulnerable communities worldwide by donating to Distribute Aid's projects
-raisedEUR: 0
+title: Support us today, so communities are prepared for tomorrow.
+raisedEUR: "0"
+
 ---

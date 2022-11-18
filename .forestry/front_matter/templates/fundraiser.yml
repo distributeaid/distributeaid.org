@@ -10,6 +10,27 @@ fields:
     min: 2
   label: Title
   description: The title of the fundraiser.
+- name: donateUrl
+  type: text
+  config:
+    required: true
+    min: 14
+  label: Donate URL
+  description: A link to the donate page of the fundraiser (i.e. where folks can begin
+    to enter their info / card info).<br><br>Please include the "https://" at the
+    start of the link.<br><br>DON'T LINK TO THE GENERAL FUNDRAISER PAGE, DEEP LINK
+    INTO THE DONATE FORM
+- name: target
+  type: number
+  label: Fundraiser Target
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
 - type: field_group_list
   name: allocations
   label: Funding allocations
