@@ -41,7 +41,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
       }
     >
       <SectionTitle title="Storage &amp; Shipping (£)" />
-      <div className="mt-4">
+      <div className="mt-4 mb-4">
         <p className="mb-6">
           We offer a flat, per-pallet and per-box storage and shipment charge
           (S&amp;S) to take the stress out of budgeting to move your aid. By
