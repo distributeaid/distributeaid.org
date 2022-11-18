@@ -1,0 +1,98 @@
+---
+label: Fundraiser
+hide_body: false
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+    min: 2
+  label: Title
+  description: The title of the fundraiser.
+- name: donateUrl
+  type: text
+  config:
+    required: true
+    min: 14
+  label: Donate URL
+  description: A link to the donate page of the fundraiser (i.e. where folks can begin
+    to enter their info / card info).<br><br>Please include the "https://" at the
+    start of the link.<br><br>DON'T LINK TO THE GENERAL FUNDRAISER PAGE, DEEP LINK
+    INTO THE DONATE FORM
+- name: target
+  type: number
+  label: Fundraiser Target
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
+- type: field_group_list
+  name: allocations
+  label: Funding allocations
+  description: Provide the planned funding allocations for this project
+  hidden: false
+  config:
+    labelField: purpose
+    required: false
+    min: 0
+  fields:
+  - name: date
+    type: datetime
+    label: Date
+    description: Date of allocation
+    config:
+      required: true
+      date_format: YYYY-MM-DD
+      time_format: 
+      display_utc: false
+    default: now
+  - name: amountEUR
+    type: number
+    config:
+      required: true
+      min: 1
+    label: Amount (EUR)
+    description: The amount of the allocated funds in EUR
+  - name: purpose
+    type: text
+    config:
+      required: true
+      min: 2
+    label: Purpose
+    description: Describes the purpose the allocated funds will be used for.
+- type: field_group_list
+  name: gallery
+  label: Gallery
+  description: Provide photos for the fundraiser. The first photos is used as the
+    hero image for the fundraiser.
+  hidden: false
+  fields:
+  - type: file
+    name: url
+    label: URL
+    hidden: false
+    config:
+      required: true
+  - name: alt
+    type: text
+    config:
+      required: true
+      min: 2
+    label: Alternative text
+    description: Description of the photo, used as the alternative text.
+  config:
+    labelField: alt
+    required: true
+    min: 1
+pages:
+- content/blocks/fundraisers/european-refugee-relief.md
+- content/blocks/fundraisers/humanitarian-logistics.md
+- content/blocks/fundraisers/sustainable-supply-chains.md
+- content/blocks/fundraisers/tech-for-good.md
+- content/blocks/fundraisers/ukraine-response.md
+- content/blocks/fundraisers/us-disaster-relief.md
