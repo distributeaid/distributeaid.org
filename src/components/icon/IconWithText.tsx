@@ -4,17 +4,31 @@ type IconWithTextProps = {
   icon: string
   altText: string
   description: string | ReactNode
+  positionOfVisual: 'vertical' | 'horizontal'
 }
 
 const IconWithText: FC<IconWithTextProps> = ({
   icon,
   altText,
   description,
+  positionOfVisual,
 }) => {
   return (
-    <div className="flex flex-wrap flex-col content-around w-1/2 h-40">
+    <div
+      className={`flex ${
+        positionOfVisual === 'vertical'
+          ? 'flex-wrap flex-col content-around w-1/2 h-40'
+          : 'justify-around border-b-2 mb-4 pb-4'
+      }`}
+    >
       {icon && (
-        <div className="flex items-center justify-center mx-auto h-20 w-40 mb-1.5">
+        <div
+          className={`h-20  mb-1.5 ${
+            positionOfVisual === 'vertical'
+              ? 'flex items-center justify-center'
+              : ''
+          }`}
+        >
           <img className="w-20" src={icon} alt={altText} />
         </div>
       )}
