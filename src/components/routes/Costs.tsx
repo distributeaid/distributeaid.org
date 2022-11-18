@@ -71,6 +71,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
                 <p className="mt-1.5">700kg</p>
               </div>
             }
+            positionOfVisual="vertical"
           />
           <IconWithText
             icon={halfPalletIcon}
@@ -85,6 +86,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
                 <p className="mt-1.5">350kg</p>
               </div>
             }
+            positionOfVisual="vertical"
           />
         </div>
 
