@@ -16,7 +16,7 @@
     "@types/lodash": "4.14.189",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.8",
+    "@types/react-dom": "18.0.9",
     "@types/react-modal": "3.13.1",
     "@types/react-table": "7.7.12",
     "@types/tailwindcss": "3.0.11",
