@@ -1,8 +1,0 @@
-main.donate {
-  --color-dark: #000000dd;
-  --color-light: #ffffffdd;
-  --color-content-dim: #e2e7f1;
-  --color-da: #082b76;
-  color: var(--color-da);
-  background-color: white;
-}

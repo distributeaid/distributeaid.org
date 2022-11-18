@@ -1,6 +1,5 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC, useEffect, useState } from 'react'
-import '../../stylesheets/donate.css'
 
 import { Photo } from '../../types/photo'
 

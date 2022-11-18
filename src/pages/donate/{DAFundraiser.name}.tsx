@@ -17,8 +17,6 @@ import { Gallery } from '@components/image/Gallery'
 import Button from '@components/button/Button'
 import SmartLink from '@components/link/SmartLink'
 
-import '../../stylesheets/donate.css'
-
 type Props = {
   data: {
     fundraiser: Fundraiser
