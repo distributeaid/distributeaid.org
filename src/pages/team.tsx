@@ -3,12 +3,12 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import DomainDesktop from '@components/team/DomainDesktop'
 import DomainMobile from '@components/team/DomainMobile'
-import { Members } from '@components/team/MemberComponentTypes'
+import { Member } from '@components/team/MemberComponentTypes'
 
 type Props = {
   data: {
     members: {
-      nodes: Members[]
+      nodes: Member[]
     }
   }
 }
@@ -38,7 +38,7 @@ const TeamPage: FC<Props> = ({ data }) => {
           members,
         }: {
           domainName: string
-          members: Members[]
+          members: Member[]
         }) => (
           <>
             <DomainDesktop domainName={domainName} members={members} />

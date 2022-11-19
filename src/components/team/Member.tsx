@@ -1,14 +1,14 @@
 import { Card } from '@components/card/Card'
 import ExternalLink from '@components/link/ExternalLink'
-import { Members } from '@components/team/MemberComponentTypes'
+import { Member } from '@components/team/MemberComponentTypes'
 
 type Props = {
   members: {
-    nodes: Members[]
+    nodes: Member[]
   }
 }
 
-export const Member = ({ member }: { member: Members }) => (
+export const MemberCard = ({ member }: { member: Member }) => (
   <Card
     dynamicCardImage={{
       image: member?.profilePhoto?.gatsbyImageData,

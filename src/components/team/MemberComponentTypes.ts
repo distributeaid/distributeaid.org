@@ -5,7 +5,7 @@ Members
 ================================================================================
 */
 
-export type Members = {
+export type Member = {
   bio: string
   name: string
   profilePhoto: {

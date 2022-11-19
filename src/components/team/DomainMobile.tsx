@@ -1,10 +1,10 @@
-import { Member } from './Member'
-import { Members } from '@components/team/MemberComponentTypes'
+import { MemberCard } from './Member'
+import { Member } from '@components/team/MemberComponentTypes'
 
 type Props = {
   domainName: string
   members: {
-    nodes: Members[]
+    nodes: Member[]
   }
 }
 
@@ -13,7 +13,7 @@ const DomainMobile = ({
   members,
 }: {
   domainName: string
-  members: Members[]
+  members: Member[]
 }) => {
   return (
     <div className="block md:hidden">
@@ -22,7 +22,7 @@ const DomainMobile = ({
           {domainName}
         </summary>
         {members.map((member) => (
-          <Member member={member} />
+          <MemberCard member={member} />
         ))}
       </details>
     </div>
