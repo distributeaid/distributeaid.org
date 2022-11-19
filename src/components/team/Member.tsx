@@ -8,7 +8,7 @@ type Props = {
   }
 }
 
-export const Member = ({ member }: { member: any }) => (
+export const Member = ({ member }: { member: Members }) => (
   <Card
     dynamicCardImage={{
       image: member?.profilePhoto?.gatsbyImageData,

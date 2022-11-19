@@ -33,7 +33,13 @@ const TeamPage: FC<Props> = ({ data }) => {
       <h1 className="text-4xl text-center mt-5 mb-5">Meet the Team</h1>
 
       {membersByDomain.map(
-        ({ domainName, members }: { domainName: string; members: any[] }) => (
+        ({
+          domainName,
+          members,
+        }: {
+          domainName: string
+          members: Members[]
+        }) => (
           <>
             <DomainDesktop domainName={domainName} members={members} />
             <DomainMobile domainName={domainName} members={members} />

@@ -13,7 +13,7 @@ const DomainDesktop = ({
   members,
 }: {
   domainName: string
-  members: any[]
+  members: Members[]
 }) => {
   return (
     <div className="hidden md:block ">

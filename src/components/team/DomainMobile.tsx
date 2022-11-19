@@ -13,7 +13,7 @@ const DomainMobile = ({
   members,
 }: {
   domainName: string
-  members: any[]
+  members: Members[]
 }) => {
   return (
     <div className="block md:hidden">

@@ -1,30 +1,22 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+
 /*
-Member
+Members
 ================================================================================
 */
 
 export type Members = {
-  data: {
-    allDaTeamMember: {
-      nodes: {
-        bio: string
-        name: string
-        profilePhoto: {
-          gatsbyImageData: {
-            height: number
-            aspectRatio: number
-            transformOptions: { cropFocus: string }
-          }
-        }
-        link: string
-        roles: {
-          role: {
-            title: string
-            commitment: string
-            domain: string
-          }[]
-        }
-      }
-    }
+  bio: string
+  name: string
+  profilePhoto: {
+    gatsbyImageData: IGatsbyImageData
   }
+  link: string
+  roles: {
+    role: {
+      title: string
+      commitment: string
+      domain: string
+    }
+  }[]
 }
