@@ -1,9 +1,9 @@
-import { FC } from 'react'
-import SimpleLayout from '@layouts/Simple'
-import { graphql } from 'gatsby'
 import DomainDesktop from '@components/team/DomainDesktop'
 import DomainMobile from '@components/team/DomainMobile'
 import { Member } from '@components/team/MemberComponentTypes'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 
 type Props = {
   data: {
