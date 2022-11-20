@@ -1,5 +1,5 @@
-import { MemberCard } from './Member'
 import { Member } from '@components/team/MemberComponentTypes'
+import { MemberCard } from './Member'
 
 type Props = {
   domainName: string
