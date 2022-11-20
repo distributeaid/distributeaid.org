@@ -1,35 +1,51 @@
-import { PageHeader } from '@components/PageHeader'
+import { FC } from 'react'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
-import { FC } from 'react'
+import DomainDesktop from '@components/team/DomainDesktop'
+import DomainMobile from '@components/team/DomainMobile'
+import { Member } from '@components/team/MemberComponentTypes'
 
 type Props = {
   data: {
-    allDaTeamMember: {
-      nodes: any[]
+    members: {
+      nodes: Member[]
     }
   }
 }
 
-export function Head() {
-  return <PageHeader title={'Team'} />
-}
-
 const TeamPage: FC<Props> = ({ data }) => {
-  const members = data.allDaTeamMember.nodes
+  const members = data.members.nodes
+  const domains = Array.from(
+    new Set(members.map((member) => member?.roles[0]?.role?.domain)),
+  )
+
+  const membersByDomain = domains.map((domain) => {
+    return {
+      domainName: domain,
+      members: members.filter(
+        (member) => member?.roles[0]?.role?.domain === domain,
+      ),
+    }
+  })
+
   return (
-    <SimpleLayout>
-      <h1 className="text-2xl">Meet the Team</h1>
-      <ul>
-        {members.map((member: any) => {
-          return (
-            <li>
-              <span>{member.name}</span>
-              <span>({member.pronouns})</span>
-            </li>
-          )
-        })}
-      </ul>
+    <SimpleLayout pageTitle="Team">
+      <h1 className="text-4xl text-center mt-5 mb-5">Meet the Team</h1>
+
+      {membersByDomain.map(
+        ({
+          domainName,
+          members,
+        }: {
+          domainName: string
+          members: Member[]
+        }) => (
+          <>
+            <DomainDesktop domainName={domainName} members={members} />
+            <DomainMobile domainName={domainName} members={members} />
+          </>
+        ),
+      )}
     </SimpleLayout>
   )
 }
@@ -38,13 +54,24 @@ export default TeamPage
 
 export const pageQuery = graphql`
   query TeamQuery {
-    allDaTeamMember {
+    members: allDaTeamMember {
       nodes {
         bio
         name
-        pronouns
         profilePhoto {
-          gatsbyImageData
+          gatsbyImageData(
+            height: 256
+            aspectRatio: 1.5
+            transformOptions: { cropFocus: CENTER }
+          )
+        }
+        link
+        roles {
+          role {
+            title
+            commitment
+            domain
+          }
         }
       }
     }
