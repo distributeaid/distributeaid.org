@@ -12,8 +12,8 @@ gallery:
 - url: "/uploads/fundraisers/sustainable-supply-chains-gallery-05.jpg"
   alt: Volunteers loading boxes of aid items into a truck that is filled at full capacity
 allocations:
-- date: 2022-11-16T11:17:05+01:00
-  amountEUR: 1000
+- date: 2022-11-16T11:17:05.000+01:00
+  amountEUR: 1
   purpose: Please donate to Distribute Aid, and together, we can build solutions that
     create sustainable humanitarian relief supply chains that protect our environment
     and our future.
