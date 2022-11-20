@@ -4,15 +4,6 @@ Legacy CSS for the routes pages
 /routes/uk-to-france
 */
 
-.section__title {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  margin-bottom: 0;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-}
-
 .section--above-the-fold {
   position: relative;
   min-height: 100vh;
@@ -52,17 +43,6 @@ Legacy CSS for the routes pages
 Photos
 ------------------------------------------------------------
 */
-.photo-credit {
-  font-size: 0.875em;
-  font-style: italic;
-}
-
-@media only screen and (max-device-width: 600px) {
-  .photo-credit {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 .tiles {
   margin-bottom: 1rem;

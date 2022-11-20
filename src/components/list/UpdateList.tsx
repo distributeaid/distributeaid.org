@@ -1,8 +1,7 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { UpdateList as UpdateListType } from '@components/list/ListTypes'
 
-import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
 type Props = {
@@ -17,12 +16,12 @@ const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
     <div>
       <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
       <ol className="p-4">
-        {updates.map(({ title, date, content }) => (
-          <li className="p-7">
+        {updates.map(({ title, date, content }, i) => (
+          <li className="p-7" key={i}>
             <h3 className="text-center text-2xl">{title}</h3>
-            <p className="py-4 text-center">{date}</p>
+            <p className="py-4 text-center">{new Date(date).toUTCString()}</p>
             <div className="w-full">
-              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center  text-gray-800 sm:text-lg">
+              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center text-gray-800 sm:text-lg">
                 <MarkdownContent content={content} />
               </article>
             </div>

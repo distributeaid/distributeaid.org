@@ -9,28 +9,37 @@ export type Route = {
   introduction: string
   mapUrl: string
   aidRequestFormUrl: string
-  images: {
-    deliverySection: string
-    reservationSection: string
-    groupsSection: string
-    storageSection: string
-    palletsSection: string
-  }
-  costs: {
-    currency: string
-    standardPaletteCost: number
-    overflowPricing: number
-    halfPaletteCost: number
-  }
-  deadlines: {
-    submissionsDeadline: string
-    confirmationDate: string
-    stagingBegins: string
-    stagingEnds: string
-    shipmentDeparture: string
-  }
-  frontlineGroups: {
-    logo: string
-    name: string
-  }[]
+  population: number
+  images: RouteImages
+  costs: RouteCosts
+  deadlines: RouteDeadlines
+  frontlineGroups: RouteFrontlineGroup[]
+}
+
+export type RouteImages = {
+  deliverySection: string
+  reservationSection: string
+  groupsSection: string
+  storageSection: string
+  palletsSection: string
+}
+
+export type RouteFrontlineGroup = {
+  logo: string
+  name: string
+}
+
+export type RouteDeadlines = {
+  submissionsDeadline: string
+  confirmationDate: string
+  stagingBegins: string
+  stagingEnds: string
+  shipmentDeparture: string
+}
+
+export type RouteCosts = {
+  currency: string
+  standardPaletteCost: number
+  overflowPricing: number
+  halfPaletteCost: number
 }

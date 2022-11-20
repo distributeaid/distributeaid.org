@@ -1,14 +1,11 @@
-import { FC } from 'react'
 import ExternalLink from '@components/link/ExternalLink'
 import { Link } from 'gatsby'
+import { FC } from 'react'
 import siteSettings from '../../content/site-settings.json'
 import SocialIconContainer from './social-media/SocialIconContainer'
 
 const Footer: FC<{ showDonateButton?: boolean }> = ({ showDonateButton }) => (
-  <footer
-    style={{ background: '#F3F4F6' }}
-    className="px-4 py-12 md:px-8 text-center"
-  >
+  <footer className="px-4 py-12 bg-navy-100 md:px-8 text-center">
     {(showDonateButton ?? true) && (
       <Link
         to="/donate"

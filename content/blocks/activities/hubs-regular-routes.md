@@ -1,6 +1,7 @@
 ---
 title: Aid Hubs and Regular Routes
-desc: Distribute Aid collects aid from multiple organisations at one central hub and
+desc:
+  Distribute Aid collects aid from multiple organisations at one central hub and
   then ships it with regularity, lowering shipping costs and increasing predictability
   for everyone involved.
 challenge: |-
@@ -12,7 +13,8 @@ challenge: |-
   * Difficulties in aid matching and sorting
 
   For a sector that is underfunded and overworked, the hubs model works to solve these inefficiencies.
-explanation: We set up hubs that function as community warehouses. These spaces are
+explanation:
+  We set up hubs that function as community warehouses. These spaces are
   used for smaller groups to amalgamate aid in order to send a full truck or container
   full of aid. This system allows for organised aid matching and sorting, regular
   dispatches of humanitarian aid to frontline groups, and tariff free shipments into
@@ -25,12 +27,11 @@ benefits: |-
 regions: []
 category: Powering Aid Supply Chains
 headerPhoto:
-  asset: "/uploads/in-kind-donations.webp"
-  caption: " "
-  attribution: "?"
-  dateUploaded: 
+  asset: '/uploads/in-kind-donations.webp'
+  caption: ' '
+  attribution: '?'
+  dateUploaded:
   date: 1798-12-31T22:45:00Z
   altText: Two men hug each other.
   tags: []
-
 ---

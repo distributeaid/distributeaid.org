@@ -1,10 +1,10 @@
-import { FC, ReactNode } from 'react'
 import { Link } from 'gatsby'
+import { FC, ReactNode } from 'react'
 
 type Props = {
   children?: ReactNode
   to: string
-  className?: string
+  className?: string | undefined
 }
 
 const InternalLink: FC<Props> = ({ children, ...otherProps }) => (

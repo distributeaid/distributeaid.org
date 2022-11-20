@@ -1,73 +1,54 @@
+import { shuffle } from 'lodash'
 import resolveConfig from 'tailwindcss/resolveConfig'
+import { KeyValuePair } from 'tailwindcss/types/config.js'
 import tailwindConfig from '../../tailwind.config.js'
 
-const siteTheme = resolveConfig(tailwindConfig).theme
-
-interface ISiteColorsList {
-  [key: string]: string[]
-}
-interface ISiteColorsMap {
-  [key: string]: string
-}
-interface ISiteColors {
-  byName: ISiteColorsList
-  byShade: ISiteColorsList
-  byNameAndShade: {
-    [key: string]: ISiteColorsMap
-  }
-  byShadeAndName: {
-    [key: string]: ISiteColorsMap
-  }
-}
-
-const siteColors: ISiteColors = {
-  byName: {},
-  byShade: {},
-  byNameAndShade: {},
-  byShadeAndName: {},
-}
-Object.entries(siteTheme.colors).forEach(
-  (entry: [string, string | ISiteColorsMap]) => {
-    const [name, shades] = entry
-    if (typeof shades !== 'string') {
-      siteColors.byName[name] = Object.values(shades)
-      siteColors.byNameAndShade[name] = shades
-
-      Object.entries(shades).forEach((entry: [string, string]) => {
-        const [shade, hex] = entry
-        if (!siteColors.byShade[shade]) {
-          siteColors.byShade[shade] = []
-        }
-        siteColors.byShade[shade].push(hex)
-
-        if (!siteColors.byShadeAndName[shade]) {
-          siteColors.byShadeAndName[shade] = {}
-        }
-        siteColors.byShadeAndName[shade][name] = hex
-      })
-    }
-  },
-)
-export { siteTheme, siteColors }
-
-export function getCategoricalColorList(shade = '700') {
-  return siteColors.byShade[shade]
-}
-
-export function getSequentialColorList(name = 'navy') {
-  return siteColors.byName[name]
-}
-
-export function getColor(name = 'navy', shade = '700') {
-  return siteColors.byNameAndShade[name][shade]
-}
-
-export function getDivergingColorList(nameA = 'rosemary', nameB = 'purple') {
-  const colorsA = siteColors.byName[nameA].reverse()
-  const colorsB = siteColors.byName[nameB]
-  return colorsA.concat(colorsB)
-}
+const theme = resolveConfig(tailwindConfig).theme
 
 export function getThemeLargeScreenWidth() {
-  return parseInt(siteTheme?.screens?.lg.replace('px', ''), 10)
+  const screens = theme?.screens as KeyValuePair<string, string> | undefined // {sm: '640px', md: '768px', lg: '1024px', xl: '1280px', 2xl: '1536px'}
+  return parseInt(screens?.['lg']?.replace('px', '') ?? '1024', 10)
+}
+
+let backgroundColorIndex = 0
+const colors = shuffle(
+  getColors({
+    swatches: ['navy', 'purple', 'rosemary', 'turquoise', 'beige'],
+    weights: [50, 100],
+  }),
+)
+
+export function getBackgroundColor() {
+  const color = colors[backgroundColorIndex]
+  backgroundColorIndex = (backgroundColorIndex + 1) % colors.length
+
+  return color
+}
+
+export function getColors({
+  swatches,
+  weights,
+}: {
+  swatches: string[]
+  weights: number[]
+}): string[] {
+  const themeColors = theme?.colors as Record<
+    string,
+    KeyValuePair<number, string>
+  > // {rosemary: {200: '#F2ECF5', 300: '#E9DFEE', etc}, etc}
+
+  const colors: string[] = []
+
+  for (const swatch of swatches) {
+    for (const weight of weights) {
+      const swatchColors = themeColors[swatch] ?? {}
+      const color = swatchColors[weight]
+      if (color) {
+        colors.push(color)
+      }
+    }
+  }
+
+  // ['#F2ECF5', '#E9DFEE', '#D7C6E0', '#C6ACD2', '#B493C4', '#A284B0']
+  return colors
 }

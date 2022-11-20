@@ -1,0 +1,56 @@
+---
+label: 'Block: Card'
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
+- name: bodyText
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Body Text
+- name: borderColor
+  type: color
+  label: Border Color
+  config:
+    required: true
+    color_format: Hex
+  default: "#9B9B9B"
+- name: bodyColor
+  type: color
+  label: Body Color
+  config:
+    required: true
+    color_format: Hex
+- name: image
+  type: include
+  config: {}
+  template: media-asset
+  label: Image
+- name: imageShape
+  type: select
+  default: rectangle
+  config:
+    required: true
+    options:
+    - rectangle
+    - circle
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Image Shape
+  hidden: false

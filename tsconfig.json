@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -18,11 +25,14 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
-      "@templates/*": ["templates/*"],
+      "@data/*": ["data/*"],
+      "@images/*": ["images/*"],
+      "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
+      "@stylesheets/*": ["stylesheets/*"],
+      "@templates/*": ["templates/*"],
       "@types/*": ["types/*"],
-      "@layouts/*": ["layouts/*"]
+      "@utils/*": ["utils/*"]
     }
-  },
-  "include": ["src"]
+  }
 }

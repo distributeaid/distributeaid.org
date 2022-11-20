@@ -1,0 +1,47 @@
+---
+label: Generic Page
+hide_body: true
+fields:
+- name: template
+  type: text
+  config:
+    required: true
+  label: Template
+  default: DAPageGeneric
+  hidden: true
+- name: title
+  type: text
+  config:
+    required: true
+  label: Page Title
+- name: slug
+  type: text
+  config:
+    required: true
+    min: 5
+  label: URL slug
+  description: A URL slug refers to the end part of a URL after the backslash (“/”)
+    that identifies the specific page or post. e.g. the "about-us" in distributeaid.org/about-us.  This
+    should bet set once and then basically never changed.
+- name: desc
+  type: text
+  config:
+    required: false
+  label: Metadata Description
+  description: This description will appear under the link in Google search results
+    and is important for search engine optimization (SEO).
+- name: sections
+  type: blocks
+  label: Content Sections
+  template_types:
+  - section-grid
+  config:
+    min: 
+    max: 
+pages:
+- content/pages/connecting-communities.md
+- content/pages/contact-us.md
+- content/pages/empowering-humanitarians.md
+- content/pages/our-mission-and-values.md
+- content/pages/our-story.md
+- content/pages/powering-aid-supply-chains.md

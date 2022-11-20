@@ -16,8 +16,8 @@ const linksHardcoded: NavLinkItem[] = [
 ]
 
 const routeLinks: NavLinkItem[] = [
-  { label: 'UK to France', path: '/routes/uk-to-france' },
-  { label: 'UK to Lebanon', path: '/routes/uk-to-lebanon' },
+  { label: 'UK to France', path: '/routes/uk-to-france/' },
+  { label: 'UK to Lebanon', path: '/routes/uk-to-lebanon/' },
 ]
 
 /**
@@ -30,7 +30,7 @@ const MainMenu: FunctionComponent = () => (
       <MobileNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />
       <div className="h-full">
         <Link to="/" className="text-white" aria-label="Go to the home page">
-          <LogoMark width="auto" height="100%" />
+          <LogoMark width="50" height={(60 / 70) * 50} />
         </Link>
       </div>
       <DesktopNavigation navLinks={linksHardcoded} routeLinks={routeLinks} />

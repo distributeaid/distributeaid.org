@@ -1,6 +1,5 @@
 import cx from 'classnames'
 import { ButtonHTMLAttributes, FunctionComponent, Ref } from 'react'
-import ButtonIcon from './ButtonIcon'
 
 /**
  * By default, it should look like a neutral button
@@ -24,14 +23,14 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
    * @param default This is the default button. Use another style if the button requires a different visual weight.
    * @param primary Used to highlight the most important actions. Use sparingly! Avoid showing multiple primary buttons in the same section.
    */
-  variant?: 'default' | 'primary'
+  variant?: 'default' | 'primary' | 'rosemary'
   /**
    * An optional way to pass a ref down to the <button> element
    */
   forwardRef?: Ref<HTMLButtonElement>
 }
 
-const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
+const Button: FunctionComponent<ButtonProps> = ({
   variant = 'default',
   slim = false,
   type = 'button',
@@ -45,15 +44,20 @@ const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
     className,
     {
       // Default
-      'bg-white border-gray-300 text-gray-600 shadow-sm ring-gray-200 hover:text-gray-700 hover:shadow active:bg-gray-100 active:text-gray-900':
+      'bg-white border-gray-300 text-gray-600 shadow-sm ring-gray-200 hover:text-gray-800 hover:drop-shadow-md active:bg-gray-100 active:text-gray-900':
         variant === 'default' && !disabled,
       'bg-gray-50 border-gray-300 text-gray-400':
         variant === 'default' && disabled,
       // Primary variant
-      'bg-navy-700 border-transparent text-white ring-navy-300 hover:bg-navy-800 active:bg-navy-900':
+      'bg-navy-700 border-transparent text-white ring-navy-300 hover:bg-navy-800 hover:drop-shadow-md active:bg-navy-900 active:drop-shadow-none':
         variant === 'primary' && !disabled,
       'bg-navy-500 border-transparent text-navy-100':
         variant === 'primary' && disabled,
+      // Rosemary variant
+      'bg-rosemary-800 border-transparent text-white ring-rosemary-300 hover:bg-rosemary-900 hover:drop-shadow-md active:bg-rosemary-900 active:drop-shadow-none':
+        variant === 'rosemary' && !disabled,
+      'bg-rosemary-500 border-transparent text-rosemary-100':
+        variant === 'rosemary' && disabled,
       // Sizing
       'px-4 py-2': !slim,
       'px-3 py-1': slim,
@@ -72,7 +76,5 @@ const Button: FunctionComponent<ButtonProps> & { Icon: typeof ButtonIcon } = ({
     </button>
   )
 }
-
-Button.Icon = ButtonIcon
 
 export default Button

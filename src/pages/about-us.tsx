@@ -1,11 +1,12 @@
-import { FC } from 'react'
-import SimpleLayout from '@layouts/Simple'
 import AboutHero from '@components/about-us/AboutHero'
-import MissionStatement from '@components/about-us/MissionStatement'
-import BoardMembers from '@components/about-us/BoardMembers'
 import AboutOurMission from '@components/about-us/AboutOurMission'
+import BoardMembers from '@components/about-us/BoardMembers'
+import MissionStatement from '@components/about-us/MissionStatement'
 import Timeline from '@components/about-us/Timeline'
+import { PageHeader } from '@components/PageHeader'
+import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
+import { FC } from 'react'
 
 type Props = {
   data: {
@@ -22,6 +23,10 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'About us'} />
+}
+
 const AboutUsPage: FC<Props> = ({
   data: {
     markdownRemark: { frontmatter },
@@ -30,7 +35,7 @@ const AboutUsPage: FC<Props> = ({
   const { missionStatement, aboutOurMission, timelineItems } = frontmatter
 
   return (
-    <SimpleLayout pageTitle="About us">
+    <SimpleLayout>
       <AboutHero />
       <MissionStatement missionStatement={missionStatement} />
       <BoardMembers />

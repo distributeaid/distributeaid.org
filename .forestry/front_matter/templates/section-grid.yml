@@ -1,0 +1,94 @@
+---
+label: 'Section: Grid'
+hide_body: true
+fields:
+- name: metadata
+  type: field_group
+  config: {}
+  fields:
+  - name: margins
+    type: select
+    default: Default
+    config:
+      required: true
+      options:
+      - Default
+      - Banner
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Banner or Margins?
+    description: If you want the content to go all the way to the very edge of the
+      page on both sides, select Banner.  If you want the content to have natural
+      margins (like most parts of the website), select Default.
+  - name: layout
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - Row-Bound
+      - Column-Bound
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Column-Bound or Row-Bound?
+  - name: numCols
+    type: number
+    label: Number of Colums
+    description: ''
+    default: 1
+    required: true
+    config:
+      min: 1
+      max: 8
+      step: 
+    showOnly:
+      field: layout
+      value: Column-Bound
+  - name: numRows
+    type: number
+    label: Number of Rows
+    description: ''
+    default: 1
+    required: true
+    config:
+      min: 1
+      max: 8
+      step: 
+    showOnly:
+      field: layout
+      value: Row-Bound
+  - name: order
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - left-to-right
+      - top-to-bottom
+      - random
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Order
+  label: Metadata
+- name: contentBlocks
+  type: blocks
+  label: Content Blocks
+  template_types:
+  - block-image-with-caption
+  - block-title
+  - block-youtube-embed
+  - block-text
+  - timeline
+  - block-card
+  config:
+    min: 
+    max: 

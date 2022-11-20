@@ -1,11 +1,11 @@
-import { FC } from 'react'
-import { graphql } from 'gatsby'
-import SimpleLayout from '@layouts/Simple'
-import { Region } from '@components/regions/RegionComponentTypes'
 import { Card, ImageVariant } from '@components/card/Card'
 import SmartLink from '@components/link/SmartLink'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
-import slugify from 'utils/slugify'
+import { PageHeader } from '@components/PageHeader'
+import { Region } from '@components/regions/RegionComponentTypes'
+import SimpleLayout from '@layouts/Simple'
+import { graphql } from 'gatsby'
+import { FC } from 'react'
 import { getOxfordCommaSeparator } from 'utils/strings'
 
 type Props = {
@@ -16,16 +16,15 @@ type Props = {
   }
 }
 
+export function Head() {
+  return <PageHeader title={'Regions'} />
+}
+
 const RegionsPage: FC<Props> = ({
   data: {
     regions: { nodes: regions },
   },
 }) => {
-  const createRegionHref = (region: Region) => {
-    const regionSlug = slugify(region.name)
-    return `/regions/${regionSlug}`
-  }
-
   // totals up and returns the population count for a region
   const getRegionPopulationCount = (region: Region): string => {
     const populationCount = region.subregions
@@ -38,15 +37,12 @@ const RegionsPage: FC<Props> = ({
 
   // creates subregion links for a given region
   const createSubregionLinks = (region: Region): JSX.Element[] => {
-    const regionHref = createRegionHref(region)
     return region.subregions.map((subregion, index, array) => {
-      const subregionSlug = slugify(subregion.name)
-      const subregionHref = `${regionHref}/${subregionSlug}`
       const seperator = getOxfordCommaSeparator(index, array)
       return (
         <span key={subregion.name}>
           {seperator}
-          <SmartLink className="link" href={subregionHref}>
+          <SmartLink className="link" href={subregion.path}>
             {subregion.name}
           </SmartLink>
         </span>
@@ -68,7 +64,7 @@ const RegionsPage: FC<Props> = ({
   }
 
   return (
-    <SimpleLayout pageTitle="Regions">
+    <SimpleLayout>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         {regions.map((region) => (
           <Card
@@ -83,7 +79,7 @@ const RegionsPage: FC<Props> = ({
             body={createRegionsCardBody(region)}
             actions={[
               {
-                url: createRegionHref(region),
+                url: region.path,
                 label: 'View Region',
               },
             ]}
@@ -96,16 +92,21 @@ const RegionsPage: FC<Props> = ({
 
 export default RegionsPage
 
-export const pageQuery = graphql`
-  query RegionsQuery {
+export const query = graphql`
+  query MyQuery($id: String) {
+    markdownRemark(id: { eq: $id }) {
+      id
+    }
     regions: allDaRegion {
       nodes {
+        path
         name
         map {
           gatsbyImageData
         }
         overview
         subregions {
+          path
           name
           population {
             count

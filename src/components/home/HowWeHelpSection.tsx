@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import cx from 'classnames'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
+import cx from 'classnames'
+import { FC } from 'react'
 
 export type HowWeHelpBlock = {
   title: string

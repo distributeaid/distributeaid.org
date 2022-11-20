@@ -1,6 +1,6 @@
-import { FC, useEffect, useRef, useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import WordMark from '@components/brand/WordMark'
+import { graphql, useStaticQuery } from 'gatsby'
+import { FC, useEffect, useRef, useState } from 'react'
 import CarouselTile from './CarouselTile'
 
 const CAROUSEL_TIMER_MS = 5000 as const
@@ -55,7 +55,7 @@ const ImageCarousel: FC<Props> = ({ headline }) => {
       {/* Central column for some text + an image */}
       <div className="max-w-4xl w-full flex relative mx-auto justify-between items-center">
         <div className="pb-8">
-          <WordMark width={300} height="auto" />
+          <WordMark width={300} height={44} />
           <h1 className="text-4xl text-navy-700 max-w-sm mt-4 leading-snug">
             {headline || 'Re-imagine Humanitarian Aid Delivery'}
           </h1>
