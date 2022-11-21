@@ -2,12 +2,6 @@ import { Card } from '@components/card/Card'
 import ExternalLink from '@components/link/ExternalLink'
 import { Member } from '@components/team/MemberComponentTypes'
 
-type Props = {
-  members: {
-    nodes: Member[]
-  }
-}
-
 export const MemberCard = ({ member }: { member: Member }) => (
   <Card
     dynamicCardImage={{

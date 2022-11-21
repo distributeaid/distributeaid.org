@@ -1,12 +1,5 @@
 import { Member } from '@components/team/MemberComponentTypes'
-import { MemberCard } from './Member'
-
-type Props = {
-  domainName: string
-  members: {
-    nodes: Member[]
-  }
-}
+import { MemberCard } from './MemberCard'
 
 const DomainMobile = ({
   domainName,
