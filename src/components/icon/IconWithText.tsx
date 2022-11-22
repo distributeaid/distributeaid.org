@@ -4,7 +4,7 @@ type IconWithTextProps = {
   icon: string
   altText: string
   description: string | ReactNode
-  positionOfVisual: 'vertical' | 'horizontal'
+  positionOfVisual?: 'vertical' | 'horizontal' | undefined
 }
 
 const IconWithText: FC<IconWithTextProps> = ({
@@ -13,6 +13,10 @@ const IconWithText: FC<IconWithTextProps> = ({
   description,
   positionOfVisual,
 }) => {
+  if (positionOfVisual === undefined) {
+    positionOfVisual = 'vertical'
+  }
+
   return (
     <div
       className={`flex ${
@@ -21,21 +25,19 @@ const IconWithText: FC<IconWithTextProps> = ({
           : 'justify-around py-4'
       }`}
     >
-      {icon && (
-        <div
-          className={`h-20  mb-1.5 ${
-            positionOfVisual === 'vertical'
-              ? 'flex items-center justify-center'
-              : ''
-          }`}
-        >
-          <img className="w-20" src={icon} alt={altText} />
-        </div>
-      )}
-      {description && typeof description === 'string' && (
+      <div
+        className={`h-20  mb-1.5 ${
+          positionOfVisual === 'vertical'
+            ? 'flex items-center justify-center'
+            : ''
+        }`}
+      >
+        <img className="w-20" src={icon} alt={altText} />
+      </div>
+      {typeof description === 'string' && (
         <p className="text-sm w-40 text-center">{description}</p>
       )}
-      {description && typeof description !== 'string' && <>{description}</>}
+      {typeof description !== 'string' && <>{description}</>}
     </div>
   )
 }
