@@ -72,7 +72,7 @@ const getWrapperFlexClasses = (slim?: Boolean, direction?: Direction) => {
       return defaultVal
 
     case Direction.RTL:
-      return `${commonClasses} flex-row md:flex-row-reverse`
+      return `${commonClasses} flex-row-reverse md:flex-row-reverse`
 
     default:
       return defaultVal
