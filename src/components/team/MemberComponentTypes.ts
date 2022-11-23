@@ -6,12 +6,12 @@ Members
 */
 
 export type Member = {
-  bio: string
+  bio?: string
   name: string
-  profilePhoto: {
+  profilePhoto?: {
     gatsbyImageData: IGatsbyImageData
   }
-  link: string
+  link?: string
   roles: {
     role: {
       title: string
