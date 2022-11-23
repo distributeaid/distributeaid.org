@@ -7,6 +7,8 @@ import directTransferImage from '../../images/direct_transfer.svg'
 import openCollectiveImage from '../../images/opencollective-wordmark.svg'
 import paypalLogo from '../../images/paypal-color.svg'
 
+import siteSettings from '../../../content/site-settings.json'
+
 const Divider = () => <hr className="w-[110%] h-1 bg-rosemary-300 px-8" />
 
 export const WaysToDonate = () => {
@@ -17,7 +19,7 @@ export const WaysToDonate = () => {
       ------------------------------------------------------------ */}
       <ExternalLink
         className="flex flex-col gap-2 items-center hover:drop-shadow-md"
-        href="https://paypal.me/distributeaid"
+        href={siteSettings.donate.byPaypal}
       >
         <img className="h-9" src={paypalLogo} alt="PayPal Logo" />
         <Divider />
@@ -28,7 +30,7 @@ export const WaysToDonate = () => {
       ------------------------------------------------------------ */}
       <ExternalLink
         className="flex flex-col gap-2 items-center hover:drop-shadow-md"
-        href="https://opencollective.com/distribute-aid-usa/donate?amount=20&interval=month&platformTip=0"
+        href={siteSettings.donate.byOpenCollective}
       >
         <img
           className="h-9"

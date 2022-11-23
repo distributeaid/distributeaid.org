@@ -28,7 +28,7 @@ test.describe('Donate action', () => {
       expect(await page.locator('a:has-text("PayPal")')).toBeTruthy()
       const link = page.locator('a:has-text("PayPal")').first()
       expect(await link.getAttribute('href')).toContain(
-        'https://paypal.me/distributeaid',
+        'https://paypal.me/DistributeAidOrg',
       )
     })
 

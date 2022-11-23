@@ -1,6 +1,7 @@
 import Button from '@components/button/Button'
 import { FC } from 'react'
 import Modal from 'react-modal'
+import siteSettings from '../../../content/site-settings.json'
 import ExternalLink from '../link/ExternalLink'
 
 type Props = {
@@ -34,8 +35,11 @@ const BankInfoModal: FC<Props> = ({ isOpen, onRequestClose }) => (
       <p>
         Make a donation directly to our bank account at Distribute Aid. Reach
         out to{' '}
-        <ExternalLink className="link" href="mailto:hello@distributeaid.org">
-          hello@distributeaid.org
+        <ExternalLink
+          className="link"
+          href={`mailto:${siteSettings.donate.byBankTransfer.emailSupport}`}
+        >
+          {siteSettings.donate.byBankTransfer.emailSupport}
         </ExternalLink>{' '}
         if you have any questions.
       </p>
@@ -50,13 +54,13 @@ const BankInfoModal: FC<Props> = ({ isOpen, onRequestClose }) => (
           <tr>
             <td className="text-gray-700 font-medium py-1">IBAN:</td>
             <td className="font-semibold text-navy-700 py-1 pl-2">
-              BE72 9672 1338 5616
+              {siteSettings.donate.byBankTransfer.IBAN}
             </td>
           </tr>
           <tr>
             <td className="text-gray-700 font-medium py-1">BIC:</td>
             <td className="font-semibold text-navy-700 py-1 pl-2">
-              TRWIBEB1XXX
+              {siteSettings.donate.byBankTransfer.BIC}
             </td>
           </tr>
         </tbody>
