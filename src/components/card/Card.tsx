@@ -23,17 +23,17 @@ const createAction = (action: Action) => (
 )
 export const Card: FC<
   PropsWithChildren<{
-    header?: ReactNode // Can be either a StaticImage or anything you want to display in the header
-    dynamicCardImage?: DynamicCardImage
-    imageVariant?: ImageVariant
-    title?: ReactNode
-    subtitle?: string
-    additionalHeaderContent?: ReactNode | ReactNode[]
-    body?: ReactNode
-    actions?: Action[]
-    transparentBorder?: boolean
-    transparentBody?: boolean
-    bodyColor?: string
+    header?: ReactNode | undefined // Can be either a StaticImage or anything you want to display in the header
+    dynamicCardImage?: DynamicCardImage | undefined
+    imageVariant?: ImageVariant | undefined
+    title?: ReactNode | undefined
+    subtitle?: string | undefined
+    additionalHeaderContent?: ReactNode | ReactNode[] | undefined
+    body?: ReactNode | undefined
+    actions?: Action[] | undefined
+    transparentBorder?: boolean | undefined
+    transparentBody?: boolean | undefined
+    bodyColor?: string | undefined
   }>
 > = ({
   children,
