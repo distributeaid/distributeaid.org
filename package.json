@@ -87,7 +87,7 @@
     "netlify-cli": "12.2.6",
     "postcss": "8.4.19",
     "prettier": "2.7.1",
-    "prettier-plugin-organize-imports": "3.1.1",
+    "prettier-plugin-organize-imports": "3.2.0",
     "ts-jest": "29.0.3"
   },
   "engines": {
