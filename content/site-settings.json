@@ -3,6 +3,17 @@
   "twitterUrl": "https://twitter.com/DistributeAid",
   "linkedinUrl": "https://www.linkedin.com/company/distribute-aid",
   "facebookUrl": "https://www.facebook.com/DistributeAidDotOrg/",
+  "githubUrl": "https://github.com/distributeaid",
+
   "footerEmail": "hello@distributeaid.org",
-  "githubUrl": "https://github.com/distributeaid"
+
+  "donate": {
+    "byOpenCollective": "https://opencollective.com/distribute-aid-usa/donate?amount=20&interval=month&platformTip=0",
+    "byPaypal": "https://paypal.me/DistributeAidOrg?country.x=SE&locale.x=en_US",
+    "byBankTransfer": {
+      "emailSupport": "hello@distributeaid.org",
+      "IBAN": "BE72 9672 1338 5616",
+      "BIC": "TRWIBEB1XXX"
+    }
+  }
 }
