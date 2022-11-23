@@ -1,9 +1,14 @@
+import { PageHeader } from '@components/PageHeader'
 import DomainDesktop from '@components/team/DomainDesktop'
 import DomainMobile from '@components/team/DomainMobile'
 import { Member } from '@components/team/MemberComponentTypes'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
+
+export function Head() {
+  return <PageHeader title={'Our Team'} />
+}
 
 type Props = {
   data: {
@@ -16,7 +21,7 @@ type Props = {
 const TeamPage: FC<Props> = ({ data }) => {
   const members = data.members.nodes
   const domains = Array.from(
-    new Set(members.map((member) => member?.roles[0]?.role?.domain)),
+    new Set(members.map((member) => member?.roles[0]?.role?.domain || 'Other')),
   )
 
   const membersByDomain = domains.map((domain) => {
@@ -29,7 +34,7 @@ const TeamPage: FC<Props> = ({ data }) => {
   })
 
   return (
-    <SimpleLayout pageTitle="Team">
+    <SimpleLayout>
       <h1 className="text-4xl text-center mt-5 mb-5">Meet the Team</h1>
 
       {membersByDomain.map(
