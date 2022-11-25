@@ -1,7 +1,11 @@
 ---
 name: Weston Lindner
-bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua.
+bio: My deep passion for Distribute Aid's mission is informed by my experience at
+  a food distribution NGO in Hamilton, Ohio and my studies of security, peace, and
+  conflict at Duke University.  As Head of Projects, I work to ensure that we pursue
+  our projects with intentionality and a strong connection to the mission of DA.  As
+  Head of Administration, I work to empower DA contributors through effective onboarding,
+  policies, and remote volunteer opportunities.
 link: https://www.linkedin.com/in/weston-lindner/
 profilePhoto: "/uploads/20190909_lindner_weston-1.jpg"
 beyondDA:
