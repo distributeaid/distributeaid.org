@@ -1,7 +1,7 @@
 ---
 location: Europe
 team: Operations
-domain: Staff
+domain: Volunteer
 commitment: Full-Time
 title: Network Empowerment Coordinator
 desc: ''
