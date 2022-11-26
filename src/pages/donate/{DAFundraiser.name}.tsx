@@ -31,7 +31,11 @@ type Props = {
   }
 }
 
-export function Head({ pageContext: fundraiser }: { pageContext: Fundraiser }) {
+export function Head({
+  data: { fundraiser: fundraiser },
+}: {
+  data: { fundraiser: Fundraiser }
+}) {
   return (
     <PageHeader
       title={`Donate to ${fundraiser.title}`}
