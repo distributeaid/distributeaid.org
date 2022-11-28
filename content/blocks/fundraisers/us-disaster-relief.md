@@ -17,11 +17,11 @@ gallery:
   alt: 'A distribution of donations including: socks, scarfs, hand warmers, and informative
     leaflets'
 allocations:
-- date: 2022-11-11T16:06:00+01:00
-  amountEUR: 0
+- date: 2022-11-11T16:06:00.000+01:00
+  amountEUR: 1000
   purpose: 'Please donate to support our US team in their operations to increase the
     capacity of the U.S. grassroots network to serve the needs of their beneficiaries.  '
-target: 8000
+target: 1000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/us-disaster-and-refugee-relief/donate?amount=20&interval=month&platformTip=0
 
 ---
