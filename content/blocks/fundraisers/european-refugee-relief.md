@@ -20,19 +20,21 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-08.jpg"
   alt: Volunteers unloading boxes of aid from a truck
 allocations:
-- date: 2022-11-16T11:23:03+01:00
-  amountEUR: 0
+- date: 2022-11-16T11:23:03.000+01:00
+  amountEUR: 3500
   purpose: Please donate to help us provide the grassroots relief effort with the
     lifesaving resources needed to continue to run their operations and services.
     Support these groups today, so they are prepared for tomorrow.
   alt: volunteers unloading boxes of aid from a truck
-target: 6000
+target: 3500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
 ---
 We connect aid groups together to strengthen the sharing of information and resources to multiply their impact across relief responses.
 
-Our network spans 150+ varying organizations - by zooming in on the different individual needs of groups, we gain a wide understanding of how to develop the grassroots movement at scale to fortify the supply chain of material aid in preparation for current and future relief responses.
+Last year, we supported over 100,000 displaced people with material essentials.
+
+Our network spans 150+ varying organizations. By zooming in on the different individual needs of groups, we gain a wide understanding of how to develop the grassroots movement at scale to fortify the supply chain of material aid in preparation for current and future relief responses.
 
 Across the world, the number of individuals affected by conflict, climate change, economic hardship and political persecution; continues to rise every day.
 
