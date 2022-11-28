@@ -13,9 +13,6 @@ gallery:
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-05.jpg"
   alt: A person in PPE gear, fumigating a truck full of boxes
 allocations:
-- date: 2022-11-28T18:22:18Z
-  amountEUR: 1
-  purpose: "  "
 - date: 2022-11-16T11:19:17.000+01:00
   amountEUR: 1
   purpose: Please donate to support our Logistics team to continue to provide their
