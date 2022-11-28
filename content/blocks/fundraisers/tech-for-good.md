@@ -27,7 +27,7 @@ gallery:
     of humanitarian aid
 allocations:
 - date: 2022-11-16T11:15:24.000+01:00
-  amountEUR: 700
+  amountEUR: 1
   purpose: 'Tech drives good - donate to this project and support Distribute Aid and
     its tech community in creating solutions for the humanitarian network. '
 target: 700
