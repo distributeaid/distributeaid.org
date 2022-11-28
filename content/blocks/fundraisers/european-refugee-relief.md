@@ -20,9 +20,6 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-08.jpg"
   alt: Volunteers unloading boxes of aid from a truck
 allocations:
-- date: 2022-11-28T18:23:06Z
-  amountEUR: 1
-  purpose: "  "
 - date: 2022-11-16T11:23:03.000+01:00
   amountEUR: 1
   purpose: Please donate to help us provide the grassroots relief effort with the
