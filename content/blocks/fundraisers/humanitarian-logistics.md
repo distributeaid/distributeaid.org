@@ -13,11 +13,14 @@ gallery:
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-05.jpg"
   alt: A person in PPE gear, fumigating a truck full of boxes
 allocations:
-- date: 2022-11-16T11:19:17+01:00
-  amountEUR: 0
+- date: 2022-11-28T18:22:18Z
+  amountEUR: 1
+  purpose: "  "
+- date: 2022-11-16T11:19:17.000+01:00
+  amountEUR: 1
   purpose: Please donate to support our Logistics team to continue to provide their
     services to  relief efforts across Europe and the Middle East.
-target: 4000
+target: 2000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/humanitarian-logistics/donate?amount=20&interval=month&platformTip=0
 
 ---
