@@ -17,11 +17,8 @@ gallery:
   alt: 'A distribution of donations including: socks, scarfs, hand warmers, and informative
     leaflets'
 allocations:
-- date: 2022-11-28T18:19:20Z
-  amountEUR: 1000
-  purpose: "  "
 - date: 2022-11-11T16:06:00.000+01:00
-  amountEUR: 1000
+  amountEUR: 1
   purpose: 'Please donate to support our US team in their operations to increase the
     capacity of the U.S. grassroots network to serve the needs of their beneficiaries.  '
 target: 1000
