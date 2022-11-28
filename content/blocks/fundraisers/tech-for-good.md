@@ -26,11 +26,11 @@ gallery:
   alt: A group of people posing for a group picture inside a truck they have unloaded
     of humanitarian aid
 allocations:
-- date: 2022-11-16T11:15:24+01:00
-  amountEUR: 0
+- date: 2022-11-16T11:15:24.000+01:00
+  amountEUR: 700
   purpose: 'Tech drives good - donate to this project and support Distribute Aid and
     its tech community in creating solutions for the humanitarian network. '
-target: 5000
+target: 700
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/tech-4-good/donate?amount=20&interval=month&platformTip=0
 
 ---
