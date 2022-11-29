@@ -17,7 +17,7 @@ allocations:
   purpose: Please donate to Distribute Aid, and together, we can build solutions that
     create sustainable humanitarian relief supply chains that protect our environment
     and our future.
-target: 800
+target: 1000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/sustainable-supply-chains/donate?amount=20&interval=month&platformTip=0
 
 ---
