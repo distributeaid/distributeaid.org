@@ -15,7 +15,7 @@ gallery:
 - url: "/uploads/fundraisers/ukraine-response-gallery-06.jpg"
   alt: Volunteers loading a container full of boxes of donated items
 allocations: []
-target: 3000
+target: 1500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/ukraine-response/donate?amount=20&interval=month&platformTip=0
 
 ---
