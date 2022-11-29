@@ -16,7 +16,10 @@ gallery:
 - url: "/uploads/fundraisers/us-disaster-relief-gallery-07.jpg"
   alt: 'A distribution of donations including: socks, scarfs, hand warmers, and informative
     leaflets'
-allocations: []
+allocations:
+- date: 2022-11-29T21:12:12Z
+  amountEUR: 50
+  purpose: "  "
 target: 1000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/us-disaster-and-refugee-relief/donate?amount=20&interval=month&platformTip=0
 
