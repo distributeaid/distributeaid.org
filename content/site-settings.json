@@ -7,7 +7,7 @@
   "footerEmail": "hello@distributeaid.org",
   "donate": {
     "byOpenCollective": "https://opencollective.com/distribute-aid-usa/donate?amount=20&interval=month&platformTip=0",
-    "byPaypal": "https://paypal.me/DistributeAidOrg",
+    "byPaypal": "https://www.paypal.com/donate/?hosted_button_id=VCREWCLA6WTB4",
     "byBankTransfer": {
       "emailSupport": "hello@distributeaid.org",
       "IBAN": "BE72 9672 1338 5616",
