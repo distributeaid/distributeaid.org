@@ -17,8 +17,6 @@ gallery:
   alt: A group of volunteers putting away donated items into a warehouse space
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-07.jpg"
   alt: A woman receiving bars of soap from a volunteer handing them out
-- url: "/uploads/fundraisers/european-refugee-relief-gallery-08.jpg"
-  alt: Volunteers unloading boxes of aid from a truck
 allocations:
 - date: 2022-11-16T11:23:03.000+01:00
   amountEUR: 1
