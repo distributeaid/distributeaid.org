@@ -5,8 +5,8 @@ gallery:
   alt: A container port
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-02.jpg"
   alt: A person using a circular saw to remove the locks on a container
-- url: "/uploads/fundraisers/humanitarian-logistics-gallery-03.jpg"
-  alt: Two people loading boxes into a container
+- url: "/uploads/unloading-image-2022-05-02-at-12-14-57-pm.jpeg"
+  alt: Volunteers unloading boxes of aid from a truck
 - url: "/uploads/fundraisers/humanitarian-logistics-gallery-04.jpg"
   alt: A forklift loading boxes onto a truck; the truck has the word ‘Logistics’ written
     across it
