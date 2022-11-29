@@ -17,7 +17,10 @@ gallery:
   alt: A group of volunteers putting away donated items into a warehouse space
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-07.jpg"
   alt: A woman receiving bars of soap from a volunteer handing them out
-allocations: []
+allocations:
+- date: 2022-11-29T12:40:29Z
+  amountEUR: 4.82
+  purpose: "  "
 target: 3500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
