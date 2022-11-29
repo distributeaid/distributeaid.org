@@ -18,7 +18,7 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-07.jpg"
   alt: A woman receiving bars of soap from a volunteer handing them out
 allocations:
-- date: 2022-11-29T12:40:29Z
+- date: 2022-11-28T12:40:29Z
   amountEUR: 4.82
   purpose: "  "
 target: 3500
