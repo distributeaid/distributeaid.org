@@ -20,7 +20,7 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-08.jpg"
   alt: Volunteers unloading boxes of aid from a truck
 allocations: []
-target: 6000
+target: 3000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
 ---
