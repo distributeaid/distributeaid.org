@@ -19,8 +19,8 @@ gallery:
   alt: A woman receiving bars of soap from a volunteer handing them out
 allocations:
 - date: 2022-11-29T12:40:29Z
-  amountEUR: 4.82
-  purpose: " TBD"
+  amountEUR: 205
+  purpose: "  "
 target: 3500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
 
