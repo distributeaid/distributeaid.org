@@ -30,7 +30,7 @@ allocations:
   amountEUR: 1
   purpose: 'Tech drives good - donate to this project and support Distribute Aid and
     its tech community in creating solutions for the humanitarian network. '
-target: 700
+target: 2500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/tech-4-good/donate?amount=20&interval=month&platformTip=0
 
 ---
