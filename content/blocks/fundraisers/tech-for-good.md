@@ -26,7 +26,7 @@ gallery:
   alt: A group of people posing for a group picture inside a truck they have unloaded
     of humanitarian aid
 allocations: []
-target: 1500
+target: 2500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/tech-4-good/donate?amount=20&interval=month&platformTip=0
 
 ---
