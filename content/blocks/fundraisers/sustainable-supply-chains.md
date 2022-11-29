@@ -12,7 +12,7 @@ gallery:
 - url: "/uploads/fundraisers/sustainable-supply-chains-gallery-05.jpg"
   alt: Volunteers loading boxes of aid items into a truck that is filled at full capacity
 allocations: []
-target: 1000
+target: 500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/sustainable-supply-chains/donate?amount=20&interval=month&platformTip=0
 
 ---
