@@ -14,7 +14,7 @@ gallery:
   alt: A person in PPE gear, fumigating a truck full of boxes
 allocations:
 - date: 2022-11-29T18:11:51Z
-  amountEUR: 230
+  amountEUR: 460
   purpose: "  "
 target: 2000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/humanitarian-logistics/donate?amount=20&interval=month&platformTip=0
