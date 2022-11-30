@@ -17,12 +17,14 @@ const IconWithText: FC<IconWithTextProps> = ({
     positionOfVisual = 'top'
   }
 
-  let imgAlignment = getImgAlignment(positionOfVisual)
+  console.log(positionOfVisual)
+
   let flexAlignment = getFlexAlignment(positionOfVisual)
+  let imgAlignment = getImgAlignment(positionOfVisual)
 
   return (
-    <div className={`flex ${imgAlignment}`}>
-      <div className={`h-20  mb-1.5 ${flexAlignment}`}>
+    <div className={`flex ${flexAlignment}`}>
+      <div className={`h-20  mb-1.5 ${imgAlignment}`}>
         <img className="w-20" src={icon} alt={altText} />
       </div>
       {typeof description === 'string' && (
@@ -33,7 +35,7 @@ const IconWithText: FC<IconWithTextProps> = ({
   )
 }
 
-export const getImgAlignment = (positionOfVisual: string) => {
+export const getFlexAlignment = (positionOfVisual: string) => {
   if (positionOfVisual === 'top') {
     return 'flex-wrap flex-col content-around w-1/2 h-40'
   } else {
@@ -41,7 +43,7 @@ export const getImgAlignment = (positionOfVisual: string) => {
   }
 }
 
-export const getFlexAlignment = (positionOfVisual: string) => {
+export const getImgAlignment = (positionOfVisual: string) => {
   if (positionOfVisual === 'top') {
     return 'flex items-center justify-center'
   } else {
