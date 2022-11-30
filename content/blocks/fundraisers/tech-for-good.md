@@ -27,7 +27,7 @@ gallery:
     of humanitarian aid
 allocations:
 - date: 2022-11-29T18:13:01Z
-  amountEUR: 50
+  amountEUR: 100
   purpose: "  "
 target: 2500
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/tech-4-good/donate?amount=20&interval=month&platformTip=0
