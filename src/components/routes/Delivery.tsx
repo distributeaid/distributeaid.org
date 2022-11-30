@@ -47,25 +47,25 @@ const Delivery: FC<DeliveryProps> = ({
             icon={netIcon}
             altText="Hub Icon: Multiple nodes connected to a center hub."
             description="UK Staging Hub in Coventry"
-            positionOfVisual="vertical"
+            positionOfVisual="top"
           />
           <IconWithText
             icon={mapIcon}
             altText="Map Icon: A destination marker on a map."
             description={`Service to ${routeDestination}, supporting ${frontlineGroups.length} frontline groups`}
-            positionOfVisual="vertical"
+            positionOfVisual="top"
           />
           <IconWithText
             icon={truckIcon}
             altText="Truck Icon: A truck in motion."
             description={'Regular shipments, scaled to demand'}
-            positionOfVisual="vertical"
+            positionOfVisual="top"
           />
           <IconWithText
             icon={heartBillIcon}
             altText="Money Icon: A currency bill with a heart in the middle."
             description="Fair flat-rate pricing, all-inclusive, at-cost"
-            positionOfVisual="vertical"
+            positionOfVisual="top"
           />
         </div>
       </div>

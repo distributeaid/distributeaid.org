@@ -44,7 +44,7 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
                 </p>
               </div>
             }
-            positionOfVisual="horizontal"
+            positionOfVisual="left"
           />
 
           <IconWithText
@@ -73,7 +73,7 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
                 </ul>
               </div>
             }
-            positionOfVisual="horizontal"
+            positionOfVisual="left"
           />
 
           <IconWithText
@@ -104,7 +104,7 @@ const Pallets: FC<PalletsProps> = ({ images }) => {
                 </ul>
               </div>
             }
-            positionOfVisual="horizontal"
+            positionOfVisual="left"
           />
         </div>
       </div>
