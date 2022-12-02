@@ -33,3 +33,4 @@ By contributing to this project you agree to:
 - Tymur Levtsun
 - Tyler Alexander
 - Federico Chaves
+- Daniel C. Silverstein
