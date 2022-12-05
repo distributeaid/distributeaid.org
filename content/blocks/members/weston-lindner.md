@@ -7,7 +7,7 @@ bio: My deep passion for Distribute Aid's mission is informed by my experience a
   Head of Administration, I work to empower DA contributors through effective onboarding,
   policies, and remote volunteer opportunities.
 link: https://www.linkedin.com/in/weston-lindner/
-profilePhoto: "/uploads/20190909_lindner_weston-1.jpg"
+profilePhoto: "/uploads/headshots-1.png"
 beyondDA:
   isRelevant: false
   companyName: ''
@@ -22,7 +22,7 @@ roles:
   end: 2021-08-01T22:00:00.000+00:00
 pronouns: he/him
 profilePhoto_updated:
-  asset: ''
+  asset: "/uploads/img-7400.JPG"
   caption: test
   attribution: test
   dateUploaded: 
