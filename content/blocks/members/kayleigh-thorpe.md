@@ -1,11 +1,11 @@
 ---
 profilePhoto_updated:
-  dateUploaded: 2022-11-08T08:26:28Z
+  dateUploaded: 2022-11-08T08:26:28.000+00:00
   tags: []
   asset: "/uploads/earth-topology.png"
   caption: "(placeholder)"
   attribution: "(placeholder)"
-  date: 2022-10-31T23:00:00Z
+  date: 2022-10-31T23:00:00.000+00:00
   altText: "(placeholder)"
 name: Kayleigh Thorpe
 pronouns: she/her
@@ -13,7 +13,7 @@ bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 link: ''
-profilePhoto: ''
+profilePhoto: "/uploads/5.png"
 beyondDA:
   isRelevant: false
   companyName: ''
@@ -21,7 +21,7 @@ beyondDA:
   desc: ''
 roles:
 - role: content/blocks/roles/logistics-coordinator.md
-  start: 2022-09-18T22:00:00Z
+  start: 2022-09-18T22:00:00.000+00:00
   end: 
 
 ---
