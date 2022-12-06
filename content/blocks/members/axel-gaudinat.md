@@ -12,7 +12,7 @@ pronouns: he/him
 bio: I come from France where I've been graduated from the Bioforce institut in humanitarian
   logistics. I previously worked with doctors of the world in Bordeaux and some French
   social organisations, and I worked also with Distribute Aid as an intern in 2021.
-  I'm now the Network Empowerment at Distribute Aid. My role consists in running the
+  I'm now the Network Empowerment at Distribute Aid. My role consists of running the
   Needs Assessment project and being an aid for the logistics team.
 link: ''
 profilePhoto: "/uploads/headshots-3.png"
