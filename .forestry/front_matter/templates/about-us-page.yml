@@ -35,4 +35,5 @@ fields:
     labelField: 
   label: Timeline items
 pages:
+- content/pages/Methodology.md
 - content/pages/about-us.md
