@@ -14,6 +14,7 @@ describe('Blocks', () => {
     blocks = [
       factory.getBlockTitleNode({ text: 'My Title' }),
       factory.getBlockTextNode({ text: 'My text.' }),
+      factory.getBlockYoutubeNode({ title: 'My video.' }),
     ]
   })
 
@@ -25,11 +26,13 @@ describe('Blocks', () => {
 
     const text = getByText('My text.')
     expect(text).toBeTruthy()
+
+    const youTubeTitle = getByText('My video.')
+    expect(youTubeTitle).toBeTruthy()
   })
 
   it('gracefully drops unimplemented block types', () => {
     blocks = blocks.concat([
-      factory.getBlockYoutubeNode(),
       factory.getBlockTimelineNode(),
       factory.getBlockImageNode(),
       factory.getBlockCardNode(),
@@ -41,9 +44,6 @@ describe('Blocks', () => {
 
     const text = getByText('My text.')
     expect(text).toBeTruthy()
-
-    const youtube = queryByText('youtube')
-    expect(youtube).toBeFalsy()
 
     const timelineEntry = queryByText('2020')
     expect(timelineEntry).toBeFalsy()
@@ -84,7 +84,13 @@ describe('Block', () => {
     expect(text).toBeTruthy()
   })
 
-  test.todo('can render a youtube block')
+  it('can render a youtube block', () => {
+    const block = factory.getBlockYoutubeNode({ title: 'My video.' })
+    const { getByText } = render(<Block block={block} />)
+    const text = getByText('My video.')
+    expect(text).toBeTruthy()
+  })
+
   test.todo('can render a timeline block')
   test.todo('can render a links list block')
   test.todo('can render an updates list block')

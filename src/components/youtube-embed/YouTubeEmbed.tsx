@@ -3,7 +3,7 @@ import { FC, PropsWithChildren } from 'react'
 export const YouTubeEmbed: FC<
   PropsWithChildren<{
     videoUrl: string
-    videoTitle?: string
+    videoTitle?: string | undefined
   }>
 > = ({ videoUrl, videoTitle }) => (
   <figure>
