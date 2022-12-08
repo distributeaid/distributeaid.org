@@ -42,7 +42,6 @@ describe('Sections', () => {
 
     sections[1] = factory.getSectionGridNode({
       blocks: [
-        factory.getBlockYoutubeNode(),
         factory.getBlockTimelineNode(),
         factory.getBlockImageNode(),
         factory.getBlockCardNode(),
@@ -55,9 +54,6 @@ describe('Sections', () => {
 
     const text = getByText('My text.')
     expect(text).toBeTruthy()
-
-    const youtube = queryByText('youtube')
-    expect(youtube).toBeFalsy()
 
     const timelineEntry = queryByText('2020')
     expect(timelineEntry).toBeFalsy()

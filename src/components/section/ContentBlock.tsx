@@ -5,11 +5,13 @@ import {
   BlockText as BlockTextType,
   BlockTitle as BlockTitleType,
   BlockUpdatesList as BlockUpdatesListType,
+  BlockYoutube as BlockYoutubeType,
 } from '../../types/generic-page.d'
 import { BlockLinksList } from './blocks/BlockLinksList'
 import { BlockText } from './blocks/BlockText'
 import { BlockTitle } from './blocks/BlockTitle'
 import { BlockUpdatesList } from './blocks/BlockUpdatesList'
+import { BlockYouTube } from './blocks/BlockYouTube'
 
 type BlocksProps = {
   blocks: BlockNode[]
@@ -50,10 +52,13 @@ export const Block: FC<BlockProps> = ({ block, className }) => {
           className={className}
         />
       )
+    case 'DABlockYoutube':
+      return <BlockYouTube
+        block={block as BlockYoutubeType}
+        className={className}
+      />
 
     // wishlist
-    case 'DABlockYoutube':
-      return null
     case 'DABlockTimeline':
       return null
     case 'DABlockImage':
