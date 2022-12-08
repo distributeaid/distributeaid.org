@@ -55,6 +55,9 @@ sections:
       Sara Lönegård, Executive Director and Founder
 
       Taylor Fairbank, Director of Operations and Co-Founder
+  - template: block-youtube-embed
+    title: About Distribute Aid
+    embed: https://www.youtube-nocookie.com/embed/msizPweg3kE
   - template: block-image-with-caption
     dateUploaded: 2022-10-14T14:13:51.000+00:00
     tags: []
