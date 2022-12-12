@@ -2,7 +2,7 @@
 profilePhoto_updated:
   dateUploaded: 2022-11-08T08:26:28.000+00:00
   tags: []
-  asset: "/uploads/headshots.png"
+  asset: "/uploads/headshotssss.png"
   caption: "(placeholder)"
   attribution: "(placeholder)"
   date: 2022-10-31T23:00:00.000+00:00
@@ -15,7 +15,7 @@ bio: I joined DA in September 2022 as a Logistics Coordinator for DAs Ukraine Re
   to facilitate the movement of aid, using various methods, to support IDPs as well
   as displaced people in neighbouring countries.
 link: ''
-profilePhoto: "/uploads/headshots.png"
+profilePhoto: "/uploads/headshotssss.png"
 beyondDA:
   isRelevant: false
   companyName: ''
