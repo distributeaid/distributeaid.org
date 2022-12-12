@@ -110,7 +110,6 @@
     "prepare": "husky install",
     "test": "jest",
     "clean": "gatsby clean",
-    "gen-types": "graphql-codegen --config codegen.yml",
     "test:e2e": "npx playwright test -c e2e-tests",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

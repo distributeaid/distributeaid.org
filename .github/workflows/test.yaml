@@ -43,9 +43,6 @@ jobs:
         run: until nc -w 10 127.0.0.1 8000; do tail -n 20 server.log; sleep 10; done
         timeout-minutes: 5
 
-      - name: Generate types
-        run: yarn run gen-types
-
       - name: Kill dev server
         run: kill ${{ env.DEVSERVER_PID }}
 
