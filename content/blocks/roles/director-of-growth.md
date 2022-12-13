@@ -1,6 +1,6 @@
 ---
 location: Remote
-team: Governance
+team: Administration
 domain: Volunteer
 commitment: Full-Time
 title: Director of Growth
