@@ -14,9 +14,12 @@ beyondDA:
   companyLink: ''
   desc: ''
 roles:
-- role: content/blocks/roles/director-of-operations.md
-  start: 2018-10-31T23:00:00.000+00:00
+- role: content/blocks/roles/director-of-growth.md
+  start: 2022-07-01T04:00:00Z
   end: 
+- role: content/blocks/roles/director-of-operations.md
+  start: 2018-07-01T23:00:00Z
+  end: 2022-06-30T04:00:00Z
 pronouns: he/him
 profilePhoto_updated:
   asset: "/uploads/2021-summer-square.jpeg"
