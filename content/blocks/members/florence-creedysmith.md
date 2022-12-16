@@ -8,7 +8,7 @@ bio: I joined Distribute Aid as Ukraine Response Coordinator on 5th September 20
   in the refugee sector and an ongoing desire to help improve the situation makes
   this role an exciting opportunity!
 link: ''
-profilePhoto: "/uploads/headshots.png"
+profilePhoto: "/uploads/flo.png"
 beyondDA:
   isRelevant: false
   companyName: ''
