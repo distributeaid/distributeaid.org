@@ -9,7 +9,12 @@ profilePhoto_updated:
   altText: " "
 name: Shanice D'Silva
 pronouns: she/her
-bio: Hello!
+bio: I am one of the logistics coordinators at Distribute Aid since January 2022.
+  I mainly coordinate shipments to France, Lebanon and The Balkans. Previous experience
+  in Calais and Tanzania has helped me with certain aspects of my job at DA. Navigating
+  through rules around tax relief, labour strikes and increased transportation costs
+  have been challenges we have faced this year but has helped build out our network
+  of trusted partners and increased the regions we are able to support.
 link: ''
 profilePhoto: "/uploads/8.png"
 beyondDA:
