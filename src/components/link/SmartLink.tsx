@@ -1,5 +1,4 @@
-import { AnchorHTMLAttributes } from '@reach/router/node_modules/@types/react'
-import { FC } from 'react'
+import { AnchorHTMLAttributes, FC } from 'react'
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
 
