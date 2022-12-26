@@ -40,9 +40,59 @@ fields:
   type: field_group
   config: {}
   fields:
+  - name: needsTotal
+    type: number
+    label: Total Human Needs
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: totalItemsRequested
+    type: number
+    label: Total Items Requested
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoBeneficiaries
+    type: number
+    label: People served by responding groups
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoPopulation
+    type: number
+    label: People who occasionally access NGO services
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoRespondents
+    type: number
+    label: NGOs responded
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
   - name: count
     type: number
-    label: Count
+    label: Population Official Figure
     description: The total number of people supported by Distribute Aid's frontline
       partners in the sub-region.
     default: 0
