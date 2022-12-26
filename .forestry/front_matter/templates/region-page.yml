@@ -43,9 +43,59 @@ fields:
   type: field_group
   config: {}
   fields:
+  - name: needsTotal
+    type: number
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+    label: Total Human Needs
+  - name: totalItemsRequested
+    type: number
+    label: Total Items Requested
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoBeneficiaries
+    type: number
+    label: People served by responding groups
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoPopulation
+    type: number
+    label: People who occasionally access NGO services
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: ngoRespondents
+    type: number
+    label: NGOs Responded
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
   - name: count
     type: number
-    label: Count
+    label: Population Official Figure
     description: ''
     default: 0
     required: true
