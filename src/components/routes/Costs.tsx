@@ -21,7 +21,7 @@ const formatCostInCurrency = (cost: number, currency: string) => {
       style: 'currency',
       currency,
       maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
+      minimumFractionDigits: 0,
     })
   }
 
@@ -63,7 +63,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
             altText="Standard Pallet Icon: Four boxes stacked evenly on a pallet."
             description={
               <div className="text-sm w-40 text-center">
-                <p>{`Standard Pallet -${' '} ${formatCostInCurrency(
+                <p>{`Standard Pallet - ${formatCostInCurrency(
                   costs.standardPaletteCost,
                   costs.currency,
                 )}`}</p>
@@ -78,7 +78,7 @@ const Costs: FC<CostsProps> = ({ images, costs }) => {
             altText="Half Pallet Icon: 3 boxes stacked in a pyramid on a pallet."
             description={
               <div className="text-sm w-40 text-center">
-                <p>{`Half Pallet -${' '} ${formatCostInCurrency(
+                <p>{`Half Pallet - ${formatCostInCurrency(
                   costs.halfPaletteCost,
                   costs.currency,
                 )}`}</p>

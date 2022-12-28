@@ -17,8 +17,6 @@ const IconWithText: FC<IconWithTextProps> = ({
     positionOfVisual = 'top'
   }
 
-  console.log(positionOfVisual)
-
   let flexAlignment = getFlexAlignment(positionOfVisual)
   let imgAlignment = getImgAlignment(positionOfVisual)
 
