@@ -38,7 +38,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-globe.gl": "2.22.8",
-    "react-markdown": "8.0.3",
+    "react-markdown": "8.0.4",
     "react-modal": "3.16.1",
     "react-router-dom": "6.4.3",
     "slugify": "1.6.5",
