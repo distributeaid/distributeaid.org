@@ -1,4 +1,4 @@
-import { Need } from '../../../types/need-types'
+import { Need } from '../../../types/need.d'
 
 import {
   getDefaultNivoBarChartOptions,

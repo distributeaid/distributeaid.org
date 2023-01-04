@@ -6,7 +6,7 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { getOxfordCommaSeparator } from 'utils/strings'
-import { Region } from '../../types/place-types'
+import { Region } from '../../types/place.d'
 
 type Props = {
   data: {

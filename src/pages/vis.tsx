@@ -2,9 +2,9 @@ import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
-import { Product } from '../types/product-types'
+import { Product } from '../types/product.d'
 
-import { Need } from '../types/need-types'
+import { Need } from '../types/need.d'
 
 // These modules have dependencies to libraries which depend on browser features
 // Use React Suspense to only load them when the page is rendered in the browser

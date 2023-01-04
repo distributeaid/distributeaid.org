@@ -1,14 +1,14 @@
 import { FC } from 'react'
 
-import { LinkList as LinkListType } from '@components/list/ListTypes'
+import { LinksList as LinksListType } from '../../types/list.d'
 
 import SmartLink from '@components/link/SmartLink'
 
 type Props = {
-  list: LinkListType
+  list: LinksListType
 }
 
-const LinkList: FC<Props> = ({ list: { title, links } }) => {
+const LinksList: FC<Props> = ({ list: { title, links } }) => {
   return (
     <div>
       <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
@@ -30,4 +30,4 @@ const LinkList: FC<Props> = ({ list: { title, links } }) => {
   )
 }
 
-export default LinkList
+export default LinksList

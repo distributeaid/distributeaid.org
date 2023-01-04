@@ -1,14 +1,14 @@
 import { FC } from 'react'
 
-import { UpdateList as UpdateListType } from '@components/list/ListTypes'
+import { UpdatesList as UpdatesListType } from '../../types/list.d'
 
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
 type Props = {
-  list: UpdateListType
+  list: UpdatesListType
 }
 
-const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
+const LinksList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
   // todo: sort by update data & pinned
   // todo: limit by visibleCount
 
@@ -32,4 +32,4 @@ const LinkList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
   )
 }
 
-export default LinkList
+export default LinksList

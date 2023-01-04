@@ -37,6 +37,7 @@ OneShipment.args = {
           item: 'Clothes',
           ageGender: '',
           sizeStyle: '',
+          unit: 'Item',
         },
       },
     ],
@@ -60,6 +61,7 @@ TwoShipments.args = {
           item: 'Clothes',
           ageGender: '',
           sizeStyle: '',
+          unit: 'Item',
         },
       },
       {
@@ -75,6 +77,7 @@ TwoShipments.args = {
           item: 'Coat',
           ageGender: '',
           sizeStyle: '',
+          unit: 'Item',
         },
       },
     ],

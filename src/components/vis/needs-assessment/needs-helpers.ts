@@ -1,9 +1,14 @@
-import { Need } from '../../../types/need-types'
+import { Need } from '../../../types/need.d'
 
 /*
 Selectors
 ================================================================================
 Select a comparable string representing some aspect of a need.
+*/
+
+/*
+Key Selectors
+------------------------------------------------------------
 */
 type KeySelector = (entry: Need) => string
 
@@ -19,6 +24,10 @@ export const selectItem: KeySelector = ({ product }) =>
   (product.sizeStyle ? `${product.sizeStyle} ` : '') +
   `${product.item}`
 
+/*
+Value Selectors
+------------------------------------------------------------
+*/
 type ValueSelector = (entry: Need) => number
 
 export const selectNeed: ValueSelector = ({ need }) => need

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { Need } from '../../../types/need-types'
+import { Need } from '../../../types/need.d'
 import { nivoProps } from '../nivo-theme'
 import { NeedsBarChart } from './needs-bar-chart'
 

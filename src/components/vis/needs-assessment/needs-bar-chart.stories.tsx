@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Need } from '../../../types/need-types'
+import { Need } from '../../../types/need.d'
 
 import { NeedsBarChart } from './needs-bar-chart'
 import { AxisOption, NeedsBarChartOptions } from './needs-options-helpers'
@@ -23,8 +23,8 @@ const Template: ComponentStory<typeof NeedsBarChart> = ({
   options,
 }: {
   needs: Need[]
-  title: string
-  options: NeedsBarChartOptions
+  title?: string | undefined
+  options?: NeedsBarChartOptions | undefined
 }) => <NeedsBarChart needs={needs} title={title} options={options} />
 
 export const Default = Template.bind({})

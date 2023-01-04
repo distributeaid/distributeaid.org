@@ -1,7 +1,7 @@
 import { ResponsiveBar } from '@nivo/bar'
 import { FC } from 'react'
 
-import { Need } from '../../../types/need-types'
+import { Need } from '../../../types/need.d'
 
 import { buildNivoData, getTotalValue, indexCounter } from '../nivo-helpers'
 import { nivoProps } from '../nivo-theme'
@@ -18,8 +18,8 @@ import {
 
 type Props = {
   needs: Need[]
-  title?: string
-  options?: NeedsBarChartOptions
+  title?: string | undefined
+  options?: NeedsBarChartOptions | undefined
 }
 
 export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
