@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch'
 import { SourceNodesArgs } from 'gatsby'
-import { Product } from '../../src/types/product-types'
+import { Product } from '../../src/types/product.d'
 import {
   isProductSurveyPage,
   placeMapper,

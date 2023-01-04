@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { getCoordsAlpha3 } from 'utils/iso-3166'
-import { Product } from '../../types/product-types'
+import { Product } from '../../types/product.d'
 
 type Shipment = {
   year: string

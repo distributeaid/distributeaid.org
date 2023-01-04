@@ -1,8 +1,8 @@
 /*
-Link List
+Links List
 ================================================================================
 */
-export type LinkList = {
+export type LinksList = {
   title: string
   links: {
     label: string
@@ -12,10 +12,10 @@ export type LinkList = {
 }
 
 /*
-Update List
+Updates List
 ================================================================================
 */
-export type UpdateList = {
+export type UpdatesList = {
   title: string
   visibleCount: number
   updates: {

@@ -1,6 +1,6 @@
 import { ResponsiveSunburst } from '@nivo/sunburst'
 import { FC } from 'react'
-import { Product } from '../../types/product-types'
+import { Product } from '../../types/product.d'
 
 type Shipment = {
   year: string

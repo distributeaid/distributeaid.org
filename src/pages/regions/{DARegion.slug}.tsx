@@ -2,11 +2,11 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 
-import { Region } from '../../types/place-types'
+import { Region } from '../../types/place.d'
 
 import SmartLink from '@components/link/SmartLink'
-import LinkList from '@components/list/LinkList'
-import UpdateList from '@components/list/UpdateList'
+import LinksList from '@components/list/LinksList'
+import UpdatesList from '@components/list/UpdatesList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from 'layouts/Simple'
@@ -64,8 +64,8 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
           <MarkdownContent content={region.governmentResponse} />
         </div>
       </div>
-      <UpdateList list={region.newsUpdates} />
-      <LinkList list={region.stayInformed} />
+      <UpdatesList list={region.newsUpdates} />
+      <LinksList list={region.stayInformed} />
     </SimpleLayout>
   )
 }

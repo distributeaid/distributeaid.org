@@ -1,11 +1,18 @@
-import { LinkList, UpdateList } from '@components/list/ListTypes'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
+
+/*
+Place
+================================================================================
+*/
+export type Place = {
+  region?: Region
+  subregion?: Subregion
+}
 
 /*
 Region
 ================================================================================
 */
-
 export type Region = {
   slug: string
   path: string
@@ -22,8 +29,8 @@ export type Region = {
    * Markdown string
    */
   governmentResponse: string
-  newsUpdates: UpdateList
-  stayInformed: LinkList
+  newsUpdates: UpdatesList
+  stayInformed: LinksList
   subregions: Subregion[]
 }
 
@@ -31,7 +38,6 @@ export type Region = {
 Subregion
 ================================================================================
 */
-
 export type Subregion = {
   slug: string
   path: string
@@ -49,6 +55,6 @@ export type Subregion = {
     trend: string
     description: string
   }
-  newsUpdates: UpdateList
+  newsUpdates: UpdatesList
   region: Region
 }
