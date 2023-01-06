@@ -14,7 +14,10 @@ gallery:
   alt: Volunteers unloading a truck full of boxes of donated items
 - url: "/uploads/fundraisers/ukraine-response-gallery-06.jpg"
   alt: Volunteers loading a container full of boxes of donated items
-allocations: []
+allocations:
+- date: 2023-01-06T10:59:07Z
+  amountEUR: 1660.18
+  purpose: "  "
 target: 2000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/ukraine-response/donate?amount=20&interval=month&platformTip=0
 
