@@ -29,7 +29,7 @@ fields:
   config:
     min: 0
     max: 
-    step: 
+    step: 1
     required: true
 - type: field_group_list
   name: allocations
