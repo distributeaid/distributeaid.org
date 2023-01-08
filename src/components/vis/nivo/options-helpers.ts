@@ -51,7 +51,7 @@ export const sort = (data: BarDatum[], sort?: SortOptions) => {
 }
 
 export const getSortByOptions = (
-  entry: any[],
+  entries: any[],
   options: NivoBarChartOptions,
 ): string[] => {
   return Object.values(SortByOption)
@@ -77,7 +77,7 @@ export const updateSortByOption: NivoOptionUpdater = (
 }
 
 export const getSortOrderOptions = (
-  entry: any[],
+  entries: any[],
   options: NivoBarChartOptions,
 ): string[] => {
   return Object.values(SortOrderOption)

@@ -69,10 +69,10 @@ export const sortByLabel: Sorter = (data) => {
     const aLabel = a.index as string
     const bLabel = b.index as string
 
-    if (aLabel < bLabel) {
+    if (aLabel > bLabel) {
       return 1
     }
-    if (aLabel > bLabel) {
+    if (aLabel < bLabel) {
       return -1
     }
     return 0
@@ -84,10 +84,10 @@ export const sortByValue: Sorter = (data) => {
     const aValue = getIndexValue(a)
     const bValue = getIndexValue(b)
 
-    if (aValue < bValue) {
+    if (aValue > bValue) {
       return 1
     }
-    if (aValue > bValue) {
+    if (aValue < bValue) {
       return -1
     }
     return 0
@@ -104,7 +104,7 @@ export const sortByRandom: Sorter = (data) => {
 Manipliate BarDatum
 ================================================================================
 */
-const getIndexValue = (datum: BarDatum): number => {
+export const getIndexValue = (datum: BarDatum): number => {
   return Object.entries(datum).reduce((totalValue, [key, value]) => {
     if (key !== 'index' && typeof value === 'number') {
       return totalValue + value
