@@ -7,10 +7,10 @@ sections:
 - template: section-grid
   metadata:
     margins: Default
-    layout: []
+    layout: Column-Bound
     numCols: 1
     numRows: 1
-    order: []
+    order: top-to-bottom
   contentBlocks:
   - template: block-title
     text: Title
