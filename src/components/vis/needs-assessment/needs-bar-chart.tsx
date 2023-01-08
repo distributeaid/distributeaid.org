@@ -8,13 +8,9 @@ import { nivoProps } from '../nivo-theme'
 
 import { sort } from '../nivo-options-helpers'
 
-import {
-  filter,
-  index,
-  NeedsBarChartOptions,
-  selectBy,
-  valueBy,
-} from './needs-options-helpers'
+import { filter, index, selectBy, valueBy } from './needs-options-helpers'
+
+import { NeedsBarChartOptions } from '../../../types/vis/needs-bar-chart-options.d'
 
 type Props = {
   needs: Need[]

@@ -1,8 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Need } from '../../../types/need.d'
 
+import {
+  AxisOption,
+  NeedsBarChartOptions,
+} from '../../../types/vis/needs-bar-chart-options.d'
 import { NeedsBarChart } from './needs-bar-chart'
-import { AxisOption, NeedsBarChartOptions } from './needs-options-helpers'
 import NeedsSampleData from './needs-sample-data.json'
 
 export default {
