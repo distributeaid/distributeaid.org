@@ -106,6 +106,12 @@ Spin up a production-ready server with the site. Don't forget to build your page
 
 Remove cached data from Gatsby. A good first step if you believe you are running into issues caused by incorrect or outdated cached data.
 
+### Prettify Your Code
+
+**`yarn pretty`**
+
+This is included in our pre-commit hook so all committed code is formatted the same.
+
 ### Running the unit tests
 
 **`yarn test`**
@@ -114,6 +120,12 @@ Remove cached data from Gatsby. A good first step if you believe you are running
 
 First start the application locally with `yarn dev`.
 Then run `yarn test:e2e`.
+
+### Running TypeScript Checks
+
+**`yarn test:types`**
+
+This is included in our pre-commit hook so all committed code is type safe.
 
 ### Component development with Storybook
 
