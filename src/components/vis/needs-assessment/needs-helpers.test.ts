@@ -699,6 +699,12 @@ describe('filterBySearch', () => {
     expect(filtered).toStrictEqual([])
   })
 
+  it("empty search terms don't filter out results", () => {
+    const needs = [getNeed(), getNeed()]
+    const filtered = filterBySearch(needs, '')
+    expect(filtered).toStrictEqual(needs)
+  })
+
   it('filters needs by search', () => {
     const needs = [
       getNeed({

@@ -19,8 +19,6 @@ import {
   getFilterQuarterOptions,
   getFilterRegionOptions,
   getFilterSubregionOptions,
-  NeedsBarChartOptions,
-  NeedsOptionUpdater,
   updateAxisGroupByOption,
   updateAxisIndexByOption,
   updateFilterCategoryOption,
@@ -30,6 +28,11 @@ import {
   updateFilterSearchOption,
   updateFilterSubregionOption,
 } from './needs-options-helpers'
+
+import {
+  NeedsBarChartOptions,
+  NeedsOptionUpdater,
+} from '../../../types/vis/needs-bar-chart-options.d'
 
 import {
   getSortByOptions,

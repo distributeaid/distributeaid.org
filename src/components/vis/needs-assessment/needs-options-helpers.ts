@@ -1,10 +1,13 @@
 import { Need } from '../../../types/need.d'
 
 import {
-  getDefaultNivoBarChartOptions,
-  NivoBarChartOptions,
-  OptionUpdater,
-} from '../nivo-options-helpers'
+  AxisOption,
+  FilterOptions,
+  NeedsBarChartOptions,
+  NeedsOptionUpdater,
+} from '../../../types/vis/needs-bar-chart-options.d'
+
+import { getDefaultNivoBarChartOptions } from '../nivo-options-helpers'
 
 import {
   filterByCategory,
@@ -36,16 +39,10 @@ import {
 Needs Options
 ================================================================================
 */
-export interface NeedsBarChartOptions extends NivoBarChartOptions {
-  filters?: FilterOptions
-  axis?: AxisOptions
-}
-
-export type NeedsOptionUpdater = OptionUpdater<Need, NeedsBarChartOptions>
-
 export const getDefaultOptions = (): NeedsBarChartOptions => {
   return {
     filters: {
+      search: '',
       quarter: undefined,
       region: undefined,
       subregion: undefined,
@@ -62,17 +59,10 @@ export const getDefaultOptions = (): NeedsBarChartOptions => {
 
 /*
 Filter Options
-------------------------------------------------------------
+================================================================================
 */
-export type FilterOptions = {
-  search?: string
-  quarter?: string | undefined
-  region?: string | undefined
-  subregion?: string | undefined
-  category?: string | undefined
-  item?: string | undefined
-}
 
+// TODO: should accept the full set of NeedsBarChartOptions for consistency w/ other function signatures
 export const filter = (needs: Need[], filters?: FilterOptions) => {
   if (filters === undefined) {
     return needs
@@ -229,21 +219,10 @@ export const updateFilterSubregionOption: NeedsOptionUpdater = (
 
 /*
 Axis Options
-------------------------------------------------------------
+================================================================================
 */
-export type AxisOptions = {
-  indexBy?: AxisOption
-  groupBy?: AxisOption
-}
 
-export enum AxisOption {
-  Survey = 'Survey',
-  Region = 'Region',
-  Subregion = 'Subregion',
-  Category = 'Category',
-  Item = 'Item',
-}
-
+// TODO: should accept the full set of NeedsBarChartOptions for consistency w/ other function signatures
 export const index = (needs: Need[], indexBy?: AxisOption): Index => {
   switch (indexBy) {
     case AxisOption.Survey:
@@ -261,6 +240,7 @@ export const index = (needs: Need[], indexBy?: AxisOption): Index => {
   }
 }
 
+// TODO: should accept a Needs[] and the full set of NeedsBarChartOptions for consistency w/ other function signatures
 export const selectBy = (groupBy?: AxisOption) => {
   switch (groupBy) {
     case AxisOption.Survey:
