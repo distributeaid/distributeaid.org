@@ -2,4 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn pretty-quick --staged
+
+echo "Running TypeScript checks (about 15s)..."
 npx tsc --pretty
