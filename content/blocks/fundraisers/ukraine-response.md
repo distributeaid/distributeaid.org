@@ -16,7 +16,7 @@ gallery:
   alt: Volunteers loading a container full of boxes of donated items
 allocations:
 - date: 2023-01-06T10:59:07Z
-  amountEUR: 1660.18
+  amountEUR: 1660
   purpose: "  "
 target: 2000
 donateUrl: https://opencollective.com/distribute-aid-usa/projects/ukraine-response/donate?amount=20&interval=month&platformTip=0
