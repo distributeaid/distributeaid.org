@@ -21,7 +21,7 @@ const ShipmentsOnGlobeVis = React.lazy(
   () => import('@components/vis/shipments-on-globe'),
 )
 const InteractiveNeedsBarChart = React.lazy(
-  () => import('@components/vis/needs-assessment/interactive-needs-bar-chart'),
+  () => import('@components/vis/needs-bar-chart/chart-interactive'),
 )
 
 type Shipment = {

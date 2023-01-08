@@ -6,9 +6,9 @@ import {
   SortByOption,
   SortOptions,
   SortOrderOption,
-} from '../../types/vis/nivo-bar-chart-options.d'
+} from '../../../types/vis/nivo-bar-chart-options.d'
 
-import { sortByLabel, sortByRandom, sortByValue } from './nivo-helpers'
+import { sortByLabel, sortByRandom, sortByValue } from './data-helpers'
 
 /*
 Nivo Bar Chart Options
