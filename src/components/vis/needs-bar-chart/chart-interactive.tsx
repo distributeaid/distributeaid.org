@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
 
 import { Need } from '../../../types/need.d'
-import { nivoProps } from '../nivo-theme'
-import { NeedsBarChart } from './needs-bar-chart'
+import { nivoProps } from '../nivo/theme'
+import { NeedsBarChart } from './chart'
 
 import {
   ControlSection,
@@ -27,7 +27,7 @@ import {
   updateFilterRegionOption,
   updateFilterSearchOption,
   updateFilterSubregionOption,
-} from './needs-options-helpers'
+} from './options-helpers'
 
 import {
   NeedsBarChartOptions,
@@ -39,7 +39,7 @@ import {
   getSortOrderOptions,
   updateSortByOption,
   updateSortOrderOption,
-} from '../nivo-options-helpers'
+} from '../nivo/options-helpers'
 
 type Props = {
   needs: Need[]

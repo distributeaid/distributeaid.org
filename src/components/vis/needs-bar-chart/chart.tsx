@@ -3,12 +3,16 @@ import { FC } from 'react'
 
 import { Need } from '../../../types/need.d'
 
-import { buildNivoData, getTotalValue, indexCounter } from '../nivo-helpers'
-import { nivoProps } from '../nivo-theme'
+import {
+  buildNivoData,
+  getTotalValue,
+  indexCounter,
+} from '../nivo/data-helpers'
+import { nivoProps } from '../nivo/theme'
 
-import { sort } from '../nivo-options-helpers'
+import { sort } from '../nivo/options-helpers'
 
-import { filter, index, selectBy, valueBy } from './needs-options-helpers'
+import { filter, index, selectBy, valueBy } from './options-helpers'
 
 import { NeedsBarChartOptions } from '../../../types/vis/needs-bar-chart-options.d'
 

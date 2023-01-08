@@ -5,7 +5,7 @@ import {
   AxisOption,
   NeedsBarChartOptions,
 } from '../../../types/vis/needs-bar-chart-options.d'
-import { NeedsBarChart } from './needs-bar-chart'
+import { NeedsBarChart } from './chart'
 import NeedsSampleData from './needs-sample-data.json'
 
 export default {

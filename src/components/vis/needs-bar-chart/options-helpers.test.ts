@@ -20,7 +20,7 @@ import {
   updateFilterSearchOption,
   updateFilterSubregionOption,
   valueBy,
-} from './needs-options-helpers'
+} from './options-helpers'
 
 import {
   selectCategory,
@@ -29,7 +29,7 @@ import {
   selectQuarter,
   selectRegion,
   selectSubregion,
-} from './needs-helpers'
+} from './data-helpers'
 
 import {
   AxisOption,

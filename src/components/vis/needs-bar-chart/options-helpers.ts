@@ -7,7 +7,7 @@ import {
   NeedsOptionUpdater,
 } from '../../../types/vis/needs-bar-chart-options.d'
 
-import { getDefaultNivoBarChartOptions } from '../nivo-options-helpers'
+import { getDefaultNivoBarChartOptions } from '../nivo/options-helpers'
 
 import {
   filterByCategory,
@@ -33,7 +33,7 @@ import {
   selectQuarter,
   selectRegion,
   selectSubregion,
-} from './needs-helpers'
+} from './data-helpers'
 
 /*
 Needs Options

@@ -1,4 +1,4 @@
-import { getVisualizationColors } from '../../utils/site-theme'
+import { getVisualizationColors } from '../../../utils/site-theme'
 
 // docs: https://nivo.rocks/guides/colors/
 export const colors = getVisualizationColors({
