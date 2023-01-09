@@ -1,6 +1,6 @@
 ---
 population:
-  count: 182.979
+  count: 182979
   trend: Unkown
   description: Beirut has various refugee camps that have existed since the late 1940’s.
     Over time they have become established towns/neighbourhoods, [home to thousands
@@ -12,6 +12,11 @@ population:
     certain professions](https://www.refworld.org/pdfid/56cc95484.pdf). As the dire
     situation in Lebanon continues, displaced people are those most affected, often
     living in desperate conditions with little hope of change.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 
+  ngoPopulation: 
+  ngoRespondents: 
 newsUpdates:
   title: News Updates
   visibleCount: 3
@@ -39,5 +44,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
