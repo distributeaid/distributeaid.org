@@ -19,12 +19,12 @@ stayInformed:
     label: Humanitarian Needs in Ukraine - OCHA
 name: Eastern Europe
 map: "/uploads/region-maps-12.png"
-overview: Eastern Europe as a region, includes Ukraine, Romania, Moldova, Hungary,
-  Slovakia, and Poland.  It mostly act as places of transition for people wanting
-  to seek asylum in other EU countries- although not always.  Since Russia's war in
-  the Ukraine began, millions of Ukrainians have fled to neighboring countries.
+overview: Eastern Europe includes Ukraine, Romania, Moldova, Hungary, Slovakia, and
+  Poland.  These countries mostly act as places of transition for people wanting to
+  file an asylum claim in other European countries, although not always.  Since Russia's
+  war in Ukraine began, millions of Ukrainians have fled to neighbouring countries.
 governmentResponse: |-
-  Governance in this region has been characterised by right-wing populism, as seen in Hungary and Poland, which results in fewer rights for people on the move. Humanitarian aid organisations have been forced out of the region by government hostility, despite the critical need for medicine, warm clothing, and shelter. Construction of a $353 million fence along half the border is underway, adding to the growing anti-immigration EU policies often referred to as “[Fortress Europe](https://www.theguardian.com/commentisfree/2021/aug/01/the-guardian-view-on-fortress-europe-a-continent-losing-its-moral-compass)_”_. Romania, one of the transitory countries for people travelling from the southeast into the EU, [has the largest number of illegal pushbacks recorded by UNHCR](https://www.infomigrants.net/en/post/32629/romania-poor-peoples-route-to-europe).
+  Governance in this region has been characterised by the rise of right-wing populism in some countries, as seen in Hungary and Poland, which results in fewer rights for people on the move. Humanitarian aid organisations have been forced out of some areas by government hostility, despite the critical need for medicine, warm clothing, and shelter. Construction of a $353 million fence along half the border is underway, adding to the growing anti-immigration EU policies often referred to as “[Fortress Europe](https://www.theguardian.com/commentisfree/2021/aug/01/the-guardian-view-on-fortress-europe-a-continent-losing-its-moral-compass)_”_. Romania, one of the transitory countries for people travelling from the southeast into the EU, [has the largest number of illegal pushbacks recorded by UNHCR](https://www.infomigrants.net/en/post/32629/romania-poor-peoples-route-to-europe).
 
   Eastern European countries have been much more welcoming to Ukrainian refugees than those fleeing conflict in the Middle East or North Africa.
 subregions:
