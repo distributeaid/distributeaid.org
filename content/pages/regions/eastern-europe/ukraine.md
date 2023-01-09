@@ -5,6 +5,11 @@ population:
   description: Up. Russia’s invasion of Ukraine has created [some 10.7 million refugees](https://data2.unhcr.org/en/situations/ukraine/location?secret=unhcrrestricted).
     Around 4.2 million have fled Ukraine, most travelling westward to the bordering
     states of Poland, Slovakia, and Hungary.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 
+  ngoPopulation: 
+  ngoRespondents: 
 newsUpdates:
   title: News Updates
   visibleCount: 3
@@ -17,7 +22,7 @@ overview: After Russia’s invasion of Ukraine a lot of people had the intention
   and families had to be separated. Reports of children going missing around the border
   regions are alarmingly high and human trafficking is a serious concern among the
   organisations working in these areas.
-map: ''
+map: "/uploads/ukraine-subregion-map.png"
 governmentResponse: |-
   According to estimates made by the [UN OCHA](https://reports.unocha.org/en/country/ukraine/#cf-7zDXryKIJX1IHL5zJL5YcA) as many as 18 million people across Ukraine are in need of assistance with water, sanitation, and hygiene. In the areas with little or no conflict, people are now starting to return to their homes. [More people are now returning](http://www.infomigrants.net/en/post/40990/frontex-more-ukrainians-are-returning-than-leaving-the-country) to Ukraine than the number who are leaving. According to Frontex estimations made in early September, around 5.5 million Ukrainians have returned to Ukraine.
 
@@ -33,5 +38,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
