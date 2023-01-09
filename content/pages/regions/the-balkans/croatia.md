@@ -26,7 +26,7 @@ overview: People typically cross Croatia to reach Slovenia - entering the Scheng
   NFI, medical assistance, legal support, and much more are all vital services currently
   provided by non-profit groups in Croatia.
 map: "/uploads/croatia-subregion-map.png"
-governmentResponse: "[The EU having allocated €122 million to fortify border control
+governmentResponse: "[The EU has allocated €122 million to fortify border control
   in Croatia over the past five years,](https://ecre.org/balkan-route-years-of-pushbacks-condemned-ombudsman-slams-commission-failure-on-croatian-funding-asylum-shortcomings-in-serbia-hungarian-border-violence/)
   making it one of the hardest transit points within the EU. However, following the
   announcement that the border fence between Slovenia and Croatia will be dismantled
