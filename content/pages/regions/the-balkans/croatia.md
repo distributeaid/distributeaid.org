@@ -10,7 +10,7 @@ population:
   totalItemsRequested: 
   ngoBeneficiaries: 
   ngoPopulation: 
-  ngoRespondents: -1
+  ngoRespondents: 
 newsUpdates:
   title: Updates
   visibleCount: 3
