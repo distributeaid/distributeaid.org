@@ -100,9 +100,9 @@ fields:
     default: 0
     required: true
     config:
-      min: 0
+      min: 
       max: 
-      step: 1
+      step: 
   - name: trend
     type: select
     default: []

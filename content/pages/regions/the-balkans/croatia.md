@@ -1,11 +1,16 @@
 ---
 population:
-  count: 
+  count: 2500
   trend: ''
   description: Accurate population numbers are hard to ascertain as people in The
     Balkans tend to be on the move.  Numbers can change substantially from season
     to season due to drastic temperature fluctuations, events in Greece, and other
     reasons.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 
+  ngoPopulation: 
+  ngoRespondents: -1
 newsUpdates:
   title: Updates
   visibleCount: 3
@@ -43,5 +48,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
