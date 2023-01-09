@@ -1,11 +1,16 @@
 ---
 population:
-  count: 324.141
+  count: 324141
   trend: Unkown
   description: The largest population of refugees in Lebanon is in Bekaa, which hosts[
     39% of total registered refugees in Lebanon](https://data2.unhcr.org/en/situations/syria/location/71).
     [80% of refugees have no legal residency](https://ec.europa.eu/echo/news-stories/stories/syrian-refugees-lebanon-between-hammer-and-anvil_en),
     making it difficult to calculate how many refugees currently reside in the country.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 
+  ngoPopulation: 
+  ngoRespondents: 
 newsUpdates:
   title: News Updates
   visibleCount: 3
@@ -28,5 +33,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
