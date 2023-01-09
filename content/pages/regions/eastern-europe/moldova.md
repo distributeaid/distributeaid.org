@@ -23,7 +23,7 @@ overview: 'Moldova has one of the smallest economies in Europe. For this reason,
   [the highest needs requested by people were](https://reliefweb.int/report/moldova/republic-moldova-displacement-surveys-ukrainian-refugees-and-tcns-crossing-ukraine-20-july-04-september-2022)
   “financial support” (30%), followed by “medicines and health services” (14%) and
   “employment/job” (10%). '
-map: ''
+map: "/uploads/moldova-subregion-map.png"
 governmentResponse: The government of Moldova does not usually provide all of the
   types of services that refugees need, and the responsibility fell on the local citizens,
   grassroots groups, and volunteers in Moldova. An example of this is the need for
