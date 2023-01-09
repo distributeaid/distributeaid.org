@@ -66,12 +66,17 @@ overview: The number of displaced people in Northern France continuously fluctua
   them from claiming asylum there.
 map: "/uploads/screenshot-from-2022-05-16-15-52-07-2x.png"
 population:
-  count: 2817
+  count: 
   trend: Increasing
   description: |-
     Fluctuating, likely to increase. It is difficult to gather accurate data on the number of displaced people in Northern France. The population is largely on the move, and the French government continues to refuse support from the UN, so very few official statistics are collected.
 
     There are typically the most people on the move in Northern France during the summer months, with the least during the winter.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 4300
+  ngoPopulation: 4920
+  ngoRespondents: 4
 stayInformed:
   title: " "
   links: []
@@ -83,5 +88,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
