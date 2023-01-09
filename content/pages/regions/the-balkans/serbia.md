@@ -24,7 +24,7 @@ overview: The geo-location of Serbia makes it a region of transit for those who 
   accommodated in governmental centres at the end of August](https://reliefweb.int/report/serbia/unhcr-serbia-update-august-2022),
   [a 24% increase](https://data.unhcr.org/en/documents/details/88897) compared to
   the same period of the previous year.
-map: ''
+map: "/uploads/serbia-subregion-map.png"
 governmentResponse: Serbia has 7 Asylum Centres and 12 Reception Centres. To be able
   to stay in an Asylum Centre you must be [registered with the intent to apply for
   asylum](https://asylumineurope.org/reports/country/serbia/reception-conditions/short-overview-of-the-reception-system/),
