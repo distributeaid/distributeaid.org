@@ -1,6 +1,6 @@
 ---
 population:
-  count: 2492
+  count: 0
   trend: Decreasing
   description: Accurate population numbers are hard to ascertain as people in The
     Balkans tend to be on the move.  Numbers can change substantially from season
@@ -25,7 +25,7 @@ overview: Bosnia and Herzegovina is one of the last transit corridors used by pe
   for 12 to 24 months before they continue their journey.](https://bih.iom.int/sites/g/files/tmzbdl1076/files/documents/dtm_bih_14-round_report_21_07_2022_eng.pdf)
   Many travel by bus from Sarajevo to the northwest of Bosnia, to towns like Bihać
   and Velika Kladuša, before attempting to cross into Croatia.
-map: ''
+map: "/uploads/bosnia-subregion-map.png"
 governmentResponse: Although there are various reception centres, the vast majority
   of people stay in informal camps so as to avoid the overcrowding and inhumane conditions
   of the reception centres. In [September 2022, Bosnia and Herzegovina joined the
