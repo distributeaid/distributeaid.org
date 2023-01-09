@@ -35,10 +35,10 @@ overview: The Balkan region borders the EU and Schengen zone, which makes it a s
   Syria, Iraq and Iran. Many people transit through in hopes of gaining entrance to
   Croatia or Hungary, from which they can travel to other EU states. Since the infamous
   EU-Turkey deal closed the Balkan Route at the Greece-Turkey border, the Balkans
-  have relatively low numbers of asylum applications. Bosnia and Herzegovina and Serbia
-  have around [5000 asylum seekers](https://data2.unhcr.org/en/situations/southeasterneurope)
+  have had relatively few asylum applications. Bosnia and Herzegovina and Serbia have
+  around [5000 asylum seekers](https://data2.unhcr.org/en/situations/southeasterneurope),
   while Montenegro, North Macedonia, and Albania have fewer than 200. However, [some
-  60,000 people traveled along the Balkan route in 2021](https://www.infomigrants.net/en/post/38478/digital-borders-eu-increases-use-of-technology-to-monitor-migration).
+  60,000 people travelled along the Balkan route in 2021](https://www.infomigrants.net/en/post/38478/digital-borders-eu-increases-use-of-technology-to-monitor-migration).
 governmentResponse: 'These states are often antagonistic towards people seeking refuge
   in Europe. Since 2017, there has been a problem of pushbacks along the Croatian
   and Hungarian borders: people attempting to cross a border are forcibly ‘pushed
@@ -59,8 +59,8 @@ population:
     Europe. Most people on this route are male adults and unaccompanied or separated
     children. As the people accessing NGO services in this region are largely in transit,
     their needs vary compared to those actively seeking asylum. Balkan countries experience
-    extremely cold winters and very warm summers, meaning access to appropriate clothing
-    and shelter year round is essential.
+    frigid winters and hot summers, meaning access to appropriate clothing and shelter
+    year-round is essential.
   needsTotal: 
   totalItemsRequested: 
   ngoBeneficiaries: 4970
