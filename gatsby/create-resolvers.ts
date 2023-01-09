@@ -28,8 +28,6 @@ export default {
             return subregions
           },
         },
-
-        map: imageSharpResolver(getNode, 'mapFileRelativePath'),
       },
     })
   },
@@ -59,8 +57,6 @@ export default {
             return region
           },
         },
-
-        map: imageSharpResolver(getNode, 'mapFileRelativePath'),
       },
     })
   },

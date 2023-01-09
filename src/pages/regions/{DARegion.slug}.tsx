@@ -33,8 +33,8 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         <div className="w-full">
           <GatsbyImage
             key={region.name}
-            image={region.map.gatsbyImageData}
-            alt={`Map highlighting the ${region.name} region.`}
+            image={region.map.image.gatsbyImageData}
+            alt={region.map.alt}
             className="w-full h-32"
           />
         </div>
@@ -77,11 +77,31 @@ export const query = graphql`
     region: daRegion(id: { eq: $id }) {
       id
       name
-      map {
-        gatsbyImageData
-      }
       overview
       governmentResponse
+      longText
+
+      map {
+        relativePath
+        alt
+        image {
+          gatsbyImageData(
+            width: 640
+            aspectRatio: 1.2
+            transformOptions: { fit: COVER }
+          )
+        }
+      }
+      population {
+        needsTotal
+        totalItemsRequested
+        ngoBeneficiaries
+        ngoPopulation
+        ngoRespondents
+        count
+        trend
+        description
+      }
       newsUpdates {
         title
         visibleCount
@@ -100,6 +120,7 @@ export const query = graphql`
           description
         }
       }
+
       subregions {
         path
         name

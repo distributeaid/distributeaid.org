@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { Photo } from './photo.d'
 
 /*
 Place
@@ -18,9 +18,6 @@ export type Region = {
   path: string
 
   name: string
-  map: {
-    gatsbyImageData: IGatsbyImageData
-  }
   /**
    * Markdown string
    */
@@ -29,6 +26,13 @@ export type Region = {
    * Markdown string
    */
   governmentResponse: string
+  /**
+   * Markdown string
+   */
+  longText: string
+
+  map: Photo
+  population?: Population
   newsUpdates: UpdatesList
   stayInformed: LinksList
   subregions: Subregion[]
@@ -43,18 +47,37 @@ export type Subregion = {
   path: string
 
   name: string
-  map: {
-    gatsbyImageData: IGatsbyImageData
-  }
   /**
    * Markdown string
    */
   overview: string
-  population: {
-    count: number
-    trend: string
-    description: string
-  }
+  /**
+   * Markdown string
+   */
+  governmentResponse: string
+  /**
+   * Markdown string
+   */
+  longText: string
+
+  map: Photo
+  population?: Population
   newsUpdates: UpdatesList
+  stayInformed: LinksList
   region: Region
+}
+
+/*
+Population
+================================================================================
+*/
+export type Population = {
+  needsTotal: number
+  totalItemsRequested: number
+  ngoBeneficiaries: number
+  ngoPopulation: number
+  ngoRespondents: number
+  count: number
+  trend: string
+  description: string
 }

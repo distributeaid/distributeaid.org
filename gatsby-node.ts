@@ -20,6 +20,7 @@ Customize the GraqphQL Schema
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
   (args) => {
     schema.definePageTypes(args)
+    schema.definePlaceTypes(args)
     schema.defineNeedTypes(args)
     schema.defineTeamTypes(args)
     createFundraiserSchemaCustomization(args)

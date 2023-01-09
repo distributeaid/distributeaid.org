@@ -25,16 +25,6 @@ const RegionsPage: FC<Props> = ({
     regions: { nodes: regions },
   },
 }) => {
-  // totals up and returns the population count for a region
-  const getRegionPopulationCount = (region: Region): string => {
-    const populationCount = region.subregions
-      .reduce((count: number, subregion) => {
-        return count + subregion.population.count
-      }, 0)
-      .toLocaleString()
-    return populationCount
-  }
-
   // creates subregion links for a given region
   const createSubregionLinks = (region: Region): JSX.Element[] => {
     return region.subregions.map((subregion, index, array) => {
@@ -54,7 +44,7 @@ const RegionsPage: FC<Props> = ({
     return (
       <>
         <p className="mb-3">
-          <strong>Population:</strong> {getRegionPopulationCount(region)}
+          <strong>Population:</strong> {region.population?.count || 0}
         </p>
         <div className="mb-3 space-y-2 line-clamp-3">
           <MarkdownContent content={region.overview} />
@@ -70,8 +60,8 @@ const RegionsPage: FC<Props> = ({
           <Card
             key={region.name}
             dynamicCardImage={{
-              image: region.map.gatsbyImageData,
-              alt: `Map highlighting the ${region.name} region.`,
+              image: region.map.image.gatsbyImageData,
+              alt: region.map.alt,
             }}
             imageVariant={ImageVariant.square}
             title={region.name}
@@ -102,7 +92,15 @@ export const query = graphql`
         path
         name
         map {
-          gatsbyImageData
+          relativePath
+          alt
+          image {
+            gatsbyImageData(
+              width: 640
+              aspectRatio: 1
+              transformOptions: { fit: COVER }
+            )
+          }
         }
         overview
         subregions {

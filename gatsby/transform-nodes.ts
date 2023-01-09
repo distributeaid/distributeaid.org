@@ -7,6 +7,7 @@ import { getStringProperty } from './utils/untypedAccess/getStringProperty'
 import { nodeParent } from './utils/untypedAccess/nodeParent'
 
 import { deriveGenericPageNode } from './generic-pages/pages'
+import { derivePhoto } from './photos/photos'
 
 /*
  * Note: some TypeScript errors have been silenced below,
@@ -41,14 +42,16 @@ export default {
   Regions
   ================================================================================
   */
-  createRegionsFromMarkdown: ({
-    node,
-    actions: { createNode },
-    createNodeId,
-    createContentDigest,
-    getNode,
-    reporter,
-  }: CreateNodeArgs) => {
+  createRegionsFromMarkdown: (args: CreateNodeArgs) => {
+    const {
+      node,
+      actions: { createNode },
+      createNodeId,
+      createContentDigest,
+      getNode,
+      reporter,
+    } = args
+
     if (
       node.internal.type === 'MarkdownRemark' &&
       'fileAbsolutePath' in node &&
@@ -73,14 +76,26 @@ export default {
         )
 
         const fm = getObjectProperty(node, 'frontmatter')
+        const mapPhoto = derivePhoto(
+          {
+            url: fm.map,
+            alt: `A simple map showing the shape of ${fm.name}`,
+          },
+          node.id,
+          args,
+        )
+
         createNode({
           // Node Data
           name: fm.name,
           overview: fm.overview,
           governmentResponse: fm.governmentResponse,
+          longText: fm.longText || '',
+
+          map: mapPhoto,
+          population: fm.population,
           newsUpdates: fm.newsUpdates,
           stayInformed: fm.stayInformed,
-          subregionFileRelativePaths: fm.subregions,
 
           // navigation
           slug: slug,
@@ -89,6 +104,7 @@ export default {
           // Metadata
           fileRelativePath: fileRelativePath,
           mapFileRelativePath: fm.map,
+          subregionFileRelativePaths: fm.subregions,
 
           // Gatsby Fields
           id: createNodeId(`DA Region - ${fm.name}`),
@@ -109,14 +125,16 @@ export default {
   Subregions
   ================================================================================
   */
-  createSubregionsFromMarkdown: ({
-    node,
-    actions: { createNode },
-    createNodeId,
-    createContentDigest,
-    getNode,
-    reporter,
-  }: CreateNodeArgs) => {
+  createSubregionsFromMarkdown: (args: CreateNodeArgs) => {
+    const {
+      node,
+      actions: { createNode },
+      createNodeId,
+      createContentDigest,
+      getNode,
+      reporter,
+    } = args
+
     if (
       node.internal.type === 'MarkdownRemark' &&
       'fileAbsolutePath' in node &&
@@ -142,12 +160,26 @@ export default {
         )
 
         const fm = getObjectProperty(node, 'frontmatter')
+        const mapPhoto = derivePhoto(
+          {
+            url: fm.map,
+            alt: `A simple map showing the shape of ${fm.name}`,
+          },
+          node.id,
+          args,
+        )
+
         createNode({
           // Node Data
           name: fm.name,
           overview: fm.overview,
+          governmentResponse: fm.governmentResponse,
+          longText: fm.longText,
+
+          map: mapPhoto,
           population: fm.population,
           newsUpdates: fm.newsUpdates,
+          stayInformed: fm.stayInformed,
 
           // navigation
           slug: slug,
@@ -155,7 +187,6 @@ export default {
 
           // Metadata
           fileRelativePath: fileRelativePath,
-          mapFileRelativePath: fm.map,
 
           // Gatsby Fields
           id: createNodeId(`DA Subregion - ${fm.name}`),
