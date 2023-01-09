@@ -1,6 +1,6 @@
 ---
 population:
-  count: 182979
+  count: 182.979
   trend: Unkown
   description: Beirut has various refugee camps that have existed since the late 1940’s.
     Over time they have become established towns/neighbourhoods, [home to thousands
@@ -31,7 +31,7 @@ overview: The accumulation of crises in Lebanon, specifically Beirut, has led to
   society. As Beirut hosts a large array of Lebanese families, refugees, and foreign
   workers from many backgrounds, these intersecting crises are affecting the entire
   population in Beirut to varying degrees.
-map: ''
+map: "/uploads/beirut-subregion-map.png"
 governmentResponse: ''
 stayInformed:
   title: " "
