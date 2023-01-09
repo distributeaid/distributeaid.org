@@ -19,7 +19,7 @@ name: Bosnia
 overview: Bosnia and Herzegovina is one of the last transit corridors used by people
   on the move (PoM) to reach the EU. [3,076 migrants and asylum-seekers arrived irregularly
   in BiH in August](https://reliefweb.int/report/bosnia-and-herzegovina/bosnia-and-herzegovina-operational-update-august-2022),
-  representing a 47% increase since the previous month, and a 78% increase compared
+  representing a 47% increase since the previous month and a 78% increase compared
   to August 2021. Afghanistan and Burundi are the two largest nationalities represented
   among PoM in Bosnia. [Around 19% of PoM stay for less than two weeks, and 4% stay
   for 12 to 24 months before they continue their journey.](https://bih.iom.int/sites/g/files/tmzbdl1076/files/documents/dtm_bih_14-round_report_21_07_2022_eng.pdf)
