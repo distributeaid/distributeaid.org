@@ -1,7 +1,7 @@
 ---
 template: DAPageGeneric
 title: Needs Assessment Methodology
-slug: needs-assessment/methodology
+slug: needs-assessments/methodology
 desc: ''
 sections:
 - template: section-grid
@@ -9,7 +9,7 @@ sections:
     margins: Default
     numCols: 1
     numRows: 1
-    layout: Row-Bound
+    layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
   - template: block-title
