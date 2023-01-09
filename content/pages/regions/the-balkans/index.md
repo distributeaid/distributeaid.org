@@ -10,7 +10,7 @@ newsUpdates:
       This could lead to a decline in people migrating through these territories,
       choosing more dangerous routes, or taking greater risks on the existing Balkan
       route.
-    date: '2022-02-18T23:59:19.000+00:00'
+    date: '2022-02-18T23:59:19Z'
     pinned: false
   - title: Illegal EU Pushbacks Continue
     content: In the last year, there have been several instances of pushbacks at the
@@ -32,14 +32,14 @@ map: "/uploads/region-maps-11.png"
 overview: The Balkan region borders the EU and Schengen zone, which makes it a standard
   route for transitory migrants wishing to gain asylum within the EU. The Balkans
   act as a transitory region for people on the move, most from Afghanistan, Pakistan,
-  Syria, Iraq and Iran. Many transition through in hopes of gaining entrance to Croatia
-  or Hungary, from where they can travel to other EU states. Since the infamous EU-Turkey
-  deal closed the Balkan Route at the Greece-Turkey border, the Balkans have relatively
-  low numbers of asylum applications. Bosnia and Herzegovina and Serbia have around
-  [5000 asylum seekers](https://data2.unhcr.org/en/situations/southeasterneurope)
-  while Montenegro, North Macedonia, and Albania have less than 200. However, [some
+  Syria, Iraq and Iran. Many people transit through in hopes of gaining entrance to
+  Croatia or Hungary, from which they can travel to other EU states. Since the infamous
+  EU-Turkey deal closed the Balkan Route at the Greece-Turkey border, the Balkans
+  have relatively low numbers of asylum applications. Bosnia and Herzegovina and Serbia
+  have around [5000 asylum seekers](https://data2.unhcr.org/en/situations/southeasterneurope)
+  while Montenegro, North Macedonia, and Albania have fewer than 200. However, [some
   60,000 people traveled along the Balkan route in 2021](https://www.infomigrants.net/en/post/38478/digital-borders-eu-increases-use-of-technology-to-monitor-migration).
-governmentResponse: 'Most states are often antagonistic towards people seeking refuge
+governmentResponse: 'These states are often antagonistic towards people seeking refuge
   in Europe. Since 2017, there has been a problem of pushbacks along the Croatian
   and Hungarian borders: people attempting to cross a border are forcibly ‘pushed
   back’ into the country they entered from by authorities. The practice often constitutes
