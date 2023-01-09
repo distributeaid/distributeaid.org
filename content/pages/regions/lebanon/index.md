@@ -43,9 +43,17 @@ subregions:
 - content/pages/regions/lebanon/beirut.md
 - content/pages/regions/lebanon/bekka-valley.md
 population:
-  count: 
+  count: 814715
   trend: ''
-  description: ''
+  description: The figures used for 'Official figures' are the [UNHCR data](https://data.unhcr.org/en/situations/syria/location/71)
+    on Syrian refugee figures across different regions. However, many grassroots groups
+    in Lebanon provide services to a range of different populations as explained in
+    the sub-region pages.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 7700
+  ngoPopulation: 9500
+  ngoRespondents: 3
 coverPhoto:
   asset: ''
   caption: " "
@@ -54,5 +62,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
