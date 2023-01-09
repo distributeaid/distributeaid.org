@@ -51,6 +51,11 @@ const surveyIds: SurveyId[] = [
     id: '01GCW8TQFCE92TR1NXH8NEET7F',
     year: '2022',
   },
+  {
+    // Q1
+    id: '01GKQEXWQSERMVX0BVT3G1N5JX',
+    year: '2023',
+  },
 ]
 
 export const sourceNeedsAssessments = async ({
