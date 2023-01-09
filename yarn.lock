@@ -1224,10 +1224,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@codesee/babel-plugin-instrument@0.438.0":
-  version "0.438.0"
-  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.438.0.tgz#e96d41d603c496673d178f14d72ad384ba457421"
-  integrity sha512-N8BxslhxTzawiZBL0iz80hesU4WzKsVsgXNg/4c5mzXLT7pYfZxS5OKtD5U80nX2UJp2qK4TolHReyOpGf/+Tw==
+"@codesee/babel-plugin-instrument@0.474.0":
+  version "0.474.0"
+  resolved "https://registry.yarnpkg.com/@codesee/babel-plugin-instrument/-/babel-plugin-instrument-0.474.0.tgz#268a81812d762f573c5c76fa7e2eec00b144ec9a"
+  integrity sha512-FdCv0DphJzYnke4bPvC3c0dVn71d1YI7rFSmz8QIHwRocKz/57kv9NMoSm+/0lHxXFyvclBx2lZ+JYolPhIUVQ==
   dependencies:
     "@babel/plugin-syntax-jsx" "^7.12.13"
     "@babel/plugin-transform-typescript" "^7.14.4"
