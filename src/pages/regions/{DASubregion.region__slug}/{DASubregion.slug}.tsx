@@ -96,7 +96,7 @@ export const query = graphql`
         alt
         image {
           gatsbyImageData(
-            width: 144
+            width: 256
             aspectRatio: 1
             transformOptions: { fit: COVER }
           )
