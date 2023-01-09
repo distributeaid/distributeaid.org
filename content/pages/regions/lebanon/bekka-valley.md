@@ -8,9 +8,9 @@ population:
     making it difficult to calculate how many refugees currently reside in the country.
   needsTotal: 
   totalItemsRequested: 
-  ngoBeneficiaries: 
-  ngoPopulation: 
-  ngoRespondents: 
+  ngoBeneficiaries: 2502
+  ngoPopulation: 6000
+  ngoRespondents: 2
 newsUpdates:
   title: News Updates
   visibleCount: 3
