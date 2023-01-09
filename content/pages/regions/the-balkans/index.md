@@ -52,12 +52,18 @@ subregions:
 - content/pages/regions/the-balkans/bosnia.md
 - content/pages/regions/the-balkans/croatia.md
 population:
-  count: 10.756
+  count: 10758
   trend: Increasing
-  description: ''
+  description: _The Balkan Route_ is the name given to the route taken by many persons
+    on the move who head north from Turkey or Greece towards Western and Northern
+    Europe. Most people on this route are male adults and unaccompanied or separated
+    children. As the people accessing NGO services in this region are largely in transit,
+    their needs vary compared to those actively seeking asylum. Balkan countries experience
+    extremely cold winters and very warm summers, meaning access to appropriate clothing
+    and shelter year round is essential.
   needsTotal: 
   totalItemsRequested: 
-  ngoBeneficiaries: 4969
+  ngoBeneficiaries: 4970
   ngoPopulation: 8452
   ngoRespondents: 5
 coverPhoto:
