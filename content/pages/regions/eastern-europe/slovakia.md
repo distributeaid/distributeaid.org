@@ -23,7 +23,7 @@ overview: 'As of 4 October, just over [851,000 refugees from Ukraine](https://da
   (IOM), spanning from the 9th of March to the 11th of August, 1,298 refugees were
   interviewed regarding their needs and intentions. 84% of the interviewees were women
   or girls. '
-map: ''
+map: "/uploads/slovakia-subregion-map.png"
 governmentResponse: The highest needs for the people who arrived in the Slovakian
   reception centre were “information support” (71%), “financial support” (66%), “transportation
   support” (57%), and “food” (47%). These services are generally not provided by governments
