@@ -15,14 +15,14 @@ stayInformed:
   links: []
 name: Lebanon
 map: "/uploads/3.png"
-overview: Lebanon's largest population of refugees is in Bekaa, which hosts [39% of
-  total registered refugees](https://data2.unhcr.org/en/situations/syria/location/71).
-  The lowest population is in South Lebanon, with [90,832 registered refugees.](https://data2.unhcr.org/en/situations/syria/location/71)
-  Since many do not get registered, the actual number is likely much higher. Lebanon,
-  once an upper-middle-income country, is entering its third year of severe economic,
-  political and social crises. [**1.5 million refugees**](https://www.thenewhumanitarian.org/opinion/2022/1/18/Syrian-refugees-Lebanon-help-protection-pressure-leave)
+overview: 'Lebanon, once an upper-middle-income country, is entering its third year
+  of severe economic, political and social crises. [**1.5 million refugees**](https://www.thenewhumanitarian.org/opinion/2022/1/18/Syrian-refugees-Lebanon-help-protection-pressure-leave)
   are at particular risk. Their rights and freedoms, economic opportunities, and relations
-  with host communities have deteriorated amid wide-felt poverty and hardship.
+  with host communities have deteriorated amid wide-felt poverty and hardship. Lebanon''s
+  largest population of displaced people is in Bekaa, which hosts [39% of total registered
+  refugees](https://data2.unhcr.org/en/situations/syria/location/71). The lowest population
+  is in South Lebanon, with [90,832 registered refugees.](https://data2.unhcr.org/en/situations/syria/location/71)
+  Since many do not get registered, the actual number is likely much higher. '
 governmentResponse: "Experiencing a massive decrease in international and national
   funding for refugees, the Lebanese government [has yet to propose a long-term and
   viable plan](https://apnews.com/article/business-middle-east-lebanon-beirut-hezbollah-6fba3e7874b69381d194a029f51bda49)
