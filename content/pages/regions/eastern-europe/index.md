@@ -35,9 +35,17 @@ subregions:
 - content/pages/regions/eastern-europe/poland.md
 - content/pages/regions/eastern-europe/hungary.md
 population:
-  count: 
-  trend: ''
-  description: ''
+  count: 2419288
+  trend: Increasing
+  description: The current situation in Eastern Europe has been heavily affected by
+    the Russian invasion of Ukraine. It is estimated that [over 14 million people
+    have crossed the border](https://data.unhcr.org/en/situations/ukraine) since the
+    invasion began in February 2022.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 
+  ngoPopulation: 
+  ngoRespondents: 
 coverPhoto:
   asset: ''
   caption: " "
@@ -46,5 +54,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
