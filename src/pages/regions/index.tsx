@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import { FC } from 'react'
 import { getOxfordCommaSeparator } from 'utils/strings'
 import { Region } from '../../types/place.d'
+import { getBackgroundColor } from '../../utils/site-theme'
 
 type Props = {
   data: {
@@ -55,6 +56,17 @@ const RegionsPage: FC<Props> = ({
 
   return (
     <SimpleLayout>
+      <header className="prose max-w-none text-center">
+        <h1
+          className="py-8"
+          style={{
+            backgroundColor: getBackgroundColor(),
+          }}
+        >
+          Regions We Support
+        </h1>
+      </header>
+
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
         {regions.map((region) => (
           <Card

@@ -10,6 +10,8 @@ import UpdatesList from '@components/list/UpdatesList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from 'layouts/Simple'
+import { getOxfordCommaSeparator } from 'utils/strings'
+import { getBackgroundColor } from '../../utils/site-theme'
 
 type TemplateProps = {
   data: {
@@ -24,23 +26,48 @@ export function Head({ data: { region } }: TemplateProps) {
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   return (
     <SimpleLayout>
-      <div className="relative mb-4">
-        <div className="absolute inset-0 z-10 flex justify-center">
-          <div className="bg-navy-700 bg-opacity-75 px-6 flex flex-col justify-center">
-            <h1 className="text-4xl text-white flex-none">{region.name}</h1>
+      <header
+        style={{
+          backgroundColor: getBackgroundColor(),
+        }}
+        className="prose max-w-none py-8 flex justify-center items-center gap-x-4"
+      >
+        <SmartLink href={region.path}>
+          <div className="bg-white rounded-full p-2 drop-shadow-md hover:drop-shadow-lg">
+            <GatsbyImage
+              image={region.map.image.gatsbyImageData}
+              alt={region.map.alt}
+              className="w-36 h-36"
+            />
           </div>
-        </div>
-        <div className="w-full">
-          <GatsbyImage
-            key={region.name}
-            image={region.map.image.gatsbyImageData}
-            alt={region.map.alt}
-            className="w-full h-32"
-          />
-        </div>
-      </div>
+        </SmartLink>
 
-      <ul className="flex  justify-evenly my-5 text-2xl">
+        <div className="flex flex-col justify-center">
+          <h1 className="mb-0">
+            <SmartLink
+              href={region.path}
+              className="text-navy-700 no-underline"
+            >
+              {region.name}
+            </SmartLink>
+          </h1>
+          <nav className="text-xl">
+            {region.subregions.map((subregion, index, array) => {
+              const seperator = getOxfordCommaSeparator(index, array)
+              return (
+                <span key={subregion.name}>
+                  {seperator}
+                  <SmartLink className="link" href={subregion.path}>
+                    {subregion.name}
+                  </SmartLink>
+                </span>
+              )
+            })}
+          </nav>
+        </div>
+      </header>
+
+      {/*      <ul className="flex justify-evenly my-5 text-2xl">
         {region.subregions.map((subregion, i) => {
           return (
             <li key={i}>
@@ -51,7 +78,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
           )
         })}
       </ul>
-
+*/}
       <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
         <div className="p-4 bg-navy-100">
           <h2 className="text-center text-2xl text-navy-700">Overview</h2>
@@ -76,6 +103,8 @@ export const query = graphql`
   query ($id: String!) {
     region: daRegion(id: { eq: $id }) {
       id
+      path
+
       name
       overview
       governmentResponse
@@ -86,8 +115,8 @@ export const query = graphql`
         alt
         image {
           gatsbyImageData(
-            width: 640
-            aspectRatio: 1.2
+            width: 144
+            aspectRatio: 1
             transformOptions: { fit: COVER }
           )
         }
