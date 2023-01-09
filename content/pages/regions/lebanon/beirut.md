@@ -1,6 +1,6 @@
 ---
 population:
-  count: 182.979
+  count: 182979
   trend: Unkown
   description: Beirut has various refugee camps that have existed since the late 1940’s.
     Over time they have become established towns/neighbourhoods, [home to thousands
