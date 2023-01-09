@@ -6,6 +6,11 @@ population:
     Balkans tend to be on the move.  Numbers can change substantially from season
     to season due to drastic temperature fluctuations, events in Greece, and other
     reasons.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 4000
+  ngoPopulation: 4970
+  ngoRespondents: 1
 newsUpdates:
   title: Updates
   visibleCount: 3
@@ -39,5 +44,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
