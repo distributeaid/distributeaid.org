@@ -12,7 +12,7 @@ export interface NavLinkItem {
 const linksHardcoded: NavLinkItem[] = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about-us/' },
-  //  { label: 'Regions', path: '/regions/' },
+  { label: 'Regions', path: '/regions/' },
 ]
 
 const routeLinks: NavLinkItem[] = [
