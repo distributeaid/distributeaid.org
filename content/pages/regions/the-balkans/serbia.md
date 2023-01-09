@@ -17,7 +17,7 @@ newsUpdates:
   updates: []
 name: Serbia
 overview: The geo-location of Serbia makes it a region of transit for those who are
-  travelling to Western Europe by land - very few individuals choose to stay and apply
+  travelling to Western Europe by land; very few individuals choose to stay and apply
   for asylum. However, the onward journey to Western Europe has been affected by the
   war in Ukraine, [leading to an increase in refugees in Serbia](https://www.infomigrants.net/en/post/41376/refugee-numbers-in-serbia-up-55-on-2021).
   According to the authorities, [6,254 refugees, asylum-seekers and migrants were
