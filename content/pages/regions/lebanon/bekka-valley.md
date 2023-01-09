@@ -17,9 +17,9 @@ newsUpdates:
   updates: []
 name: Bekka Valley
 overview: |-
-  [Around a quarter of Syrian refugees are located in Bekaa Valley](https://reporting.unhcr.org/document/2972). Large camps are not permitted by the Lebanese government, and as a result informal, small, makeshift camps without basic services are commonplace. The region is one of the most economically deprived, it is common that [children are taken out of school so they can go into full time work to support their families](https://www.thenationalnews.com/weekend/2022/09/09/syrian-refugees-forced-to-choose-between-school-or-work-in-lebanons-bekaa-valley/).
+  [Around a quarter of Syrian refugees are located in Bekaa Valley](https://reporting.unhcr.org/document/2972). The Lebanese government does not permit large camps, and as a result, informal, small, makeshift camps without essential services are commonplace. The region is one of the most economically deprived; it is common for [children to be taken out of school so they can go into full-time work to support their families](https://www.thenationalnews.com/weekend/2022/09/09/syrian-refugees-forced-to-choose-between-school-or-work-in-lebanons-bekaa-valley/).
 
-  Recently, the power supply in camps across the Bekaa Valley, specifically Arsal, [are frequently suspended due to the rise in price of mazout (fuel oil)](https://diyaruna.com/en_GB/articles/cnmi_di/features/2022/03/29/feature-01). The shutdown of generators deeply affects the lives of displaced people. Darkness prevents children from being able to access remote learning, spoils food in refrigerators, prevents the provision of medical services, and gives rise to crime.
+  Recently, the power supply in camps across the Bekaa Valley (specifically Arsal) [is frequently suspended due to the rise in the price of mazout (fuel oil)](https://diyaruna.com/en_GB/articles/cnmi_di/features/2022/03/29/feature-01). The shutdown of generators profoundly affects the lives of displaced people. Darkness prevents children from being able to access remote learning, spoils food in refrigerators, prevents the provision of medical services, and gives rise to crime.
 map: "/uploads/bekka-subregion-map.png"
 governmentResponse: ''
 stayInformed:
