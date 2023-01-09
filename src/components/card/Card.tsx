@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC, PropsWithChildren, ReactNode } from 'react'
 import { Action, DynamicCardImage } from 'types/card.d'
+import { getBackgroundColor } from '../../utils/site-theme'
 
 export enum ImageVariant {
   square,
@@ -63,7 +64,16 @@ export const Card: FC<
   >
     {header && header}
     {dynamicCardImage && (
-      <div className={imageVariant === ImageVariant.circle ? `p-2` : ''}>
+      <div
+        style={{
+          backgroundColor: getBackgroundColor(),
+        }}
+        className={
+          imageVariant === ImageVariant.circle
+            ? `m-4 w-1/2 p-1 rounded-full mx-auto`
+            : ''
+        }
+      >
         <GatsbyImage
           data-testid="card-gatsby-image"
           image={dynamicCardImage.image}
@@ -75,7 +85,7 @@ export const Card: FC<
         ></GatsbyImage>
       </div>
     )}
-    <div className="mx-4 my-4">
+    <div className="m-4">
       <div className="text-center">
         {title && <h2 className="text-xl font-semibold">{title}</h2>}
         {subtitle && <p className="text-gray-600">{subtitle}</p>}

@@ -45,7 +45,8 @@ const RegionsPage: FC<Props> = ({
     return (
       <>
         <p className="mb-3">
-          <strong>Population:</strong> {region.population?.count || 0}
+          <strong>Population:</strong>{' '}
+          {region.population?.count?.toLocaleString() || 0}
         </p>
         <div className="mb-3 space-y-2 line-clamp-3">
           <MarkdownContent content={region.overview} />
@@ -67,7 +68,7 @@ const RegionsPage: FC<Props> = ({
         </h1>
       </header>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8 py-12 lg:py-24 max-w-7xl mx-auto">
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 px-2 lg:px-4 py-4 lg:py-8 max-w-7xl mx-auto">
         {regions.map((region) => (
           <Card
             key={region.name}
@@ -75,16 +76,18 @@ const RegionsPage: FC<Props> = ({
               image: region.map.image.gatsbyImageData,
               alt: region.map.alt,
             }}
-            imageVariant={ImageVariant.square}
-            title={region.name}
-            additionalHeaderContent={<div>{createSubregionLinks(region)}</div>}
+            imageVariant={ImageVariant.circle}
+            title={
+              <SmartLink className="link text-3xl" href={region.path}>
+                {region.name}
+              </SmartLink>
+            }
+            additionalHeaderContent={
+              <div style={{ minHeight: '48px' }}>
+                {createSubregionLinks(region)}
+              </div>
+            }
             body={createRegionsCardBody(region)}
-            actions={[
-              {
-                url: region.path,
-                label: 'View Region',
-              },
-            ]}
           />
         ))}
       </section>
@@ -95,26 +98,26 @@ const RegionsPage: FC<Props> = ({
 export default RegionsPage
 
 export const query = graphql`
-  query MyQuery($id: String) {
-    markdownRemark(id: { eq: $id }) {
-      id
-    }
-    regions: allDaRegion {
+  query RegionsPageQuery {
+    regions: allDaRegion(sort: { fields: name }) {
       nodes {
         path
         name
+        overview
         map {
           relativePath
           alt
           image {
             gatsbyImageData(
-              width: 640
+              width: 256
               aspectRatio: 1
               transformOptions: { fit: COVER }
             )
           }
         }
-        overview
+        population {
+          count
+        }
         subregions {
           path
           name
