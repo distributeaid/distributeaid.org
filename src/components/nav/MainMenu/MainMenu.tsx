@@ -13,6 +13,7 @@ const linksHardcoded: NavLinkItem[] = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about-us/' },
   { label: 'Regions', path: '/regions/' },
+  { label: 'Needs', path: '/needs-assessments/explorer/' },
 ]
 
 const routeLinks: NavLinkItem[] = [
