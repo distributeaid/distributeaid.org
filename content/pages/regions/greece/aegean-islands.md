@@ -10,15 +10,15 @@ introduction: The Aegean Islands are a group of small Greek islands in the Aegea
   fake or no lifejackets, and sending boats despite poor sea conditions.
 governmentResponse: 'Greece has been moving towards a US-style detention and deportation
   system. Greece recently took over responsibility for making cash support payments
-  to asylum seekers from the UNHCR, but tethered it to detention and cut large numbers
+  to asylum seekers from the UNHCR but tethered it to detention and cut large numbers
   of recipients from receiving aid. This is [creating a human rights](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
   and [hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
   A [€130 million project funded by the EU commission](https://05cd942b-77f4-4d21-b3ea-797e75ad39b3.filesusr.com/ugd/0d6197_ec32a14581f044499e32a3f8dca9775f.pdf)
   to build camps on Samos, Kos and Leros is completed. Plans remain to build closed
   facilities on Lesvos and Chios. Humanitarians have concerns about camp conditions:
-  access to education for children, sufficient services to be provided to the residents,
-  for human rights observation, or for the freedoms of asylum seekers e.g. to come
-  and go.'
+  insufficient access to education for children, insufficient services for residents,
+  restrictions on human rights observation, and limitated freedoms of asylum seekers
+  to come and go.'
 populationCount: 3100
 populationDescription: There have been increases in [illegal mass asylum rejections
   and deportations](https://www.infomigrants.net/en/post/33636/asylum-seekers-facing-rejection-in-greece-we-cannot-clap-with-one-hand),
@@ -59,7 +59,7 @@ stayInformedLinks:
     and other population trends.
 name: Aegean Islands
 overview: |-
-  The Aegean Islands are a group of small Greek islands in the Aegean Sea, located just a few kilometres west of Turkey. Their close proximity to the Turkish coast makes them a destination for many people seeking safety in Europe. However, smugglers have employed life-threatening and money-saving tactics, such as using unsuitable boats, providing insufficient fuel to complete the crossing, fake or no lifejackets, and sending boats despite poor sea conditions.
+  The Aegean Islands are a group of small Greek islands in the Aegean Sea, located just a few kilometres west of Turkey. Their proximity to the Turkish coast makes them a destination for many people seeking safety in Europe. However, smugglers have employed life-threatening and money-saving tactics, such as using unsuitable boats, providing insufficient fuel to complete the crossing, supplying fake or no lifejackets, and sending boats despite poor sea conditions.
 
   Islands that host refugee camps include Lesvos, Samos, Chios, Leros, Kos, and Crete.
 map: "/uploads/aegean-islands-subregion-map.png"
