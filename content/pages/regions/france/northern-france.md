@@ -53,14 +53,14 @@ stayInformedLinks:
     years since the Calais jungle was dismantled.
 subRegion: Northern France
 name: Northern France
-overview: The number of displaced people in Northern France continuously fluctuates,
-  as it hosts a transient community. Many people reach Northern France after months
-  of travelling hoping to cross the channel to the UK. [Calais and the surrounding
-  area host around 2,000 refugees](https://www.aljazeera.com/news/2021/12/23/we-all-get-scared-migrants-in-calais-face-fear-determination),
+overview: The number of displaced people in Northern France continuously fluctuates
+  because the community it hosts is highly transient. Many people reach Northern France
+  after months of travel, hoping to cross the English Channel to the UK. [Calais and
+  the surrounding area host around 2,000 refugees](https://www.aljazeera.com/news/2021/12/23/we-all-get-scared-migrants-in-calais-face-fear-determination),
   which will likely increase given the situation in Ukraine. In 2021, [an estimated
   35,382 people attempted to cross the English Channel](https://ecre.org/channel-crossings-soar-in-2021-with-no-legal-routes-fears-for-displaced-following-calais-funding-cut-warm-welcome-illusive-as-resettlement-flops/),
   almost three times as many as in 2020. This is likely due to other routes being
-  closed or more difficult to access, rather than an overall increase in people seeking
+  closed or more challenging to access rather than an overall increase in people seeking
   asylum. Many people making this journey speak English, have family or friends in
   the UK, and/or have been subject to state violence in other countries, deterring
   them from claiming asylum there.
@@ -69,7 +69,7 @@ population:
   count: 
   trend: Increasing
   description: |-
-    Fluctuating, likely to increase. It is difficult to gather accurate data on the number of displaced people in Northern France. The population is largely on the move, and the French government continues to refuse support from the UN, so very few official statistics are collected.
+    The numbers are fluctuating but are likely to increase. It is difficult to gather accurate data on the number of displaced people in Northern France. The population is largely on the move, and the French government continues to refuse support from the UN, so very few official statistics are collected.
 
     There are typically the most people on the move in Northern France during the summer months, with the least during the winter.
   needsTotal: 
