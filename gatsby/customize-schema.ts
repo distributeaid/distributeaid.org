@@ -18,6 +18,90 @@ export default {
   },
 
   /*
+  Place
+  ================================================================================
+  */
+
+  /*
+  Region
+  ------------------------------------------------------------
+  */
+  definePlaceTypes: ({
+    actions: { createTypes },
+  }: CreateSchemaCustomizationArgs) => {
+    const typeDefs = `
+      type DARegion implements Node {
+        slug: String!
+        path: String!
+
+        name: String!
+        overview: String
+        governmentResponse: String
+        longText: String
+
+        map: DAPhoto
+        population: DAPlacePopulation
+        newsUpdates: DAUpdatesList
+        stayInformed: DALinksList
+        subregions: [DASubregion!]!
+      }
+
+      type DASubregion implements Node {
+        slug: String!
+        path: String!
+
+        name: String!
+        overview: String
+        governmentResponse: String
+        longText: String
+
+        map: DAPhoto
+        population: DAPlacePopulation
+        newsUpdates: DAUpdatesList
+        stayInformed: DALinksList
+        region: DARegion!
+      }
+
+      type DAPlacePopulation {
+        needsTotal: Int
+        totalItemsRequested: Int
+        ngoBeneficiaries: Int
+        ngoPopulation: Int
+        ngoRespondents: Int
+        count: Int
+        trend: String
+        description: String
+      }
+
+      type DAUpdatesList {
+        title: String
+        visibleCount: Int
+        updates: [DAUpdate!]!
+      }
+
+      type DAUpdate {
+        title: String!
+        content: String!
+        date: Date
+        pinned: Boolean
+      }
+
+      type DALinksList {
+        title: String
+        links: [DAUpdate!]!
+      }
+
+      type DALink {
+        label: String!
+        url: String!
+        description: String
+      }
+    `
+
+    createTypes(typeDefs)
+  },
+
+  /*
   Need
   ================================================================================
   */

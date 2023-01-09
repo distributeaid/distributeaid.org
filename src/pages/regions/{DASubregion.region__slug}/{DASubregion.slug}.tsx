@@ -1,4 +1,5 @@
 import SmartLink from '@components/link/SmartLink'
+import LinksList from '@components/list/LinksList'
 import UpdatesList from '@components/list/UpdatesList'
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
@@ -33,14 +34,21 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </small>
       </h1>
 
-      <section className="text-center p-4 bg-navy-100 m-auto">
-        <h2 className="text-center text-2xl text-navy-700">Overview</h2>
-        <div className="text-center m-auto">
+      <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
+        <div className="p-4 bg-navy-100">
+          <h2 className="text-center text-2xl text-navy-700">Overview</h2>
           <MarkdownContent content={subregion.overview} />
         </div>
-      </section>
+        <div className="p-4 bg-navy-50">
+          <h2 className="text-center text-2xl text-navy-700">
+            Government Response
+          </h2>
+          <MarkdownContent content={subregion.governmentResponse} />
+        </div>
+      </div>
 
       <UpdatesList list={subregion.newsUpdates} />
+      <LinksList list={subregion.stayInformed} />
     </SimpleLayout>
   )
 }
@@ -51,10 +59,31 @@ export const query = graphql`
   query ($id: String!) {
     subregion: daSubregion(id: { eq: $id }) {
       name
-      map {
-        gatsbyImageData
-      }
       overview
+      governmentResponse
+      longText
+
+      map {
+        relativePath
+        alt
+        image {
+          gatsbyImageData(
+            width: 640
+            aspectRatio: 1.2
+            transformOptions: { fit: COVER }
+          )
+        }
+      }
+      population {
+        needsTotal
+        totalItemsRequested
+        ngoBeneficiaries
+        ngoPopulation
+        ngoRespondents
+        count
+        trend
+        description
+      }
       newsUpdates {
         title
         visibleCount
@@ -65,6 +94,15 @@ export const query = graphql`
           pinned
         }
       }
+      stayInformed {
+        title
+        links {
+          label
+          url
+          description
+        }
+      }
+
       region {
         path
         name
