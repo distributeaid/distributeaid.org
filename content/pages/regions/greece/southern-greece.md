@@ -1,8 +1,16 @@
 ---
 population:
-  count: 7098
+  count: 
   trend: Unkown
-  description: ''
+  description: Northern Greece and Athens host a combination of people in transit
+    and people actively seeking asylum or looking for permanent residence. Once someone
+    gains refugee status, they may settle on the mainland and no longer access NGO
+    services. Therefore using ‘refugee figures’ in Greece is not particularly insightful.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 1268
+  ngoPopulation: 6500
+  ngoRespondents: 4
 newsUpdates:
   title: Updates
   visibleCount: 3
@@ -25,5 +33,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
