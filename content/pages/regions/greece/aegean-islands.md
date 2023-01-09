@@ -62,7 +62,7 @@ overview: |-
   The Aegean Islands are a group of small Greek islands in the Aegean Sea, located just a few kilometres west of Turkey. Their close proximity to the Turkish coast makes them a destination for many people seeking safety in Europe. However, smugglers have employed life-threatening and money-saving tactics, such as using unsuitable boats, providing insufficient fuel to complete the crossing, fake or no lifejackets, and sending boats despite poor sea conditions.
 
   Islands that host refugee camps include Lesvos, Samos, Chios, Leros, Kos, and Crete.
-map: ''
+map: "/uploads/aegean-islands-subregion-map.png"
 population:
   count: 4737
   trend: Increasing
