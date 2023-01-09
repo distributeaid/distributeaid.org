@@ -52,9 +52,14 @@ subregions:
 - content/pages/regions/the-balkans/bosnia.md
 - content/pages/regions/the-balkans/croatia.md
 population:
-  count: 
-  trend: ''
+  count: 10.756
+  trend: Increasing
   description: ''
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 4969
+  ngoPopulation: 8452
+  ngoRespondents: 5
 coverPhoto:
   asset: ''
   caption: " "
@@ -63,5 +68,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
