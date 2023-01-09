@@ -20,7 +20,7 @@ overview: 'According to the UNHCR over 1.7 million [Ukrainian refugees had enter
   by the end of August 2022. However, Romania has largely been a country of transition,
   since 94.9% of Ukranians who have entered have also departed from Romania to move
   onward to other countries or back to Ukraine. '
-map: ''
+map: "/uploads/romania-subregion-map.png"
 governmentResponse: Romanian authorities have on numerous occasions been accused of
   [violent pushbacks](https://www.amnesty.org/en/location/europe-and-central-asia/romania/report-romania/).
   Despite this, Romania is becoming [a more frequently used route](https://www.infomigrants.net/en/post/32629/romania-poor-peoples-route-to-europe)
