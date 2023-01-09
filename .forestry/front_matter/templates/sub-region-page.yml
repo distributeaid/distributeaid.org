@@ -100,7 +100,7 @@ fields:
     config:
       min: 0
       max: 
-      step: 
+      step: 1
   - name: trend
     type: select
     default: ''
