@@ -1,10 +1,15 @@
 ---
 population:
-  count: 80498
-  trend: Decreasing
+  count: 103800
+  trend: Increasing
   description: Up. Russia’s invasion of Ukraine has created [some 10.7 million refugees](https://data2.unhcr.org/en/situations/ukraine/location?secret=unhcrrestricted).
     Around 4.2 million have fled Ukraine, most travelling westward to the bordering
     states of Poland, Slovakia, and Hungary.
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 70
+  ngoPopulation: 
+  ngoRespondents: 1
 newsUpdates:
   title: News Updates
   visibleCount: 3
@@ -37,5 +42,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
