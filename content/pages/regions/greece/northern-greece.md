@@ -25,7 +25,7 @@ newsUpdates:
 stayInformedLinks: []
 name: Northern Greece
 overview: |-
-  The refugee solidarity response in Northern Greece is centered around Thessaloniki.  The city hosts a variety of community-run infrastructure, including warehouses, informal schools, social centers, and squats.  The main warehousing hub in Northern Greece is run by [IHA](https://www.iha.help/), and supplies both projects in the city as well as camps in the surrounding smaller towns.
+  The refugee solidarity response in Northern Greece is centred around Thessaloniki.  The city hosts a variety of community-run infrastructure, including warehouses, informal schools, social centres, and squats.  The central warehousing hub in Northern Greece is run by [IHA](https://www.iha.help/); it supplies projects in the city as well as camps in the surrounding smaller towns.
 
   Displaced people in this sub-region may [seek permanent residence or prepare to travel further west](https://www.refugeesintowns.org/thessaloniki).
 map: "/uploads/nothern-greece-subregion-map.png"
