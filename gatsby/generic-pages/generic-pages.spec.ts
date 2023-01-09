@@ -54,7 +54,7 @@ describe('Processes Page Data', () => {
     expect(argsMock.reporter.panic.mock.calls.length).toBe(0)
   })
 
-  it('logs an error on empty pages', () => {
+  it('logs a warning on empty pages', () => {
     // build our input
     const pageData = factory.getPageData()
 
@@ -73,8 +73,8 @@ describe('Processes Page Data', () => {
 
     // check side-effects
     expect(argsMock.reporter.log.mock.calls.length).toBe(0)
-    expect(argsMock.reporter.warn.mock.calls.length).toBe(0)
-    expect(argsMock.reporter.error.mock.calls.length).toBe(1)
+    expect(argsMock.reporter.warn.mock.calls.length).toBe(1)
+    expect(argsMock.reporter.error.mock.calls.length).toBe(0)
     expect(argsMock.reporter.panic.mock.calls.length).toBe(0)
   })
 
