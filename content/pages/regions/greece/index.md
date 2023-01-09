@@ -113,6 +113,11 @@ population:
   count: 
   trend: ''
   description: ''
+  needsTotal: 
+  totalItemsRequested: 
+  ngoBeneficiaries: 3800
+  ngoPopulation: 39000
+  ngoRespondents: 8
 coverPhoto:
   asset: ''
   caption: " "
@@ -121,5 +126,6 @@ coverPhoto:
   date: 
   altText: " "
   tags: []
+longText: ''
 
 ---
