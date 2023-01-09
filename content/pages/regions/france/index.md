@@ -27,10 +27,10 @@ governmentResponse: Displaced people in France face “[inhuman and degrading li
   conditions, as well as police abuse and harassment](https://www.hrw.org/world-report/2021/country-chapters/france).”
   The state sometimes provides emergency shelter during particularly cold weather,
   but almost all migrants are forced to live outside in makeshift camps. Police minimise
-  livable areas and frequently seize property. [Human Rights Observers witnessed](https://humanrightsobservers.org/monthly-observations/)
-  at least 156 evictions in February alone, and roughly 627 tents and tarps were destroyed
-  across Calais and Grande-Synthe. These evictions [regularly subject people to violence
-  and police brutality](http://www.laubergedesmigrants.fr/wp-content/uploads/2021/05/HRO-2020-Annual-Report_All.pdf).
+  livable areas and frequently seize property. [Human Rights Observers witnessed at
+  least 156 evictions in February alone, and roughly 627 tents and tarps were destroyed
+  across Calais and Grande-Synthe.](https://humanrightsobservers.org/monthly-observations/)
+  These evictions [regularly subject people to violence and police brutality](http://www.laubergedesmigrants.fr/wp-content/uploads/2021/05/HRO-2020-Annual-Report_All.pdf).
 subregions:
 - content/pages/regions/france/northern-france.md
 population:
