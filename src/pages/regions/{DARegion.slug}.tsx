@@ -32,25 +32,16 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         }}
         className="prose max-w-none py-8 flex justify-center items-center gap-x-4"
       >
-        <SmartLink href={region.path}>
-          <div className="bg-white rounded-full p-2 drop-shadow-md hover:drop-shadow-lg">
-            <GatsbyImage
-              image={region.map.image.gatsbyImageData}
-              alt={region.map.alt}
-              className="w-36 h-36"
-            />
-          </div>
-        </SmartLink>
+        <div className="bg-white rounded-full p-2 drop-shadow-md">
+          <GatsbyImage
+            image={region.map.image.gatsbyImageData}
+            alt={region.map.alt}
+            className="w-36 h-36"
+          />
+        </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">
-            <SmartLink
-              href={region.path}
-              className="text-navy-700 no-underline"
-            >
-              {region.name}
-            </SmartLink>
-          </h1>
+          <h1 className="mb-0">{region.name}</h1>
           <nav className="text-xl">
             {region.subregions.map((subregion, index, array) => {
               const seperator = getOxfordCommaSeparator(index, array)
@@ -67,18 +58,28 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         </div>
       </header>
 
-      {/*      <ul className="flex justify-evenly my-5 text-2xl">
-        {region.subregions.map((subregion, i) => {
-          return (
-            <li key={i}>
-              <SmartLink className="link" href={subregion.path}>
-                {subregion.name}
-              </SmartLink>
-            </li>
-          )
-        })}
+      <ul className="flex justify-evenly my-5 text-2xl">
+        <li>
+          <SmartLink className="link" href={region.path}>
+            Overview
+          </SmartLink>
+        </li>
+        <li>
+          <SmartLink
+            className="link"
+            href={`/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22region%22%3A%22${region.name.replace(
+              ' ',
+              '+',
+            )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Subregion%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Needs+In+${region.name.replace(
+              ' ',
+              '+',
+            )}`}
+          >
+            Needs
+          </SmartLink>
+        </li>
       </ul>
-*/}
+
       <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
         <div className="p-4 bg-navy-100">
           <h2 className="text-center text-2xl text-navy-700">Overview</h2>

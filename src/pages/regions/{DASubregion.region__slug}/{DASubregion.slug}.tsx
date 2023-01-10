@@ -42,14 +42,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">
-            <SmartLink
-              href={subregion.path}
-              className="text-navy-700 no-underline"
-            >
-              {subregion.name}
-            </SmartLink>
-          </h1>
+          <h1 className="mb-0">{subregion.name}</h1>
           <nav className="text-xl">
             <SmartLink className="link" href="/regions/">
               All Regions
@@ -61,6 +54,28 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
           </nav>
         </div>
       </header>
+
+      <ul className="flex justify-evenly my-5 text-2xl">
+        <li>
+          <SmartLink className="link" href={subregion.path}>
+            Overview
+          </SmartLink>
+        </li>
+        <li>
+          <SmartLink
+            className="link"
+            href={`/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22subregion%22%3A%22${subregion.name.replace(
+              ' ',
+              '+',
+            )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Need+in+the+${subregion.name.replace(
+              ' ',
+              '+',
+            )}+%28${subregion.name.replace(' ', '+')}%29`}
+          >
+            Needs
+          </SmartLink>
+        </li>
+      </ul>
 
       <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
         <div className="p-4 bg-navy-100">
