@@ -170,6 +170,16 @@ fields:
     schema:
       format: markdown
   label: Wiki Text
+- name: needs
+  type: field_group
+  config: {}
+  fields:
+  - name: needsURL
+    type: text
+    config:
+      required: false
+    label: Needs URL
+  label: Needs
 pages:
 - content/pages/South Lebanon.md
 - content/pages/Southern Lebanon.md
