@@ -6,7 +6,7 @@ desc: ''
 sections:
 - template: section-grid
   metadata:
-    margins: Default
+    margins: Banner
     numCols: 1
     numRows: 1
     layout: Column-Bound
