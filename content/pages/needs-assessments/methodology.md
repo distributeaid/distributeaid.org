@@ -20,10 +20,10 @@ sections:
 
       The information contained in our needs assessment reporting can be broken down into four categories:
 
-      1. Needed Items: This data describes the types and quantities of aid items that humanitarian aid organisations need. It is based on surveying groups in Distribute Aid’s network.
-      2. Population Statistics: This includes population size and migration trends for displaced people in each region. This data is based on a mix of survey data from groups in Distribute Aid’s network and official statistics.
-      3. Regional Context: This qualitative information about the humanitarian situation in different regions is curated by Distribute Aid team members and includes hyperlinked citations to news stories / official figures where appropriate.
-      4. Unmet Human Needs: This measures of the extent to which the basic human needs of displaced people still need to be met. We rely on the internationally-recognised Sphere Standards, plus some additional DA-specific methodology, to translate Needed Items data into a quantitative number of “unmet human needs.”
+      1. **Needed Items:** This data describes the types and quantities of aid items that humanitarian aid organisations need. It is based on surveying groups in Distribute Aid’s network.
+      2. **Population Statistics:** This includes population size and migration trends for displaced people in each region. This data is based on a mix of survey data from groups in Distribute Aid’s network and official statistics.
+      3. **Regional Context:** This qualitative information about the humanitarian situation in different regions is curated by Distribute Aid team members and includes hyperlinked citations to news stories / official figures where appropriate.
+      4. **Unmet Human Needs:** This measures of the extent to which the basic human needs of displaced people still need to be met. We rely on the internationally-recognised Sphere Standards, plus some additional DA-specific methodology, to translate Needed Items data into a quantitative number of “unmet human needs.”
 
       This page goes into more detail about each of these.
 - template: section-grid
