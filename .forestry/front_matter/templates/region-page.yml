@@ -182,6 +182,16 @@ fields:
     schema:
       format: markdown
   label: Wiki Text
+- name: needs
+  type: field_group
+  config: {}
+  fields:
+  - name: needsUrl
+    type: text
+    config:
+      required: false
+    label: Needs URL
+  label: Needs
 pages:
 - content/pages/regions/eastern-europe/index.md
 - content/pages/regions/france/index.md
