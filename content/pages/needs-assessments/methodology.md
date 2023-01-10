@@ -40,7 +40,7 @@ sections:
     text: |-
       The most prominent information emerging from the needs assessment process is data which describes the types and quantities of aid items that humanitarian organisations need. Distribute Aid gathers this data by sending a quarterly survey to our partners on the ground with instructions to indicate how much of each item they need for the ensuing three months. Hence, Distribute Aid releases new data four times a year.
 
-      Distribute Aid works primarily with groups supporting displaced people, and the needs described on this website are those reported by these groups. It is important to note that our needs assessment data is not (and does not claim to be) a definitive picture of the needs of every single displaced or otherwise disadvantaged person in each region in which we operate. Still, the information is useful for demonstrating the vast magnitude of unmet needs and determining which aid items definitely **_are_** needed by some groups in the region.
+      Distribute Aid works primarily with groups supporting displaced people, and the needs described on this website are those reported by these groups. It is important to note that our needs assessment data is not (and does not claim to be) a definitive picture of the needs of every single displaced or otherwise disadvantaged person in each region in which we operate. Still, the information is useful for demonstrating the vast magnitude of unmet needs and determining which aid items definitely are needed by some groups in the region.
 
       Using our needs explorer, you can see what items are needed and filter the information by region, item category, and specific item.
 - template: section-grid
