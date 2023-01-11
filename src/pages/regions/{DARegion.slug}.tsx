@@ -87,6 +87,16 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
   }
   // HACK END
 
+  region.subregions.sort((subregionA, subregionB) => {
+    if (subregionA.name > subregionB.name) {
+      return 1
+    } else if (subregionA.name < subregionB.name) {
+      return -1
+    } else {
+      return 0
+    }
+  })
+
   return (
     <SimpleLayout>
       <header
@@ -105,18 +115,44 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 
         <div className="flex flex-col justify-center">
           <h1 className="mb-0">{region.name}</h1>
-          <nav className="text-xl">
-            {region.subregions.map((subregion, index, array) => {
-              const seperator = getOxfordCommaSeparator(index, array)
-              return (
-                <span key={subregion.name}>
-                  {seperator}
-                  <SmartLink className="link" href={subregion.path}>
-                    {subregion.name}
-                  </SmartLink>
+          <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
+          <nav className="text-xl flex gap-4 pt-2">
+            <div className="flex">
+              <SmartLink className="link" href="/regions/">
+                All Regions
+              </SmartLink>
+              <div>
+                <span className="relative -top-2 left-1 text-4xl text-navy-700">
+                  &#10095;
                 </span>
-              )
-            })}
+              </div>
+            </div>
+
+            <div>
+              <span className="relative -top-4 text-4xl text-navy-700">
+                &#8609;
+              </span>
+            </div>
+
+            <div className="flex">
+              <div>
+                <span className="relative -top-2 -left-1 text-4xl text-navy-700">
+                  &#10095;
+                </span>
+              </div>
+
+              {region.subregions.map((subregion, index, array) => {
+                const seperator = getOxfordCommaSeparator(index, array)
+                return (
+                  <span key={subregion.name}>
+                    {seperator}
+                    <SmartLink className="link" href={subregion.path}>
+                      {subregion.name}
+                    </SmartLink>
+                  </span>
+                )
+              })}
+            </div>
           </nav>
         </div>
       </header>

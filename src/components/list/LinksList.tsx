@@ -19,17 +19,15 @@ const LinksList: FC<Props> = ({ list: { title, links } }) => {
       {title && (
         <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
       )}
-      <dl className="p-4">
+      <dl>
         {links.map(({ label, url, description }, i) => (
-          <div className="p-7" key={i}>
-            <dt className="text-center text-2xl">
+          <div className="mb-6 last:mb-0" key={i}>
+            <dt>
               <SmartLink className="link" href={url}>
                 {label}
               </SmartLink>
             </dt>
-            <dd className="prose mx-auto mb-4 max-w-xl py-2 text-center">
-              {description}
-            </dd>
+            <dd>{description}</dd>
           </div>
         ))}
       </dl>

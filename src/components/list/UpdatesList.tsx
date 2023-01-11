@@ -13,7 +13,7 @@ const LinksList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
   // todo: limit by visibleCount
 
   return (
-    <div>
+    <div className="prose">
       {/*
         NOTE: depreciating titles here
               preferred way is to use '/src/components/section/blocks/BlockLinksList.tsx'
@@ -22,21 +22,17 @@ const LinksList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
       {title && (
         <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
       )}
-      <ol className="p-4">
-        {updates.map(({ title, date, content }, i) => (
-          <li className="p-7" key={i}>
-            <h3 className="text-center text-2xl">{title}</h3>
-            <p className="py-4 text-center">
+      {updates.map(({ title, date, content }, i) => (
+        <article key={i} className="mb-6 last:mb-0">
+          <header className="flex justify-between items-end">
+            <h3 className="mb-0">{title}</h3>
+            <p className="mb-0 italic text-gray-600">
               {new Date(date).toLocaleDateString()}
             </p>
-            <div className="w-full">
-              <article className="prose mx-auto mb-4 max-w-xl py-2 text-center text-gray-800 sm:text-lg">
-                <MarkdownContent content={content} />
-              </article>
-            </div>
-          </li>
-        ))}
-      </ol>
+          </header>
+          <MarkdownContent content={content} />
+        </article>
+      ))}
     </div>
   )
 }
