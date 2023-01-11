@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { BlockTitleNode } from '../../../types/generic-page.d'
+import { BlockTitle as BlockTitleType } from '../../../types/generic-page.d'
 
 type BlockTitleProps = {
-  block: BlockTitleNode
+  block: BlockTitleType
 }
 
 export const BlockTitle: FC<BlockTitleProps> = ({ block }) => {

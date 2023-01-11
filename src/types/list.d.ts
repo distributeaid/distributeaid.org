@@ -3,11 +3,11 @@ Links List
 ================================================================================
 */
 export type LinksList = {
-  title: string
+  title?: string
   links: {
     label: string
     url: string
-    description: string
+    description?: string
   }[]
 }
 
@@ -16,7 +16,7 @@ Updates List
 ================================================================================
 */
 export type UpdatesList = {
-  title: string
+  title?: string
   visibleCount: number
   updates: {
     title: string

@@ -1,11 +1,15 @@
 import { FC } from 'react'
 import {
+  BlockLinksList as BlockLinksListType,
   BlockNode,
-  BlockTextNode,
-  BlockTitleNode,
+  BlockText as BlockTextType,
+  BlockTitle as BlockTitleType,
+  BlockUpdatesList as BlockUpdatesListType,
 } from '../../types/generic-page.d'
+import { BlockLinksList } from './blocks/BlockLinksList'
 import { BlockText } from './blocks/BlockText'
 import { BlockTitle } from './blocks/BlockTitle'
+import { BlockUpdatesList } from './blocks/BlockUpdatesList'
 
 type BlocksProps = {
   blocks: BlockNode[]
@@ -24,9 +28,13 @@ type BlockProps = {
 export const Block: FC<BlockProps> = ({ block }) => {
   switch (block.internal.type) {
     case 'DABlockTitle':
-      return <BlockTitle block={block as BlockTitleNode} />
+      return <BlockTitle block={block as BlockTitleType} />
     case 'DABlockText':
-      return <BlockText block={block as BlockTextNode} />
+      return <BlockText block={block as BlockTextType} />
+    case 'DABlockLinksList':
+      return <BlockLinksList block={block as BlockLinksListType} />
+    case 'DABlockUpdatesList':
+      return <BlockUpdatesList block={block as BlockUpdatesListType} />
 
     // wishlist
     case 'DABlockYoutube':

@@ -14,12 +14,21 @@ const LinksList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
+      {/*
+        NOTE: depreciating titles here
+              preferred way is to use '/src/components/section/blocks/BlockLinksList.tsx'
+              which will render the title as a title block
+      */}
+      {title && (
+        <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
+      )}
       <ol className="p-4">
         {updates.map(({ title, date, content }, i) => (
           <li className="p-7" key={i}>
             <h3 className="text-center text-2xl">{title}</h3>
-            <p className="py-4 text-center">{new Date(date).toUTCString()}</p>
+            <p className="py-4 text-center">
+              {new Date(date).toLocaleDateString()}
+            </p>
             <div className="w-full">
               <article className="prose mx-auto mb-4 max-w-xl py-2 text-center text-gray-800 sm:text-lg">
                 <MarkdownContent content={content} />

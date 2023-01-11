@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { BlockTextNode } from '../../../types/generic-page.d'
+import { BlockText as BlockTextType } from '../../../types/generic-page.d'
 import { MarkdownContent } from '../../markdown/MarkdownContent'
 
 type BlockTextProps = {
-  block: BlockTextNode
+  block: BlockTextType
 }
 
 export const BlockText: FC<BlockTextProps> = ({ block }) => {

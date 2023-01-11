@@ -11,7 +11,14 @@ type Props = {
 const LinksList: FC<Props> = ({ list: { title, links } }) => {
   return (
     <div>
-      <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
+      {/*
+        NOTE: depreciating titles here
+              preferred way is to use '/src/components/section/blocks/BlockLinksList.tsx'
+              which will render the title as a title block
+      */}
+      {title && (
+        <h2 className="text-center text-3xl text-navy-700 mt-2">{title}</h2>
+      )}
       <dl className="p-4">
         {links.map(({ label, url, description }, i) => (
           <div className="p-7" key={i}>
