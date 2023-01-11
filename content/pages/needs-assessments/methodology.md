@@ -6,7 +6,7 @@ desc: ''
 sections:
 - template: section-grid
   metadata:
-    margins: Banner
+    margins: Default
     numCols: 1
     numRows: 1
     layout: Column-Bound
@@ -20,10 +20,10 @@ sections:
 
       The information contained in our needs assessment reporting can be broken down into four categories:
 
-      1. **Needed Items:** This data describes the types and quantities of aid items that humanitarian aid organisations need. It is based on surveying groups in Distribute Aid’s network.
-      2. **Population Statistics:** This includes population size and migration trends for displaced people in each region. This data is based on a mix of survey data from groups in Distribute Aid’s network and official statistics.
-      3. **Regional Context:** This qualitative information about the humanitarian situation in different regions is curated by Distribute Aid team members and includes hyperlinked citations to news stories / official figures where appropriate.
-      4. **Unmet Human Needs:** This measures of the extent to which the basic human needs of displaced people still need to be met. We rely on the internationally-recognised Sphere Standards, plus some additional DA-specific methodology, to translate Needed Items data into a quantitative number of “unmet human needs.”
+      1. Needed Items: This data describes the types and quantities of aid items that humanitarian aid organisations need. It is based on surveying groups in Distribute Aid’s network.
+      2. Population Statistics: This includes population size and migration trends for displaced people in each region. This data is based on a mix of survey data from groups in Distribute Aid’s network and official statistics.
+      3. Regional Context: This qualitative information about the humanitarian situation in different regions is curated by Distribute Aid team members and includes hyperlinked citations to news stories / official figures where appropriate.
+      4. Unmet Human Needs: This measures of the extent to which the basic human needs of displaced people still need to be met. We rely on the internationally-recognised Sphere Standards, plus some additional DA-specific methodology, to translate Needed Items data into a quantitative number of “unmet human needs.”
 
       This page goes into more detail about each of these.
 - template: section-grid
@@ -40,7 +40,7 @@ sections:
     text: |-
       The most prominent information emerging from the needs assessment process is data which describes the types and quantities of aid items that humanitarian organisations need. Distribute Aid gathers this data by sending a quarterly survey to our partners on the ground with instructions to indicate how much of each item they need for the ensuing three months. Hence, Distribute Aid releases new data four times a year.
 
-      Distribute Aid works primarily with groups supporting displaced people, and the needs described on this website are those reported by these groups. It is important to note that our needs assessment data is not (and does not claim to be) a definitive picture of the needs of every single displaced or otherwise disadvantaged person in each region in which we operate. Still, the information is useful for demonstrating the vast magnitude of unmet needs and determining which aid items definitely are needed by some groups in the region.
+      Distribute Aid works primarily with groups supporting displaced people, and the needs described on this website are those reported by these groups. It is important to note that our needs assessment data is not (and does not claim to be) a definitive picture of the needs of every single displaced or otherwise disadvantaged person in each region in which we operate. Still, the information is useful for demonstrating the vast magnitude of unmet needs and determining which aid items definitely **_are_** needed by some groups in the region.
 
       Using our needs explorer, you can see what items are needed and filter the information by region, item category, and specific item.
 - template: section-grid
@@ -92,5 +92,7 @@ sections:
       There are some items that Sphere does not consider basic human needs but which, in the context of displaced people, Distribute Aid believes are essential. This includes shampoo, toothpaste, deodorant, shaving foam, disposable razors, and condoms. As such, Distribute Aid counts needs for these items as unmet human needs alongside Sphere-recognised needs. Additionally, to measure unmet shelter needs, Distribute Aid looks at needs for items like tents. Although items like tents are not considered to meet Sphere needs, these items are often in high demand among humanitarian groups. and can be used as a proxy for estimating shelter needs that, per Sphere, can only truly be met with a safe, warm, permanent dwelling. This reflects two realities: (1) many people on the move and asylum seekers in Europe face deplorable living conditions, and (2) grassroots NGOs lack the capacity to provide people on the move with shelter that meets durability and square meterage requirements.
 
       Other items may be highly needed and useful but are not considered to meet basic human needs. For example, educational materials, flashlights, and sun cream fall into this category.
+
+      Food is a basic human need, but the data we collect does not allow us to quantify food needs in the same way we can quantify needs for other goods. The Sphere Handbook's standards for food needs include many variables like nutritional value, calories etc. making an accurate analysis difficult. Needs vary depending on age, gender, atypical needs, and other individual considerations. Hence, with the data we have available, we cannot generate a count of unmet human needs for food.
 
 ---
