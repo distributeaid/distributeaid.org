@@ -5,9 +5,10 @@ import { FC } from 'react'
 import { Region } from '../../types/place.d'
 
 import SmartLink from '@components/link/SmartLink'
-import LinksList from '@components/list/LinksList'
-import UpdatesList from '@components/list/UpdatesList'
 import { PageHeader } from '@components/PageHeader'
+import { BlockLinksList } from '@components/section/blocks/BlockLinksList'
+import { BlockUpdatesList } from '@components/section/blocks/BlockUpdatesList'
+import { SectionGrid } from '@components/section/sections/SectionGrid'
 import SimpleLayout from 'layouts/Simple'
 import { getOxfordCommaSeparator } from 'utils/strings'
 import { getBackgroundColor } from '../../utils/site-theme'
@@ -158,9 +159,30 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
           })}
         </div>
 
-        <div>
-          <LinksList list={region.stayInformed} />
-          <UpdatesList list={region.newsUpdates} />
+        <div className="flex flex-col">
+          {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
+          {region.stayInformed.links.length > 0 && (
+            <div style={{ backgroundColor: getBackgroundColor() }}>
+              <SectionGrid
+                section={getSectionGridNode()}
+                className="prose mx-auto"
+              >
+                <BlockLinksList block={region.stayInformed} />
+              </SectionGrid>
+            </div>
+          )}
+
+          {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
+          {region.newsUpdates.updates.length > 0 && (
+            <div style={{ backgroundColor: getBackgroundColor() }}>
+              <SectionGrid
+                section={getSectionGridNode()}
+                className="prose mx-auto"
+              >
+                <BlockUpdatesList block={region.newsUpdates} />
+              </SectionGrid>
+            </div>
+          )}
         </div>
       </div>
     </SimpleLayout>

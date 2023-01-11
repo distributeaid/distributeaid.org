@@ -86,6 +86,8 @@ describe('Block', () => {
 
   test.todo('can render a youtube block')
   test.todo('can render a timeline block')
+  test.todo('can render a links list block')
+  test.todo('can render an updates list block')
   test.todo('can render an image block')
   test.todo('can render a card block')
 

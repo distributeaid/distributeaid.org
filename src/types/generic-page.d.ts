@@ -1,13 +1,14 @@
 import { Node, NodeInput } from 'gatsby'
+import { LinksList, UpdatesList } from './list.d'
 
 /*
 Page
 ================================================================================
 */
 /**
- * T should be SectionNodeInput or SectionNode
+ * T should be / extend Section
  */
-interface PageGeneric<T> {
+interface PageGenericBase<T> {
   title: string
   slug: string
   /**
@@ -17,10 +18,11 @@ interface PageGeneric<T> {
   sections: T[]
 }
 
+export interface PageGeneric extends PageGenericBase<Section> {}
 export interface PageGenericNodeInput
-  extends PageGeneric<SectionNodeInput>,
+  extends PageGenericBase<SectionNodeInput>,
     NodeInput {}
-export interface PageGenericNode extends PageGeneric<SectionNode>, Node {}
+export interface PageGenericNode extends PageGenericBase<SectionNode>, Node {}
 
 /*
 Sections
@@ -30,6 +32,7 @@ Sections
 /**
  * Union of page section types.
  */
+export type Section = SectionGrid
 export type SectionNodeInput = SectionGridNodeInput
 export type SectionNode = SectionGridNode
 
@@ -39,17 +42,19 @@ Section: Grid
 */
 
 /**
- * T should be BlockNode or BlockNodeInput
+ * T should be / extend Block
  */
-interface SectionGrid<T> {
+interface SectionGridBase<T> {
   options: SectionGridOptions
   blocks: T[]
 }
 
+export interface SectionGrid extends SectionGridBase<Block> {}
+
 export interface SectionGridNodeInput
-  extends SectionGrid<BlockNodeInput>,
+  extends SectionGridBase<BlockNodeInput>,
     NodeInput {}
-export interface SectionGridNode extends SectionGrid<BlockNode>, Node {}
+export interface SectionGridNode extends SectionGridBase<BlockNode>, Node {}
 
 export type SectionGridOptions = {
   rows: Int
@@ -82,11 +87,22 @@ Content Blocks
 /**
  * Union of content block types.
  */
+export type Block =
+  | BlockTitle
+  | BlockText
+  | BlockYoutube
+  | BlockTimeline
+  | BlockLinksList
+  | BlockUpdatesList
+  | BlockImage
+  | BlockCard
 export type BlockNodeInput =
   | BlockTitleNodeInput
   | BlockTextNodeInput
   | BlockYoutubeNodeInput
   | BlockTimelineNodeInput
+  | BlockLinksListNodeInput
+  | BlockUpdatesListNodeInput
   | BlockImageNodeInput
   | BlockCardNodeInput
 export type BlockNode =
@@ -94,6 +110,8 @@ export type BlockNode =
   | BlockTextNode
   | BlockYoutubeNode
   | BlockTimelineNode
+  | BlockLinksListNode
+  | BlockUpdatesListNode
   | BlockImageNode
   | BlockCardNode
 
@@ -101,10 +119,9 @@ export type BlockNode =
 Block: Title
 ------------------------------------------------------------
 */
-interface BlockTitle {
+export interface BlockTitle {
   text: string
 }
-
 export interface BlockTitleNodeInput extends BlockTitle, NodeInput {}
 export interface BlockTitleNode extends BlockTitle, Node {}
 
@@ -112,13 +129,12 @@ export interface BlockTitleNode extends BlockTitle, Node {}
 Block: Text
 ------------------------------------------------------------
 */
-interface BlockText {
+export interface BlockText {
   /**
    * Markdown string
    */
   text: string
 }
-
 export interface BlockTextNodeInput extends BlockText, NodeInput {}
 export interface BlockTextNode extends BlockText, Node {}
 
@@ -126,11 +142,10 @@ export interface BlockTextNode extends BlockText, Node {}
 Block: Youtube
 ------------------------------------------------------------
 */
-interface BlockYoutube {
+export interface BlockYoutube {
   title?: string
   embedUrl: string
 }
-
 export interface BlockYoutubeNodeInput extends BlockYoutube, NodeInput {}
 export interface BlockYoutubeNode extends BlockYoutube, Node {}
 
@@ -138,7 +153,7 @@ export interface BlockYoutubeNode extends BlockYoutube, Node {}
 Block: Timeline
 ------------------------------------------------------------
 */
-interface BlockTimeline {
+export interface BlockTimeline {
   entries: {
     period?: string
     /**
@@ -147,17 +162,31 @@ interface BlockTimeline {
     desc?: string
   }[]
 }
-
 export interface BlockTimelineNodeInput extends BlockTimeline, NodeInput {}
 export interface BlockTimelineNode extends BlockTimeline, Node {}
+
+/*
+Block: Links List
+------------------------------------------------------------
+*/
+export interface BlockLinksList extends LinksList {}
+export interface BlockLinksListNodeInput extends BlockLinksList, NodeInput {}
+export interface BlockLinksListNode extends BlockLinksList, Node {}
+
+/*
+Block: Updates List
+------------------------------------------------------------
+*/
+export interface BlockUpdatesList extends UpdatesList {}
+export interface BlockUpdatesListInput extends BlockUpdatesList, NodeInput {}
+export interface BlockUpdatesListNode extends BlockUpdatesList, Node {}
 
 /*
 Block: Image
 ------------------------------------------------------------
 Stub.
 */
-interface BlockImage {}
-
+export interface BlockImage {}
 export interface BlockImageNodeInput extends BlockImage, NodeInput {}
 export interface BlockImageNode extends BlockImage, Node {}
 
@@ -166,17 +195,6 @@ Block: Card
 ------------------------------------------------------------
 Stub.
 */
-interface BlockImage {}
-
-export interface BlockImageNodeInput extends BlockImage, NodeInput {}
-export interface BlockImageNode extends BlockImage, Node {}
-
-/*
-Block: Card
-------------------------------------------------------------
-Stub.
-*/
-interface BlockCard {}
-
+export interface BlockCard {}
 export interface BlockCardNodeInput extends BlockCard, NodeInput {}
 export interface BlockCardNode extends BlockCard, Node {}

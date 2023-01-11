@@ -1,13 +1,13 @@
 import { FC, PropsWithChildren } from 'react'
 import {
-  SectionGridNode,
+  SectionGrid as SectionGridType,
   SectionGridOptionLayout,
   SectionGridOptionMargin,
   SectionGridOptions,
 } from '../../../types/generic-page.d'
 
 type SectionGridProps = {
-  section: SectionGridNode
+  section: SectionGridType
   className?: string
   [key: string]: any
 }

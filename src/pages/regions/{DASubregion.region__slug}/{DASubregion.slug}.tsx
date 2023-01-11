@@ -1,7 +1,8 @@
 import SmartLink from '@components/link/SmartLink'
-import LinksList from '@components/list/LinksList'
-import UpdatesList from '@components/list/UpdatesList'
 import { PageHeader } from '@components/PageHeader'
+import { BlockLinksList } from '@components/section/blocks/BlockLinksList'
+import { BlockUpdatesList } from '@components/section/blocks/BlockUpdatesList'
+import { SectionGrid } from '@components/section/sections/SectionGrid'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import SimpleLayout from 'layouts/Simple'
@@ -155,9 +156,30 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
           })}
         </div>
 
-        <div>
-          <LinksList list={subregion.stayInformed} />
-          <UpdatesList list={subregion.newsUpdates} />
+        <div className="flex flex-col">
+          {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
+          {subregion.stayInformed.links.length > 0 && (
+            <div style={{ backgroundColor: getBackgroundColor() }}>
+              <SectionGrid
+                section={getSectionGridNode()}
+                className="prose mx-auto"
+              >
+                <BlockLinksList block={subregion.stayInformed} />
+              </SectionGrid>
+            </div>
+          )}
+
+          {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
+          {subregion.newsUpdates.updates.length > 0 && (
+            <div style={{ backgroundColor: getBackgroundColor() }}>
+              <SectionGrid
+                section={getSectionGridNode()}
+                className="prose mx-auto"
+              >
+                <BlockUpdatesList block={subregion.newsUpdates} />
+              </SectionGrid>
+            </div>
+          )}
         </div>
       </div>
     </SimpleLayout>
