@@ -76,6 +76,9 @@ const config = {
           50: '#FFFDFA',
         },
       },
+      width: {
+        '6/5': '120%',
+      },
       minHeight: {
         /**
          * Viewport height minus the header height
@@ -143,11 +146,17 @@ const config = {
               marginBottom: em(36, 36),
               lineHeight: round(48 / 36),
             },
+            'h2:first-child': {
+              marginTop: 0,
+            },
             h3: {
               fontSize: em(20, 16),
               marginTop: em(32, 20),
               marginBottom: em(12, 20),
               lineHeight: round(32 / 20),
+            },
+            'h3:first-child': {
+              marginTop: 0,
             },
 
             '--tw-prose-body': theme('colors.gray[800]'),
