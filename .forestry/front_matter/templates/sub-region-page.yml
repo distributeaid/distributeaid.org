@@ -174,7 +174,7 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: needsURL
+  - name: url
     type: text
     config:
       required: false
