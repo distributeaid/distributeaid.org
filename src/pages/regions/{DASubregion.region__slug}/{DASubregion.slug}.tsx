@@ -1,7 +1,6 @@
 import SmartLink from '@components/link/SmartLink'
 import LinksList from '@components/list/LinksList'
 import UpdatesList from '@components/list/UpdatesList'
-import { MarkdownContent } from '@components/markdown/MarkdownContent'
 import { PageHeader } from '@components/PageHeader'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
@@ -9,6 +8,15 @@ import SimpleLayout from 'layouts/Simple'
 import { FC } from 'react'
 import { Subregion } from '../../../types/place.d'
 import { getBackgroundColor } from '../../../utils/site-theme'
+
+import { Section } from '@components/section/Section'
+
+// imports for HACK, see HACK comment below
+import {
+  getBlockTextNode,
+  getBlockTitleNode,
+  getSectionGridNode,
+} from '../../../types/generic-page.test-helpers'
 
 type TemplateProps = {
   data: {
@@ -25,6 +33,60 @@ export function Head({ data: { subregion } }: TemplateProps) {
 }
 
 const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
+  // HACK START
+  //   goal: use the generic pages stuff
+  //   better way:
+  //     1. Have sections & blocks take the plain data, not the node.
+  //     2. Enable section & block support for custom pages.
+
+  const sections = []
+
+  if (subregion.overview) {
+    sections.push(
+      getSectionGridNode({
+        blocks: [
+          getBlockTitleNode({
+            text: 'Overview',
+          }),
+          getBlockTextNode({
+            text: subregion.overview,
+          }),
+        ],
+      }),
+    )
+  }
+
+  if (subregion.governmentResponse) {
+    sections.push(
+      getSectionGridNode({
+        blocks: [
+          getBlockTitleNode({
+            text: 'Government Response',
+          }),
+          getBlockTextNode({
+            text: subregion.governmentResponse,
+          }),
+        ],
+      }),
+    )
+  }
+
+  if (subregion.longText) {
+    sections.push(
+      getSectionGridNode({
+        blocks: [
+          getBlockTitleNode({
+            text: 'Government Response',
+          }),
+          getBlockTextNode({
+            text: subregion.longText,
+          }),
+        ],
+      }),
+    )
+  }
+  // HACK END
+
   return (
     <SimpleLayout>
       <header
@@ -77,21 +139,27 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </li>
       </ul>
 
-      <div className="flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row">
-        <div className="p-4 bg-navy-100">
-          <h2 className="text-center text-2xl text-navy-700">Overview</h2>
-          <MarkdownContent content={subregion.overview} />
+      <div className="flex">
+        <div className="flex flex-col">
+          {sections.map((section, i) => {
+            return (
+              <div
+                key={i}
+                style={{
+                  backgroundColor: getBackgroundColor(),
+                }}
+              >
+                <Section key={i} section={section} className="prose mx-auto" />
+              </div>
+            )
+          })}
         </div>
-        <div className="p-4 bg-navy-50">
-          <h2 className="text-center text-2xl text-navy-700">
-            Government Response
-          </h2>
-          <MarkdownContent content={subregion.governmentResponse} />
+
+        <div>
+          <LinksList list={subregion.stayInformed} />
+          <UpdatesList list={subregion.newsUpdates} />
         </div>
       </div>
-
-      <UpdatesList list={subregion.newsUpdates} />
-      <LinksList list={subregion.stayInformed} />
     </SimpleLayout>
   )
 }
