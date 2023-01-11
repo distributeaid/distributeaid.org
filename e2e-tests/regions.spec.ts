@@ -17,11 +17,11 @@ test.describe('Regions', () => {
   it('should have a link to a region', async ({ page }) => {
     await page.goto(regionsUrl)
 
-    const regionButton = page.locator(
-      'data-testid=card >> :scope:has-text("Balkans") >> a:has-text("View Region")',
+    const regionLink = page.locator(
+      'data-testid=card >> a:has-text("The Balkans")',
     )
 
-    await regionButton.click()
+    await regionLink.click()
 
     await expect(page).toHaveURL(
       new URL('/regions/the-balkans/', base).toString(),
