@@ -186,14 +186,11 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: needsUrl
+  - name: url
     type: text
     config:
       required: false
-      min: 64
     label: Needs URL
-    description: Only copy the bit after the first slash:<br><br>YES - "/needs-assessments/explorer/?InteractiveNeeds..."<br><br>NO
-      - "https://distributeaid.org/needs-assessments/..."
   label: Needs
 pages:
 - content/pages/regions/eastern-europe/index.md
