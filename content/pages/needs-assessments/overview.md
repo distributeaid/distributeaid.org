@@ -1,7 +1,7 @@
 ---
 template: DAPageGeneric
 title: Needs Assessment Overview
-slug: needs-assessment
+slug: needs-assessments/overview
 desc: ''
 sections:
 - template: section-grid
