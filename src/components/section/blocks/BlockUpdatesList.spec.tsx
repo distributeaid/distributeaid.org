@@ -10,12 +10,12 @@ describe('BlockUpdatesList', () => {
       updates: [
         {
           title: 'An Event',
-          date: '2022-03-09T02:08:54Z',
+          date: '2022-03-09T12:00:00Z',
           content: '**Chaos At Home!** How can you help?',
         },
         {
           title: 'An Announcement',
-          date: '2022-03-10T02:08:54Z',
+          date: '2022-03-10T12:00:00Z',
           content:
             "How to contribute to Distribute Aid's response: \n\n1. Do this.\n2. Then do that.",
         },
@@ -31,9 +31,9 @@ describe('BlockUpdatesList', () => {
     const updateTitle2 = getByText('An Announcement')
     expect(updateTitle2).toBeTruthy()
 
-    const updateDate1 = getByText('3/8/2022')
+    const updateDate1 = getByText('3/9/2022')
     expect(updateDate1).toBeTruthy()
-    const updateDate2 = getByText('3/9/2022')
+    const updateDate2 = getByText('3/10/2022')
     expect(updateDate2).toBeTruthy()
 
     const updateContent1 = getByText('Chaos At Home!')
