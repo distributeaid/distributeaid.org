@@ -105,31 +105,33 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">{subregion.name}</h1>
+          <h1 className="w-6/5 mb-0 text-center">
+            &#8609;{subregion.name}&#8609;
+          </h1>
           <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
           <nav className="text-xl flex gap-2 pt-2">
             <div className="flex">
               <SmartLink className="link" href="/regions/">
                 All Regions
               </SmartLink>
-              <span className="relative -top-2 text-4xl text-navy-700">
-                &#10095;
-              </span>
             </div>
+
+            <span className="relative -top-2 text-4xl text-navy-700">
+              &#10095;
+            </span>
 
             <div className="flex">
               <SmartLink className="link" href={subregion.region.path}>
                 {subregion.region.name}
               </SmartLink>
-              <div>
-                <span className="relative -top-2 text-4xl text-navy-700">
-                  &#10095;
-                </span>
-              </div>
             </div>
 
+            <span className="relative -top-2 text-4xl text-navy-700">
+              &#10095;
+            </span>
+
             <div>
-              <span className="relative -top-4 text-4xl text-navy-700">
+              <span className="relative -top-4 text-5xl text-navy-700">
                 &#8609;
               </span>
             </div>

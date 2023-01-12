@@ -12,3 +12,11 @@ export function getOxfordCommaSeparator(
     return <>, </>
   }
 }
+
+export function getCommaSeparator(index: number, array: any[]): JSX.Element {
+  if (index === 0) {
+    return <></>
+  } else {
+    return <>, </>
+  }
+}
