@@ -15,17 +15,22 @@ sections:
   - template: block-title
     text: Overview
   - template: block-text
-    text: |-
-      This page describes the methodology of Distribute Aid’s needs assessment process.
-
-      The information contained in our needs assessment reporting can be broken down into four categories:
-
-      1. Needed Items: This data describes the types and quantities of aid items that humanitarian aid organisations need. It is based on surveying groups in Distribute Aid’s network.
-      2. Population Statistics: This includes population size and migration trends for displaced people in each region. This data is based on a mix of survey data from groups in Distribute Aid’s network and official statistics.
-      3. Regional Context: This qualitative information about the humanitarian situation in different regions is curated by Distribute Aid team members and includes hyperlinked citations to news stories / official figures where appropriate.
-      4. Unmet Human Needs: This measures of the extent to which the basic human needs of displaced people still need to be met. We rely on the internationally-recognised Sphere Standards, plus some additional DA-specific methodology, to translate Needed Items data into a quantitative number of “unmet human needs.”
-
-      This page goes into more detail about each of these.
+    text: "This page describes the methodology of Distribute Aid’s needs assessment
+      process.\n\nThe information contained in our needs assessment reporting can
+      be broken down into four categories:\n\n1. Needed Items: This data describes
+      the types and quantities of aid items that humanitarian aid organisations need.
+      It is based on surveying groups in Distribute Aid’s network. \n2. Population
+      Statistics: This includes population size and migration trends for displaced
+      people in each region. This data is based on a mix of survey data from groups
+      in Distribute Aid’s network and official statistics.\n3. Regional Context: This
+      qualitative information about the humanitarian situation in different regions
+      is curated by Distribute Aid team members and includes hyperlinked citations
+      to news stories / official figures where appropriate.\n4. Unmet Human Needs:
+      This measures of the extent to which the basic human needs of displaced people
+      still need to be met. We rely on the internationally-recognised Sphere Standards,
+      plus some additional DA-specific methodology, to translate Needed Items data
+      into a quantitative number of “unmet human needs.”\n\nThis page goes into more
+      detail about each of these."
 - template: section-grid
   metadata:
     margins: Default
