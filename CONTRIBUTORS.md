@@ -34,3 +34,5 @@ By contributing to this project you agree to:
 - Tyler Alexander
 - Federico Chaves
 - Daniel C. Silverstein
+- Travis Waith-Mair
+- Jenn Junod
