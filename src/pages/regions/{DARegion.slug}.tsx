@@ -10,7 +10,7 @@ import { BlockLinksList } from '@components/section/blocks/BlockLinksList'
 import { BlockUpdatesList } from '@components/section/blocks/BlockUpdatesList'
 import { SectionGrid } from '@components/section/sections/SectionGrid'
 import SimpleLayout from 'layouts/Simple'
-import { getOxfordCommaSeparator } from 'utils/strings'
+import { getCommaSeparator } from 'utils/strings'
 import { getBackgroundColor } from '../../utils/site-theme'
 
 import { Section } from '@components/section/Section'
@@ -114,35 +114,30 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">{region.name}</h1>
+          <h1 className="w-6/5 mb-0 text-center">
+            &#8609;{region.name}&#8609;
+          </h1>
           <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
           <nav className="text-xl flex gap-4 pt-2">
             <div className="flex">
               <SmartLink className="link" href="/regions/">
                 All Regions
               </SmartLink>
-              <div>
-                <span className="relative -top-2 left-1 text-4xl text-navy-700">
-                  &#10095;
-                </span>
-              </div>
             </div>
+            <span className="relative -top-2 left-1 text-4xl text-navy-700">
+              &#10095;
+            </span>
 
-            <div>
-              <span className="relative -top-4 text-4xl text-navy-700">
-                &#8609;
-              </span>
-            </div>
+            <span className="relative -top-4 text-5xl text-navy-700">
+              &#8609;
+            </span>
 
+            <span className="relative -top-2 -left-1 text-4xl text-navy-700">
+              &#10095;
+            </span>
             <div className="flex">
-              <div>
-                <span className="relative -top-2 -left-1 text-4xl text-navy-700">
-                  &#10095;
-                </span>
-              </div>
-
               {region.subregions.map((subregion, index, array) => {
-                const seperator = getOxfordCommaSeparator(index, array)
+                const seperator = getCommaSeparator(index, array)
                 return (
                   <span key={subregion.name}>
                     {seperator}
