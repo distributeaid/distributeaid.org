@@ -43,7 +43,7 @@ newsUpdates:
   - content: The war in Ukraine has led many Ukrainian nationals to seek temporary
       refuge in Calais while attempting to seek asylum in the UK. As of March 8th,
       [around 600 Ukrainian refugees are in Calais.](https://www.bbc.com/news/uk-wales-politics-60664557)
-    date: '2022-03-09T02:08:54Z'
+    date: 2022-03-09T02:08:54Z
     pinned: false
     title: Ukrainian Refugees Stuck At UK-France Border
 stayInformedLinks:
@@ -89,5 +89,7 @@ coverPhoto:
   altText: " "
   tags: []
 longText: ''
+needs:
+  url: "/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22region%22%3A%22France%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Category%22%2C%22groupBy%22%3A%22Item%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Q1+2023+franc"
 
 ---
