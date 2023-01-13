@@ -42,7 +42,7 @@ newsUpdates:
     content: "[Protests by locals against camp construction](https://www.infomigrants.net/en/post/37728/greek-islanders-block-ship-full-of-construction-materials-for-migrant-camps)
       have been occurring, leading to [arrests](https://www.infomigrants.net/en/post/38429/protesters-detained-after-violence-breaks-out-at-building-site-of-new-greek-migrant-camp)
       after demonstrations turned violent in February."
-    date: '2022-01-10T23:50:23Z'
+    date: 2022-01-10T23:50:23Z
     pinned: false
   - title: Greece Continues Illegal Sea Pushbacks
     content: There have been increases in [illegal mass asylum rejections and deportations](https://www.infomigrants.net/en/post/33636/asylum-seekers-facing-rejection-in-greece-we-cannot-clap-with-one-hand),
@@ -50,7 +50,7 @@ newsUpdates:
       During the week 7th to 13th March 2022 alone, [15 boats carrying 506 people](https://aegeanboatreport.com/weekly-reports/)
       were stopped from reaching the islands by either the Turkish Coast Guard or
       Police.
-    date: '2022-03-07T23:49:40Z'
+    date: 2022-03-07T23:49:40Z
     pinned: false
 stayInformedLinks:
 - linkLabel: Aegean Boat Report
@@ -89,5 +89,7 @@ coverPhoto:
   altText: " "
   tags: []
 longText: ''
+needs:
+  url: "/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22region%22%3A%22Greece%22%2C%22subregion%22%3A%22Aegean+Islands%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Category%22%2C%22groupBy%22%3A%22Item%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Q1+2023+Aegean+islands+"
 
 ---
