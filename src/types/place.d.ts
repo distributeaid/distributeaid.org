@@ -30,6 +30,10 @@ export type Region = {
    * Markdown string
    */
   longText: string
+  /**
+   * Relative URL path: /needs-assessments/explorer
+   */
+  needsUrl: string
 
   map: Photo
   population?: Population
@@ -59,6 +63,10 @@ export type Subregion = {
    * Markdown string
    */
   longText: string
+  /**
+   * Relative URL path: /needs-assessments/explorer
+   */
+  needsUrl: string
 
   map: Photo
   population?: Population

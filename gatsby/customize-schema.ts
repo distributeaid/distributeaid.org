@@ -38,6 +38,7 @@ export default {
         overview: String
         governmentResponse: String
         longText: String
+        needsUrl: String
 
         map: DAPhoto
         population: DAPlacePopulation
@@ -54,6 +55,7 @@ export default {
         overview: String
         governmentResponse: String
         longText: String
+        needsUrl: String
 
         map: DAPhoto
         population: DAPlacePopulation

@@ -1,5 +1,5 @@
 import { getLinksList, getUpdatesList } from './list.test-helpers'
-import { Place, Region, Subregion } from './place.d'
+import { Place, Population, Region, Subregion } from './place.d'
 
 /*
 Place
@@ -23,17 +23,17 @@ export const getRegion = (props?: Record<string, any>): Region => {
     path: '/regions/usa/',
 
     name: 'USA',
+    overview: '# Overview',
+    governmentResponse: '# Gov Response',
+    longText: '# Long Text',
+    needsUrl: '/needs-assessments/explorer',
 
     // map: {
     //   gatsbyImageData: IGatsbyImageData
     // }
-
-    overview: '# Overview',
-    governmentResponse: '# Gov Response',
-
+    population: getPopulation(),
     newsUpdates: getUpdatesList(),
     stayInformed: getLinksList(),
-
     subregions: [] as Subregion[],
 
     ...props,
@@ -50,21 +50,38 @@ export const getSubregion = (props?: Record<string, any>): Subregion => {
     path: '/regions/usa/usa-southeast/',
 
     name: 'USA - SouthEast',
+    overview: '# Overview',
+    governmentResponse: '# Gov Response',
+    longText: '# Long Text',
+    needsUrl: '/needs-assessments/explorer',
 
     // map: {
     //   gatsbyImageData: IGatsbyImageData
     // }
-
-    overview: '# Overview',
-    population: {
-      count: 10000,
-      trend: 'Increasing',
-      description:
-        'Increasing hurricane intensity is displacing more and more folks along the Gulf Coast.',
-    },
+    population: getPopulation(),
     newsUpdates: getUpdatesList(),
+    stayInformed: getLinksList(),
     region: getRegion(),
 
     ...props,
   } as Subregion
+}
+
+/*
+Population
+------------------------------------------------------------
+*/
+export const getPopulation = (props?: Record<string, any>): Population => {
+  return {
+    needsTotal: 100000,
+    totalItemsRequested: 400000,
+    ngoBeneficiaries: 10000,
+    ngoPopulation: 10000,
+    ngoRespondents: 10000,
+    count: 10000,
+    trend: 'Increasing',
+    description: '',
+
+    ...props,
+  }
 }

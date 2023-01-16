@@ -148,13 +148,16 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         <li>
           <SmartLink
             className="link"
-            href={`/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22subregion%22%3A%22${subregion.name.replace(
-              ' ',
-              '+',
-            )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Need+in+the+${subregion.name.replace(
-              ' ',
-              '+',
-            )}+%28${subregion.name.replace(' ', '+')}%29`}
+            href={
+              subregion.needsUrl ??
+              `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22subregion%22%3A%22${subregion.name.replace(
+                ' ',
+                '+',
+              )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Need+in+the+${subregion.name.replace(
+                ' ',
+                '+',
+              )}+%28${subregion.name.replace(' ', '+')}%29`
+            }
           >
             Needs
           </SmartLink>
