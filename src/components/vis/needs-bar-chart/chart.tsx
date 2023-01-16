@@ -28,7 +28,9 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
   const keySelector = selectBy(options?.axis?.groupBy)
   const valueSelector = valueBy()
   const { data, keys } = buildNivoData(needsByIndex, keySelector, valueSelector)
-  const sortedData = sort(data, options?.sort)
+
+  // bit of a hack, Nivo seems to show the data in reverse order???
+  const sortedData = sort(data, options?.sort).reverse()
 
   const barProps = nivoProps.bar.horizontal
   const indexCount = indexCounter(sortedData)

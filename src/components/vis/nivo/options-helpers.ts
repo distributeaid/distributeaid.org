@@ -29,13 +29,13 @@ Sort Options
 */
 export const sort = (data: BarDatum[], sort?: SortOptions) => {
   switch (sort?.by) {
-    case 'Label':
+    case SortByOption.Label:
       data = sortByLabel(data)
       break
-    case 'Value':
+    case SortByOption.Value:
       data = sortByValue(data)
       break
-    case 'Random':
+    case SortByOption.Random:
       data = sortByRandom(data)
       break
     default:
@@ -43,7 +43,7 @@ export const sort = (data: BarDatum[], sort?: SortOptions) => {
       break
   }
 
-  if (sort?.order === 'Descending') {
+  if (sort?.order === SortOrderOption.Desc) {
     data = data.reverse()
   }
 
