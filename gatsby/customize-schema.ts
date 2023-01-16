@@ -134,7 +134,7 @@ export default {
         survey: DANeedSurvey!
         place: DANeedPlace!
         product: DAProduct!
-        need: Float
+        need: Int
       }
     `
 

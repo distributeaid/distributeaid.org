@@ -168,7 +168,7 @@ export const processNeedsAssessment = (
             },
             place,
             product,
-            need,
+            need: Math.floor(need),
           }
 
           needsDatas.push(needsData)

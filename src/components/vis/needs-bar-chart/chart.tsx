@@ -38,14 +38,9 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
 
   return (
     // docs: https://nivo.rocks/bar/
-    <div
-      className="w-full pt-8 border-t-2 mt-8"
-      style={{
-        height: `${height}px`,
-      }}
-    >
+    <div className="w-full py-8">
       <header
-        className="prose mb-2"
+        className="prose max-w-none mb-2"
         style={{
           marginLeft: barProps.margin.left,
           marginRight: barProps.margin.right,
@@ -57,32 +52,38 @@ export const NeedsBarChart: FC<Props> = ({ needs, title, options }) => {
           <span className="text-3xl text-navy-600 font-normal">
             {total.toLocaleString()}
           </span>
-          <span>total known needs.</span>
+          <span>total known needed items.</span>
         </h3>
       </header>
-      <ResponsiveBar
-        // base
-        data={sortedData}
-        indexBy="index"
-        keys={keys}
-        {...barProps}
-        axisTop={{
-          ...nivoProps.bar.horizontal.axisTop,
-          legend: `# Items`,
-          legendPosition: 'start',
-          legendOffset: -40,
+      <div
+        style={{
+          height: `${height}px`,
         }}
-        axisBottom={
-          indexCount <= 9
-            ? nivoProps.bar.horizontal.axisBottom
-            : {
-                ...nivoProps.bar.horizontal.axisBottom,
-                legend: `# Items`,
-                legendPosition: 'start',
-                legendOffset: 40,
-              }
-        }
-      />
+      >
+        <ResponsiveBar
+          // base
+          data={sortedData}
+          indexBy="index"
+          keys={keys}
+          {...barProps}
+          axisTop={{
+            ...nivoProps.bar.horizontal.axisTop,
+            legend: `# Items`,
+            legendPosition: 'start',
+            legendOffset: -40,
+          }}
+          axisBottom={
+            indexCount <= 9
+              ? nivoProps.bar.horizontal.axisBottom
+              : {
+                  ...nivoProps.bar.horizontal.axisBottom,
+                  legend: `# Items`,
+                  legendPosition: 'start',
+                  legendOffset: 40,
+                }
+          }
+        />
+      </div>
     </div>
   )
 }
