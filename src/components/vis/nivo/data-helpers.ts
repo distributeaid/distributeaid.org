@@ -69,10 +69,10 @@ export const sortByLabel: Sorter = (data) => {
     const aLabel = a.index as string
     const bLabel = b.index as string
 
-    if (aLabel > bLabel) {
+    if (aLabel < bLabel) {
       return -1
     }
-    if (aLabel < bLabel) {
+    if (aLabel > bLabel) {
       return 1
     }
     return 0
@@ -84,10 +84,10 @@ export const sortByValue: Sorter = (data) => {
     const aValue = getIndexValue(a)
     const bValue = getIndexValue(b)
 
-    if (aValue > bValue) {
+    if (aValue < bValue) {
       return -1
     }
-    if (aValue < bValue) {
+    if (aValue > bValue) {
       return 1
     }
     return 0
