@@ -5,7 +5,7 @@ export function getOxfordCommaSeparator(
   if (index === 0) {
     return <></>
   } else if (index === 1 && array.length == 2) {
-    return <>, &amp;&nbsp;</>
+    return <>;&nbsp;&amp;&nbsp;</>
   } else if (index === array.length - 1) {
     return <>, &amp;&nbsp;</>
   } else {

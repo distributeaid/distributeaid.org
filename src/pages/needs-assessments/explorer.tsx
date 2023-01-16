@@ -55,6 +55,16 @@ const NeedsAssessmentPage: FC<Props> = ({ data: { needs } }) => {
               <Button>Methodology</Button>
             </SmartLink>
           </nav>
+
+          <div className="lg:hidden">
+            <p>
+              <strong>NOTE:</strong>
+              <br />
+              Our data explorer is designed for larger screens.
+              <br />
+              We recommend viewing it on your laptop or PC.
+            </p>
+          </div>
         </header>
 
         <div className="grid grid-cols-3 gap-4">

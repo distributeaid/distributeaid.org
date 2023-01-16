@@ -5,7 +5,7 @@ import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import { getOxfordCommaSeparator } from 'utils/strings'
+import { getCommaSeparator } from 'utils/strings'
 import { Region } from '../../types/place.d'
 import { getBackgroundColor } from '../../utils/site-theme'
 
@@ -80,7 +80,7 @@ const RegionsPage: FC<Props> = ({
 
 const createSubregionLinks = (region: Region): JSX.Element[] => {
   return region.subregions.map((subregion, index, array) => {
-    const seperator = getOxfordCommaSeparator(index, array)
+    const seperator = getCommaSeparator(index, array)
     return (
       <span key={subregion.name}>
         {seperator}

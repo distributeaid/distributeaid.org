@@ -95,7 +95,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         style={{
           backgroundColor: getBackgroundColor(),
         }}
-        className="prose max-w-none py-8 flex justify-center items-center gap-x-4"
+        className="prose max-w-none py-8 flex flex-col md:flex-row justify-center items-center gap-x-4"
       >
         <div className="bg-white rounded-full drop-shadow-md">
           <GatsbyImage
@@ -106,18 +106,18 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">{subregion.name}</h1>
+          <h1 className="mb-0 text-center md:text-left">{subregion.name}</h1>
 
-          <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
+          <hr className="lg:w-6/5 m-0 border-b-4 border-navy-700" />
 
-          <nav className="text-xl flex gap-2 pt-2">
-            <div className="flex">
+          <nav className="text-xl flex justify-center md:justify-start gap-2 pt-2">
+            <div className="hidden sm:flex">
               <SmartLink className="link" href="/regions/">
                 All Regions
               </SmartLink>
             </div>
 
-            <span className="relative -top-2 text-4xl text-navy-700">
+            <span className="hidden sm:block relative -top-2 text-4xl text-navy-700">
               &#10095;
             </span>
 
@@ -127,11 +127,11 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
               </SmartLink>
             </div>
 
-            <span className="relative -top-2 text-4xl text-navy-700">
+            <span className="hidden sm:block relative -top-2 text-4xl text-navy-700">
               &#10095;
             </span>
 
-            <div className="flex">
+            <div className="hidden sm:flex">
               <SmartLink className="link" href={subregion.path}>
                 {subregion.name}
               </SmartLink>
@@ -166,7 +166,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </ul>
       </div>
 
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <div className="flex flex-col">
           {sections.map((section, i) => {
             return (
