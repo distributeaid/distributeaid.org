@@ -64,8 +64,8 @@ sections:
   - template: block-title
     text: Get Started
   - template: block-text
-    text: You can explore our needs assessment data using our [**needs explorer**](needs-assessments/explorer/).  You
+    text: You can explore our needs assessment data using our [**needs explorer**](/needs-assessments/explorer/).  You
       can see information about the humanitarian situation in the regions in which
-      we operate by visiting our [**regions pages**](regions).
+      we operate by visiting our [**regions pages**](/regions).
 
 ---
