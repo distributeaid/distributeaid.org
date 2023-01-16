@@ -34,8 +34,6 @@ export function Head({ data: { region } }: TemplateProps) {
 }
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
-  console.log(region)
-
   // HACK START
   //   goal: use the generic pages stuff
   //   better way:

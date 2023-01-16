@@ -27,7 +27,7 @@ export const ProgressBar: FC<{
   let progressPercent = Math.floor((allocated / target) * 100)
   if (progressPercent > 100) {
     progressPercent = 100
-    console.log(
+    console.warn(
       new Error('ProgressBar Component: allocated was greater than target.'),
     )
   }
