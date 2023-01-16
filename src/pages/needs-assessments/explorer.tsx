@@ -4,6 +4,8 @@ import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import React, { FC, Suspense } from 'react'
 
+import Button from '@components/button/Button'
+
 import { Need } from '../../types/need.d'
 
 import { getBackgroundColor } from '../../utils/site-theme'
@@ -36,19 +38,21 @@ const NeedsAssessmentPage: FC<Props> = ({ data: { needs } }) => {
           style={{
             backgroundColor: getBackgroundColor(),
           }}
-          className="prose max-w-none py-8 flex flex-col justify-center items-center gap-2"
+          className="py-8 flex flex-col justify-center items-center gap-2"
         >
-          <h1 className="mb-0">Needs Assessments</h1>
+          <div className="prose max-w-none">
+            <h1 className="mb-0">Needs Assessments</h1>
+          </div>
 
-          <nav className="flex gap-8 text-3xl">
-            <SmartLink className="link" href="/needs-assessments/overview/">
-              Overview
+          <nav className="flex gap-4 justify-center text-3xl">
+            <SmartLink href="/needs-assessments/overview/">
+              <Button>Overview</Button>
             </SmartLink>
-            <SmartLink className="link" href="/needs-assessments/explorer/">
-              Data Explorer
+            <SmartLink href="/needs-assessments/explorer/">
+              <Button variant="primary">Data Explorer</Button>
             </SmartLink>
-            <SmartLink className="link" href="/needs-assessments/methodology/">
-              Methodology
+            <SmartLink href="/needs-assessments/methodology/">
+              <Button>Methodology</Button>
             </SmartLink>
           </nav>
         </header>

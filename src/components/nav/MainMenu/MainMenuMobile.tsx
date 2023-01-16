@@ -1,17 +1,13 @@
 import cx from 'classnames'
 import { Link } from 'gatsby'
 import { FunctionComponent, useState } from 'react'
-import { NavLinkItem } from './MainMenu'
+import { NavItem } from './MainMenu'
 
 interface Props {
-  navLinks: NavLinkItem[]
-  routeLinks?: NavLinkItem[]
+  nav: NavItem[]
 }
 
-const MobileNavigation: FunctionComponent<Props> = ({
-  navLinks,
-  routeLinks,
-}) => {
+const MobileNavigation: FunctionComponent<Props> = ({ nav }) => {
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const toggleMobileNav = () => {
@@ -50,42 +46,63 @@ const MobileNavigation: FunctionComponent<Props> = ({
           },
         )}
       >
-        {navLinks.map((link) => (
-          <li key={link.path}>
-            <Link
-              to={link.path}
-              className="py-2 px-4 flex items-center text-white"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {nav.map((linkItem) => {
+          if (linkItem._type === 'NavLink') {
+            return (
+              <li key={linkItem.label}>
+                <Link
+                  to={linkItem.path}
+                  className="py-2 px-4 flex items-center text-white"
+                >
+                  {linkItem.label}
+                </Link>
+              </li>
+            )
+          } else if (linkItem._type === 'NavLabel') {
+            return (
+              <li className="mt-6">
+                <p className="text-navy-100 px-4 mb-2 text-sm tracking-wide uppercase">
+                  {linkItem.label}
+                </p>
+              </li>
+            )
+          } else if (linkItem._type === 'NavButton') {
+            return (
+              <li>
+                <Link
+                  to={linkItem.path}
+                  className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
+                >
+                  {linkItem.label}
+                </Link>
+              </li>
+            )
+          } else if (linkItem._type === 'NavGroup') {
+            return (
+              <li className="mt-6">
+                <Link
+                  key={linkItem.main.label}
+                  to={linkItem.main.path}
+                  className="text-navy-100 px-4 mb-2 text-sm tracking-wide uppercase"
+                >
+                  {linkItem.main.label}
+                </Link>
 
-        {routeLinks && (
-          <li className="mt-6">
-            <p className="text-navy-100 px-4 mb-2 text-sm tracking-wide uppercase">
-              Routes
-            </p>
-            {routeLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="py-2 px-6 flex items-center text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </li>
-        )}
-
-        <li>
-          <Link
-            to="/donate/"
-            className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
-          >
-            Donate
-          </Link>
-        </li>
+                {linkItem.sub.map((subLinkItem) => (
+                  <Link
+                    key={subLinkItem.label}
+                    to={subLinkItem.path}
+                    className="py-2 px-6 flex items-center text-white"
+                  >
+                    {subLinkItem.label}
+                  </Link>
+                ))}
+              </li>
+            )
+          } else {
+            return null
+          }
+        })}
       </ul>
     </nav>
   )
