@@ -41,13 +41,13 @@ const NeedsAssessmentPage: FC<Props> = ({ data: { needs } }) => {
           <h1 className="mb-0">Needs Assessments</h1>
 
           <nav className="flex gap-8 text-3xl">
-            <SmartLink className="link" href="/needs-assessments/overview">
+            <SmartLink className="link" href="/needs-assessments/overview/">
               Overview
             </SmartLink>
-            <SmartLink className="link" href="/needs-assessments/explorer">
+            <SmartLink className="link" href="/needs-assessments/explorer/">
               Data Explorer
             </SmartLink>
-            <SmartLink className="link" href="/needs-assessments/methodology">
+            <SmartLink className="link" href="/needs-assessments/methodology/">
               Methodology
             </SmartLink>
           </nav>

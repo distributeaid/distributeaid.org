@@ -43,7 +43,7 @@ export const getDefaultOptions = (): NeedsBarChartOptions => {
   return {
     filters: {
       search: '',
-      quarter: undefined,
+      quarter: '2023 Q1',
       region: undefined,
       subregion: undefined,
       category: undefined,

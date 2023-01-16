@@ -118,7 +118,7 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
   }
 
   const startingTitle =
-    url.searchParams.get('InteractiveNeedsBarChartTitle') || 'Needs Bar Chart'
+    url.searchParams.get('InteractiveNeedsBarChartTitle') || 'Data Explorer'
   const [title, setTitle] = useState(startingTitle)
 
   const setTitlePartial = (value: string) => {
@@ -131,22 +131,20 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
 
   return (
     <div>
-      <form className="flex flex-col gap-10 prose max-w-none">
-        <ControlSection label="Display" margin={barProps.margin}>
-          <SelectControl
-            label="Index By"
-            values={getAxisIndexByOptions(needs, options)}
-            value={options?.axis?.indexBy}
-            setValue={setOptionPartial(updateAxisIndexByOption)}
+      <form className="flex flex-col gap-8 prose max-w-none py-8 border-b-2">
+        <ControlSection label="Share" margin={barProps.margin}>
+          <TextInputControl
+            label="Title"
+            value={title}
+            setValue={setTitlePartial}
           />
-          <SelectControl
-            label="Group By"
-            values={getAxisGroupByOptions(needs, options)}
-            value={options?.axis?.groupBy}
-            setValue={setOptionPartial(updateAxisGroupByOption)}
-          />
+          <TextInputControl label="Link" value={url.href} />
         </ControlSection>
+      </form>
 
+      <NeedsBarChart title={title} needs={needs} options={options} />
+
+      <form className="flex flex-col gap-4 prose max-w-none py-8 border-t-2">
         <ControlSection label="Search" margin={barProps.margin}>
           <TextInputControl
             label="Term"
@@ -156,13 +154,6 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
         </ControlSection>
 
         <ControlSection label="Filter" margin={barProps.margin}>
-          <SelectControl
-            label="Survey"
-            values={getFilterQuarterOptions(needs, options)}
-            value={options?.filters?.quarter}
-            setValue={setOptionPartial(updateFilterQuarterOption)}
-            isClearable={true}
-          />
           <SelectControl
             label="Region"
             values={getFilterRegionOptions(needs, options)}
@@ -191,6 +182,13 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
             setValue={setOptionPartial(updateFilterItemOption)}
             isClearable={true}
           />
+          <SelectControl
+            label="Survey"
+            values={getFilterQuarterOptions(needs, options)}
+            value={options?.filters?.quarter}
+            setValue={setOptionPartial(updateFilterQuarterOption)}
+            isClearable={true}
+          />
         </ControlSection>
 
         <ControlSection label="Sort" margin={barProps.margin}>
@@ -208,17 +206,21 @@ export const InteractiveNeedsBarChart: FC<Props> = ({ needs }) => {
           />
         </ControlSection>
 
-        <ControlSection label="Share" margin={barProps.margin}>
-          <TextInputControl
-            label="Title"
-            value={title}
-            setValue={setTitlePartial}
+        <ControlSection label="Display" margin={barProps.margin}>
+          <SelectControl
+            label="Index By"
+            values={getAxisIndexByOptions(needs, options)}
+            value={options?.axis?.indexBy}
+            setValue={setOptionPartial(updateAxisIndexByOption)}
           />
-          <TextInputControl label="Link" value={url.href} disabled />
+          <SelectControl
+            label="Group By"
+            values={getAxisGroupByOptions(needs, options)}
+            value={options?.axis?.groupBy}
+            setValue={setOptionPartial(updateAxisGroupByOption)}
+          />
         </ControlSection>
       </form>
-
-      <NeedsBarChart title={title} needs={needs} options={options} />
     </div>
   )
 }
