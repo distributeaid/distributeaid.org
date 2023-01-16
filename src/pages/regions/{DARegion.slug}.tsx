@@ -34,6 +34,8 @@ export function Head({ data: { region } }: TemplateProps) {
 }
 
 const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
+  console.log(region)
+
   // HACK START
   //   goal: use the generic pages stuff
   //   better way:
@@ -104,7 +106,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         style={{
           backgroundColor: getBackgroundColor(),
         }}
-        className="prose max-w-none py-8 flex justify-center items-center gap-x-4"
+        className="prose max-w-none py-8 flex flex-col md:flex-row justify-center items-center gap-x-4"
       >
         <div className="bg-white rounded-full p-2 drop-shadow-md">
           <GatsbyImage
@@ -115,28 +117,28 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="mb-0">{region.name}</h1>
+          <h1 className="mb-0 text-center md:text-left">{region.name}</h1>
 
-          <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
+          <hr className="lg:w-6/5 m-0 border-b-4 border-navy-700" />
 
-          <nav className="text-xl flex gap-4 pt-2">
-            <div className="flex">
+          <nav className="text-xl flex justify-center md:justify-start gap-4 pt-2">
+            <div className="hidden sm:flex">
               <SmartLink className="link" href="/regions/">
                 All Regions
               </SmartLink>
             </div>
 
-            <span className="relative -top-2 left-1 text-4xl text-navy-700">
+            <span className="hidden sm:block relative -top-2 left-1 text-4xl text-navy-700">
               &#10095;
             </span>
 
-            <div className="flex">
+            <div className="hidden sm:flex">
               <SmartLink className="link" href={region.path}>
                 {region.name}
               </SmartLink>
             </div>
 
-            <span className="relative -top-2 -left-1 text-4xl text-navy-700">
+            <span className="hidden sm:block relative -top-2 -left-1 text-4xl text-navy-700">
               &#10095;
             </span>
 
@@ -183,7 +185,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         </ul>
       </div>
 
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <div className="flex flex-col">
           {sections.map((section, i) => {
             return (
