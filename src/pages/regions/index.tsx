@@ -14,6 +14,12 @@ type Props = {
     regions: {
       nodes: Region[]
     }
+    needs: {
+      byRegion: {
+        regionName: string
+        currentNeed: number
+      }[]
+    }
   }
 }
 
@@ -24,36 +30,13 @@ export function Head() {
 const RegionsPage: FC<Props> = ({
   data: {
     regions: { nodes: regions },
+    needs,
   },
 }) => {
-  // creates subregion links for a given region
-  const createSubregionLinks = (region: Region): JSX.Element[] => {
-    return region.subregions.map((subregion, index, array) => {
-      const seperator = getOxfordCommaSeparator(index, array)
-      return (
-        <span key={subregion.name}>
-          {seperator}
-          <SmartLink className="link" href={subregion.path}>
-            {subregion.name}
-          </SmartLink>
-        </span>
-      )
-    })
-  }
-
-  const createRegionsCardBody = (region: Region): JSX.Element => {
-    return (
-      <>
-        <p className="mb-3">
-          <strong>Population:</strong>{' '}
-          {region.population?.count?.toLocaleString() || 0}
-        </p>
-        <div className="mb-3 space-y-2 line-clamp-3">
-          <MarkdownContent content={region.overview} />
-        </div>
-      </>
-    )
-  }
+  const needsByRegion: Record<string, number> = {}
+  needs.byRegion.forEach(({ regionName, currentNeed }) => {
+    needsByRegion[regionName] = currentNeed
+  })
 
   return (
     <SimpleLayout>
@@ -87,11 +70,49 @@ const RegionsPage: FC<Props> = ({
                 {createSubregionLinks(region)}
               </div>
             }
-            body={createRegionsCardBody(region)}
+            body={createRegionsCardBody(region, needsByRegion[region.name])}
           />
         ))}
       </section>
     </SimpleLayout>
+  )
+}
+
+const createSubregionLinks = (region: Region): JSX.Element[] => {
+  return region.subregions.map((subregion, index, array) => {
+    const seperator = getOxfordCommaSeparator(index, array)
+    return (
+      <span key={subregion.name}>
+        {seperator}
+        <SmartLink className="link" href={subregion.path}>
+          {subregion.name}
+        </SmartLink>
+      </span>
+    )
+  })
+}
+
+const createRegionsCardBody = (
+  region: Region,
+  currentNeed?: number,
+): JSX.Element => {
+  return (
+    <>
+      {region.population?.ngoBeneficiaries && (
+        <p className="mb-3">
+          <strong>People Reached:</strong>{' '}
+          {region.population?.ngoBeneficiaries?.toLocaleString()}
+        </p>
+      )}
+      {currentNeed && (
+        <p className="mb-3">
+          <strong># Items Needed:</strong> {currentNeed.toLocaleString()}
+        </p>
+      )}
+      <div className="mb-3 space-y-2 line-clamp-3">
+        <MarkdownContent content={region.overview} />
+      </div>
+    </>
   )
 }
 
@@ -116,15 +137,21 @@ export const query = graphql`
           }
         }
         population {
-          count
+          ngoBeneficiaries
         }
         subregions {
           path
           name
-          population {
-            count
-          }
         }
+      }
+    }
+
+    needs: allDaNeed(
+      filter: { survey: { year: { eq: "2023" }, quarter: { eq: "Q1" } } }
+    ) {
+      byRegion: group(field: place___region___name) {
+        currentNeed: sum(field: need)
+        regionName: fieldValue
       }
     }
   }
