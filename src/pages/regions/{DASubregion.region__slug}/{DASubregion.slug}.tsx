@@ -1,3 +1,4 @@
+import Button from '@components/button/Button'
 import SmartLink from '@components/link/SmartLink'
 import { PageHeader } from '@components/PageHeader'
 import { BlockLinksList } from '@components/section/blocks/BlockLinksList'
@@ -105,10 +106,10 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="w-6/5 mb-0 text-center">
-            &#8609;{subregion.name}&#8609;
-          </h1>
+          <h1 className="mb-0">{subregion.name}</h1>
+
           <hr className="w-6/5 m-0 border-b-4 border-navy-700" />
+
           <nav className="text-xl flex gap-2 pt-2">
             <div className="flex">
               <SmartLink className="link" href="/regions/">
@@ -130,39 +131,40 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
               &#10095;
             </span>
 
-            <div>
-              <span className="relative -top-4 text-5xl text-navy-700">
-                &#8609;
-              </span>
+            <div className="flex">
+              <SmartLink className="link" href={subregion.path}>
+                {subregion.name}
+              </SmartLink>
             </div>
           </nav>
         </div>
       </header>
 
-      <ul className="flex justify-evenly my-5 text-2xl">
-        <li>
-          <SmartLink className="link" href={subregion.path}>
-            Overview
-          </SmartLink>
-        </li>
-        <li>
-          <SmartLink
-            className="link"
-            href={
-              subregion.needsUrl ??
-              `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22subregion%22%3A%22${subregion.name.replace(
-                ' ',
-                '+',
-              )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Descending%22%7D%7D&InteractiveNeedsBarChartTitle=Top+Need+In+${subregion.name.replace(
-                ' ',
-                '+',
-              )}+%28${subregion.region.name.replace(' ', '+')}%29+-+2023+Q1`
-            }
-          >
-            Needs
-          </SmartLink>
-        </li>
-      </ul>
+      <div className="py-8">
+        <ul className="flex gap-4 justify-center text-2xl border-b-2">
+          <li>
+            <SmartLink href={subregion.path}>
+              <Button variant="primary">Overview</Button>
+            </SmartLink>
+          </li>
+          <li>
+            <SmartLink
+              href={
+                subregion.needsUrl ??
+                `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22subregion%22%3A%22${subregion.name.replace(
+                  ' ',
+                  '+',
+                )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Descending%22%7D%7D&InteractiveNeedsBarChartTitle=Top+Need+In+${subregion.name.replace(
+                  ' ',
+                  '+',
+                )}+%28${subregion.region.name.replace(' ', '+')}%29+-+2023+Q1`
+              }
+            >
+              <Button>Needs</Button>
+            </SmartLink>
+          </li>
+        </ul>
+      </div>
 
       <div className="flex">
         <div className="flex flex-col">
