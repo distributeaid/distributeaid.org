@@ -9,9 +9,12 @@ profilePhoto_updated:
   altText: " "
 name: Fionn Douthwaite
 pronouns: he/him
-bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+bio: I joined Distribute Aid in January 2022 as a full time logistics coordinator.
+  I chose to join DA after previously working for organisations in both Calais and
+  Greece as I saw a chance to make use of my studies and experiences to support the
+  infrastructure of grassroots aid networks. My main focus is supporting shipments
+  and customs clearances in Greece, the Balkans and Eastern Europe. I enjoy the new
+  and constantly changing challenges that logistics in this field involves.
 link: ''
 profilePhoto: "/uploads/6.png"
 beyondDA:
