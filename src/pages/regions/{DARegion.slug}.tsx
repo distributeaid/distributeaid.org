@@ -161,13 +161,16 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         <li>
           <SmartLink
             className="link"
-            href={`/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22region%22%3A%22${region.name.replace(
-              ' ',
-              '+',
-            )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Subregion%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Needs+In+${region.name.replace(
-              ' ',
-              '+',
-            )}`}
+            href={
+              region.needsUrl ??
+              `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22region%22%3A%22${region.name.replace(
+                ' ',
+                '+',
+              )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Subregion%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Annual+Needs+In+${region.name.replace(
+                ' ',
+                '+',
+              )}`
+            }
           >
             Needs
           </SmartLink>

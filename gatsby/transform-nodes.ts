@@ -91,6 +91,7 @@ export default {
           overview: fm.overview,
           governmentResponse: fm.governmentResponse,
           longText: fm.longText || '',
+          needsUrl: fm.needs.url,
 
           map: mapPhoto,
           population: fm.population,
@@ -175,6 +176,7 @@ export default {
           overview: fm.overview,
           governmentResponse: fm.governmentResponse,
           longText: fm.longText,
+          needsUrl: fm.needs.url,
 
           map: mapPhoto,
           population: fm.population,
