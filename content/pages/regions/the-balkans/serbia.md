@@ -1,6 +1,6 @@
 ---
 population:
-  count: 7263
+  count: "7263"
   trend: Increasing
   description: Accurate population numbers are hard to ascertain as people in The
     Balkans tend to be on the move.  Numbers can change substantially from season
@@ -8,13 +8,19 @@ population:
     reasons.
   needsTotal: 
   totalItemsRequested: 
-  ngoBeneficiaries: 4000
-  ngoPopulation: 4970
-  ngoRespondents: 1
+  ngoBeneficiaries: "4000"
+  ngoPopulation: "4970"
+  ngoRespondents: "1"
 newsUpdates:
   title: Updates
-  visibleCount: 3
-  updates: []
+  visibleCount: "3"
+  updates:
+  - title: Situation report
+    content: |-
+      Collective Aid and Medical Volunteers International (MVI) have been working on a bi-monthly report about the situation in Northern Serbia that we are excited to share with you. This report focuses on trends in border violence and in Serbian state action in October and November. Its purpose is to contextualize the events of the past two months into a more ongoing narrative and establish a system to continue centralized information monitoring.
+
+      https://medical-volunteers.org/Northern-Serbia-Advocacy-Report_OctNov_vFinal.pdf
+    pinned: ''
 name: Serbia
 overview: The geolocation of Serbia makes it a region of transit for those travelling
   to Western Europe by land; very few individuals choose to stay and apply for asylum.
@@ -25,7 +31,7 @@ overview: The geolocation of Serbia makes it a region of transit for those trave
   [a 24% increase](https://data.unhcr.org/en/documents/details/88897) compared to
   the same period of the previous year.
 map: "/uploads/serbia-subregion-map.png"
-governmentResponse: Serbia has 7 Asylum Centres and 12 Reception Centres. To be able
+governmentResponse: 'Serbia has 7 Asylum Centres and 12 Reception Centres. To be able
   to stay in an Asylum Centre, one must be [registered with the intent to apply for
   asylum](https://asylumineurope.org/reports/country/serbia/reception-conditions/short-overview-of-the-reception-system/),
   whilst Reception Centres tend to be nearer the border regions and have more flexible
@@ -33,9 +39,14 @@ governmentResponse: Serbia has 7 Asylum Centres and 12 Reception Centres. To be 
   Act, a ‘foreigner’ is not protected by the right to accommodation until they have
   applied for asylum. Serbian government reception facilities are at capacity, resulting
   in poor hygiene conditions and a lack of access to privacy.
+
+  '
 stayInformed:
   title: " "
-  links: []
+  links:
+  - url: ''
+    description: ''
+    label: ''
 coverPhoto:
   asset: ''
   caption: " "
