@@ -15,7 +15,7 @@ newsUpdates:
   title: Updates
   visibleCount: "3"
   updates:
-  - title: Situation report
+  - title: Situation report Northern Serbia
     content: |-
       Collective Aid and Medical Volunteers International (MVI) have been working on a bi-monthly report about the situation in Northern Serbia that we are excited to share with you. This report focuses on trends in border violence and in Serbian state action in October and November. Its purpose is to contextualize the events of the past two months into a more ongoing narrative and establish a system to continue centralized information monitoring.
 
