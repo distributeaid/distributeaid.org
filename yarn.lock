@@ -1236,10 +1236,10 @@
     object-path "^0.11.4"
     pkg-up "^3.1.0"
 
-"@codesee/tracker@0.474.0":
-  version "0.474.0"
-  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.474.0.tgz#4c96a33ffc7a7d13e31e943d117af57df31c5ee2"
-  integrity sha512-3rGwG8/3Cq2cssHgZWjXnVzj7ueln066vXXC9CeJWT0U1D5FDWqo2RznE0JHNJnfpf5k0SdqLLHlILVLGW0Rrg==
+"@codesee/tracker@0.479.0":
+  version "0.479.0"
+  resolved "https://registry.yarnpkg.com/@codesee/tracker/-/tracker-0.479.0.tgz#c3f4cb130938685d5e52e9bbf415f4bae986da00"
+  integrity sha512-JjXgIX0g6IEEPMPQPebL7lu9+9tIcjzzmJDIJgO9C323p2QDveEkjvEXbBnTVU4tdvCx8aX6ldJYTOxaZ8uYJg==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
