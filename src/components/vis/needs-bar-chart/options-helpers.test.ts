@@ -153,7 +153,7 @@ describe('filter', () => {
         region: 'Greece',
         subregion: 'Northern Greece',
         category: 'Hygiene',
-        item: '100g Bar Soap',
+        item: '100g Bar Soap (Item)',
       }),
     })
 
@@ -259,7 +259,10 @@ describe('get filter options', () => {
 
   it('getFilterItemOptions should return items for the given needs, sorted asc', () => {
     const optionChoices = getFilterItemOptions(needs, options)
-    expect(optionChoices).toStrictEqual(['100g Bar Soap', 'Women T-Shirt'])
+    expect(optionChoices).toStrictEqual([
+      '100g Bar Soap (Item)',
+      'Women T-Shirt (Item)',
+    ])
   })
 
   it('getFilterItemOptions limits options within a category if the category filter is set', () => {
@@ -269,7 +272,7 @@ describe('get filter options', () => {
       }),
     })
     const optionChoices = getFilterItemOptions(needs, options)
-    expect(optionChoices).toStrictEqual(['Women T-Shirt'])
+    expect(optionChoices).toStrictEqual(['Women T-Shirt (Item)'])
   })
 
   it('getFilterRegionOptions should return regions for the given needs, sorted asc', () => {
@@ -520,8 +523,8 @@ describe('index', () => {
       Clothing: [need2, need2],
     })
     expect(index(needs, AxisOption.Item)).toStrictEqual({
-      '100g Bar Soap': [need1, need1],
-      'Women T-Shirt': [need2, need2],
+      '100g Bar Soap (Item)': [need1, need1],
+      'Women T-Shirt (Item)': [need2, need2],
     })
     expect(index(needs, AxisOption.Region)).toStrictEqual({
       Greece: [need1, need1],
