@@ -22,7 +22,7 @@ export const selectCategory: KeySelector = ({ product }) => product.category
 export const selectItem: KeySelector = ({ product }) =>
   (product.ageGender ? `${product.ageGender} ` : '') +
   (product.sizeStyle ? `${product.sizeStyle} ` : '') +
-  `${product.item}`
+  `${product.item} (${product.unit})`
 
 /*
 Value Selectors
