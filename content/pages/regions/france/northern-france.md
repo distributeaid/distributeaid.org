@@ -44,7 +44,7 @@ newsUpdates:
       create the terror and UK pay them to do it
     content: '"[If you ever doubt the hateful effects of Tory migrant policy, go to
       Calais and see what I’ve seen"](https://www.theguardian.com/commentisfree/2023/jan/21/tory-migrant-policy-calais-refugee-camps-french)
-      An article from Jeremy Corbyn on The Guardian'
+      An article from Jeremy Corbyn on The Guardian after visiting Calais.'
     date: '2023-01-23T15:39:59Z'
     pinned: false
   - content: The war in Ukraine has led many Ukrainian nationals to seek temporary
