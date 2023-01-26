@@ -98,10 +98,11 @@ describe('selectItem', () => {
     const need = getNeed({
       product: getProduct({
         item: 'Some Item',
+        unit: 'Unit',
       }),
     })
     const selected = selectItem(need)
-    expect(selected).toBe('Some Item')
+    expect(selected).toBe('Some Item (Unit)')
   })
 
   it("provides a string representation of a need's survey's item including modifiers", () => {
@@ -110,10 +111,11 @@ describe('selectItem', () => {
         item: 'T-Shirt',
         ageGender: 'Mens',
         sizeStyle: 'Large',
+        unit: 'Unit',
       }),
     })
     const selected = selectItem(need)
-    expect(selected).toBe('Mens Large T-Shirt')
+    expect(selected).toBe('Mens Large T-Shirt (Unit)')
   })
 })
 
@@ -283,22 +285,28 @@ describe('getItems', () => {
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Another Item',
+          unit: 'Another Unit',
         }),
       }),
     ]
 
     const uniqueLabels = getItems(needs)
-    expect(uniqueLabels).toStrictEqual(['Another Item', 'Some Item'])
+    expect(uniqueLabels).toStrictEqual([
+      'Another Item (Another Unit)',
+      'Some Item (Unit)',
+    ])
   })
 })
 
@@ -465,24 +473,27 @@ describe('indexByItem', () => {
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Another Item',
+          unit: 'Another Unit',
         }),
       }),
     ]
 
     const index = indexByItem(needs)
     expect(index).toStrictEqual({
-      'Some Item': [needs[0], needs[1]],
-      'Another Item': [needs[2]],
+      'Some Item (Unit)': [needs[0], needs[1]],
+      'Another Item (Another Unit)': [needs[2]],
     })
   })
 })
@@ -668,21 +679,24 @@ describe('filterByItem', () => {
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Some Item',
+          unit: 'Unit',
         }),
       }),
       getNeed({
         product: getProduct({
           item: 'Another Item',
+          unit: 'Another Unit',
         }),
       }),
     ]
 
-    const filtered = filterByItem(needs, 'Some Item')
+    const filtered = filterByItem(needs, 'Some Item (Unit)')
     expect(filtered).toStrictEqual([needs[0], needs[1]])
   })
 })
