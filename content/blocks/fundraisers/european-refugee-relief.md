@@ -9,8 +9,8 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-03.jpg"
   alt: A volunteer holding up donated food items for babies – that have been delivered,
     in a warehouse
-- url: "/uploads/fundraisers/european-refugee-relief-gallery-04.jpg"
-  alt: People unloading pallets of aid from a container onto a pick-up truck
+- url: "/uploads/761290bd-44ae-4a13-8ddc-a70a61043596.JPG"
+  alt: Two volunteers pose next to a large bag of humanitarian aid.
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-05.jpg"
   alt: A man sorting through donations of clothes in a warehouse
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-06.jpg"
@@ -18,7 +18,7 @@ gallery:
 - url: "/uploads/fundraisers/european-refugee-relief-gallery-07.jpg"
   alt: A woman receiving bars of soap from a volunteer handing them out
 allocations:
-- date: 2022-11-29T12:40:29Z
+- date: 2022-11-29T12:40:29.000+00:00
   amountEUR: 530
   purpose: "  "
 target: 3500
