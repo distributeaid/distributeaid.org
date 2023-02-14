@@ -7317,12 +7317,12 @@ damerau-levenshtein@^1.0.8:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
-data-joint@^1.2:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/data-joint/-/data-joint-1.2.6.tgz#9c1e8844473894fbf04aea5e052a9027c2df9c8b"
-  integrity sha512-xuKyhQcD7vlO451VwKoK0RS8owh+iAZoQM2Up0ooTxrpLXh6XMUNPQW9vEOqv1+BT3c185FCLyWjUcCsEXC0/Q==
+data-joint@^1.3:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/data-joint/-/data-joint-1.3.1.tgz#d134950322c90f531e81bbbe8454277549031466"
+  integrity sha512-tMK0m4OVGqiA3zkn8JmO6YAqD8UwJqIAx4AAwFl1SKTtKAqcXePuT+n2aayiX9uITtlN3DFtKKTOxJRUc2+HvQ==
   dependencies:
-    index-array-by "^1.3.3"
+    index-array-by "^1.4.0"
 
 data-urls@^3.0.2:
   version "3.0.2"
@@ -9860,17 +9860,17 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-globe.gl@^2.26:
-  version "2.26.10"
-  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.26.10.tgz#a902f0ea252f3a04542d15e1b136b482ffc11c83"
-  integrity sha512-eFySA6JUw1ZrI1GFDZJJ0vEluTiCnKFoBVb7m5J8e2hqHE5pVP4x1ONjWLsP4w3+G4M56c8UA/Cwsjzg/h9t6g==
+globe.gl@^2.27:
+  version "2.27.1"
+  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.27.1.tgz#01f1d1f7f19a2268704497d9daa703e04c533b44"
+  integrity sha512-nfVjBiMsRg+4+HPkOnaIfsdqlo9YIrRalBJ1R0GMibOImbfN4/Kvl4IOqGgdsOPY/0TH1xiHDkzF98rF8Xs5EQ==
   dependencies:
     "@tweenjs/tween.js" "^18.6"
     accessor-fn "1"
-    kapsule "^1.13"
+    kapsule "^1.14"
     three ">=0.118 <1"
-    three-globe "^2.24"
-    three-render-objects "^1.27"
+    three-globe "^2.25"
+    three-render-objects "^1.28"
 
 gopd@^1.0.1:
   version "1.0.1"
@@ -10543,10 +10543,15 @@ indent-string@^4.0.0:
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
   integrity sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
 
-index-array-by@1, index-array-by@^1.3.3:
+index-array-by@1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/index-array-by/-/index-array-by-1.3.3.tgz#6881ae680a44af2c344db5e18eac6c5dc1ccea47"
   integrity sha512-dpqV1sX+hx4s0RqAT97ypk9xzcAXJ0XK27p3bTgPy8bjbJAX6Kf7RU3pPXgmg9hhO7f5/WxO354v2f/A0/fz3Q==
+
+index-array-by@^1.4.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/index-array-by/-/index-array-by-1.4.1.tgz#425f26cf0c744a47ebadf47366692e52043cf17b"
+  integrity sha512-Zu6THdrxQdyTuT2uA5FjUoBEsFHPzHcPIj18FszN6yXKHxSfGcR4TPLabfuT//E25q1Igyx9xta2WMvD/x9P/g==
 
 infer-owner@^1.0.3, infer-owner@^1.0.4:
   version "1.0.4"
@@ -11941,10 +11946,10 @@ junk@^3.1.0:
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
-kapsule@^1.13:
-  version "1.13.8"
-  resolved "https://registry.yarnpkg.com/kapsule/-/kapsule-1.13.8.tgz#1f43f8111b1b78d13e45daeff35dbef1e81114c2"
-  integrity sha512-Y1lLt1htHNofIM5kxS5OdEqDm7WFqHF4hm6DrrvNEKIJugfQrxDBycV41QI5FpnBGHqyBD99VpTB5ARnlufP6w==
+kapsule@^1.14:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/kapsule/-/kapsule-1.14.1.tgz#344a0a7b3e48ee0942ad58ee97daac12433bc1ef"
+  integrity sha512-zA9LbOApzkDtulUYNp5R2RVXX1mS6tIoPlhsr8bVQPsGvTQHXnF8W3n0mC//lMciu/NNvtqv+lXUahDn9P6Y0Q==
   dependencies:
     debounce "^1.2.1"
 
@@ -15135,12 +15140,12 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-globe.gl@2.22.10:
-  version "2.22.10"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.22.10.tgz#561894e715f514952acb2dd9d09a9daf479a56a6"
-  integrity sha512-WiOXOORIe8BQeqwLu6cdHoAQYdmyJE+AJPUxrtUjKHShz9PyNfd4NwK2ZyF1gZ9V1T7Z0/oPyaAMRGWeRYPVIA==
+react-globe.gl@2.23.2:
+  version "2.23.2"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.23.2.tgz#32bb71d2a4416223d3270d33135d294870333381"
+  integrity sha512-GIWzhEXpK1kUk4EWzoi1lcEXIgRPHl1vdUyvFABBjLcooM0F2WN8xvOpcHT50lZkTiog1/lswtoY3TJNHrOu+w==
   dependencies:
-    globe.gl "^2.26"
+    globe.gl "^2.27"
     prop-types "^15.8"
     react-kapsule "^2.2"
 
@@ -17116,10 +17121,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-three-conic-polygon-geometry@^1.5:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.5.3.tgz#4c6b34b67cdb720e57c7cc033ad6376ab3d5f2ee"
-  integrity sha512-ey+qDG6Sr5uZyAIXw9XEdTnewdMIdxLLA4gPAYWpHl1AynhvbYlK7TEzW9SnOM5+VMqkgsqaEgv5fgQyXyh0Kg==
+three-conic-polygon-geometry@^1.6:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.6.1.tgz#72279973322de2eb1781844cb1624b71c883c604"
+  integrity sha512-nycXmeeKBiSKWsae/77Z4IjOWnRKuIphFVtJT1Y6yqO0gSwtVVnNcdkMh8wMVlV26zafU4aazHkOSZVPWfpbGA==
   dependencies:
     "@turf/boolean-point-in-polygon" "^6.5"
     d3-array "1 - 3"
@@ -17134,43 +17139,43 @@ three-fatline@^0.5:
   resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.5.3.tgz#20837874f1a2bbaad56bb662088db2d8c575c52d"
   integrity sha512-oKpBkodXLim6STcM6mbdZT4i0PwsXnjHzsEo6I0OO7HHkbkV1XJ+mvmuMDwmfAxT5PjJDbQhvrB1lfoGjEQdUg==
 
-three-geojson-geometry@^1.1:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/three-geojson-geometry/-/three-geojson-geometry-1.1.8.tgz#180177d86989c106506fd4394cace9cfc538d861"
-  integrity sha512-idzJG7tZzPH1oshUz1pcqt5/Rzjhqty2jHpwI+h0A54JwkEaT7AwoAVloaYZmxmW4ixZz3hq/tIDJYKSs2IFyw==
+three-geojson-geometry@^1.3:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/three-geojson-geometry/-/three-geojson-geometry-1.3.1.tgz#0e0aa4ffacba9f491024e053875fc1fdeaa127fc"
+  integrity sha512-dUBA0R5Xn43JcIr3n0RjBIxMb+zGUoKODAkJfcbL6Am9qZF0PE11+T3ZSQBnlElOpKdwfox9x6cQ59J1Kh7qFQ==
   dependencies:
     d3-geo "1 - 3"
     earcut "2"
 
-three-globe@^2.24:
-  version "2.24.10"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.24.10.tgz#84454701d40cb70684e7c56ecc6b07fbc4db7402"
-  integrity sha512-oNSUxotbzwcpnlg7py18PZcz2a1MijIO7ldbiuqUisa/mnnAiMhBnLnjwbxjgmzaDKDlmDjf6XvqfsNWKBw4MA==
+three-globe@^2.25:
+  version "2.25.3"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.25.3.tgz#9f622ce21c48da2333a848dcc2173423e99e0217"
+  integrity sha512-Qa0ARLN0U3S6XGo3Kl5wc6lLxM2AiCwWgUZlC76ucXwNPkIoCumqaetAtcPQadhaxcCulSc1GfTiipGBOjhhVA==
   dependencies:
     "@tweenjs/tween.js" "18"
     accessor-fn "1"
     d3-geo "1 - 3"
     d3-interpolate "1 - 3"
     d3-scale "1 - 4"
-    data-joint "^1.2"
+    data-joint "^1.3"
     earcut "2"
     frame-ticker "1"
     h3-js "4"
     index-array-by "1"
-    kapsule "^1.13"
-    three-conic-polygon-geometry "^1.5"
+    kapsule "^1.14"
+    three-conic-polygon-geometry "^1.6"
     three-fatline "^0.5"
-    three-geojson-geometry "^1.1"
-    tinycolor2 "^1.4"
+    three-geojson-geometry "^1.3"
+    tinycolor2 "^1.6"
 
-three-render-objects@^1.27:
-  version "1.27.6"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.27.6.tgz#15fecad746a558d240d1b772f8b20d44e4834cc0"
-  integrity sha512-mvNHk3oujVuajW0U+/UxQ7RBNmCLXgOIqdtThPXJCPimInwdPCw6lWVETgp6WAA1TebZLdpvKPfXpG5hgOJRvQ==
+three-render-objects@^1.28:
+  version "1.28.1"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.28.1.tgz#a25f8a1f136a0d00bf96b486d73153e0a0d4abb2"
+  integrity sha512-8FIvzTcmLGMtCl8EZvzUFgLKTC7DTZWYnPIbEz51oi4jS5ugzQBKt8wNZyan448Vokl6noky5PnjzcONzIpgyQ==
   dependencies:
     "@tweenjs/tween.js" "18"
     accessor-fn "1"
-    kapsule "^1.13"
+    kapsule "^1.14"
     polished "4"
 
 "three@>=0.118 <1":
@@ -17211,10 +17216,10 @@ timers-ext@^0.1.7:
     es5-ext "~0.10.46"
     next-tick "1"
 
-tinycolor2@^1.4:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.2.tgz#3f6a4d1071ad07676d7fa472e1fac40a719d8803"
-  integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
+tinycolor2@^1.6:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
+  integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
 
 title-case@^3.0.3:
   version "3.0.3"
