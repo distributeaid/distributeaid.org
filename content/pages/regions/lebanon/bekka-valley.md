@@ -14,7 +14,13 @@ population:
 newsUpdates:
   title: News Updates
   visibleCount: 3
-  updates: []
+  updates:
+  - title: Syrian refugees in Lebanon have lost relatives in the earthquake, which
+      has compounded their already distressing situation.
+    content: '[https://www.arabnews.com/node/2248631/middle-east](https://www.arabnews.com/node/2248631/middle-east
+      "https://www.arabnews.com/node/2248631/middle-east")'
+    date: '2023-02-14T13:14:23Z'
+    pinned: false
 name: Bekka Valley
 overview: |-
   [Around a quarter of Syrian refugees are located in Bekaa Valley](https://reporting.unhcr.org/document/2972). The Lebanese government does not permit large camps, and as a result, informal, small, makeshift camps without essential services are commonplace. The region is one of the most economically deprived; it is common for [children to be taken out of school so they can go into full-time work to support their families](https://www.thenationalnews.com/weekend/2022/09/09/syrian-refugees-forced-to-choose-between-school-or-work-in-lebanons-bekaa-valley/).
