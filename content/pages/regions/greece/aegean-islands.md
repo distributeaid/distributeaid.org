@@ -38,11 +38,16 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Mediterranean tragedy continue
+    content: Another [boat sank in the Aegean Sea](https://www.reuters.com/world/europe/four-dead-least-39-rescued-after-migrant-boat-sinks-off-greece-2023-02-05/),
+      killing four people.
+    date: '2023-02-05T10:03:07Z'
+    pinned: false
   - title: Greek Islanders Protest Construction of Closed Camps
     content: "[Protests by locals against camp construction](https://www.infomigrants.net/en/post/37728/greek-islanders-block-ship-full-of-construction-materials-for-migrant-camps)
       have been occurring, leading to [arrests](https://www.infomigrants.net/en/post/38429/protesters-detained-after-violence-breaks-out-at-building-site-of-new-greek-migrant-camp)
       after demonstrations turned violent in February."
-    date: 2022-01-10T23:50:23Z
+    date: '2022-01-10T23:50:23.000+00:00'
     pinned: false
   - title: Greece Continues Illegal Sea Pushbacks
     content: There have been increases in [illegal mass asylum rejections and deportations](https://www.infomigrants.net/en/post/33636/asylum-seekers-facing-rejection-in-greece-we-cannot-clap-with-one-hand),
@@ -50,7 +55,7 @@ newsUpdates:
       During the week 7th to 13th March 2022 alone, [15 boats carrying 506 people](https://aegeanboatreport.com/weekly-reports/)
       were stopped from reaching the islands by either the Turkish Coast Guard or
       Police.
-    date: 2022-03-07T23:49:40Z
+    date: '2022-03-07T23:49:40.000+00:00'
     pinned: false
 stayInformedLinks:
 - linkLabel: Aegean Boat Report
