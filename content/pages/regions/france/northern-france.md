@@ -40,6 +40,14 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Attrocities continue on the route between France and England. And the UK
+      is ramping up its illegal immigration enforcement
+    content: "[How smugglers separate the families](https://www.theguardian.com/uk-news/2023/feb/05/mother-whose-children-were-sent-across-channel-without-her-arrives-in-uk)
+      on the Channel crossing attempts from France to the UK continue. The UK is [ramping
+      up its illegal immigration enforcement](https://www.gov.uk/government/news/immigration-enforcement-surge-since-pledge-to-tackle-illegal-working)
+      as of this year."
+    date: '2023-01-23T09:51:50Z'
+    pinned: false
   - title: Indian are now the Third Largest Group Crossing the English Channel
     content: 'Indian are now the Third Largest Group Crossing the English Channel:
       [UK Home Office](https://thewire.in/world/indians-crossing-english-channel-uk-home-office)'
