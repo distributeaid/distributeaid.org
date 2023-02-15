@@ -40,6 +40,11 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Indian are now the Third Largest Group Crossing the English Channel
+    content: 'Indian are now the Third Largest Group Crossing the English Channel:
+      [UK Home Office](https://thewire.in/world/indians-crossing-english-channel-uk-home-office)'
+    date: '2023-02-04T09:50:43Z'
+    pinned: false
   - title: The refugee camps are riddled with disease, poverty and violence. The French
       create the terror and UK pay them to do it
     content: '"[If you ever doubt the hateful effects of Tory migrant policy, go to
