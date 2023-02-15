@@ -13,7 +13,14 @@ population:
 newsUpdates:
   title: Updates
   visibleCount: 3
-  updates: []
+  updates:
+  - title: 'Moldova : Praised for helping the Ukrainian refugees but still discriminate
+      the Romani'
+    content: UN [praises Moldova](https://news.un.org/en/story/2023/01/1132697) for
+      helping hundreds of thousands of Ukrainian refugees. But Moldova still [discriminates
+      against Romani refugees](https://www.hrw.org/news/2022/05/25/moldova-romani-refugees-ukraine-face-segregation).
+    date: '2022-05-25T08:58:55Z'
+    pinned: false
 name: Moldova
 overview: Moldova has one of the smallest economies in Europe. For this reason, emigration
   has been significantly more prevalent than immigration. However, [around half a
