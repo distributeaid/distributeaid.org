@@ -54,7 +54,7 @@ sections:
 
       Sara Lönegård, Executive Director and Founder
 
-      Taylor Fairbank, Director of Operations and Co-Founder
+      Taylor Fairbank, Director of Growth and Co-Founder
 
       ![Two smiling people pose for a photograph in front of a brick wall.](/uploads/dsc_0427-129.jpg)
   - template: block-youtube-embed
