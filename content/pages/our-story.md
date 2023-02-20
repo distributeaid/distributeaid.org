@@ -14,14 +14,14 @@ sections:
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
-    dateUploaded: 2022-10-14T13:55:26.000+00:00
+    dateUploaded: '2022-10-14T13:55:26.000+00:00'
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
     caption: " "
     attribution: Distribute Aid
     asset: "/uploads/50297749_521554841683858_669757054109351936_n.jpg"
-    date: 2022-10-14T14:08:47.000+00:00
+    date: '2022-10-14T14:08:47.000+00:00'
     altText: Two people sit at a desk and work, one of them on a laptop and one of
       them in a notebook.
 - template: section-grid
@@ -55,11 +55,13 @@ sections:
       Sara Lönegård, Executive Director and Founder
 
       Taylor Fairbank, Director of Operations and Co-Founder
+
+      ![Two smiling people pose for a photograph in front of a brick wall.](/uploads/dsc_0427-129.jpg)
   - template: block-youtube-embed
     title: About Distribute Aid
     embed: https://www.youtube-nocookie.com/embed/msizPweg3kE
   - template: block-image-with-caption
-    dateUploaded: 2022-10-14T14:13:51.000+00:00
+    dateUploaded: '2022-10-14T14:13:51.000+00:00'
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
@@ -67,7 +69,7 @@ sections:
     caption: Taylor Fairbank and Sara Lonegard, our founders
     attribution: Distribute Aid
     altText: Two standing people smile for the camera in front of a brick wall.
-    date: 
+    date: ''
   - template: block-timeline
     timelineItems:
     - period: Summer 2018
