@@ -29,6 +29,10 @@ sections:
 
       ASSORT was established as part of a joint partnership between Boxtribute, Distribute Aid, HERMINE, and the InterEuropean Human Aid Association.
 
-      [Click here](https://www.google.com/) to download the ASSORT standards. If you are an organisation intending to adopt the ASSORT standards, we strongly encourage you to fill out this form to receive updates when revised versions of the standards come out: FORM LINK.
+      #### [Standards Guide](www.google.com)
+
+      #### [Sizing Chart](www.google.com)
+
+      #### _If you are an organisation intending to adopt the standards, we strongly encourage you to fill out this form to receive updates when revised versions of the standards come out: FORM LINK._
 
 ---
