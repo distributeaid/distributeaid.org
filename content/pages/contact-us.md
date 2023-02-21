@@ -13,7 +13,7 @@ sections:
     order: top-to-bottom
   contentBlocks:
   - template: block-image-with-caption
-    dateUploaded: 2022-10-21T13:52:45.000+00:00
+    dateUploaded: '2022-10-21T13:52:45.000+00:00'
     tags: []
     alignmentPhoto: Center
     alignmentCaption: Center
@@ -21,7 +21,7 @@ sections:
     caption: " "
     attribution: Distribute Aid
     altText: Two people converse next to pallets in a warehouse
-    date: 
+    date: ''
 - template: section-grid
   metadata:
     margins: Default
@@ -30,8 +30,6 @@ sections:
     layout: Column-Bound
     order: top-to-bottom
   contentBlocks:
-  - template: block-title
-    text: Contact Us
   - template: block-title
     text: General Inquiries
   - template: block-text
