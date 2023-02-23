@@ -25,6 +25,6 @@ beyondDA:
 roles:
 - role: content/blocks/roles/logistics-coordinator.md
   start: 2021-12-31T23:00:00.000+00:00
-  end: 
+  end: 2023-02-16T23:00:00Z
 
 ---
