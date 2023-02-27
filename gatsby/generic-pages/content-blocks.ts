@@ -75,7 +75,7 @@ export const deriveBlockNode: DeriveBlockFn = (
     case 'block-text':
       return deriveTextBlockNode(block, parentId, createNodeArgs)
 
-    case 'block-youtube':
+    case 'block-youtube-embed':
       return deriveYoutubeBlockNode(block, parentId, createNodeArgs)
 
     case 'block-timeline':
