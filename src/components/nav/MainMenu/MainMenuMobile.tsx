@@ -60,7 +60,7 @@ const MobileNavigation: FunctionComponent<Props> = ({ nav }) => {
             )
           } else if (linkItem._type === 'NavLabel') {
             return (
-              <li className="mt-6">
+              <li key={linkItem.label} className="mt-6">
                 <p className="text-navy-100 px-4 mb-2 text-sm tracking-wide uppercase">
                   {linkItem.label}
                 </p>
@@ -68,7 +68,7 @@ const MobileNavigation: FunctionComponent<Props> = ({ nav }) => {
             )
           } else if (linkItem._type === 'NavButton') {
             return (
-              <li>
+              <li key={linkItem.label}>
                 <Link
                   to={linkItem.path}
                   className="mt-8 block mx-4 py-2 px-6 text-center rounded bg-white transition-colors text-navy-700"
@@ -79,7 +79,7 @@ const MobileNavigation: FunctionComponent<Props> = ({ nav }) => {
             )
           } else if (linkItem._type === 'NavGroup') {
             return (
-              <li className="mt-6">
+              <li key={linkItem.main.label} className="mt-6">
                 <Link
                   key={linkItem.main.label}
                   to={linkItem.main.path}

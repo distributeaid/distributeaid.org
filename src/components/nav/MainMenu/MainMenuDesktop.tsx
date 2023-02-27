@@ -43,7 +43,7 @@ const DesktopNavigation: FunctionComponent<Props> = ({ nav }) => {
             )
           } else if (linkItem._type === 'NavGroup') {
             return (
-              <nav className="group relative">
+              <nav key={linkItem.main.label} className="group relative">
                 <a
                   href={linkItem.main.path}
                   className={`peer py-2 px-4 text-white block rounded-t group-hover:bg-navy-700 ${
