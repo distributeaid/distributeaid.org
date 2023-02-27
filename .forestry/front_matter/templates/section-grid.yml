@@ -25,7 +25,7 @@ fields:
       margins (like most parts of the website), select Default.
   - name: layout
     type: select
-    default: []
+    default: Row-Bound
     config:
       required: false
       options:
@@ -65,7 +65,7 @@ fields:
       value: Row-Bound
   - name: order
     type: select
-    default: []
+    default: top-to-bottom
     config:
       required: false
       options:
