@@ -58,22 +58,35 @@ const nav: NavItem[] = [
     ],
   },
   { _type: 'NavLink', label: 'Regions', path: '/regions/' },
-  {
-    _type: 'NavGroup',
-    main: { _type: 'NavLink', label: 'Routes', path: '#' },
-    sub: [
-      {
-        _type: 'NavLink',
-        label: 'UK to France',
-        path: '/routes/uk-to-france/',
-      },
-      {
-        _type: 'NavLink',
-        label: 'UK to Lebanon',
-        path: '/routes/uk-to-lebanon/',
-      },
-    ],
-  },
+
+  // NOTE: Intentionally hiding routes pages until we can get all of our routes
+  //       up, since they contain old info + people think we can only do
+  //       UK > France & UK > Lebanon.
+  //
+  // SEE: https://github.com/distributeaid/distributeaid.org/issues/968
+  //
+  // NOTE: Main menu route link tests were deleted from the home page E2E tests
+  //       as part of this update. We should write comprehensive main menu E2E
+  //       tests at some point, which cover the updated route pages & other key
+  //       main menu items.
+  //
+  // {
+  //   _type: 'NavGroup',
+  //   main: { _type: 'NavLink', label: 'Routes', path: '#' },
+  //   sub: [
+  //     {
+  //       _type: 'NavLink',
+  //       label: 'UK to France',
+  //       path: '/routes/uk-to-france/',
+  //     },
+  //     {
+  //       _type: 'NavLink',
+  //       label: 'UK to Lebanon',
+  //       path: '/routes/uk-to-lebanon/',
+  //     },
+  //   ],
+  // },
+
   { _type: 'NavButton', label: 'Donate', path: '/donate/' },
 ]
 
