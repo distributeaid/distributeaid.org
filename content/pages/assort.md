@@ -48,10 +48,11 @@ sections:
   - template: block-title
     text: Download
   - template: block-text
-    text: "#### [Standards Guide](/docs/assort_guidelines_v15.pdf \"assort_guidelines_v15.pdf\")\n\n####
-      [Sizing Chart](/docs/assort_sizing_chart_v6.pdf \"assort_sizing_chart_v6.pdf\")\n\n####
-      _If you are an organisation intending to adopt the standards, we strongly encourage
-      you to fill out this form to receive updates when revised versions of the standards
-      come out:_ \n\n#### [_Stay Up To Date_](https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq88gyT7h8Hzz%252F5pwVnAjsSIBdsuOiiRRR3tO5iNRn8gS049TyW7spdJ)_!_"
+    text: |-
+      #### [Standards Guide](/docs/assort_guidelines_v15.pdf "assort_guidelines_v15.pdf")
+
+      #### [Sizing Chart](/docs/assort_sizing_chart_v6.pdf "assort_sizing_chart_v6.pdf")
+
+      #### _If you are an organisation intending to adopt the standards, we strongly encourage you to fill out this form to receive updates when revised versions of the standards come out:_ [_Stay Up To Date_](https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq88gyT7h8Hzz%252F5pwVnAjsSIBdsuOiiRRR3tO5iNRn8gS049TyW7spdJ)_!_
 
 ---
