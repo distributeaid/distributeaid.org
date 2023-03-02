@@ -36,7 +36,7 @@ sections:
 - template: section-grid
   metadata:
     margins: Default
-    layout: Row-Bound
+    layout: Column-Bound
     numCols: 1
     numRows: 1
     order: top-to-bottom
