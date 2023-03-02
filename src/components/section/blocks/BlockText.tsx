@@ -4,11 +4,12 @@ import { MarkdownContent } from '../../markdown/MarkdownContent'
 
 type BlockTextProps = {
   block: BlockTextType
+  className?: string | undefined
 }
 
-export const BlockText: FC<BlockTextProps> = ({ block }) => {
+export const BlockText: FC<BlockTextProps> = ({ block, className }) => {
   return (
-    <div className="border-l-2 pl-4 border-navy-400">
+    <div className={`${className} border-l-2 pl-4 border-navy-400`}>
       <MarkdownContent content={block.text} />
     </div>
   )

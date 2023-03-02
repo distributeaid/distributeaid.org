@@ -16,25 +16,40 @@ type BlocksProps = {
 }
 
 export const Blocks: FC<BlocksProps> = ({ blocks }) => {
-  const blockElems = blocks.map((block, i) => <Block key={i} block={block} />)
+  const blockElems = blocks.map((block, i) => (
+    <Block className="mb-8" key={i} block={block} />
+  ))
 
   return <>{blockElems}</>
 }
 
 type BlockProps = {
   block: BlockNode
+  className?: string | undefined
 }
 
-export const Block: FC<BlockProps> = ({ block }) => {
+export const Block: FC<BlockProps> = ({ block, className }) => {
   switch (block.internal.type) {
     case 'DABlockTitle':
-      return <BlockTitle block={block as BlockTitleType} />
+      return (
+        <BlockTitle block={block as BlockTitleType} className={className} />
+      )
     case 'DABlockText':
-      return <BlockText block={block as BlockTextType} />
+      return <BlockText block={block as BlockTextType} className={className} />
     case 'DABlockLinksList':
-      return <BlockLinksList block={block as BlockLinksListType} />
+      return (
+        <BlockLinksList
+          block={block as BlockLinksListType}
+          className={className}
+        />
+      )
     case 'DABlockUpdatesList':
-      return <BlockUpdatesList block={block as BlockUpdatesListType} />
+      return (
+        <BlockUpdatesList
+          block={block as BlockUpdatesListType}
+          className={className}
+        />
+      )
 
     // wishlist
     case 'DABlockYoutube':
