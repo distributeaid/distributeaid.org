@@ -33,8 +33,19 @@ sections:
       * How to box and label the sorted donations and ready them for shipment.
 
       ASSORT was established as part of a joint partnership between [Boxtribute](https://www.boxtribute.org/ "https://www.boxtribute.org/"), [Distribute Aid](https://distributeaid.org/ "https://distributeaid.org/"), [HERMINE](https://hermine.global/ "https://hermine.global/"), and the [InterEuropean Human Aid Association](https://www.iha.help/ "https://www.iha.help/").
-
-      #### [Standards Guide (pdf)](www.google.com) <= Download
+- template: section-grid
+  metadata:
+    margins: Default
+    layout: Row-Bound
+    numCols: 1
+    numRows: 1
+    order: top-to-bottom
+  contentBlocks:
+  - template: block-title
+    text: Download
+  - template: block-text
+    text: |-
+      #### [Standards Guide](www.google.com)
 
       #### [Sizing Chart (pdf)](www.google.com) <= Download
 
