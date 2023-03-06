@@ -17,7 +17,7 @@ type BlocksProps = {
 
 export const Blocks: FC<BlocksProps> = ({ blocks }) => {
   const blockElems = blocks.map((block, i) => (
-    <Block className="mb-8" key={i} block={block} />
+    <Block className="mb-8 last:mb-0" key={i} block={block} />
   ))
 
   return <>{blockElems}</>
