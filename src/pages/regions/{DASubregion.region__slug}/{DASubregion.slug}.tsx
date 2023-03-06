@@ -172,6 +172,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
             return (
               <div
                 key={i}
+                className="last:grow"
                 style={{
                   backgroundColor: getBackgroundColor(),
                 }}
@@ -185,7 +186,10 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         <div className="flex flex-col">
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
           {subregion.stayInformed.links.length > 0 && (
-            <div style={{ backgroundColor: getBackgroundColor() }}>
+            <div
+              className="last:grow"
+              style={{ backgroundColor: getBackgroundColor() }}
+            >
               <SectionGrid
                 section={getSectionGridNode()}
                 className="prose mx-auto"
@@ -197,7 +201,10 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
 
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
           {subregion.newsUpdates.updates.length > 0 && (
-            <div style={{ backgroundColor: getBackgroundColor() }}>
+            <div
+              className="last:grow"
+              style={{ backgroundColor: getBackgroundColor() }}
+            >
               <SectionGrid
                 section={getSectionGridNode()}
                 className="prose mx-auto"

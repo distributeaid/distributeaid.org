@@ -189,6 +189,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
             return (
               <div
                 key={i}
+                className="last:grow"
                 style={{
                   backgroundColor: getBackgroundColor(),
                 }}
@@ -202,7 +203,10 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         <div className="flex flex-col">
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
           {region.stayInformed.links.length > 0 && (
-            <div style={{ backgroundColor: getBackgroundColor() }}>
+            <div
+              className="last:grow"
+              style={{ backgroundColor: getBackgroundColor() }}
+            >
               <SectionGrid
                 section={getSectionGridNode()}
                 className="prose mx-auto"
@@ -214,7 +218,10 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
           {region.newsUpdates.updates.length > 0 && (
-            <div style={{ backgroundColor: getBackgroundColor() }}>
+            <div
+              className="last:grow"
+              style={{ backgroundColor: getBackgroundColor() }}
+            >
               <SectionGrid
                 section={getSectionGridNode()}
                 className="prose mx-auto"
