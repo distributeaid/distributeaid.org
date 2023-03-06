@@ -2,22 +2,22 @@ import { FC, PropsWithChildren } from 'react'
 
 export const YouTubeEmbed: FC<
   PropsWithChildren<{
-    videoUrl: string
-    videoTitle?: string | undefined
+    url: string
+    title?: string | undefined
   }>
-> = ({ videoUrl, videoTitle }) => (
-  <figure>
+> = ({ url, title }) => (
+  <figure className="first:mt-0 last:mb-0">
     <iframe
       className="aspect-video w-full"
-      src={videoUrl}
-      title="YouTube embed"
+      src={url}
+      title={title || 'Youtube Video'}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       frameBorder="0"
       allowFullScreen
     />
-    {videoTitle && (
-      <figcaption data-testid="videoTitle" className="text-sm mt-4">
-        {videoTitle}
+    {title && (
+      <figcaption data-testid="YouTubeEmbed-Title" className="text-sm mt-4">
+        {title}
       </figcaption>
     )}
   </figure>

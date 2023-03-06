@@ -11,11 +11,10 @@ type BlockTextProps = {
 export const BlockLinksList: FC<BlockTextProps> = ({ block, className }) => {
   return (
     <>
-      {/* TODO: replace w/ <BlockTitle> once that no longer needs a full Node */}
       {block.title && (
         <BlockTitle className={className} block={{ text: block.title }} />
       )}
-      <div className={`${className} border-l-2 pl-4 border-navy-400`}>
+      <div className={`${className}`}>
         {/* NOTE: we're intentionally dropping the title so it doesn't get repeated */}
         <LinksList list={{ links: block.links }} />
       </div>

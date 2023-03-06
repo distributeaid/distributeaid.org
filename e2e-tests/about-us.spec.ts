@@ -18,7 +18,7 @@ test.describe('About us', () => {
   it('should have the correct content', async ({ page }) => {
     await page.goto(new URL('/about-us/', base).toString())
 
-    expect(await page.getByTitle('YouTube embed')).toHaveAttribute(
+    expect(await page.getByTitle('About Distribute Aid!')).toHaveAttribute(
       'src',
       'https://www.youtube.com/embed/msizPweg3kE',
     )

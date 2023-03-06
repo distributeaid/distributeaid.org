@@ -7,9 +7,5 @@ type BlockTitleProps = {
 }
 
 export const BlockTitle: FC<BlockTitleProps> = ({ block, className }) => {
-  return (
-    <h2 className={`${className} pl-4 border-l-2 border-navy-600`}>
-      {block.text}
-    </h2>
-  )
+  return <h2 className={`${className} border-navy-600`}>{block.text}</h2>
 }
