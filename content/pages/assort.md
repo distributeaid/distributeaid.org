@@ -1,7 +1,7 @@
 ---
 template: DAPageGeneric
 title: Resources
-slug: resources
+slug: resources/assort
 desc: ''
 sections:
 - template: section-grid
@@ -13,7 +13,7 @@ sections:
     order: top-to-bottom
   contentBlocks:
   - template: block-title
-    text: ASSORT
+    text: About ASSORT
   - template: block-text
     text: |-
       The Aid Standards for Sorting (ASSORT) are a set of interoperability standards for humanitarian aid that are designed to save grassroots organisations time, effort, and money.
