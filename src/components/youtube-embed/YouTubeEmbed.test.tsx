@@ -5,19 +5,19 @@ describe('<YouTubeEmbed/>', () => {
   it('renders the video and title', () => {
     render(
       <YouTubeEmbed
-        videoTitle="the title of the video"
-        videoUrl="https://example.com/video"
+        title="the title of the video"
+        url="https://example.com/video"
       />,
     )
 
-    expect(screen.getByText('the title of the video'))
-    expect(screen.getByTitle('YouTube embed')).toBeInTheDocument()
+    expect(screen.getByText('the title of the video')).toBeInTheDocument()
+    expect(screen.getByTitle('the title of the video')).toBeInTheDocument()
   })
 
   it('does not render title when none is given', () => {
-    render(<YouTubeEmbed videoUrl="https://example.com/video" />)
+    render(<YouTubeEmbed url="https://example.com/video" />)
 
-    expect(screen.getByTitle('YouTube embed')).toBeInTheDocument()
-    expect(screen.queryByTestId('videoTitle')).not.toBeInTheDocument()
+    expect(screen.getByTitle('Youtube Video')).toBeInTheDocument()
+    expect(screen.queryByTestId('YouTubeEmbed-Title')).not.toBeInTheDocument()
   })
 })

@@ -19,7 +19,11 @@ type BlocksProps = {
 
 export const Blocks: FC<BlocksProps> = ({ blocks }) => {
   const blockElems = blocks.map((block, i) => (
-    <Block className="mb-8 last:mb-0" key={i} block={block} />
+    <Block
+      className="mb-8 last:mb-0 border-l-2 pl-4 border-navy-400"
+      key={i}
+      block={block}
+    />
   ))
 
   return <>{blockElems}</>
@@ -53,10 +57,9 @@ export const Block: FC<BlockProps> = ({ block, className }) => {
         />
       )
     case 'DABlockYoutube':
-      return <BlockYouTube
-        block={block as BlockYoutubeType}
-        className={className}
-      />
+      return (
+        <BlockYouTube block={block as BlockYoutubeType} className={className} />
+      )
 
     // wishlist
     case 'DABlockTimeline':
