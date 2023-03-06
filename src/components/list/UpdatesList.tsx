@@ -24,8 +24,8 @@ const LinksList: FC<Props> = ({ list: { title, visibleCount, updates } }) => {
       )}
       {updates.map(({ title, date, content }, i) => (
         <article key={i} className="mb-6 last:mb-0">
-          <header className="flex justify-between items-end">
-            <h3 className="mb-0">{title}</h3>
+          <header className="flex justify-between items-start">
+            <h4 className="my-0">{title}</h4>
             <p className="mb-0 italic text-gray-600">
               {new Date(date).toLocaleDateString()}
             </p>
