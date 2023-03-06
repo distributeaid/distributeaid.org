@@ -194,7 +194,12 @@ fields:
   label: Needs
 pages:
 - content/pages/regions/eastern-europe/index.md
+- content/pages/regions/eastern-europe/index.md
+- content/pages/regions/france/index.md
 - content/pages/regions/france/index.md
 - content/pages/regions/greece/index.md
+- content/pages/regions/greece/index.md
 - content/pages/regions/lebanon/index.md
+- content/pages/regions/lebanon/index.md
+- content/pages/regions/the-balkans/index.md
 - content/pages/regions/the-balkans/index.md

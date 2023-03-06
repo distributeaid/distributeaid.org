@@ -20,8 +20,8 @@ sections:
 
       When quality control and sorting are not standardised, inefficiencies arise. These inefficiencies require significant expenditure of resources:
 
-      * Quality Control - the receiver may have to pay to dispose of items that are culturally inappropriate, out of season, or poor in quality
-      * Sorting - 100,000 aid items on a shipment might be sorted one way by the sender and then re-sorted another way by the receiver
+      * Quality Control - the receiver may have to pay to dispose of items that are culturally inappropriate, out of season, or poor in quality.
+      * Sorting - 100,000 aid items on a shipment might be sorted one way by the sender and then re-sorted another way by the receiver. Sorting takes time.
   - template: block-text
     text: |-
       **That’s where ASSORT comes in.** ASSORT leads to faster, cheaper, and more responsive aid. By providing a “common language” for aid donations, organisations receiving aid can know ahead of time what is on an aid shipment. When the shipment arrives, they process it much faster than they otherwise could. Indeed, a pilot shipment showed that using ASSORT standards significantly cut down on the receiving organisation’s sorting and processing time. Saving time and volunteer capacity makes a big difference for grassroots aid organisations.
