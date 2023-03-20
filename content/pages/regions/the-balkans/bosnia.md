@@ -19,7 +19,7 @@ newsUpdates:
     content: "[Many Chechens seeking to avoid conscription are heading to Bosnia.](https://apnews.com/article/politics-bosnia-and-herzegovina-croatia-europe-european-union-4f393a6765fed32ae1587ce783594ef7)"
     date: '2022-12-28T12:00:26Z'
     pinned: false
-name: Bosnia
+name: Bosnia and Herzegovina
 overview: Bosnia and Herzegovina is one of the last transit corridors used by people
   on the move (PoM) to reach the EU. [3,076 migrants and asylum-seekers arrived irregularly
   in BiH in August](https://reliefweb.int/report/bosnia-and-herzegovina/bosnia-and-herzegovina-operational-update-august-2022),
