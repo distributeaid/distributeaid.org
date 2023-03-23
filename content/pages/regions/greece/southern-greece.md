@@ -14,7 +14,12 @@ population:
 newsUpdates:
   title: Updates
   visibleCount: 3
-  updates: []
+  updates:
+  - title: Protests against Pushbacks
+    content: Refugees and Asylum Seekers in Athens took to the city centre to [protest
+      against the Greek government's illegal pushbacks and border violence](https://www.thenationalherald.com/refugees-migrants-march-in-athens-protest-alleged-sea-pushbacks/).
+    date: '2023-03-20T11:23:28Z'
+    pinned: false
 name: Southern Greece
 overview: |-
   The refugee solidarity response in Southern Greece is centred around Athens, which is most commonly where people are relocated from the Aegean Islands after their asylum applications have been processed. Some people seek permanent residence in Athens, while others only stay until arrangements are made for resettlement elsewhere in Europe.  It is common for refugees to live on the streets for periods of time, especially in the summer.
