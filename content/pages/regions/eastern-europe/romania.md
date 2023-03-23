@@ -14,6 +14,15 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Romania's support to Ukrainian Refugees
+    content: Romania [released a report detailing its response](https://ec.europa.eu/migrant-integration/library-document/romania-report-national-response-those-displaced-ukraine_en)
+      to Ukrainian refugees. As of January 2023, the country has spent €76 million
+      on housing and €152 million on food for refugees, while 19,594 have received
+      emergency medical care. However, infrastructure is still lacking for elderly
+      and disabled people, and fewer Ukrainian children than expected are enrolled
+      in Romanian schools.
+    date: '2023-03-20T11:33:24Z'
+    pinned: false
   - title: 'U.S. to selling military vehicles to Romania '
     content: The U.S. State Department is set to sell [nearly 100 military vehicles](https://www.rferl.org/a/romania-united-states-tactical-vehicles-sale/32318412.html)
       to NATO-member Romania. “Romania and the United States remain committed to supporting
