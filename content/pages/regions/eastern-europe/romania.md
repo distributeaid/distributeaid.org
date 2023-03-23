@@ -13,7 +13,12 @@ population:
 newsUpdates:
   title: News Updates
   visibleCount: 3
-  updates: []
+  updates:
+  - title: Meeting between Romania and Moldova
+    content: Romanian and Moldovan heads of state have [met to strengthen their relationship](https://apnews.com/article/russia-ukraine-politics-government-romania-287aee52255013dfa60a7c95aa805a72)
+      amid the Ukraine war.
+    date: '2023-02-23T11:31:55Z'
+    pinned: false
 name: Romania
 overview: According to the UNHCR, over 1.7 million [Ukrainian refugees had entered
   Romania](https://reliefweb.int/report/romania/regional-refugee-response-plan-ukraine-situation-inter-agency-operational-update-romania-august-2022#:\~:text=Operational%20context,to%20remain%20in%20the%20country.)
