@@ -14,6 +14,15 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: 'U.S. to selling military vehicles to Romania '
+    content: The U.S. State Department is set to sell [nearly 100 military vehicles](https://www.rferl.org/a/romania-united-states-tactical-vehicles-sale/32318412.html)
+      to NATO-member Romania. “Romania and the United States remain committed to supporting
+      the democratically elected authorities of the Republic of Moldova in their efforts
+      to strengthen their country’s political and economic resilience, defend its
+      sovereignty and territorial integrity, and continue the process of European
+      integration,” said both countries in a joint statement.
+    date: '2023-03-14T11:32:38Z'
+    pinned: false
   - title: Meeting between Romania and Moldova
     content: Romanian and Moldovan heads of state have [met to strengthen their relationship](https://apnews.com/article/russia-ukraine-politics-government-romania-287aee52255013dfa60a7c95aa805a72)
       amid the Ukraine war.
