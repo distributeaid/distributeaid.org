@@ -21,6 +21,12 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Protests in Beirut as banks limit withdrawals
+    content: In Beirut, protesters have [blocked roads and set fire to banks](https://www.reuters.com/world/middle-east/lebanese-depositors-smash-up-burn-beirut-banks-2023-02-16/)
+      over withdrawal restrictions. These restrictions have led some depositors to
+      take the desperate step of holding up banks at gunpoint to retrieve their money.
+    date: '2023-02-16T11:27:36Z'
+    pinned: false
   - date: '2023-02-03T11:09:40Z'
     pinned: false
     content: "[Inflation and the economic crisis](https://www.irishexaminer.com/news/arid-41063792.html)
