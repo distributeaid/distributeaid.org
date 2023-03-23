@@ -38,6 +38,12 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: 'Deaths in the Mediterranean '
+    content: Over 60 people died when a boat capsized off the coast of Italy on March
+      1st. Italy’s Interior Minister said [Greece’s containment policy](https://www.usnews.com/news/world/articles/2023-03-01/greeces-policies-may-affect-migrant-sea-routes-to-italy-italian-minister)
+      may have pushed the boat further toward Italy, although Greek land was closer.
+    date: '2023-03-01T11:09:11Z'
+    pinned: false
   - title: Calls for EU Solidarity
     content: Mediterranean governments are [calling for other EU countries](https://www.euronews.com/2023/03/05/ministers-from-five-mediterranean-countries-push-for-more-eu-solidarity-on-migration)
       to help front-line nations like theirs deal with increased migration.
