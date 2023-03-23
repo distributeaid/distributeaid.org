@@ -14,6 +14,14 @@ newsUpdates:
   title: Updates
   visibleCount: 3
   updates:
+  - title: Pro-Russia protesters arrested
+    content: "[Police arrested seven people](https://www.theguardian.com/world/2023/mar/12/moldova-pro-russian-protesters-gather-amid-fears-of-orchestrated-violence)
+      for allegedly plotting to cause “mass disorder” during an anti-government protest.
+      Moldova says those arrested were part of Russia’s ongoing attempt to destabilize
+      its country, which continues to suffer an energy crisis and high inflation amid
+      the war in neighbouring Ukraine."
+    date: '2023-03-13T11:29:36Z'
+    pinned: false
   - title: 'Moldova : Praised for helping the Ukrainian refugees but still discriminate
       the Romani'
     content: UN [praises Moldova](https://news.un.org/en/story/2023/01/1132697) for
