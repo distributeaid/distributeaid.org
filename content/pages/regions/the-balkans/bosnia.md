@@ -15,6 +15,11 @@ newsUpdates:
   title: Updates
   visibleCount: 3
   updates:
+  - title: Solidarity across borders
+    content: Bugojno, BiH residents collected [50 pallets of humanitarian aid ](https://sarajevotimes.com/humanitarian-aid-packages-for-turkey-and-syria-blocked-the-street-in-bosnian-town/)for
+      Türkiye and Syria earthquake victims.
+    date: '2022-12-28T11:12:16Z'
+    pinned: false
   - title: Russians can still enter Bosnia for 90 days with no visa
     content: "[Many Chechens seeking to avoid conscription are heading to Bosnia.](https://apnews.com/article/politics-bosnia-and-herzegovina-croatia-europe-european-union-4f393a6765fed32ae1587ce783594ef7)"
     date: '2022-12-28T12:00:26Z'
