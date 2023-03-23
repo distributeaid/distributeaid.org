@@ -40,6 +40,14 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Sunak and Macron Franco-British summit
+    content: Rishi Sunak and Emmanuel Macron met at the first Franco-British summit
+      in five years. Among other agreements, they announced a new detention centre
+      in Dunkirk, a joint enforcement team, and increased surveillance measures intended
+      to [keep displaced people from crossing the Channel](https://www.theguardian.com/politics/live/2023/mar/10/rishi-sunak-emmanuel-macron-channel-migrant-crossings-uk-politics-live)
+      [in small boats](https://www.theguardian.com/politics/live/2023/mar/10/rishi-sunak-emmanuel-macron-channel-migrant-crossings-uk-politics-live).
+    date: '2023-03-10T11:20:34Z'
+    pinned: false
   - title: UN Statement on the UK's newly introduced asylum bill
     content: The [UN released a statement ](https://www.unhcr.org/uk/news/press/2023/3/6407794e4/statement-on-uk-asylum-bill.html#:\~:text=The%20legislation%2C%20if%20passed%2C%20would,consideration%20of%20their%20individual%20circumstances)voicing
       profound concern over the UK’s asylum bill introduced to the House of Commons.
