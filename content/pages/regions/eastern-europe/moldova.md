@@ -14,6 +14,12 @@ newsUpdates:
   title: Updates
   visibleCount: 3
   updates:
+  - title: Apparent Russian plan to 'destabilize' Moldova
+    content: Media outlets report having [discovered a Russian document](https://www.cnn.com/2023/03/16/europe/russia-moldova-secret-document-intl-cmd/index.html)
+      that outlines a 10-year plan to destabilize Moldova, including “opposition to
+      cooperation between the Republic of Moldova and NATO.”
+    date: '2023-03-23T11:30:38Z'
+    pinned: false
   - title: Pro-Russia protesters arrested
     content: "[Police arrested seven people](https://www.theguardian.com/world/2023/mar/12/moldova-pro-russian-protesters-gather-amid-fears-of-orchestrated-violence)
       for allegedly plotting to cause “mass disorder” during an anti-government protest.
