@@ -40,6 +40,13 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: French pledge to support Ukrainians in Moldova
+    content: France [pledged €3 million](https://www.miragenews.com/france-funds-wfp-for-moldova-refugees-host-970129/)
+      to the United Nations World Food Programme to aid Ukrainian refugees and their
+      Moldovan host families. The World Food Programme created an office in Moldova
+      in March 2022 that provides three meals per day to Ukrainian refugees.
+    date: '2023-03-21T11:21:42Z'
+    pinned: false
   - title: Sunak and Macron Franco-British summit
     content: Rishi Sunak and Emmanuel Macron met at the first Franco-British summit
       in five years. Among other agreements, they announced a new detention centre
