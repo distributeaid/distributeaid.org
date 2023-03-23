@@ -32,7 +32,7 @@ newsUpdates:
     content: "[Inflation and the economic crisis](https://www.irishexaminer.com/news/arid-41063792.html)
       continue to make life worse decrease the life conditions for Syrian refugees
       living in Lebanon."
-    title: Syran refugees in Lebanon
+    title: Syrian refugees in Lebanon
 name: Beirut
 overview: The accumulation of crises in Lebanon, specifically Beirut, has led to enormous
   difficulties across many levels of society. People living in Beirut have been affected
