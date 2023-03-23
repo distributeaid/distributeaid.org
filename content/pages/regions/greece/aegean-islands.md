@@ -38,6 +38,11 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Calls for EU Solidarity
+    content: Mediterranean governments are [calling for other EU countries](https://www.euronews.com/2023/03/05/ministers-from-five-mediterranean-countries-push-for-more-eu-solidarity-on-migration)
+      to help front-line nations like theirs deal with increased migration.
+    date: '2023-03-01T11:07:45Z'
+    pinned: false
   - title: Mediterranean tragedy continue
     content: Another [boat sank in the Aegean Sea](https://www.reuters.com/world/europe/four-dead-least-39-rescued-after-migrant-boat-sinks-off-greece-2023-02-05/),
       killing four people.
