@@ -38,6 +38,13 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Death in the Aegean
+    content: "[Five people drowned](https://www.infomigrants.net/en/post/47457/5-dead-in-migrant-shipwreck-in-aegean-coast-guards)
+      in the Aegean Sea when a boat sank off the Turkish coast. Since 2014, over 2,200
+      people have drowned in the eastern Mediterranean, according to the International
+      Organization for Migration."
+    date: '2023-03-13T11:11:13Z'
+    pinned: false
   - title: 'Deaths in the Mediterranean '
     content: Over 60 people died when a boat capsized off the coast of Italy on March
       1st. Italy’s Interior Minister said [Greece’s containment policy](https://www.usnews.com/news/world/articles/2023-03-01/greeces-policies-may-affect-migrant-sea-routes-to-italy-italian-minister)
