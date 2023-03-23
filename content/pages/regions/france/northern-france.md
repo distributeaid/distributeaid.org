@@ -40,6 +40,15 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: UN Statement on the UK's newly introduced asylum bill
+    content: The [UN released a statement ](https://www.unhcr.org/uk/news/press/2023/3/6407794e4/statement-on-uk-asylum-bill.html#:\~:text=The%20legislation%2C%20if%20passed%2C%20would,consideration%20of%20their%20individual%20circumstances)voicing
+      profound concern over the UK’s asylum bill introduced to the House of Commons.
+      The UK Government claims this bill will stop small boat crossings from France.
+      The UN states, “This would be a clear breach of the Refugee Convention and would
+      undermine a longstanding, humanitarian tradition of which the British people
+      are rightly proud.”
+    date: '2023-03-07T11:18:59Z'
+    pinned: false
   - title: Attrocities continue on the route between France and England. And the UK
       is ramping up its illegal immigration enforcement
     content: "[How smugglers separate the families](https://www.theguardian.com/uk-news/2023/feb/05/mother-whose-children-were-sent-across-channel-without-her-arrives-in-uk)
