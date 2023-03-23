@@ -4590,9 +4590,9 @@
     "@types/node" "*"
 
 "@types/scheduler@*":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
-  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.3.tgz#cef09e3ec9af1d63d2a6cc5b383a737e24e6dcf5"
+  integrity sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
 
 "@types/sharp@^0.30.5":
   version "0.30.5"
@@ -15731,9 +15731,9 @@ react-router@6.9.0:
     "@remix-run/router" "1.4.0"
 
 react-select@^5.5.4:
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.7.1.tgz#c85afa8a771d75c935ec698726a8fbfece662ed0"
-  integrity sha512-u/brzm3B6vgI+PtxNyE4/18kXgaf6bn5sOAjKhaQ54EItBfW41SRLH1AJC5fefPnGM4JmMcM51t/HAVCi5GrpQ==
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.7.2.tgz#ccd40071b9429277983bf15526e7a5773a060e09"
+  integrity sha512-cTlJkQ8YjV6T/js8wW0owTzht0hHGABh29vjLscY4HfZGkv7hc3FFTmRp9NzY/Ib1uQ36GieAKEjxpHdpCFpcA==
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
