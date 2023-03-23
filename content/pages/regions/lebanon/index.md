@@ -3,12 +3,17 @@ newsUpdates:
   title: News Updates
   visibleCount: 5
   updates:
+  - title: Cash only economy emerging in Lebanon
+    content: "[Banks are rapidly collapsing](https://www.reuters.com/markets/cash-is-king-lebanon-banks-atrophy-2023-01-31/)
+      in Lebanon, leading to a cash-only economy."
+    date: '2023-01-31T11:26:31Z'
+    pinned: false
   - title: Lebanon's Economic Crisis Impacts Refugees
     content: In late 2021, 54% of refugees in the region declared a loss in employment
       or income, and 95% of refugee households [could not afford](https://data2.unhcr.org/en/documents/details/90852)
       enough food. [Thousands of displaced families and individuals are facing evictions](https://www.nrc.no/news/2022/february/lebanon-syrian-refugees-face-evictions-as-they-take-desperate-measures-to-survive-the-winter/)
       as they cannot pay rent.
-    date: 2022-02-12T02:41:19.000+00:00
+    date: '2022-02-12T02:41:19.000+00:00'
     pinned: false
 stayInformed:
   title: Stay Informed
