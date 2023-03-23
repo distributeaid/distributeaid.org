@@ -21,6 +21,12 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Lebanon encourages Syrian refugees to relocate
+    content: Lebanon’s acting director of General of Security reiterated that his
+      country would [continue encouraging Syrian refugees to locate elsewhere](https://www.arabnews.com/node/2272601/middle-east),
+      as Lebanon cannot afford to support them.
+    date: '2023-03-21T11:28:42Z'
+    pinned: false
   - title: Protests in Beirut as banks limit withdrawals
     content: In Beirut, protesters have [blocked roads and set fire to banks](https://www.reuters.com/world/middle-east/lebanese-depositors-smash-up-burn-beirut-banks-2023-02-16/)
       over withdrawal restrictions. These restrictions have led some depositors to
