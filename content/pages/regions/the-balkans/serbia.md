@@ -14,7 +14,14 @@ population:
 newsUpdates:
   title: Updates
   visibleCount: 3
-  updates: []
+  updates:
+  - title: 2022 migration figures
+    content: Serbia’s Refugee and Migration Commissariat reports that [124,127 total
+      registered migrants](https://www.aa.com.tr/en/europe/over-124-000-migrants-pass-through-serbia-in-2022/2838521)
+      passed through the country in 2022. Most people come from Afghanistan, Syria,
+      Pakistan, Morocco, India, and Ukraine.
+    date: '2023-03-13T11:14:35Z'
+    pinned: false
 name: Serbia
 overview: The geolocation of Serbia makes it a region of transit for those travelling
   to Western Europe by land; very few individuals choose to stay and apply for asylum.
