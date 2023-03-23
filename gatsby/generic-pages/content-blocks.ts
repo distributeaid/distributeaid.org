@@ -164,7 +164,7 @@ export const deriveImageBlockNode: DeriveBlockFn = (
     caption: getStringProperty(block, 'caption'),
     attribution: getStringProperty(block, 'attribution'),
     dateUploaded: getDateProperty(block, 'dateUploaded'),
-    date: getDateProperty(block, 'date'),
+    date: block?.date ? getDateProperty(block, 'date') : undefined,
     altText: altText,
     tags: getArrayProperty(block, 'tags'),
 

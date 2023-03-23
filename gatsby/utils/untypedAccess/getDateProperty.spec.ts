@@ -1,6 +1,6 @@
 import { getDateProperty } from './getDateProperty'
 
-describe('getNumberProperty()', () => {
+describe('getDateProperty()', () => {
   it('should return a Date property if present', () =>
     expect(getDateProperty({ foo: new Date('2019-01-17') }, 'foo')).toEqual(
       new Date('2019-01-17'),
@@ -19,5 +19,10 @@ describe('getNumberProperty()', () => {
   it('should throw an error if the property is not a Date', () =>
     expect(() => getDateProperty({ foo: 'not a Date' }, 'foo')).toThrow(
       `Property 'foo' on object '{\"foo\":\"not a Date\"}' does not match expected type!`,
+    ))
+
+  it('should throw an error if the property is not a valid Date', () =>
+    expect(() => getDateProperty({ foo: new Date('invalid') }, 'foo')).toThrow(
+      `Property 'foo' on object '{\"foo\":null}' is an invalid Date!`,
     ))
 })
