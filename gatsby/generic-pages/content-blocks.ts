@@ -91,6 +91,7 @@ export const deriveBlockNode: DeriveBlockFn = (
       return deriveTextBlockNode(block, parentId, createNodeArgs)
 
     case 'block-image-with-caption':
+      console.log(deriveImageBlockNode(block, parentId, createNodeArgs))
       return deriveImageBlockNode(block, parentId, createNodeArgs)
 
     case 'block-youtube-embed':
@@ -98,12 +99,6 @@ export const deriveBlockNode: DeriveBlockFn = (
 
     case 'block-timeline':
       return deriveTimelineBlockNode(block, parentId, createNodeArgs)
-
-    case 'block-image-with-caption':
-      reporter.warn(
-        `Dropping content block type="${blockType}", since it is not implemented yet.`,
-      )
-      return null
 
     default:
       reporter.warn(`Dropping unknown content block: type="${blockType}"`)

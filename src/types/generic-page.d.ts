@@ -186,7 +186,27 @@ Block: Image
 ------------------------------------------------------------
 Stub.
 */
-export interface BlockImage {}
+export interface BlockImage {
+  /**
+   * relative path to media file
+   */
+  asset: string
+
+  caption?: string
+
+  /**
+   * Photo attribution.  Usually a person or org name.
+   */
+  attribution: string
+
+  dateUploaded?: Date
+  date?: Date
+  altText: string
+  tags: string[]
+
+  alignmentPhoto?: 'Left' | 'Center' | 'Right'
+  alignmentCaption?: 'Left' | 'Center' | 'Right'
+}
 export interface BlockImageNodeInput extends BlockImage, NodeInput {}
 export interface BlockImageNode extends BlockImage, Node {}
 
