@@ -76,6 +76,22 @@ export const query = graphql`
               title
               embedUrl
             }
+            ... on DABlockImage {
+              internal {
+                type
+              }
+
+              asset
+              caption
+              attribution
+              dateUploaded
+              date
+              altText
+              tags
+
+              alignmentPhoto
+              alignmentCaption
+            }
             ... on DABlockTimeline {
               internal {
                 type

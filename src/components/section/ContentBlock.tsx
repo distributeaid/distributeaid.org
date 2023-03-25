@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import {
+  BlockImage as BlockImageType,
   BlockLinksList as BlockLinksListType,
   BlockNode,
   BlockText as BlockTextType,
@@ -7,6 +8,7 @@ import {
   BlockUpdatesList as BlockUpdatesListType,
   BlockYoutube as BlockYoutubeType,
 } from '../../types/generic-page.d'
+import { BlockImage } from './blocks/BlockImage'
 import { BlockLinksList } from './blocks/BlockLinksList'
 import { BlockText } from './blocks/BlockText'
 import { BlockTitle } from './blocks/BlockTitle'
@@ -60,11 +62,13 @@ export const Block: FC<BlockProps> = ({ block, className }) => {
       return (
         <BlockYouTube block={block as BlockYoutubeType} className={className} />
       )
+    case 'DABlockImage':
+      return (
+        <BlockImage block={block as BlockImageType} className={className} />
+      )
 
     // wishlist
     case 'DABlockTimeline':
-      return null
-    case 'DABlockImage':
       return null
     case 'DABlockCard':
       return null

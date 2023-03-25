@@ -91,7 +91,6 @@ export const deriveBlockNode: DeriveBlockFn = (
       return deriveTextBlockNode(block, parentId, createNodeArgs)
 
     case 'block-image-with-caption':
-      console.log(deriveImageBlockNode(block, parentId, createNodeArgs))
       return deriveImageBlockNode(block, parentId, createNodeArgs)
 
     case 'block-youtube-embed':
