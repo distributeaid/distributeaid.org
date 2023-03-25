@@ -22,12 +22,14 @@ export const schema = `
   }
 
   type DABlockImage implements Node {
-    asset: String!
+    relativePath: String!
+    alt: String!
+    image: ImageSharp!
+
     caption: String
     attribution: String!
     dateUploaded: Date
     date: Date
-    altText: String!
     tags: [String!]!
 
     alignmentPhoto: String
@@ -152,21 +154,22 @@ export const deriveImageBlockNode: DeriveBlockFn = (
   parentId,
   { createNodeId, createContentDigest },
 ) => {
-  const altText = getStringProperty(block, 'altText')
+  const alt = getStringProperty(block, 'altText')
   return {
-    asset: getStringProperty(block, 'asset'),
+    relativePath: getStringProperty(block, 'asset'),
+    alt: alt,
+
     caption: getStringProperty(block, 'caption'),
     attribution: getStringProperty(block, 'attribution'),
     dateUploaded: getDateProperty(block, 'dateUploaded'),
     date: block?.date ? getDateProperty(block, 'date') : undefined,
-    altText: altText,
     tags: getArrayProperty(block, 'tags'),
 
     alignmentPhoto: getStringProperty(block, 'alignmentPhoto'),
     alignmentCaption: getStringProperty(block, 'alignmentCaption'),
 
     // Gatsby Fields
-    id: createNodeId(`DABlockImage - ${altText}`),
+    id: createNodeId(`DABlockImage - ${alt}`),
     parent: parentId,
     children: [],
     internal: {

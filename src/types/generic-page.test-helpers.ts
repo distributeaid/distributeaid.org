@@ -478,11 +478,12 @@ export const getBlockImageData = (props?: Record<string, any>) => {
     ...props,
 
     asset: '',
+    alt: 'A Fake Image',
+
     caption: 'An Image Block',
     attribution: 'Distribute Aid',
     dateUploaded: new Date(2020, 9, 8),
     date: new Date(2020, 9, 8),
-    altText: 'A Fake Image',
     tags: ['a tag'],
 
     alignmentPhoto: 'Left',
@@ -498,12 +499,14 @@ export const getBlockImageNodeInput = (props?: Record<string, any>) => {
     parent: 'parent-id',
     children: [],
 
-    asset: '',
+    relativePath: '',
+    alt: 'A Fake Image',
+    image: undefined,
+
     caption: 'An Image Block',
     attribution: 'Distribute Aid',
     dateUploaded: new Date(2020, 9, 8),
     date: new Date(2020, 9, 8),
-    altText: 'A Fake Image',
     tags: ['a tag'],
 
     alignmentPhoto: 'Left',
@@ -526,12 +529,15 @@ export const getBlockImageNode = (props?: Record<string, any>) => {
     parent: 'parent-id',
     children: [],
 
+    relativePath: '',
+    alt: 'A Fake Image',
+    image: undefined,
+
     asset: '',
     caption: 'An Image Block',
     attribution: 'Distribute Aid',
     dateUploaded: new Date(2020, 9, 8),
     date: new Date(2020, 9, 8),
-    altText: 'A Fake Image',
     tags: ['a tag'],
 
     alignmentPhoto: 'Left',

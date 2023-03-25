@@ -1,3 +1,4 @@
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import { BlockImage as BlockImageType } from '../../../types/generic-page.d'
 
@@ -7,5 +8,13 @@ type BlockImageProps = {
 }
 
 export const BlockImage: FC<BlockImageProps> = ({ block, className }) => {
-  return <div className={`${className}`}>image</div>
+  return (
+    <div className={`${className}`}>
+      <GatsbyImage
+        className="w-full"
+        alt={block.alt}
+        image={block.image.gatsbyImageData}
+      />
+    </div>
+  )
 }

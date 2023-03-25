@@ -81,12 +81,19 @@ export const query = graphql`
                 type
               }
 
-              asset
+              image {
+                gatsbyImageData(
+                  width: 640
+                  aspectRatio: 1.2
+                  transformOptions: { fit: COVER }
+                )
+              }
+              alt
+
               caption
               attribution
               dateUploaded
               date
-              altText
               tags
 
               alignmentPhoto

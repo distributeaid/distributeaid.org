@@ -1,4 +1,5 @@
 import { Node, NodeInput } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { LinksList, UpdatesList } from './list.d'
 
 /*
@@ -190,7 +191,15 @@ export interface BlockImage {
   /**
    * relative path to media file
    */
-  asset: string
+  relativePath: string
+  /**
+   * Alternative text
+   */
+  alt: string
+  /**
+   * Image process by sharp
+   */
+  image: GatsbyImage
 
   caption?: string
 
@@ -201,7 +210,6 @@ export interface BlockImage {
 
   dateUploaded?: Date
   date?: Date
-  altText: string
   tags: string[]
 
   alignmentPhoto?: 'Left' | 'Center' | 'Right'
