@@ -64,7 +64,7 @@ newsUpdates:
       are rightly proud.”
     date: '2023-03-07T11:18:59Z'
     pinned: false
-  - title: Attrocities continue on the route between France and England. And the UK
+  - title: Atrocities continue on the route between France and England. And the UK
       is ramping up its illegal immigration enforcement
     content: "[How smugglers separate the families](https://www.theguardian.com/uk-news/2023/feb/05/mother-whose-children-were-sent-across-channel-without-her-arrives-in-uk)
       on the Channel crossing attempts from France to the UK continue. The UK is [ramping
