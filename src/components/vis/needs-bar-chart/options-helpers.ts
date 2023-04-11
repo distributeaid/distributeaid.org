@@ -40,10 +40,14 @@ Needs Options
 ================================================================================
 */
 export const getDefaultOptions = (): NeedsBarChartOptions => {
+  const today = new Date()
+  const year = today.getFullYear()
+  const quarter = 'Q' + Math.floor((today.getMonth() + 3) / 3)
+
   return {
     filters: {
       search: '',
-      quarter: '2023 Q1',
+      quarter: `${year} ${quarter}`,
       region: undefined,
       subregion: undefined,
       category: undefined,
