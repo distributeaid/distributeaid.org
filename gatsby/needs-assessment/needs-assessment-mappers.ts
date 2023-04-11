@@ -260,6 +260,7 @@ const placeMap: Record<string, PlacePartial> = {
   moldova: { region: 'Eastern Europe', subregion: 'Moldova' },
   slovakia: { region: 'Eastern Europe', subregion: 'Slovakia' },
   hungary: { region: 'Eastern Europe', subregion: 'Hungary' },
+  ukraine: { region: 'Eastern Europe', subregion: 'Ukraine' },
   other: {},
 }
 

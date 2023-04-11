@@ -8,16 +8,31 @@ import {
   productMapper,
 } from './needs-assessment-mappers'
 
-type SurveyId = {
-  id: string
-  year: string
+enum SURVEY_FORMATS {
+  ORIGINAL = 'ORIGINAL',
+  NO_QUARTER = 'NO_QUARTER',
 }
 
-type NeedsAssessmentSummary = {
-  summary: Record<
-    string,
-    Record<string, Record<string, Record<string, Record<string, number>>>>
-  >
+export type SurveyId = {
+  id: string
+  year: string
+  quarter?: string
+  url: string
+  format: SURVEY_FORMATS
+}
+
+type NASummary = NASummary_ORIGINAL | NASummary_NO_QUARTER
+type NASummary_ORIGINAL = Record<
+  string,
+  Record<string, Record<string, Record<string, Record<string, number>>>>
+>
+type NASummary_NO_QUARTER = Record<
+  string,
+  Record<string, Record<string, Record<string, number>>>
+>
+
+type NAResponse = {
+  summary: NASummary
   stats: { count: number }
 }
 
@@ -35,26 +50,64 @@ type NeedsData = {
 
 // NOTE: previous surveys were conducted with Google Forms, then Qualtrics.
 //       need to load the data manually
+
+// The original format encoded quarters into the survey via a select box.
+// That led to issues w/ people filling out the wrong survey, so we updated the
+// format to exclude the quarter question.  This required us to change the
+// structure of our url request and add some pre-processing code to put the data
+// in the same structure.
 const surveyIds: SurveyId[] = [
   {
-    // Q2
+    // 2022 Q2
     id: '01FXN0BYG1X8509Y8DTDCB8WKB',
     year: '2022',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01FXN0BYG1X8509Y8DTDCB8WKB/summary?groupBy=timeOfYear.quarter,basicInfo.region',
+    format: SURVEY_FORMATS.ORIGINAL,
   },
   {
-    // Q3
+    // 2022 Q3
     id: '01G4X7XTMCD6MFHDT5KS7Z27GF',
     year: '2022',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01G4X7XTMCD6MFHDT5KS7Z27GF/summary?groupBy=timeOfYear.quarter,basicInfo.region',
+    format: SURVEY_FORMATS.ORIGINAL,
   },
   {
-    // Q4
+    // 2022 Q4
     id: '01GCW8TQFCE92TR1NXH8NEET7F',
     year: '2022',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01GCW8TQFCE92TR1NXH8NEET7F/summary?groupBy=timeOfYear.quarter,basicInfo.region',
+    format: SURVEY_FORMATS.ORIGINAL,
   },
   {
-    // Q1
+    // 2023 Q1
     id: '01GKQEXWQSERMVX0BVT3G1N5JX',
     year: '2023',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01GKQEXWQSERMVX0BVT3G1N5JX/summary?groupBy=timeOfYear.quarter,basicInfo.region',
+    format: SURVEY_FORMATS.ORIGINAL,
+  },
+  {
+    // 2023 Q2
+    id: '01GVZ3652112KBNGBG43KB1F8J',
+    year: '2023',
+    quarter: 'Q2',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01GVZ3652112KBNGBG43KB1F8J/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.NO_QUARTER,
+  },
+  {
+    // 2023 Q2 - LHI
+    id: '01GVZ3R4RP5GMQPQWZH9SFR100',
+    year: '2023',
+    quarter: 'Q2',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01GVZ3R4RP5GMQPQWZH9SFR100/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.NO_QUARTER,
+  },
+  {
+    // 2023 Q2 - IsraAID
+    id: '01GVZ3SXBA8HCYTPQ1JZ53GZAX',
+    year: '2023',
+    quarter: 'Q2',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01GVZ3SXBA8HCYTPQ1JZ53GZAX/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.NO_QUARTER,
   },
 ]
 
@@ -66,11 +119,13 @@ export const sourceNeedsAssessments = async ({
 }: SourceNodesArgs) => {
   for (const surveyId of surveyIds) {
     reporter.info(`Fetching survey id ${surveyId.id}`)
-    const summary = await fetchNeedsAssessment(surveyId)
-    if (summary instanceof Error) {
-      reporter.panic(`Sourcing Failed`, summary)
+    const response = await fetchNeedsAssessment(surveyId)
+    if (response instanceof Error) {
+      reporter.panic(`Sourcing Failed`, response)
       continue
     }
+
+    const summary = preprocess(surveyId, response.summary)
 
     const { needsDatas, lookupMissLog } = processNeedsAssessment(
       surveyId,
@@ -102,21 +157,40 @@ export const sourceNeedsAssessments = async ({
 
 export const fetchNeedsAssessment = async (
   survey: SurveyId,
-): Promise<NeedsAssessmentSummary | Error> => {
-  const url = `https://storage.needs-assessment.distributeaid.dev/form/${survey.id}/summary?groupBy=timeOfYear.quarter,basicInfo.region`
-
-  const result = await fetch(url)
+): Promise<NAResponse | Error> => {
+  const result = await fetch(survey.url)
   if (result.status !== 200) {
-    return new Error(`Could not source needs assessment data: ${url}`)
+    return new Error(`Could not source needs assessment data: ${survey.url}`)
   }
 
-  const resultData = (await result.json()) as NeedsAssessmentSummary
+  const resultData = (await result.json()) as NAResponse
   return resultData
+}
+
+export const preprocess = (
+  surveyId: SurveyId,
+  summary: NASummary,
+): NASummary_ORIGINAL => {
+  switch (surveyId.format) {
+    case SURVEY_FORMATS.ORIGINAL:
+      return summary as NASummary_ORIGINAL
+    case SURVEY_FORMATS.NO_QUARTER:
+      if (surveyId.quarter === undefined) {
+        throw new Error(
+          `Survey has NO_QUARTER format and no hardcoded quarter: ${surveyId.id}`,
+        )
+      }
+      const structuredSummary: Record<string, NASummary_NO_QUARTER> = {}
+      structuredSummary[surveyId.quarter] = summary as NASummary_NO_QUARTER
+      return structuredSummary
+    default:
+      throw new Error(`Survey had an unkown format: ${surveyId.id}`)
+  }
 }
 
 export const processNeedsAssessment = (
   surveyId: SurveyId,
-  survey: NeedsAssessmentSummary,
+  summary: NASummary_ORIGINAL,
 ): {
   needsDatas: NeedsData[]
   lookupMissLog: string[]
@@ -124,7 +198,7 @@ export const processNeedsAssessment = (
   const needsDatas: NeedsData[] = []
   const lookupMissLog: string[] = []
 
-  for (let [quarter, places] of Object.entries(survey.summary)) {
+  for (let [quarter, places] of Object.entries(summary)) {
     for (const [placeKey, pages] of Object.entries(places)) {
       for (const [page, questions] of Object.entries(pages)) {
         if (!isProductSurveyPage(page)) continue

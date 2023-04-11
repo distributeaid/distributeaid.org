@@ -1,5 +1,10 @@
 {
-  "validSurveyId": { "id": "01FXN0BYG1X8509Y8DTDCB8WKB", "year": "2022" },
+  "validSurveyId": {
+    "id": "01FXN0BYG1X8509Y8DTDCB8WKB",
+    "year": "2022",
+    "format": "ORIGINAL",
+    "url": "https://storage.needs-assessment.distributeaid.dev/form/01FXN0BYG1X8509Y8DTDCB8WKB/summary?groupBy=timeOfYear.quarter,basicInfo.region"
+  },
   "validNeedsAssessmentData": {
     "summary": {
       "Q1": {

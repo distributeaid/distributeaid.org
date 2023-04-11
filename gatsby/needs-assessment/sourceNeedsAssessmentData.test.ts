@@ -1,15 +1,17 @@
-import { processNeedsAssessment } from './sourceNeedsAssessmentData'
+import { processNeedsAssessment, SurveyId } from './sourceNeedsAssessmentData'
 import {
   validNeedsAssessmentData,
   validNeedsDatas,
-  validSurveyId,
+  validSurveyId as validSurveyIdData,
 } from './valid-needs-assessment-data.json'
+
+const validSurveyId = validSurveyIdData as SurveyId
 
 describe('Processes Needs Assessment Data', () => {
   it('processes the needs assessment data correctly', () => {
     const { needsDatas, lookupMissLog } = processNeedsAssessment(
       validSurveyId,
-      validNeedsAssessmentData,
+      validNeedsAssessmentData.summary,
     )
     expect(needsDatas).toStrictEqual(validNeedsDatas)
     expect(lookupMissLog).toStrictEqual([])
