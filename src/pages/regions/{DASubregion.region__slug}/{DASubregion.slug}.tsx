@@ -151,13 +151,13 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
             <SmartLink
               href={
                 subregion.needsUrl ??
-                `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22subregion%22%3A%22${subregion.name.replace(
+                `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q2%22%2C%22subregion%22%3A%22${subregion.name.replace(
                   ' ',
                   '+',
                 )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Descending%22%7D%7D&InteractiveNeedsBarChartTitle=Top+Need+In+${subregion.name.replace(
                   ' ',
                   '+',
-                )}+%28${subregion.region.name.replace(' ', '+')}%29+-+2023+Q1`
+                )}+%28${subregion.region.name.replace(' ', '+')}%29+-+2023+Q2`
               }
             >
               <Button>Needs</Button>
