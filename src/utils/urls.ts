@@ -1,5 +1,7 @@
 export function getBaseURL(): URL {
-  return new URL('/', window.location.origin)
+  // HACK: made prod build
+  //  return new URL('/', window.location.origin)
+  return new URL('/', 'https://distributeaid.org')
 }
 
 export function originsMatch(
