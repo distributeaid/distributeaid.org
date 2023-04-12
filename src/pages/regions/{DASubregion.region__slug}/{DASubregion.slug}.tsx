@@ -13,6 +13,17 @@ import { getBackgroundColor } from '../../../utils/site-theme'
 
 import { Section } from '@components/section/Section'
 
+import { getQuarterOption } from '@components/vis/needs-bar-chart/options-helpers'
+
+import { AxisOption } from '../../../types/vis/needs-bar-chart-options.d'
+
+import {
+  SortByOption,
+  SortOrderOption,
+} from '../../../types/vis/nivo-bar-chart-options.d'
+
+import { getBaseURL } from '../../../utils/urls'
+
 // imports for HACK, see HACK comment below
 import {
   getBlockTextNode,
@@ -89,6 +100,34 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
   }
   // HACK END
 
+  const today = new Date()
+  const quarterOption = getQuarterOption(today)
+  const needsExplorerOtions = {
+    filters: {
+      search: '',
+      quarter: quarterOption,
+      subregion: subregion.name,
+    },
+    axis: {
+      indexBy: AxisOption.Item,
+      groupBy: AxisOption.Category,
+    },
+    sort: {
+      by: SortByOption.Value,
+      order: SortOrderOption.Desc,
+    },
+  }
+
+  const needsExplorerUrl = new URL('/needs-assessments/explorer/', getBaseURL())
+  needsExplorerUrl.searchParams.set(
+    'InteractiveNeedsBarChartTitle',
+    `Top Needs In ${subregion.name} (${quarterOption})`,
+  )
+  needsExplorerUrl.searchParams.set(
+    'InteractiveNeedsBarChartOptions',
+    JSON.stringify(needsExplorerOtions),
+  )
+
   return (
     <SimpleLayout>
       <header
@@ -148,18 +187,7 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
             </SmartLink>
           </li>
           <li>
-            <SmartLink
-              href={
-                subregion.needsUrl ??
-                `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q2%22%2C%22subregion%22%3A%22${subregion.name.replace(
-                  ' ',
-                  '+',
-                )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Descending%22%7D%7D&InteractiveNeedsBarChartTitle=Top+Need+In+${subregion.name.replace(
-                  ' ',
-                  '+',
-                )}+%28${subregion.region.name.replace(' ', '+')}%29+-+2023+Q2`
-              }
-            >
+            <SmartLink href={needsExplorerUrl.toString()}>
               <Button>Needs</Button>
             </SmartLink>
           </li>

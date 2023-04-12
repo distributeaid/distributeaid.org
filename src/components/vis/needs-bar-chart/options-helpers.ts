@@ -39,15 +39,27 @@ import {
 Needs Options
 ================================================================================
 */
+export const getQuarterOption = (date: Date): string => {
+  const year = date.getFullYear()
+  const quarter = 'Q' + Math.floor((date.getMonth() + 3) / 3)
+
+  console.log(date.getFullYear())
+  console.log(date.getMonth())
+  console.log(date.getMonth() + 3)
+  console.log((date.getMonth() + 3) / 3)
+  console.log(Math.floor((date.getMonth() + 3) / 3))
+  console.log(Math.floor((date.getMonth() + 3) / 3))
+
+  return `${year} ${quarter}`
+}
+
 export const getDefaultOptions = (): NeedsBarChartOptions => {
   const today = new Date()
-  const year = today.getFullYear()
-  const quarter = 'Q' + Math.floor((today.getMonth() + 3) / 3)
 
   return {
     filters: {
       search: '',
-      quarter: `${year} ${quarter}`,
+      quarter: getQuarterOption(today),
       region: undefined,
       subregion: undefined,
       category: undefined,

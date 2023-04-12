@@ -15,7 +15,7 @@ describe('<Card/>', () => {
         body={<p>body paragraph</p>}
         actions={[
           {
-            url: 'test/path',
+            url: '/test/path',
             label: 'test label',
           },
         ]}
@@ -27,7 +27,7 @@ describe('<Card/>', () => {
     expect(card).toHaveTextContent(/card test subtitle/)
     expect(card).toHaveTextContent(/body paragraph/)
     const actionEl = getByText('test label')
-    expect(actionEl).toHaveAttribute('href', 'test/path')
+    expect(actionEl).toHaveAttribute('href', '/test/path')
   })
 
   it('renders the children', () => {
@@ -64,7 +64,7 @@ describe('<Card/>', () => {
         body={<p>body paragraph</p>}
         actions={[
           {
-            url: 'test/path',
+            url: '/test/path',
             label: 'test label',
           },
         ]}
@@ -96,7 +96,7 @@ describe('<Card/>', () => {
         body={<p>body paragraph</p>}
         actions={[
           {
-            url: 'test/path',
+            url: '/test/path',
             label: 'test label',
           },
         ]}

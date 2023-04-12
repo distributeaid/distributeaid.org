@@ -9,6 +9,7 @@ import {
   getFilterQuarterOptions,
   getFilterRegionOptions,
   getFilterSubregionOptions,
+  getQuarterOption,
   index,
   selectBy,
   updateAxisGroupByOption,
@@ -52,10 +53,23 @@ import {
 } from '../../../types/vis/needs-bar-chart-options.test-helpers'
 
 /*
+Needs Options
+================================================================================
+*/
+describe('getQuarterOption', () => {
+  it('should return a "YYYY QQ" formatted string for the given date', () => {
+    const date1 = new Date(Date.parse('2023-03-31'))
+    expect(getQuarterOption(date1)).toBe('2023 Q1')
+
+    const date2 = new Date(Date.parse('2023-04-01'))
+    expect(getQuarterOption(date2)).toBe('2023 Q2')
+  })
+})
+
+/*
 Filter
 ================================================================================
 */
-
 describe('filter', () => {
   it('should return all the needs if the filter is undefined', () => {
     const needs = [] as Need[]
