@@ -16,6 +16,17 @@ import { getBackgroundColor } from '../../utils/site-theme'
 
 import { Section } from '@components/section/Section'
 
+import { getQuarterOption } from '@components/vis/needs-bar-chart/options-helpers'
+
+import { AxisOption } from '../../types/vis/needs-bar-chart-options.d'
+
+import {
+  SortByOption,
+  SortOrderOption,
+} from '../../types/vis/nivo-bar-chart-options.d'
+
+import { getBaseURL } from '../../utils/urls'
+
 // imports for HACK, see HACK comment below
 import {
   getBlockTextNode,
@@ -87,6 +98,34 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
     )
   }
   // HACK END
+
+  const today = new Date()
+  const quarterOption = getQuarterOption(today)
+  const needsExplorerOtions = {
+    filters: {
+      search: '',
+      quarter: quarterOption,
+      region: region.name,
+    },
+    axis: {
+      indexBy: AxisOption.Item,
+      groupBy: AxisOption.Category,
+    },
+    sort: {
+      by: SortByOption.Value,
+      order: SortOrderOption.Desc,
+    },
+  }
+
+  const needsExplorerUrl = new URL('/needs-assessments/explorer/', getBaseURL())
+  needsExplorerUrl.searchParams.set(
+    'InteractiveNeedsBarChartTitle',
+    `Top Needs In ${region.name} (${quarterOption})`,
+  )
+  needsExplorerUrl.searchParams.set(
+    'InteractiveNeedsBarChartOptions',
+    JSON.stringify(needsExplorerOtions),
+  )
 
   region.subregions.sort((subregionA, subregionB) => {
     if (subregionA.name > subregionB.name) {
@@ -165,18 +204,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
             </SmartLink>
           </li>
           <li>
-            <SmartLink
-              href={
-                region.needsUrl ??
-                `/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q2%22%2C%22region%22%3A%22${region.name.replace(
-                  ' ',
-                  '+',
-                )}%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Item%22%2C%22groupBy%22%3A%22Category%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Value%22%2C%22order%22%3A%22Descending%22%7D%7D&InteractiveNeedsBarChartTitle=Top+Needs+In+${region.name.replace(
-                  ' ',
-                  '+',
-                )}+-2023+Q2`
-              }
-            >
+            <SmartLink href={needsExplorerUrl.toString()}>
               <Button>Needs</Button>
             </SmartLink>
           </li>
