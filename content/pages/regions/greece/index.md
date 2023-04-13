@@ -27,14 +27,14 @@ newsUpdates:
       that host people on the move in mainland Greece are [not designed to handle
       these types of extreme weather conditions](https://www.infomigrants.net/en/post/38150/greek-system-leaves-migrants-out-in-the-cold).
       For the people outside the camps, conditions are potentially even worse.
-    date: 2022-01-26T23:39:13.000+00:00
+    date: '2022-01-26T23:39:13.000+00:00'
     pinned: false
   - content: Greece recently took over responsibility for making cash support payments
       to asylum seekers from the UNHCR, but created restrictive [regulations](https://www.refugee.info/greece/cash-assistance-in-greece--greece/greece-cash-alliance-hotline?language=en)
       to cut large numbers of recipients from receiving aid. This is [creating](https://www.savethechildren.net/news/ngos-raise-alarm-growing-hunger-among-refugees-and-asylum-seekers-greece)
       a [human rights](https://oxfamilibrary.openrepository.com/bitstream/handle/10546/621307/bp-detention-as-default-greece-asylum-161121-en.pdf;jsessionid=E395A5C0804B9A94EBA2F1D7907AC19F?sequence=1)
       [and hunger crisis](https://eu.rescue.org/press-release/joint-statement-are-you-eligible-eat).
-    date: 2021-10-01T22:27:13.000+00:00
+    date: '2021-10-01T22:27:13.000+00:00'
     pinned: false
     title: Cash Support Program Fails Asylum Seekers
 stayInformedLinks:
@@ -113,6 +113,6 @@ coverPhoto:
   tags: []
 longText: ''
 needs:
-  url: "/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22region%22%3A%22Greece%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Category%22%2C%22groupBy%22%3A%22Item%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Q1+2023+greec"
+  url: "/needs-assessments/explorer/?InteractiveNeedsBarChartOptions=%7B%22filters%22%3A%7B%22search%22%3A%22%22%2C%22quarter%22%3A%222023+Q1%22%2C%22region%22%3A%22Greece%22%7D%2C%22axis%22%3A%7B%22indexBy%22%3A%22Category%22%2C%22groupBy%22%3A%22Item%22%7D%2C%22sort%22%3A%7B%22by%22%3A%22Label%22%2C%22order%22%3A%22Ascending%22%7D%7D&InteractiveNeedsBarChartTitle=Q1+2023+greece"
 
 ---
