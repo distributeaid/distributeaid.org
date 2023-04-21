@@ -14,6 +14,20 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Survey of Ukrainian refugee experiences
+    content: A survey by the Norwegian Refugee Council (NRC) found that 68% of refugees
+      from Ukraine who live in Poland, Romania, and Moldova [struggle to meet basic
+      needs](https://www.nrc.no/news/2023/february/ukraine-refugee-survey/) and risk
+      falling into poverty. The survey also revealed that refugees in collective centres,
+      mothers and children, pensioners, and people with disabilities need help accessing
+      basic necessities. Around 45% of refugees reportedly skip meals, while Ukrainian
+      refugees in Poland and Moldova (especially Roma refugees) say they have been
+      moved to substandard housing and have been forced to borrow money for survival.
+      The NRC is calling on host countries and international donors to ensure the
+      continued protection of refugees from Ukraine by developing policies that will
+      prevent people from falling into further hardship.
+    date: '2023-02-21T22:13:10Z'
+    pinned: false
   - title: Payment delays for Romanians hosting Ukrainian refugees
     content: Romanians hosting Ukrainian refugees say they [did not receive their
       promised governmental assistance](https://balkaninsight.com/2023/03/23/romanians-hosting-ukrainian-refugees-complain-of-delay-in-payments/)
