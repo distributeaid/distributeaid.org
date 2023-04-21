@@ -14,6 +14,14 @@ newsUpdates:
   title: News Updates
   visibleCount: 3
   updates:
+  - title: Payment delays for Romanians hosting Ukrainian refugees
+    content: Romanians hosting Ukrainian refugees say they [did not receive their
+      promised governmental assistance](https://balkaninsight.com/2023/03/23/romanians-hosting-ukrainian-refugees-complain-of-delay-in-payments/)
+      in January or February. Romania paid out €160 million in December, but future
+      subsidies may become more restricted as concerns arise about people abusing
+      this scheme.
+    date: '2023-03-23T07:00:00Z'
+    pinned: false
   - title: Romania's support to Ukrainian Refugees
     content: Romania [released a report detailing its response](https://ec.europa.eu/migrant-integration/library-document/romania-report-national-response-those-displaced-ukraine_en)
       to Ukrainian refugees. As of January 2023, the country has spent €76 million
