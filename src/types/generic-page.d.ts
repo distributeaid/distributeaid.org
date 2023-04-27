@@ -199,7 +199,7 @@ export interface BlockImage {
   /**
    * Image process by sharp
    */
-  image: GatsbyImage
+  image?: GatsbyImage
 
   caption?: string
 
@@ -216,7 +216,12 @@ export interface BlockImage {
   alignmentCaption?: 'Left' | 'Center' | 'Right'
 }
 export interface BlockImageNodeInput extends BlockImage, NodeInput {}
-export interface BlockImageNode extends BlockImage, Node {}
+export interface BlockImageNode extends BlockImage, Node {
+  /**
+   * Image process by sharp
+   */
+  image: GatsbyImage
+}
 
 /*
 Block: Card

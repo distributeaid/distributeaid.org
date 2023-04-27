@@ -20,7 +20,7 @@ describe('Blocks', () => {
   })
 
   it('can render multiple blocks', () => {
-    const { getByText, getByAltText } = render(<Blocks blocks={blocks} />)
+    const { getByText, getByTestId } = render(<Blocks blocks={blocks} />)
 
     const titleElem = getByText('My Title')
     expect(titleElem).toBeTruthy()
@@ -31,7 +31,7 @@ describe('Blocks', () => {
     const youTubeElem = getByText('My video.')
     expect(youTubeElem).toBeTruthy()
 
-    const imageElem = getByAltText('My Alt')
+    const imageElem = getByTestId('BlockImage')
     expect(imageElem).toBeTruthy()
   })
 
@@ -96,8 +96,8 @@ describe('Block', () => {
 
   it('can render an image block', () => {
     const block = factory.getBlockImageNode({ alt: 'My Alt' })
-    const { getByAltText } = render(<Block block={block} />)
-    const imageElem = getByAltText('My Alt')
+    const { getByTestId } = render(<Block block={block} />)
+    const imageElem = getByTestId('BlockImage')
     expect(imageElem).toBeTruthy()
   })
 

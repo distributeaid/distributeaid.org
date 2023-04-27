@@ -478,7 +478,7 @@ export const getBlockImageData = (props?: Record<string, any>) => {
     ...props,
 
     asset: '',
-    alt: 'A Fake Image',
+    altText: 'A Fake Image',
 
     caption: 'An Image Block',
     attribution: 'Distribute Aid',
@@ -501,7 +501,6 @@ export const getBlockImageNodeInput = (props?: Record<string, any>) => {
 
     relativePath: '',
     alt: 'A Fake Image',
-    image: undefined,
 
     caption: 'An Image Block',
     attribution: 'Distribute Aid',
@@ -531,7 +530,7 @@ export const getBlockImageNode = (props?: Record<string, any>) => {
 
     relativePath: '',
     alt: 'A Fake Image',
-    image: undefined,
+    image: { gatsbyImageData: undefined },
 
     asset: '',
     caption: 'An Image Block',

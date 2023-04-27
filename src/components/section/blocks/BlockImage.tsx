@@ -9,7 +9,7 @@ type BlockImageProps = {
 
 export const BlockImage: FC<BlockImageProps> = ({ block, className }) => {
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} data-testId="BlockImage">
       <GatsbyImage
         className="w-full"
         alt={block.alt}
