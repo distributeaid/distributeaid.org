@@ -2,6 +2,10 @@ import fetch from 'cross-fetch'
 import { SourceNodesArgs } from 'gatsby'
 import { Product } from '../../src/types/product.d'
 import {
+  isProductSurveyPage as generatedIsProductSurveyPage,
+  productMapper as generatedProductMapper,
+} from './generated-needs-assessment-mappers'
+import {
   isProductSurveyPage,
   placeMapper,
   PlacePartial,
@@ -11,6 +15,7 @@ import {
 enum SURVEY_FORMATS {
   ORIGINAL = 'ORIGINAL',
   NO_QUARTER = 'NO_QUARTER',
+  GENERATED_V1 = 'GENERATED_V1',
 }
 
 export type SurveyId = {
@@ -21,7 +26,10 @@ export type SurveyId = {
   format: SURVEY_FORMATS
 }
 
-type NASummary = NASummary_ORIGINAL | NASummary_NO_QUARTER
+type NASummary =
+  | NASummary_ORIGINAL
+  | NASummary_NO_QUARTER
+  | NASummary_GENERATED_V1
 type NASummary_ORIGINAL = Record<
   string,
   Record<string, Record<string, Record<string, Record<string, number>>>>
@@ -30,6 +38,7 @@ type NASummary_NO_QUARTER = Record<
   string,
   Record<string, Record<string, Record<string, number>>>
 >
+type NASummary_GENERATED_V1 = NASummary_NO_QUARTER
 
 type NAResponse = {
   summary: NASummary
@@ -109,6 +118,14 @@ const surveyIds: SurveyId[] = [
     url: 'https://storage.needs-assessment.distributeaid.dev/form/01GVZ3SXBA8HCYTPQ1JZ53GZAX/summary?groupBy=basicInfo.region',
     format: SURVEY_FORMATS.NO_QUARTER,
   },
+  {
+    // 2023 Q3
+    id: '01H3KENGVF837HMQ2S4VXYCC39',
+    year: '2023',
+    quarter: 'Q3',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01H3KENGVF837HMQ2S4VXYCC39/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.GENERATED_V1,
+  },
 ]
 
 export const sourceNeedsAssessments = async ({
@@ -174,15 +191,27 @@ export const preprocess = (
   switch (surveyId.format) {
     case SURVEY_FORMATS.ORIGINAL:
       return summary as NASummary_ORIGINAL
+
     case SURVEY_FORMATS.NO_QUARTER:
       if (surveyId.quarter === undefined) {
         throw new Error(
           `Survey has NO_QUARTER format and no hardcoded quarter: ${surveyId.id}`,
         )
       }
-      const structuredSummary: Record<string, NASummary_NO_QUARTER> = {}
-      structuredSummary[surveyId.quarter] = summary as NASummary_NO_QUARTER
-      return structuredSummary
+      const noQuarterSummary: Record<string, NASummary_NO_QUARTER> = {}
+      noQuarterSummary[surveyId.quarter] = summary as NASummary_NO_QUARTER
+      return noQuarterSummary
+
+    case SURVEY_FORMATS.GENERATED_V1:
+      if (surveyId.quarter === undefined) {
+        throw new Error(
+          `Survey has NO_QUARTER format and no hardcoded quarter: ${surveyId.id}`,
+        )
+      }
+      const generatedV1Summary: Record<string, NASummary_GENERATED_V1> = {}
+      generatedV1Summary[surveyId.quarter] = summary as NASummary_GENERATED_V1
+      return generatedV1Summary
+
     default:
       throw new Error(`Survey had an unkown format: ${surveyId.id}`)
   }
@@ -198,10 +227,20 @@ export const processNeedsAssessment = (
   const needsDatas: NeedsData[] = []
   const lookupMissLog: string[] = []
 
+  const testProductSurveyPage =
+    surveyId.format === SURVEY_FORMATS.GENERATED_V1
+      ? generatedIsProductSurveyPage
+      : isProductSurveyPage
+
+  const mapProduct =
+    surveyId.format === SURVEY_FORMATS.GENERATED_V1
+      ? generatedProductMapper
+      : productMapper
+
   for (let [quarter, places] of Object.entries(summary)) {
     for (const [placeKey, pages] of Object.entries(places)) {
       for (const [page, questions] of Object.entries(pages)) {
-        if (!isProductSurveyPage(page)) continue
+        if (!testProductSurveyPage(page)) continue
         for (const [question, units] of Object.entries(questions)) {
           const unitKey = Object.keys(units)[0]
           if (unitKey === undefined) {
@@ -217,7 +256,7 @@ export const processNeedsAssessment = (
             continue
           }
 
-          const product = productMapper(page, question, unitKey)
+          const product = mapProduct(page, question, unitKey)
           if (product === undefined) {
             lookupMissLog.push(
               `No product defined for ${page}.${question}.${unitKey}`,
