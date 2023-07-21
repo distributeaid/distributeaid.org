@@ -6,7 +6,6 @@ import SimpleLayout from '@layouts/Simple'
 import HowWeHelpSection from '@components/home/HowWeHelpSection'
 import ImageCarousel from '@components/home/ImageCarousel'
 import MissionSection from '@components/home/MissionSection'
-import RoutesSection from '@components/home/RoutesSection'
 import YearInNumbersSection from '@components/home/YearInNumbersSection'
 import { PageHeader } from '@components/PageHeader'
 
@@ -43,7 +42,6 @@ const HomePage: FC<Props> = ({
     <SimpleLayout>
       <ImageCarousel headline={headline} />
       <MissionSection missionStatement={missionStatement} />
-      <RoutesSection />
       <HowWeHelpSection blocks={howWeHelpBlock} />
       <YearInNumbersSection />
     </SimpleLayout>
