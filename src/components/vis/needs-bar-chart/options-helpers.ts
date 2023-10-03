@@ -54,12 +54,17 @@ export const getQuarterOption = (date: Date): string => {
 }
 
 export const getDefaultOptions = (): NeedsBarChartOptions => {
-  const today = new Date()
+  //  see BUG below
+  //  const today = new Date()
 
   return {
     filters: {
       search: '',
-      quarter: getQuarterOption(today),
+
+      // BUG: NA data isn't available right after the quarter changes.
+      // quarter: getQuarterOption(today),
+      quarter: '2023 Q3',
+
       region: undefined,
       subregion: undefined,
       category: undefined,
