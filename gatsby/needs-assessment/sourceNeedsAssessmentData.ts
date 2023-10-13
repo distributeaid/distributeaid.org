@@ -126,6 +126,14 @@ const surveyIds: SurveyId[] = [
     url: 'https://storage.needs-assessment.distributeaid.dev/form/01H3KENGVF837HMQ2S4VXYCC39/summary?groupBy=basicInfo.region',
     format: SURVEY_FORMATS.GENERATED_V1,
   },
+  {
+    // 2023 Q4
+    id: '01HAC605NVGB5ADR2PMXKWKJ6W',
+    year: '2023',
+    quarter: 'Q4',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01HAC605NVGB5ADR2PMXKWKJ6W/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.GENERATED_V1,
+  },
 ]
 
 export const sourceNeedsAssessments = async ({
