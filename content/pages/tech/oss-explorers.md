@@ -41,10 +41,9 @@ sections:
       * Cyber Security & Compliance
       * Documentation & Content
       * API development
-  - template: block-title
-    text: Specific things you could be working on while in the Open Source Explorers program
-  - template: block-text
-    text: |-
+  
+      ### Specific things you could be working on while in the Open Source Explorers program
+      
       * Distribute Aid Website
       * Our Needs Assessment (frontend and backend)
       * Visualisations like our [Data Exporer](https://distributeaid.org/needs-assessments/explorer/)
@@ -70,10 +69,9 @@ sections:
         * People who have been looking for a way to contribute to open-source projects
         * People who have varied skill sets and interests (Jacks of all trades)
         * People who are keen on learning new skills
-  - template: block-title
-    text: Our Stack
-  - template: block-text
-    text: |-
+
+      ### Our Stack
+
       We’re currently using the following technologies and more. Don’t worry too much about whether you have extended familiarity with all of them. This is just so you know what to expect to work with.
 
       * TypeScript
