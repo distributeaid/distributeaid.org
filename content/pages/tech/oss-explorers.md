@@ -14,7 +14,7 @@ sections:
   contentBlocks:
   - template: block-text
     text: |-
-      ![DA Open Source Explorers Logo](/uploads/da-oss-explorers-horizontal.png)
+      ![DA Open Source Explorers Logo](/uploads/da-oss-explorers-horizontal--inverse.png)
   - template: block-title
     text: What is Open Source Explorers
   - template: block-text
