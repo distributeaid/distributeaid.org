@@ -59,6 +59,7 @@ const nav: NavItem[] = [
   },
   { _type: 'NavLink', label: 'Regions', path: '/regions/' },
   { _type: 'NavLink', label: 'Resources', path: '/resources/assort' },
+  { _type: 'NavLink', label: 'Tech', path: '/tech/oss-explorers/' },
 
   // NOTE: Intentionally hiding routes pages until we can get all of our routes
   //       up, since they contain old info + people think we can only do
