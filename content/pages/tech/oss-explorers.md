@@ -42,7 +42,7 @@ sections:
       * Documentation & Content
       * API development
   - template: block-title
-    text: Specific things you could be working on while in the Open Source Explorers program:
+    text: Specific things you could be working on while in the Open Source Explorers program
   - template: block-text
     text: |-
       * Distribute Aid Website
