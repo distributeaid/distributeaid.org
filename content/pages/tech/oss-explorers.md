@@ -96,15 +96,14 @@ sections:
   - template: block-text
     text: |-
       **Step 1: Fill out our [application form](https://forms.gle/6nyfSoGPn9GLFEnBA)**
-      The deadline is DATE and we’ll try to get back to everyone by DATE
-
+      The deadline is end of November 2023.
       **Step 2: Interview**
-      This is a chance for us to get to know each other, figure out how much time you can commit to the program, and work out which contributor track or project you’d be the best fit for
-      These will happen TIMEFRAME and we’ll try to make our final decisions by DATE
+      This is a chance for us to get to know each other, figure out how much time you can commit to the program, and work out which contributor track or project you’d be the best fit.
+      These will happen in November and December.
 
       **Step 3: Final decision and onboarding**
-      If you’re invited to join the the Open Source Explorers program, we’ll introduce you to your mentor and start onboarding you
-      This will happen TIMEFRAME
+      If you’re invited to join the the Open Source Explorers program, we’ll introduce you to your mentor and start onboarding you.
+      We’ll make our final decision and inform participants by mid-December.
 
       **Step 4: Open Source Explorers program**
       The program kicks off in week 2 of January and runs until mid-March
