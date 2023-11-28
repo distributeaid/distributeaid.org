@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/giving-tuesday"
+  to = "https://opencollective.com/distribute-aid-usa/contribute/support-refugees-with-vital-winter-aid-68456"
+  status = 302
+  force = true
