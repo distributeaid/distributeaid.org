@@ -81,7 +81,7 @@
     "jest-environment-jsdom": "29.5.0",
     "jest-extended": "3.2.4",
     "postcss": "8.4.33",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "prettier-plugin-organize-imports": "3.2.2",
     "ts-jest": "29.1.0",
     "ts-node": "^10.9.1"
