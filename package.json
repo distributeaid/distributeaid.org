@@ -55,7 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/plugin-transform-react-jsx": "7.21.0",
-    "@codesee/babel-plugin-instrument": "0.551.0",
+    "@codesee/babel-plugin-instrument": "0.587.0",
     "@codesee/tracker": "0.551.0",
     "@distributeaid/shared-config": "distributeaid/shared-config",
     "@storybook/addon-a11y": "^6.5.12",
