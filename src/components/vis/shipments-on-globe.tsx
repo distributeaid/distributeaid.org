@@ -23,7 +23,7 @@ type Props = {
 }
 
 function buildGlobeVisData(lineItems: LineItem[]) {
-  const arcsData = lineItems
+  let arcsData = lineItems
     .map((node) => {
       if (node?.shipment?.origin === node?.shipment?.destination) {
         return null
@@ -44,6 +44,51 @@ function buildGlobeVisData(lineItems: LineItem[]) {
     .filter((node) => {
       return node !== null
     })
+  const extraOrigin: string[] = [
+    'USA',
+    'USA',
+    'USA',
+    'USA',
+    'USA',
+    'UKR',
+    'UKR',
+    'ESP',
+    'LTU',
+    'NLD',
+    'USA',
+  ]
+  const extraDest: string[] = [
+    'UKR',
+    'MDA',
+    'POL',
+    'ROU',
+    'USA',
+    'GRC',
+    'FRA',
+    'POL',
+    'ROU',
+    'LBN',
+    'GRC',
+  ]
+  const extraData = extraOrigin
+    .map((origin: string, index: number) => {
+      let originCoords = getCoordsAlpha3(origin)
+      let destCoords = getCoordsAlpha3(extraDest[index] || '')
+      if (!originCoords || !destCoords) {
+        return null
+      }
+      return {
+        startLat: originCoords?.lat,
+        startLng: originCoords?.lon,
+        endLat: destCoords?.lat,
+        endLng: destCoords?.lon,
+        color: ['blue', 'rgb(8, 43, 118)'],
+      }
+    })
+    .filter((node) => {
+      return node !== null
+    })
+  extraData.forEach((data) => arcsData.push(data))
   return arcsData
 }
 
