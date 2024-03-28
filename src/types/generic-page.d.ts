@@ -1,4 +1,5 @@
 import { Node, NodeInput } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { LinksList, UpdatesList } from './list.d'
 
 /*
@@ -186,9 +187,41 @@ Block: Image
 ------------------------------------------------------------
 Stub.
 */
-export interface BlockImage {}
+export interface BlockImage {
+  /**
+   * relative path to media file
+   */
+  relativePath: string
+  /**
+   * Alternative text
+   */
+  alt: string
+  /**
+   * Image process by sharp
+   */
+  image?: GatsbyImage
+
+  caption?: string
+
+  /**
+   * Photo attribution.  Usually a person or org name.
+   */
+  attribution: string
+
+  dateUploaded?: Date
+  date?: Date
+  tags: string[]
+
+  alignmentPhoto?: 'Left' | 'Center' | 'Right'
+  alignmentCaption?: 'Left' | 'Center' | 'Right'
+}
 export interface BlockImageNodeInput extends BlockImage, NodeInput {}
-export interface BlockImageNode extends BlockImage, Node {}
+export interface BlockImageNode extends BlockImage, Node {
+  /**
+   * Image process by sharp
+   */
+  image: GatsbyImage
+}
 
 /*
 Block: Card

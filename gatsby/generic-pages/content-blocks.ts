@@ -1,5 +1,6 @@
 import { CreateNodeArgs } from 'gatsby'
 import { getArrayProperty } from '../utils/untypedAccess/getArrayProperty'
+import { getDateProperty } from '../utils/untypedAccess/getDateProperty'
 import { getStringProperty } from '../utils/untypedAccess/getStringProperty'
 
 import { BlockNodeInput } from '../../src/types/generic-page.d'
@@ -8,6 +9,7 @@ export const schema = `
   union DABlockTypes =
     DABlockTitle |
     DABlockText |
+    DABlockImage |
     DABlockYoutube |
     DABlockTimeline
 
@@ -17,6 +19,21 @@ export const schema = `
 
   type DABlockText implements Node {
     text: String!
+  }
+
+  type DABlockImage implements Node {
+    relativePath: String!
+    alt: String!
+    image: ImageSharp!
+
+    caption: String
+    attribution: String!
+    dateUploaded: Date
+    date: Date
+    tags: [String!]!
+
+    alignmentPhoto: String
+    alignmentCaption: String
   }
 
   type DABlockYoutube implements Node {
@@ -75,17 +92,14 @@ export const deriveBlockNode: DeriveBlockFn = (
     case 'block-text':
       return deriveTextBlockNode(block, parentId, createNodeArgs)
 
+    case 'block-image-with-caption':
+      return deriveImageBlockNode(block, parentId, createNodeArgs)
+
     case 'block-youtube-embed':
       return deriveYoutubeBlockNode(block, parentId, createNodeArgs)
 
     case 'block-timeline':
       return deriveTimelineBlockNode(block, parentId, createNodeArgs)
-
-    case 'block-image-with-caption':
-      reporter.warn(
-        `Dropping content block type="${blockType}", since it is not implemented yet.`,
-      )
-      return null
 
     default:
       reporter.warn(`Dropping unknown content block: type="${blockType}"`)
@@ -131,6 +145,36 @@ export const deriveTextBlockNode: DeriveBlockFn = (
     internal: {
       type: 'DABlockText',
       contentDigest: createContentDigest(text),
+    },
+  }
+}
+
+export const deriveImageBlockNode: DeriveBlockFn = (
+  block,
+  parentId,
+  { createNodeId, createContentDigest },
+) => {
+  const alt = getStringProperty(block, 'altText')
+  return {
+    relativePath: getStringProperty(block, 'asset'),
+    alt: alt,
+
+    caption: getStringProperty(block, 'caption'),
+    attribution: getStringProperty(block, 'attribution'),
+    dateUploaded: getDateProperty(block, 'dateUploaded'),
+    date: block?.date ? getDateProperty(block, 'date') : undefined,
+    tags: getArrayProperty(block, 'tags'),
+
+    alignmentPhoto: getStringProperty(block, 'alignmentPhoto'),
+    alignmentCaption: getStringProperty(block, 'alignmentCaption'),
+
+    // Gatsby Fields
+    id: createNodeId(`DABlockImage - ${alt}`),
+    parent: parentId,
+    children: [],
+    internal: {
+      type: 'DABlockImage',
+      contentDigest: createContentDigest(JSON.stringify(block)),
     },
   }
 }
