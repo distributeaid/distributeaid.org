@@ -6,7 +6,7 @@
 
 [[redirects]]
   from = "/send-aid-to-gaza"
-  to = "https://www.launchgood.com/v4/campaign/send_aid_to_gaza"
+  to = "https://donorbox.org/help-distribute-aid-save-humans-in-gaza"
   status = 302
   force = true
 
