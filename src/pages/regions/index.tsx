@@ -120,7 +120,10 @@ export default RegionsPage
 
 export const query = graphql`
   query RegionsPageQuery {
-    regions: allDaRegion(sort: { fields: name }) {
+    regions: allDaRegion(
+      filter: { name: { ne: "USA" } }
+      sort: { fields: name }
+    ) {
       nodes {
         path
         name

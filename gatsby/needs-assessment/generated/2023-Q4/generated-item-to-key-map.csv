@@ -55,12 +55,19 @@ Medical,Bandaid / Plaster,,,40 per Box,medical,bandaidPlaster,boxper40
 Medical,Anti-Lice Shampoo,,,100ml Bottle,medical,antiLiceShampoo,bottle100ml
 Medical,Surgical Needles,,,10 per Pack,medical,surgicalNeedles,packper10
 Swag,DA Hoodies,,,Individual Item,swag,dAHoodies,itemIndividual
+Food,Rice,,,Euro Pallet,food,rice,palletEuro
 Food,Rice,,,Kilogram,food,rice,kilogram
+Food,Potatoe,,,Euro Pallet,food,potatoe,palletEuro
 Food,Potatoe,,,Kilogram,food,potatoe,kilogram
+Food,Onion,,,Euro Pallet,food,onion,palletEuro
 Food,Onion,,,Kilogram,food,onion,kilogram
+Food,Garlic,,,Euro Pallet,food,garlic,palletEuro
 Food,Garlic,,,Kilogram,food,garlic,kilogram
+Food,Flour,,,Euro Pallet,food,flour,palletEuro
 Food,Flour,,,Kilogram,food,flour,kilogram
+Food,Salt,,,Euro Pallet,food,salt,palletEuro
 Food,Salt,,,Kilogram,food,salt,kilogram
+Food,Sugar,,,Euro Pallet,food,sugar,palletEuro
 Food,Sugar,,,Kilogram,food,sugar,kilogram
 Food,Cooking Oil,,,Euro Pallet,food,cookingOil,palletEuro
 Food,Cooking Oil,,,Liter,food,cookingOil,liter
@@ -74,8 +81,10 @@ Food,Canned Fish,,,Euro Pallet,food,cannedFish,palletEuro
 Food,Canned Fish,,,Cans (#10 Kitchen Size),food,cannedFish,cans
 Food,Sweetcorn,,,Euro Pallet,food,sweetcorn,palletEuro
 Food,Sweetcorn,,,Cans (#10 Kitchen Size),food,sweetcorn,cans
+Food,Tea,,,Euro Pallet,food,tea,palletEuro
 Food,Tea,,,Kilogram,food,tea,kilogram
 Food,Tea,,,Servings,food,tea,servings
+Food,Coffee,,,Euro Pallet,food,coffee,palletEuro
 Food,Coffee,,,Kilogram,food,coffee,kilogram
 Food,Coffee,,,Servings,food,coffee,servings
 Women's Clothing,Jacket,Woman,,Individual Item,womensClothing,jacket,itemIndividual

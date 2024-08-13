@@ -1,0 +1,262 @@
+Category,Item,Age / Gender,Size / Style,Unit,Category Id,Item Id,Unit Id
+Hygiene,Baby Powder,,,8 oz Bottle,hygiene,babyPowder,bottleoz8
+Hygiene,Bath Towel,,,Individual Item,hygiene,bathTowel,itemIndividual
+Hygiene,Bleach,,,1 Quart Bottle,hygiene,bleach,bottle1Quart
+Hygiene,Body Wash,,,8 oz Bottle,hygiene,bodyWash,bottleoz8
+Hygiene,Chapstick,,,0.15 oz Tube,hygiene,chapstick,tubeoz0point15
+Hygiene,Comb,,,Individual Item,hygiene,comb,itemIndividual
+Hygiene,Conditioner,,,8 oz Bottle,hygiene,conditioner,bottleoz8
+Hygiene,Condom,,,Individual Item,hygiene,condom,itemIndividual
+Hygiene,Deodorant,,,3.4 oz Roller,hygiene,deodorant,rolleroz3point4
+Hygiene,Diaper,,Size 0,Individual Item,baby,size0Diaper,itemIndividual
+Hygiene,Diaper,,Size 1,Individual Item,baby,size1Diaper,itemIndividual
+Hygiene,Diaper,,Size 2,Individual Item,baby,size2Diaper,itemIndividual
+Hygiene,Diaper,,Size 3,Individual Item,baby,size3Diaper,itemIndividual
+Hygiene,Diaper,,Size 4,Individual Item,baby,size4Diaper,itemIndividual
+Hygiene,Diaper,,Size 5,Individual Item,baby,size5Diaper,itemIndividual
+Hygiene,Diaper,,Size 6,Individual Item,baby,size6Diaper,itemIndividual
+Hygiene,Diaper,,Adult,Individual Item,hygiene,adultDiaper,itemIndividual
+Hygiene,Foot Powder,,,8 oz Bottle,hygiene,footPowder,bottleoz8
+Hygiene,Gloves,,Disposable,100 Count Box,hygiene,disposableGloves,boxCount100
+Hygiene,Hair Brush,,,Individual Item,hygiene,hairBrush,itemIndividual
+Hygiene,Hair Tie,,,Individual Item,hygiene,hairTie,itemIndividual
+Hygiene,Hand Sanitizer,,,8 oz Bottle,hygiene,handSanitizer,bottleoz8
+Hygiene,Lotion,,,8 oz Bottle,hygiene,lotion,bottleoz8
+Hygiene,Mask,,Cloth,Individual Item,hygiene,clothMask,itemIndividual
+Hygiene,Mask,,Surgical,Individual Item,hygiene,surgicalMask,itemIndividual
+Hygiene,Mask,,KN95,Individual Item,hygiene,kN95Mask,itemIndividual
+Hygiene,Mask,,N95 / FFP2,Individual Item,hygiene,n95FFP2Mask,itemIndividual
+Hygiene,Mosquito Repellent,,,3.4 oz Bottle,hygiene,mosquitoRepellent,bottleoz3point4
+Hygiene,Nail Clipper,,,Individual Item,hygiene,nailClipper,itemIndividual
+Hygiene,Petroleum Jelly,,,7.5 oz Jar,hygiene,petroleumJelly,jaroz7point5
+Hygiene,Razor,,Disposable,Individual Item,hygiene,disposableRazor,itemIndividual
+Hygiene,Sanitary Pad,,Disposable,Individual Item,hygiene,disposableSanitaryPad,itemIndividual
+Hygiene,Shampoo,,,8 oz Bottle,hygiene,shampoo,bottleoz8
+Hygiene,Shaving Foam,,,6.8 oz Can,hygiene,shavingFoam,canoz6point8
+Hygiene,Soap,,Bar,3.5 oz Bar,hygiene,barSoap,baroz3point5
+Hygiene,Soap,,Liquid,8 oz Bottle,hygiene,liquidSoap,bottleoz8
+Hygiene,Sunblock,,,5 oz Tube,hygiene,sunblock,tubeoz5
+Hygiene,Sunscreen,,,8 oz Tube,hygiene,sunscreen,tubeoz8
+Hygiene,Tampons,,,20 Count Box,hygiene,tampons,boxCount20
+Hygiene,Tissue,,Box,Box,hygiene,boxTissue,box
+Hygiene,Toilet Paper,,,Roll,hygiene,toiletPaper,roll
+Hygiene,Toothbrush,,,Individual Item,hygiene,toothbrush,itemIndividual
+Hygiene,Toothpaste,,,3.4 oz Tube,hygiene,toothpaste,tubeoz3point4
+Hygiene,Washcloth,,,Individual Item,hygiene,washcloth,itemIndividual
+Hygiene,Washing Detergent,,,1 Quart Bottle (Liquid),hygiene,washingDetergent,bottleQuart1
+Hygiene,Washing Detergent,,,11 lbs Bag (Powedered),hygiene,washingDetergent,baglbs11
+Hygiene,Wet Wipes,,,100 Count Pack,hygiene,wetWipes,packper100
+Food,Bottled Water,,,Individual Item,food,bottledWater,itemIndividual
+Food,Cereal Bar,,,Individual Item,food,cerealBar,itemindividual
+Food,Coffee,,,Pallet,food,coffee,pallet
+Food,Coffee,,,Pound,food,coffee,pound
+Food,Coffee,,,Servings,food,coffee,servings
+Food,Condiments,,,8 oz Bottle,food,condiments,bottleoz8
+Food,Cooking Oil,,,Pallet,food,cookingOil,pallet
+Food,Cooking Oil,,,Gallon,food,cookingOil,gallon
+Food,Fruit,,Canned,15 oz Cans,food,cannedFruit,cansoz15
+Food,Individual Snack,,,20 Count Box,food,individualSnack,boxCount20
+Food,Jerkey,,,8 oz bag,food,jerkey,bagoz8
+Food,Juice Box,,,individual Item,food,juiceBox,itemindividual
+Food,Nuts,,,oz,food,nuts,bagoz8
+Food,Ramen,,,Individual Item,food,ramen,itemIndividual
+Food,Rice,,,Pallet,food,rice,pallet
+Food,Rice,,,Pound,food,rice,pound
+Food,Salt,,,Pallet,food,salt,pallet
+Food,Salt,,,Pound,food,salt,pound
+Food,Soda,,,12 oz Cans,food,soda,cansoz12
+Food,Soda,,,20 oz Bottles,food,soda,bottlesoz20
+Food,Soup,,Canned,15 oz Cans,food,cannedSoup,cansoz15
+Food,Sugar,,,Pallet,food,sugar,pallet
+Food,Sugar,,,Pound,food,sugar,pound
+Food,Tea,,,Pallet,food,tea,pallet
+Food,Tea,,,Pound,food,tea,pound
+Food,Tea,,,Servings,food,tea,servings
+Food,Vegetables,,Canned,15 oz Cans,food,cannedVegetables,cansoz15
+Cooking,Aluminum Foil,,,Individual Item,cooking,aluminumFoil,itemIndividual
+Cooking,Bowl,,Mixing,Individual Item,cooking,mixingBowl,itemIndividual
+Cooking,Bowl,,Serving,Individual Item,cooking,servingBowl,itemIndividual
+Cooking,Camping Stove,,,Individual Item,cooking,campingStove,itemIndividual
+Cooking,Can Opener,,,Individual Item,cooking,canOpener,itemIndividual
+Cooking,Charcoal,,,20 lb Bag,cooking,charcoal,baglb20
+Cooking,Coffee Cup,,Disposable,Individual Item,cooking,disposableCoffeeCup,itemIndividual
+Cooking,Coffee Machine,,,Individual Item,cooking,coffeeMachine,itemIndividual
+Cooking,Cup,,,Individual Item,cooking,cup,itemIndividual
+Cooking,Cutting Board,,,Individual Item,cooking,cuttingBoard,itemIndividual
+Cooking,Dish,,Disposable,Individual Item,cooking,disposableDish,itemIndividual
+Cooking,Eating Utensils,,Disposable,Individual Item,cooking,disposableEatingUtensils,itemIndividual
+Cooking,Eating Utensils,,,Individual Item,cooking,eatingUtensils,itemIndividual
+Cooking,Food Container,,,Individual Item,cooking,foodContainer,itemIndividual
+Cooking,Frying Pan,,,Individual Item,cooking,fryingPan,itemIndividual
+Cooking,Grater,,,Individual Item,cooking,grater,itemIndividual
+Cooking,Grill,,,Individual Item,cooking,grill,itemIndividual
+Cooking,Hot Pad,,,Individual Item,cooking,hotPad,itemIndividual
+Cooking,Paper Bag,,,Individual Item,cooking,paperBag,itemIndividual
+Cooking,Pot,,,Individual Item,cooking,pot,itemIndividual
+Cooking,Rice Cooker,,,Individual Item,cooking,riceCooker,itemIndividual
+Cooking,Soup Cup,,Disposable,Individual Item,cooking,disposableSoupCup,itemIndividual
+Cooking,Straw,,Disposable,Individual Item,cooking,disposableStraw,itemIndividual
+Cooking,Tea Kettle,,,Individual Item,cooking,teaKettle,itemIndividual
+Cooking,Ziploc Bag,,,100 Count Box,cooking,ziplocBag,boxCount100
+Cleaning,Dish Soap,,,32 oz Bottle,cleaning,dishSoap,bottleoz32
+Cleaning,Disinfectant Spray,,,32 oz Bottle,cleaning,disinfectantSpray,bottleoz32
+Cleaning,Mold Remediation Tool,,,Individual Item,cleaning,moldRemediationTool,itemIndividual
+Cleaning,Mold Remover Spray,,,32 oz Bottle,cleaning,moldRemoverSpray,bottleoz32
+Men's Clothing,Jacket,Man,,Individual Item,clothingMen,jacket,itemIndividual
+Men's Clothing,Long-Sleeved Top,Man,,Individual Item,clothingMen,longSleevedTop,itemIndividual
+Men's Clothing,Pants,Man,,Individual Item,clothingMen,pants,itemIndividual
+Men's Clothing,Shoes,Man,,Individual Item,clothingMen,shoes,pair
+Men's Clothing,Shorts,Man,,Individual Item,clothingMen,shorts,itemIndividual
+Men's Clothing,Socks,Man,,Individual Item,clothingMen,socks,pair
+Men's Clothing,Sweatshirt,Man,,Individual Item,clothingMen,sweatshirt,itemIndividual
+Men's Clothing,T-Shirt,Man,,Individual Item,clothingMen,tShirt,itemIndividual
+Men's Clothing,Underwear,Man,,Individual Item,clothingMen,underwear,itemIndividual
+Women's Clothing,Bras,Woman,,Individual Item,clothingWomen,bras,itemIndividual
+Women's Clothing,Dresses,Woman,,Individual Item,clothingWomen,dresses,itemIndividual
+Women's Clothing,Jacket,Woman,,Individual Item,clothingWomen,jacket,itemIndividual
+Women's Clothing,Leggings,Woman,,Individual Item,clothingWomen,leggings,itemIndividual
+Women's Clothing,Long-Sleeved Top,Woman,,Individual Item,clothingWomen,longSleevedTop,itemIndividual
+Women's Clothing,Pants,Woman,,Individual Item,clothingWomen,pants,itemIndividual
+Women's Clothing,Shoes,Woman,,Individual Item,clothingWomen,shoes,pair
+Women's Clothing,Shorts,Woman,,Individual Item,clothingWomen,shorts,itemIndividual
+Women's Clothing,Socks,Woman,,Individual Item,clothingWomen,socks,pair
+Women's Clothing,Sweatshirt,Woman,,Individual Item,clothingWomen,sweatshirt,itemIndividual
+Women's Clothing,T-Shirt,Woman,,Individual Item,clothingWomen,tShirt,itemIndividual
+Women's Clothing,Underwear,Woman,,Individual Item,clothingWomen,underwear,itemIndividual
+Boy's Clothing,Jacket,Boy,,Individual Item,clothingBoys,jacket,itemIndividual
+Boy's Clothing,Long-Sleeved Top,Boy,,Individual Item,clothingBoys,longSleevedTop,itemIndividual
+Boy's Clothing,Pants,Boy,,Individual Item,clothingBoys,pants,itemIndividual
+Boy's Clothing,Shoes,Boy,,Individual Item,clothingBoys,shoes,pair
+Boy's Clothing,Shorts,Boy,,Individual Item,clothingBoys,shorts,itemIndividual
+Boy's Clothing,Socks,Boy,,Individual Item,clothingBoys,socks,pair
+Boy's Clothing,Sweatshirt,Boy,,Individual Item,clothingBoys,sweatshirt,itemIndividual
+Boy's Clothing,T-Shirt,Boy,,Individual Item,clothingBoys,tShirt,itemIndividual
+Boy's Clothing,Underwear,Boy,,Individual Item,clothingBoys,underwear,itemIndividual
+Girl's Clothing,Bras,Girl,,Individual Item,clothingGirls,bras,itemIndividual
+Girl's Clothing,Dresses,Girl,,Individual Item,clothingGirls,dresses,itemIndividual
+Girl's Clothing,Jacket,Girl,,Individual Item,clothingGirls,jacket,itemIndividual
+Girl's Clothing,Long-Sleeved Top,Girl,,Individual Item,clothingGirls,longSleevedTop,itemIndividual
+Girl's Clothing,Pants,Girl,,Individual Item,clothingGirls,pants,itemIndividual
+Girl's Clothing,Shoes,Girl,,Individual Item,clothingGirls,shoes,pair
+Girl's Clothing,Shorts,Girl,,Individual Item,clothingGirls,shorts,itemIndividual
+Girl's Clothing,Socks,Girl,,Individual Item,clothingGirls,socks,pair
+Girl's Clothing,Sweatshirt,Girl,,Individual Item,clothingGirls,sweatshirt,itemIndividual
+Girl's Clothing,T-Shirt,Girl,,Individual Item,clothingGirls,tShirt,itemIndividual
+Girl's Clothing,Underwear,Girl,,Individual Item,clothingGirls,underwear,itemIndividual
+Baby Clothing,Bodies / Rompers,Baby,,Individual Item,clothingBaby,bodiesRompers,itemIndividual
+Baby Clothing,Jacket / All-In-Ones,Baby,,Individual Item,clothingBaby,jacketAllInOnes,itemIndividual
+Baby Clothing,Onesies / Pyjamas,Baby,,Individual Item,clothingBaby,onesiesPyjamas,itemIndividual
+Baby Clothing,Pants,Baby,,Individual Item,clothingBaby,pants,itemIndividual
+Baby Clothing,Shoes,Baby,,Individual Item,clothingBaby,shoes,pair
+Baby Clothing,Shorts,Baby,,Individual Item,clothingBaby,shorts,itemIndividual
+Baby Clothing,Socks,Baby,,Individual Item,clothingBaby,socks,pair
+Baby Clothing,Sweatshirt,Baby,,Individual Item,clothingBaby,sweatshirt,itemIndividual
+Baby Clothing,T-Shirt,Baby,,Individual Item,clothingBaby,tShirt,itemIndividual
+Baby,Baby Food,,,2.5 oz Can,baby,babyFood,canoz2point5
+Baby,Baby Formula,,Regular,20 oz Can,baby,regularBabyFormula,canoz20
+Baby,Baby Formula,,Regular,Pound,baby,regularBabyFormula,pound
+Baby,Baby Shampoo,,,8 oz Bottle,baby,babyShampoo,bottleoz8
+Baby,Bib,,,Individual Item,baby,bib,itemIndividual
+Baby,Blanket,,,Individual Item,baby,blanket,itemIndividual
+Baby,Bottle,,,Individual Item,baby,bottle,itemIndividual
+Baby,Car Seat,,,Individual Item,baby,carSeat,itemIndividual
+Baby,Diaper,,,Individual Item,baby,diaper,itemIndividual
+Baby,Diaper Bag,,Disposable,Individual Item,baby,disposableDiaperBag,itemIndividual
+Baby,Diaper Rash Cream,,,Individual Item,baby,diaperRashCream,itemIndividual
+Baby,Pacifier,,,Individual Item,baby,pacifier,itemIndividual
+Baby,Stroller,,,Individual Item,baby,stroller,itemIndividual
+Shelter,Backpack,,,Individual Item,shelter,backpack,itemIndividual
+Shelter,Bed Sheets,,,Individual Item,shelter,bedSheets,itemIndividual
+Shelter,Blanket,,,Individual Item,shelter,blanket,itemIndividual
+Shelter,Camping Chair,,,Individual Item,shelter,campingChair,itemIndividual
+Shelter,Cot,,,Individual Item,shelter,cot,itemIndividual
+Shelter,Duvet,,,Individual Item,shelter,duvet,itemIndividual
+Shelter,Hand Warmer,,,Individual Item,shelter,handWarmer,itemIndividual
+Shelter,Lock,,,Individual Item,shelter,lock,itemIndividual
+Shelter,Mosquito Net,,,Individual Item,shelter,mosquitoNet,itemIndividual
+Shelter,Pillow,,,Individual Item,shelter,pillow,itemIndividual
+Shelter,Pillow Case,,,Individual Item,shelter,pillowCase,itemIndividual
+Shelter,Rain Poncho,,Plastic,Individual Item,shelter,plasticRainPoncho,itemIndividual
+Shelter,Sleeping Bag,,Adult,Individual Item,shelter,adultSleepingBag,itemIndividual
+Shelter,Sleeping Bag,,Child,Individual Item,shelter,childSleepingBag,itemIndividual
+Shelter,Sleeping Mat,,,Individual Item,shelter,sleepingMat,itemIndividual
+Shelter,Suitcase,,,Individual Item,shelter,suitcase,itemIndividual
+Shelter,Tarp,,,Individual Item,shelter,tarp,itemIndividual
+Shelter,Tent,,,Individual Item,shelter,tent,itemIndividual
+Household,Air Conditioner,,,Individual Item,household,airConditioner,itemIndividual
+Household,Bed Frame,,,Individual Item,household,bedFrame,itemIndividual
+Household,Blender,,,Individual Item,household,blender,itemIndividual
+Household,Candle,,,Individual Item,household,candle,itemIndividual
+Household,Chair,,,Individual Item,household,chair,itemIndividual
+Household,Couch,,,Individual Item,household,couch,itemIndividual
+Household,Dehumidifier,,,Individual Item,household,dehumidifier,itemIndividual
+Household,Dishes,,,Individual Item,household,dishes,itemIndividual
+Household,Dresser,,,Individual Item,household,dresser,itemIndividual
+Household,Flashlight,,,Individual Item,household,flashlight,itemIndividual
+Household,Freezer,,Chest,Individual Item,household,chestFreezer,itemIndividual
+Household,Hand Towel,,,Individual Item,household,handTowel,itemIndividual
+Household,Hanger,,,Individual Item,household,hanger,itemIndividual
+Household,Kitchen Towel,,,Individual Item,household,kitchenTowel,itemIndividual
+Household,Mattress,,,Individual Item,household,mattress,itemIndividual
+Household,Microwave,,,Individual Item,household,microwave,itemIndividual
+Household,Paper Towel,,Roll,Rolls,household,rollPaperTowel,roll
+Household,Plastic Bag,,Grocery,Individual Item,household,groceryPlasticBag,itemIndividual
+Household,Purse,,,Individual Item,household,purse,itemIndividual
+Household,Refrigerator,,Mini,Individual Item,household,miniRefrigerator,itemIndividual
+Household,Refrigerator,,,Individual Item,household,refrigerator,itemIndividual
+Household,Rug,,,Individual Item,household,rug,itemIndividual
+Household,Table,,,Individual Item,household,table,itemIndividual
+Household,Trash Bag,,Contractor Bag,20 Count Box,infrastructure,contractorBagTrashBag,boxCount20
+Household,Trash Bag,,,20 Count Box,household,trashBag,boxCount20
+Household,Trash Can,,,Individual Item,household,trashCan,itemIndividual
+Household,Umbrella,,,Individual Item,household,umbrella,itemIndividual
+Household,Vacuum,,,Individual Item,household,vacuum,itemIndividual
+Education,Backpack,,,Individual Item,education,backpack,itemIndividual
+Education,Binder,,,Individual Item,education,binder,itemIndividual
+Education,Book,,,Individual Item,education,book,itemIndividual
+Education,Eraser,,,Individual Item,education,eraser,itemIndividual
+Education,Glue Stick,,,Individual Item,education,glueStick,itemIndividual
+Education,Highlighter,,,Individual Item,education,highlighter,itemIndividual
+Education,Marker,,,Individual Item,education,marker,itemIndividual
+Education,Notepad,,,Individual Item,education,notepad,itemIndividual
+Education,Pen,,,Individual Item,education,pen,itemIndividual
+Education,Pencil,,,Individual Item,education,pencil,itemIndividual
+Education,Pencil Case,,,Individual Item,education,pencilCase,itemIndividual
+Education,Pencil Sharpener,,,Individual Item,education,pencilSharpener,itemIndividual
+Education,Ruler,,,Individual Item,education,ruler,itemIndividual
+Education,Student Desk,,,Individual Item,education,studentDesk,itemIndividual
+Toys & Activities,Art Supplies,,,Individual Item,toysActivities,artSupplies,itemIndividual
+Toys & Activities,Bicycle Tube,,,Individual Item,toysActivities,bicycleTube,itemIndividual
+Toys & Activities,Bicycle Tube Patch Kit,,,Individual Item,toysActivities,bicycleTubePatchKit,itemIndividual
+Toys & Activities,Coloring Book,,,Individual Item,toysActivities,coloringBook,itemIndividual
+Toys & Activities,Crayons / Markers / Colored Pencils,,,12 Count Pack,toysActivities,crayonsMarkersColoredPencils,packCount12
+Toys & Activities,Stickers,,,Individual Item,toysActivities,stickers,itemIndividual
+Toys & Activities,Stuffed Animal,,,Individual Item,toysActivities,stuffedAnimal,itemIndividual
+Medical,Anti-Lice Shampoo,,,8 oz Bottle,medical,antiLiceShampoo,bottleoz8
+Medical,Bandaid,,,40 Count Box,medical,bandaid,boxCount40
+Medical,Crutches,,,Individual Item,medical,crutches,itemIndividual
+Medical,Wheelchair,,,Individual Item,medical,wheelchair,itemIndividual
+Health,Bug Spray,,,8 oz Bottle,health,bugSpray,bottleoz8
+Health,First Aid Kit,,,Individual Item,health,firstAidKit,itemIndividual
+Health,Harm Reduction Supplies,,,Individual Item,health,harmReductionSupplies,itemIndividual
+Health,Thermometer,,Body,Individual Item,health,bodyThermometer,itemIndividual
+Electronics,Laptop,,,Individual Item,electronics,laptop,itemIndividual
+Electronics,Phone,,,Individual Item,electronics,phone,itemIndividual
+Electronics,Phone Charger,,,Individual Item,electronics,phoneCharger,itemIndividual
+Electronics,Powerbank,,,Individual Item,electronics,powerbank,itemIndividual
+Electronics,Router,,,Individual Item,electronics,router,itemIndividual
+Electronics,Tablet,,,Individual Item,electronics,tablet,itemIndividual
+Electronics,Walkie Talkie,,,Individual Item,electronics,walkieTalkie,itemIndividual
+Infrastructure,Crowbar,,,Individual Item,infrastructure,crowbar,itemIndividual
+Infrastructure,Generator,,,Individual Item,infrastructure,generator,itemIndividual
+Infrastructure,Hammer,,,Individual Item,infrastructure,hammer,itemIndividual
+Infrastructure,Pallet Jack,,,Individual Item,infrastructure,palletJack,itemIndividual
+Infrastructure,PPE Coveralls,,,Individual Item,infrastructure,pPECoveralls,itemIndividual
+Infrastructure,Respirator,,P100,Individual Item,infrastructure,p100Respirator,itemIndividual
+Infrastructure,Respirator Air Filter,,,Individual Item,infrastructure,respiratorAirFilter,itemIndividual
+Infrastructure,Rope,,,50 ft,infrastructure,rope,ft50
+Infrastructure,Shovel,,,Individual Item,infrastructure,shovel,itemIndividual
+Infrastructure,Toolbox,,,Individual Item,infrastructure,toolbox,itemIndividual
+Infrastructure,Tools,,,Individual Item,infrastructure,tools,itemIndividual
+Infrastructure,Tyvek Suit,,,Individual Item,infrastructure,tyvekSuit,itemIndividual
+Infrastructure,Water Filter,,Filtration System,Individual Item,infrastructure,filtrationSystemWaterFilter,itemIndividual

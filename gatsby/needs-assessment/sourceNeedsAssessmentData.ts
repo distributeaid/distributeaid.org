@@ -134,6 +134,14 @@ const surveyIds: SurveyId[] = [
     url: 'https://storage.needs-assessment.distributeaid.dev/form/01HAC605NVGB5ADR2PMXKWKJ6W/summary?groupBy=basicInfo.region',
     format: SURVEY_FORMATS.GENERATED_V1,
   },
+  {
+    // US NA
+    id: '01HAEN4RAW941QVQ38M1WQ7QW3',
+    year: '2023-24-USA',
+    quarter: 'All',
+    url: 'https://storage.needs-assessment.distributeaid.dev/form/01HAEN4RAW941QVQ38M1WQ7QW3/summary?groupBy=basicInfo.region',
+    format: SURVEY_FORMATS.GENERATED_V1,
+  },
 ]
 
 export const sourceNeedsAssessments = async ({
@@ -242,7 +250,7 @@ export const processNeedsAssessment = (
 
   const mapProduct =
     surveyId.format === SURVEY_FORMATS.GENERATED_V1
-      ? generatedProductMapper
+      ? generatedProductMapper(surveyId) // call closure
       : productMapper
 
   for (let [quarter, places] of Object.entries(summary)) {
