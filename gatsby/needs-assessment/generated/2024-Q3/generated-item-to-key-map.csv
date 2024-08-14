@@ -1,0 +1,150 @@
+Category,Item,Age / Gender,Size / Style,Unit,Category Id,Item Id,Unit Id
+Hygiene,Soap,,Bar,100g Bar,hygiene,barSoap,bar100g
+Hygiene,Soap,,Liquid,250ml Bottle,hygiene,liquidSoap,bottle250ml
+Hygiene,Shampoo,,,250ml Bottle,hygiene,shampoo,bottle250ml
+Hygiene,Toothbrush,,,Individual Item,hygiene,toothbrush,itemIndividual
+Hygiene,Toothpaste,,,100ml Tube,hygiene,toothpaste,tube100ml
+Hygiene,Nail Clipper,,,Individual Item,hygiene,nailClipper,itemIndividual
+Hygiene,Deodorant,,,100ml Roller,hygiene,deodorant,roller100ml
+Hygiene,Razor,,Disposable,Individual Item,hygiene,disposableRazor,itemIndividual
+Hygiene,Shaving Foam,,,200ml Can,hygiene,shavingFoam,can200ml
+Hygiene,Sanitary Pad,,Reusable,Individual Item,hygiene,reusableSanitaryPad,itemIndividual
+Hygiene,Sanitary Pad,,Disposable,Individual Item,hygiene,disposableSanitaryPad,itemIndividual
+Hygiene,Condom,,,Individual Item,hygiene,condom,itemIndividual
+Hygiene,Diaper,,Size 0,Individual Item,hygiene,size0Diaper,itemIndividual
+Hygiene,Diaper,,Size 1,Individual Item,hygiene,size1Diaper,itemIndividual
+Hygiene,Diaper,,Size 2,Individual Item,hygiene,size2Diaper,itemIndividual
+Hygiene,Diaper,,Size 3,Individual Item,hygiene,size3Diaper,itemIndividual
+Hygiene,Diaper,,Size 4,Individual Item,hygiene,size4Diaper,itemIndividual
+Hygiene,Diaper,,Size 5,Individual Item,hygiene,size5Diaper,itemIndividual
+Hygiene,Diaper,,Size 6,Individual Item,hygiene,size6Diaper,itemIndividual
+Hygiene,Diaper,,Adult,Individual Item,hygiene,adultDiaper,itemIndividual
+Hygiene,Wet Wipes,,,100 per Pack,hygiene,wetWipes,packper100
+Hygiene,Washing Detergent,,,1L Bottle (Liquid),hygiene,washingDetergent,bottle1L
+Hygiene,Washing Detergent,,,5kg Bag (Powedered),hygiene,washingDetergent,bag5kg
+Hygiene,Bleach,,,1L Bottle,hygiene,bleach,bottle1L
+Hygiene,Sunblock,,,150ml Tube,hygiene,sunblock,tube150ml
+Hygiene,Mosquito Repellent,,,100ml Bottle,hygiene,mosquitoRepellent,bottle100ml
+Shelter,Tent,,,Individual Item,shelter,tent,itemIndividual
+Shelter,Tarp,,,Individual Item,shelter,tarp,itemIndividual
+Shelter,Sleeping Bag,,Adult,Individual Item,shelter,adultSleepingBag,itemIndividual
+Shelter,Sleeping Bag,,Child,Individual Item,shelter,childSleepingBag,itemIndividual
+Shelter,Sleeping Mat,,,Individual Item,shelter,sleepingMat,itemIndividual
+Shelter,Blanket,,,Individual Item,shelter,blanket,itemIndividual
+Shelter,Bed Sheets,,,Individual Item,shelter,bedSheets,itemIndividual
+Shelter,Duvet,,,Individual Item,shelter,duvet,itemIndividual
+Shelter,Pillow,,,Individual Item,shelter,pillow,itemIndividual
+Shelter,Pillow Case,,,Individual Item,shelter,pillowCase,itemIndividual
+Shelter,Bed Rails,,Child,Individual Item,shelter,childBedRails,itemIndividual
+Shelter,Backpack,,,Individual Item,shelter,backpack,itemIndividual
+Education,Notepad,,,Individual Item,education,notepad,itemIndividual
+Education,Pen,,,Individual Item,education,pen,itemIndividual
+Education,Pencil,,,Individual Item,education,pencil,itemIndividual
+Education,Pencil Sharpener,,,Individual Item,education,pencilSharpener,itemIndividual
+Education,Eraser,,,Individual Item,education,eraser,itemIndividual
+Electronics,Laptop,,,Individual Item,electronics,laptop,itemIndividual
+Electronics,Tablet,,,Individual Item,electronics,tablet,itemIndividual
+Electronics,Phone,,,Individual Item,electronics,phone,itemIndividual
+Electronics,Phone Charger,,,Individual Item,electronics,phoneCharger,itemIndividual
+Electronics,Powerbank,,,Individual Item,electronics,powerbank,itemIndividual
+Medical,Wheelchair,,,Individual Item,medical,wheelchair,itemIndividual
+Medical,Crutches,,,Individual Item,medical,crutches,itemIndividual
+Medical,Bandaid / Plaster,,,40 per Box,medical,bandaidPlaster,boxper40
+Medical,Anti-Lice Shampoo,,,100ml Bottle,medical,antiLiceShampoo,bottle100ml
+Food,Rice,,,Euro Pallet,food,rice,palletEuro
+Food,Rice,,,Kilogram,food,rice,kilogram
+Food,Potatoe,,,Euro Pallet,food,potatoe,palletEuro
+Food,Potatoe,,,Kilogram,food,potatoe,kilogram
+Food,Onion,,,Euro Pallet,food,onion,palletEuro
+Food,Onion,,,Kilogram,food,onion,kilogram
+Food,Garlic,,,Euro Pallet,food,garlic,palletEuro
+Food,Garlic,,,Kilogram,food,garlic,kilogram
+Food,Flour,,,Euro Pallet,food,flour,palletEuro
+Food,Flour,,,Kilogram,food,flour,kilogram
+Food,Salt,,,Euro Pallet,food,salt,palletEuro
+Food,Salt,,,Kilogram,food,salt,kilogram
+Food,Sugar,,,Euro Pallet,food,sugar,palletEuro
+Food,Sugar,,,Kilogram,food,sugar,kilogram
+Food,Cooking Oil,,,Euro Pallet,food,cookingOil,palletEuro
+Food,Cooking Oil,,,Liter,food,cookingOil,liter
+Food,Milk,,,Euro Pallet,food,milk,palletEuro
+Food,Milk,,,Liter,food,milk,liter
+Food,Canned Tomatoes,,,Euro Pallet,food,cannedTomatoes,palletEuro
+Food,Canned Tomatoes,,,Cans (#10 Kitchen Size),food,cannedTomatoes,cans
+Food,Canned Beans,,,Euro Pallet,food,cannedBeans,palletEuro
+Food,Canned Beans,,,Cans (#10 Kitchen Size),food,cannedBeans,cans
+Food,Canned Fish,,,Euro Pallet,food,cannedFish,palletEuro
+Food,Canned Fish,,,Cans (#10 Kitchen Size),food,cannedFish,cans
+Food,Sweetcorn,,,Euro Pallet,food,sweetcorn,palletEuro
+Food,Sweetcorn,,,Cans (#10 Kitchen Size),food,sweetcorn,cans
+Food,Tea,,,Kilogram,food,tea,kilogram
+Food,Tea,,,Servings,food,tea,servings
+Food,Coffee,,,Euro Pallet,food,coffee,palletEuro
+Food,Coffee,,,Kilogram,food,coffee,kilogram
+Food,Coffee,,,Servings,food,coffee,servings
+Women's Clothing,Jacket,Woman,,Individual Item,womensClothing,jacket,itemIndividual
+Women's Clothing,Jumper,Woman,,Individual Item,womensClothing,jumper,itemIndividual
+Women's Clothing,Scarves,Woman,,Individual Item,womensClothing,scarves,itemIndividual
+Women's Clothing,Gloves,Woman,,Individual Item,womensClothing,gloves,itemIndividual
+Women's Clothing,Hats,Woman,,Individual Item,womensClothing,hats,itemIndividual
+Women's Clothing,T-Shirt,Woman,,Individual Item,womensClothing,tShirt,itemIndividual
+Women's Clothing,Long-Sleeved Top,Woman,,Individual Item,womensClothing,longSleevedTop,itemIndividual
+Women's Clothing,Shorts,Woman,,Individual Item,womensClothing,shorts,itemIndividual
+Women's Clothing,Trousers,Woman,,Individual Item,womensClothing,trousers,itemIndividual
+Women's Clothing,Leggings,Woman,,Individual Item,womensClothing,leggings,itemIndividual
+Women's Clothing,Pants (Underwear),Woman,,Individual Item,womensClothing,pantsUnderwear,itemIndividual
+Women's Clothing,Bras,Woman,,Individual Item,womensClothing,bras,itemIndividual
+Women's Clothing,Socks,Woman,,Individual Item,womensClothing,socks,itemIndividual
+Women's Clothing,Shoes,Woman,,Individual Item,womensClothing,shoes,itemIndividual
+Women's Clothing,Dresses,Woman,,Individual Item,womensClothing,dresses,itemIndividual
+Women's Clothing,Hijabs,Woman,,Individual Item,womensClothing,hijabs,itemIndividual
+Women's Clothing,Abayas,Woman,,Individual Item,womensClothing,abayas,itemIndividual
+Men's Clothing,Jacket,Man,,Individual Item,mensClothing,jacket,itemIndividual
+Men's Clothing,Jumper,Man,,Individual Item,mensClothing,jumper,itemIndividual
+Men's Clothing,Scarves,Man,,Individual Item,mensClothing,scarves,itemIndividual
+Men's Clothing,Gloves,Man,,Individual Item,mensClothing,gloves,itemIndividual
+Men's Clothing,Hats,Man,,Individual Item,mensClothing,hats,itemIndividual
+Men's Clothing,T-Shirt,Man,,Individual Item,mensClothing,tShirt,itemIndividual
+Men's Clothing,Long-Sleeved Top,Man,,Individual Item,mensClothing,longSleevedTop,itemIndividual
+Men's Clothing,Shorts,Man,,Individual Item,mensClothing,shorts,itemIndividual
+Men's Clothing,Trousers,Man,,Individual Item,mensClothing,trousers,itemIndividual
+Men's Clothing,Pants (Underwear),Man,,Individual Item,mensClothing,pantsUnderwear,itemIndividual
+Men's Clothing,Socks,Man,,Individual Item,mensClothing,socks,itemIndividual
+Men's Clothing,Shoes,Man,,Individual Item,mensClothing,shoes,itemIndividual
+Girl's Clothing,Jacket,Girl,,Individual Item,girlsClothing,jacket,itemIndividual
+Girl's Clothing,Jumper,Girl,,Individual Item,girlsClothing,jumper,itemIndividual
+Girl's Clothing,Scarves,Girl,,Individual Item,girlsClothing,scarves,itemIndividual
+Girl's Clothing,Gloves,Girl,,Individual Item,girlsClothing,gloves,itemIndividual
+Girl's Clothing,Hats,Girl,,Individual Item,girlsClothing,hats,itemIndividual
+Girl's Clothing,T-Shirt,Girl,,Individual Item,girlsClothing,tShirt,itemIndividual
+Girl's Clothing,Long-Sleeved Top,Girl,,Individual Item,girlsClothing,longSleevedTop,itemIndividual
+Girl's Clothing,Shorts,Girl,,Individual Item,girlsClothing,shorts,itemIndividual
+Girl's Clothing,Trousers,Girl,,Individual Item,girlsClothing,trousers,itemIndividual
+Girl's Clothing,Leggings,Girl,,Individual Item,girlsClothing,leggings,itemIndividual
+Girl's Clothing,Pants (Underwear),Girl,,Individual Item,girlsClothing,pantsUnderwear,itemIndividual
+Girl's Clothing,Bras,Girl,,Individual Item,girlsClothing,bras,itemIndividual
+Girl's Clothing,Socks,Girl,,Individual Item,girlsClothing,socks,itemIndividual
+Girl's Clothing,Shoes,Girl,,Individual Item,girlsClothing,shoes,itemIndividual
+Girl's Clothing,Dresses,Girl,,Individual Item,girlsClothing,dresses,itemIndividual
+Boy's Clothing,Jacket,Boy,,Individual Item,boysClothing,jacket,itemIndividual
+Boy's Clothing,Jumper,Boy,,Individual Item,boysClothing,jumper,itemIndividual
+Boy's Clothing,Scarves,Boy,,Individual Item,boysClothing,scarves,itemIndividual
+Boy's Clothing,Gloves,Boy,,Individual Item,boysClothing,gloves,itemIndividual
+Boy's Clothing,Hats,Boy,,Individual Item,boysClothing,hats,itemIndividual
+Boy's Clothing,T-Shirt,Boy,,Individual Item,boysClothing,tShirt,itemIndividual
+Boy's Clothing,Long-Sleeved Top,Boy,,Individual Item,boysClothing,longSleevedTop,itemIndividual
+Boy's Clothing,Shorts,Boy,,Individual Item,boysClothing,shorts,itemIndividual
+Boy's Clothing,Trousers,Boy,,Individual Item,boysClothing,trousers,itemIndividual
+Boy's Clothing,Pants (Underwear),Boy,,Individual Item,boysClothing,pantsUnderwear,itemIndividual
+Boy's Clothing,Socks,Boy,,Individual Item,boysClothing,socks,itemIndividual
+Boy's Clothing,Shoes,Boy,,Individual Item,boysClothing,shoes,itemIndividual
+Baby Clothing,Jacket / All-In-Ones,Baby,,Individual Item,babyClothing,jacketAllInOnes,itemIndividual
+Baby Clothing,Jumper,Baby,,Individual Item,babyClothing,jumper,itemIndividual
+Baby Clothing,Hats,Baby,,Individual Item,babyClothing,hats,itemIndividual
+Baby Clothing,T-Shirt,Baby,,Individual Item,babyClothing,tShirt,itemIndividual
+Baby Clothing,Shorts,Baby,,Individual Item,babyClothing,shorts,itemIndividual
+Baby Clothing,Trousers,Baby,,Individual Item,babyClothing,trousers,itemIndividual
+Baby Clothing,Socks,Baby,,Individual Item,babyClothing,socks,itemIndividual
+Baby Clothing,Shoes,Baby,,Individual Item,babyClothing,shoes,itemIndividual
+Baby Clothing,Bodies / Rompers,Baby,,Individual Item,babyClothing,bodiesRompers,itemIndividual
+Baby Clothing,Onsies / Pyjamas,Baby,,Individual Item,babyClothing,onsiesPyjamas,itemIndividual
