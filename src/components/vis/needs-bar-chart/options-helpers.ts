@@ -63,7 +63,7 @@ export const getDefaultOptions = (): NeedsBarChartOptions => {
 
       // BUG: NA data isn't available right after the quarter changes.
       // quarter: getQuarterOption(today),
-      quarter: '2023 Q4',
+      quarter: '2024 Q1',
 
       region: undefined,
       subregion: undefined,
