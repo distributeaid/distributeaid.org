@@ -144,7 +144,7 @@ const surveyIds: SurveyId[] = [
   },
   {
     // 2024 Q1
-    id: '',
+    id: '01HMH5Q0DB6AKB9PN84CD14QZK',
     year: '2024',
     quarter: 'Q1',
     url: 'https://storage.needs-assessment.distributeaid.dev/form/01HMH5Q0DB6AKB9PN84CD14QZK/summary?groupBy=basicInfo.region',
@@ -152,7 +152,7 @@ const surveyIds: SurveyId[] = [
   },
   {
     // 2024 Q3
-    id: '',
+    id: '01J2BC7AF3K8D14QKQVYWVQP6Q',
     year: '2024',
     quarter: 'Q3',
     url: 'https://storage.needs-assessment.distributeaid.dev/form/01J2BC7AF3K8D14QKQVYWVQP6Q/summary?groupBy=basicInfo.region',

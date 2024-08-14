@@ -145,13 +145,15 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
         }}
         className="prose max-w-none py-8 flex flex-col md:flex-row justify-center items-center gap-x-4"
       >
-        <div className="bg-white rounded-full p-2 drop-shadow-md">
-          <GatsbyImage
-            image={region.map.image.gatsbyImageData}
-            alt={region.map.alt}
-            className="w-36 h-36"
-          />
-        </div>
+        {region.map.image && (
+          <div className="bg-white rounded-full p-2 drop-shadow-md">
+            <GatsbyImage
+              image={region.map.image.gatsbyImageData}
+              alt={region.map.alt}
+              className="w-36 h-36"
+            />
+          </div>
+        )}
 
         <div className="flex flex-col justify-center">
           <h1 className="mb-0 text-center md:text-left">{region.name}</h1>
@@ -230,7 +232,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
 
         <div className="flex flex-col">
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
-          {region.stayInformed.links.length > 0 && (
+          {region.stayInformed && region.stayInformed.links.length > 0 && (
             <div
               className="last:grow"
               style={{ backgroundColor: getBackgroundColor() }}
@@ -245,7 +247,7 @@ const RegionPage: FC<TemplateProps> = ({ data: { region } }) => {
           )}
 
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
-          {region.newsUpdates.updates.length > 0 && (
+          {region.newsUpdates && region.newsUpdates.updates.length > 0 && (
             <div
               className="last:grow"
               style={{ backgroundColor: getBackgroundColor() }}

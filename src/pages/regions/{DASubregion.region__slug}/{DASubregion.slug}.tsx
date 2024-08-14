@@ -136,13 +136,15 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         }}
         className="prose max-w-none py-8 flex flex-col md:flex-row justify-center items-center gap-x-4"
       >
-        <div className="bg-white rounded-full drop-shadow-md">
-          <GatsbyImage
-            image={subregion.map.image.gatsbyImageData}
-            alt={subregion.map.alt}
-            className="w-36 h-36 rounded-full"
-          />
-        </div>
+        {subregion.map.image && (
+          <div className="bg-white rounded-full drop-shadow-md">
+            <GatsbyImage
+              image={subregion.map.image.gatsbyImageData}
+              alt={subregion.map.alt}
+              className="w-36 h-36 rounded-full"
+            />
+          </div>
+        )}
 
         <div className="flex flex-col justify-center">
           <h1 className="mb-0 text-center md:text-left">{subregion.name}</h1>
@@ -213,34 +215,36 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
 
         <div className="flex flex-col">
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
-          {subregion.stayInformed.links.length > 0 && (
-            <div
-              className="last:grow"
-              style={{ backgroundColor: getBackgroundColor() }}
-            >
-              <SectionGrid
-                section={getSectionGridNode()}
-                className="prose mx-auto"
+          {subregion.stayInformed &&
+            subregion.stayInformed.links.length > 0 && (
+              <div
+                className="last:grow"
+                style={{ backgroundColor: getBackgroundColor() }}
               >
-                <BlockLinksList block={subregion.stayInformed} />
-              </SectionGrid>
-            </div>
-          )}
+                <SectionGrid
+                  section={getSectionGridNode()}
+                  className="prose mx-auto"
+                >
+                  <BlockLinksList block={subregion.stayInformed} />
+                </SectionGrid>
+              </div>
+            )}
 
           {/* SMALL HACK: shouldn't use test-helpers as a way to get defaults */}
-          {subregion.newsUpdates.updates.length > 0 && (
-            <div
-              className="last:grow"
-              style={{ backgroundColor: getBackgroundColor() }}
-            >
-              <SectionGrid
-                section={getSectionGridNode()}
-                className="prose mx-auto"
+          {subregion.newsUpdates &&
+            subregion.newsUpdates.updates.length > 0 && (
+              <div
+                className="last:grow"
+                style={{ backgroundColor: getBackgroundColor() }}
               >
-                <BlockUpdatesList block={subregion.newsUpdates} />
-              </SectionGrid>
-            </div>
-          )}
+                <SectionGrid
+                  section={getSectionGridNode()}
+                  className="prose mx-auto"
+                >
+                  <BlockUpdatesList block={subregion.newsUpdates} />
+                </SectionGrid>
+              </div>
+            )}
         </div>
       </div>
     </SimpleLayout>

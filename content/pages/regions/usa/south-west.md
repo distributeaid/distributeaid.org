@@ -1,4 +1,5 @@
 ---
 name: South West
+map: ""
 
 ---

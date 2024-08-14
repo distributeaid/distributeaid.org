@@ -1,4 +1,5 @@
 ---
 name: Midwest
+map: ""
 
 ---

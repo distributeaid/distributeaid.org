@@ -11,9 +11,9 @@ export const createPhotoSchemaCustomization = ({
 }: CreateSchemaCustomizationArgs) => {
   const typeDefs = `
     type DAPhoto implements Node {
-      relativePath: String!
-      alt: String!
-      image: ImageSharp!
+      relativePath: String
+      alt: String
+      image: ImageSharp
     }
   `
   createTypes(typeDefs)

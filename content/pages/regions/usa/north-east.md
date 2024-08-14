@@ -1,4 +1,5 @@
 ---
 name: North East
+map: ""
 
 ---
