@@ -10,3 +10,8 @@
   status = 302
   force = true
 
+[[redirects]]
+  from = "/donate-now"
+  to = "https://www.omprakash.org/global/distribute-aid/donate"
+  status = 302
+  force = true
