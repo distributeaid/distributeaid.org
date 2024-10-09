@@ -18,7 +18,12 @@ describe('Processes Page Data', () => {
   it('processes each type of page, section, and content block correctly', () => {
     // build our input
     const sectionData = factory.getSectionGridData({
-      contentBlocks: [factory.getBlockTitleData(), factory.getBlockTextData()],
+      contentBlocks: [
+        factory.getBlockTitleData(),
+        factory.getBlockTextData(),
+        factory.getBlockImageData(),
+        factory.getBlockYoutubeData(),
+      ],
     })
 
     const pageData = factory.getPageData({
@@ -30,6 +35,8 @@ describe('Processes Page Data', () => {
       blocks: [
         factory.getBlockTitleNodeInput(),
         factory.getBlockTextNodeInput(),
+        factory.getBlockImageNodeInput(),
+        factory.getBlockYoutubeNodeInput(),
       ],
     })
 

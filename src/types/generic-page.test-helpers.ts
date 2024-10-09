@@ -334,7 +334,7 @@ export const getBlockYoutubeData = (props?: Record<string, any>) => {
 
     ...props,
 
-    template: 'block-youtube',
+    template: 'block-youtube-embed',
   }
 }
 
@@ -477,7 +477,19 @@ export const getBlockImageData = (props?: Record<string, any>) => {
   return {
     ...props,
 
-    template: 'block-card',
+    asset: '',
+    altText: 'A Fake Image',
+
+    caption: 'An Image Block',
+    attribution: 'Distribute Aid',
+    dateUploaded: new Date(2020, 9, 8),
+    date: new Date(2020, 9, 8),
+    tags: ['a tag'],
+
+    alignmentPhoto: 'Left',
+    alignmentCaption: 'Right',
+
+    template: 'block-image-with-caption',
   }
 }
 
@@ -486,6 +498,18 @@ export const getBlockImageNodeInput = (props?: Record<string, any>) => {
     id: 'node-id',
     parent: 'parent-id',
     children: [],
+
+    relativePath: '',
+    alt: 'A Fake Image',
+
+    caption: 'An Image Block',
+    attribution: 'Distribute Aid',
+    dateUploaded: new Date(2020, 9, 8),
+    date: new Date(2020, 9, 8),
+    tags: ['a tag'],
+
+    alignmentPhoto: 'Left',
+    alignmentCaption: 'Right',
 
     ...props,
 
@@ -504,13 +528,27 @@ export const getBlockImageNode = (props?: Record<string, any>) => {
     parent: 'parent-id',
     children: [],
 
+    relativePath: '',
+    alt: 'A Fake Image',
+    image: { gatsbyImageData: undefined },
+
+    asset: '',
+    caption: 'An Image Block',
+    attribution: 'Distribute Aid',
+    dateUploaded: new Date(2020, 9, 8),
+    date: new Date(2020, 9, 8),
+    tags: ['a tag'],
+
+    alignmentPhoto: 'Left',
+    alignmentCaption: 'Right',
+
     ...props,
 
     internal: {
       contentDigest: 'content digest',
       ...props?.internal,
 
-      type: 'DABlockTimeline',
+      type: 'DABlockImage',
     },
   } as BlockImageNode
 }
