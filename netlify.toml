@@ -15,3 +15,9 @@
   to = "https://www.omprakash.org/global/distribute-aid/donate"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/hurricane-response"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/grassroots-response-to-hurricane-helene"
+  status = 302
+  force = true
