@@ -16467,14 +16467,14 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-globe.gl@2.27.4:
-  version "2.27.4"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.27.4.tgz#9bfc445906f7defbf4f085c963e51c01694e21eb"
-  integrity sha512-okpAHFf1fmagkEeL38/LfMG33v/nAwZKxJqlBWswuYZBszrcLVQyTKFfwwLEeaDiYmoDyNJ2qK2D3mnL1yC3Fg==
+react-globe.gl@2.27.5:
+  version "2.27.5"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.27.5.tgz#475f40f3d4e2b27217232d30095dd20a80f82538"
+  integrity sha512-jzO+uKkSdsTdmFSqZvkdb/SMWA+Gl9JXYJVRpX7Yid0/CFFhJkHAwha8Jc/6bvll9SAlCHdASajNqzQN4+vs3Q==
   dependencies:
     globe.gl "^2.33"
     prop-types "15"
-    react-kapsule "2"
+    react-kapsule "^2.5"
 
 react-inspector@^5.1.0:
   version "5.1.1"
@@ -16500,10 +16500,10 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-kapsule@2:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-kapsule/-/react-kapsule-2.4.0.tgz#50d296ed2872a6db89f2de176eebb1a4ce2cccb8"
-  integrity sha512-w4Yv9CgWdj8kWGQEPNWFGJJ08dYEZHZpiaFR/DgZjCMBNqv9wus2Gy1qvHVJmJbzvAZbq6jdvFC+NYzEqAlNhQ==
+react-kapsule@^2.5:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-kapsule/-/react-kapsule-2.5.0.tgz#16977f03288934c382f6c1d558de4ff11bed355f"
+  integrity sha512-bJm1K4dyfZ3xKaulvVgiLkoGqlxjmfoajlOErC2y9j1hJpzbc7cLwhoBWqRnZ/2IqgIMWpP2uIn8VMN2sgAsFA==
   dependencies:
     fromentries "^1.3.2"
     jerrypick "^1.1.1"
