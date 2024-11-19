@@ -16521,10 +16521,10 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-globe.gl@2.27.5:
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.27.5.tgz#475f40f3d4e2b27217232d30095dd20a80f82538"
-  integrity sha512-jzO+uKkSdsTdmFSqZvkdb/SMWA+Gl9JXYJVRpX7Yid0/CFFhJkHAwha8Jc/6bvll9SAlCHdASajNqzQN4+vs3Q==
+react-globe.gl@2.27.6:
+  version "2.27.6"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.27.6.tgz#da849d1219b1ab8ea72eb3b24ff76053da347486"
+  integrity sha512-1Oh46lQ/+hd3XiLRVqkn3tejnnXMqvaSnJ2Ngz9FgbeYE1Cic//8FwDt1wN2G4n7n9JE5gKOoSOHt6D98FwOEw==
   dependencies:
     globe.gl "^2.33"
     prop-types "15"
