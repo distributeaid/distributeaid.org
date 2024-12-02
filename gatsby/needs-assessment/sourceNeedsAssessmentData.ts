@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch'
+import { writeFileSync } from 'fs'
 import { SourceNodesArgs } from 'gatsby'
 import { Product } from '../../src/types/product.d'
 import {
@@ -166,6 +167,8 @@ export const sourceNeedsAssessments = async ({
   createNodeId,
   reporter,
 }: SourceNodesArgs) => {
+  let exportNeedsData = [] as NeedsData[]
+
   for (const surveyId of surveyIds) {
     reporter.info(`Fetching survey id ${surveyId.id}`)
     const response = await fetchNeedsAssessment(surveyId)
@@ -183,6 +186,8 @@ export const sourceNeedsAssessments = async ({
     for (const lookupMiss of lookupMissLog) {
       reporter.error(lookupMiss)
     }
+
+    exportNeedsData = exportNeedsData.concat(needsDatas)
 
     for (const needsData of needsDatas) {
       const nodeData = {
@@ -202,6 +207,8 @@ export const sourceNeedsAssessments = async ({
       createNode(nodeData)
     }
   }
+
+  await writeFileSync('needs-data.json', JSON.stringify(exportNeedsData))
 }
 
 export const fetchNeedsAssessment = async (

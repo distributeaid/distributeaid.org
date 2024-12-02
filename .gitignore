@@ -75,3 +75,6 @@ public
 
 # end-to-end tests
 test-results/
+
+# needs assessment export
+needs-data.json
