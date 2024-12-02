@@ -21,3 +21,15 @@
   to = "https://www.omprakash.org/global/distribute-aid/crowdfund/grassroots-response-to-hurricane-helene"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/send-winter-aid-now"
+  to = "https://www.globalgiving.org/projects/gift-winter-aid-to-displaced-people/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/send-medicine-to-lebanon"
+  to = "https://www.globalgiving.org/projects/send-medical-aid-to-lebanon/"
+  status = 302
+  force = true
