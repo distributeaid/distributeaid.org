@@ -10979,17 +10979,17 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-globe.gl@^2.33:
-  version "2.33.1"
-  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.33.1.tgz#32f9cecaa5097b5a460e86b33081ee71d9fba52b"
-  integrity sha512-ASofOu8nKaqvPU25D+L59L/fp3SNGr5MjQbxlgu8XZy/JoVWKmdWZj+VDgLy2yeWTssOPGiwaxe1RbaVAFoyHQ==
+globe.gl@^2.34:
+  version "2.34.2"
+  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.34.2.tgz#0816eec17ec9a430ca2237569cc675e0aa26ed0f"
+  integrity sha512-DSrkyVp7jFrM6FxcfGf0b9JsY432Yb7XUdh7kdL+g2sFmcc/U0n3SapfL6mo5wOCABJj4/jUs7J2HLckS6kCaQ==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
-    kapsule "1"
+    kapsule "^1.16"
     three ">=0.154 <1"
-    three-globe "^2.33"
-    three-render-objects "^1.30"
+    three-globe "^2.35"
+    three-render-objects "^1.31"
 
 gopd@^1.0.1:
   version "1.0.1"
@@ -13154,10 +13154,10 @@ junk@^3.1.0:
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
-kapsule@1:
-  version "1.14.5"
-  resolved "https://registry.yarnpkg.com/kapsule/-/kapsule-1.14.5.tgz#c0bc7c1d4c693ee2647182e5b4ffbf95a4d65f72"
-  integrity sha512-H0iSpTynUzZw3tgraDmReprpFRmH5oP5GPmaNsurSwLx2H5iCpOMIkp5q+sfhB4Tz/UJd1E1IbEE9Z6ksnJ6RA==
+kapsule@^1.16:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/kapsule/-/kapsule-1.16.0.tgz#184e3982211d0650055c9a751fa07d44b8a7b8ac"
+  integrity sha512-4f/z/Luu0cEXmagCwaFyzvfZai2HKgB4CQLwmsMUA+jlUbW94HfFSX+TWZxzWoMSO6b6aR+FD2Xd5z88VYZJTw==
   dependencies:
     lodash-es "4"
 
@@ -16532,12 +16532,12 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-globe.gl@2.27.6:
-  version "2.27.6"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.27.6.tgz#da849d1219b1ab8ea72eb3b24ff76053da347486"
-  integrity sha512-1Oh46lQ/+hd3XiLRVqkn3tejnnXMqvaSnJ2Ngz9FgbeYE1Cic//8FwDt1wN2G4n7n9JE5gKOoSOHt6D98FwOEw==
+react-globe.gl@2.28.2:
+  version "2.28.2"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.28.2.tgz#284050eada9216c0a8c160caf07c7862ecdca058"
+  integrity sha512-p89pkjRKznwub1I5YnS+L5t8hPTYXN+/WCBZzD+ElovAUALjNrFhM7TA39aYsHe4M4utr2oVDt5v2i1vJwiggg==
   dependencies:
-    globe.gl "^2.33"
+    globe.gl "^2.34"
     prop-types "15"
     react-kapsule "^2.5"
 
@@ -18734,10 +18734,10 @@ three-geojson-geometry@1:
     d3-geo "1 - 3"
     earcut "2"
 
-three-globe@^2.33:
-  version "2.34.4"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.34.4.tgz#b1d4ff62128f4afee059dc59f39dcd07fe85bc1e"
-  integrity sha512-JLNeOOwVf7s6iEACQ6tKfRNGEZ+2Fjx7A2H4z/IN+8Hpo+CCapno3hkFdx+EVn4H3OuAMWd4WxPQrSZjTF+7PA==
+three-globe@^2.35:
+  version "2.35.6"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.35.6.tgz#16c9ceb8ab6d12976057bf5b23d96d08be181bb9"
+  integrity sha512-hVgQMO2xupg85xWaxCGUZpDXRuTk2kxTxLj/moIkwLm+UFwZIKV3laWCenBTJ0OsdK85qFVvipjDsHBFfpZjeQ==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -18751,20 +18751,20 @@ three-globe@^2.33:
     frame-ticker "1"
     h3-js "4"
     index-array-by "1"
-    kapsule "1"
+    kapsule "^1.16"
     three-conic-polygon-geometry "1"
     three-geojson-geometry "1"
     tinycolor2 "1"
     yaot "^1.1"
 
-three-render-objects@^1.30:
-  version "1.31.0"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.31.0.tgz#eaaf4098f4e9f63795c807caff6eebe76ad056fe"
-  integrity sha512-of54HTCHatV9OwhrBAKF6A2xtWxBQ47+u5WITTaTbGW6Px9mqLxw7L61dYDHqeQVuvlWMG8VQwyXmkeVsWx4Wg==
+three-render-objects@^1.31:
+  version "1.32.0"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.32.0.tgz#fab62559ebc2ff45ab8bf7da93d8953f3868b998"
+  integrity sha512-bTpyr8hp8PowFAi3pGjm/t0cMY7G8tecxgBTlOi9H/JNXxlAJBmvT6LF7oXeh7i2Q4Q6m9DNy+/Y72s+Varzww==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
-    kapsule "1"
+    kapsule "^1.16"
     polished "4"
 
 "three@>=0.154 <1":
