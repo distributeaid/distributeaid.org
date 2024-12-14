@@ -33,3 +33,9 @@
   to = "https://www.globalgiving.org/projects/send-medical-aid-to-lebanon/"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/hrt-harm-reduction-toolkit"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/hrt---harm-reduction-toolkit"
+  status = 302
+  force = true
