@@ -45,3 +45,9 @@
   to = "https://us02web.zoom.us/j/87221284454?pwd=63sdWMxWseUXAfaJCU114dbA9KanQc.1"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/la-fires"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/la-fire-response"
+  status = 302
+  force = true
