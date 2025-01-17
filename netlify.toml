@@ -51,3 +51,9 @@
   to = "https://www.omprakash.org/global/distribute-aid/crowdfund/la-fire-response"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/la-fires/needs"
+  to = "https://docs.google.com/spreadsheets/d/11G9sCVPjprsEL3R7yTpOYUzmIZNPKb_Sz_zxgvGulas/"
+  status = 302
+  force = true
