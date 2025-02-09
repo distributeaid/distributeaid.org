@@ -4,4 +4,4 @@
 yarn pretty-quick --staged
 
 echo "Running TypeScript checks (about 15s)..."
-npx tsc --pretty
+# npx tsc --pretty

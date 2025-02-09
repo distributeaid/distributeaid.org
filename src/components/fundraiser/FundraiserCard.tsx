@@ -4,7 +4,6 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { FC } from 'react'
 import { Fundraiser } from '../../types/fundraiser.d'
 import { Direction } from '../../types/layout.d'
-import { ProgressBar } from './ProgressBar'
 
 export const FundraiserCard: FC<{
   fundraiser: Fundraiser
@@ -30,15 +29,6 @@ export const FundraiserCard: FC<{
         >
           <h1 className="font-bold uppercase">{fundraiser.title}</h1>
         </SmartLink>
-        <div>
-          <ProgressBar
-            currency="EUR"
-            allocated={fundraiser.totalAllocated}
-            target={fundraiser.target}
-            slim={true}
-            direction={direction}
-          />
-        </div>
         <div className={`${buttonFlexClasses} py-2`}>
           <SmartLink href={fundraiser.donateUrl} className="button">
             <Button variant="primary">Donate Now</Button>

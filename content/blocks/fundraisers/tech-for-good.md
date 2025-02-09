@@ -30,7 +30,7 @@ allocations:
   amountEUR: 130
   purpose: "  "
 target: 2500
-donateUrl: https://opencollective.com/distribute-aid-usa/projects/tech-4-good/donate?amount=20&interval=month&platformTip=0
+donateUrl: https://www.omprakash.org/global/distribute-aid/donate
 
 ---
 Technology based tools are increasingly shaping humanitarian relief responses worldwide. Distribute Aid works to integrate tech solutions across its operations so as to improve the efficiency and effectiveness of its projects. Our tech community is committed to supporting us in automating various internal and external processes to increase accessibility for our many partners and user-audiences.

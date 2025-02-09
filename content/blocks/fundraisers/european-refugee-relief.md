@@ -22,7 +22,7 @@ allocations:
   amountEUR: 530
   purpose: "  "
 target: 3500
-donateUrl: https://opencollective.com/distribute-aid-usa/projects/european-refugee-response/donate?amount=20&interval=month&platformTip=0
+donateUrl: https://www.omprakash.org/global/distribute-aid/donate
 
 ---
 We connect aid groups together to strengthen the sharing of information and resources to multiply their impact across relief responses.

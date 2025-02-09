@@ -4,7 +4,7 @@ import ExternalLink from '@components/link/ExternalLink'
 import { useState } from 'react'
 
 import directTransferImage from '../../images/direct_transfer.svg'
-import openCollectiveImage from '../../images/opencollective-wordmark.svg'
+import omprakashLogo from '../../images/omprakash.png'
 import paypalLogo from '../../images/paypal-color.svg'
 
 import siteSettings from '../../../content/site-settings.json'
@@ -26,17 +26,13 @@ export const WaysToDonate = () => {
         <Button variant="rosemary">Donate with PayPal</Button>
       </ExternalLink>
 
-      {/* Open Collective
+      {/* Omprakash
       ------------------------------------------------------------ */}
       <ExternalLink
         className="flex flex-col gap-2 items-center hover:drop-shadow-md"
-        href={siteSettings.donate.byOpenCollective}
+        href={siteSettings.donate.byOmprakash}
       >
-        <img
-          className="h-9"
-          src={openCollectiveImage}
-          alt="Open Collective Logo"
-        />
+        <img className="h-9" src={omprakashLogo} alt="Omprakash Logo" />
         <Divider />
         <Button variant="rosemary">Use a Debit / Credit Card</Button>
       </ExternalLink>

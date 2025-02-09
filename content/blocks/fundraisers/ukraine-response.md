@@ -19,7 +19,7 @@ allocations:
   amountEUR: 1660
   purpose: "  "
 target: 2000
-donateUrl: https://opencollective.com/distribute-aid-usa/projects/ukraine-response/donate?amount=20&interval=month&platformTip=0
+donateUrl: https://www.omprakash.org/global/distribute-aid/donate
 
 ---
 Since Russia invaded Ukraine in February 2022, Distribute Aid has built a Ukraine Response Project to support emergency relief groups in Ukraine and the bordering regions including Poland, Moldova, and Romania.

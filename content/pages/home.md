@@ -49,8 +49,7 @@ howWeHelpBlock:
       base we work with the US Marines to distribute items to guests, and supply materials
       for NGOs running education & activity programs to use in their classes. In November
       & December, our efforts resulted in more than 750,000 items being distributed
-      to or used by 7,500 guests at Fort Pickett. You can support our work by [donating
-      to us through our Open Collective page](https://opencollective.com/fort-pickett)!
+      to or used by 7,500 guests at Fort Pickett.
     image: '/uploads/fort-pickett.jpg'
     imageAlt: A US Marine in camouflage uniform playing football with Afghan boys.
 ---

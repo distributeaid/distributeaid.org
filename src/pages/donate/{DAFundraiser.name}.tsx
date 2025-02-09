@@ -10,7 +10,6 @@ import SimpleLayout from '../../layouts/Simple'
 
 import { MarkdownContent } from '@components/markdown/MarkdownContent'
 
-import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { Gallery } from '@components/image/Gallery'
 
@@ -103,11 +102,6 @@ const FundraiserPage: FC<Props> = ({ data: { fundraiser, gallery } }) => {
                 <Button variant="primary">Donate Now &#10140;</Button>
               </SmartLink>
             </div>
-            <ProgressBar
-              currency="EUR"
-              allocated={fundraiser.totalAllocated}
-              target={fundraiser.target}
-            />
           </aside>
         </div>
 

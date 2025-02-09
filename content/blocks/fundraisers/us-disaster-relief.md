@@ -21,7 +21,7 @@ allocations:
   amountEUR: 100
   purpose: "  "
 target: 1000
-donateUrl: https://opencollective.com/distribute-aid-usa/projects/us-disaster-and-refugee-relief/donate?amount=20&interval=month&platformTip=0
+donateUrl: https://www.omprakash.org/global/distribute-aid/donate
 
 ---
 Natural disasters including powerful hurricanes, droughts, wildfires, torrential rain storms and flooding; are on the rise across the U.S.. People are forcibly displaced to survive these climate emergencies. Relief grassroots communities are having to respond to emergency situations now, more than ever to support the vulnerable communities that are affected. 

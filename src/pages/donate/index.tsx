@@ -1,6 +1,5 @@
 import Footer from '@components/Footer'
 import { FundraiserCard } from '@components/fundraiser/FundraiserCard'
-import { ProgressBar } from '@components/fundraiser/ProgressBar'
 import { WaysToDonate } from '@components/fundraiser/WaysToDonate'
 import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
@@ -44,34 +43,23 @@ const DonatePage: FC<Props> = ({
 }) => {
   fundraisers.sort(() => Math.random() - Math.random())
 
-  const allocated = fundraisers.reduce((total, { totalAllocated }) => {
-    return total + totalAllocated
-  }, 0)
-
-  const target = fundraisers.reduce((total, fundraiser) => {
-    return total + fundraiser.target
-  }, 0)
-
   return (
     <SimpleLayout
       className={'donate'}
       footer={<Footer showDonateButton={false} />}
     >
-      <div className="bg-navy-100 px-4 py-8">
-        <header className="prose prose-sm max-w-screen-sm mx-auto">
-          <h1>{title}</h1>
-        </header>
-
-        {fundraisers.length > 0 && (
-          <div className="mt-4 max-w-screen-sm mx-auto">
-            <ProgressBar
-              currency={'EUR'}
-              allocated={allocated}
-              target={target}
-            />
-          </div>
-        )}
-      </div>
+      <header className="bg-rosemary-50">
+        <div className="px-4 py-12">
+          <header className="prose max-w-none mx-auto mb-8">
+            <h1 className="text-center text-rosemary-800">
+              Ship aid to people in need.
+              <br />
+              Donate today:
+            </h1>
+          </header>
+          <WaysToDonate />
+        </div>
+      </header>
 
       {fundraisers.length > 0 && (
         <article className="fundraisers max-w-screen-lg mx-auto">
@@ -87,19 +75,6 @@ const DonatePage: FC<Props> = ({
           })}
         </article>
       )}
-
-      <section className="bg-rosemary-50">
-        <div className="px-4 py-12">
-          <header className="prose max-w-none mx-auto mb-8">
-            <h2 className="text-center text-rosemary-800">
-              Ship aid to people in need.
-              <br />
-              Donate today:
-            </h2>
-          </header>
-          <WaysToDonate />
-        </div>
-      </section>
     </SimpleLayout>
   )
 }
