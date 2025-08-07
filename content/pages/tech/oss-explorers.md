@@ -117,7 +117,7 @@ sections:
 
       Sponsoring Open Source Explorers is a fantastic opportunity for companies to support open-source software development. There are many ways to help out, from allowing employees to participate in Open Source Explorers or mentor participants on company time to contributing financially.
 
-      If you are interested in becoming a mentor or sponsor, [please get in touch with Taylor](mailto:taylor@distributeaid.org)
+      If you are interested in becoming a mentor or sponsor, [please get in touch with us!](mailto:tech@distributeaid.org)
 
 
 
