@@ -17,12 +17,6 @@
   force = true
 
 [[redirects]]
-  from = "/hurricane-response"
-  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/grassroots-response-to-hurricane-helene"
-  status = 302
-  force = true
-
-[[redirects]]
   from = "/send-winter-aid-now"
   to = "https://www.globalgiving.org/projects/gift-winter-aid-to-displaced-people/"
   status = 302
@@ -41,19 +35,19 @@
   force = true
 
 [[redirects]]
-  from = "/events/autonomous-supply-chains"
-  to = "https://us02web.zoom.us/j/87221284454?pwd=63sdWMxWseUXAfaJCU114dbA9KanQc.1"
+  from = "/hurricane-response"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/us-disaster-relief"
   status = 302
   force = true
 
 [[redirects]]
   from = "/la-fires"
-  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/la-fire-response"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/us-disaster-relief"
   status = 302
   force = true
 
 [[redirects]]
-  from = "/la-fires/needs"
-  to = "https://docs.google.com/spreadsheets/d/11G9sCVPjprsEL3R7yTpOYUzmIZNPKb_Sz_zxgvGulas/"
+  from = "/usa-disaster-prep"
+  to = "https://www.omprakash.org/global/distribute-aid/crowdfund/us-disaster-relief"
   status = 302
   force = true
