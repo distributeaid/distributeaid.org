@@ -11491,10 +11491,10 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-globe.gl@^2.43:
-  version "2.43.0"
-  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.43.0.tgz#cfaec38c12b620fc3bec28ba954e5ab0195fa3c8"
-  integrity sha512-iOPADfA/J0s0LrU8BnxXeDH2iTpZBCvmQfyl+DVN/RSSoxLxtNpK1xc6c5eBqc9mc+rC263sGiqOIA3/HTGLgQ==
+globe.gl@^2.44:
+  version "2.44.0"
+  resolved "https://registry.yarnpkg.com/globe.gl/-/globe.gl-2.44.0.tgz#ee5b926bf1f67e20b56dfb93323f564d4964c5ca"
+  integrity sha512-kIOri5QANIA13Bhyncz5FSFoCWpHvCOqEQUICX1cq6qv2RkMLdsZgNN/kZD0t24jiEXC9EKJ+Vjwk99jA5o7eA==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -17694,12 +17694,12 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-globe.gl@2.35.0:
-  version "2.35.0"
-  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.35.0.tgz#2503c45814bea82e1da6a2118f844bcf6445187f"
-  integrity sha512-ZCUjM/4rw0UvDyiZq75hyMT29OOMCYTfmy9XWRXyMn1c5npsOLXMOxQ1LLhGNd1y7psNMcnq8VqlzOz/SLzkEQ==
+react-globe.gl@2.36.0:
+  version "2.36.0"
+  resolved "https://registry.yarnpkg.com/react-globe.gl/-/react-globe.gl-2.36.0.tgz#29bfa19ebf05c1111922d81782c21032522d137c"
+  integrity sha512-jUAEnvqr54UbAI5r/5UKKX9QKVmLqh+Q3wH9cGZ4Y7G+mVMq5asco7XCCXiSBVFYC5K0HrOe2elOm0c+mZGj3A==
   dependencies:
-    globe.gl "^2.43"
+    globe.gl "^2.44"
     prop-types "15"
     react-kapsule "^2.5"
 
