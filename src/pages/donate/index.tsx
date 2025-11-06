@@ -5,7 +5,7 @@ import { PageHeader } from '@components/PageHeader'
 import SimpleLayout from '@layouts/Simple'
 import { graphql } from 'gatsby'
 import { FC } from 'react'
-import wingOfHonorSrc from '../../images/donate/wing-of-honor.png'
+import wingOfHonorSrc from '../../images/donate/wing-of-honor-transparent.png'
 import { Fundraiser } from '../../types/fundraiser.d'
 import { Direction } from '../../types/layout.d'
 
@@ -79,7 +79,7 @@ const DonatePage: FC<Props> = ({
 
       <section id="donor-wing-of-honor" className="bg-navy-50 px-4 pt-12">
         <header className="prose max-w-screen-lg mx-auto">
-          <h1 className="text-center text-rosemary-800">Donor Wing of Honor</h1>
+          <h1 className="text-center">Donor Wing of Honor</h1>
           <h3>
             These people have made extraordinary contributions to Distribute
             Aid’s work around the world. Their support has enabled us to defend
