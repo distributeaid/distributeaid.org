@@ -73,7 +73,7 @@
     "@testing-library/user-event": "^14.4.3",
     "autoprefixer": "10.4.22",
     "babel-jest": "29.7.0",
-    "babel-loader": "^9.0.0",
+    "babel-loader": "^10.0.0",
     "babel-preset-gatsby": "2.25.0",
     "gatsby-plugin-postcss": "^5.24.0",
     "identity-obj-proxy": "3.0.0",
