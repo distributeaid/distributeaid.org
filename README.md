@@ -1,4 +1,4 @@
-# Distribute Aid's Landing Site
+# Distribute Aid's ARCHIVED Landing Site
 
 [![CodeSee: View Architecture Diagram](./codesee-badge.svg)](https://app.codesee.io/maps/public/ddc21460-098f-11ec-b053-333e0b8cd199)
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/distributeaid/distributeaid.org)
