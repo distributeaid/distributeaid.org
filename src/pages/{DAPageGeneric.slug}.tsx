@@ -76,6 +76,29 @@ export const query = graphql`
               title
               embedUrl
             }
+            ... on DABlockImage {
+              internal {
+                type
+              }
+
+              image {
+                gatsbyImageData(
+                  width: 640
+                  aspectRatio: 1.2
+                  transformOptions: { fit: COVER }
+                )
+              }
+              alt
+
+              caption
+              attribution
+              dateUploaded
+              date
+              tags
+
+              alignmentPhoto
+              alignmentCaption
+            }
             ... on DABlockTimeline {
               internal {
                 type

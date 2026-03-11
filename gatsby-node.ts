@@ -6,13 +6,13 @@ import {
   createFundraiserSchemaCustomization,
   createFundraisersFromMarkdown,
 } from './gatsby/fundraisers/transformers'
+import { createBlockPhotoResolvers } from './gatsby/generic-pages/resolvers'
 import { sourceNeedsAssessments } from './gatsby/needs-assessment/sourceNeedsAssessmentData'
 import {
   createPhotoResolvers,
   createPhotoSchemaCustomization,
 } from './gatsby/photos/photos'
 import transformers from './gatsby/transform-nodes'
-
 /*
 Customize the GraqphQL Schema
 ================================================================================
@@ -59,6 +59,7 @@ export const createResolvers: GatsbyNode['createResolvers'] = (args) => {
   resolvers.resolveSubregionFields(args)
   resolvers.resolveTeamMemberFields(args)
   createPhotoResolvers(args)
+  createBlockPhotoResolvers(args)
 }
 
 /*
