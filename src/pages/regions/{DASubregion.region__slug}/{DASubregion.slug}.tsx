@@ -196,8 +196,8 @@ const SubregionPage: FC<TemplateProps> = ({ data: { subregion } }) => {
         </ul>
       </div>
 
-      <div className="flex flex-col md:flex-row">
-        <div className="flex flex-col">
+      <div className="flex flex-col md:flex-row justify-around">
+        <div className="flex flex-col p-10">
           {sections.map((section, i) => {
             return (
               <div
